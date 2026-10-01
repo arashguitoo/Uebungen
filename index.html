@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Übungszentrale – Lern Deutsch mit Arash</title>
+<link rel="stylesheet" href="stil.css">
+<style>
+  .held{background:linear-gradient(135deg,#1f2328,#2f3f46);color:#fff;padding:34px 0 60px}
+  .held h1{font-size:2rem;margin-bottom:4px}
+  .held p{opacity:.85;margin:0}
+  .anmeld{margin-top:-40px}
+  .anmeld .reihe{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:640px){.anmeld .reihe{grid-template-columns:1fr}}
+  .code-in{font-size:1.4rem;letter-spacing:.2em;text-transform:uppercase;width:100%;text-align:center;font-weight:700}
+  .fehler{color:var(--fehler);font-weight:600;min-height:1.4em;margin:6px 0 0}
+  .gruss{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .gruss .ava{width:52px;height:52px;border-radius:50%;background:var(--akzent);color:#fff;display:grid;place-items:center;font-size:1.5rem;font-weight:700}
+  .liste{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:10px}
+  .ex{display:flex;flex-direction:column;text-decoration:none;color:inherit;background:#fff;border:1px solid var(--linie);border-radius:var(--r);overflow:hidden;box-shadow:var(--schatten);transition:transform .15s}
+  .ex:hover{transform:translateY(-2px)}
+  .ex .band{height:8px}
+  .ex .inh{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:6px}
+  .ex h3{margin:0;font-size:1.15rem}
+  .ex .meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:6px}
+  .ex .best{font-weight:700;color:var(--ok)}
+  .abschnitt{margin:28px 0 6px;display:flex;align-items:baseline;gap:10px}
+  .filter{display:flex;gap:8px;flex-wrap:wrap}
+  .chip{border:1px solid var(--linie);background:#fff;border-radius:99px;padding:4px 12px;font:inherit;font-size:.9rem;cursor:pointer}
+  .chip.an{background:#1f2328;color:#fff;border-color:#1f2328}
+  footer{margin:40px 0 20px;text-align:center}
+</style>
+<script data-goatcounter="https://aguitoo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<div id="demo"></div>
+<section class="held"><div class="wrap">
+  <h1>Übungszentrale</h1>
+  <p>Lern Deutsch mit Arash · Spiele, Übungen und Zusatzlektionen</p>
+</div></section>
+
+<main class="wrap">
+  <div class="karte anmeld" id="anmeld"></div>
+  <div id="inhalt"></div>
+  <footer class="klein leise">Lern Deutsch mit Arash · <a href="konsole.html">Konsole</a></footer>
+</main>
+
+<script type="module">
+import { db, DEMO, esc } from './db.js';
+import { KATALOG } from './katalog.js';
+import { sitzung, anmelden, alsGast, abmelden, besteLokal } from './spieler.js';
+
+if (DEMO) document.getElementById('demo').innerHTML = '<div class="demo-band">DEMO-MODUS – Daten bleiben nur in diesem Browser</div>';
+const $ = s => document.querySelector(s);
+let filt = 'alle';
+
+const urlCode = new URLSearchParams(location.search).get('code');
+if (urlCode) { try { await anmelden(urlCode); } catch (e) { } history.replaceState(null, '', location.pathname + (DEMO ? '?demo' : '')); }
+
+function zeigeAnmeldung(fehler = '') {
+  const s = sitzung();
+  if (s && s.code) {
+    $('#anmeld').innerHTML = `<div class="gruss"><div class="ava">${esc((s.name || '?')[0].toUpperCase())}</div>
+      <div style="flex:1"><h2 style="margin:0">Hallo ${esc(s.name)}!</h2><div class="leise">${esc(s.kurs || '')} · Code ${esc(s.code)}</div></div>
+      <button class="btn zweit klein" id="ab">Abmelden</button></div>`;
+    $('#ab').onclick = () => { abmelden(); start(); };
+    return;
+  }
+  $('#anmeld').innerHTML = `<div class="reihe">
+    <form id="fCode"><h2>Mit Code</h2><p class="leise klein" style="margin-top:0">Dein Lehrer sieht deine Ergebnisse. Du bekommst die Übungen deines Kurses.</p>
+      <input class="code-in" id="code" type="text" maxlength="8" autocomplete="off" placeholder="CODE" aria-label="Dein Code">
+      <button class="btn" style="width:100%;margin-top:10px">Anmelden</button><p class="fehler" id="fe">${esc(fehler)}</p></form>
+    <form id="fGast"><h2>Ohne Code</h2><p class="leise klein" style="margin-top:0">Einfach losspielen. ${s && s.gast ? 'Du spielst gerade als <b>' + esc(s.name) + '</b>.' : 'Ein Spitzname ist freiwillig.'}</p>
+      <input id="gname" type="text" maxlength="30" placeholder="Spitzname (freiwillig)" style="width:100%" value="${s && s.gast && s.name !== 'Gast' ? esc(s.name) : ''}">
+      <button class="btn zweit" style="width:100%;margin-top:10px">${s && s.gast ? 'Namen ändern' : 'Ohne Code spielen'}</button></form></div>`;
+  $('#fCode').onsubmit = async e => {
+    e.preventDefault(); $('#fe').textContent = 'Einen Moment …';
+    try { await anmelden($('#code').value); start(); } catch (err) { $('#fe').textContent = err.message; }
+  };
+  $('#fGast').onsubmit = e => { e.preventDefault(); alsGast($('#gname').value); start(); };
+}
+
+function karte(ex, best) {
+  const href = ex.datei + (DEMO ? '?demo' : '');
+  return `<a class="ex" href="${href}"><div class="band" style="background:${ex.farbe}"></div><div class="inh">
+    <h3>${esc(ex.titel)}</h3><div class="leise klein">${esc(ex.untertitel || '')}</div>
+    <div class="meta"><span class="pille" style="background:${ex.farbe}1a;color:${ex.farbe}">${esc(ex.typ)}</span><span class="pille">${esc(ex.niveau)}</span>
+    ${ex.dauer ? `<span class="pille" style="background:#eee;color:#555">${esc(ex.dauer)}</span>` : ''}
+    ${best != null ? `<span class="best klein">✓ ${best} %</span>` : ''}</div></div></a>`;
+}
+
+async function start() {
+  zeigeAnmeldung();
+  const s = sitzung(), best = besteLokal();
+  let pubEx = {}, kursEx = {};
+  try { pubEx = (await db.get('pub/ex')) || {}; } catch (e) { }
+  if (s && s.kid) { try { kursEx = (await db.get('pub/kurse/' + s.kid + '/ex')) || {}; } catch (e) { } }
+  const offen = ex => (pubEx[ex.id] && typeof pubEx[ex.id].offen === 'boolean') ? pubEx[ex.id].offen : ex.offen !== false;
+  const meine = KATALOG.filter(ex => kursEx[ex.id]);
+  const weitere = KATALOG.filter(ex => !kursEx[ex.id] && offen(ex));
+  const themen = [...new Set(weitere.flatMap(e => e.themen || []))];
+  const pass = ex => filt === 'alle' || (ex.themen || []).includes(filt) || ex.niveau === filt;
+  let h = '';
+  if (s && s.kid) h += `<div class="abschnitt"><h2>Deine Übungen</h2><span class="leise klein">für ${esc(s.kurs || 'deinen Kurs')}</span></div>` +
+    (meine.length ? `<div class="liste">${meine.map(ex => karte(ex, best[ex.id])).join('')}</div>` : '<p class="leise">Für deinen Kurs ist gerade nichts freigeschaltet.</p>');
+  h += `<div class="abschnitt"><h2>${s && s.kid ? 'Weitere Übungen' : 'Alle Übungen'}</h2></div>`;
+  if (themen.length > 1) h += `<div class="filter">${['alle', ...themen].map(t => `<button class="chip ${t === filt ? 'an' : ''}" data-t="${esc(t)}">${t === 'alle' ? 'Alle' : esc(t)}</button>`).join('')}</div>`;
+  const sicht = weitere.filter(pass);
+  h += sicht.length ? `<div class="liste">${sicht.map(ex => karte(ex, best[ex.id])).join('')}</div>` : '<p class="leise">Keine weiteren Übungen.</p>';
+  $('#inhalt').innerHTML = h;
+  document.querySelectorAll('.chip').forEach(c => c.onclick = () => { filt = c.dataset.t; start(); });
+}
+start();
+</script>
+</body>
+</html>

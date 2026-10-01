@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Die Satzpresse – Übungszentrale</title>
+<link rel="stylesheet" href="stil.css">
+<style>
+  :root{--akzent:#7a3b69;--akzent-hell:#f3e8f0;--stahl:#5d6670}
+  body{background:#efedf0}
+  .start{text-align:center;padding:26px 18px}
+  .stempel{display:inline-block;border:3px solid #b3402f;color:#b3402f;font-weight:700;letter-spacing:.12em;padding:4px 14px;transform:rotate(-4deg);border-radius:6px;font-size:.9rem;margin-bottom:12px}
+  .start h1{font-family:Georgia,serif;font-size:2.1rem;color:var(--akzent)}
+  .start p{max-width:560px;margin:8px auto}
+  .beispiel{max-width:560px;margin:16px auto;text-align:left;background:#faf8fb;border:1px solid var(--linie);border-radius:12px;padding:12px 14px;font-size:.95rem}
+  .beispiel .rein{color:#888;text-decoration:line-through;text-decoration-color:#c88}
+  .beispiel .raus{font-weight:700;color:var(--akzent)}
+  .maschine{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;margin-bottom:12px}
+  .presse{width:64px;height:58px;position:relative}
+  .presse .rahmen{position:absolute;inset:0;border:5px solid var(--stahl);border-bottom:none;border-radius:8px 8px 0 0}
+  .presse .stempelk{position:absolute;left:12px;right:12px;top:6px;height:16px;background:var(--akzent);border-radius:3px;transition:top .18s ease-in}
+  .presse .stempelk::before{content:"";position:absolute;left:50%;top:-8px;width:6px;height:8px;background:var(--stahl);transform:translateX(-50%)}
+  .presse .blatt{position:absolute;left:8px;right:8px;bottom:0;height:12px;background:#fff;border:1px solid #bbb}
+  .presse.zu .stempelk{top:30px}
+  .zaehler{background:#fff;border:1px solid var(--linie);border-radius:12px;padding:6px 12px}
+  .zaehler b{font-size:1.4rem;color:var(--akzent);font-family:Consolas,monospace}
+  .zaehler span{display:block;font-size:.78rem;color:var(--leise)}
+  .stufen{display:flex;gap:6px;margin-bottom:14px}
+  .stufe{flex:1;height:8px;border-radius:8px;background:#ddd}
+  .stufe.fertig{background:var(--ok)}.stufe.jetzt{background:var(--akzent)}
+  .abt{font-size:.85rem;color:var(--leise);display:flex;justify-content:space-between;margin-bottom:6px}
+  .akte{border-left:5px solid var(--akzent);background:#fdfbfd}
+  .akte .kontext{color:var(--akzent)}
+  .ersparnis{display:inline-block;margin-top:6px;font-weight:700;color:var(--akzent)}
+  .rang{font-family:Georgia,serif;font-size:1.6rem;color:var(--akzent);margin:6px 0}
+  .knopfreihe{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+  .nachl{background:#f6eef4;border:1px solid #e2cbdb;border-radius:10px;padding:8px 12px;margin-bottom:12px;font-size:.92rem}
+  .formel{background:#fff;border:1px dashed var(--akzent);border-radius:10px;padding:10px;text-align:center;font-weight:600;margin:8px 0}
+</style>
+<script data-goatcounter="https://aguitoo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<main class="wrap" id="app"><p class="leise" style="text-align:center;margin-top:40px">Lädt …</p></main>
+
+<script type="module">
+import { starte } from './spieler.js';
+import { zeige, ziehe, label } from './aufgaben.js';
+import { esc } from './db.js';
+
+/* ======================= INHALT ======================= */
+const STUFEN = [
+  { name: 'Aktiv oder passiv?', abt: 'Abteilung 1 · Poststelle', text: 'Welche Partizip-Form ersetzt den Relativsatz? Partizip I (-end) oder Partizip II?' },
+  { name: 'Die richtige Endung', abt: 'Abteilung 2 · Formularwesen', text: 'Partizipien vor dem Nomen bekommen Adjektivendungen – wie jedes andere Adjektiv.' },
+  { name: 'Verdichten', abt: 'Abteilung 3 · Satzverkürzung', text: 'Aus Relativsatz wird Partizip-Attribut. Was zwischen Relativpronomen und Verb steht, wandert vor das Partizip.' },
+  { name: 'Entpacken', abt: 'Abteilung 4 · Bürgerservice', text: 'Ein Bürger versteht das Amtsdeutsch nicht. Übersetze das Partizip zurück in einen Relativsatz.' },
+  { name: 'Satzbaustelle', abt: 'Abteilung 5 · Chefetage', text: 'Bau die verdichteten Sätze selbst – in der richtigen Reihenfolge.' }
+];
+const P = 'Partizip I/II', E = 'Endung', V = 'Verdichten', R = 'Entpacken', B = 'Satzbau';
+const POOL = [
+ [
+  { id: 'p1', typ: 'mc', kontext: P, frage: 'die Preise, **die zurzeit steigen** → die ___ Preise', opts: ['steigenden', 'gestiegenen', 'steigende', 'gestiegene'], l: 0, x: 'Die Preise steigen gerade (aktiv, jetzt) → **Partizip I**: steig**end** + Endung -en.' },
+  { id: 'p2', typ: 'mc', kontext: P, frage: 'der Brief, **der gestern geschrieben wurde** → der gestern ___ Brief', opts: ['geschriebene', 'schreibende', 'geschriebende', 'geschriebenen'], l: 0, x: 'Passiv, schon passiert → **Partizip II**: geschrieben + -e.' },
+  { id: 'p3', typ: 'mc', kontext: P, frage: 'das Kind, **das weint** → das ___ Kind', opts: ['weinende', 'geweinte', 'weinend', 'weinenden'], l: 0 },
+  { id: 'p4', typ: 'mc', kontext: P, frage: 'die Rechnung, **die schon bezahlt worden ist** → die schon ___ Rechnung', opts: ['bezahlte', 'bezahlende', 'bezahlten', 'bezahlt'], l: 0, x: 'Passiv und abgeschlossen → **Partizip II**.' },
+  { id: 'p5', typ: 'mc', kontext: P, frage: 'die Kollegen, **die im Ausland arbeiten** → die im Ausland ___ Kollegen', opts: ['arbeitenden', 'gearbeiteten', 'arbeitende', 'arbeiteten'], l: 0 },
+  { id: 'p6', typ: 'mc', kontext: P, frage: 'die Waren, **die beim Transport beschädigt wurden** → die beim Transport ___ Waren', opts: ['beschädigten', 'beschädigenden', 'beschädigte', 'beschädigend'], l: 0 },
+  { id: 'p7', typ: 'mc', kontext: P, frage: 'der Terminplan, **der noch gilt** → der ___ Terminplan', opts: ['geltende', 'gegoltene', 'geltenden', 'gegolten'], l: 0, x: 'Partizip I = **Infinitiv + d**: gelten + d = geltend.' },
+  { id: 'p8', typ: 'mc', kontext: P, frage: 'der Zug, **der gerade ankommt** → der gerade ___ Zug', opts: ['ankommende', 'angekommene', 'ankommenden', 'anzukommende'], l: 0, x: 'Er kommt **gerade** an (gleichzeitig) → Partizip I. *Der angekommene Zug* ist schon da.' }
+ ],
+ [
+  { id: 'q1', typ: 'mc', kontext: E, frage: 'Wir haben den bestellt___ Schrank noch nicht bekommen.', opts: ['bestellten', 'bestellte', 'bestelltes', 'bestellter'], l: 0, x: 'den … Schrank: Akkusativ maskulin mit bestimmtem Artikel → **-en**.' },
+  { id: 'q2', typ: 'mc', kontext: E, frage: 'In einem frisch gestrichen___ Büro macht die Arbeit mehr Spaß.', opts: ['gestrichenen', 'gestrichenem', 'gestrichene', 'gestrichenes'], l: 0, x: 'in einem … Büro: Dativ neutral → **-en**.' },
+  { id: 'q3', typ: 'mc', kontext: E, frage: 'Die wartend___ Kunden werden langsam ungeduldig.', opts: ['wartenden', 'wartende', 'wartender', 'wartendes'], l: 0 },
+  { id: 'q4', typ: 'mc', kontext: E, frage: 'Ein gut ausgebildet___ Mitarbeiter ist Gold wert.', opts: ['ausgebildeter', 'ausgebildete', 'ausgebildeten', 'ausgebildetes'], l: 0, x: 'ein … Mitarbeiter: Nominativ maskulin ohne Endung am Artikel → **-er**.' },
+  { id: 'q5', typ: 'mc', kontext: E, frage: 'Vielen Dank für die schnell bearbeitet___ Reklamation.', opts: ['bearbeitete', 'bearbeiteten', 'bearbeiteter', 'bearbeitetes'], l: 0 },
+  { id: 'q6', typ: 'mc', kontext: E, frage: 'Trotz des vereinbart___ Termins ist niemand gekommen.', opts: ['vereinbarten', 'vereinbartes', 'vereinbarte', 'vereinbartem'], l: 0, x: 'Genitiv (trotz des …) → **-en**.' },
+  { id: 'q7', typ: 'mc', kontext: E, frage: 'Bei steigend___ Kosten müssen wir sparen.', opts: ['steigenden', 'steigendem', 'steigende', 'steigender'], l: 0, x: 'Dativ Plural ohne Artikel → **-en**.' },
+  { id: 'q8', typ: 'mc', kontext: E, frage: 'Wir suchen ein erfahren___ Team für unser neues Projekt.', opts: ['erfahrenes', 'erfahrene', 'erfahrenen', 'erfahrener'], l: 0, x: 'ein … Team: Akkusativ neutral → **-es**. Viele Adjektive sind eigentlich Partizipien: erfahren, bekannt, geschlossen, spannend.' }
+ ],
+ [
+  { id: 'r1', typ: 'mc', kontext: V, rs: 'Die Ware, die vor drei Wochen bei Ihnen bestellt wurde, ist noch nicht angekommen.', frage: '„Die Ware, die vor drei Wochen bei Ihnen bestellt wurde, ist noch nicht angekommen.“', opts: ['Die vor drei Wochen bei Ihnen bestellte Ware ist noch nicht angekommen.', 'Die bestellte vor drei Wochen bei Ihnen Ware ist noch nicht angekommen.', 'Die vor drei Wochen bei Ihnen bestellende Ware ist noch nicht angekommen.', 'Die vor drei Wochen bei Ihnen bestellten Ware ist noch nicht angekommen.'], l: 0, x: 'Artikel – **Ergänzungen** – Partizip + Endung – Nomen.' },
+  { id: 'r2', typ: 'mc', kontext: V, rs: 'Die Mängel, die seit Monaten bestehen, müssen endlich behoben werden.', frage: '„Die Mängel, die seit Monaten bestehen, müssen endlich behoben werden.“', opts: ['Die seit Monaten bestehenden Mängel müssen endlich behoben werden.', 'Die seit Monaten bestandenen Mängel müssen endlich behoben werden.', 'Die bestehenden seit Monaten Mängel müssen endlich behoben werden.', 'Die seit Monaten bestehende Mängel müssen endlich behoben werden.'], l: 0 },
+  { id: 'r3', typ: 'mc', kontext: V, rs: 'Wir sprechen mit dem Kunden, der seit einer Stunde wartet.', frage: '„Wir sprechen mit dem Kunden, der seit einer Stunde wartet.“', opts: ['Wir sprechen mit dem seit einer Stunde wartenden Kunden.', 'Wir sprechen mit dem seit einer Stunde gewarteten Kunden.', 'Wir sprechen mit dem wartenden seit einer Stunde Kunden.', 'Wir sprechen mit dem seit einer Stunde wartende Kunden.'], l: 0 },
+  { id: 'r4', typ: 'mc', kontext: V, rs: 'Das Angebot, das von unserer Firma erstellt wurde, ist sehr günstig.', frage: '„Das Angebot, das von unserer Firma erstellt wurde, ist sehr günstig.“', opts: ['Das von unserer Firma erstellte Angebot ist sehr günstig.', 'Das von unserer Firma erstellende Angebot ist sehr günstig.', 'Das erstellte von unserer Firma Angebot ist sehr günstig.', 'Das von unserer Firma erstellten Angebot ist sehr günstig.'], l: 0 },
+  { id: 'r5', typ: 'mc', kontext: V, rs: 'Die Kosten, die ständig steigen, sind ein großes Problem.', frage: '„Die Kosten, die ständig steigen, sind ein großes Problem.“', opts: ['Die ständig steigenden Kosten sind ein großes Problem.', 'Die ständig gestiegenen Kosten sind ein großes Problem.', 'Die steigenden ständig Kosten sind ein großes Problem.', 'Die ständig steigende Kosten sind ein großes Problem.'], l: 0, x: '*gestiegen* hieße: Der Anstieg ist schon vorbei. Hier passiert es **ständig** → Partizip I.' },
+  { id: 'r6', typ: 'mc', kontext: V, rs: 'Den Entwurf, den Sie uns geschickt haben, haben wir ausführlich kommentiert.', frage: '„Den Entwurf, den Sie uns geschickt haben, haben wir ausführlich kommentiert.“', opts: ['Den von Ihnen geschickten Entwurf haben wir ausführlich kommentiert.', 'Den von Ihnen schickenden Entwurf haben wir ausführlich kommentiert.', 'Den Sie uns geschickten Entwurf haben wir ausführlich kommentiert.', 'Den von Ihnen geschickte Entwurf haben wir ausführlich kommentiert.'], l: 0, x: 'Aktiv-Relativsatz mit Partizip II: Wer etwas getan hat, steht mit **von**: *Sie* → *von Ihnen*.' },
+  { id: 'r7', typ: 'mc', kontext: V, rs: 'Die Firma, die den Auftrag ausführt, ist für Nachbesserungen zuständig.', frage: '„Die Firma, die den Auftrag ausführt, ist für Nachbesserungen zuständig.“', opts: ['Die den Auftrag ausführende Firma ist für Nachbesserungen zuständig.', 'Die den Auftrag ausgeführte Firma ist für Nachbesserungen zuständig.', 'Die ausführende den Auftrag Firma ist für Nachbesserungen zuständig.', 'Die den Auftrag ausführenden Firma ist für Nachbesserungen zuständig.'], l: 0, x: 'Die Firma führt selbst aus (aktiv) → **Partizip I**. Das Objekt (den Auftrag) bleibt vor dem Partizip.' },
+  { id: 'r8', typ: 'mc', kontext: V, rs: 'Der Kollege, der gestern aus Berlin angekommen ist, stellt sich vor.', frage: '„Der Kollege, der gestern aus Berlin angekommen ist, stellt sich vor.“', opts: ['Der gestern aus Berlin angekommene Kollege stellt sich vor.', 'Der gestern aus Berlin ankommende Kollege stellt sich vor.', 'Der angekommene gestern aus Berlin Kollege stellt sich vor.', 'Der gestern aus Berlin angekommenen Kollege stellt sich vor.'], l: 0, x: 'Bei Verben mit **sein** im Perfekt (ankommen, fahren, wachsen) ist das Partizip II **aktiv**: *der angekommene Kollege* = der Kollege, der angekommen ist.' }
+ ],
+ [
+  { id: 's1', typ: 'mc', kontext: R, frage: 'der im Internet bestellte Drucker = der Drucker, …', opts: ['der im Internet bestellt wurde', 'der im Internet bestellt', 'den im Internet bestellt wurde', 'der im Internet bestellend ist'], l: 0 },
+  { id: 's2', typ: 'mc', kontext: R, frage: 'die im Lager arbeitenden Kollegen = die Kollegen, …', opts: ['die im Lager arbeiten', 'die im Lager gearbeitet werden', 'die im Lager gearbeitet wurden', 'denen im Lager arbeiten'], l: 0, x: 'Partizip I = Aktiv, Gegenwart → *die arbeiten*.' },
+  { id: 's3', typ: 'mc', kontext: R, frage: 'das schnell wachsende Unternehmen = das Unternehmen, …', opts: ['das schnell wächst', 'das schnell gewachsen wird', 'das schnell wachsen wird', 'dem schnell wächst'], l: 0 },
+  { id: 's4', typ: 'mc', kontext: R, frage: 'mit dem von der Chefin unterschriebenen Vertrag = mit dem Vertrag, …', opts: ['der von der Chefin unterschrieben wurde', 'den von der Chefin unterschrieben wurde', 'der die Chefin unterschreibt', 'dem von der Chefin unterschrieben wurde'], l: 0, x: 'Im Relativsatz ist *der Vertrag* Subjekt (Passiv) → Nominativ **der**.' },
+  { id: 's5', typ: 'mc', kontext: R, frage: 'die noch nicht bezahlten Rechnungen = die Rechnungen, …', opts: ['die noch nicht bezahlt worden sind', 'die noch nicht bezahlen', 'die noch nicht bezahlt haben', 'denen noch nicht bezahlt wurden'], l: 0 },
+  { id: 's6', typ: 'mc', kontext: R, frage: 'für die uns gestern zugeschickten Unterlagen = für die Unterlagen, …', opts: ['die uns gestern zugeschickt wurden', 'die uns gestern zugeschickt haben', 'denen uns gestern zugeschickt wurden', 'die wir gestern zugeschickt wurden'], l: 0, x: 'Die Unterlagen haben nichts geschickt – sie **wurden** geschickt (Passiv).' },
+  { id: 's7', typ: 'mc', kontext: R, frage: 'die bis heute geltenden Regeln = die Regeln, …', opts: ['die bis heute gelten', 'die bis heute gegolten werden', 'die bis heute geltend wurden', 'denen bis heute gelten'], l: 0 }
+ ],
+ [
+  { id: 't1', typ: 'bau', kontext: B, rs: 'Die Ware, die vor vier Wochen bei Ihnen bestellt wurde, ist noch nicht angekommen.', frage: 'Verdichte: „Die Ware, die vor vier Wochen bei Ihnen bestellt wurde, ist noch nicht angekommen.“', steine: ['Die', 'vor vier Wochen', 'bei Ihnen', 'bestellte', 'Ware', 'ist noch nicht angekommen.'], alt: [['Die', 'bei Ihnen', 'vor vier Wochen', 'bestellte', 'Ware', 'ist noch nicht angekommen.']] },
+  { id: 't2', typ: 'bau', kontext: B, rs: 'Den Entwurf, den Sie bis zum 10. Mai erstellt haben, haben wir kommentiert.', frage: 'Verdichte: „Den Entwurf, den Sie bis zum 10. Mai erstellt haben, haben wir kommentiert.“', steine: ['Den', 'von Ihnen', 'bis zum 10. Mai', 'erstellten', 'Entwurf', 'haben wir kommentiert.'], alt: [['Den', 'bis zum 10. Mai', 'von Ihnen', 'erstellten', 'Entwurf', 'haben wir kommentiert.']] },
+  { id: 't3', typ: 'bau', kontext: B, rs: 'Die Fahrer, die seit Stunden im Lager warten, werden ungeduldig.', frage: 'Verdichte: „Die Fahrer, die seit Stunden im Lager warten, werden ungeduldig.“', steine: ['Die', 'seit Stunden', 'im Lager', 'wartenden', 'Fahrer', 'werden ungeduldig.'], alt: [['Die', 'im Lager', 'seit Stunden', 'wartenden', 'Fahrer', 'werden ungeduldig.']] },
+  { id: 't4', typ: 'bau', kontext: B, rs: 'Bitte prüfen Sie die Rechnung, die gestern von uns verschickt wurde.', frage: 'Verdichte: „Bitte prüfen Sie die Rechnung, die gestern von uns verschickt wurde.“', steine: ['Bitte prüfen Sie die', 'gestern', 'von uns', 'verschickte', 'Rechnung.'], alt: [['Bitte prüfen Sie die', 'von uns', 'gestern', 'verschickte', 'Rechnung.']] },
+  { id: 't5', typ: 'bau', kontext: B, rs: 'Der Antrag, der mit Dringlichkeit vorgelegt wurde, wurde nicht bearbeitet.', frage: 'Verdichte: „Der Antrag, der mit Dringlichkeit vorgelegt wurde, wurde nicht bearbeitet.“', steine: ['Der', 'mit Dringlichkeit', 'vorgelegte', 'Antrag', 'wurde nicht bearbeitet.'] },
+  { id: 't6', typ: 'bau', kontext: B, rs: 'Wegen der Preise, die ständig steigen, kaufen viele Kunden weniger.', frage: 'Verdichte: „Wegen der Preise, die ständig steigen, kaufen viele Kunden weniger.“', steine: ['Wegen der', 'ständig', 'steigenden', 'Preise', 'kaufen viele Kunden weniger.'] },
+  { id: 't7', typ: 'bau', kontext: B, rs: 'Die Bearbeitung meines Antrags, den ich bei Ihnen eingereicht habe, ist noch nicht erfolgt.', frage: 'Der Endgegner! „Die Bearbeitung meines Antrags, den ich bei Ihnen eingereicht habe, ist noch nicht erfolgt.“', steine: ['Die Bearbeitung', 'meines', 'bei Ihnen', 'eingereichten', 'Antrags', 'ist noch nicht erfolgt.'], x: 'Auch im Genitiv funktioniert es: *meines … eingereicht**en** Antrags*.' },
+  { id: 't8', typ: 'bau', kontext: B, rs: 'Das Gesetz, das noch heute gilt, stammt aus dem Jahr 1990.', frage: 'Verdichte: „Das Gesetz, das noch heute gilt, stammt aus dem Jahr 1990.“', steine: ['Das', 'noch heute', 'geltende', 'Gesetz', 'stammt aus dem Jahr 1990.'] }
+ ]
+];
+const PRO_STUFE = 6;
+const RAENGE = [[90, 'Ministerialrat / Ministerialrätin', '🏛️'], [75, 'Amtsleiter:in', '🗂️'], [60, 'Referent:in', '📋'], [40, 'Sachbearbeiter:in', '🖋️'], [0, 'Praktikant:in', '📎']];
+const woerter = s => s.replace(/[„“,.]/g, ' ').trim().split(/\s+/).length;
+function ersparnis(a) {
+  if (!a.rs) return 1;
+  const kurz = a.typ === 'bau' ? a.steine.join(' ') : a.opts[a.l];
+  return Math.max(1, woerter(a.rs) - woerter(kurz));
+}
+
+/* ======================= SPIEL ======================= */
+const app = document.getElementById('app');
+const L = await starte('partizip-presse');
+if (!L.frei) { L.sperre(app); throw new Error('gesperrt'); }
+const labels = {}; POOL.flat().forEach(a => labels[a.id] = label(a)); L.registriereItems(labels);
+let G;
+
+function startbild() {
+  app.innerHTML = `<div class="karte start" style="margin-top:18px">
+    <div class="stempel">AMT FÜR SATZVERKÜRZUNG</div>
+    <h1>Die Satzpresse</h1>
+    <p>Willkommen im Amt! Deine Aufgabe: lange Relativsätze in kurze, elegante <b>Partizip-Attribute</b> pressen – und Amtsdeutsch für die Bürger wieder entpacken.</p>
+    <div class="beispiel"><div class="rein">die Mängel, die seit Monaten bestehen</div><div>⬇ ⚙️</div><div class="raus">die seit Monaten bestehenden Mängel</div></div>
+    <p class="leise klein">5 Abteilungen · 30 Akten · Jedes gesparte Wort zählt für deine Beförderung</p>
+    <div class="knopfreihe"><button class="btn zweit" id="spick">📒 Spickzettel</button><button class="btn" id="los" style="min-width:200px">Dienst antreten →</button></div></div>`;
+  document.getElementById('los').onclick = neuesSpiel;
+  document.getElementById('spick').onclick = spickzettel;
+}
+
+function neuesSpiel() {
+  G = { st: 0, richtig: 0, erledigt: 0, gespart: 0, gesamt: STUFEN.length * PRO_STUFE, stufeRichtig: [] };
+  G.plan = POOL.map(p => ziehe(p, PRO_STUFE));
+  L.beginne(G.gesamt, G.gesamt, 'Abteilung 1: ' + STUFEN[0].name);
+  stufeStart();
+}
+
+const kopfzeile = () => `<div class="maschine"><div class="presse" id="presse"><div class="rahmen"></div><div class="stempelk"></div><div class="blatt"></div></div>
+  <div class="zaehler"><b id="gespart">${G.gespart}</b><span>Wörter eingespart</span></div><button class="btn zweit klein" id="spick">📒</button></div>
+  <div class="stufen">${STUFEN.map((s, i) => `<div class="stufe ${i < G.st ? 'fertig' : i === G.st ? 'jetzt' : ''}" title="${esc(s.name)}"></div>`).join('')}</div>`;
+
+function stufeStart() {
+  const s = STUFEN[G.st];
+  app.innerHTML = kopfzeile() + `<div class="karte akte aufgabe"><div class="kontext">${esc(s.abt)}</div><h2>${esc(s.name)}</h2><p>${esc(s.text)}</p>
+    <button class="btn weiter" id="go">Akten öffnen →</button></div>`;
+  document.getElementById('spick').onclick = spickzettel;
+  document.getElementById('go').onclick = () => { G.q = G.plan[G.st].slice(); G.nach = []; G.inSt = 0; G.r = 0; naechste(); };
+  L.fortschritt(G.erledigt, G.richtig, 'Abteilung ' + (G.st + 1) + ': ' + s.name);
+}
+
+async function naechste() {
+  const s = STUFEN[G.st];
+  if (G.q.length) {
+    const a = G.q.shift(); G.inSt++;
+    app.innerHTML = kopfzeile() + `<div class="abt"><span>${esc(s.abt)}</span><span>Akte ${G.inSt} / ${PRO_STUFE}</span></div><div class="karte" id="feld"></div>`;
+    document.getElementById('spick').onclick = spickzettel;
+    await zeige(document.getElementById('feld'), a, { onErgebnis: ok => wertung(a, ok) });
+    return naechste();
+  }
+  if (G.nach.length) {
+    const a = G.nach.shift();
+    app.innerHTML = kopfzeile() + `<div class="nachl">📂 <b>Wiedervorlage:</b> Diese Akte kommt noch einmal auf deinen Tisch – ohne Punkte, nur zum Üben.</div><div class="karte" id="feld"></div>`;
+    document.getElementById('spick').onclick = spickzettel;
+    await zeige(document.getElementById('feld'), a, { lobText: 'Akte erledigt!', fehlerText: 'Noch nicht – lies die Lösung genau.' });
+    return naechste();
+  }
+  G.stufeRichtig.push(G.r); G.st++;
+  if (G.st < STUFEN.length) zwischen(); else ende();
+}
+
+function wertung(a, ok) {
+  L.antwort(a.id, ok); G.erledigt++;
+  if (ok) {
+    G.richtig++; G.r++; const w = ersparnis(a); G.gespart += w;
+    const pr = document.getElementById('presse'); if (pr) { pr.classList.add('zu'); setTimeout(() => pr.classList.remove('zu'), 260); }
+    const g = document.getElementById('gespart'); if (g) g.textContent = G.gespart;
+    const fb = document.querySelector('.feedback.ok b'); if (fb && a.rs) fb.insertAdjacentHTML('afterend', `<span class="ersparnis">⚙️ ${w} Wörter gespart</span>`);
+  } else G.nach.push(a);
+  L.fortschritt(G.erledigt, G.richtig, 'Abteilung ' + (G.st + 1) + ': ' + STUFEN[G.st].name);
+}
+
+function zwischen() {
+  const r = G.stufeRichtig.at(-1);
+  app.innerHTML = kopfzeile() + `<div class="karte aufgabe" style="text-align:center"><div style="font-size:2.4rem">${r >= 5 ? '🏅' : r >= 3 ? '👍' : '☕'}</div>
+    <h2>${esc(STUFEN[G.st - 1].abt)} erledigt</h2><p><b>${r} von ${PRO_STUFE}</b> Akten auf Anhieb richtig.</p>
+    <p class="leise">Nächste Station: <b>${esc(STUFEN[G.st].abt)}</b></p><button class="btn weiter" id="go">Weiter →</button></div>`;
+  document.getElementById('spick').onclick = spickzettel;
+  document.getElementById('go').onclick = stufeStart;
+}
+
+async function ende() {
+  const pct = await L.ende(G.richtig, G.gesamt, { gespart: G.gespart });
+  const r = RAENGE.find(x => pct >= x[0]);
+  const schwach = G.stufeRichtig.map((n, i) => [n, i]).sort((a, b) => a[0] - b[0])[0];
+  app.innerHTML = kopfzeile() + `<div class="karte aufgabe" style="text-align:center">
+    <div style="font-size:3rem">${r[2]}</div><div class="leise">Du wirst befördert zur / zum</div><div class="rang">${esc(r[1])}</div>
+    <p><b>${G.richtig} von ${G.gesamt}</b> Akten auf Anhieb richtig (${pct} %) · <b>${G.gespart}</b> Wörter eingespart.</p>
+    <div style="max-width:420px;margin:10px auto;text-align:left">${STUFEN.map((s, i) => `<div class="zeile" style="justify-content:space-between;border-bottom:1px dotted #ccc;padding:3px 0"><span>${esc(s.name)}</span><b>${G.stufeRichtig[i]} / ${PRO_STUFE}</b></div>`).join('')}</div>
+    ${schwach[0] < PRO_STUFE ? `<p class="leise">Noch üben: <b>${esc(STUFEN[schwach[1]].name)}</b> – siehe Spickzettel.</p>` : ''}
+    <div class="knopfreihe">${pct >= 60 ? '<button class="btn" id="zert">🎓 Zertifikat herunterladen</button>' : ''}<button class="btn zweit" id="nochmal">Neue Akten</button><a class="btn zweit" href="index.html">Zur Zentrale</a></div>
+    ${pct < 60 ? '<p class="leise klein">Ab 60 % gibt es ein Zertifikat. Die Akten werden jedes Mal neu gemischt.</p>' : ''}</div>`;
+  document.getElementById('spick').onclick = spickzettel;
+  document.getElementById('nochmal').onclick = neuesSpiel;
+  const z = document.getElementById('zert');
+  if (z) z.onclick = () => L.zertifikat({ titel: 'Die Satzpresse', zeile: 'Partizip I und II als Adjektiv statt Relativsatz', punkte: `${r[1]} · ${G.richtig}/${G.gesamt} richtig · ${G.gespart} Wörter gespart` });
+}
+
+function spickzettel() {
+  const d = document.createElement('div'); d.className = 'spick';
+  d.innerHTML = `<div class="karte"><div class="zeile" style="justify-content:space-between"><h2 style="margin:0">📒 Spickzettel</h2><button class="btn zweit klein" id="zu">Schließen</button></div>
+  <table style="margin-top:12px"><tr><th></th><th>Partizip I</th><th>Partizip II</th></tr>
+  <tr><td>Form</td><td>Infinitiv + <b>d</b> + Endung<br>steigen → steigen<b>d</b>e</td><td>Partizip II + Endung<br>bestellen → bestellt<b>e</b></td></tr>
+  <tr><td>Bedeutung</td><td><b>aktiv</b>, passiert gerade / ist aktuell</td><td><b>passiv</b>, ist schon passiert / gemacht worden</td></tr>
+  <tr><td>Beispiel</td><td>die steigend<b>en</b> Preise<br>= die Preise, die steigen</td><td>die bestellt<b>e</b> Ware<br>= die Ware, die bestellt wurde</td></tr></table>
+  <h3 style="margin-top:14px">So wird verdichtet</h3>
+  <div class="formel">Artikel + Ergänzungen + Partizip mit Endung + Nomen</div>
+  <p class="klein">Die Ware, <u>die vor drei Wochen bei Ihnen</u> bestellt wurde → die <u>vor drei Wochen bei Ihnen</u> bestellt<b>e</b> Ware</p>
+  <p class="klein">1. Relativpronomen und Hilfsverb (wurde, ist, hat) fallen weg.<br>2. Alles dazwischen rückt vor das Partizip.<br>3. Das Partizip bekommt die normale <b>Adjektivendung</b>.<br>4. Wer etwas getan hat, steht mit <b>von</b>: den Sie geschickt haben → von Ihnen geschickt.</p>
+  <h3 style="margin-top:14px">Achtung</h3>
+  <p class="klein">Verben mit <b>sein</b> im Perfekt: Das Partizip II ist <b>aktiv</b>: der angekommene Zug = der Zug, der angekommen ist.<br>
+  Partizip I = gleichzeitig: der abfahrende Zug (fährt gerade ab) ↔ der abgefahrene Zug (ist schon weg).</p></div>`;
+  document.body.append(d);
+  d.onclick = e => { if (e.target === d || e.target.id === 'zu') d.remove(); };
+}
+
+startbild();
+</script>
+</body>
+</html>

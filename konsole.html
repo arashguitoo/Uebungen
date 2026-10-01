@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Konsole – Übungszentrale</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="stil.css">
+<style>
+  :root{--akzent:#2f3f46;--akzent-hell:#e7edef}
+  body{font-size:16px}
+  .top{background:#1f2328;color:#fff}
+  .top .wrap{display:flex;align-items:center;gap:14px;flex-wrap:wrap;max-width:1200px;padding-top:12px;padding-bottom:0}
+  .top h1{font-size:1.25rem;margin:0;flex:1}
+  .tabs{display:flex;gap:2px;width:100%;overflow-x:auto}
+  .tab{background:none;border:0;color:#cfd6da;font:inherit;font-weight:600;padding:10px 16px;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap}
+  .tab.an{color:#fff;border-color:#ffd166}
+  .wrap{max-width:1200px}
+  .zahlen{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:14px 0}
+  .zahl{background:#fff;border:1px solid var(--linie);border-radius:12px;padding:12px 14px}
+  .zahl b{display:block;font-size:1.7rem;line-height:1.1}
+  .zahl span{color:var(--leise);font-size:.85rem}
+  .leiste{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:12px 0}
+  .leiste label{font-size:.9rem;color:var(--leise)}
+  .live{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px}
+  .lk{background:#fff;border:1px solid var(--linie);border-left:6px solid #bbb;border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+  .lk.aktiv{border-left-color:#2e9e5b}.lk.fertig{border-left-color:#2b6cb0}.lk.abgebrochen{border-left-color:#c05621}.lk.inaktiv{border-left-color:#aaa;opacity:.85}
+  .lk .n{font-weight:700;font-size:1.05rem;display:flex;justify-content:space-between;gap:8px}
+  .balken{height:9px;background:#eee;border-radius:9px;overflow:hidden}
+  .balken i{display:block;height:100%;background:var(--ok)}
+  .st{font-size:.75rem;font-weight:700;padding:2px 8px;border-radius:99px;white-space:nowrap}
+  .st.aktiv{background:#e3f6ea;color:#1e7a45}.st.fertig{background:#e2ecf8;color:#2b6cb0}.st.abgebrochen{background:#fdeee3;color:#c05621}.st.inaktiv{background:#eee;color:#666}
+  .puls{display:inline-block;width:8px;height:8px;border-radius:50%;background:#2e9e5b;margin-right:4px;animation:p 1.4s infinite}
+  @keyframes p{50%{opacity:.25}}
+  table.t{border-collapse:collapse;width:100%;background:#fff;border-radius:12px;overflow:hidden;font-size:.93rem}
+  .t th,.t td{padding:8px 10px;border-bottom:1px solid var(--linie);text-align:left;vertical-align:middle}
+  .t th{background:#f1eee8;font-size:.82rem;text-transform:uppercase;letter-spacing:.03em;color:#555;position:sticky;top:0}
+  .tabwrap{overflow:auto;max-height:70vh;border:1px solid var(--linie);border-radius:12px}
+  .zelle{display:inline-block;min-width:54px;text-align:center;border-radius:8px;padding:3px 6px;font-weight:700}
+  .q{display:grid;grid-template-columns:62px 1fr;gap:10px;align-items:center;padding:7px 0;border-bottom:1px solid var(--linie)}
+  .q .pz{font-weight:700;text-align:right}
+  .q .lb{font-size:.9rem}
+  .q .bb{height:6px;background:#eee;border-radius:6px;margin-top:4px;overflow:hidden}
+  .q .bb i{display:block;height:100%}
+  .zwei{display:grid;grid-template-columns:300px 1fr;gap:16px;align-items:start}
+  @media(max-width:860px){.zwei{grid-template-columns:1fr}}
+  .kl{display:flex;flex-direction:column;gap:6px}
+  .kursbtn{text-align:left;font:inherit;background:#fff;border:1px solid var(--linie);border-radius:10px;padding:10px 12px;cursor:pointer}
+  .kursbtn.an{border-color:var(--akzent);box-shadow:inset 4px 0 0 var(--akzent)}
+  .code{font-family:Consolas,monospace;font-weight:700;letter-spacing:.12em;background:#f3f1ec;padding:2px 8px;border-radius:6px}
+  .exk{background:#fff;border:1px solid var(--linie);border-radius:12px;padding:14px;display:grid;gap:8px}
+  .exk .kopfz{display:flex;gap:10px;align-items:center}
+  .exk .farbe{width:14px;height:42px;border-radius:5px}
+  .schalter{display:flex;align-items:center;gap:8px;cursor:pointer;font-size:.95rem}
+  .schalter input{width:18px;height:18px}
+  .icon{background:none;border:0;cursor:pointer;font-size:1rem;padding:4px 6px;border-radius:6px}
+  .icon:hover{background:#eee}
+  .meldung{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#1f2328;color:#fff;padding:10px 18px;border-radius:10px;z-index:99;box-shadow:var(--schatten)}
+</style>
+</head>
+<body>
+<div id="demo"></div>
+<header class="top"><div class="wrap">
+  <h1>Konsole · Übungszentrale</h1>
+  <span id="wer" class="klein" style="opacity:.8"></span>
+  <button class="btn zweit klein versteckt" id="aus" style="background:transparent;color:#fff;border-color:#666">Abmelden</button>
+  <nav class="tabs versteckt" id="tabs">
+    <button class="tab an" data-t="live">● Live</button>
+    <button class="tab" data-t="erg">Ergebnisse</button>
+    <button class="tab" data-t="kurse">Kurse &amp; Codes</button>
+    <button class="tab" data-t="ex">Übungen</button>
+  </nav>
+</div></header>
+<main class="wrap" id="app"></main>
+
+<script type="module">
+import { db, DEMO, zufall, esc } from './db.js';
+import { KATALOG, exById } from './katalog.js';
+
+if (DEMO) document.getElementById('demo').innerHTML = '<div class="demo-band">DEMO-MODUS – Anmeldung mit beliebigen Daten, alles bleibt in diesem Browser</div>';
+const $ = s => document.querySelector(s), app = $('#app');
+const D = { kurse: {}, pub: {}, live: {}, res: {}, items: {} };
+let tab = 'live', offs = [], gewKurs = null;
+const F = { lkurs: 'alle', lex: 'alle', nurAktiv: false, ekurs: 'alle', eex: 'alle', mehr: false };
+const BASE = location.href.replace(/[?#].*$/, '').replace(/[^/]*$/, '');
+const meld = t => { const m = document.createElement('div'); m.className = 'meldung'; m.textContent = t; document.body.append(m); setTimeout(() => m.remove(), 2200); };
+const zeit = t => t ? new Date(t).toLocaleString('de-DE', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }) : '';
+const dauer = s => s >= 3600 ? Math.floor(s / 3600) + ' h ' + Math.floor(s % 3600 / 60) + ' min' : Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0') + ' min';
+const vor = t => { const s = Math.max(0, Math.round((Date.now() - t) / 1000)); return s < 60 ? 'vor ' + s + ' s' : s < 3600 ? 'vor ' + Math.floor(s / 60) + ' min' : s < 86400 ? 'vor ' + Math.floor(s / 3600) + ' h' : zeit(t); };
+const farbe = p => p >= 85 ? '#d9f2e2' : p >= 65 ? '#eef6d5' : p >= 45 ? '#fdf0cf' : '#fbe0db';
+const exName = id => (exById(id) || { titel: id }).titel;
+const kursName = kid => (D.kurse[kid] || {}).name || (kid ? '(gelöschter Kurs)' : 'Gast');
+const kursListe = () => Object.entries(D.kurse || {}).sort((a, b) => (a[1].name || '').localeCompare(b[1].name || ''));
+
+/* ---------------- Anmeldung ---------------- */
+db.onAuth((u, admin) => {
+  offs.forEach(f => f()); offs = [];
+  if (!u || !admin) {
+    $('#tabs').classList.add('versteckt'); $('#aus').classList.add('versteckt'); $('#wer').textContent = '';
+    app.innerHTML = `<form class="karte" id="login" style="max-width:420px;margin:50px auto">
+      <h2>Anmelden</h2><p class="leise">Dieselben Zugangsdaten wie in der Liga-Konsole.</p>
+      ${u && !admin ? '<p class="hinweis">Dieses Konto hat keinen Zugriff.</p>' : ''}
+      <input type="email" id="em" placeholder="E-Mail" style="width:100%;margin-bottom:10px" autocomplete="username" required>
+      <input type="password" id="pw" placeholder="Passwort" style="width:100%;margin-bottom:12px" autocomplete="current-password" required>
+      <button class="btn" style="width:100%">Anmelden</button><p id="lf" style="color:var(--fehler)"></p></form>`;
+    $('#login').onsubmit = async e => { e.preventDefault(); $('#lf').textContent = '';
+      try { await db.login($('#em').value, $('#pw').value); } catch (err) { $('#lf').textContent = 'Anmeldung fehlgeschlagen: ' + (err.code || err.message); } };
+    return;
+  }
+  $('#tabs').classList.remove('versteckt'); $('#aus').classList.remove('versteckt');
+  $('#wer').textContent = DEMO ? 'Demo' : (u.email || '');
+  for (const k of Object.keys(D)) offs.push(db.listen(k, v => { D[k] = v || {}; zeichne(k); }, e => meld('Fehler beim Laden: ' + e.message)));
+  zeichne();
+});
+$('#aus').onclick = () => db.logout();
+document.querySelectorAll('.tab').forEach(b => b.onclick = () => {
+  document.querySelectorAll('.tab').forEach(x => x.classList.toggle('an', x === b)); tab = b.dataset.t; zeichne();
+});
+setInterval(() => { if (tab === 'live' && !document.querySelector('#app input:focus,#app select:focus')) zeichne('tick'); }, 5000);
+
+let zTimer = null;
+function zeichne(quelle) {
+  // Formulare nicht beim Tippen überschreiben
+  if (quelle && document.activeElement && document.activeElement.closest('#app') && /INPUT|TEXTAREA/.test(document.activeElement.tagName)) {
+    clearTimeout(zTimer); zTimer = setTimeout(() => zeichne(), 1500); return;
+  }
+  if (tab === 'live') live(); else if (tab === 'erg') erg(); else if (tab === 'kurse') kurse(); else uebungen();
+}
+
+/* ---------------- LIVE ---------------- */
+function status(v) { if (v.st === 'fertig') return 'fertig'; if (v.st === 'abgebrochen') return 'abgebrochen'; return Date.now() - v.t < 60000 ? 'aktiv' : 'inaktiv'; }
+const ST = { aktiv: '<span class="puls"></span>spielt gerade', fertig: 'fertig', abgebrochen: 'verlassen', inaktiv: 'keine Aktivität' };
+function kursOptionen(wert, mitGast = true) {
+  return `<option value="alle">Alle Kurse</option>${mitGast ? `<option value="gast" ${wert === 'gast' ? 'selected' : ''}>Ohne Code (Gäste)</option>` : ''}` +
+    kursListe().map(([k, v]) => `<option value="${k}" ${wert === k ? 'selected' : ''}>${esc(v.name)}</option>`).join('');
+}
+const exOptionen = wert => `<option value="alle">Alle Übungen</option>` + KATALOG.map(e => `<option value="${e.id}" ${wert === e.id ? 'selected' : ''}>${esc(e.titel)}</option>`).join('');
+const passtKurs = (kid, f) => f === 'alle' || (f === 'gast' ? !kid : kid === f);
+
+function live() {
+  const alle = Object.entries(D.live || {}).map(([sid, v]) => ({ sid, ...v, s: status(v) }));
+  const heute = new Date(); heute.setHours(0, 0, 0, 0);
+  let l = alle.filter(v => passtKurs(v.kid, F.lkurs) && (F.lex === 'alle' || v.ex === F.lex) && (!F.nurAktiv || v.s === 'aktiv'));
+  l.sort((a, b) => ((b.s === 'aktiv') - (a.s === 'aktiv')) || (b.t - a.t));
+  const aktiv = alle.filter(v => v.s === 'aktiv').length, hg = alle.filter(v => v.t0 >= +heute).length, hf = alle.filter(v => v.t0 >= +heute && v.s === 'fertig').length;
+  app.innerHTML = `<div class="zahlen">
+      <div class="zahl"><b style="color:#1e7a45">${aktiv}</b><span>spielen gerade</span></div>
+      <div class="zahl"><b>${hg}</b><span>heute gestartet</span></div>
+      <div class="zahl"><b>${hf}</b><span>heute beendet</span></div>
+      <div class="zahl"><b>${alle.length}</b><span>Einträge in der Live-Liste</span></div></div>
+    <div class="leiste"><select id="lk">${kursOptionen(F.lkurs)}</select><select id="le">${exOptionen(F.lex)}</select>
+      <label class="schalter"><input type="checkbox" id="na" ${F.nurAktiv ? 'checked' : ''}> nur aktive</label>
+      <span style="flex:1"></span><button class="btn zweit klein" id="alt">Ältere als heute entfernen</button></div>
+    ${l.length ? `<div class="live">${l.map(v => {
+      const pr = v.n ? Math.min(100, Math.round(100 * v.i / v.n)) : 0, pz = v.pm ? Math.round(100 * v.p / v.pm) : 0;
+      return `<div class="lk ${v.s}"><div class="n"><span>${esc(v.name)}</span><span class="st ${v.s}">${ST[v.s]}</span></div>
+        <div class="klein leise">${esc(v.kid ? kursName(v.kid) : 'ohne Code')} · ${esc(exName(v.ex))}</div>
+        <div class="balken"><i style="width:${pr}%"></i></div>
+        <div class="zeile klein" style="justify-content:space-between"><span>Aufgabe ${v.i} / ${v.n}</span><span><b>${v.p}</b> von ${v.i || 0} richtig${v.i ? ' (' + Math.round(100 * v.p / v.i) + ' %)' : ''}</span></div>
+        ${v.info ? `<div class="klein">📍 ${esc(v.info)}</div>` : ''}
+        <div class="klein leise">Start ${zeit(v.t0)} · ${vor(v.t)}${v.s === 'fertig' ? ' · Ergebnis ' + pz + ' %' : ''}</div></div>`; }).join('')}</div>`
+      : '<p class="leise" style="margin-top:30px;text-align:center">Gerade spielt niemand. Sobald jemand eine Übung startet, erscheint er hier – ohne Neuladen.</p>'}`;
+  $('#lk').onchange = e => { F.lkurs = e.target.value; live(); };
+  $('#le').onchange = e => { F.lex = e.target.value; live(); };
+  $('#na').onchange = e => { F.nurAktiv = e.target.checked; live(); };
+  $('#alt').onclick = async () => {
+    const weg = alle.filter(v => v.t < +heute); if (!weg.length) return meld('Nichts zu entfernen.');
+    const up = {}; weg.forEach(v => up[v.sid] = null); await db.update('live', up); meld(weg.length + ' Einträge entfernt (Ergebnisse bleiben erhalten).');
+  };
+}
+
+/* ---------------- ERGEBNISSE ---------------- */
+function versuche() {
+  const out = [];
+  for (const [ex, m] of Object.entries(D.res || {})) for (const [sid, r] of Object.entries(m || {})) out.push({ ex, sid, ...r });
+  return out.sort((a, b) => b.t - a.t);
+}
+const median = a => { if (!a.length) return 0; const s = a.slice().sort((x, y) => x - y), m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
+
+function erg() {
+  const alle = versuche();
+  const l = alle.filter(v => passtKurs(v.kid, F.ekurs) && (F.eex === 'alle' || v.ex === F.eex));
+  const pcts = l.map(v => v.pct || 0), personen = new Set(l.map(v => v.pid || ('g:' + v.name)));
+  let h = `<div class="leiste"><select id="ek">${kursOptionen(F.ekurs)}</select><select id="ee">${exOptionen(F.eex)}</select>
+    <span style="flex:1"></span><button class="btn zweit klein" id="csv">⤓ CSV-Export</button></div>
+    <div class="zahlen"><div class="zahl"><b>${l.length}</b><span>Durchgänge</span></div>
+    <div class="zahl"><b>${personen.size}</b><span>Personen</span></div>
+    <div class="zahl"><b>${l.length ? Math.round(pcts.reduce((a, b) => a + b, 0) / l.length) : 0} %</b><span>Durchschnitt</span></div>
+    <div class="zahl"><b>${Math.round(median(pcts))} %</b><span>Median</span></div>
+    <div class="zahl"><b>${l.length ? dauer(Math.round(median(l.map(v => v.dur || 0)))) : '–'}</b><span>Bearbeitungszeit (Median)</span></div></div>`;
+
+  // Matrix für einen Kurs
+  if (F.ekurs !== 'alle' && F.ekurs !== 'gast' && D.kurse[F.ekurs]) {
+    const tn = Object.entries(D.kurse[F.ekurs].tn || {}).sort((a, b) => a[1].name.localeCompare(b[1].name));
+    const zug = (D.pub.kurse && D.pub.kurse[F.ekurs] && D.pub.kurse[F.ekurs].ex) || {};
+    const exs = KATALOG.filter(e => (F.eex === 'alle' || e.id === F.eex) && (zug[e.id] || l.some(v => v.ex === e.id)));
+    h += `<h2 style="margin-top:20px">Übersicht ${esc(D.kurse[F.ekurs].name)}</h2><p class="leise klein">Bestes Ergebnis je Person (Anzahl Durchgänge in Klammern).</p>`;
+    h += exs.length && tn.length ? `<div class="tabwrap"><table class="t"><tr><th>Name</th>${exs.map(e => `<th>${esc(e.titel)}</th>`).join('')}</tr>${tn.map(([pid, p]) => `<tr><td><b>${esc(p.name)}</b></td>${exs.map(e => {
+      const vs = l.filter(v => v.pid === pid && v.ex === e.id); if (!vs.length) return '<td class="leise">–</td>';
+      const b = Math.max(...vs.map(v => v.pct || 0)); return `<td><span class="zelle" style="background:${farbe(b)}">${b} %</span> <span class="klein leise">(${vs.length})</span></td>`; }).join('')}</tr>`).join('')}</table></div>`
+      : '<p class="leise">Noch keine Teilnehmenden oder zugewiesenen Übungen.</p>';
+  }
+
+  // Aufgabenanalyse
+  if (F.eex !== 'alle') {
+    const stat = {}, txt = D.items[F.eex] || {};
+    l.forEach(v => Object.entries(v.it || {}).forEach(([k, x]) => { stat[k] = stat[k] || [0, 0]; stat[k][0] += x ? 1 : 0; stat[k][1]++; }));
+    const rows = Object.entries(stat).map(([k, [r, n]]) => ({ k, q: Math.round(100 * r / n), n })).sort((a, b) => a.q - b.q);
+    h += `<h2 style="margin-top:24px">Aufgabenanalyse · ${esc(exName(F.eex))}</h2><p class="leise klein">Lösungsquote beim ersten Versuch – die schwierigsten Aufgaben stehen oben.</p>
+      <div class="karte">${rows.length ? rows.map(r => `<div class="q"><div class="pz" style="color:${r.q < 50 ? 'var(--fehler)' : r.q < 75 ? '#a06a00' : 'var(--ok)'}">${r.q} %</div>
+        <div><div class="lb">${esc(txt[r.k] || r.k)} <span class="leise klein">· ${r.n}×</span></div><div class="bb"><i style="width:${r.q}%;background:${r.q < 50 ? '#d9826f' : r.q < 75 ? '#e2b84f' : '#5fb07f'}"></i></div></div></div>`).join('') : '<p class="leise">Noch keine Daten.</p>'}</div>`;
+  }
+
+  // Liste der Durchgänge
+  const zeig = F.mehr ? l : l.slice(0, 60);
+  h += `<h2 style="margin-top:24px">Durchgänge</h2>` + (l.length ? `<div class="tabwrap"><table class="t"><tr><th>Datum</th><th>Name</th><th>Kurs</th><th>Übung</th><th>Richtig</th><th>%</th><th>Dauer</th><th></th></tr>
+    ${zeig.map(v => `<tr><td>${zeit(v.t)}</td><td><b>${esc(v.name)}</b></td><td>${esc(v.kid ? kursName(v.kid) : 'Gast')}</td><td>${esc(exName(v.ex))}</td>
+    <td>${v.p} / ${v.pm}</td><td><span class="zelle" style="background:${farbe(v.pct)}">${v.pct} %</span></td><td>${dauer(v.dur || 0)}</td>
+    <td><button class="icon" title="Durchgang löschen" data-del="${v.ex}/${v.sid}">🗑</button></td></tr>`).join('')}</table></div>
+    ${l.length > zeig.length ? `<button class="btn zweit klein" id="mehr" style="margin-top:10px">Alle ${l.length} anzeigen</button>` : ''}` : '<p class="leise">Noch keine Ergebnisse.</p>');
+  app.innerHTML = h;
+  $('#ek').onchange = e => { F.ekurs = e.target.value; erg(); };
+  $('#ee').onchange = e => { F.eex = e.target.value; erg(); };
+  if ($('#mehr')) $('#mehr').onclick = () => { F.mehr = true; erg(); };
+  app.querySelectorAll('[data-del]').forEach(b => b.onclick = async () => { if (confirm('Diesen Durchgang endgültig löschen?')) { await db.remove('res/' + b.dataset.del); meld('Gelöscht.'); } });
+  $('#csv').onclick = () => {
+    const q = s => '"' + String(s ?? '').replace(/"/g, '""') + '"';
+    const z = [['Datum', 'Name', 'Kurs', 'Code', 'Übung', 'Richtig', 'Maximum', 'Prozent', 'Dauer (s)'].map(q).join(';')];
+    l.forEach(v => z.push([new Date(v.t).toLocaleString('de-DE'), v.name, v.kid ? kursName(v.kid) : 'Gast', v.pid && D.kurse[v.kid] && D.kurse[v.kid].tn && D.kurse[v.kid].tn[v.pid] ? D.kurse[v.kid].tn[v.pid].code : '', exName(v.ex), v.p, v.pm, v.pct, v.dur].map(q).join(';')));
+    const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob(['﻿' + z.join('\r\n')], { type: 'text/csv' }));
+    a.download = 'ergebnisse_' + new Date().toISOString().slice(0, 10) + '.csv'; a.click();
+  };
+}
+
+/* ---------------- KURSE & CODES ---------------- */
+function alleCodes() { const s = new Set(); kursListe().forEach(([, k]) => Object.values(k.tn || {}).forEach(t => s.add(t.code))); return s; }
+async function neuerCode(belegt) {
+  for (let i = 0; i < 30; i++) { const c = zufall(5); if (belegt.has(c)) continue; if (!(await db.get('codes/' + c))) { belegt.add(c); return c; } }
+  throw new Error('Kein freier Code gefunden');
+}
+function kurse() {
+  const kl = kursListe();
+  if (gewKurs && !D.kurse[gewKurs]) gewKurs = null;
+  if (!gewKurs && kl.length) gewKurs = kl[0][0];
+  const k = gewKurs ? D.kurse[gewKurs] : null;
+  const tn = k ? Object.entries(k.tn || {}).sort((a, b) => a[1].name.localeCompare(b[1].name)) : [];
+  const zug = (gewKurs && D.pub.kurse && D.pub.kurse[gewKurs] && D.pub.kurse[gewKurs].ex) || {};
+  app.innerHTML = `<div class="zwei" style="margin-top:16px"><div class="kl">
+      ${kl.map(([kid, v]) => `<button class="kursbtn ${kid === gewKurs ? 'an' : ''}" data-k="${kid}"><b>${esc(v.name)}</b><br><span class="klein leise">${Object.keys(v.tn || {}).length} Personen</span></button>`).join('')}
+      <form id="nk" class="karte" style="padding:12px;display:grid;gap:8px"><b>Neuer Kurs</b><input type="text" id="nkn" placeholder="z. B. BSK B2 Plön Herbst" required><button class="btn klein">Anlegen</button></form></div>
+    <div>${k ? `<div class="karte">
+      <div class="zeile"><h2 style="margin:0;flex:1">${esc(k.name)}</h2>
+        <button class="btn zweit klein" id="umb">Umbenennen</button><button class="btn zweit klein" id="druck" ${tn.length ? '' : 'disabled'}>🖨 Codekarten</button><button class="btn gefahr klein" id="loe">Kurs löschen</button></div>
+      <p class="leise klein">Link für die Gruppe: <a href="${BASE}index.html" target="_blank">${BASE}index.html</a> – dort mit Code anmelden.</p>
+      <h3 style="margin-top:18px">Teilnehmende (${tn.length})</h3>
+      ${tn.length ? `<div class="tabwrap"><table class="t"><tr><th>Name</th><th>Code</th><th>Direktlink</th><th></th></tr>${tn.map(([pid, p]) => `<tr>
+        <td><b>${esc(p.name)}</b></td><td><span class="code">${esc(p.code)}</span></td>
+        <td><button class="icon" data-link="${esc(p.code)}" title="Link mit Code kopieren">🔗 kopieren</button></td>
+        <td style="white-space:nowrap"><button class="icon" data-ren="${pid}" title="Namen ändern">✏️</button><button class="icon" data-neu="${pid}" title="Neuen Code erzeugen">🔄</button><button class="icon" data-del="${pid}" title="Entfernen">🗑</button></td></tr>`).join('')}</table></div>` : '<p class="leise">Noch niemand eingetragen.</p>'}
+      <form id="ntn" style="margin-top:14px"><label class="klein leise">Namen eintragen – ein Name pro Zeile. Jede Person bekommt automatisch einen Code.</label>
+        <textarea id="ntnt" placeholder="Amina&#10;Bashir&#10;Carla"></textarea><button class="btn klein" style="margin-top:8px">Eintragen</button></form>
+      <h3 style="margin-top:22px">Übungen für diesen Kurs</h3><p class="leise klein" style="margin-top:0">Angehakte Übungen erscheinen bei den Teilnehmenden unter „Deine Übungen“ – auch wenn sie nicht öffentlich sind.</p>
+      <div style="display:grid;gap:6px">${KATALOG.map(e => `<label class="schalter"><input type="checkbox" data-zu="${e.id}" ${zug[e.id] ? 'checked' : ''}> <b>${esc(e.titel)}</b> <span class="leise klein">${esc(e.niveau)} · ${esc(e.untertitel || '')}</span></label>`).join('')}</div>
+    </div>` : '<div class="karte"><h2>Noch kein Kurs</h2><p class="leise">Lege links deinen ersten Kurs an. Danach trägst du die Namen ein und druckst die Codekarten.</p></div>'}</div></div>`;
+  app.querySelectorAll('.kursbtn').forEach(b => b.onclick = () => { gewKurs = b.dataset.k; kurse(); });
+  $('#nk').onsubmit = async e => { e.preventDefault(); const name = $('#nkn').value.trim(); if (!name) return;
+    const kid = zufall(8, 'abcdefghijkmnpqrstuvwxyz23456789'); $('#nkn').value = '';
+    await db.update('', { ['kurse/' + kid]: { name, t: Date.now() }, ['pub/kurse/' + kid + '/name']: name }); gewKurs = kid; meld('Kurs angelegt.'); };
+  if (!k) return;
+  $('#umb').onclick = async () => { const n = prompt('Neuer Kursname:', k.name); if (!n || !n.trim()) return;
+    const up = { ['kurse/' + gewKurs + '/name']: n.trim(), ['pub/kurse/' + gewKurs + '/name']: n.trim() };
+    tn.forEach(([, p]) => up['codes/' + p.code + '/kurs'] = n.trim()); await db.update('', up); };
+  $('#loe').onclick = async () => { if (!confirm(`Kurs „${k.name}“ mit allen Codes löschen? Die Ergebnisse bleiben erhalten.`)) return;
+    const up = { ['kurse/' + gewKurs]: null, ['pub/kurse/' + gewKurs]: null }; tn.forEach(([, p]) => up['codes/' + p.code] = null);
+    await db.update('', up); gewKurs = null; meld('Kurs gelöscht.'); };
+  $('#ntn').onsubmit = async e => { e.preventDefault();
+    const namen = $('#ntnt').value.split(/\n|;/).map(s => s.trim()).filter(Boolean); if (!namen.length) return;
+    const belegt = alleCodes(), up = {};
+    for (const name of namen) { const pid = zufall(8, 'abcdefghijkmnpqrstuvwxyz23456789'), code = await neuerCode(belegt);
+      up['kurse/' + gewKurs + '/tn/' + pid] = { name, code, t: Date.now() };
+      up['codes/' + code] = { kid: gewKurs, pid, name, kurs: k.name }; }
+    await db.update('', up); meld(namen.length + ' eingetragen.'); };
+  app.querySelectorAll('[data-del]').forEach(b => b.onclick = async () => { const p = k.tn[b.dataset.del];
+    if (!confirm(`${p.name} entfernen? Der Code ${p.code} funktioniert dann nicht mehr.`)) return;
+    await db.update('', { ['kurse/' + gewKurs + '/tn/' + b.dataset.del]: null, ['codes/' + p.code]: null }); });
+  app.querySelectorAll('[data-neu]').forEach(b => b.onclick = async () => { const pid = b.dataset.neu, p = k.tn[pid];
+    if (!confirm(`Neuen Code für ${p.name}? Der alte Code ${p.code} funktioniert dann nicht mehr.`)) return;
+    const c = await neuerCode(alleCodes());
+    await db.update('', { ['kurse/' + gewKurs + '/tn/' + pid + '/code']: c, ['codes/' + p.code]: null, ['codes/' + c]: { kid: gewKurs, pid, name: p.name, kurs: k.name } }); });
+  app.querySelectorAll('[data-ren]').forEach(b => b.onclick = async () => { const pid = b.dataset.ren, p = k.tn[pid];
+    const n = prompt('Name:', p.name); if (!n || !n.trim()) return;
+    await db.update('', { ['kurse/' + gewKurs + '/tn/' + pid + '/name']: n.trim(), ['codes/' + p.code + '/name']: n.trim() }); });
+  app.querySelectorAll('[data-link]').forEach(b => b.onclick = () => { navigator.clipboard.writeText(BASE + 'index.html?code=' + b.dataset.link).then(() => meld('Link kopiert.'), () => prompt('Link:', BASE + 'index.html?code=' + b.dataset.link)); });
+  app.querySelectorAll('[data-zu]').forEach(c => c.onchange = () => db.set('pub/kurse/' + gewKurs + '/ex/' + c.dataset.zu, c.checked ? true : null));
+  $('#druck').onclick = () => druck(k, tn);
+}
+function druck(k, tn) {
+  const w = window.open('', '_blank'); if (!w) return meld('Bitte Pop-ups erlauben.');
+  w.document.write(`<!doctype html><html lang="de"><head><meta charset="utf-8"><title>Codekarten ${esc(k.name)}</title><style>
+    body{font-family:Calibri,Carlito,sans-serif;margin:10mm}.g{display:grid;grid-template-columns:1fr 1fr;gap:6mm}
+    .c{border:1.5px dashed #888;border-radius:4mm;padding:6mm;break-inside:avoid}.c h2{margin:0 0 2mm;font-size:16pt}
+    .code{font:700 26pt Consolas,monospace;letter-spacing:.15em;margin:3mm 0}.k{font-size:10pt;color:#555}.u{font-size:10pt;word-break:break-all}
+    @media print{button{display:none}}</style></head><body><button onclick="print()" style="font-size:14pt;margin-bottom:8mm">Drucken</button>
+    <div class="g">${tn.map(([, p]) => `<div class="c"><div class="k">Übungszentrale · ${esc(k.name)}</div><h2>${esc(p.name)}</h2>
+    <div>Dein Code:</div><div class="code">${esc(p.code)}</div><div class="u">${esc(BASE)}index.html</div>
+    <div class="k" style="margin-top:2mm">Seite öffnen → Code eingeben → Anmelden</div></div>`).join('')}</div></body></html>`);
+  w.document.close();
+}
+
+/* ---------------- ÜBUNGEN ---------------- */
+function uebungen() {
+  const alle = versuche(), kl = kursListe();
+  app.innerHTML = `<p class="leise" style="margin-top:16px">Alle Übungen aus <code>katalog.js</code>. <b>Öffentlich</b> = in der Zentrale für alle sichtbar und ohne Code spielbar. Ist eine Übung nicht öffentlich, sehen sie nur die Kurse, denen du sie zuweist.</p>
+    <div style="display:grid;gap:12px">${KATALOG.map(e => {
+      const p = (D.pub.ex || {})[e.id], offen = p && typeof p.offen === 'boolean' ? p.offen : e.offen !== false;
+      const vs = alle.filter(v => v.ex === e.id), d = vs.length ? Math.round(vs.reduce((a, v) => a + (v.pct || 0), 0) / vs.length) : null;
+      const aktiv = Object.values(D.live || {}).filter(v => v.ex === e.id && status(v) === 'aktiv').length;
+      return `<div class="exk"><div class="kopfz"><div class="farbe" style="background:${e.farbe}"></div><div style="flex:1"><h3 style="margin:0">${esc(e.titel)}</h3>
+        <div class="klein leise">${esc(e.typ)} · ${esc(e.niveau)} · ${esc(e.untertitel || '')}</div></div>
+        <a class="btn zweit klein" href="${e.datei}${DEMO ? '?demo' : ''}" target="_blank">Öffnen</a><button class="btn zweit klein" data-cp="${e.datei}">🔗 Link</button></div>
+        <div class="zeile klein"><span><b>${vs.length}</b> Durchgänge</span><span>Ø <b>${d == null ? '–' : d + ' %'}</b></span>${aktiv ? `<span style="color:#1e7a45"><span class="puls"></span>${aktiv} spielen gerade</span>` : ''}
+        <span style="flex:1"></span><button class="btn zweit klein" data-st="${e.id}">Statistik →</button></div>
+        <div class="zeile"><label class="schalter"><input type="checkbox" data-of="${e.id}" ${offen ? 'checked' : ''}> <b>Öffentlich</b> (ohne Code spielbar)</label></div>
+        ${kl.length ? `<div class="zeile klein"><span class="leise">Kurse:</span>${kl.map(([kid, k]) => `<label class="schalter"><input type="checkbox" data-k="${kid}" data-e="${e.id}" ${D.pub.kurse && D.pub.kurse[kid] && D.pub.kurse[kid].ex && D.pub.kurse[kid].ex[e.id] ? 'checked' : ''}> ${esc(k.name)}</label>`).join('')}</div>` : ''}</div>`; }).join('')}</div>`;
+  app.querySelectorAll('[data-of]').forEach(c => c.onchange = () => db.set('pub/ex/' + c.dataset.of + '/offen', c.checked));
+  app.querySelectorAll('[data-k]').forEach(c => c.onchange = () => db.set('pub/kurse/' + c.dataset.k + '/ex/' + c.dataset.e, c.checked ? true : null));
+  app.querySelectorAll('[data-cp]').forEach(b => b.onclick = () => navigator.clipboard.writeText(BASE + b.dataset.cp).then(() => meld('Link kopiert.'), () => prompt('Link:', BASE + b.dataset.cp)));
+  app.querySelectorAll('[data-st]').forEach(b => b.onclick = () => { F.eex = b.dataset.st; F.ekurs = 'alle'; document.querySelector('.tab[data-t=erg]').click(); });
+}
+</script>
+</body>
+</html>

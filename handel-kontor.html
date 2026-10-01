@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Das Handelskontor – Übungszentrale</title>
+<link rel="stylesheet" href="stil.css">
+<style>
+  :root{--akzent:#1f6f78;--akzent-hell:#e1f0f1;--messing:#b8841a}
+  body{background:#f3efe6 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M0 39.5h40M39.5 0v40' stroke='%23e8e1d3' stroke-width='1'/%3E%3C/svg%3E")}
+  .start{text-align:center;padding:26px 18px}
+  .start .schild{display:inline-block;border:3px double var(--messing);color:#5b4410;padding:8px 22px;border-radius:6px;font-family:Georgia,serif;font-size:1.05rem;letter-spacing:.08em;background:#fffaf0;margin-bottom:14px}
+  .start h1{font-family:Georgia,serif;font-size:2.1rem;color:var(--akzent)}
+  .start p{max-width:560px;margin:8px auto}
+  .regeln{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:600px;margin:18px auto;text-align:left}
+  .regeln div{background:#fbf8f1;border:1px solid var(--linie);border-radius:10px;padding:10px;font-size:.9rem}
+  .regeln b{display:block;font-size:1.3rem}
+  @media(max-width:560px){.regeln{grid-template-columns:1fr}}
+  .hud{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;margin-bottom:12px}
+  .kasse{background:#1d2b2d;color:#9ff0c4;font-family:Consolas,"Courier New",monospace;font-size:1.35rem;font-weight:700;padding:6px 14px;border-radius:10px;box-shadow:inset 0 2px 6px rgba(0,0,0,.5);min-width:150px;text-align:right}
+  .kasse.plus{animation:plus .5s}.kasse.minus{animation:minus .5s}
+  @keyframes plus{40%{color:#fff;transform:scale(1.06)}}@keyframes minus{40%{color:#ff8f7a;transform:translateX(-4px)}}
+  .sterne{font-size:1.15rem;letter-spacing:1px;white-space:nowrap}
+  .weg{position:relative;display:flex;justify-content:space-between;align-items:flex-start;margin:6px 0 16px;padding:0 4px}
+  .weg::before{content:"";position:absolute;left:24px;right:24px;top:21px;height:4px;background:repeating-linear-gradient(90deg,#c9bfae 0 10px,transparent 10px 18px)}
+  .stn{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;width:16%;text-align:center;font-size:.72rem;color:var(--leise);font-weight:600}
+  .stn .p{width:44px;height:44px;border-radius:50%;background:#fff;border:3px solid #d5ccbb;display:grid;place-items:center;font-size:1.25rem;margin-bottom:3px;transition:.3s}
+  .stn.jetzt .p{border-color:var(--akzent);box-shadow:0 0 0 5px color-mix(in srgb,var(--akzent) 22%,transparent);transform:scale(1.08)}
+  .stn.jetzt{color:var(--akzent)}
+  .stn.fertig .p{border-color:var(--ok);background:var(--ok-hell)}
+  @media(max-width:520px){.stn span{display:none}.stn .p{width:38px;height:38px;font-size:1.05rem}.weg::before{top:18px}}
+  .auftrag{border-left:5px solid var(--messing);background:#fffaf0}
+  .auftrag .kontext{color:#8a6412}
+  .zaehl{font-size:.88rem;color:var(--leise);text-align:right;margin-bottom:6px}
+  .nachl{background:#fff4e0;border:1px solid #f0d6a2;border-radius:10px;padding:8px 12px;margin-bottom:12px;font-size:.92rem}
+  .bilanz{font-family:Consolas,"Courier New",monospace;background:#fffdf7;border:1px solid var(--linie);border-radius:10px;padding:14px;max-width:420px;margin:14px auto;text-align:left}
+  .bilanz div{display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px dotted #d9d1c0}
+  .bilanz .summe{border-top:2px solid #333;border-bottom:none;font-weight:700;font-size:1.1rem;margin-top:6px;padding-top:6px}
+  .rang{font-family:Georgia,serif;font-size:1.6rem;color:var(--akzent);margin:6px 0}
+  .knopfreihe{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+</style>
+<script data-goatcounter="https://aguitoo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<main class="wrap" id="app"><p class="leise" style="text-align:center;margin-top:40px">Lädt …</p></main>
+
+<script type="module">
+import { starte } from './spieler.js';
+import { zeige, ziehe, mische, label } from './aufgaben.js';
+import { esc } from './db.js';
+
+/* ======================= INHALT ======================= */
+const STATIONEN = [
+  { k: 'A', name: 'Anfrage & Angebot', icon: '📨', auftrag: 'Das Möbelhaus Nord fragt nach 40 Bürostühlen. Erstelle ein gutes Angebot.' },
+  { k: 'B', name: 'Bestellung', icon: '🛒', auftrag: 'Das Möbelhaus Nord hat sich entschieden und bestellt. Jetzt muss alles stimmen.' },
+  { k: 'C', name: 'Lager & Lieferung', icon: '🚚', auftrag: 'Die Stühle müssen aus dem Lager zum Kunden. Achtung, Streik bei der Spedition!' },
+  { k: 'D', name: 'Rechnung & Zahlung', icon: '🧾', auftrag: 'Die Ware ist da. Jetzt geht es ums Geld – und um Zahlungsfristen.' },
+  { k: 'E', name: 'Reklamation', icon: '📞', auftrag: 'Drei Stühle wackeln. Der Kunde ist verärgert und reklamiert.' },
+  { k: 'F', name: 'Chefgespräch', icon: '💼', auftrag: 'Die Chefin will wissen, wie das Kontor wachsen kann. Jetzt zählt jedes Wort.' }
+];
+const W = 'Wortschatz', K = 'Konnektor', S = 'Satzbau', U = 'Umformen', Z = 'Zuordnen';
+const POOL = {
+A: [
+ { id: 'a1', typ: 'mc', kontext: W, frage: 'Ein schriftliches Angebot, das genau beschreibt, was eine Leistung voraussichtlich kosten wird, ist ein …', opts: ['Kostenvoranschlag', 'Lieferschein', 'Gutschrift', 'Mahnung'], l: 0 },
+ { id: 'a2', typ: 'mc', kontext: W, frage: 'Bevor wir bestellen, möchten wir bei drei Lieferanten ein Angebot ___.', opts: ['einholen', 'abholen', 'erholen', 'ausholen'], l: 0, x: 'ein Angebot **einholen** = ein Angebot erbitten. Der Verkäufer **unterbreitet** oder **macht** ein Angebot.' },
+ { id: 'a3', typ: 'mc', kontext: W, frage: 'Der Preis ohne Mehrwertsteuer heißt …', opts: ['Nettopreis', 'Bruttopreis', 'Endpreis', 'Festpreis'], l: 0, x: 'Netto = ohne Steuer, brutto = mit Steuer.' },
+ { id: 'a4', typ: 'mc', kontext: W, frage: 'Wer innerhalb von 10 Tagen zahlt, darf 2 % vom Rechnungsbetrag abziehen. Das nennt man …', opts: ['Skonto', 'Rabatt', 'Provision', 'Pfand'], l: 0, x: '**Skonto** gibt es für schnelles Zahlen, **Rabatt** z. B. für große Mengen oder treue Kunden.' },
+ { id: 'a5', typ: 'mc', kontext: W, frage: 'Bei einer Bestellung ab 100 Stück bekommen Sie 10 % ___.', opts: ['Mengenrabatt', 'Skonto', 'Mehrwertsteuer', 'Mahngebühr'], l: 0 },
+ { id: 'a6', typ: 'mc', kontext: K, frage: 'Wir haben dem Kunden ein besonders günstiges Angebot gemacht, ___ er nicht zur Konkurrenz wechselt.', opts: ['damit', 'indem', 'ohne dass', 'sodass'], l: 0, x: '**damit** nennt den Zweck (Wozu?).' },
+ { id: 'a7', typ: 'mc', kontext: K, frage: 'Der Praktikant hat das Angebot verschickt, ___ die Chefin es vorher geprüft hat.', opts: ['ohne dass', 'damit', 'indem', 'statt dass'], l: 0, x: '**ohne dass**: Etwas, das man erwartet, passiert nicht. Die Chefin hat es nicht geprüft.' },
+ { id: 'a8', typ: 'bau', kontext: S, frage: 'Wie finden wir den besten Preis? Bilde den Satz.', steine: ['Wir finden den besten Preis,', 'indem', 'wir', 'mehrere Angebote', 'vergleichen.'], x: '**indem** beantwortet die Frage *Wie?* – das Verb steht am Ende.' },
+ { id: 'a9', typ: 'zu', kontext: Z, frage: 'Was bedeuten die Begriffe?', paare: [['Anfrage', 'Der Kunde fragt nach Preis und Bedingungen.'], ['Angebot', 'Der Verkäufer nennt Preis und Bedingungen.'], ['Zahlungsziel', 'Bis wann die Rechnung bezahlt sein muss.'], ['Lieferzeit', 'Wie lange es dauert, bis die Ware ankommt.']] },
+ { id: 'a10', typ: 'mc', kontext: U, frage: 'Welcher Satz ist richtig?', opts: ['Wir senden die Muster heute, damit der Kunde sie vor Montag prüfen kann.', 'Wir senden die Muster heute, um der Kunde sie vor Montag prüfen zu können.', 'Wir senden die Muster heute, damit der Kunde kann sie vor Montag prüfen.', 'Wir senden die Muster heute, indem der Kunde sie vor Montag prüfen kann.'], l: 0, x: '**um … zu** geht nur, wenn beide Teile dasselbe Subjekt haben. Hier: *wir* – *der Kunde* → also **damit**.' }
+],
+B: [
+ { id: 'b1', typ: 'mc', kontext: W, frage: 'Das Möbelhaus möchte eine Bestellung ___.', opts: ['aufgeben', 'angeben', 'ausgeben', 'hingeben'], l: 0, x: 'eine Bestellung **aufgeben**, einen Auftrag **erteilen**.' },
+ { id: 'b2', typ: 'mc', kontext: W, frage: 'Der Lieferant bestätigt schriftlich, dass er den Auftrag annimmt. Das ist die …', opts: ['Auftragsbestätigung', 'Rechnung', 'Quittung', 'Mahnung'], l: 0 },
+ { id: 'b3', typ: 'mc', kontext: W, frage: 'Alle Waren, die ein Geschäft anbietet, nennt man …', opts: ['Sortiment', 'Inventur', 'Umsatz', 'Lieferumfang'], l: 0 },
+ { id: 'b4', typ: 'mc', kontext: W, frage: 'Wer Waren in großen Mengen an Geschäfte verkauft (nicht an Privatkunden), arbeitet im …', opts: ['Großhandel', 'Einzelhandel', 'Versandhandel', 'Kundendienst'], l: 0, x: '**Großhandel** verkauft an Händler, **Einzelhandel** an Endkunden.' },
+ { id: 'b5', typ: 'mc', kontext: K, frage: 'Wir sparen Versandkosten, ___ wir alle Artikel in einer Lieferung bestellen.', opts: ['indem', 'damit', 'ohne dass', 'statt dass'], l: 0, x: 'Wie sparen wir? → **indem** wir alles zusammen bestellen.' },
+ { id: 'b6', typ: 'mc', kontext: K, frage: '___ telefonisch zu bestellen, nutzen viele Kunden inzwischen den Onlineshop.', opts: ['Statt', 'Ohne', 'Damit', 'Indem'], l: 0, x: '**statt … zu**: Die eine Möglichkeit (telefonieren) passiert nicht, die andere schon.' },
+ { id: 'b7', typ: 'bau', kontext: S, frage: 'Bitte an den Kunden: Bilde den Satz.', steine: ['Bitte bestellen Sie bis Freitag,', 'damit', 'wir', 'pünktlich', 'liefern', 'können.'], x: 'Im Nebensatz mit **damit** steht das konjugierte Verb (können) ganz am Ende.' },
+ { id: 'b8', typ: 'mc', kontext: K, frage: 'Der Einkäufer vergleicht die Preise, …', opts: ['um das günstigste Angebot zu finden.', 'um das günstigste Angebot finden.', 'um zu das günstigste Angebot finden.', 'damit das günstigste Angebot zu finden.'], l: 0, x: '**um** … **zu** + Infinitiv am Ende.' },
+ { id: 'b9', typ: 'zu', kontext: Z, frage: 'Welche Satzteile passen zusammen?', paare: [['Wir zahlen per Vorkasse,', 'damit die Ware sofort verschickt wird.'], ['Sie bestellen ganz einfach,', 'indem Sie auf „Kaufen“ klicken.'], ['Der Praktikant hat 500 Kartons bestellt,', 'ohne dass es jemand bemerkt hat.'], ['Bestellen Sie lieber online,', 'statt lange in der Warteschleife zu hängen.']] },
+ { id: 'b10', typ: 'mc', kontext: W, frage: 'Man bezahlt, bevor die Ware geliefert wird. Das heißt …', opts: ['Vorkasse', 'Nachnahme', 'Ratenzahlung', 'Lastschrift'], l: 0, x: '**Nachnahme**: Man bezahlt bei der Lieferung an der Tür.' }
+],
+C: [
+ { id: 'c1', typ: 'mc', kontext: W, frage: 'Ein Papier, das mit der Ware kommt und auflistet, was geliefert wurde, ist der …', opts: ['Lieferschein', 'Kassenbon', 'Kostenvoranschlag', 'Lieferant'], l: 0 },
+ { id: 'c2', typ: 'mc', kontext: W, frage: 'Die Ware kommt später als vereinbart. Es gibt einen …', opts: ['Lieferverzug', 'Lieferschein', 'Lieferumfang', 'Liefervertrag'], l: 0 },
+ { id: 'c3', typ: 'mc', kontext: W, frage: 'Einmal im Jahr zählt die Firma alle Waren im Lager. Das ist die …', opts: ['Inventur', 'Bilanz', 'Bestellung', 'Reklamation'], l: 0 },
+ { id: 'c4', typ: 'mc', kontext: W, frage: 'Wegen des Streiks kann der Liefertermin leider nicht ___ werden.', opts: ['eingehalten', 'aufgehalten', 'behalten', 'unterhalten'], l: 0, x: 'einen Termin / eine Frist **einhalten**.' },
+ { id: 'c5', typ: 'mc', kontext: W, frage: 'Die Menge an Waren, die gerade im Lager liegt, heißt …', opts: ['Lagerbestand', 'Wareneingang', 'Warenkorb', 'Lagerplatz'], l: 0 },
+ { id: 'c6', typ: 'mc', kontext: K, frage: 'Der Fahrer hat das Paket vor die Tür gestellt, ___ jemand unterschrieben hat.', opts: ['ohne dass', 'damit', 'indem', 'statt'], l: 0 },
+ { id: 'c7', typ: 'mc', kontext: K, frage: 'Wir verpacken Glas besonders sorgfältig, ___ nichts kaputtgeht.', opts: ['damit', 'indem', 'ohne dass', 'statt dass'], l: 0 },
+ { id: 'c8', typ: 'bau', kontext: S, frage: 'Wie prüft der Lagerist die Lieferung? Bilde den Satz.', steine: ['Der Lagerist prüft jede Lieferung,', 'indem', 'er', 'sie', 'mit dem Lieferschein', 'vergleicht.'] },
+ { id: 'c9', typ: 'bau', kontext: S, frage: 'Bilde den Satz mit „ohne … zu“.', steine: ['Der Fahrer ist weggefahren,', 'ohne', 'auf die Unterschrift', 'zu', 'warten.'], x: '**ohne … zu** + Infinitiv – nur wenn das Subjekt gleich ist (der Fahrer).' },
+ { id: 'c10', typ: 'mc', kontext: U, frage: 'Welcher Satz ist richtig?', opts: ['Die Ware wurde verschickt, ohne dass wir eine Bestätigung bekommen haben.', 'Die Ware wurde verschickt, ohne wir eine Bestätigung zu bekommen.', 'Die Ware wurde verschickt, ohne dass wir haben eine Bestätigung bekommen.', 'Die Ware wurde verschickt, ohne dass eine Bestätigung zu bekommen.'], l: 0, x: 'Verschiedene Subjekte (die Ware / wir) → **ohne dass** + Verb am Ende.' }
+],
+D: [
+ { id: 'd1', typ: 'mc', kontext: W, frage: 'Bitte ___ Sie die Rechnung bis zum 30. Juni.', opts: ['begleichen', 'beheben', 'bestreiten', 'beseitigen'], l: 0, x: 'eine Rechnung **begleichen** = bezahlen.' },
+ { id: 'd2', typ: 'mc', kontext: W, frage: 'Ein schriftlicher Hinweis, dass eine Rechnung noch nicht bezahlt wurde, ist eine …', opts: ['Mahnung', 'Quittung', 'Gutschrift', 'Anfrage'], l: 0 },
+ { id: 'd3', typ: 'mc', kontext: W, frage: 'Man zahlt einen großen Betrag in mehreren Teilen. Das ist eine …', opts: ['Ratenzahlung', 'Barzahlung', 'Vorkasse', 'Überweisung'], l: 0 },
+ { id: 'd4', typ: 'mc', kontext: W, frage: 'Nach einer Rücksendung schreibt die Firma dem Kunden 120 € gut. Der Kunde bekommt eine …', opts: ['Gutschrift', 'Mahngebühr', 'Lastschrift', 'Quittung'], l: 0 },
+ { id: 'd5', typ: 'mc', kontext: K, frage: 'Viele Firmen sparen Geld, ___ sie Rechnungen sofort bezahlen und Skonto nutzen.', opts: ['indem', 'damit', 'ohne dass', 'statt dass'], l: 0 },
+ { id: 'd6', typ: 'mc', kontext: K, frage: 'Wir haben Ihre Webseite überarbeitet, ___ wir bis heute unser Geld bekommen haben.', opts: ['ohne dass', 'damit', 'indem', 'sodass'], l: 0, x: 'Erwartet: Bezahlung. Passiert ist sie nicht → **ohne dass**.' },
+ { id: 'd7', typ: 'bau', kontext: S, frage: 'Aus einer Mahnung: Bilde den Satz.', steine: ['Wir setzen Ihnen eine Frist bis zum 15. Mai,', 'damit', 'Sie', 'den Betrag', 'überweisen', 'können.'] },
+ { id: 'd8', typ: 'zu', kontext: Z, frage: 'Was bedeuten die Begriffe?', paare: [['Mahngebühr', 'Extrakosten für eine Zahlungserinnerung'], ['Überweisung', 'Geld geht von einem Konto auf ein anderes.'], ['Quittung', 'Beleg, dass man bar bezahlt hat'], ['Mehrwertsteuer', 'Steuer, die auf den Nettopreis kommt']] },
+ { id: 'd9', typ: 'mc', kontext: U, frage: 'Der Kunde hat nicht bezahlt. Er hat sich nur beschwert. – Welcher Satz sagt das?', opts: ['Statt zu bezahlen, hat sich der Kunde nur beschwert.', 'Um zu bezahlen, hat sich der Kunde nur beschwert.', 'Indem er bezahlt hat, hat sich der Kunde nur beschwert.', 'Ohne sich zu beschweren, hat der Kunde bezahlt.'], l: 0 },
+ { id: 'd10', typ: 'mc', kontext: W, frage: 'Bis zu diesem Tag muss die Rechnung bezahlt sein. Das ist die …', opts: ['Zahlungsfrist', 'Zahlungsart', 'Zahlungsmittel', 'Zahlungsbilanz'], l: 0 }
+],
+E: [
+ { id: 'e1', typ: 'mc', kontext: W, frage: 'Der Kunde beschwert sich offiziell über fehlerhafte Ware. Das ist eine …', opts: ['Reklamation', 'Rezension', 'Rückfrage', 'Kündigung'], l: 0 },
+ { id: 'e2', typ: 'mc', kontext: W, frage: 'Die Mängel müssen schnell ___ werden.', opts: ['behoben', 'erhoben', 'gehoben', 'aufgehoben'], l: 0, x: 'Mängel **beheben** = reparieren, in Ordnung bringen.' },
+ { id: 'e3', typ: 'mc', kontext: W, frage: 'Der Händler muss zwei Jahre für Mängel einstehen, die schon beim Kauf da waren. Das ist die gesetzliche …', opts: ['Gewährleistung', 'Garantie', 'Kulanz', 'Provision'], l: 0, x: '**Gewährleistung** ist Pflicht (Gesetz). Eine **Garantie** gibt der Hersteller freiwillig.' },
+ { id: 'e4', typ: 'mc', kontext: W, frage: 'Die Firma tauscht den Stuhl freiwillig um, obwohl sie es nicht müsste. Das ist …', opts: ['Kulanz', 'Gewährleistung', 'Haftung', 'Pflicht'], l: 0 },
+ { id: 'e5', typ: 'mc', kontext: W, frage: 'Wenn die Ware bis Freitag nicht da ist, setzen wir Ihnen eine letzte ___.', opts: ['Frist', 'Pause', 'Grenze', 'Stunde'], l: 0, x: 'eine Frist **setzen** / eine Frist **einhalten**.' },
+ { id: 'e6', typ: 'mc', kontext: K, frage: 'Wir haben Ihnen sofort neue Stühle geschickt, ___ Sie nicht länger warten müssen.', opts: ['damit', 'indem', 'ohne dass', 'statt dass'], l: 0 },
+ { id: 'e7', typ: 'mc', kontext: K, frage: 'Wir können das Problem schnell lösen, ___ Sie uns ein Foto des Schadens schicken.', opts: ['indem', 'damit', 'ohne dass', 'statt dass'], l: 0 },
+ { id: 'e8', typ: 'bau', kontext: S, frage: 'Eine gute Nachricht: Bilde den Satz.', steine: ['Die Firma hat die Stühle ausgetauscht,', 'ohne dass', 'wir', 'lange', 'diskutieren', 'mussten.'] },
+ { id: 'e9', typ: 'bau', kontext: S, frage: 'Eine schlechte Nachricht: Bilde den Satz.', steine: ['Statt', 'die Mängel', 'zu', 'beheben,', 'hat der Händler nur Entschuldigungen geschrieben.'], x: 'Steht der Nebensatz vorne, beginnt der Hauptsatz mit dem Verb: *…, **hat** der Händler …*' },
+ { id: 'e10', typ: 'zu', kontext: Z, frage: 'Was passt zusammen?', paare: [['Umtausch', 'Ware zurückgeben und eine andere bekommen'], ['Nachbesserung', 'Der Fehler wird repariert.'], ['Preisminderung', 'Der Kunde behält die Ware und zahlt weniger.'], ['Rücktritt vom Vertrag', 'Ware zurück, Geld zurück']] }
+],
+F: [
+ { id: 'f1', typ: 'mc', kontext: U, frage: 'Wir senken die Preise. Wir wollen neue Kunden gewinnen. – Verbinde richtig:', opts: ['Wir senken die Preise, um neue Kunden zu gewinnen.', 'Wir senken die Preise, damit neue Kunden gewinnen.', 'Wir senken die Preise, indem wir neue Kunden gewinnen.', 'Wir senken die Preise, ohne neue Kunden zu gewinnen.'], l: 0, x: 'Gleiches Subjekt (wir) und Zweck → **um … zu**.' },
+ { id: 'f2', typ: 'mc', kontext: U, frage: 'Wir verbessern den Service. Die Kunden sollen zufrieden sein. – Verbinde richtig:', opts: ['Wir verbessern den Service, damit die Kunden zufrieden sind.', 'Wir verbessern den Service, um die Kunden zufrieden zu sein.', 'Wir verbessern den Service, indem die Kunden zufrieden sind.', 'Wir verbessern den Service, damit sind die Kunden zufrieden.'], l: 0, x: 'Verschiedene Subjekte (wir / die Kunden) → nur **damit**. „sollen“ fällt bei damit weg.' },
+ { id: 'f3', typ: 'mc', kontext: U, frage: 'Wie steigern wir den Umsatz? Wir eröffnen einen Onlineshop. – Verbinde richtig:', opts: ['Wir steigern den Umsatz, indem wir einen Onlineshop eröffnen.', 'Wir steigern den Umsatz, damit wir einen Onlineshop eröffnen.', 'Wir steigern den Umsatz, indem einen Onlineshop zu eröffnen.', 'Wir steigern den Umsatz, ohne dass wir einen Onlineshop eröffnen.'], l: 0, x: 'Nach **indem** gibt es nie „zu“ + Infinitiv.' },
+ { id: 'f4', typ: 'mc', kontext: U, frage: '„Dadurch, dass wir regional einkaufen, sparen wir Transportkosten.“ Das bedeutet:', opts: ['Wir sparen Transportkosten, indem wir regional einkaufen.', 'Wir sparen Transportkosten, damit wir regional einkaufen.', 'Wir sparen Transportkosten, ohne dass wir regional einkaufen.', 'Wir sparen Transportkosten, statt regional einzukaufen.'], l: 0, x: '**dadurch, dass** = **indem** (Mittel, Art und Weise).' },
+ { id: 'f5', typ: 'zu', kontext: Z, frage: 'Welche Frage passt zu welchem Konnektor?', paare: [['Wie? Auf welche Weise?', 'indem / dadurch, dass'], ['Wozu? Mit welchem Ziel?', 'damit / um … zu'], ['Was Erwartetes passiert nicht?', 'ohne dass / ohne … zu'], ['Welche Möglichkeit wird nicht gewählt?', 'statt dass / statt … zu']] },
+ { id: 'f6', typ: 'bau', kontext: S, frage: 'Kritik an der Konkurrenz: Bilde den Satz.', steine: ['Der Händler hat die Preise erhöht,', 'ohne', 'die Kunden', 'vorher', 'zu', 'informieren.'] },
+ { id: 'f7', typ: 'mc', kontext: K, frage: 'Wir schulen unsere Mitarbeiter, ___ die Kunden besser beraten werden.', opts: ['damit', 'um', 'indem', 'ohne'], l: 0, x: 'Anderes Subjekt im Nebensatz (die Kunden) → **damit**, nicht um … zu.' },
+ { id: 'f8', typ: 'mc', kontext: K, frage: 'Die Konkurrenz hat ihre Preise gesenkt, ___ die Qualität darunter gelitten hat.', opts: ['ohne dass', 'damit', 'indem', 'um'], l: 0 },
+ { id: 'f9', typ: 'bau', kontext: S, frage: 'Das Erfolgsrezept: Bilde den Satz.', steine: ['Wir gewinnen das Vertrauen der Kunden,', 'indem', 'wir', 'Reklamationen', 'schnell', 'bearbeiten.'] },
+ { id: 'f10', typ: 'mc', kontext: U, frage: 'Welcher Satz ist **falsch**?', opts: ['Wir bestellen früher, um die Kunden nicht warten zu lassen.', 'Wir bestellen früher, damit die Kunden nicht warten müssen.', 'Wir bestellen früher, um die Kunden nicht warten müssen.', 'Wir bestellen früher, damit wir die Kunden nicht warten lassen.'], l: 2, x: 'Nach **um** braucht man **zu** + Infinitiv: *um … warten **zu lassen***.' }
+]};
+const PRO_STATION = 6;
+const RAENGE = [[90, 'Handelsprofi', '🏆'], [75, 'Filialleitung', '🥇'], [60, 'Kaufmann / Kauffrau', '🥈'], [40, 'Azubi im 2. Jahr', '🥉'], [0, 'Lehrling', '📦']];
+
+/* ======================= SPIEL ======================= */
+const app = document.getElementById('app');
+const L = await starte('handel-kontor');
+if (!L.frei) { L.sperre(app); throw new Error('gesperrt'); }
+const labels = {}; Object.values(POOL).flat().forEach(a => labels[a.id] = label(a)); L.registriereItems(labels);
+
+let G;
+const euro = n => (n < 0 ? '−' : '') + Math.abs(n).toLocaleString('de-DE') + ' €';
+
+function startbild() {
+  app.innerHTML = `<div class="karte start" style="margin-top:18px">
+    <div class="schild">FÖRDE-HANDEL · KIEL · SEIT 1923</div>
+    <h1>Das Handelskontor</h1>
+    <p>Du übernimmst das kleine Handelskontor am Hafen. Ein großer Kunde, das <b>Möbelhaus Nord</b>, will 40 Bürostühle. Begleite den Auftrag durch alle <b>sechs Stationen</b> – von der Anfrage bis zum Chefgespräch.</p>
+    <div class="regeln"><div><b>+100 €</b>für jede richtige Antwort</div><div><b>⭐ Bonus</b>für Antworten in Serie (bis +100 €)</div><div><b>−50 €</b>Retoure bei Fehlern – die Aufgabe kommt als Nachlieferung zurück</div></div>
+    <p class="leise klein">36 Aufgaben · Wortschatz Handel · indem, damit, um … zu, ohne dass, statt … zu</p>
+    <div class="knopfreihe"><button class="btn zweit" id="spick">📒 Spickzettel</button><button class="btn" id="los" style="min-width:200px">Kontor öffnen →</button></div></div>`;
+  document.getElementById('los').onclick = neuesSpiel;
+  document.getElementById('spick').onclick = spickzettel;
+}
+
+function neuesSpiel() {
+  G = { st: 0, umsatz: 0, serie: 0, richtig: 0, erledigt: 0, gesamt: STATIONEN.length * PRO_STATION, stationsUmsatz: [], fehlerJeTyp: {}, typZahl: {} };
+  G.plan = STATIONEN.map(s => ziehe(POOL[s.k], PRO_STATION));
+  L.beginne(G.gesamt, G.gesamt, 'Station 1: ' + STATIONEN[0].name);
+  stationsStart();
+}
+
+function hud() {
+  const s = Math.min(5, G.serie);
+  return `<div class="hud"><div class="kasse" id="kasse">${euro(G.umsatz)}</div>
+    <div class="sterne" title="Serie">${'★'.repeat(s)}<span style="color:#ccc">${'★'.repeat(5 - s)}</span></div>
+    <button class="btn zweit klein" id="spick">📒</button></div>
+    <div class="weg">${STATIONEN.map((s, i) => `<div class="stn ${i < G.st ? 'fertig' : i === G.st ? 'jetzt' : ''}"><div class="p">${i < G.st ? '✓' : s.icon}</div><span>${s.name}</span></div>`).join('')}</div>`;
+}
+
+function stationsStart() {
+  const s = STATIONEN[G.st];
+  app.innerHTML = hud() + `<div class="karte auftrag aufgabe"><div class="kontext">Station ${G.st + 1} von 6</div>
+    <h2>${s.icon} ${s.name}</h2><p>${s.auftrag}</p><button class="btn weiter" id="go">Los geht's →</button></div>`;
+  document.getElementById('spick').onclick = spickzettel;
+  document.getElementById('go').onclick = () => { G.q = G.plan[G.st].slice(); G.nach = []; G.stU = 0; G.inSt = 0; naechste(); };
+  L.fortschritt(G.erledigt, G.richtig, 'Station ' + (G.st + 1) + ': ' + s.name);
+}
+
+async function naechste() {
+  const s = STATIONEN[G.st];
+  if (G.q.length) {
+    const a = G.q.shift(); G.inSt++;
+    app.innerHTML = hud() + `<div class="zaehl">${s.icon} ${s.name} · Aufgabe ${G.inSt} von ${PRO_STATION}</div><div class="karte" id="feld"></div>`;
+    document.getElementById('spick').onclick = spickzettel;
+    await zeige(document.getElementById('feld'), a, { onErgebnis: ok => wertung(a, ok) });
+    return naechste();
+  }
+  if (G.nach.length) {
+    const a = G.nach.shift();
+    app.innerHTML = hud() + `<div class="nachl">🔁 <b>Nachlieferung:</b> Diese Aufgabe war vorhin schwierig. Versuch es noch einmal – ohne Punkte, nur zum Üben.</div><div class="karte" id="feld"></div>`;
+    document.getElementById('spick').onclick = spickzettel;
+    await zeige(document.getElementById('feld'), a, { lobText: 'Jetzt sitzt es!', fehlerText: 'Noch nicht – schau dir die Lösung genau an.' });
+    return naechste();
+  }
+  G.stationsUmsatz.push(G.stU); G.st++;
+  if (G.st < STATIONEN.length) zwischenbilanz(); else ende();
+}
+
+function wertung(a, ok) {
+  L.antwort(a.id, ok); G.erledigt++;
+  G.typZahl[a.kontext] = (G.typZahl[a.kontext] || 0) + 1;
+  let d;
+  if (ok) { G.richtig++; G.serie++; d = 100 + Math.min(5, G.serie - 1) * 20; }
+  else { G.serie = 0; d = -50; G.nach.push(a); G.fehlerJeTyp[a.kontext] = (G.fehlerJeTyp[a.kontext] || 0) + 1; }
+  G.umsatz += d; G.stU += d;
+  const k = document.getElementById('kasse');
+  if (k) { k.textContent = euro(G.umsatz); k.classList.remove('plus', 'minus'); void k.offsetWidth; k.classList.add(d > 0 ? 'plus' : 'minus'); }
+  const st = document.querySelector('.sterne'); if (st) { const s = Math.min(5, G.serie); st.innerHTML = '★'.repeat(s) + `<span style="color:#ccc">${'★'.repeat(5 - s)}</span>`; }
+  L.fortschritt(G.erledigt, G.richtig, 'Station ' + (G.st + 1) + ': ' + STATIONEN[G.st].name);
+}
+
+function zwischenbilanz() {
+  const alt = STATIONEN[G.st - 1], u = G.stationsUmsatz.at(-1);
+  app.innerHTML = hud() + `<div class="karte aufgabe" style="text-align:center"><div style="font-size:2.4rem">${u >= 400 ? '📈' : u >= 0 ? '📊' : '📉'}</div>
+    <h2>Station „${alt.name}“ abgeschlossen</h2><p>Umsatz dieser Station: <b style="color:${u >= 0 ? 'var(--ok)' : 'var(--fehler)'}">${u >= 0 ? '+' : ''}${euro(u)}</b></p>
+    <p class="leise">Weiter geht es mit <b>${STATIONEN[G.st].icon} ${STATIONEN[G.st].name}</b>.</p>
+    <button class="btn weiter" id="go">Weiter →</button></div>`;
+  document.getElementById('spick').onclick = spickzettel;
+  document.getElementById('go').onclick = stationsStart;
+}
+
+async function ende() {
+  const pct = await L.ende(G.richtig, G.gesamt, { umsatz: G.umsatz });
+  const r = RAENGE.find(x => pct >= x[0]);
+  const schwach = Object.entries(G.fehlerJeTyp).sort((a, b) => b[1] - a[1])[0];
+  app.innerHTML = hud() + `<div class="karte aufgabe" style="text-align:center">
+    <div style="font-size:3rem">${r[2]}</div><div class="leise">Dein neuer Titel</div><div class="rang">${r[1]}</div>
+    <div class="bilanz">${STATIONEN.map((s, i) => `<div><span>${s.icon} ${s.name}</span><span>${euro(G.stationsUmsatz[i])}</span></div>`).join('')}
+      <div class="summe"><span>Jahresumsatz</span><span>${euro(G.umsatz)}</span></div></div>
+    <p><b>${G.richtig} von ${G.gesamt}</b> Aufgaben beim ersten Versuch richtig (${pct} %).</p>
+    ${schwach ? `<p class="leise">Am meisten Fehler bei: <b>${esc(schwach[0])}</b> – ein Blick in den Spickzettel lohnt sich.</p>` : '<p>Keine einzige Retoure – ausgezeichnet!</p>'}
+    <div class="knopfreihe">${pct >= 60 ? '<button class="btn" id="zert">🎓 Zertifikat herunterladen</button>' : ''}<button class="btn zweit" id="nochmal">Neuer Auftrag</button><a class="btn zweit" href="index.html">Zur Zentrale</a></div>
+    ${pct < 60 ? '<p class="leise klein">Ab 60 % gibt es ein Zertifikat. Die Aufgaben werden jedes Mal neu gemischt.</p>' : ''}</div>`;
+  document.getElementById('spick').onclick = spickzettel;
+  document.getElementById('nochmal').onclick = neuesSpiel;
+  const z = document.getElementById('zert');
+  if (z) z.onclick = () => L.zertifikat({ titel: 'Das Handelskontor', zeile: 'Wortschatz Handel · indem, damit, ohne dass, statt … zu', punkte: `${r[1]} · ${G.richtig}/${G.gesamt} richtig · Umsatz ${euro(G.umsatz)}` });
+}
+
+function spickzettel() {
+  const d = document.createElement('div'); d.className = 'spick';
+  d.innerHTML = `<div class="karte"><div class="zeile" style="justify-content:space-between"><h2 style="margin:0">📒 Spickzettel</h2><button class="btn zweit klein" id="zu">Schließen</button></div>
+  <h3 style="margin-top:14px">Konnektoren</h3>
+  <table><tr><th>Frage</th><th>Konnektor</th><th>Beispiel</th></tr>
+  <tr><td>Wie? Wodurch?</td><td><b>indem</b><br><span class="leise klein">= dadurch, dass</span></td><td>Wir sparen Geld, <b>indem</b> wir Skonto <u>nutzen</u>.</td></tr>
+  <tr><td>Wozu?</td><td><b>damit</b></td><td>Wir liefern schnell, <b>damit</b> der Kunde zufrieden <u>ist</u>.</td></tr>
+  <tr><td></td><td><b>um … zu</b></td><td>Wir liefern schnell, <b>um</b> den Kunden <b>zu</b> <u>halten</u>.</td></tr>
+  <tr><td>Was passiert nicht (obwohl erwartet)?</td><td><b>ohne dass</b></td><td>Er hat bestellt, <b>ohne dass</b> der Chef es <u>wusste</u>.</td></tr>
+  <tr><td></td><td><b>ohne … zu</b></td><td>Er hat bestellt, <b>ohne</b> den Preis <b>zu</b> <u>prüfen</u>.</td></tr>
+  <tr><td>Welche Alternative passiert nicht?</td><td><b>statt … zu</b> / <b>statt dass</b></td><td><b>Statt</b> an<b>zu</b>rufen, schreibt er eine E-Mail.</td></tr></table>
+  <h3 style="margin-top:14px">Die wichtigste Regel</h3>
+  <p><b>um … zu</b>, <b>ohne … zu</b>, <b>statt … zu</b> nur, wenn beide Satzteile <b>dasselbe Subjekt</b> haben.<br>Verschiedene Subjekte → <b>damit</b>, <b>ohne dass</b>, <b>statt dass</b>.<br><b>indem</b> hat nie „zu“.</p>
+  <p class="leise klein">Im Nebensatz steht das konjugierte Verb am Ende. Bei trennbaren Verben steht „zu“ in der Mitte: an<b>zu</b>rufen, ein<b>zu</b>kaufen.</p>
+  <h3 style="margin-top:14px">Wichtige Wortverbindungen</h3>
+  <p class="klein">ein Angebot einholen / machen · eine Bestellung aufgeben · einen Auftrag erteilen · einen Termin einhalten · eine Rechnung begleichen · eine Frist setzen · Mängel beheben · eine Reklamation bearbeiten · Rabatt gewähren · Skonto abziehen</p></div>`;
+  document.body.append(d);
+  d.onclick = e => { if (e.target === d || e.target.id === 'zu') d.remove(); };
+}
+
+startbild();
+</script>
+</body>
+</html>
