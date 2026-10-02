@@ -36,7 +36,7 @@
 <div id="demo"></div>
 <section class="held"><div class="wrap">
   <h1>Übungszentrale</h1>
-  <p>Lern Deutsch mit Arash · Spiele, Übungen und Zusatzlektionen</p>
+  <p>Lern Deutsch mit Arash · Spiele, Übungen und Prüfungstraining</p>
 </div></section>
 
 <main class="wrap">
@@ -46,7 +46,7 @@
 </main>
 
 <script type="module">
-import { db, DEMO, esc } from './db.js';
+import { db, DEMO, esc, mitDemo } from './db.js';
 import { KATALOG } from './katalog.js';
 import { sitzung, anmelden, alsGast, abmelden, besteLokal } from './spieler.js';
 
@@ -81,7 +81,7 @@ function zeigeAnmeldung(fehler = '') {
 }
 
 function karte(ex, best) {
-  const href = ex.datei + (DEMO ? '?demo' : '');
+  const href = mitDemo(ex.datei);
   return `<a class="ex" href="${href}"><div class="band" style="background:${ex.farbe}"></div><div class="inh">
     <h3>${esc(ex.titel)}</h3><div class="leise klein">${esc(ex.untertitel || '')}</div>
     <div class="meta"><span class="pille" style="background:${ex.farbe}1a;color:${ex.farbe}">${esc(ex.typ)}</span><span class="pille">${esc(ex.niveau)}</span>
@@ -106,7 +106,8 @@ async function start() {
   h += `<div class="abschnitt"><h2>${s && s.kid ? 'Weitere Übungen' : 'Alle Übungen'}</h2></div>`;
   if (themen.length > 1) h += `<div class="filter">${['alle', ...themen].map(t => `<button class="chip ${t === filt ? 'an' : ''}" data-t="${esc(t)}">${t === 'alle' ? 'Alle' : esc(t)}</button>`).join('')}</div>`;
   const sicht = weitere.filter(pass);
-  h += sicht.length ? `<div class="liste">${sicht.map(ex => karte(ex, best[ex.id])).join('')}</div>` : '<p class="leise">Keine weiteren Übungen.</p>';
+  const gruppen = [...new Set(sicht.map(ex => ex.reihe || ex.typ || 'Übungen'))];
+  h += sicht.length ? gruppen.map(g => `${gruppen.length > 1 ? `<h3 style="margin:18px 0 0" class="leise">${esc(g)}</h3>` : ''}<div class="liste">${sicht.filter(ex => (ex.reihe || ex.typ || 'Übungen') === g).map(ex => karte(ex, best[ex.id])).join('')}</div>`).join('') : '<p class="leise">Keine weiteren Übungen.</p>';
   $('#inhalt').innerHTML = h;
   document.querySelectorAll('.chip').forEach(c => c.onclick = () => { filt = c.dataset.t; start(); });
 }

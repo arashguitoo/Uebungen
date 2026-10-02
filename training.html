@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Training – Übungszentrale</title>
+<link rel="stylesheet" href="stil.css">
+<style>
+  body{background:#f1f3f5}
+  .held{background:var(--akzent);color:#fff;border-radius:0 0 22px 22px;padding:22px 18px 26px;margin:0 -16px 18px}
+  .held .pille{background:rgba(255,255,255,.18);color:#fff}
+  .held h1{font-size:1.9rem;margin:8px 0 4px}
+  .held p{margin:0;opacity:.9}
+  .module{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+  .modul{font:inherit;text-align:left;cursor:pointer;background:#fff;border:1px solid var(--linie);border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;box-shadow:var(--schatten);transition:transform .15s;color:var(--text)}
+  .modul:hover{transform:translateY(-2px);border-color:var(--akzent)}
+  .modul .kopfz{display:flex;align-items:center;gap:10px}
+  .modul .ic{font-size:1.6rem;width:46px;height:46px;border-radius:12px;background:var(--akzent-hell);display:grid;place-items:center;flex:none}
+  .modul .nr{font-size:.78rem;color:var(--leise);font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+  .modul h3{margin:0;font-size:1.08rem}
+  .modul .meta{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:4px;font-size:.85rem;color:var(--leise)}
+  .modul .best{font-weight:700;color:var(--ok)}
+  .knopfreihe{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
+  .lauf-kopf{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+  .lauf-kopf .ic{font-size:1.4rem}
+  .lauf-kopf .t{flex:1;min-width:0;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .lauf-kopf .pkt{background:#fff;border:1px solid var(--linie);border-radius:99px;padding:4px 12px;font-weight:700;white-space:nowrap}
+  .fbalken{height:8px;background:#dfe3e8;border-radius:8px;overflow:hidden;margin-bottom:6px}
+  .fbalken i{display:block;height:100%;background:var(--akzent);transition:width .3s}
+  .zaehl{font-size:.85rem;color:var(--leise);display:flex;justify-content:space-between;margin-bottom:8px}
+  .nachl{background:#fff4e0;border:1px solid #f0d6a2;border-radius:10px;padding:8px 12px;margin-bottom:12px;font-size:.92rem}
+  .ergebnis{text-align:center}
+  .ring{width:150px;height:150px;margin:6px auto 10px;border-radius:50%;display:grid;place-items:center;font-size:2.2rem;font-weight:700}
+  .bereiche{max-width:520px;margin:14px auto;text-align:left;display:grid;gap:8px}
+  .ber{display:grid;grid-template-columns:1fr auto;gap:2px 10px;font-size:.93rem}
+  .ber .bb{grid-column:1/-1;height:7px;background:#e6e6e6;border-radius:7px;overflow:hidden}.ber .bb i{display:block;height:100%}
+  .kompakt h3{margin:16px 0 6px;color:var(--akzent)}
+  .kompakt ul{margin:0;padding-left:20px}.kompakt li{margin:3px 0}
+</style>
+<script data-goatcounter="https://aguitoo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<main class="wrap" id="app"><p class="leise" style="text-align:center;margin-top:40px">Lädt …</p></main>
+
+<script type="module">
+import { starte, sitzung } from './spieler.js';
+import { zeige, ziehe, punkte, labels, fmt } from './aufgaben.js';
+import { esc } from './db.js';
+
+const app = document.getElementById('app');
+const setId = (new URLSearchParams(location.search).get('set') || '').replace(/[^a-zA-Z0-9_-]/g, '');
+let LK;
+try {
+  const r = await fetch('trainings/' + setId + '.json', { cache: 'no-cache' });
+  if (!r.ok) throw new Error('HTTP ' + r.status);
+  LK = await r.json();
+} catch (e) {
+  app.innerHTML = `<div class="karte" style="margin-top:30px;text-align:center"><h2>Übung nicht gefunden</h2><p class="leise">${esc(setId || '(keine Übung angegeben)')}</p><a class="btn" href="index.html">Zur Übungszentrale</a></div>`;
+  throw e;
+}
+document.title = LK.titel + ' – Übungszentrale';
+const L = await starte(LK.id, { id: LK.id, titel: LK.titel, farbe: LK.farbe, offen: true });
+if (LK.farbe) { document.documentElement.style.setProperty('--akzent', LK.farbe); document.documentElement.style.setProperty('--akzent-hell', LK.farbe + '18'); }
+if (!L.frei) { L.sperre(app); throw new Error('gesperrt'); }
+
+const lab = {};
+LK.module.forEach((m, mi) => m.aufgaben.forEach(a => Object.entries(labels(a)).forEach(([k, v]) => lab[k] = 'T' + (mi + 1) + ' · ' + v)));
+L.registriereItems(lab);
+
+const MIX = LK.mix || 15;
+const s = sitzung(), BK = 'ueb_lek_' + LK.id + '_' + (s && s.code ? s.code : 'gast');
+const beste = () => { try { return JSON.parse(localStorage.getItem(BK)) || {}; } catch (e) { return {}; } };
+const merke = (k, pct) => { const b = beste(); if (!(k in b) || pct > b[k]) { b[k] = pct; localStorage.setItem(BK, JSON.stringify(b)); } };
+const farbeFuer = p => p >= 85 ? 'var(--ok)' : p >= 60 ? '#5f9e3f' : p >= 40 ? '#c48a12' : 'var(--fehler)';
+
+/* ---------------- Übersicht ---------------- */
+function uebersicht() {
+  const b = beste();
+  app.innerHTML = `<section class="held"><span class="pille">${esc(LK.niveau || '')}</span> <span class="pille">${esc(LK.reihe || 'Training')}</span>
+      <h1>${esc(LK.titel)}</h1><p>${esc(LK.untertitel || '')}</p></section>
+    ${LK.intro ? `<p>${fmt(LK.intro)}</p>` : ''}
+    <div class="knopfreihe">${LK.kompakt ? '<button class="btn zweit" id="komp">📘 Grammatik & Redemittel kompakt</button>' : ''}
+      <button class="btn" id="mix">🎲 Prüfungsmix · ${MIX} Aufgaben</button></div>
+    <div class="module">${LK.module.map((m, mi) => `<button class="modul" data-m="${mi}">
+      <div class="kopfz"><div class="ic">${esc(m.icon || '📝')}</div><div><div class="nr">Teil ${mi + 1}</div><h3>${esc(m.titel)}</h3></div></div>
+      <div class="leise klein">${esc(m.kurz || '')}</div>
+      <div class="meta"><span>${m.aufgaben.length} Aufgaben · ${m.aufgaben.reduce((s, a) => s + punkte(a), 0)} Punkte</span>${b[mi] != null ? `<span class="best">✓ ${b[mi]} %</span>` : ''}</div></button>`).join('')}</div>
+    ${b.mix != null ? `<p class="leise klein" style="margin-top:14px">Bestes Ergebnis im Prüfungsmix: <b>${b.mix} %</b></p>` : ''}`;
+  app.querySelectorAll('.modul').forEach(x => x.onclick = () => spiele(+x.dataset.m));
+  document.getElementById('mix').onclick = () => spiele(-1);
+  const k = document.getElementById('komp'); if (k) k.onclick = kompakt;
+  scrollTo(0, 0);
+}
+
+/* ---------------- Durchgang ---------------- */
+async function spiele(mi) {
+  const m = mi >= 0 ? LK.module[mi] : { titel: 'Prüfungsmix', icon: '🎲' };
+  const teil = mi >= 0 ? `Teil ${mi + 1}: ${m.titel}` : 'Prüfungsmix';
+  const liste = mi >= 0 ? m.aufgaben.slice() : ziehe(LK.module.flatMap(x => x.aufgaben), MIX);
+  const pm = liste.reduce((s, a) => s + punkte(a), 0);
+  let p = 0, pa = 0; const nach = [], ber = {};
+  L.beginne(liste.length, pm, teil);
+  const rahmen = (i, banner = '') => {
+    app.innerHTML = `<div class="lauf-kopf"><span class="ic">${esc(m.icon || '📝')}</span><span class="t">${esc(teil)}</span><span class="pkt" id="pkt">${p} / ${pa} Pkt.</span>
+      <button class="btn zweit klein" id="komp" title="Grammatik & Redemittel kompakt">📘</button></div>
+      <div class="fbalken"><i style="width:${Math.round(100 * i / liste.length)}%"></i></div>
+      <div class="zaehl"><span>${banner ? 'Wiederholung' : `Aufgabe ${i + 1} von ${liste.length}`}</span><span>${esc(LK.titel)}</span></div>
+      ${banner}<div class="karte" id="feld"></div>`;
+    const k = document.getElementById('komp'); if (LK.kompakt) k.onclick = kompakt; else k.remove();
+    scrollTo(0, 0);
+    return document.getElementById('feld');
+  };
+  for (let i = 0; i < liste.length; i++) {
+    const a = liste[i];
+    await zeige(rahmen(i), a, { onErgebnis: (ok, d) => {
+      p += d.p; pa += d.pm;
+      const bk = a.kontext || 'Sonstiges'; ber[bk] = ber[bk] || [0, 0]; ber[bk][0] += d.p; ber[bk][1] += d.pm;
+      d.teile.forEach(([id, x]) => L.antwort(id, x));
+      if (!ok && punkte(a) === 1) nach.push(a);
+      L.fortschritt(i + 1, p, teil, pa);
+      document.getElementById('pkt').textContent = `${p} / ${pa} Pkt.`;
+    } });
+  }
+  for (const a of nach) {
+    await zeige(rahmen(liste.length, '<div class="nachl">🔁 <b>Noch einmal:</b> Diese Aufgabe war vorhin schwierig. Jetzt ohne Punkte – nur zum Üben.</div>'), a,
+      { lobText: 'Jetzt sitzt es!', fehlerText: 'Noch nicht – schau dir die Lösung genau an.' });
+  }
+  const pct = await L.ende(p, pm, { teil });
+  merke(mi >= 0 ? mi : 'mix', pct);
+  ergebnis(mi, teil, p, pm, pct, ber);
+}
+
+function ergebnis(mi, teil, p, pm, pct, ber) {
+  const urteil = pct >= 90 ? 'Ausgezeichnet – prüfungsreif!' : pct >= 75 ? 'Sehr gut!' : pct >= 60 ? 'Gut gemacht – bestanden!' : pct >= 40 ? 'Schon ein guter Anfang. Wiederhole diesen Teil.' : 'Hier lohnt sich noch Übung.';
+  const naechster = mi >= 0 && mi + 1 < LK.module.length ? mi + 1 : null;
+  app.innerHTML = `<div class="karte ergebnis aufgabe" style="margin-top:14px">
+    <div class="leise">${esc(LK.titel)}</div><h2>${esc(teil)}</h2>
+    <div class="ring" style="background:conic-gradient(${farbeFuer(pct)} ${pct * 3.6}deg,#e6e6e6 0);"><div style="background:#fff;width:118px;height:118px;border-radius:50%;display:grid;place-items:center">${pct} %</div></div>
+    <p><b>${p} von ${pm} Punkten</b> · ${urteil}</p>
+    <div class="bereiche">${Object.entries(ber).sort((a, b) => a[1][0] / a[1][1] - b[1][0] / b[1][1]).map(([k, [x, y]]) => { const q = Math.round(100 * x / y);
+      return `<div class="ber"><span>${esc(k)}</span><b>${x}/${y}</b><div class="bb"><i style="width:${q}%;background:${farbeFuer(q)}"></i></div></div>`; }).join('')}</div>
+    <div class="knopfreihe" style="justify-content:center">
+      ${pct >= 60 ? '<button class="btn" id="zert">🎓 Zertifikat</button>' : ''}
+      ${naechster != null ? `<button class="btn" id="next">Weiter mit Teil ${naechster + 1} →</button>` : ''}
+      <button class="btn zweit" id="nochmal">Nochmal</button><button class="btn zweit" id="ueb">Zur Übersicht</button></div>
+    ${pct < 60 ? '<p class="leise klein">Ab 60 % gibt es ein Zertifikat.</p>' : ''}</div>`;
+  document.getElementById('ueb').onclick = uebersicht;
+  document.getElementById('nochmal').onclick = () => spiele(mi);
+  const n = document.getElementById('next'); if (n) n.onclick = () => spiele(naechster);
+  const z = document.getElementById('zert'); if (z) z.onclick = () => L.zertifikat({ titel: LK.titel, zeile: teil, punkte: `${p} von ${pm} Punkten · ${pct} %`, farbe: LK.farbe });
+  scrollTo(0, 0);
+}
+
+function kompakt() {
+  const d = document.createElement('div'); d.className = 'spick';
+  d.innerHTML = `<div class="karte kompakt"><div class="zeile" style="justify-content:space-between"><h2 style="margin:0">📘 Kompakt</h2><button class="btn zweit klein" id="zu">Schließen</button></div>
+    ${LK.kompakt.map(k => `<h3>${esc(k.titel)}</h3><ul>${k.zeilen.map(z => `<li>${fmt(z)}</li>`).join('')}</ul>`).join('')}</div>`;
+  document.body.append(d);
+  d.onclick = e => { if (e.target === d || e.target.id === 'zu') d.remove(); };
+}
+
+uebersicht();
+</script>
+</body>
+</html>

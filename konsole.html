@@ -74,7 +74,7 @@
 <main class="wrap" id="app"></main>
 
 <script type="module">
-import { db, DEMO, zufall, esc } from './db.js';
+import { db, DEMO, zufall, esc, mitDemo } from './db.js';
 import { KATALOG, exById } from './katalog.js';
 
 if (DEMO) document.getElementById('demo').innerHTML = '<div class="demo-band">DEMO-MODUS – Anmeldung mit beliebigen Daten, alles bleibt in diesem Browser</div>';
@@ -156,7 +156,7 @@ function live() {
       return `<div class="lk ${v.s}"><div class="n"><span>${esc(v.name)}</span><span class="st ${v.s}">${ST[v.s]}</span></div>
         <div class="klein leise">${esc(v.kid ? kursName(v.kid) : 'ohne Code')} · ${esc(exName(v.ex))}</div>
         <div class="balken"><i style="width:${pr}%"></i></div>
-        <div class="zeile klein" style="justify-content:space-between"><span>Aufgabe ${v.i} / ${v.n}</span><span><b>${v.p}</b> von ${v.i || 0} richtig${v.i ? ' (' + Math.round(100 * v.p / v.i) + ' %)' : ''}</span></div>
+        <div class="zeile klein" style="justify-content:space-between"><span>Aufgabe ${v.i} / ${v.n}</span><span><b>${v.p}</b> von ${v.pa ?? v.i ?? 0} richtig${(v.pa ?? v.i) ? ' (' + Math.round(100 * v.p / (v.pa ?? v.i)) + ' %)' : ''}</span></div>
         ${v.info ? `<div class="klein">📍 ${esc(v.info)}</div>` : ''}
         <div class="klein leise">Start ${zeit(v.t0)} · ${vor(v.t)}${v.s === 'fertig' ? ' · Ergebnis ' + pz + ' %' : ''}</div></div>`; }).join('')}</div>`
       : '<p class="leise" style="margin-top:30px;text-align:center">Gerade spielt niemand. Sobald jemand eine Übung startet, erscheint er hier – ohne Neuladen.</p>'}`;
@@ -175,6 +175,7 @@ function versuche() {
   for (const [ex, m] of Object.entries(D.res || {})) for (const [sid, r] of Object.entries(m || {})) out.push({ ex, sid, ...r });
   return out.sort((a, b) => b.t - a.t);
 }
+const teilVon = v => { try { return v.x ? (JSON.parse(v.x).teil || '') : ''; } catch (e) { return ''; } };
 const median = a => { if (!a.length) return 0; const s = a.slice().sort((x, y) => x - y), m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
 
 function erg() {
@@ -194,9 +195,12 @@ function erg() {
     const tn = Object.entries(D.kurse[F.ekurs].tn || {}).sort((a, b) => a[1].name.localeCompare(b[1].name));
     const zug = (D.pub.kurse && D.pub.kurse[F.ekurs] && D.pub.kurse[F.ekurs].ex) || {};
     const exs = KATALOG.filter(e => (F.eex === 'alle' || e.id === F.eex) && (zug[e.id] || l.some(v => v.ex === e.id)));
-    h += `<h2 style="margin-top:20px">Übersicht ${esc(D.kurse[F.ekurs].name)}</h2><p class="leise klein">Bestes Ergebnis je Person (Anzahl Durchgänge in Klammern).</p>`;
+    h += `<h2 style="margin-top:20px">Übersicht ${esc(D.kurse[F.ekurs].name)}</h2><p class="leise klein">Bestes Ergebnis je Person (Anzahl Durchgänge in Klammern). Bei Trainings mit mehreren Teilen: Durchschnitt der besten Ergebnisse je Teil – Maus auf die Zelle zeigt die Teile.</p>`;
     h += exs.length && tn.length ? `<div class="tabwrap"><table class="t"><tr><th>Name</th>${exs.map(e => `<th>${esc(e.titel)}</th>`).join('')}</tr>${tn.map(([pid, p]) => `<tr><td><b>${esc(p.name)}</b></td>${exs.map(e => {
       const vs = l.filter(v => v.pid === pid && v.ex === e.id); if (!vs.length) return '<td class="leise">–</td>';
+      if (e.teile) { const best = {}; vs.forEach(v => { const t = teilVon(v) || '?'; best[t] = Math.max(best[t] ?? 0, v.pct || 0); });
+        const tt = Object.entries(best).filter(([t]) => t !== 'Prüfungsmix'), d = tt.length ? Math.round(tt.reduce((s, [, x]) => s + x, 0) / tt.length) : (best['Prüfungsmix'] ?? 0);
+        return `<td title="${esc(Object.entries(best).map(([t, x]) => t + ': ' + x + ' %').join('\n'))}"><span class="zelle" style="background:${farbe(d)}">${d} %</span> <span class="klein leise">${tt.length}/${e.teile} Teile</span></td>`; }
       const b = Math.max(...vs.map(v => v.pct || 0)); return `<td><span class="zelle" style="background:${farbe(b)}">${b} %</span> <span class="klein leise">(${vs.length})</span></td>`; }).join('')}</tr>`).join('')}</table></div>`
       : '<p class="leise">Noch keine Teilnehmenden oder zugewiesenen Übungen.</p>';
   }
@@ -213,8 +217,8 @@ function erg() {
 
   // Liste der Durchgänge
   const zeig = F.mehr ? l : l.slice(0, 60);
-  h += `<h2 style="margin-top:24px">Durchgänge</h2>` + (l.length ? `<div class="tabwrap"><table class="t"><tr><th>Datum</th><th>Name</th><th>Kurs</th><th>Übung</th><th>Richtig</th><th>%</th><th>Dauer</th><th></th></tr>
-    ${zeig.map(v => `<tr><td>${zeit(v.t)}</td><td><b>${esc(v.name)}</b></td><td>${esc(v.kid ? kursName(v.kid) : 'Gast')}</td><td>${esc(exName(v.ex))}</td>
+  h += `<h2 style="margin-top:24px">Durchgänge</h2>` + (l.length ? `<div class="tabwrap"><table class="t"><tr><th>Datum</th><th>Name</th><th>Kurs</th><th>Übung</th><th>Punkte</th><th>%</th><th>Dauer</th><th></th></tr>
+    ${zeig.map(v => `<tr><td>${zeit(v.t)}</td><td><b>${esc(v.name)}</b></td><td>${esc(v.kid ? kursName(v.kid) : 'Gast')}</td><td>${esc(exName(v.ex))}${teilVon(v) ? `<br><span class="klein leise">${esc(teilVon(v))}</span>` : ''}</td>
     <td>${v.p} / ${v.pm}</td><td><span class="zelle" style="background:${farbe(v.pct)}">${v.pct} %</span></td><td>${dauer(v.dur || 0)}</td>
     <td><button class="icon" title="Durchgang löschen" data-del="${v.ex}/${v.sid}">🗑</button></td></tr>`).join('')}</table></div>
     ${l.length > zeig.length ? `<button class="btn zweit klein" id="mehr" style="margin-top:10px">Alle ${l.length} anzeigen</button>` : ''}` : '<p class="leise">Noch keine Ergebnisse.</p>');
@@ -225,8 +229,8 @@ function erg() {
   app.querySelectorAll('[data-del]').forEach(b => b.onclick = async () => { if (confirm('Diesen Durchgang endgültig löschen?')) { await db.remove('res/' + b.dataset.del); meld('Gelöscht.'); } });
   $('#csv').onclick = () => {
     const q = s => '"' + String(s ?? '').replace(/"/g, '""') + '"';
-    const z = [['Datum', 'Name', 'Kurs', 'Code', 'Übung', 'Richtig', 'Maximum', 'Prozent', 'Dauer (s)'].map(q).join(';')];
-    l.forEach(v => z.push([new Date(v.t).toLocaleString('de-DE'), v.name, v.kid ? kursName(v.kid) : 'Gast', v.pid && D.kurse[v.kid] && D.kurse[v.kid].tn && D.kurse[v.kid].tn[v.pid] ? D.kurse[v.kid].tn[v.pid].code : '', exName(v.ex), v.p, v.pm, v.pct, v.dur].map(q).join(';')));
+    const z = [['Datum', 'Name', 'Kurs', 'Code', 'Übung', 'Teil', 'Richtig', 'Maximum', 'Prozent', 'Dauer (s)'].map(q).join(';')];
+    l.forEach(v => z.push([new Date(v.t).toLocaleString('de-DE'), v.name, v.kid ? kursName(v.kid) : 'Gast', v.pid && D.kurse[v.kid] && D.kurse[v.kid].tn && D.kurse[v.kid].tn[v.pid] ? D.kurse[v.kid].tn[v.pid].code : '', exName(v.ex), teilVon(v), v.p, v.pm, v.pct, v.dur].map(q).join(';')));
     const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob(['﻿' + z.join('\r\n')], { type: 'text/csv' }));
     a.download = 'ergebnisse_' + new Date().toISOString().slice(0, 10) + '.csv'; a.click();
   };
@@ -317,7 +321,7 @@ function uebungen() {
       const aktiv = Object.values(D.live || {}).filter(v => v.ex === e.id && status(v) === 'aktiv').length;
       return `<div class="exk"><div class="kopfz"><div class="farbe" style="background:${e.farbe}"></div><div style="flex:1"><h3 style="margin:0">${esc(e.titel)}</h3>
         <div class="klein leise">${esc(e.typ)} · ${esc(e.niveau)} · ${esc(e.untertitel || '')}</div></div>
-        <a class="btn zweit klein" href="${e.datei}${DEMO ? '?demo' : ''}" target="_blank">Öffnen</a><button class="btn zweit klein" data-cp="${e.datei}">🔗 Link</button></div>
+        <a class="btn zweit klein" href="${mitDemo(e.datei)}" target="_blank">Öffnen</a><button class="btn zweit klein" data-cp="${e.datei}">🔗 Link</button></div>
         <div class="zeile klein"><span><b>${vs.length}</b> Durchgänge</span><span>Ø <b>${d == null ? '–' : d + ' %'}</b></span>${aktiv ? `<span style="color:#1e7a45"><span class="puls"></span>${aktiv} spielen gerade</span>` : ''}
         <span style="flex:1"></span><button class="btn zweit klein" data-st="${e.id}">Statistik →</button></div>
         <div class="zeile"><label class="schalter"><input type="checkbox" data-of="${e.id}" ${offen ? 'checked' : ''}> <b>Öffentlich</b> (ohne Code spielbar)</label></div>

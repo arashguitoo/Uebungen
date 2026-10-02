@@ -26,8 +26,8 @@ const bkey = (s = sitzung()) => BKEY + '_' + (s && s.code ? s.code : 'gast');
 export function besteLokal() { try { return JSON.parse(localStorage.getItem(bkey())) || {}; } catch (e) { return {}; } }
 
 /* ---------------- Freigabe ---------------- */
-export async function istFreigegeben(exId, s = sitzung()) {
-  const ex = exById(exId); if (!ex) return false;
+export async function istFreigegeben(exId, s = sitzung(), meta = null) {
+  const ex = exById(exId) || meta; if (!ex) return false;
   let offen = ex.offen !== false;
   try {
     const p = await db.get('pub/ex/' + exId);
@@ -39,14 +39,14 @@ export async function istFreigegeben(exId, s = sitzung()) {
 }
 
 /* ---------------- Start einer Übung ---------------- */
-export async function starte(exId) {
-  const ex = exById(exId) || { id: exId, titel: exId };
+export async function starte(exId, meta = null) {
+  const ex = exById(exId) || meta || { id: exId, titel: exId };
   const urlCode = new URLSearchParams(location.search).get('code');
   if (urlCode) { try { await anmelden(urlCode); } catch (e) { } }
   let s = sitzung() || alsGast('Gast');
   kopf(ex, s);
   if (ex.farbe) document.documentElement.style.setProperty('--akzent', ex.farbe);
-  const frei = await istFreigegeben(exId, s);
+  const frei = await istFreigegeben(exId, s, meta || ex);
   return new Lauf(ex, s, frei);
 }
 
@@ -67,12 +67,12 @@ class Lauf {
   /** Beim Klick auf „Start“ aufrufen */
   beginne(n, pm, info = '') {
     this.sid = zufall(14, 'abcdefghijkmnopqrstuvwxyz23456789'); this.t0 = jetzt(); this.items = {}; this.fertig = false;
-    this.stand = { i: 0, n, p: 0, pm, info };
+    this.stand = { i: 0, n, p: 0, pm, pa: 0, info };
     this._live({ st: 'spielt' }, true);
   }
   /** Fortschritt melden: i = erledigte Aufgaben, p = Punkte */
-  fortschritt(i, p, info) {
-    Object.assign(this.stand, { i, p }); if (info !== undefined) this.stand.info = info;
+  fortschritt(i, p, info, pa) {
+    Object.assign(this.stand, { i, p }); if (info !== undefined) this.stand.info = info; if (pa !== undefined) this.stand.pa = pa;
     this._live({}, false);
   }
   /** Einzelantwort für die Aufgabenanalyse (nur der erste Versuch zählt) */
@@ -80,9 +80,9 @@ class Lauf {
   /** Aufgabentexte einmalig in die Datenbank schreiben (für die Analyse in der Konsole) */
   async registriereItems(map) {
     try {
-      const vorh = (await db.get('items/' + this.ex.id)) || {};
-      const neu = Object.entries(map).filter(([k]) => !(k in vorh));
-      for (const [k, v] of neu) { try { await db.set('items/' + this.ex.id + '/' + k, String(v).slice(0, 280)); } catch (e) { } }
+      const vorh = (await db.get('items/' + this.ex.id)) || {}, neu = {};
+      for (const [k, v] of Object.entries(map)) if (!(k in vorh)) neu[k] = String(v).slice(0, 280);
+      if (Object.keys(neu).length) await db.update('items/' + this.ex.id, neu);
     } catch (e) { }
   }
   async ende(p, pm, extra = {}) {
@@ -104,7 +104,7 @@ class Lauf {
       this._last = jetzt(); this._pend = null;
       const s = this.s, st = this.stand;
       const v = { ex: this.ex.id, name: s.name || 'Gast', kid: s.kid || '', pid: s.pid || '', kurs: s.kurs || '',
-        i: st.i || 0, n: st.n || 0, p: st.p || 0, pm: st.pm || 0, info: String(st.info || '').slice(0, 80),
+        i: st.i || 0, n: st.n || 0, p: st.p || 0, pm: st.pm || 0, pa: st.pa ?? st.i ?? 0, info: String(st.info || '').slice(0, 80),
         st: extra.st || (this.fertig ? 'fertig' : 'spielt'), t0: this.t0, t: jetzt() };
       try { await db.set('live/' + this.sid, v); } catch (e) { }
     };

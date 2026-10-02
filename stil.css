@@ -72,3 +72,49 @@ input:focus,select:focus,textarea:focus,.btn:focus-visible{outline:3px solid col
 @media (min-width:700px){.spick{align-items:center}.spick .karte{border-radius:18px}}
 .spick table{border-collapse:collapse;width:100%;font-size:.95rem}
 .spick td,.spick th{border-bottom:1px solid var(--linie);padding:6px 4px;text-align:left;vertical-align:top}
+
+/* ---------- Lesetexte ---------- */
+.lesetext{background:#fffdf8;border:1px solid var(--linie);border-radius:12px;padding:14px 16px;margin:0 0 14px;font-size:.98rem;line-height:1.55}
+.lesetext p{margin:0 0 .7em}.lesetext p:last-child{margin-bottom:0}
+.lt-titel{font-weight:700;font-size:1.05rem;margin-bottom:8px;color:var(--akzent)}
+.lesetext.brief{font-family:Georgia,"Times New Roman",serif;font-size:1rem;line-height:1.9}
+.forum{display:grid;gap:10px;margin:0 0 14px}
+.post{background:#fff;border:1px solid var(--linie);border-left:4px solid var(--akzent);border-radius:10px;padding:10px 14px;font-size:.96rem;line-height:1.5}
+.post p{margin:0 0 .5em}.post p:last-child{margin:0}
+.post-kopf{margin-bottom:4px}.post-kopf b{color:var(--akzent)}.post-kopf span{color:var(--leise);font-size:.82rem}
+
+/* ---------- Matrix (richtig/falsch, wer?, sortieren, Fragen zum Text) ---------- */
+.matrix{display:grid;gap:8px}
+.mz{display:grid;grid-template-columns:1fr auto;gap:8px 12px;align-items:center;background:#fff;border:1px solid var(--linie);border-radius:12px;padding:10px 12px}
+.mz.eigen{grid-template-columns:1fr}
+.mz-t{font-size:.98rem}
+.mz-n{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--akzent);color:#fff;font-size:.8rem;font-weight:700;margin-right:8px}
+.mz-w{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end}
+.mz.eigen .mz-w{display:grid;gap:6px}
+.mw{font:inherit;font-size:.9rem;border:2px solid var(--linie);background:#fff;border-radius:9px;padding:6px 10px;cursor:pointer;min-height:40px;color:var(--text);text-align:left}
+.mw:hover:not(:disabled){border-color:var(--akzent)}
+.mw.gewaehlt{border-color:var(--akzent);background:var(--akzent-hell);font-weight:600}
+.mw.richtig{border-color:var(--ok);background:var(--ok-hell)}
+.mw.falsch{border-color:var(--fehler);background:var(--fehler-hell);text-decoration:line-through}
+.mw:disabled{cursor:default}
+.mz.ok{border-color:#bfe2cb}.mz.nok{border-color:#f1c6be}
+@media(max-width:620px){.mz{grid-template-columns:1fr}.mz-w{justify-content:flex-start}}
+.pruefen-voll{width:100%;margin-top:12px}
+
+/* ---------- Lückentext ---------- */
+.lsel{font:inherit;font-family:Calibri,Carlito,sans-serif;font-size:.95rem;min-height:36px;padding:3px 8px;border:2px solid var(--akzent);border-radius:8px;background:var(--akzent-hell);color:var(--text);max-width:100%;margin:2px 0}
+.lsel.gesetzt{background:#fff}
+.lsel.ok{border-color:var(--ok);background:var(--ok-hell)}
+.lsel.nok{border-color:var(--fehler);background:var(--fehler-hell);text-decoration:line-through}
+.korr{display:inline-block;margin-left:6px;font-family:Calibri,Carlito,sans-serif;font-weight:700;color:var(--ok);font-size:.95rem}
+
+/* ---------- Ordnen ---------- */
+.ord-ziel{min-height:60px;border:2px dashed var(--linie);border-radius:12px;padding:8px;display:grid;gap:6px;background:#fcfbf9;margin-bottom:12px}
+.ord-ziel:empty::before{content:"Tippe die Teile in der richtigen Reihenfolge an";color:var(--leise);font-size:.92rem;padding:6px}
+.ord-vorrat{display:grid;gap:6px;margin-bottom:12px}
+.ord{font:inherit;text-align:left;display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid #c9c2b6;border-radius:10px;padding:9px 12px;cursor:pointer;box-shadow:0 2px 0 #d8d2c7;font-size:.96rem}
+.ord-n{flex:none;display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#eee;font-weight:700;font-size:.82rem}
+.ord-ziel .ord{background:var(--akzent-hell)}.ord-ziel .ord-n{background:var(--akzent);color:#fff}
+.ord.richtig{border-color:var(--ok);background:var(--ok-hell)}.ord.falsch{border-color:var(--fehler);background:var(--fehler-hell)}
+.ord:disabled{cursor:default;color:var(--text)}
+ol.loesung{margin:6px 0 4px;padding-left:22px}

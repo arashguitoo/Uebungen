@@ -67,4 +67,5 @@ export const db = DEMO ? Demo : Fire;
 /* ---------------- Hilfen ---------------- */
 export const CHARS = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
 export const zufall = (n, cs = CHARS) => Array.from(crypto.getRandomValues(new Uint32Array(n)), x => cs[x % cs.length]).join('');
+export const mitDemo = u => DEMO ? u + (u.includes('?') ? '&' : '?') + 'demo' : u;
 export const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));

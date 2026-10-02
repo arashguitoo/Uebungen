@@ -1,0 +1,1858 @@
+{
+ "id": "neue-wege-im-beruf",
+ "titel": "Neue Wege im Beruf",
+ "untertitel": "Pendeln oder umziehen · Wortstellung · Agentur für Arbeit · Anerkennung · Anfragen schreiben",
+ "niveau": "B1/B2",
+ "reihe": "Prüfungstraining B1/B2",
+ "farbe": "#0f6aa6",
+ "mix": 15,
+ "intro": "Sechs Teile – jeder Teil kann einzeln gespielt werden. Der **Prüfungsmix** zieht zufällig Aufgaben aus allen Teilen.",
+ "kompakt": [
+  {
+   "titel": "Meinung und Argumente",
+   "zeilen": [
+    "**Meinung:** Ich bin der Meinung, dass … · Meiner Ansicht nach … · Ich persönlich finde, dass …",
+    "**Argumente:** Ein wichtiges Argument dafür/dagegen ist, dass … · Ein weiterer Aspekt ist, dass … · Gegen … spricht, dass …",
+    "**Abwägen:** Das ist zwar …, aber … · Einerseits …, andererseits … · Es kommt darauf an, ob …",
+    "**Hypothetisch (Konjunktiv II):** Ich würde … · Für mich käme … nicht in Frage. · Ich könnte mir vorstellen, …"
+   ]
+  },
+  {
+   "titel": "Wortstellung im Mittelfeld",
+   "zeilen": [
+    "Merkformel für Angaben: **te – ka – mo – lo** (Wann? – Warum? – Wie? – Wo/Wohin/Woher?)",
+    "Ich bin **letztes Jahr** (te) **wegen eines Projekts** (ka) **ziemlich spontan** (mo) **nach Hamburg** (lo) gezogen.",
+    "Angabe auf Position 1: Verb direkt danach, dann das Subjekt. **Letztes Jahr** bin ich …",
+    "**Dativergänzung** meistens vor der temporalen Angabe: Ich teile **meinen Freunden** täglich alles mit.",
+    "**Akkusativergänzung** hinter den Angaben te, ka, mo – vor oder hinter der lokalen Angabe.",
+    "**Präpositionalergänzung** am Ende des Mittelfelds: Ich habe ständig **an meine Familie** gedacht.",
+    "**Pronomen** stehen direkt hinter dem Verb, Akkusativ vor Dativ: Ich gebe **es ihr** morgen."
+   ]
+  },
+  {
+   "titel": "Verben mit Präposition",
+   "zeilen": [
+    "denken **an** · sich gewöhnen **an** · sich wenden **an** · sich interessieren **für** · sich bewerben **um** · sich kümmern **um** · warten **auf** · sich informieren **über**"
+   ]
+  },
+  {
+   "titel": "Telefonieren",
+   "zeilen": [
+    "**Begrüßen:** Guten Tag, hier spricht … · Mein Name ist …",
+    "**Grund nennen:** Ich rufe an, weil … · Es geht um Folgendes: …",
+    "**Fragen:** Ich würde gern wissen, … · Könnten Sie mir sagen, ob …?",
+    "**Nachfragen:** Könnten Sie das bitte wiederholen? · Habe ich Sie richtig verstanden, dass …? · Sie meinen also, …",
+    "**Beenden:** Vielen Dank für die Auskunft. · Das hat mir sehr geholfen. · Auf Wiederhören!"
+   ]
+  },
+  {
+   "titel": "Anerkennung – wichtige Wörter",
+   "zeilen": [
+    "einen Antrag **stellen** · Zeugnisse übersetzen **lassen** · Unterlagen **einreichen** · eine Prüfung **ablegen / bestehen** · einen Beruf **ausüben**",
+    "**reglementierter Beruf:** Man darf nur mit Anerkennung arbeiten (z. B. Ärztin, Lehrer, Pflegefachfrau).",
+    "**nicht reglementierter Beruf:** Man darf auch ohne Anerkennung arbeiten (z. B. Elektroniker, Bürokauffrau) – die Anerkennung hilft aber bei der Jobsuche.",
+    "**Bescheid:** schriftliche Entscheidung · **Anpassungslehrgang:** Kurs, der fehlende Inhalte ausgleicht",
+    "Perfekt mit lassen: Sie hat ihr Diplom übersetzen **lassen** (nicht: gelassen)."
+   ]
+  },
+  {
+   "titel": "Eine Anfrage schreiben",
+   "zeilen": [
+    "**Einleiten:** Mit großem Interesse habe ich … gelesen. · Auf Ihrer Webseite bin ich auf … gestoßen. · … hat mich auf … aufmerksam gemacht.",
+    "**Über sich berichten:** Von Beruf bin ich … · Ich habe eine Ausbildung als … gemacht. · Zurzeit …",
+    "**Nach einem Platz fragen:** Gibt es noch freie Plätze für …? · Ich möchte mich gern für … anmelden.",
+    "**Informationen einholen:** Ich möchte gern wissen, ob … · Könnten Sie mir bitte mitteilen, welche …?",
+    "Indirekte Frage: Verb am Ende! Ich möchte wissen, wie lange das Verfahren **dauert**."
+   ]
+  }
+ ],
+ "module": [
+  {
+   "titel": "Pendeln oder umziehen?",
+   "icon": "🚆",
+   "kurz": "Forum lesen · Wortschatz · Meinung und Argumente · Forumsbeitrag",
+   "aufgaben": [
+    {
+     "id": "m1-forum",
+     "typ": "matrix",
+     "kontext": "Lesen",
+     "frage": "Lesen Sie die Beiträge im Forum „Für den Job umziehen?“. Wer sagt das?",
+     "posts": [
+      {
+       "name": "Jana_HRO",
+       "info": "Mo, 08:14",
+       "text": "Vor einem Jahr habe ich ein Angebot von einem Autozulieferer in Stuttgart bekommen – 700 km von Rostock entfernt. Ich habe nicht lange überlegt und zugesagt. Die Firma hat sogar die Umzugskosten übernommen. Am Anfang habe ich mich ziemlich allein gefühlt, aber dann bin ich in einen Chor eingetreten. Dort habe ich inzwischen echte Freunde gefunden. Ich würde es jederzeit wieder machen."
+      },
+      {
+       "name": "Mehmet_pendelt",
+       "info": "Mo, 12:40",
+       "text": "Ich fahre jeden Tag mit dem Zug von Lübeck nach Hamburg, das sind fast anderthalb Stunden pro Strecke. Die Zeit nutze ich, um zu lesen oder E-Mails zu beantworten. Was mich wirklich stört, sind die vielen Verspätungen. Trotzdem kommt ein Umzug für uns nicht in Frage: Meine Kinder gehen hier zur Schule und meine Frau hat in Lübeck eine feste Stelle."
+      },
+      {
+       "name": "Kerstin_vom_Land",
+       "info": "Di, 19:05",
+       "text": "Ich arbeite für eine Berliner Agentur, wohne aber in einem kleinen Dorf in Brandenburg. Das geht, weil ich fast nur im Homeoffice arbeite. Nur einmal im Monat fahre ich ins Büro. Manchmal fehlen mir die Kolleginnen und der Kaffee in der Teeküche. Mein Tipp: Richtet euch einen festen Arbeitsplatz ein und macht nach Feierabend den Laptop wirklich zu!"
+      },
+      {
+       "name": "Wochenendpapa",
+       "info": "Mi, 22:31",
+       "text": "Seit zwei Jahren wohne ich von Montag bis Freitag in einem kleinen Apartment in München, meine Familie lebt in Kassel. Freitagabend fahre ich nach Hause, Sonntagabend wieder zurück. Das ist anstrengend und teuer, weil wir zwei Mieten bezahlen. Ich bewerbe mich gerade bei Firmen in der Nähe von Kassel. So soll es nicht weitergehen."
+      }
+     ],
+     "wahl": [
+      "Jana",
+      "Mehmet",
+      "Kerstin",
+      "Wochenendpapa"
+     ],
+     "aussagen": [
+      [
+       "… hat am Arbeitsort eine zweite Wohnung.",
+       3
+      ],
+      [
+       "… nutzt die Fahrzeit für sinnvolle Dinge.",
+       1
+      ],
+      [
+       "… hat vom Arbeitgeber Geld für den Umzug bekommen.",
+       0
+      ],
+      [
+       "… ist nur selten persönlich am Arbeitsplatz.",
+       2
+      ],
+      [
+       "… möchte die eigene Situation bald ändern.",
+       3
+      ],
+      [
+       "… lehnt einen Umzug wegen der Familie ab.",
+       1
+      ],
+      [
+       "… hat durch ein Hobby neue Kontakte gefunden.",
+       0
+      ],
+      [
+       "… empfiehlt, Arbeit und Freizeit klar zu trennen.",
+       2
+      ]
+     ]
+    },
+    {
+     "id": "m1-w1",
+     "typ": "mc",
+     "kontext": "Wortschatz",
+     "frage": "Wer jeden Tag zwischen Wohnort und Arbeitsort hin- und herfährt, ___.",
+     "opts": [
+      "pendelt",
+      "zieht um",
+      "wandert aus",
+      "reist ab"
+     ],
+     "l": 0
+    },
+    {
+     "id": "m1-w2",
+     "typ": "mc",
+     "kontext": "Wortschatz",
+     "frage": "Zwei Stunden Fahrt pro Tag? Das würde ich für einen guten Job in ___ nehmen.",
+     "opts": [
+      "Kauf",
+      "Frage",
+      "Ordnung",
+      "Angriff"
+     ],
+     "l": 0,
+     "x": "etwas **in Kauf nehmen** = einen Nachteil akzeptieren. Achtung: etwas **in Angriff nehmen** = mit etwas beginnen."
+    },
+    {
+     "id": "m1-w3",
+     "typ": "mc",
+     "kontext": "Wortschatz",
+     "frage": "Ein Umzug kommt für mich überhaupt nicht in ___.",
+     "opts": [
+      "Frage",
+      "Kauf",
+      "Ordnung",
+      "Sicht"
+     ],
+     "l": 0,
+     "x": "**nicht in Frage kommen** = keine Möglichkeit sein."
+    },
+    {
+     "id": "m1-zu",
+     "typ": "zu",
+     "kontext": "Wortschatz",
+     "frage": "Was bedeuten die Ausdrücke?",
+     "paare": [
+      [
+       "etwas in Kauf nehmen",
+       "einen Nachteil akzeptieren"
+      ],
+      [
+       "alles stehen und liegen lassen",
+       "plötzlich alles aufgeben und weggehen"
+      ],
+      [
+       "Heimweh haben",
+       "sich nach dem Zuhause sehnen"
+      ],
+      [
+       "in Kontakt bleiben",
+       "sich weiter regelmäßig melden"
+      ],
+      [
+       "sich an etwas gewöhnen",
+       "etwas nach einiger Zeit normal finden"
+      ]
+     ]
+    },
+    {
+     "id": "m1-k1",
+     "typ": "mc",
+     "kontext": "Grammatik",
+     "frage": "Für eine gute Stelle ___ ich sofort in eine andere Stadt ziehen.",
+     "opts": [
+      "würde",
+      "werde",
+      "wurde",
+      "wäre"
+     ],
+     "l": 0,
+     "x": "Für hypothetische Situationen benutzt man den **Konjunktiv II**: würde + Infinitiv."
+    },
+    {
+     "id": "m1-k2",
+     "typ": "mc",
+     "kontext": "Grammatik",
+     "frage": "Ein Wechsel ___ für mich nur in Frage, wenn ich komplett im Homeoffice arbeiten könnte.",
+     "opts": [
+      "käme",
+      "kam",
+      "kamen",
+      "kommte"
+     ],
+     "l": 0,
+     "x": "kommen → kam → Konjunktiv II: **käme** (mit Umlaut)."
+    },
+    {
+     "id": "m1-bau",
+     "typ": "bau",
+     "kontext": "Satzbau",
+     "frage": "Bilden Sie den Satz.",
+     "steine": [
+      "Ich",
+      "würde",
+      "nie",
+      "wegen eines Jobs",
+      "alles",
+      "stehen und liegen",
+      "lassen."
+     ],
+     "alt": [
+      [
+       "Ich",
+       "würde",
+       "wegen eines Jobs",
+       "nie",
+       "alles",
+       "stehen und liegen",
+       "lassen."
+      ]
+     ]
+    },
+    {
+     "id": "m1-rm",
+     "typ": "matrix",
+     "kontext": "Redemittel",
+     "frage": "Wozu benutzt man diese Redemittel? Ordnen Sie zu.",
+     "wahl": [
+      "Meinung äußern",
+      "Argument nennen",
+      "abwägen"
+     ],
+     "aussagen": [
+      [
+       "Ich bin der Meinung, dass …",
+       0
+      ],
+      [
+       "Meiner Ansicht nach …",
+       0
+      ],
+      [
+       "Ich persönlich finde, dass …",
+       0
+      ],
+      [
+       "Ein wichtiges Argument dafür ist, dass …",
+       1
+      ],
+      [
+       "Gegen einen Umzug spricht, dass …",
+       1
+      ],
+      [
+       "Ein weiterer Aspekt ist, dass …",
+       1
+      ],
+      [
+       "Das ist zwar …, aber …",
+       2
+      ],
+      [
+       "Einerseits …, andererseits …",
+       2
+      ],
+      [
+       "Es kommt darauf an, ob …",
+       2
+      ]
+     ]
+    },
+    {
+     "id": "m1-rm2",
+     "typ": "mc",
+     "kontext": "Redemittel",
+     "frage": "Sie möchten in einer Diskussion ein Gegenargument einleiten. Was passt?",
+     "opts": [
+      "Auf der anderen Seite muss man bedenken, dass …",
+      "Da bin ich ganz Ihrer Meinung.",
+      "Vielen Dank für Ihre Aufmerksamkeit.",
+      "Mit freundlichen Grüßen"
+     ],
+     "l": 0
+    },
+    {
+     "id": "m1-lt",
+     "typ": "luecke",
+     "kontext": "Schreiben",
+     "frage": "Ergänzen Sie den Forumsbeitrag. Wählen Sie für jede Lücke das passende Wort.",
+     "text": "Hallo zusammen,\n\nich habe gestern erfahren, dass unsere Firma bald an einen neuen Standort {0}, der 75 km von hier entfernt ist. {1} Meinung nach ist das keine gute Nachricht. Der neue Standort ist {2} mit modernster Technik ausgestattet, {3} die Fahrt kostet jeden Tag fast drei Stunden. {4} spricht auch, dass viele Kolleginnen und Kollegen Kinder haben und nicht einfach umziehen können. {5} wäre es eine gute Lösung, wenn wir zwei Tage pro Woche im Homeoffice arbeiten {6}.\n\nWas denkt ihr?\nViele Grüße\nSamira",
+     "gaps": [
+      {
+       "opts": [
+        "umzieht",
+        "umziehen",
+        "umgezogen"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "Meiner",
+        "Mein",
+        "Meinen"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "zwar",
+        "aber",
+        "doch"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "aber",
+        "denn",
+        "weil"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "Dagegen",
+        "Dafür",
+        "Deshalb"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "Deshalb",
+        "Weil",
+        "Obwohl"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "könnten",
+        "konnten",
+        "gekonnt"
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "m1-ord",
+     "typ": "ordnen",
+     "kontext": "Schreiben",
+     "frage": "Ein gut gegliederter Forumsbeitrag: Bringen Sie die Sätze in eine sinnvolle Reihenfolge.",
+     "zeilen": [
+      "Hallo zusammen, ich möchte auch etwas zum Thema Homeoffice schreiben.",
+      "Ich persönlich finde die neue Regelung grundsätzlich gut.",
+      "Ein wichtiges Argument dafür ist, dass ich mir die lange Fahrt spare.",
+      "Letzte Woche habe ich zum Beispiel fast fünf Stunden Fahrzeit gespart.",
+      "Andererseits fehlt mir im Homeoffice manchmal der Kontakt zu den Kollegen.",
+      "Insgesamt überwiegen für mich aber die Vorteile. Viele Grüße, Tom"
+     ],
+     "x": "Gliederung: Einleitung → eigene Meinung → Argument → Beispiel → Gegenargument → Fazit und Gruß."
+    }
+   ]
+  },
+  {
+   "titel": "Wortstellung im Satz",
+   "icon": "🧩",
+   "kurz": "te – ka – mo – lo · Dativ und Akkusativ · Pronomen · Präpositionalergänzungen",
+   "aufgaben": [
+    {
+     "id": "m2-fragen",
+     "typ": "zu",
+     "kontext": "Angaben",
+     "frage": "Welche Frage passt zu welcher Angabe?",
+     "paare": [
+      [
+       "temporal",
+       "Wann? Seit wann? Wie lange?"
+      ],
+      [
+       "kausal",
+       "Warum? Weshalb?"
+      ],
+      [
+       "modal",
+       "Wie? Auf welche Art?"
+      ],
+      [
+       "lokal",
+       "Wo? Wohin? Woher?"
+      ]
+     ]
+    },
+    {
+     "id": "m2-ang",
+     "typ": "matrix",
+     "kontext": "Angaben",
+     "frage": "Was für eine Angabe ist das?",
+     "wahl": [
+      "temporal",
+      "kausal",
+      "modal",
+      "lokal"
+     ],
+     "aussagen": [
+      [
+       "letztes Jahr",
+       0
+      ],
+      [
+       "wegen eines Projekts",
+       1
+      ],
+      [
+       "ziemlich spontan",
+       2
+      ],
+      [
+       "nach Hamburg",
+       3
+      ],
+      [
+       "aus Liebe",
+       1
+      ],
+      [
+       "jeden Morgen",
+       0
+      ],
+      [
+       "mit dem Auto",
+       2
+      ],
+      [
+       "im Homeoffice",
+       3
+      ],
+      [
+       "seit drei Monaten",
+       0
+      ],
+      [
+       "wegen des Streiks",
+       1
+      ]
+     ]
+    },
+    {
+     "id": "m2-merk",
+     "typ": "mc",
+     "kontext": "Angaben",
+     "frage": "Wie heißt die Merkformel für die Reihenfolge der Angaben im Mittelfeld?",
+     "opts": [
+      "te – ka – mo – lo",
+      "lo – mo – ka – te",
+      "ka – te – lo – mo",
+      "te – lo – ka – mo"
+     ],
+     "l": 0,
+     "x": "Wann? – Warum? – Wie? – Wo? Ein Satz nach dieser Formel ist immer richtig."
+    },
+    {
+     "id": "m2-b1",
+     "typ": "bau",
+     "kontext": "Satzbau",
+     "frage": "Bilden Sie den Satz nach der Merkformel.",
+     "steine": [
+      "Ich",
+      "bin",
+      "letztes Jahr",
+      "wegen eines neuen Projekts",
+      "ziemlich spontan",
+      "nach Kiel",
+      "gezogen."
+     ]
+    },
+    {
+     "id": "m2-b2",
+     "typ": "bau",
+     "kontext": "Satzbau",
+     "frage": "Bilden Sie den Satz nach der Merkformel.",
+     "steine": [
+      "Frau Koch",
+      "fährt",
+      "jeden Morgen",
+      "wegen der Staus",
+      "mit dem Zug",
+      "ins Büro."
+     ]
+    },
+    {
+     "id": "m2-b3",
+     "typ": "bau",
+     "kontext": "Satzbau",
+     "frage": "Betonen Sie die Zeitangabe: Sie steht auf Position 1.",
+     "steine": [
+      "Seit drei Jahren",
+      "pendelt",
+      "Herr Ahmadi",
+      "aus beruflichen Gründen",
+      "mit dem Auto",
+      "nach Lübeck."
+     ],
+     "x": "Steht eine Angabe auf Position 1, folgt direkt das Verb und dann das Subjekt. Die übrigen Angaben bleiben in derselben Reihenfolge."
+    },
+    {
+     "id": "m2-dat",
+     "typ": "mc",
+     "kontext": "Ergänzungen",
+     "frage": "Welcher Satz folgt der Regel „Die Dativergänzung steht meistens vor der temporalen Angabe“?",
+     "opts": [
+      "Ich habe meiner Schwester gestern alle Neuigkeiten erzählt.",
+      "Ich habe gestern alle Neuigkeiten meiner Schwester erzählt.",
+      "Ich habe alle Neuigkeiten gestern meiner Schwester erzählt.",
+      "Meiner Schwester habe ich alle Neuigkeiten erzählt gestern."
+     ],
+     "l": 0
+    },
+    {
+     "id": "m2-b4",
+     "typ": "bau",
+     "kontext": "Ergänzungen",
+     "frage": "Bilden Sie den Satz nach der Regel: Dativ – temporal – Akkusativ.",
+     "steine": [
+      "Ich",
+      "teile",
+      "meinen Eltern",
+      "fast täglich",
+      "alle Neuigkeiten",
+      "mit."
+     ]
+    },
+    {
+     "id": "m2-b5",
+     "typ": "bau",
+     "kontext": "Ergänzungen",
+     "frage": "Die Akkusativergänzung darf vor oder hinter der lokalen Angabe stehen. Bilden Sie den Satz.",
+     "steine": [
+      "Meine Freunde",
+      "schicken",
+      "mir",
+      "jede Woche",
+      "viele Fotos",
+      "nach Kiel"
+     ],
+     "alt": [
+      [
+       "Meine Freunde",
+       "schicken",
+       "mir",
+       "jede Woche",
+       "nach Kiel",
+       "viele Fotos"
+      ]
+     ]
+    },
+    {
+     "id": "m2-pr1",
+     "typ": "mc",
+     "kontext": "Pronomen",
+     "frage": "Hast du Frau Svoboda den Lebenslauf geschickt? – Ja, ich habe ___ gestern geschickt.",
+     "opts": [
+      "ihn ihr",
+      "ihr ihn",
+      "ihn sie",
+      "ihr es"
+     ],
+     "l": 0,
+     "x": "Zwei Pronomen: **Akkusativ vor Dativ** – ich habe ihn ihr geschickt."
+    },
+    {
+     "id": "m2-pr2",
+     "typ": "bau",
+     "kontext": "Pronomen",
+     "frage": "„Wann bekommt Herr Lenz seine Unterlagen zurück?“ – Antworten Sie mit Pronomen.",
+     "steine": [
+      "Ich",
+      "gebe",
+      "sie",
+      "ihm",
+      "morgen",
+      "zurück."
+     ],
+     "x": "Pronomen stehen direkt hinter dem Verb, der Akkusativ (sie) vor dem Dativ (ihm)."
+    },
+    {
+     "id": "m2-regel",
+     "typ": "matrix",
+     "kontext": "Regeln",
+     "frage": "Stimmen die Regeln? Richtig oder falsch?",
+     "aussagen": [
+      [
+       "Die Dativergänzung steht meistens vor der temporalen Angabe.",
+       true
+      ],
+      [
+       "Die Akkusativergänzung steht meistens vor den temporalen Angaben.",
+       false
+      ],
+      [
+       "Präpositionalergänzungen stehen normalerweise am Ende des Mittelfelds.",
+       true
+      ],
+      [
+       "Für die Reihenfolge der Angaben gibt es sehr strenge, feste Regeln.",
+       false
+      ],
+      [
+       "Wenn eine Angabe auf Position 1 steht, folgt direkt das Verb.",
+       true
+      ],
+      [
+       "Pronomen stehen meistens am Ende des Mittelfelds.",
+       false
+      ]
+     ]
+    },
+    {
+     "id": "m2-praep",
+     "typ": "matrix",
+     "kontext": "Präpositionen",
+     "frage": "Welche Präposition gehört zum Verb?",
+     "wahl": [
+      "an",
+      "auf",
+      "für",
+      "über",
+      "um"
+     ],
+     "aussagen": [
+      [
+       "denken ___ (die Familie)",
+       0
+      ],
+      [
+       "sich gewöhnen ___ (die neue Situation)",
+       0
+      ],
+      [
+       "sich interessieren ___ (eine Weiterbildung)",
+       2
+      ],
+      [
+       "sich bewerben ___ (eine Stelle)",
+       4
+      ],
+      [
+       "sich kümmern ___ (die Unterlagen)",
+       4
+      ],
+      [
+       "warten ___ (den Bescheid)",
+       1
+      ],
+      [
+       "sich informieren ___ (die Anerkennung)",
+       3
+      ],
+      [
+       "sich wenden ___ (die Beratungsstelle)",
+       0
+      ]
+     ]
+    },
+    {
+     "id": "m2-b6",
+     "typ": "bau",
+     "kontext": "Präpositionen",
+     "frage": "Die Präpositionalergänzung steht am Ende des Mittelfelds. Bilden Sie den Satz.",
+     "steine": [
+      "Ich",
+      "habe",
+      "am Anfang",
+      "ständig",
+      "an meine Freunde",
+      "gedacht."
+     ]
+    },
+    {
+     "id": "m2-b7",
+     "typ": "bau",
+     "kontext": "Satzbau",
+     "frage": "Auch im Nebensatz gilt die Merkformel. Bilden Sie den Satz.",
+     "steine": [
+      "Ich habe gekündigt,",
+      "weil",
+      "ich",
+      "im Sommer",
+      "wegen meiner Familie",
+      "nach Kiel",
+      "ziehe."
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Bei der Agentur für Arbeit",
+   "icon": "📞",
+   "kurz": "arbeitssuchend oder arbeitslos · Telefonieren · Behördenbrief · E-Mail",
+   "aufgaben": [
+    {
+     "id": "m3-melden",
+     "typ": "matrix",
+     "kontext": "Landeskunde",
+     "frage": "Arbeitssuchend oder arbeitslos? Ordnen Sie zu.",
+     "wahl": [
+      "arbeitssuchend",
+      "arbeitslos"
+     ],
+     "aussagen": [
+      [
+       "Man hat noch eine Stelle, aber sie endet bald.",
+       0
+      ],
+      [
+       "Man hat zurzeit keine Arbeit.",
+       1
+      ],
+      [
+       "Man muss sich spätestens drei Monate vor dem Ende des Arbeitsvertrags melden.",
+       0
+      ],
+      [
+       "Man muss sich spätestens am ersten Tag ohne Arbeit melden.",
+       1
+      ],
+      [
+       "Diese Meldung ist die Voraussetzung für Arbeitslosengeld.",
+       1
+      ],
+      [
+       "Man sucht eine neue Stelle, obwohl der befristete Vertrag noch läuft.",
+       0
+      ]
+     ],
+     "x": "Weiß man erst kurzfristig, dass die Stelle endet, muss man sich innerhalb von drei Tagen arbeitssuchend melden."
+    },
+    {
+     "id": "m3-w1",
+     "typ": "mc",
+     "kontext": "Wortschatz",
+     "frage": "Ihr Arbeitsvertrag gilt von Anfang an nur bis zum 31. März. Er ist ___.",
+     "opts": [
+      "befristet",
+      "unbefristet",
+      "verlängert",
+      "gekündigt"
+     ],
+     "l": 0,
+     "x": "**befristet** = zeitlich begrenzt."
+    },
+    {
+     "id": "m3-w2",
+     "typ": "mc",
+     "kontext": "Wortschatz",
+     "frage": "Bitte ___ Sie sich spätestens drei Monate vor dem Ende Ihres Arbeitsvertrags arbeitssuchend.",
+     "opts": [
+      "melden",
+      "bewerben",
+      "beantragen",
+      "anmelden"
+     ],
+     "l": 0,
+     "x": "sich arbeitssuchend / arbeitslos **melden**"
+    },
+    {
+     "id": "m3-tel",
+     "typ": "ordnen",
+     "kontext": "Telefonieren",
+     "frage": "Ein Anruf bei der Agentur für Arbeit. Bringen Sie das Gespräch in die richtige Reihenfolge.",
+     "zeilen": [
+      "▶ Agentur für Arbeit Kiel, Lindner. Was kann ich für Sie tun?",
+      "◀ Guten Tag, mein Name ist Ali Rezai. Ich rufe an, weil mein Arbeitsvertrag Ende März ausläuft.",
+      "▶ Dann sollten Sie sich jetzt arbeitssuchend melden. Wie war Ihr Name noch einmal?",
+      "◀ Rezai. Ich buchstabiere: R – E – Z – A – I.",
+      "▶ Danke. Ich schicke Ihnen eine Einladung zu einem ersten Gespräch. Bitte bringen Sie Ihren Lebenslauf mit.",
+      "◀ Habe ich Sie richtig verstanden, dass ich die Einladung per Post bekomme?",
+      "▶ Ja, genau. ◀ Gut, vielen Dank für die Auskunft. Auf Wiederhören!"
+     ]
+    },
+    {
+     "id": "m3-rm",
+     "typ": "matrix",
+     "kontext": "Telefonieren",
+     "frage": "Ein Telefongespräch führen: Wozu passt das Redemittel?",
+     "wahl": [
+      "begrüßen",
+      "Grund nennen",
+      "Fragen stellen",
+      "nachfragen",
+      "beenden"
+     ],
+     "aussagen": [
+      [
+       "Guten Tag, hier spricht …",
+       0
+      ],
+      [
+       "Es geht um Folgendes: …",
+       1
+      ],
+      [
+       "Ich rufe an, weil …",
+       1
+      ],
+      [
+       "Könnten Sie mir sagen, ob …?",
+       2
+      ],
+      [
+       "Ich würde gern wissen, …",
+       2
+      ],
+      [
+       "Könnten Sie das bitte noch einmal wiederholen?",
+       3
+      ],
+      [
+       "Sie meinen also, …",
+       3
+      ],
+      [
+       "Das hat mir sehr geholfen, vielen Dank.",
+       4
+      ]
+     ]
+    },
+    {
+     "id": "m3-s1",
+     "typ": "mc",
+     "kontext": "Telefonieren",
+     "frage": "Sie haben den Namen der Mitarbeiterin nicht verstanden. Was sagen Sie?",
+     "opts": [
+      "Entschuldigung, könnten Sie Ihren Namen bitte buchstabieren?",
+      "Wie bitte? Sprechen Sie doch deutlich!",
+      "Ihr Name ist nicht so wichtig.",
+      "Das hat mir sehr geholfen."
+     ],
+     "l": 0
+    },
+    {
+     "id": "m3-s2",
+     "typ": "mc",
+     "kontext": "Telefonieren",
+     "frage": "Am Ende des Gesprächs möchten Sie sicher sein, dass Sie alles richtig verstanden haben. Was sagen Sie?",
+     "opts": [
+      "Ich fasse kurz zusammen: Mein Termin ist am 10. November um 10:15 Uhr in Raum 3.12, richtig?",
+      "Ich rufe an, weil ich einen Termin brauche.",
+      "Guten Tag, hier spricht Ali Rezai.",
+      "Können Sie bitte lauter sprechen?"
+     ],
+     "l": 0
+    },
+    {
+     "id": "m3-brief",
+     "typ": "matrix",
+     "kontext": "Lesen",
+     "frage": "Lesen Sie den Brief. Richtig oder falsch?",
+     "textTitel": "Agentur für Arbeit Kiel – Einladung",
+     "text": "Sehr geehrter Herr Rezai,\n\nSie haben sich telefonisch arbeitssuchend gemeldet. Darüber möchte ich mit Ihnen in einem ersten Gespräch sprechen. Bitte kommen Sie am **10. November um 10:15 Uhr** in die Agentur für Arbeit Kiel, **Raum 3.12**.\n\nBitte bringen Sie folgende Unterlagen mit:\n– Personalausweis oder Reisepass mit Meldebestätigung\n– Ihren aktuellen Arbeitsvertrag\n– einen aktuellen Lebenslauf\n\nWenn Sie den Termin nicht wahrnehmen können, teilen Sie uns dies bitte sofort mit. Im Krankheitsfall benötigen wir eine ärztliche Bescheinigung. Bitte beachten Sie: Wenn Sie ohne wichtigen Grund nicht zum Termin kommen, kann das Nachteile für Ihr späteres Arbeitslosengeld haben (siehe Rechtsfolgenbelehrung).\n\nFahrkosten können auf Antrag erstattet werden. Bei Fragen erreichen Sie uns unter unserer kostenlosen Servicenummer.\n\nMit freundlichen Grüßen\nim Auftrag\nPetra Lindner\nBerufsberaterin",
+     "aussagen": [
+      [
+       "Herr Rezai soll zu einem Beratungsgespräch kommen.",
+       true
+      ],
+      [
+       "Er muss selbst anrufen, um einen Termin zu vereinbaren.",
+       false
+      ],
+      [
+       "Er soll seinen Arbeitsvertrag mitbringen.",
+       true
+      ],
+      [
+       "Wenn er krank ist, braucht er keine Bescheinigung.",
+       false
+      ],
+      [
+       "Wer ohne wichtigen Grund nicht kommt, muss mit Nachteilen rechnen.",
+       true
+      ],
+      [
+       "Die Fahrkosten werden automatisch überwiesen.",
+       false
+      ],
+      [
+       "Für Fragen gibt es eine kostenlose Telefonnummer.",
+       true
+      ]
+     ]
+    },
+    {
+     "id": "m3-zu",
+     "typ": "zu",
+     "kontext": "Wortschatz",
+     "frage": "Behördendeutsch: Was bedeutet das?",
+     "paare": [
+      [
+       "der Bescheid",
+       "schriftliche Entscheidung einer Behörde"
+      ],
+      [
+       "die Rechtsfolgenbelehrung",
+       "Hinweis, was passiert, wenn man Pflichten nicht erfüllt"
+      ],
+      [
+       "die Meldebestätigung",
+       "Nachweis, wo man wohnt"
+      ],
+      [
+       "befristet",
+       "zeitlich begrenzt"
+      ],
+      [
+       "erstatten",
+       "Kosten zurückzahlen"
+      ],
+      [
+       "einen Termin wahrnehmen",
+       "zu einem Termin hingehen"
+      ]
+     ]
+    },
+    {
+     "id": "m3-mail",
+     "typ": "luecke",
+     "kontext": "Schreiben",
+     "frage": "Herr Rezai kann nicht zum Termin kommen. Ergänzen Sie seine E-Mail.",
+     "text": "Betreff: Termin am 10. November – Bitte um einen neuen Termin\n\nSehr geehrte Frau Lindner,\n\nvielen Dank für Ihre Einladung {0} Gespräch am 10. November. Leider kann ich den Termin nicht {1}, {2} ich an diesem Tag ein Vorstellungsgespräch in Hamburg habe. {3} Sie mir bitte einen neuen Termin geben? {4} passt mir jeder Vormittag in der nächsten Woche.\n\nIch {5} mich über eine kurze Antwort.\n\nMit freundlichen Grüßen\nAli Rezai",
+     "gaps": [
+      {
+       "opts": [
+        "zum",
+        "zur",
+        "beim"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "wahrnehmen",
+        "übernehmen",
+        "aufnehmen"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "weil",
+        "deshalb",
+        "trotzdem"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "Könnten",
+        "Müssten",
+        "Sollten"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "Grundsätzlich",
+        "Trotzdem",
+        "Dagegen"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "freue",
+        "würde",
+        "freuen"
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "m3-b1",
+     "typ": "bau",
+     "kontext": "Telefonieren",
+     "frage": "Fragen Sie höflich nach den Unterlagen. Bilden Sie den Satz.",
+     "steine": [
+      "Ich würde gern wissen,",
+      "welche Unterlagen",
+      "ich",
+      "zum Termin",
+      "mitbringen",
+      "muss."
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Mein Abschluss",
+   "icon": "🎓",
+   "kurz": "Anerkennung · Nomen-Verb-Verbindungen · lange Wörter · Zeitungsartikel · Flyer",
+   "aufgaben": [
+    {
+     "id": "m4-sort",
+     "typ": "matrix",
+     "kontext": "Wortschatz",
+     "frage": "Was gehört zu „einen Beruf lernen“, was zu „einen Beruf anerkennen lassen“?",
+     "wahl": [
+      "einen Beruf lernen",
+      "anerkennen lassen"
+     ],
+     "aussagen": [
+      [
+       "eine Ausbildung machen",
+       0
+      ],
+      [
+       "zur Berufsschule gehen",
+       0
+      ],
+      [
+       "Azubi sein",
+       0
+      ],
+      [
+       "eine Zwischenprüfung ablegen",
+       0
+      ],
+      [
+       "Zeugnisse übersetzen lassen",
+       1
+      ],
+      [
+       "beglaubigte Kopien einreichen",
+       1
+      ],
+      [
+       "einen Antrag auf Anerkennung stellen",
+       1
+      ],
+      [
+       "einen Bescheid über die Gleichwertigkeit bekommen",
+       1
+      ]
+     ]
+    },
+    {
+     "id": "m4-nvv",
+     "typ": "zu",
+     "kontext": "Wortschatz",
+     "frage": "Welches Verb passt? Verbinden Sie.",
+     "paare": [
+      [
+       "einen Antrag",
+       "stellen"
+      ],
+      [
+       "eine Prüfung",
+       "bestehen"
+      ],
+      [
+       "eine Übersetzung",
+       "anfertigen lassen"
+      ],
+      [
+       "einen Beruf",
+       "ausüben"
+      ],
+      [
+       "Berufserfahrung",
+       "sammeln"
+      ],
+      [
+       "eine Frist",
+       "einhalten"
+      ]
+     ],
+     "x": "Achtung: eine Prüfung **ablegen** = machen, eine Prüfung **bestehen** = schaffen."
+    },
+    {
+     "id": "m4-komp",
+     "typ": "zu",
+     "kontext": "Lange Wörter",
+     "frage": "Lange Wörter verstehen: Was bedeutet das Wort?",
+     "paare": [
+      [
+       "der Anpassungslehrgang",
+       "Kurs, der fehlende Ausbildungsinhalte ausgleicht"
+      ],
+      [
+       "die Berufszulassung",
+       "Erlaubnis, einen Beruf auszuüben"
+      ],
+      [
+       "das Muttersprachniveau",
+       "Sprachkenntnisse wie in der Erstsprache"
+      ],
+      [
+       "die Ausbildungsinhalte",
+       "Themen, die man in der Ausbildung lernt"
+      ],
+      [
+       "die Anerkennungsberaterin",
+       "Frau, die bei der Anerkennung berät"
+      ],
+      [
+       "das Förderprogramm",
+       "Programm, das Menschen unterstützt"
+      ]
+     ]
+    },
+    {
+     "id": "m4-f1",
+     "typ": "mc",
+     "kontext": "Lange Wörter",
+     "frage": "Beruf + Abschluss = ?",
+     "opts": [
+      "der Berufsabschluss",
+      "das Berufsabschluss",
+      "der Berufabschluss",
+      "die Berufsabschluss"
+     ],
+     "l": 0,
+     "x": "Das **letzte** Wort bestimmt den Artikel: der Abschluss → der Berufsabschluss. Oft steht ein Fugen-s dazwischen."
+    },
+    {
+     "id": "m4-f2",
+     "typ": "mc",
+     "kontext": "Lange Wörter",
+     "frage": "Anerkennung + Verfahren = ?",
+     "opts": [
+      "das Anerkennungsverfahren",
+      "die Anerkennungsverfahren",
+      "das Anerkennungverfahren",
+      "der Anerkennungsverfahren"
+     ],
+     "l": 0,
+     "x": "Nach **-ung** steht fast immer ein Fugen-s: Anerkennung**s**verfahren, Wohnung**s**suche."
+    },
+    {
+     "id": "m4-f3",
+     "typ": "mc",
+     "kontext": "Lange Wörter",
+     "frage": "Das Wort „Praktikumszeit“ bedeutet …",
+     "opts": [
+      "die Zeit, in der man ein Praktikum macht.",
+      "ein Praktikum, das pünktlich beginnt.",
+      "die Uhrzeit, zu der das Praktikum anfängt.",
+      "eine Zeitung für Praktikanten."
+     ],
+     "l": 0
+    },
+    {
+     "id": "m4-l1",
+     "typ": "mc",
+     "kontext": "Grammatik",
+     "frage": "Ich ___ meine Zeugnisse von einer vereidigten Übersetzerin übersetzen.",
+     "opts": [
+      "lasse",
+      "lässt",
+      "habe",
+      "werde gelassen"
+     ],
+     "l": 0,
+     "x": "etwas machen **lassen** = jemand anderes macht es für mich."
+    },
+    {
+     "id": "m4-l2",
+     "typ": "mc",
+     "kontext": "Grammatik",
+     "frage": "Sie hat ihren Abschluss in Deutschland anerkennen ___.",
+     "opts": [
+      "lassen",
+      "gelassen",
+      "zu lassen",
+      "lässt"
+     ],
+     "l": 0,
+     "x": "Perfekt mit zwei Infinitiven: hat … anerkennen **lassen** (nicht: gelassen)."
+    },
+    {
+     "id": "m4-b1",
+     "typ": "bau",
+     "kontext": "Satzbau",
+     "frage": "Bilden Sie die Frage.",
+     "steine": [
+      "Was",
+      "muss",
+      "man",
+      "tun,",
+      "um",
+      "seinen Abschluss",
+      "anerkennen",
+      "zu lassen?"
+     ]
+    },
+    {
+     "id": "m4-art",
+     "typ": "lesen",
+     "kontext": "Lesen",
+     "frage": "Lesen Sie den Zeitungsartikel und beantworten Sie die Fragen.",
+     "textTitel": "„Jetzt habe ich es schwarz auf weiß“",
+     "text": "Tarek Mansour steht in einer Werkstatt in Neumünster und prüft eine Schaltanlage. Der 34-Jährige ist Elektroniker – und das schon seit vielen Jahren. In Ägypten hat er eine dreijährige Ausbildung gemacht und danach acht Jahre in einer Firma für Industrieanlagen gearbeitet.\n\nAls er vor vier Jahren nach Deutschland kam, fand er schnell einen Job als Helfer. „Ich durfte arbeiten, aber nur einfache Aufgaben machen. Das war frustrierend“, erzählt er. Elektroniker ist in Deutschland kein reglementierter Beruf. Man braucht also keine Anerkennung, um in diesem Beruf zu arbeiten. Viele Arbeitgeber wollen aber wissen, ob eine ausländische Ausbildung einer deutschen entspricht.\n\nDeshalb stellte Mansour mit Hilfe einer Beratungsstelle einen Antrag bei der Handwerkskammer. Er ließ seine Zeugnisse übersetzen und reichte Nachweise über seine Berufserfahrung ein. Nach drei Monaten kam der Bescheid: Seine Ausbildung ist teilweise gleichwertig. Es fehlten vor allem Kenntnisse über deutsche Sicherheitsvorschriften.\n\nMansour machte deshalb eine sechsmonatige Anpassungsqualifizierung in seinem Betrieb. Die Kosten für das Verfahren übernahm das Jobcenter. Seit dem Frühjahr ist seine Ausbildung voll anerkannt – und Mansour arbeitet nicht mehr als Helfer, sondern als Fachkraft. „Jetzt habe ich es schwarz auf weiß“, sagt er und lacht. Sein nächstes Ziel: die Meisterprüfung.",
+     "fragen": [
+      {
+       "f": "Warum war Tarek Mansour mit seiner ersten Stelle in Deutschland unzufrieden?",
+       "opts": [
+        "Er durfte nur einfache Arbeiten machen.",
+        "Er hat zu wenig Geld verdient.",
+        "Die Firma war zu weit weg.",
+        "Er durfte gar nicht arbeiten."
+       ],
+       "l": 0
+      },
+      {
+       "f": "Was bedeutet „kein reglementierter Beruf“ im Text?",
+       "opts": [
+        "Man darf auch ohne Anerkennung in dem Beruf arbeiten.",
+        "Für den Beruf gibt es keine Ausbildung.",
+        "Der Beruf ist in Deutschland nicht erlaubt.",
+        "Man braucht für den Beruf einen Meistertitel."
+       ],
+       "l": 0
+      },
+      {
+       "f": "Was hat Mansour für den Antrag gemacht?",
+       "opts": [
+        "Er hat Übersetzungen und Nachweise eingereicht.",
+        "Er hat eine Prüfung in Ägypten abgelegt.",
+        "Er hat einen Deutschkurs auf Muttersprachniveau besucht.",
+        "Er hat die Kosten selbst bezahlt."
+       ],
+       "l": 0
+      },
+      {
+       "f": "Was stand im Bescheid?",
+       "opts": [
+        "Seine Ausbildung ist nur zum Teil gleichwertig.",
+        "Seine Ausbildung wird nicht anerkannt.",
+        "Er muss eine neue Ausbildung machen.",
+        "Er darf sofort als Meister arbeiten."
+       ],
+       "l": 0
+      },
+      {
+       "f": "Was hat sich durch die Anerkennung für Mansour verändert?",
+       "opts": [
+        "Er arbeitet jetzt als Fachkraft.",
+        "Er hat eine eigene Firma gegründet.",
+        "Er hat die Meisterprüfung bestanden.",
+        "Er ist zurück nach Ägypten gegangen."
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "m4-flyer",
+     "typ": "matrix",
+     "kontext": "Lesen",
+     "frage": "Lesen Sie den Flyer. Richtig oder falsch?",
+     "textTitel": "Informationsabend: Anerkennung ausländischer Berufsabschlüsse",
+     "text": "Sie haben im Ausland einen Beruf gelernt oder studiert? Sie möchten wissen, wie Sie Ihren Abschluss in Deutschland anerkennen lassen können?\n\nDann kommen Sie zu unserem **kostenlosen** Informationsabend!\n\n**Wann?** jeden ersten Donnerstag im Monat, 17:00–19:00 Uhr\n**Wo?** Volkshochschule, Raum 204\n**Referentin:** Dr. Lena Petersen, Anerkennungsberaterin\n\nThemen: Welche Stelle ist für meinen Beruf zuständig? Welche Unterlagen brauche ich? Was kostet das Verfahren und wer hilft bei der Finanzierung?\n\nDie Teilnehmerzahl ist begrenzt. Bitte melden Sie sich spätestens zwei Tage vorher per E-Mail an.",
+     "aussagen": [
+      [
+       "Der Informationsabend kostet nichts.",
+       true
+      ],
+      [
+       "Die Veranstaltung findet jeden Donnerstag statt.",
+       false
+      ],
+      [
+       "Man erfährt, welche Stelle für den eigenen Beruf zuständig ist.",
+       true
+      ],
+      [
+       "Man kann ohne Anmeldung kommen.",
+       false
+      ],
+      [
+       "Es geht auch um die Finanzierung des Verfahrens.",
+       true
+      ],
+      [
+       "Die Referentin ist Übersetzerin.",
+       false
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Eine Anfrage schreiben",
+   "icon": "✉️",
+   "kurz": "Redemittel · formell oder informell · indirekte Fragen · E-Mail",
+   "aufgaben": [
+    {
+     "id": "m5-sort",
+     "typ": "matrix",
+     "kontext": "Redemittel",
+     "frage": "Eine Anfrage schreiben: Wozu passt der Satz?",
+     "wahl": [
+      "Anfrage einleiten",
+      "über sich berichten",
+      "nach einem Platz fragen",
+      "Informationen einholen"
+     ],
+     "aussagen": [
+      [
+       "Auf der Webseite der Volkshochschule habe ich gelesen, dass …",
+       0
+      ],
+      [
+       "Eine Kollegin hat mich auf Ihr Seminar aufmerksam gemacht.",
+       0
+      ],
+      [
+       "Ich habe in Syrien Pharmazie studiert.",
+       1
+      ],
+      [
+       "Seit zwei Jahren lebe ich in Kiel und besuche einen Deutschkurs.",
+       1
+      ],
+      [
+       "Ist für den Termin am 12. November noch ein Platz frei?",
+       2
+      ],
+      [
+       "Ich möchte mich verbindlich für das Seminar anmelden.",
+       2
+      ],
+      [
+       "Mich würde besonders interessieren, wie lange das Verfahren dauert.",
+       3
+      ],
+      [
+       "Könnten Sie mir außerdem mitteilen, welche Unterlagen ich brauche?",
+       3
+      ]
+     ]
+    },
+    {
+     "id": "m5-mail",
+     "typ": "luecke",
+     "kontext": "Schreiben",
+     "frage": "Ergänzen Sie die Anfrage von Samira Haddad.",
+     "text": "Betreff: Anmeldung zum Informationsabend am 5. November\n\n{0},\n\nmit großem Interesse habe ich Ihren Flyer zur Anerkennung ausländischer Berufsabschlüsse {1}. Von Beruf bin ich Apothekerin. Ich habe in Jordanien Pharmazie studiert und {2} fünf Jahre in einer Apotheke gearbeitet. Zurzeit besuche ich einen Deutschkurs auf B2-Niveau.\n\nIch hätte großes Interesse {3} Ihrer Veranstaltung und möchte mich gern dafür anmelden. Dazu hätte ich noch zwei Fragen: Könnten Sie mir bitte mitteilen, {4} ich meine Zeugnisse mitbringen soll? Außerdem möchte ich gern wissen, wie lange das Verfahren ungefähr {5}.\n\nVielen Dank im Voraus für Ihre Antwort.\n\n{6}\nSamira Haddad",
+     "gaps": [
+      {
+       "opts": [
+        "Sehr geehrte Damen und Herren",
+        "Hallo Leute",
+        "Liebe Frau Damen"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "gelesen",
+        "gelest",
+        "lesen"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "danach",
+        "nachdem",
+        "dann darauf"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "an",
+        "für",
+        "auf"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "ob",
+        "dass",
+        "wenn"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "dauert",
+        "dauern",
+        "gedauert"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "Mit freundlichen Grüßen",
+        "Viele Küsse",
+        "Tschüss und bis bald"
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "m5-ord",
+     "typ": "ordnen",
+     "kontext": "Schreiben",
+     "frage": "Bringen Sie die Teile der E-Mail in die richtige Reihenfolge.",
+     "zeilen": [
+      "Betreff: Frage zum Deutschkurs „Beruf B2“",
+      "Sehr geehrte Frau Becker,",
+      "über eine Kollegin bin ich auf Ihren Kurs aufmerksam geworden.",
+      "Ich arbeite seit einem Jahr als Pflegehelfer und möchte mich beruflich weiterentwickeln.",
+      "Gibt es für den Kurs im Januar noch freie Plätze?",
+      "Außerdem würde mich interessieren, ob der Kurs auch abends stattfindet.",
+      "Mit freundlichen Grüßen\nIgor Petrenko"
+     ]
+    },
+    {
+     "id": "m5-i1",
+     "typ": "mc",
+     "kontext": "Indirekte Fragen",
+     "frage": "Welche Frage ist höflich und grammatisch richtig?",
+     "opts": [
+      "Könnten Sie mir sagen, wie lange das Verfahren dauert?",
+      "Könnten Sie mir sagen, wie lange dauert das Verfahren?",
+      "Könnten Sie mir sagen, wie lange das Verfahren dauern?",
+      "Sagen Sie mir, wie lange dauert das Verfahren!"
+     ],
+     "l": 0,
+     "x": "In der indirekten Frage steht das Verb **am Ende**."
+    },
+    {
+     "id": "m5-i2",
+     "typ": "mc",
+     "kontext": "Indirekte Fragen",
+     "frage": "„Gibt es noch freie Plätze?“ – Indirekt: Ich möchte gern wissen, …",
+     "opts": [
+      "ob es noch freie Plätze gibt.",
+      "ob gibt es noch freie Plätze.",
+      "dass es noch freie Plätze gibt?",
+      "wenn es noch freie Plätze gibt."
+     ],
+     "l": 0,
+     "x": "Ja/Nein-Fragen werden indirekt mit **ob** eingeleitet."
+    },
+    {
+     "id": "m5-b1",
+     "typ": "bau",
+     "kontext": "Indirekte Fragen",
+     "frage": "Bilden Sie die indirekte Frage.",
+     "steine": [
+      "Ich möchte gern wissen,",
+      "ob",
+      "ich",
+      "mich",
+      "noch",
+      "anmelden",
+      "kann."
+     ]
+    },
+    {
+     "id": "m5-b2",
+     "typ": "bau",
+     "kontext": "Indirekte Fragen",
+     "frage": "Bilden Sie die indirekte Frage.",
+     "steine": [
+      "Könnten Sie mir bitte mitteilen,",
+      "welche Unterlagen",
+      "ich",
+      "für den Antrag",
+      "brauche?"
+     ]
+    },
+    {
+     "id": "m5-reg",
+     "typ": "matrix",
+     "kontext": "Register",
+     "frage": "Formell oder informell?",
+     "wahl": [
+      "formell",
+      "informell"
+     ],
+     "aussagen": [
+      [
+       "Sehr geehrte Damen und Herren,",
+       0
+      ],
+      [
+       "Hi Anna!",
+       1
+      ],
+      [
+       "Ich wäre Ihnen dankbar, wenn …",
+       0
+      ],
+      [
+       "Meld dich mal!",
+       1
+      ],
+      [
+       "Mit freundlichen Grüßen",
+       0
+      ],
+      [
+       "Liebe Grüße",
+       1
+      ],
+      [
+       "Vielen Dank im Voraus für Ihre Mühe.",
+       0
+      ],
+      [
+       "Hast du Lust, …?",
+       1
+      ]
+     ]
+    },
+    {
+     "id": "m5-bt",
+     "typ": "mc",
+     "kontext": "Schreiben",
+     "frage": "Sie möchten sich zu einem Seminar anmelden. Welcher Betreff passt am besten?",
+     "opts": [
+      "Anmeldung zum Seminar „Bewerbungstraining“ am 12. März",
+      "Hallo!!!",
+      "Frage",
+      "Ich bin Samira und möchte etwas fragen"
+     ],
+     "l": 0
+    },
+    {
+     "id": "m5-ein",
+     "typ": "mc",
+     "kontext": "Schreiben",
+     "frage": "Sie haben die Veranstaltung im Internet gefunden. Wie beginnen Sie Ihre E-Mail?",
+     "opts": [
+      "Auf Ihrer Webseite bin ich auf Ihre Veranstaltung gestoßen.",
+      "Ich bin auf Ihre Veranstaltung gestoßen worden.",
+      "Ihre Webseite hat mich gestoßen.",
+      "Mit großem Interesse bin ich Ihre Webseite."
+     ],
+     "l": 0,
+     "x": "**auf etwas stoßen** = etwas zufällig finden."
+    }
+   ]
+  },
+  {
+   "titel": "Prüfungstraining",
+   "icon": "🏁",
+   "kurz": "Sprachbausteine · Lesen · Diskutieren · gemischter Wortschatz",
+   "aufgaben": [
+    {
+     "id": "m6-sb",
+     "typ": "luecke",
+     "kontext": "Sprachbausteine",
+     "frage": "Sprachbausteine: Lesen Sie das Rundschreiben und wählen Sie für jede Lücke die richtige Lösung.",
+     "text": "Liebe Mitarbeiterinnen und Mitarbeiter,\n\nwie Sie bereits wissen, eröffnet unsere Firma im Frühjahr einen neuen Standort in Rendsburg. Das neue Gebäude ist {0} modernster Technik ausgestattet. {1} der Entfernung von 75 km möchten wir Ihnen den Wechsel so leicht wie möglich machen.\n\nAlle Kolleginnen und Kollegen, {2} umziehen möchten, erhalten einen Zuschuss zu den Umzugskosten. Wer lieber pendelt, bekommt ein kostenloses Jobticket. {3} planen wir, dass jede Abteilung zwei Tage pro Woche im Homeoffice arbeiten kann.\n\nWir wissen, dass diese Veränderung nicht für alle einfach ist. {4} laden wir Sie herzlich zu einer Informationsveranstaltung am 20. Januar ein. Dort können Sie Ihre Fragen direkt an die Geschäftsleitung {5}. Bitte melden Sie sich {6} 15. Januar bei Frau Albers in der Personalabteilung an.\n\nWir freuen uns {7} Ihr Interesse.\n\nMit freundlichen Grüßen\nIhre Geschäftsleitung",
+     "gaps": [
+      {
+       "opts": [
+        "mit",
+        "von",
+        "durch"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "Wegen",
+        "Obwohl",
+        "Damit"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "die",
+        "denen",
+        "deren"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "Außerdem",
+        "Trotzdem",
+        "Dagegen"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "Deshalb",
+        "Obwohl",
+        "Weil"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "stellen",
+        "fragen",
+        "machen"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "bis zum",
+        "seit dem",
+        "vom"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "über",
+        "an",
+        "mit"
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "m6-forum",
+     "typ": "lesen",
+     "kontext": "Lesen",
+     "frage": "Im Firmenforum: „Eine Woche Homeoffice, eine Woche Büro“. Lesen Sie die Beiträge und beantworten Sie die Fragen.",
+     "posts": [
+      {
+       "name": "Lukas_IT",
+       "info": "Di, 09:12",
+       "text": "Eine Woche Homeoffice, eine Woche Büro – für mich ist das ideal. Zu Hause kann ich mich viel besser konzentrieren, weil mich niemand unterbricht. Im Büro nutze ich dann die Zeit für Besprechungen und den Austausch mit dem Team."
+      },
+      {
+       "name": "Anja_Buchhaltung",
+       "info": "Di, 11:47",
+       "text": "Ich sehe das kritisch. Wenn wir uns die Arbeitsplätze teilen, habe ich keinen eigenen Schreibtisch mehr. Wo soll ich meine Unterlagen lassen? Außerdem ist meine Wohnung sehr klein – ich arbeite zu Hause am Küchentisch."
+      },
+      {
+       "name": "Ömer_Vertrieb",
+       "info": "Di, 16:03",
+       "text": "Für Eltern ist die Regelung ein Gewinn. In der Homeoffice-Woche kann ich die Kinder selbst von der Kita abholen. Allerdings muss man sehr diszipliniert sein, damit Arbeit und Familie nicht durcheinanderkommen."
+      }
+     ],
+     "fragen": [
+      {
+       "f": "Was ist für Lukas der größte Vorteil des Homeoffice?",
+       "opts": [
+        "Er kann ungestört arbeiten.",
+        "Er spart Geld.",
+        "Er kann länger schlafen.",
+        "Er muss keine Besprechungen machen."
+       ],
+       "l": 0
+      },
+      {
+       "f": "Was kritisiert Anja?",
+       "opts": [
+        "Sie hätte im Büro keinen festen Arbeitsplatz mehr.",
+        "Sie müsste öfter ins Büro fahren.",
+        "Ihre Kollegen unterbrechen sie ständig.",
+        "Sie bekommt kein Jobticket."
+       ],
+       "l": 0
+      },
+      {
+       "f": "Was sagt Ömer über die Regelung?",
+       "opts": [
+        "Sie ist gut für Familien, verlangt aber Disziplin.",
+        "Sie ist schlecht für Familien.",
+        "Er möchte nur noch im Büro arbeiten.",
+        "Seine Kinder gehen nicht mehr in die Kita."
+       ],
+       "l": 0
+      },
+      {
+       "f": "Wer sieht die Regelung eher negativ?",
+       "opts": [
+        "Anja",
+        "Lukas",
+        "Ömer",
+        "alle drei"
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "m6-dis",
+     "typ": "matrix",
+     "kontext": "Sprechen",
+     "frage": "In der Diskussion: Was macht man mit diesen Redemitteln?",
+     "wahl": [
+      "zustimmen",
+      "widersprechen",
+      "Kompromiss vorschlagen"
+     ],
+     "aussagen": [
+      [
+       "Da haben Sie völlig recht.",
+       0
+      ],
+      [
+       "Das sehe ich genauso.",
+       0
+      ],
+      [
+       "Da bin ich anderer Meinung.",
+       1
+      ],
+      [
+       "Das stimmt so nicht ganz.",
+       1
+      ],
+      [
+       "Wie wäre es, wenn wir …?",
+       2
+      ],
+      [
+       "Vielleicht könnten wir uns darauf einigen, dass …",
+       2
+      ]
+     ]
+    },
+    {
+     "id": "m6-w1",
+     "typ": "mc",
+     "kontext": "Wortschatz",
+     "frage": "Die Firma ___ die Umzugskosten.",
+     "opts": [
+      "übernimmt",
+      "nimmt über",
+      "überzieht",
+      "unternimmt"
+     ],
+     "l": 0,
+     "x": "Kosten **übernehmen** = bezahlen (untrennbar)."
+    },
+    {
+     "id": "m6-w2",
+     "typ": "mc",
+     "kontext": "Wortschatz",
+     "frage": "Nach drei Monaten bekam er den ___ über die Gleichwertigkeit seiner Ausbildung.",
+     "opts": [
+      "Bescheid",
+      "Beschluss",
+      "Bestand",
+      "Befund"
+     ],
+     "l": 0
+    },
+    {
+     "id": "m6-w3",
+     "typ": "mc",
+     "kontext": "Wortschatz",
+     "frage": "Ihr Arbeitsvertrag läuft Ende Juni ___. Sie sollten sich jetzt arbeitssuchend melden.",
+     "opts": [
+      "aus",
+      "weg",
+      "vor",
+      "durch"
+     ],
+     "l": 0,
+     "x": "Ein Vertrag **läuft aus** / **läuft ab** = er endet."
+    },
+    {
+     "id": "m6-w4",
+     "typ": "mc",
+     "kontext": "Wortschatz",
+     "frage": "Um als Lehrerin arbeiten zu dürfen, braucht sie die ___ ihres Abschlusses.",
+     "opts": [
+      "Anerkennung",
+      "Erkennung",
+      "Bekennung",
+      "Kenntnis"
+     ],
+     "l": 0
+    },
+    {
+     "id": "m6-b1",
+     "typ": "bau",
+     "kontext": "Satzbau",
+     "frage": "Beginnen Sie mit der Zeitangabe.",
+     "steine": [
+      "Seit Januar",
+      "arbeitet",
+      "sie",
+      "wegen ihrer Kinder",
+      "nur noch vormittags",
+      "im Büro."
+     ],
+     "alt": [
+      [
+       "Seit Januar",
+       "arbeitet",
+       "sie",
+       "nur noch vormittags",
+       "wegen ihrer Kinder",
+       "im Büro."
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

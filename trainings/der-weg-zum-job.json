@@ -1,0 +1,1789 @@
+{
+ "id": "der-weg-zum-job",
+ "titel": "Der Weg zum Job",
+ "untertitel": "Berufe · zweiteilige Konnektoren · Lebenslauf · Ausbildungswege · Bewerbung · Termine",
+ "niveau": "B1/B2",
+ "reihe": "Prüfungstraining B1/B2",
+ "farbe": "#13836b",
+ "mix": 15,
+ "intro": "Sieben Teile – jeder Teil kann einzeln gespielt werden. Der **Prüfungsmix** zieht zufällig Aufgaben aus allen Teilen.",
+ "kompakt": [
+  {
+   "titel": "Zweiteilige Konnektoren",
+   "zeilen": [
+    "**Aufzählung:** nicht nur …, sondern auch … · sowohl … als auch …",
+    "**negative Aufzählung:** weder … noch … (keins von beiden)",
+    "**Vergleich:** je + Komparativ …, desto/umso + Komparativ … – Je mehr ich übe, **desto besser spreche** ich.",
+    "**Alternative:** entweder … oder …",
+    "**Einschränkung / Gegensatz:** zwar …, aber … · einerseits …, andererseits …",
+    "nicht nur … sondern auch und sowohl … als auch verbinden meistens Satzteile: Sie spricht sowohl Arabisch als auch Französisch."
+   ]
+  },
+  {
+   "titel": "um … zu · ohne … zu · (an)statt … zu",
+   "zeilen": [
+    "**um … zu** = Ziel, Absicht: Ich gehe zur Messe, **um** mich **zu** informieren.",
+    "**ohne … zu** = etwas Erwartetes passiert nicht: Er bewirbt sich, **ohne** die Anzeige genau **zu** lesen.",
+    "**(an)statt … zu** = etwas passiert nicht, dafür etwas anderes: **Statt** im Netz **zu** suchen, frage ich die Betriebe.",
+    "Nur bei **gleichem Subjekt**! Bei verschiedenen Subjekten: **damit · ohne dass · (an)statt dass**",
+    "Firmen bieten Praktika an, **damit** junge Leute den Beruf kennenlernen.",
+    "**wollen** und **sollen** fallen bei um … zu und damit weg.",
+    "Trennbare Verben: **zu** in der Mitte – dabei**zu**haben, kennen**zu**lernen."
+   ]
+  },
+  {
+   "titel": "Der Lebenslauf",
+   "zeilen": [
+    "Tabellarisch, klar gegliedert, möglichst nicht mehr als zwei Seiten.",
+    "Die **aktuelle Station steht oben** (umgekehrt chronologisch).",
+    "Datumsangaben mit **Monat und Jahr** und **einheitlich**: 03/2021–08/2023.",
+    "Zu Berufserfahrung und Praktika: kurze **Beschreibung der Tätigkeiten** (Nominalstil: Beratung von Kunden, Erstellung von Rechnungen).",
+    "**Sprachen** mit Niveau (B2, C1), **EDV** mit Programm und Niveau. Lücken kurz erklären.",
+    "Ein Foto ist in Deutschland **keine Pflicht**. Keine Tippfehler!"
+   ]
+  },
+  {
+   "titel": "Das Anschreiben",
+   "zeilen": [
+    "Absender – Empfänger – Ort, Datum – **Betreff** – Anrede – Einleitung – Qualifikationen – Eintrittstermin – Schlusssatz – Grußformel – Unterschrift",
+    "**Einleitung:** Mit großem Interesse habe ich Ihre Anzeige … gelesen. · Sie suchen …",
+    "**Qualifikationen:** In meiner jetzigen Stelle bin ich für … zuständig. · Dank meiner … bin ich in der Lage, …",
+    "**Eintritt:** Ich könnte meine Stelle zum … antreten. · Ich stehe Ihnen ab sofort zur Verfügung.",
+    "**Schluss:** Über eine Einladung zu einem persönlichen Gespräch freue ich mich sehr."
+   ]
+  },
+  {
+   "titel": "Termine am Telefon",
+   "zeilen": [
+    "**vereinbaren / ausmachen:** Ich hätte gern einen Termin für … · Wann hätten Sie Zeit? · Passt Ihnen Dienstag um 9:30 Uhr?",
+    "**verschieben / verlegen:** Könnten wir den Termin auf Mittwoch verlegen? · Geht es auch einen Tag früher?",
+    "**absagen:** Ich muss den Termin leider absagen, weil …",
+    "**bestätigen:** Gut, dann notiere ich mir: Mittwoch, 10 Uhr."
+   ]
+  },
+  {
+   "titel": "Ausbildungswege in Deutschland",
+   "zeilen": [
+    "**duale Ausbildung:** Betrieb + Berufsschule, meist 2–3,5 Jahre, mit Ausbildungsvergütung.",
+    "**duales Studium:** Hochschule + Praxisphasen im Unternehmen, meist 3–4 Jahre, mit Vergütung, Abschluss z. B. Bachelor.",
+    "**schulische Ausbildung:** Berufsfachschule mit Praktika, oft ohne Gehalt, manchmal mit Schulgeld (z. B. Physiotherapie)."
+   ]
+  }
+ ],
+ "module": [
+  {
+   "titel": "Berufe und Tätigkeiten",
+   "icon": "🔎",
+   "kurz": "Berufe raten · Tätigkeiten · Stellenanzeigen verstehen · Personen korrekt benennen",
+   "aufgaben": [
+    {
+     "id": "b1-raten",
+     "typ": "matrix",
+     "kontext": "Lesen",
+     "mischen": false,
+     "frage": "Sechs Menschen erzählen von ihrer Arbeit. Welchen Beruf haben sie?",
+     "posts": [
+      {
+       "name": "Text 1",
+       "text": "Mein Arbeitstag beginnt um drei Uhr nachts. Während andere noch schlafen, knete ich Teig, forme Brötchen und schiebe die Bleche in den Ofen. Um sechs Uhr muss alles fertig sein, denn dann kommen die ersten Kundinnen und Kunden in den Laden."
+      },
+      {
+       "name": "Text 2",
+       "text": "Ich kümmere mich um alte und kranke Menschen. Ich messe den Blutdruck, gebe Medikamente und helfe beim Waschen. Am wichtigsten ist mir aber, dass ich Zeit für Gespräche habe. Die Arbeit im Schichtdienst ist anstrengend, aber sie gibt mir sehr viel zurück."
+      },
+      {
+       "name": "Text 3",
+       "text": "Bei mir landen jeden Tag Belege, Rechnungen und Quittungen. Ich buche alles, bereite die Steuererklärungen unserer Mandanten vor und achte auf die Fristen beim Finanzamt. Zahlen machen mir einfach Spaß – und ohne Genauigkeit geht in meinem Beruf gar nichts."
+      },
+      {
+       "name": "Text 4",
+       "text": "Ich verlege Leitungen, schließe Steckdosen und Lampen an und prüfe, ob alle Anlagen sicher sind. Oft arbeite ich auf Baustellen, manchmal auch in Privatwohnungen. Ein kleiner Fehler kann gefährlich werden – deshalb arbeite ich immer sehr sorgfältig."
+      },
+      {
+       "name": "Text 5",
+       "text": "Morgens begrüße ich die Kinder und ihre Eltern. Wir singen, basteln, spielen draußen und lesen Bücher vor. Ich beobachte, wie sich jedes Kind entwickelt, und führe regelmäßig Gespräche mit den Eltern."
+      },
+      {
+       "name": "Text 6",
+       "text": "Ich bringe Menschen sicher von A nach B – jeden Tag auf derselben Linie quer durch die Stadt. Ich muss pünktlich sein, auch im Berufsverkehr ruhig bleiben und Fragen zu Fahrkarten beantworten."
+      }
+     ],
+     "wahl": [
+      "Erzieher/in",
+      "Busfahrer/in",
+      "Bäcker/in",
+      "Elektroniker/in",
+      "Steuerfachangestellte/r",
+      "Pflegefachkraft"
+     ],
+     "aussagen": [
+      [
+       "Text 1",
+       2
+      ],
+      [
+       "Text 2",
+       5
+      ],
+      [
+       "Text 3",
+       4
+      ],
+      [
+       "Text 4",
+       3
+      ],
+      [
+       "Text 5",
+       0
+      ],
+      [
+       "Text 6",
+       1
+      ]
+     ]
+    },
+    {
+     "id": "b1-taet",
+     "typ": "zu",
+     "kontext": "Wortschatz",
+     "frage": "Wer macht was? Verbinden Sie Beruf und Tätigkeit.",
+     "paare": [
+      [
+       "die Zimmerin",
+       "baut Dachstühle aus Holz"
+      ],
+      [
+       "der Physiotherapeut",
+       "behandelt Menschen nach Verletzungen"
+      ],
+      [
+       "die Speditionskauffrau",
+       "plant den Transport von Waren"
+      ],
+      [
+       "der Chemiker",
+       "untersucht Stoffe im Labor"
+      ],
+      [
+       "die Dolmetscherin",
+       "überträgt Gespräche mündlich in eine andere Sprache"
+      ],
+      [
+       "der Raumausstatter",
+       "gestaltet Räume mit Stoffen und Farben"
+      ]
+     ]
+    },
+    {
+     "id": "b1-w1",
+     "typ": "mc",
+     "kontext": "Wortschatz",
+     "frage": "Was ist der Unterschied zwischen Dolmetscher und Übersetzer?",
+     "opts": [
+      "Ein Dolmetscher überträgt mündlich, ein Übersetzer schriftlich.",
+      "Ein Dolmetscher überträgt schriftlich, ein Übersetzer mündlich.",
+      "Es gibt keinen Unterschied.",
+      "Ein Dolmetscher arbeitet nur vor Gericht."
+     ],
+     "l": 0
+    },
+    {
+     "id": "b1-w2",
+     "typ": "mc",
+     "kontext": "Wortschatz",
+     "frage": "In meinem Beruf geht es ___ allem um eine genaue Planung.",
+     "opts": [
+      "vor",
+      "für",
+      "mit",
+      "über"
+     ],
+     "l": 0,
+     "x": "**vor allem** = besonders, hauptsächlich."
+    },
+    {
+     "id": "b1-w3",
+     "typ": "mc",
+     "kontext": "Wortschatz",
+     "frage": "Ich habe vor, mich ___ Sportphysiotherapie zu spezialisieren.",
+     "opts": [
+      "auf",
+      "für",
+      "an",
+      "in"
+     ],
+     "l": 0,
+     "x": "sich **spezialisieren auf** + Akkusativ."
+    },
+    {
+     "id": "b1-w4",
+     "typ": "mc",
+     "kontext": "Wortschatz",
+     "frage": "Wenn wir im Labor nicht sorgfältig und ___ arbeiten, kann es gefährlich werden.",
+     "opts": [
+      "gründlich",
+      "grundsätzlich",
+      "begründet",
+      "gründend"
+     ],
+     "l": 0,
+     "x": "**gründlich** = sehr genau, sorgfältig."
+    },
+    {
+     "id": "b1-mwd",
+     "typ": "mc",
+     "kontext": "Stellenanzeigen",
+     "frage": "In Stellenanzeigen steht oft „(m/w/d)“. Wofür steht das „d“?",
+     "opts": [
+      "divers",
+      "deutsch",
+      "dringend",
+      "Dienst"
+     ],
+     "l": 0,
+     "x": "m = männlich, w = weiblich, d = divers: Die Stelle ist für Menschen jedes Geschlechts offen."
+    },
+    {
+     "id": "b1-gender",
+     "typ": "matrix",
+     "kontext": "Sprache im Beruf",
+     "frage": "Personen korrekt benennen: Was für eine Form ist das?",
+     "wahl": [
+      "Paarform",
+      "neutrale Form",
+      "Kurzform mit Zeichen"
+     ],
+     "aussagen": [
+      [
+       "die Kolleginnen und Kollegen",
+       0
+      ],
+      [
+       "die Kundinnen und Kunden",
+       0
+      ],
+      [
+       "die Mitarbeitenden",
+       1
+      ],
+      [
+       "die Belegschaft",
+       1
+      ],
+      [
+       "die Kundschaft",
+       1
+      ],
+      [
+       "die Mitarbeiter*innen",
+       2
+      ],
+      [
+       "die Kolleg:innen",
+       2
+      ],
+      [
+       "die Bewerber/innen",
+       2
+      ]
+     ],
+     "x": "Alle Formen werden im Berufsleben benutzt. Viele Firmen haben eigene Regeln dafür."
+    },
+    {
+     "id": "b1-bau",
+     "typ": "bau",
+     "kontext": "Satzbau",
+     "frage": "Bilden Sie den Satz.",
+     "steine": [
+      "Ich",
+      "habe",
+      "mich",
+      "schon in der Schulzeit",
+      "für Technik",
+      "interessiert."
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Zweiteilige Konnektoren",
+   "icon": "🔗",
+   "kurz": "nicht nur … sondern auch · sowohl … als auch · weder … noch · je … desto · entweder … oder · zwar … aber",
+   "aufgaben": [
+    {
+     "id": "b2-sort",
+     "typ": "matrix",
+     "kontext": "Bedeutung",
+     "frage": "Was drückt der Konnektor aus?",
+     "wahl": [
+      "Aufzählung",
+      "negative Aufzählung",
+      "Vergleich",
+      "Alternative",
+      "Einschränkung / Gegensatz"
+     ],
+     "aussagen": [
+      [
+       "nicht nur …, sondern auch …",
+       0
+      ],
+      [
+       "sowohl … als auch …",
+       0
+      ],
+      [
+       "weder … noch …",
+       1
+      ],
+      [
+       "je …, desto …",
+       2
+      ],
+      [
+       "je …, umso …",
+       2
+      ],
+      [
+       "entweder … oder …",
+       3
+      ],
+      [
+       "zwar …, aber …",
+       4
+      ],
+      [
+       "einerseits …, andererseits …",
+       4
+      ]
+     ]
+    },
+    {
+     "id": "b2-k1",
+     "typ": "mc",
+     "kontext": "Konnektoren",
+     "frage": "Für die Stelle sind ___ eine abgeschlossene Ausbildung ___ mehrere Jahre Berufserfahrung nötig – ohne beides geht es nicht.",
+     "opts": [
+      "sowohl … als auch",
+      "weder … noch",
+      "entweder … oder",
+      "je … desto"
+     ],
+     "l": 0
+    },
+    {
+     "id": "b2-k2",
+     "typ": "mc",
+     "kontext": "Konnektoren",
+     "frage": "___ mehr Bewerbungen ich schrieb, ___ besser wurden meine Anschreiben.",
+     "opts": [
+      "Je … desto",
+      "Sowohl … als auch",
+      "Zwar … aber",
+      "Entweder … oder"
+     ],
+     "l": 0,
+     "x": "**je** + Komparativ (Verb am Ende), **desto** + Komparativ + Verb."
+    },
+    {
+     "id": "b2-k3",
+     "typ": "mc",
+     "kontext": "Konnektoren",
+     "frage": "Die Arbeit ist ___ anstrengend, ___ sie macht mir sehr viel Spaß.",
+     "opts": [
+      "zwar … aber",
+      "weder … noch",
+      "je … desto",
+      "sowohl … als auch"
+     ],
+     "l": 0
+    },
+    {
+     "id": "b2-k4",
+     "typ": "mc",
+     "kontext": "Konnektoren",
+     "frage": "Ich habe ___ eine Einladung ___ eine Absage bekommen – einfach gar nichts.",
+     "opts": [
+      "weder … noch",
+      "sowohl … als auch",
+      "entweder … oder",
+      "nicht nur … sondern auch"
+     ],
+     "l": 0
+    },
+    {
+     "id": "b2-k5",
+     "typ": "mc",
+     "kontext": "Konnektoren",
+     "frage": "Sie können sich ___ per E-Mail ___ über unser Online-Formular bewerben – wählen Sie einen Weg.",
+     "opts": [
+      "entweder … oder",
+      "weder … noch",
+      "je … desto",
+      "zwar … aber"
+     ],
+     "l": 0
+    },
+    {
+     "id": "b2-k6",
+     "typ": "mc",
+     "kontext": "Konnektoren",
+     "frage": "Die neue Stelle bietet ___ ein besseres Gehalt, ___ auch mehr Urlaub.",
+     "opts": [
+      "nicht nur … sondern",
+      "je … desto",
+      "weder … noch",
+      "entweder … oder"
+     ],
+     "l": 0
+    },
+    {
+     "id": "b2-weder",
+     "typ": "mc",
+     "kontext": "Grammatik",
+     "frage": "Weder mein Bruder noch ich ___ bisher einen Ausbildungsplatz gefunden.",
+     "opts": [
+      "haben",
+      "hat",
+      "habe",
+      "hast"
+     ],
+     "l": 0,
+     "x": "Bei **weder … noch** mit verschiedenen Personen steht das Verb meistens im **Plural**."
+    },
+    {
+     "id": "b2-b1",
+     "typ": "bau",
+     "kontext": "Satzbau",
+     "frage": "Bilden Sie den Satz mit je … desto.",
+     "steine": [
+      "Je mehr Erfahrung man hat,",
+      "desto leichter",
+      "findet",
+      "man",
+      "eine Stelle."
+     ],
+     "x": "Nach **desto** + Komparativ folgt direkt das Verb."
+    },
+    {
+     "id": "b2-b2",
+     "typ": "bau",
+     "kontext": "Satzbau",
+     "frage": "Bilden Sie den Satz mit entweder … oder.",
+     "steine": [
+      "Entweder",
+      "mache ich",
+      "eine Ausbildung,",
+      "oder",
+      "ich studiere",
+      "an der Fachhochschule."
+     ],
+     "x": "Nach **entweder** kann das Verb direkt folgen, nach **oder** steht die normale Wortstellung."
+    },
+    {
+     "id": "b2-lt",
+     "typ": "luecke",
+     "kontext": "Konnektoren",
+     "frage": "Ein Beitrag im Forum „Stellensuche“. Ergänzen Sie die Konnektoren.",
+     "text": "Hallo zusammen,\n\nich suche seit drei Monaten eine neue Stelle. Ich habe {0} über Jobportale {1} über persönliche Kontakte gesucht – wirklich überall. {2} mehr Absagen ich bekomme, {3} unsicherer werde ich. In den letzten zwei Wochen habe ich {4} eine Einladung {5} einen Anruf bekommen. Meine Beraterin sagt: „Ihr Lebenslauf ist {6} gut, {7} Ihr Anschreiben ist zu allgemein.“ Hat jemand einen Tipp für mich?\n\nViele Grüße\nMarco",
+     "gaps": [
+      {
+       "opts": [
+        "sowohl",
+        "weder",
+        "entweder"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "als auch",
+        "noch",
+        "oder"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "Je",
+        "Desto",
+        "Sowohl"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "desto",
+        "je",
+        "als"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "weder",
+        "sowohl",
+        "entweder"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "noch",
+        "als auch",
+        "oder"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "zwar",
+        "weder",
+        "entweder"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "aber",
+        "noch",
+        "oder"
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "b2-v1",
+     "typ": "mc",
+     "kontext": "Sätze verbinden",
+     "frage": "„Die Firma bietet gute Weiterbildungen. Sie zahlt auch ein gutes Gehalt.“ – Welcher Satz ist richtig?",
+     "opts": [
+      "Die Firma bietet nicht nur gute Weiterbildungen, sondern zahlt auch ein gutes Gehalt.",
+      "Die Firma bietet nicht nur gute Weiterbildungen, aber zahlt auch ein gutes Gehalt.",
+      "Die Firma bietet weder gute Weiterbildungen, noch zahlt sie ein gutes Gehalt.",
+      "Die Firma bietet nicht nur gute Weiterbildungen, sondern auch zahlt ein gutes Gehalt."
+     ],
+     "l": 0
+    },
+    {
+     "id": "b2-v2",
+     "typ": "mc",
+     "kontext": "Sätze verbinden",
+     "frage": "„Für die Stelle braucht man keinen Führerschein. Man braucht auch keine Berufserfahrung.“ – Welcher Satz ist richtig?",
+     "opts": [
+      "Für die Stelle braucht man weder einen Führerschein noch Berufserfahrung.",
+      "Für die Stelle braucht man weder keinen Führerschein noch keine Berufserfahrung.",
+      "Für die Stelle braucht man sowohl einen Führerschein als auch Berufserfahrung.",
+      "Für die Stelle braucht man entweder einen Führerschein noch Berufserfahrung."
+     ],
+     "l": 0,
+     "x": "**weder … noch** ist schon negativ – kein zusätzliches „kein“ oder „nicht“!"
+    },
+    {
+     "id": "b2-rf",
+     "typ": "matrix",
+     "kontext": "Grammatik",
+     "frage": "Ist der Satz grammatisch richtig?",
+     "aussagen": [
+      [
+       "Ich arbeite nicht nur im Büro, sondern auch im Homeoffice.",
+       true
+      ],
+      [
+       "Je länger ich suche, desto ich werde nervöser.",
+       false
+      ],
+      [
+       "Entweder du bewirbst dich heute, oder die Stelle ist weg.",
+       true
+      ],
+      [
+       "Sie spricht sowohl Arabisch als auch Französisch.",
+       true
+      ],
+      [
+       "Ich habe weder Zeit noch keine Lust.",
+       false
+      ],
+      [
+       "Das Praktikum war zwar kurz, aber sehr interessant.",
+       true
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Der Lebenslauf",
+   "icon": "📄",
+   "kurz": "einen Lebenslauf lesen · Tipps · Rubriken · Tätigkeiten im Nominalstil",
+   "aufgaben": [
+    {
+     "id": "b3-lv",
+     "typ": "lesen",
+     "kontext": "Lesen",
+     "frage": "Lesen Sie den Lebenslauf und beantworten Sie die Fragen.",
+     "textTitel": "Lebenslauf",
+     "text": "**Olena Bondar**\nHolstenstraße 12 · 24103 Kiel · olena.bondar@mail-beispiel.de\n\n**Berufserfahrung**\nseit 03/2023 – Bürokraft (Teilzeit), Sanitätshaus Meier, Kiel\n• Terminvergabe und Telefonzentrale\n• Erstellung von Rechnungen mit DATEV\n\n09/2016–02/2022 – Assistentin der Geschäftsführung, AgroTrans GmbH, Kyjiw\n• Organisation von Geschäftsreisen\n• Korrespondenz auf Ukrainisch, Englisch und Polnisch\n\n**Ausbildung**\n09/2012–06/2016 – Bachelor Betriebswirtschaft, Nationale Universität Kyjiw\n\n**Weiterbildung**\n10/2022–08/2023 – Berufssprachkurs Deutsch (Abschluss B2), Kiel\n\n**EDV-Kenntnisse**\nWord, Excel, Outlook: sehr gut · DATEV: Grundkenntnisse\n\n**Sprachen**\nUkrainisch, Russisch: Muttersprache · Englisch: C1 · Deutsch: B2 · Polnisch: B1",
+     "fragen": [
+      {
+       "f": "Wie ist der Lebenslauf aufgebaut?",
+       "opts": [
+        "Die aktuelle Station steht oben.",
+        "Die älteste Station steht oben.",
+        "Die Stationen sind nach Wichtigkeit sortiert.",
+        "Die Stationen sind alphabetisch sortiert."
+       ],
+       "l": 0
+      },
+      {
+       "f": "Wo arbeitet Frau Bondar zurzeit?",
+       "opts": [
+        "in einem Sanitätshaus in Kiel",
+        "in einer Firma in Kyjiw",
+        "an einer Universität",
+        "in einer Sprachschule"
+       ],
+       "l": 0
+      },
+      {
+       "f": "Für welche Stelle passt der Lebenslauf am besten?",
+       "opts": [
+        "Kauffrau für Büromanagement",
+        "Köchin",
+        "Elektronikerin",
+        "Busfahrerin"
+       ],
+       "l": 0
+      },
+      {
+       "f": "Welche Lücke sollte Frau Bondar im Gespräch erklären können?",
+       "opts": [
+        "03/2022 bis 09/2022",
+        "09/2012 bis 06/2016",
+        "seit 03/2023",
+        "10/2022 bis 08/2023"
+       ],
+       "l": 0
+      },
+      {
+       "f": "Was ist bei den EDV-Kenntnissen gut gemacht?",
+       "opts": [
+        "Sie gibt an, wie gut sie die Programme kann.",
+        "Sie nennt nur die Namen der Programme.",
+        "Sie lässt die Programme ganz weg.",
+        "Sie schreibt einfach: „Computer: ja“."
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "b3-tipps",
+     "typ": "matrix",
+     "kontext": "Tipps",
+     "frage": "Tipps einer Bewerbungstrainerin: Stimmt das?",
+     "aussagen": [
+      [
+       "Im tabellarischen Lebenslauf steht die aktuelle Station meistens oben.",
+       true
+      ],
+      [
+       "Ein Foto ist in Deutschland Pflicht.",
+       false
+      ],
+      [
+       "Man gibt bei den Daten nicht nur das Jahr, sondern auch den Monat an.",
+       true
+      ],
+      [
+       "Zu Berufserfahrung und Praktika gehört eine kurze Beschreibung der Tätigkeiten.",
+       true
+      ],
+      [
+       "Ein guter Lebenslauf ist mindestens fünf Seiten lang.",
+       false
+      ],
+      [
+       "Bei Sprachen gibt man am besten das Niveau an, z. B. B2 oder C1.",
+       true
+      ],
+      [
+       "Man nennt alle Weiterbildungen, auch wenn sie nichts mit der Stelle zu tun haben.",
+       false
+      ],
+      [
+       "Tipp- und Rechtschreibfehler sind im Lebenslauf nicht so schlimm.",
+       false
+      ]
+     ]
+    },
+    {
+     "id": "b3-rub",
+     "typ": "matrix",
+     "kontext": "Rubriken",
+     "frage": "In welche Rubrik gehört der Eintrag?",
+     "wahl": [
+      "Berufserfahrung",
+      "Ausbildung",
+      "Weiterbildung",
+      "Sprachen"
+     ],
+     "aussagen": [
+      [
+       "Verkäuferin, Modehaus Lind, 04/2020–09/2023",
+       0
+      ],
+      [
+       "Aushilfe im Café Hafenblick, 2019",
+       0
+      ],
+      [
+       "Abitur, 2014",
+       1
+      ],
+      [
+       "Bachelor Informatik, 2015–2019",
+       1
+      ],
+      [
+       "Excel-Kurs für Fortgeschrittene, Volkshochschule",
+       2
+      ],
+      [
+       "Seminar „Kundenkommunikation“, 2 Tage",
+       2
+      ],
+      [
+       "Englisch – C1",
+       3
+      ],
+      [
+       "Arabisch – Muttersprache",
+       3
+      ]
+     ]
+    },
+    {
+     "id": "b3-nom",
+     "typ": "zu",
+     "kontext": "Nominalstil",
+     "frage": "Im Lebenslauf schreibt man Tätigkeiten im Nominalstil. Was gehört zusammen?",
+     "paare": [
+      [
+       "Waren einsortieren",
+       "Einsortieren der Waren"
+      ],
+      [
+       "Kunden beraten",
+       "Beratung von Kunden"
+      ],
+      [
+       "Rechnungen erstellen",
+       "Erstellung von Rechnungen"
+      ],
+      [
+       "Termine vergeben",
+       "Vergabe von Terminen"
+      ],
+      [
+       "Schaufenster gestalten",
+       "Gestaltung der Schaufenster"
+      ]
+     ]
+    },
+    {
+     "id": "b3-m1",
+     "typ": "mc",
+     "kontext": "Tipps",
+     "frage": "Die Datumsangaben im Lebenslauf sollten ___ sein.",
+     "opts": [
+      "einheitlich",
+      "unterschiedlich",
+      "ungefähr",
+      "möglichst kurz"
+     ],
+     "l": 0,
+     "x": "Zum Beispiel immer 03/2021 – nicht einmal „März 21“ und einmal „3.2021“."
+    },
+    {
+     "id": "b3-m2",
+     "typ": "mc",
+     "kontext": "Tipps",
+     "frage": "Wie gibt man EDV-Kenntnisse am besten an?",
+     "opts": [
+      "Excel: sehr gut (Formeln, Pivot-Tabellen)",
+      "Excel",
+      "Computer: ja",
+      "Ich kann alles am Computer."
+     ],
+     "l": 0
+    },
+    {
+     "id": "b3-m3",
+     "typ": "mc",
+     "kontext": "Wortschatz",
+     "frage": "Zwischen zwei Stellen hat sie ein halbes Jahr nicht gearbeitet. Sie hat eine ___ im Lebenslauf.",
+     "opts": [
+      "Lücke",
+      "Leere",
+      "Spalte",
+      "Kante"
+     ],
+     "l": 0
+    },
+    {
+     "id": "b3-b1",
+     "typ": "bau",
+     "kontext": "Satzbau",
+     "frage": "Bilden Sie den Tipp.",
+     "steine": [
+      "Zu jeder Station",
+      "gehört",
+      "eine kurze Beschreibung",
+      "der Tätigkeiten."
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Ausbildungswege",
+   "icon": "🏫",
+   "kurz": "duale Ausbildung · duales Studium · schulische Ausbildung · um … zu, ohne … zu, statt … zu",
+   "aufgaben": [
+    {
+     "id": "b4-wege",
+     "typ": "matrix",
+     "kontext": "Landeskunde",
+     "frage": "Welcher Ausbildungsweg ist das?",
+     "wahl": [
+      "duale Ausbildung",
+      "duales Studium",
+      "schulische Ausbildung"
+     ],
+     "aussagen": [
+      [
+       "Man lernt im Betrieb und in der Berufsschule.",
+       0
+      ],
+      [
+       "Der Berufsschulunterricht findet ein- bis zweimal pro Woche oder in Blöcken statt.",
+       0
+      ],
+      [
+       "Man studiert an einer Hochschule und arbeitet in Praxisphasen in einem Unternehmen.",
+       1
+      ],
+      [
+       "Voraussetzung ist meistens das Abitur oder die Fachhochschulreife.",
+       1
+      ],
+      [
+       "Am Ende hat man einen Bachelor und viel Praxiserfahrung.",
+       1
+      ],
+      [
+       "Man lernt an einer Berufsfachschule, oft mit Praktika.",
+       2
+      ],
+      [
+       "Oft bekommt man kein Gehalt und muss manchmal sogar Schulgeld bezahlen.",
+       2
+      ],
+      [
+       "Typische Berufe sind z. B. Physiotherapeutin oder Ergotherapeut.",
+       2
+      ]
+     ]
+    },
+    {
+     "id": "b4-flyer",
+     "typ": "lesen",
+     "kontext": "Lesen",
+     "frage": "Lesen Sie den Flyer und beantworten Sie die Fragen.",
+     "textTitel": "Ausbildungstag „Zukunft Nord“",
+     "text": "Sie wissen noch nicht, welcher Beruf zu Ihnen passt? Oder möchten Sie sich beruflich neu orientieren? Statt stundenlang im Internet zu suchen, können Sie bei uns mit über 80 Betrieben und Hochschulen direkt ins Gespräch kommen.\n\nKommen Sie vorbei, um sich über duale Ausbildungen, Berufsfachschulen und duale Studiengänge zu informieren. Viele Betriebe bringen ihre Auszubildenden mit – so erfahren Sie aus erster Hand, wie der Alltag in der Ausbildung aussieht.\n\nNeu in Deutschland? An unserem Infostand erfahren Sie, wie Sie Ihren ausländischen Abschluss anerkennen lassen können.\n\n**14. März, 10–16 Uhr, Stadthalle** · Der Eintritt ist frei.\n\nTipp: Bringen Sie Ihren Lebenslauf mit – einige Betriebe führen direkt vor Ort kurze Bewerbungsgespräche!",
+     "fragen": [
+      {
+       "f": "Was ist der Vorteil des Ausbildungstags?",
+       "opts": [
+        "Man kann direkt mit Betrieben und Hochschulen sprechen.",
+        "Man bekommt sofort einen Ausbildungsvertrag.",
+        "Man kann dort eine Prüfung ablegen.",
+        "Man bekommt Geld für die Fahrt."
+       ],
+       "l": 0
+      },
+      {
+       "f": "Wer erzählt vom Alltag in der Ausbildung?",
+       "opts": [
+        "Auszubildende der Betriebe",
+        "die Veranstalter",
+        "Lehrkräfte der Berufsschule",
+        "die Leute am Infostand"
+       ],
+       "l": 0
+      },
+      {
+       "f": "Was kann man am Infostand erfahren?",
+       "opts": [
+        "wie man einen ausländischen Abschluss anerkennen lässt",
+        "wo man günstige Tickets bekommt",
+        "wie man einen Lebenslauf schreibt",
+        "wo es Deutschkurse gibt"
+       ],
+       "l": 0
+      },
+      {
+       "f": "Warum sollte man einen Lebenslauf mitbringen?",
+       "opts": [
+        "Einige Betriebe führen vor Ort Bewerbungsgespräche.",
+        "Man braucht ihn als Eintrittskarte.",
+        "Ohne Lebenslauf darf man nicht hinein.",
+        "Man bekommt dafür ein Geschenk."
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "b4-bed",
+     "typ": "matrix",
+     "kontext": "Konnektoren mit zu",
+     "frage": "Welcher Konnektor passt?",
+     "wahl": [
+      "um … zu",
+      "ohne … zu",
+      "(an)statt … zu"
+     ],
+     "aussagen": [
+      [
+       "ein Ziel oder eine Absicht",
+       0
+      ],
+      [
+       "etwas Erwartetes passiert nicht",
+       1
+      ],
+      [
+       "etwas passiert nicht, dafür etwas anderes",
+       2
+      ],
+      [
+       "Sie geht zur Messe, ___ sich über Ausbildungen zu informieren.",
+       0
+      ],
+      [
+       "Er hat sich beworben, ___ die Anzeige genau zu lesen.",
+       1
+      ],
+      [
+       "___ im Netz zu suchen, spricht sie direkt mit den Betrieben.",
+       2
+      ]
+     ]
+    },
+    {
+     "id": "b4-u1",
+     "typ": "mc",
+     "kontext": "Umformen",
+     "frage": "„Amira geht zur Messe. Sie will mit Betrieben sprechen.“ – Welcher Satz ist richtig?",
+     "opts": [
+      "Amira geht zur Messe, um mit Betrieben zu sprechen.",
+      "Amira geht zur Messe, damit sie mit Betrieben sprechen will.",
+      "Amira geht zur Messe, um mit Betrieben sprechen zu wollen.",
+      "Amira geht zur Messe, ohne mit Betrieben zu sprechen."
+     ],
+     "l": 0,
+     "x": "**wollen** und **sollen** fallen bei um … zu und damit weg."
+    },
+    {
+     "id": "b4-u2",
+     "typ": "mc",
+     "kontext": "Umformen",
+     "frage": "„Jonas ist zur Messe gegangen. Er hatte keinen Lebenslauf dabei.“ – Welcher Satz ist richtig?",
+     "opts": [
+      "Jonas ist zur Messe gegangen, ohne einen Lebenslauf dabeizuhaben.",
+      "Jonas ist zur Messe gegangen, um einen Lebenslauf dabeizuhaben.",
+      "Jonas ist zur Messe gegangen, ohne einen Lebenslauf dabeihaben.",
+      "Jonas ist zur Messe gegangen, statt einen Lebenslauf dabeizuhaben."
+     ],
+     "l": 0,
+     "x": "Trennbares Verb: dabei**zu**haben – das „zu“ steht in der Mitte."
+    },
+    {
+     "id": "b4-u3",
+     "typ": "mc",
+     "kontext": "Umformen",
+     "frage": "„Lina hat nicht im Internet recherchiert, sondern eine Berufsberaterin gefragt.“ – Welcher Satz ist richtig?",
+     "opts": [
+      "Anstatt im Internet zu recherchieren, hat Lina eine Berufsberaterin gefragt.",
+      "Anstatt im Internet recherchieren, hat Lina eine Berufsberaterin gefragt.",
+      "Um im Internet zu recherchieren, hat Lina eine Berufsberaterin gefragt.",
+      "Anstatt im Internet zu recherchieren, Lina hat eine Berufsberaterin gefragt."
+     ],
+     "l": 0,
+     "x": "Steht der Nebensatz vorne, beginnt der Hauptsatz mit dem Verb: …, **hat** Lina …"
+    },
+    {
+     "id": "b4-subj",
+     "typ": "matrix",
+     "kontext": "Subjekt gleich?",
+     "frage": "Gleiches Subjekt oder nicht? Wählen Sie um … zu oder damit.",
+     "wahl": [
+      "um … zu",
+      "damit"
+     ],
+     "aussagen": [
+      [
+       "Ich lerne Deutsch, ___ eine Ausbildung zu machen.",
+       0
+      ],
+      [
+       "Die Firma bietet Praktika an, ___ junge Leute den Beruf kennenlernen.",
+       1
+      ],
+      [
+       "Er spart Geld, ___ sein Studium zu finanzieren.",
+       0
+      ],
+      [
+       "Die Beraterin spricht langsam, ___ ich alles verstehe.",
+       1
+      ],
+      [
+       "Wir gehen zur Messe, ___ uns zu informieren.",
+       0
+      ],
+      [
+       "Ich schicke dir den Flyer, ___ du die Adresse hast.",
+       1
+      ]
+     ]
+    },
+    {
+     "id": "b4-od",
+     "typ": "mc",
+     "kontext": "Konnektoren mit zu",
+     "frage": "Mein Chef hat den Termin verschoben, ___ er mich vorher gefragt hat.",
+     "opts": [
+      "ohne dass",
+      "ohne",
+      "um",
+      "damit"
+     ],
+     "l": 0,
+     "x": "Verschiedene Subjekte (mein Chef / er … mich): **ohne dass** + Verb am Ende."
+    },
+    {
+     "id": "b4-b1",
+     "typ": "bau",
+     "kontext": "Satzbau",
+     "frage": "Bilden Sie den Satz.",
+     "steine": [
+      "Anstatt",
+      "nur",
+      "in der Schule",
+      "zu sitzen,",
+      "lernt",
+      "man",
+      "im Betrieb",
+      "die Praxis kennen."
+     ]
+    },
+    {
+     "id": "b4-b2",
+     "typ": "bau",
+     "kontext": "Satzbau",
+     "frage": "Bilden Sie den Satz.",
+     "steine": [
+      "Ich mache eine duale Ausbildung,",
+      "um",
+      "Geld",
+      "zu verdienen",
+      "und",
+      "Praxis",
+      "zu sammeln"
+     ],
+     "alt": [
+      [
+       "Ich mache eine duale Ausbildung,",
+       "um",
+       "Praxis",
+       "zu sammeln",
+       "und",
+       "Geld",
+       "zu verdienen"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Die Bewerbung",
+   "icon": "✉️",
+   "kurz": "Stellenanzeige · Bewerbungsmail · Aufbau des Anschreibens · Redemittel",
+   "aufgaben": [
+    {
+     "id": "b5-anz",
+     "typ": "lesen",
+     "kontext": "Lesen",
+     "frage": "Lesen Sie die Stellenanzeige und beantworten Sie die Fragen.",
+     "textTitel": "Stellenanzeige",
+     "text": "Die **Nordwind Logistik GmbH** ist ein Speditionsunternehmen mit 120 Mitarbeitenden in Kiel. Zur Verstärkung unseres Teams suchen wir ab sofort eine/n\n\n**Kauffrau/Kaufmann für Spedition und Logistikdienstleistung (m/w/d)** in Vollzeit\n\n**Ihre Aufgaben:** Sie planen Transporte im In- und Ausland, erstellen Frachtpapiere, kümmern sich um die Zollabwicklung und sind Ansprechpartner/in für unsere Kundschaft.\n\n**Ihr Profil:** abgeschlossene kaufmännische Ausbildung, erste Berufserfahrung in der Logistik, sicherer Umgang mit MS Office, gute Englischkenntnisse; weitere Fremdsprachen sind von Vorteil.\n\n**Wir bieten:** einen unbefristeten Arbeitsvertrag, flexible Arbeitszeiten, ein Jobticket und regelmäßige Weiterbildungen.\n\nBitte senden Sie Ihre vollständigen Bewerbungsunterlagen bis zum 30. November per E-Mail an Frau Kerstin Lund.",
+     "fragen": [
+      {
+       "f": "Was macht die Firma?",
+       "opts": [
+        "Sie organisiert Transporte.",
+        "Sie verkauft Möbel.",
+        "Sie bildet Lehrkräfte aus.",
+        "Sie baut Autos."
+       ],
+       "l": 0
+      },
+      {
+       "f": "Was gehört NICHT zu den Aufgaben?",
+       "opts": [
+        "selbst Lkw fahren",
+        "Frachtpapiere erstellen",
+        "sich um den Zoll kümmern",
+        "die Kundschaft betreuen"
+       ],
+       "l": 0
+      },
+      {
+       "f": "Was müssen Bewerberinnen und Bewerber unbedingt mitbringen?",
+       "opts": [
+        "eine abgeschlossene kaufmännische Ausbildung",
+        "Polnischkenntnisse",
+        "einen Lkw-Führerschein",
+        "ein abgeschlossenes Studium"
+       ],
+       "l": 0
+      },
+      {
+       "f": "Was bietet die Firma?",
+       "opts": [
+        "Die Stelle ist nicht befristet.",
+        "Man bekommt ein Firmenauto.",
+        "Man arbeitet nur im Homeoffice.",
+        "Es gibt 40 Tage Urlaub."
+       ],
+       "l": 0
+      },
+      {
+       "f": "Wie soll man sich bewerben?",
+       "opts": [
+        "per E-Mail",
+        "per Post",
+        "persönlich im Büro",
+        "telefonisch"
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "b5-mail",
+     "typ": "matrix",
+     "kontext": "Bewerbungsmail",
+     "frage": "Passt das in eine Bewerbungsmail?",
+     "wahl": [
+      "passt",
+      "passt nicht"
+     ],
+     "aussagen": [
+      [
+       "Betreff: Bewerbung als Speditionskauffrau – Ihre Anzeige vom 3. November",
+       0
+      ],
+      [
+       "Betreff: Bewerbung",
+       1
+      ],
+      [
+       "Sehr geehrte Frau Lund,",
+       0
+      ],
+      [
+       "Hallo Frau Lund,",
+       1
+      ],
+      [
+       "Im Anhang finden Sie meine vollständigen Bewerbungsunterlagen.",
+       0
+      ],
+      [
+       "Ich habe Ihre Anzeige zufällig gesehen und dachte: Warum nicht?",
+       1
+      ],
+      [
+       "Mit freundlichen Grüßen",
+       0
+      ],
+      [
+       "Beste Grüße und bis bald!",
+       1
+      ]
+     ],
+     "x": "Der Betreff nennt die Stelle und die Anzeige. Die Mail selbst ist kurz – das ausführliche Anschreiben kommt in den Anhang."
+    },
+    {
+     "id": "b5-teile",
+     "typ": "ordnen",
+     "kontext": "Anschreiben",
+     "frage": "Aufbau des Anschreibens: Bringen Sie die Teile in die richtige Reihenfolge.",
+     "zeilen": [
+      "Absender: Olena Bondar, Holstenstraße 12, 24103 Kiel",
+      "Empfänger: Nordwind Logistik GmbH, z. Hd. Frau Kerstin Lund",
+      "Ort, Datum: Kiel, 10. November",
+      "Betreff: Bewerbung als Kauffrau für Spedition und Logistikdienstleistung",
+      "Anrede: Sehr geehrte Frau Lund,",
+      "Einleitung: Sie suchen eine engagierte Mitarbeiterin …",
+      "Hauptteil: Qualifikationen und Erfahrungen",
+      "Eintrittstermin: Meine Stelle könnte ich zum 1. Januar antreten.",
+      "Schlusssatz: Über eine Einladung zu einem Gespräch freue ich mich sehr.",
+      "Grußformel und Unterschrift"
+     ]
+    },
+    {
+     "id": "b5-saetze",
+     "typ": "matrix",
+     "kontext": "Anschreiben",
+     "frage": "In welchen Teil des Anschreibens gehört der Satz?",
+     "wahl": [
+      "Einleitung",
+      "Qualifikationen",
+      "Eintrittstermin",
+      "Schlusssatz"
+     ],
+     "aussagen": [
+      [
+       "Mit großem Interesse habe ich Ihre Anzeige auf jobs-nord.de gelesen.",
+       0
+      ],
+      [
+       "Sie suchen eine zuverlässige Mitarbeiterin mit Erfahrung in der Logistik.",
+       0
+      ],
+      [
+       "In meiner jetzigen Stelle bin ich für die Rechnungsstellung zuständig.",
+       1
+      ],
+      [
+       "Dank meiner Sprachkenntnisse kann ich auch internationale Kunden betreuen.",
+       1
+      ],
+      [
+       "Ich könnte meine Stelle zum 1. März antreten.",
+       2
+      ],
+      [
+       "Ich stehe Ihnen ab sofort zur Verfügung.",
+       2
+      ],
+      [
+       "Über eine Einladung zu einem Vorstellungsgespräch freue ich mich sehr.",
+       3
+      ],
+      [
+       "Für Rückfragen stehe ich Ihnen gern zur Verfügung.",
+       3
+      ]
+     ]
+    },
+    {
+     "id": "b5-ans",
+     "typ": "luecke",
+     "kontext": "Schreiben",
+     "frage": "Ergänzen Sie das Anschreiben.",
+     "text": "Sehr geehrte Frau Lund,\n\nSie suchen eine Kauffrau für Spedition und Logistikdienstleistung, die {0} und verantwortungsvoll arbeitet. Als ausgebildete Bürokauffrau mit drei Jahren Berufserfahrung bringe ich genau diese Eigenschaften {1}.\n\nIn meiner jetzigen Stelle bin ich {2} die Planung von Lieferungen zuständig. Dabei arbeite ich täglich {3} MS Office und unserem Bestellsystem. Dank meiner Polnisch- und Englischkenntnisse bin ich außerdem {4} der Lage, internationale Kundschaft zu betreuen.\n\nGerne würde ich meine Erfahrungen in Ihr Team {5}. Meine Stelle könnte ich zum 1. Januar {6}.\n\nÜber eine Einladung zu einem persönlichen Gespräch {7} ich mich sehr.\n\nMit freundlichen Grüßen\nOlena Bondar",
+     "gaps": [
+      {
+       "opts": [
+        "selbstständig",
+        "selbstständige",
+        "Selbstständigkeit"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "mit",
+        "an",
+        "vor"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "für",
+        "um",
+        "über"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "mit",
+        "an",
+        "bei"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "in",
+        "auf",
+        "an"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "einbringen",
+        "vorbringen",
+        "abbringen"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "antreten",
+        "eintreten",
+        "auftreten"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "freue",
+        "würde",
+        "freuen"
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "b5-m1",
+     "typ": "mc",
+     "kontext": "Wortschatz",
+     "frage": "Anschreiben, Lebenslauf und Zeugnisse zusammen nennt man …",
+     "opts": [
+      "die Bewerbungsunterlagen.",
+      "die Bewerbungsfrist.",
+      "den Bewerbungsweg.",
+      "das Bewerbungsgespräch."
+     ],
+     "l": 0
+    },
+    {
+     "id": "b5-m2",
+     "typ": "mc",
+     "kontext": "Wortschatz",
+     "frage": "Was bedeutet „z. Hd.“ in einer Adresse?",
+     "opts": [
+      "zu Händen – der Brief geht direkt an diese Person",
+      "zur Hilfe der Dame",
+      "ziemlich hohe Dringlichkeit",
+      "zum Herrn Direktor"
+     ],
+     "l": 0
+    }
+   ]
+  },
+  {
+   "titel": "Termine am Telefon",
+   "icon": "📅",
+   "kurz": "Termine vereinbaren, verschieben und absagen",
+   "aufgaben": [
+    {
+     "id": "b6-sort",
+     "typ": "matrix",
+     "kontext": "Redemittel",
+     "frage": "Was macht man mit diesem Satz?",
+     "wahl": [
+      "vereinbaren",
+      "verschieben",
+      "absagen"
+     ],
+     "aussagen": [
+      [
+       "Ich hätte gern einen Termin für ein Beratungsgespräch.",
+       0
+      ],
+      [
+       "Wann hätten Sie denn Zeit?",
+       0
+      ],
+      [
+       "Passt Ihnen Dienstag um 9:30 Uhr?",
+       0
+      ],
+      [
+       "Könnten wir den Termin auf Mittwoch verlegen?",
+       1
+      ],
+      [
+       "Am Donnerstag kann ich leider doch nicht. Geht es auch einen Tag früher?",
+       1
+      ],
+      [
+       "Ich muss den Termin leider absagen.",
+       2
+      ],
+      [
+       "In Ordnung, dann streiche ich den Termin.",
+       2
+      ],
+      [
+       "Ich kann leider nicht kommen und brauche auch keinen neuen Termin.",
+       2
+      ]
+     ]
+    },
+    {
+     "id": "b6-dial",
+     "typ": "ordnen",
+     "kontext": "Telefonieren",
+     "frage": "Einen Termin verschieben: Bringen Sie das Gespräch in die richtige Reihenfolge.",
+     "zeilen": [
+      "▶ Nordwind Logistik, Personalabteilung, Lund. Guten Tag.",
+      "◀ Guten Tag, Frau Lund, hier spricht Olena Bondar. Wir hatten für Freitag um 10 Uhr ein Vorstellungsgespräch vereinbart.",
+      "▶ Ja, richtig. Was kann ich für Sie tun?",
+      "◀ Leider habe ich am Freitag einen Arzttermin, den ich nicht verschieben kann. Könnten wir das Gespräch auf nächste Woche verlegen?",
+      "▶ Kein Problem. Würde Ihnen Dienstag um 14 Uhr passen?",
+      "◀ Ja, das passt mir gut. Vielen Dank für Ihr Verständnis!",
+      "▶ Gern. Dann bis Dienstag, Frau Bondar. Auf Wiederhören!"
+     ]
+    },
+    {
+     "id": "b6-lt",
+     "typ": "luecke",
+     "kontext": "Telefonieren",
+     "frage": "Einen Termin vereinbaren: Ergänzen Sie das Gespräch.",
+     "text": "▶ Berufsberatung, Schulz, guten Tag.\n◀ Guten Tag, mein Name ist Karim Nasser. Ich hätte gern einen Termin {0} ein Beratungsgespräch.\n▶ Gern. Wir haben von Montag bis Freitag vormittags Sprechstunde. Wann {1} es Ihnen denn?\n◀ Am besten am Vormittag, weil ich nachmittags arbeite. {2} es am Mittwoch?\n▶ Am Mittwoch um 10 Uhr ist noch etwas frei. Passt Ihnen das?\n◀ Ja, das passt {3} gut. Was soll ich zum Termin {4}?\n▶ Bitte bringen Sie Ihren Lebenslauf und Ihre Zeugnisse mit.\n◀ Gut, dann {5} ich mir den Termin: Mittwoch, 10 Uhr. Vielen Dank!",
+     "gaps": [
+      {
+       "opts": [
+        "für",
+        "zu",
+        "um"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "passt",
+        "gefällt",
+        "steht"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "Geht",
+        "Steht",
+        "Liegt"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "mir",
+        "mich",
+        "mein"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "mitbringen",
+        "bringen mit",
+        "mitzubringen"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "notiere",
+        "notieren",
+        "notiert"
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "b6-s1",
+     "typ": "mc",
+     "kontext": "Situationen",
+     "frage": "Sie haben inzwischen eine andere Stelle angenommen und gehen nicht zum Vorstellungsgespräch. Was sagen Sie am Telefon?",
+     "opts": [
+      "Ich muss den Termin leider absagen, weil ich inzwischen eine Zusage bekommen habe.",
+      "Können wir den Termin bitte verschieben?",
+      "Ich komme ein bisschen später.",
+      "Ich hätte gern einen neuen Termin."
+     ],
+     "l": 0
+    },
+    {
+     "id": "b6-s2",
+     "typ": "mc",
+     "kontext": "Situationen",
+     "frage": "Sie möchten einen Termin verschieben. Was ist höflich?",
+     "opts": [
+      "Wäre es möglich, den Termin auf Donnerstag zu verlegen?",
+      "Ich komme am Mittwoch nicht. Tschüss.",
+      "Der Termin passt mir nicht, machen Sie einen neuen.",
+      "Mittwoch geht nicht, Donnerstag!"
+     ],
+     "l": 0
+    },
+    {
+     "id": "b6-s3",
+     "typ": "mc",
+     "kontext": "Situationen",
+     "frage": "„Ich habe eine Zusage bekommen und fange nächsten Montag an.“ – „Glückwunsch! Dann wünsche ich Ihnen ___ für den neuen Job.“",
+     "opts": [
+      "viel Erfolg",
+      "gute Besserung",
+      "guten Appetit",
+      "herzliches Beileid"
+     ],
+     "l": 0
+    },
+    {
+     "id": "b6-s4",
+     "typ": "mc",
+     "kontext": "Wortschatz",
+     "frage": "„Einen Termin ausmachen“ bedeutet …",
+     "opts": [
+      "einen Termin vereinbaren.",
+      "einen Termin absagen.",
+      "einen Termin vergessen.",
+      "einen Termin beenden."
+     ],
+     "l": 0
+    }
+   ]
+  },
+  {
+   "titel": "Prüfungstraining",
+   "icon": "🏁",
+   "kurz": "Sprachbausteine · Anzeigen zuordnen · gemischter Wortschatz",
+   "aufgaben": [
+    {
+     "id": "b7-sb",
+     "typ": "luecke",
+     "kontext": "Sprachbausteine",
+     "frage": "Sprachbausteine: Lesen Sie die Einladung und wählen Sie für jede Lücke die richtige Lösung.",
+     "text": "Sehr geehrte Frau Bondar,\n\nvielen Dank für Ihr Interesse {0} unserem Unternehmen. Ihre Unterlagen haben uns sehr {1} gefallen. Deshalb möchten wir Sie gern {2} einem persönlichen Gespräch einladen.\n\nDas Gespräch findet am 2. Dezember um 10:00 Uhr in unserem Büro am Hafen statt und dauert etwa eine Stunde. {3} lernen Sie bei dieser Gelegenheit Ihre zukünftigen Kolleginnen und Kollegen kennen. Bitte bringen Sie Ihre Originalzeugnisse mit, {4} wir Kopien anfertigen können.\n\n{5} Sie den Termin nicht wahrnehmen können, geben Sie uns bitte bis zum 28. November Bescheid. Wir schlagen Ihnen dann gern einen anderen Termin {6}.\n\nWir freuen uns {7}, Sie kennenzulernen.\n\nMit freundlichen Grüßen\nKerstin Lund\nPersonalabteilung",
+     "gaps": [
+      {
+       "opts": [
+        "an",
+        "für",
+        "auf"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "gut",
+        "viel",
+        "schön"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "zu",
+        "an",
+        "für"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "Außerdem",
+        "Trotzdem",
+        "Deshalb"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "damit",
+        "um",
+        "ohne"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "Falls",
+        "Ob",
+        "Obwohl"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "vor",
+        "an",
+        "bei"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "darauf",
+        "daran",
+        "davon"
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "b7-anz",
+     "typ": "matrix",
+     "kontext": "Lesen",
+     "frage": "Welche Anzeige passt zu welcher Person? Für eine Person gibt es keine passende Anzeige.",
+     "posts": [
+      {
+       "name": "A",
+       "text": "**Ausbildung zur Bankkauffrau / zum Bankkaufmann** – Start am 1. August. Sie haben Abitur oder Fachhochschulreife und Freude am Umgang mit Zahlen und Menschen. Hafenbank Kiel"
+      },
+      {
+       "name": "B",
+       "text": "**Duales Studium Wirtschaftsinformatik (B. Sc.)** – Theorie an der Fachhochschule, Praxis bei uns im IT-Team. Vergütung ab dem ersten Semester. Datenwerk GmbH"
+      },
+      {
+       "name": "C",
+       "text": "**Berufsfachschule für Physiotherapie** – dreijährige schulische Ausbildung, Beginn im Oktober. Kein Schulgeld! Voraussetzung: mittlerer Schulabschluss."
+      },
+      {
+       "name": "D",
+       "text": "**Aushilfe im Lager gesucht** – 20 Stunden pro Woche, gern auch Studierende, keine Vorkenntnisse nötig. Spedition Holm"
+      },
+      {
+       "name": "E",
+       "text": "**Beratungsstelle Anerkennung** – Sie haben im Ausland einen Beruf gelernt? Wir beraten Sie kostenlos und helfen beim Antrag."
+      }
+     ],
+     "wahl": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "keine"
+     ],
+     "aussagen": [
+      [
+       "Jamal hat Abitur und interessiert sich für Computer. Er möchte studieren, aber auch Geld verdienen.",
+       1
+      ],
+      [
+       "Sofia möchte Menschen helfen, nach Verletzungen wieder fit zu werden. Sie hat einen Realschulabschluss.",
+       2
+      ],
+      [
+       "Herr Tran war in Vietnam Elektriker und möchte wissen, ob sein Abschluss in Deutschland gilt.",
+       4
+      ],
+      [
+       "Lea studiert Biologie und sucht einen Nebenjob für ein paar Stunden pro Woche.",
+       3
+      ],
+      [
+       "Malik hat die Fachhochschulreife und möchte eine Ausbildung im Finanzbereich machen.",
+       0
+      ],
+      [
+       "Frau Okoye ist Köchin und sucht eine Vollzeitstelle in einem Restaurant.",
+       5
+      ]
+     ]
+    },
+    {
+     "id": "b7-w1",
+     "typ": "mc",
+     "kontext": "Wortschatz",
+     "frage": "Ich bewerbe mich ___ die Stelle als Lagerist.",
+     "opts": [
+      "um",
+      "an",
+      "über",
+      "nach"
+     ],
+     "l": 0,
+     "x": "sich **um** eine Stelle bewerben (auch möglich: sich **auf** eine Anzeige / Stelle bewerben)."
+    },
+    {
+     "id": "b7-w2",
+     "typ": "mc",
+     "kontext": "Wortschatz",
+     "frage": "Die Bewerbungsfrist ___ am 30. November ab.",
+     "opts": [
+      "läuft",
+      "geht",
+      "fällt",
+      "nimmt"
+     ],
+     "l": 0,
+     "x": "Eine Frist **läuft ab** = sie endet."
+    },
+    {
+     "id": "b7-w3",
+     "typ": "mc",
+     "kontext": "Wortschatz",
+     "frage": "Er hat eine Zusage bekommen. Das heißt …",
+     "opts": [
+      "er bekommt die Stelle.",
+      "er bekommt die Stelle nicht.",
+      "er muss noch einmal anrufen.",
+      "er hat einen neuen Termin."
+     ],
+     "l": 0,
+     "x": "Zusage = ja · Absage = nein."
+    },
+    {
+     "id": "b7-w4",
+     "typ": "mc",
+     "kontext": "Konnektoren",
+     "frage": "Je ___ ich mich vorbereite, desto ___ bin ich im Vorstellungsgespräch.",
+     "opts": [
+      "besser … ruhiger",
+      "gut … ruhig",
+      "besser … ruhig",
+      "am besten … am ruhigsten"
+     ],
+     "l": 0,
+     "x": "Nach **je** und **desto** steht der **Komparativ**."
+    },
+    {
+     "id": "b7-b1",
+     "typ": "bau",
+     "kontext": "Satzbau",
+     "frage": "Bilden Sie den Satz.",
+     "steine": [
+      "Statt",
+      "mich",
+      "nur online",
+      "zu bewerben,",
+      "bin",
+      "ich",
+      "persönlich",
+      "vorbeigegangen."
+     ]
+    }
+   ]
+  }
+ ]
+}
