@@ -35,6 +35,20 @@ export const KATALOG = [
     offen: true
   },
   {
+    id: 'ankommen-im-betrieb',
+    titel: 'Ankommen im Betrieb',
+    untertitel: 'Abteilungen · erster Arbeitstag · Vergleiche · Regeln · Small Talk · das Wort „es“ · Mails und Aufträge',
+    datei: 'training.html?set=ankommen-im-betrieb',
+    typ: 'Training',
+    niveau: 'B1/B2',
+    themen: ['Prüfungsvorbereitung', 'Beruf'],
+    farbe: '#c2611f',
+    dauer: '8 Teile',
+    teile: 8,
+    reihe: 'Prüfungstraining B1/B2',
+    offen: true
+  },
+  {
     id: 'handel-kontor',
     titel: 'Das Handelskontor',
     untertitel: 'Wortschatz Handel · indem, damit, um … zu, ohne dass, statt dass',

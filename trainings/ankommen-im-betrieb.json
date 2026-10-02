@@ -1,0 +1,450 @@
+{
+  "id": "ankommen-im-betrieb",
+  "titel": "Ankommen im Betrieb",
+  "untertitel": "Abteilungen · erster Arbeitstag · Vergleiche · Regeln · Small Talk · das Wort „es“ · Mails und Aufträge",
+  "niveau": "B1/B2",
+  "reihe": "Prüfungstraining B1/B2",
+  "farbe": "#c2611f",
+  "mix": 15,
+  "intro": "Acht Teile – jeder Teil kann einzeln gespielt werden. Der **Prüfungsmix** zieht zufällig Aufgaben aus allen Teilen.",
+  "kompakt": [
+    { "titel": "Über Aufgaben sprechen", "zeilen": [
+      "Ich bin **für** … verantwortlich / zuständig. · Zu meinen Aufgaben **gehört** … · Mein Aufgabengebiet **umfasst** …",
+      "Nachfragen: **Wende ich mich an Sie, wenn** …? · Habe ich Sie richtig verstanden, dass …?",
+      "Abteilungen: Personalabteilung · Buchhaltung · Controlling · Vertrieb · Marketing · Kundenservice · IT · Produktion · Lager · Logistik · Rechtsabteilung · Forschung und Entwicklung · Geschäftsleitung"
+    ]},
+    { "titel": "Der erste Arbeitstag", "zeilen": [
+      "**Steuer-ID** (Lohnsteuer) · **Sozialversicherungsnummer** (Rente usw.) · **Krankenkasse** · **Bankverbindung/IBAN** (Gehalt) · manchmal **Führungszeugnis**",
+      "Krank? Den Arbeitgeber **sofort** informieren. Die Arbeitsunfähigkeitsbescheinigung braucht man spätestens ab dem 4. Tag – manche Firmen wollen sie früher.",
+      "Pause: bei mehr als 6 Stunden Arbeit mindestens 30 Minuten, bei mehr als 9 Stunden 45 Minuten.",
+      "Urlaub: gesetzlich mindestens 20 Tage bei einer Fünf-Tage-Woche; viele Firmen geben mehr."
+    ]},
+    { "titel": "Vergleichssätze", "zeilen": [
+      "**Gleichheit:** so / genauso + Grundform + **wie** – Die Arbeit ist genauso spannend, **wie** ich gedacht habe.",
+      "**Ungleichheit:** Komparativ + **als** – Er verdient mehr, **als** er vorher verdient hat.",
+      "Nach **anders**, **etwas anderes**, **nichts anderes** steht **als**.",
+      "Im Vergleichssatz steht das Verb **am Ende**.",
+      "**je** + Komparativ (Nebensatz, Verb am Ende), **desto/umso** + Komparativ + Verb (Hauptsatz): Je besser Sie das Team kennen, desto wohler fühlen Sie sich."
+    ]},
+    { "titel": "Verstehen signalisieren und nachfragen", "zeilen": [
+      "**Verstehen:** Ah ja, das ist klar. · Ach so, ich verstehe. · Ja, das kenne ich auch so.",
+      "**Nichtverstehen:** Entschuldigung, das habe ich nicht ganz verstanden. · Mir ist nicht ganz klar, … · Unklar ist mir noch Folgendes: …",
+      "**Nachfragen:** Habe ich richtig verstanden, dass …? · Könnten Sie das noch einmal wiederholen? · Könnten Sie mir noch mal erklären, …?"
+    ]},
+    { "titel": "Small Talk", "zeilen": [
+      "**Gute Themen:** Wetter, Wochenende, Hobbys, Urlaub, Essen, Weg zur Arbeit",
+      "**Eher vermeiden:** Gehalt, Politik, Religion, Krankheiten, Klatsch über Kollegen",
+      "**Beginnen:** Ganz schön kalt heute, oder? · Wie war Ihr Wochenende? · **Reagieren:** Das klingt spannend! · Ach, das wusste ich gar nicht.",
+      "**Thema wechseln:** Übrigens … · Ach, da fällt mir ein: … · **Beenden:** Oh, schon so spät! Ich muss los. · Es war nett, Sie zu treffen.",
+      "**du oder Sie?** Normalerweise bietet die ältere oder ranghöhere Person das „Du“ an."
+    ]},
+    { "titel": "Das Wort „es“", "zeilen": [
+      "**es als Subjekt:** Wetter (Es regnet.) · Tages- und Jahreszeiten (Es ist Abend.) · Geräusche (Es klingelt.)",
+      "**feste Ausdrücke:** Wie geht es Ihnen? · Es gibt … · Es geht um … · Es kommt auf … an.",
+      "**es als Objekt:** Ich habe es eilig. · Du hast es gut. – dann steht es **nie auf Position 1**.",
+      "**es als Verweis:** Es ist wichtig, dass … → Steht der Nebensatz auf **Position 1**, **entfällt es**: Dass man übt, ist wichtig."
+    ]},
+    { "titel": "Mails, Besprechungen, Aufträge", "zeilen": [
+      "**Cc** = Kopie · **Bcc** = Blindkopie · **AW / Re** = Antwort · **WG / Fwd** = weitergeleitet",
+      "**TOP** = Tagesordnungspunkt · **Telko** = Telefonkonferenz · **Info** = Information · **Orga** = Organisation",
+      "**Aufträge erklären:** Achten Sie bitte darauf, dass … · Denken Sie auch daran, … · Ganz wichtig ist, dass … · Zuerst …, dann …",
+      "**Verstehen zeigen:** Okay, dann mache ich also Folgendes: … · Das heißt, ich … und …, richtig? · Muss ich eigentlich auch …?"
+    ]}
+  ],
+  "module": [
+    {
+      "titel": "Abteilungen im Unternehmen",
+      "icon": "🏢",
+      "kurz": "Wer arbeitet wo? · Abteilungen und Aufgaben · über die eigenen Aufgaben sprechen",
+      "aufgaben": [
+        {
+          "id": "c1-wer", "typ": "matrix", "kontext": "Lesen",
+          "frage": "Mitarbeitende der Nordhafen Technik GmbH stellen sich vor. In welcher Abteilung arbeiten sie?",
+          "wahl": ["Marketing", "IT", "Rechtsabteilung", "Vertrieb", "Kundenservice", "Produktion", "Personalabteilung", "Buchhaltung"],
+          "aussagen": [
+            ["Jonas: „Ich schreibe Texte für unsere Webseite und plane Anzeigen in sozialen Netzwerken.“", 0],
+            ["Selin: „Wenn ein Laptop nicht startet, rufen alle mich an. Außerdem richte ich neue Benutzerkonten ein.“", 1],
+            ["Paul: „Ich prüfe Verträge mit Lieferanten und berate die Geschäftsleitung bei rechtlichen Fragen.“", 2],
+            ["Mira: „Ich besuche Kunden, präsentiere neue Produkte und verhandle Preise.“", 3],
+            ["Tom: „Ich beantworte Anfragen am Telefon und kümmere mich um Reklamationen.“", 4],
+            ["Ivan: „Ich stelle die Maschinen ein und kontrolliere die Qualität der Teile, die wir herstellen.“", 5],
+            ["Hanna: „Ich führe Bewerbungsgespräche und organisiere Weiterbildungen für alle Mitarbeitenden.“", 6],
+            ["Karim: „Ich buche Rechnungen, zahle die Gehälter aus und behalte die Kosten im Blick.“", 7]
+          ]
+        },
+        { "id": "c1-zu", "typ": "zu", "kontext": "Wortschatz", "frage": "Welche Abteilung macht was?", "paare": [
+          ["das Controlling", "plant Budgets und prüft die Wirtschaftlichkeit"],
+          ["die Logistik", "organisiert Transporte und Lieferungen"],
+          ["das Lager", "nimmt Waren an und bewahrt sie auf"],
+          ["Forschung und Entwicklung", "entwickelt neue Produkte"],
+          ["die Geschäftsleitung", "trifft die wichtigsten Entscheidungen"],
+          ["der Betriebsrat", "vertritt die Interessen der Beschäftigten"]
+        ]},
+        { "id": "c1-r1", "typ": "mc", "kontext": "Redemittel", "frage": "Ich bin verantwortlich ___ die technische Ausstattung.", "opts": ["für", "um", "über", "an"], "l": 0 },
+        { "id": "c1-r2", "typ": "mc", "kontext": "Redemittel", "frage": "Zu meinen Aufgaben ___ die Prüfung von Verträgen.", "opts": ["gehört", "gehören", "gehöre", "hört"], "l": 0, "x": "Subjekt ist **die Prüfung** (Singular) → gehört." },
+        { "id": "c1-r3", "typ": "mc", "kontext": "Redemittel", "frage": "Mein Aufgabengebiet ___ die Planung aller Lieferungen.", "opts": ["umfasst", "umfassen", "fasst um", "umgefasst"], "l": 0, "x": "**umfassen** ist untrennbar: Es umfasst …" },
+        { "id": "c1-r4", "typ": "mc", "kontext": "Redemittel", "frage": "Sie möchten wissen, ob Frau Aydın bei Computerproblemen die richtige Ansprechpartnerin ist. Was fragen Sie?", "opts": ["Wende ich mich an Sie, wenn mein Computer nicht funktioniert?", "Wenden Sie sich bitte an mich!", "Bin ich für die Computer verantwortlich?", "Zu meinen Aufgaben gehört der Computer."], "l": 0 },
+        {
+          "id": "c1-lt", "typ": "luecke", "kontext": "Redemittel",
+          "frage": "Selin stellt sich im Team vor. Ergänzen Sie.",
+          "text": "Hallo zusammen, ich bin Selin Aydın aus der IT-Abteilung. Ich bin {0} die technische Ausstattung verantwortlich. {1} meinen Aufgaben gehört auch, Computer für neue Mitarbeitende einzurichten. Mein Aufgabengebiet {2} außerdem die Datensicherung. Wenn Sie Probleme mit Ihrem Laptop haben, wenden Sie sich bitte direkt {3} mich. Für Fragen zum Gehalt ist {4} die Buchhaltung zuständig – {5} kann ich Ihnen leider nicht helfen.",
+          "gaps": [
+            { "opts": ["für", "um", "an"], "l": 0 },
+            { "opts": ["Zu", "Für", "Bei"], "l": 0 },
+            { "opts": ["umfasst", "besteht", "enthält sich"], "l": 0 },
+            { "opts": ["an", "bei", "zu"], "l": 0 },
+            { "opts": ["dagegen", "deshalb", "trotzdem"], "l": 0 },
+            { "opts": ["dabei", "dafür", "darauf"], "l": 0 }
+          ]
+        },
+        { "id": "c1-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz.", "steine": ["Für Fragen zum Urlaub", "ist", "bei uns", "die Personalabteilung", "zuständig."], "alt": [["Für Fragen zum Urlaub", "ist", "die Personalabteilung", "bei uns", "zuständig."]] }
+      ]
+    },
+    {
+      "titel": "Der erste Arbeitstag",
+      "icon": "🗂️",
+      "kurz": "Willkommensmail · Formalitäten · Arbeitszeit, Krankmeldung, Urlaub · Notizen machen",
+      "aufgaben": [
+        {
+          "id": "c2-mail", "typ": "lesen", "kontext": "Lesen",
+          "frage": "Lesen Sie die Mail und beantworten Sie die Fragen.",
+          "textTitel": "Betreff: Ihr erster Arbeitstag am 3. März",
+          "text": "Sehr geehrte Frau Okafor,\n\nwir freuen uns, Sie als neue Mitarbeiterin in unserem Lager begrüßen zu dürfen. Damit Ihr Start reibungslos klappt, möchten wir an Ihrem ersten Tag zunächst einige Formalitäten klären.\n\nBitte bringen Sie folgende Unterlagen mit:\n– Ihre Steuer-Identifikationsnummer\n– Ihre Sozialversicherungsnummer\n– eine Mitgliedsbescheinigung Ihrer Krankenkasse\n– Ihre Bankverbindung (IBAN)\n\nIch erwarte Sie um 7:30 Uhr am Empfang im Erdgeschoss. Nach unserem Gespräch zeigt Ihnen Ihr Teamleiter, Herr Brandt, Ihren Arbeitsplatz und gibt Ihnen Ihre Arbeitskleidung.\n\nFalls Sie vorher noch Fragen haben, erreichen Sie mich unter der Durchwahl -214.\n\nMit freundlichen Grüßen\nSabine Kroll\nPersonalabteilung",
+          "fragen": [
+            { "f": "Was passiert am ersten Arbeitstag zuerst?", "opts": ["Frau Okafor klärt Formalitäten mit der Personalabteilung.", "Sie arbeitet sofort im Lager.", "Sie bekommt eine Sicherheitsschulung.", "Sie lernt alle Abteilungen kennen."], "l": 0 },
+            { "f": "Wo soll sich Frau Okafor melden?", "opts": ["am Empfang im Erdgeschoss", "direkt im Lager", "bei Herrn Brandt im Büro", "in der Kantine"], "l": 0 },
+            { "f": "Wer gibt ihr die Arbeitskleidung?", "opts": ["ihr Teamleiter", "Frau Kroll", "der Empfang", "die Krankenkasse"], "l": 0 },
+            { "f": "Was muss sie NICHT mitbringen?", "opts": ["ein Führungszeugnis", "ihre IBAN", "ihre Steuer-ID", "ihre Sozialversicherungsnummer"], "l": 0 }
+          ]
+        },
+        { "id": "c2-form", "typ": "zu", "kontext": "Formalitäten", "frage": "Wozu braucht der Arbeitgeber das?", "paare": [
+          ["die Steuer-Identifikationsnummer", "um die Lohnsteuer zu berechnen"],
+          ["die Sozialversicherungsnummer", "für Rente und andere Sozialversicherungen"],
+          ["die Mitgliedsbescheinigung", "zeigt, bei welcher Krankenkasse man versichert ist"],
+          ["die Bankverbindung", "damit das Gehalt aufs Konto kommt"],
+          ["das Führungszeugnis", "zeigt, ob man Vorstrafen hat – z. B. wichtig bei der Arbeit mit Kindern"]
+        ]},
+        {
+          "id": "c2-gespr", "typ": "matrix", "kontext": "Lesen",
+          "frage": "Lesen Sie das Gespräch. Richtig oder falsch?",
+          "textTitel": "Frau Okafor und ihr Teamleiter",
+          "text": "**Herr Brandt:** So, Frau Okafor, ein paar wichtige Dinge. Ihre Arbeitszeit erfassen Sie mit dieser Chipkarte. Halten Sie die Karte morgens und abends an das Gerät neben der Tür.\n**Frau Okafor:** Und die Pausen? Muss ich mich da auch ausstempeln?\n**Herr Brandt:** Nein, die Pause wird automatisch abgezogen: 30 Minuten pro Tag. Die Zeit können Sie selbst wählen, aber bitte nicht alle gleichzeitig.\n**Frau Okafor:** Verstehe. Und wenn ich krank bin?\n**Herr Brandt:** Dann rufen Sie bitte vor Schichtbeginn bei mir an. Bei uns brauchen Sie ab dem dritten Krankheitstag eine Bescheinigung vom Arzt. Die Praxis meldet das elektronisch an die Krankenkasse – Sie müssen uns aber trotzdem Bescheid sagen.\n**Frau Okafor:** Alles klar. Wie ist es mit dem Urlaub?\n**Herr Brandt:** Sie haben 28 Urlaubstage im Jahr. Den Urlaub tragen Sie in den Online-Kalender ein. Im Dezember ist im Lager aber besonders viel los – da gibt es nur in Ausnahmefällen frei.\n**Frau Okafor:** Und die Arbeitskleidung?\n**Herr Brandt:** Sicherheitsschuhe und Jacke bekommen Sie gleich von mir. Gewaschen wird die Kleidung von der Firma – legen Sie sie einfach freitags in den grauen Container.",
+          "aussagen": [
+            ["Frau Okafor erfasst ihre Arbeitszeit mit einer Chipkarte.", true],
+            ["Für die Pause muss sie sich aus- und wieder einstempeln.", false],
+            ["Wenn sie krank ist, soll sie vor Schichtbeginn anrufen.", true],
+            ["Sie braucht schon am ersten Krankheitstag eine Bescheinigung.", false],
+            ["Im Dezember kann man normalerweise keinen Urlaub nehmen.", true],
+            ["Sie muss ihre Arbeitskleidung selbst waschen.", false]
+          ]
+        },
+        { "id": "c2-notiz", "typ": "mc", "kontext": "Notizen machen", "frage": "Welche Notiz zum Gespräch ist am übersichtlichsten?", "opts": ["Chipkarte → morgens + abends · Pause 30 Min. (automatisch)", "Ich muss mit einer Chipkarte morgens und abends meine Arbeitszeit erfassen und die Pause wird automatisch abgezogen.", "die Chipkarte, der Morgen, der Abend, die Pause", "Karte??? Pause???"], "l": 0, "x": "Gute Notizen: keine ganzen Sätze, keine Artikel, Symbole (→, +, ?, !) und Aufzählungspunkte." },
+        { "id": "c2-w1", "typ": "mc", "kontext": "Wortschatz", "frage": "Die Bescheinigung vom Arzt, dass man krank ist und nicht arbeiten kann, heißt …", "opts": ["Arbeitsunfähigkeitsbescheinigung.", "Arbeitsbescheinigung.", "Krankenversicherungskarte.", "Führungszeugnis."], "l": 0 },
+        { "id": "c2-w2", "typ": "mc", "kontext": "Landeskunde", "frage": "Wer mehr als sechs Stunden arbeitet, muss laut Gesetz mindestens ___ Pause machen.", "opts": ["30 Minuten", "10 Minuten", "eine Stunde", "zwei Stunden"], "l": 0, "x": "Bei mehr als neun Stunden sind es 45 Minuten." },
+        { "id": "c2-w3", "typ": "mc", "kontext": "Landeskunde", "frage": "Bei einer Fünf-Tage-Woche hat man in Deutschland gesetzlich mindestens ___ Urlaubstage im Jahr.", "opts": ["20", "10", "15", "35"], "l": 0, "x": "Das ist das Minimum. Viele Firmen und Tarifverträge geben mehr, oft 28 bis 30 Tage." },
+        { "id": "c2-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie die Anweisung.", "steine": ["Halten Sie", "die Chipkarte", "morgens und abends", "an das Gerät", "neben der Tür."] }
+      ]
+    },
+    {
+      "titel": "Vergleiche: als, wie, je … desto",
+      "icon": "⚖️",
+      "kurz": "Vergleichssätze mit als und wie · je …, desto/umso …",
+      "aufgaben": [
+        {
+          "id": "c3-aw", "typ": "matrix", "kontext": "als oder wie?",
+          "frage": "Herr Sommer ist neu in der Firma. Als oder wie?",
+          "wahl": ["als", "wie"],
+          "aussagen": [
+            ["Er verdient mehr, ___ er vorher verdient hat.", 0],
+            ["Die Kollegen sind genauso nett, ___ die Chefin sie beschrieben hat.", 1],
+            ["Die Arbeit ist anders, ___ er erwartet hat.", 0],
+            ["Er hat so viele Urlaubstage, ___ es im Vertrag steht.", 1],
+            ["Die Pausen sind länger, ___ er es aus seiner alten Firma kennt.", 0],
+            ["Das Büro ist nicht so groß, ___ er gedacht hat.", 1],
+            ["Die Kantine ist besser, ___ alle sagen.", 0],
+            ["Der Weg zur Arbeit dauert genauso lange, ___ er geplant hatte.", 1]
+          ]
+        },
+        {
+          "id": "c3-regel", "typ": "matrix", "kontext": "Regeln",
+          "frage": "Stimmen die Regeln?",
+          "aussagen": [
+            ["Nebensätze mit als und wie drücken einen Vergleich aus.", true],
+            ["Bei Gleichheit benutzt man als.", false],
+            ["Nach anders benutzt man als.", true],
+            ["Im Vergleichssatz steht das Verb am Ende.", true],
+            ["Bei Ungleichheit steht das Adjektiv in der Grundform.", false],
+            ["Gleichheit: so / genauso + Grundform + wie", true]
+          ]
+        },
+        { "id": "c3-m1", "typ": "mc", "kontext": "Vergleiche", "frage": "Die neue Software ist viel ___, als wir gedacht haben.", "opts": ["einfacher", "einfach", "am einfachsten", "so einfach"], "l": 0 },
+        { "id": "c3-m2", "typ": "mc", "kontext": "Vergleiche", "frage": "Die Einarbeitung war nicht so ___, wie ich befürchtet hatte.", "opts": ["schwierig", "schwieriger", "am schwierigsten", "schwierigste"], "l": 0, "x": "so + **Grundform** + wie" },
+        { "id": "c3-m3", "typ": "mc", "kontext": "Vergleiche", "frage": "Heute hat sie länger gearbeitet, ___ sie wollte.", "opts": ["als", "wie", "wenn", "dass"], "l": 0 },
+        { "id": "c3-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz.", "steine": ["In der neuen Firma", "verdient", "Herr Sommer", "mehr,", "als", "er", "vorher", "verdient hat."] },
+        { "id": "c3-b2", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz.", "steine": ["Die Kolleginnen sind", "genauso freundlich,", "wie", "die Chefin", "sie", "beschrieben hat."] },
+        {
+          "id": "c3-je", "typ": "luecke", "kontext": "je … desto",
+          "frage": "Tipps für neue Mitarbeitende: Ergänzen Sie.",
+          "text": "Je {0} Sie Ihr Team kennen, desto {1} fühlen Sie sich hier. Je mehr Fragen wir jetzt klären, umso {2} Probleme gibt es später. Je {3} Sie sich auf ein Gespräch vorbereiten, desto besser {4} es. Und: Je natürlicher Sie bleiben, desto überzeugender {5} Sie.",
+          "gaps": [
+            { "opts": ["besser", "gut", "am besten"], "l": 0 },
+            { "opts": ["wohler", "wohl", "am wohlsten"], "l": 0 },
+            { "opts": ["weniger", "wenig", "am wenigsten"], "l": 0 },
+            { "opts": ["gründlicher", "gründlich", "am gründlichsten"], "l": 0 },
+            { "opts": ["läuft", "laufen", "gelaufen"], "l": 0 },
+            { "opts": ["wirken", "wirkt", "gewirkt"], "l": 0 }
+          ]
+        },
+        { "id": "c3-je2", "typ": "mc", "kontext": "je … desto", "frage": "Welcher Satz ist richtig?", "opts": ["Je mehr ich übe, desto sicherer werde ich.", "Je mehr ich übe, desto ich werde sicherer.", "Je ich mehr übe, desto sicherer werde ich.", "Je mehr übe ich, desto sicherer werde ich."], "l": 0, "x": "**je**-Satz = Nebensatz (Verb am Ende), **desto** + Komparativ + **Verb** + Subjekt." },
+        { "id": "c3-b3", "typ": "bau", "kontext": "je … desto", "frage": "„Sie sind offen. Sie lernen die Kollegen schnell kennen.“ – Bilden Sie einen Satz mit je … desto.", "steine": ["Je offener Sie sind,", "desto schneller", "lernen", "Sie", "die Kollegen kennen."] }
+      ]
+    },
+    {
+      "titel": "Regeln im Betrieb",
+      "icon": "📋",
+      "kurz": "Willkommensmappe lesen · Regeln verstehen · Verstehen und Nichtverstehen signalisieren",
+      "aufgaben": [
+        {
+          "id": "c4-t1", "typ": "lesen", "kontext": "Lesen",
+          "frage": "Willkommensmappe, Text 1: Lesen Sie und lösen Sie die Aufgaben.",
+          "textTitel": "Arbeiten im Großraumbüro",
+          "text": "Damit sich alle in unserem Großraumbüro wohlfühlen, gelten einige einfache Regeln. Es gibt keine festen Arbeitsplätze: Buchen Sie Ihren Schreibtisch bitte am Vortag über die App „DeskPlan“. Am Ende des Tages muss der Tisch leer sein – persönliche Dinge bewahren Sie in Ihrem Schließfach auf.\n\nTelefonate und Videokonferenzen führen Sie bitte nicht am Schreibtisch, sondern in einem der Telefonräume im Flur. Die Räume müssen nicht reserviert werden.\n\nDas Fenster neben Ihrem Platz dürfen Sie gern öffnen, die Klimaanlage wird jedoch zentral gesteuert. Wenn es Ihnen zu warm oder zu kalt ist, wenden Sie sich bitte an die Haustechnik (Durchwahl -150).\n\nIn der ersten Woche erhalten Sie außerdem einen Termin bei unserer Betriebsärztin. Die Teilnahme ist freiwillig, wird aber empfohlen.",
+          "fragen": [
+            { "f": "Die Mitarbeitenden haben einen eigenen, festen Schreibtisch.", "opts": ["richtig", "falsch"], "l": 1 },
+            { "f": "Was sollen die Mitarbeitenden bei Telefonaten tun?", "opts": ["in einen Telefonraum gehen", "den Telefonraum vorher reservieren", "leise am Schreibtisch sprechen"], "l": 0 },
+            { "f": "Wer kümmert sich um die Temperatur?", "opts": ["die Haustechnik", "jede Person selbst", "die Betriebsärztin"], "l": 0 },
+            { "f": "Der Termin bei der Betriebsärztin ist Pflicht.", "opts": ["richtig", "falsch"], "l": 1 }
+          ]
+        },
+        {
+          "id": "c4-t2", "typ": "lesen", "kontext": "Lesen",
+          "frage": "Willkommensmappe, Text 2: Lesen Sie und lösen Sie die Aufgaben.",
+          "textTitel": "Sicherheit im Lager",
+          "text": "Im gesamten Lager gelten Helm- und Sicherheitsschuhpflicht. Ihre Schutzausrüstung erhalten Sie am ersten Arbeitstag von Ihrer Teamleitung. Gabelstapler dürfen nur Mitarbeitende fahren, die einen Staplerschein besitzen. Wer noch keinen hat, kann bei uns im Haus eine Schulung machen – die Kosten übernimmt die Firma.\n\nDie Fluchtwege sind mit grünen Schildern markiert und müssen immer frei bleiben. Stellen Sie deshalb niemals Paletten oder Kartons in die Gänge. Im Brandfall benutzen Sie bitte nicht den Lastenaufzug, sondern die Treppen, und gehen Sie zum Sammelplatz auf dem Parkplatz.\n\nEinmal im Jahr findet eine Sicherheitsunterweisung statt. Die Teilnahme ist für alle Beschäftigten im Lager Pflicht.",
+          "fragen": [
+            { "f": "Den Gabelstapler darf jeder fahren, der im Lager arbeitet.", "opts": ["richtig", "falsch"], "l": 1 },
+            { "f": "Wer bezahlt die Schulung für den Staplerschein?", "opts": ["die Firma", "die Mitarbeitenden selbst", "die Arbeitsagentur"], "l": 0 },
+            { "f": "Was ist im Brandfall richtig?", "opts": ["über die Treppen zum Parkplatz gehen", "mit dem Lastenaufzug nach unten fahren", "am Arbeitsplatz warten"], "l": 0 },
+            { "f": "Die Sicherheitsunterweisung ist freiwillig.", "opts": ["richtig", "falsch"], "l": 1 }
+          ]
+        },
+        {
+          "id": "c4-sig", "typ": "matrix", "kontext": "Redemittel",
+          "frage": "Was drückt man damit aus?",
+          "wahl": ["Verstehen", "Nichtverstehen", "Nachfragen"],
+          "aussagen": [
+            ["Ah ja, das ist klar.", 0], ["Ach so, ich verstehe.", 0], ["Ja, das kenne ich auch so.", 0],
+            ["Entschuldigung, das habe ich nicht ganz verstanden.", 1], ["Mir ist nicht ganz klar, wie das funktioniert.", 1], ["Unklar ist mir noch Folgendes: …", 1],
+            ["Habe ich richtig verstanden, dass …?", 2], ["Könnten Sie das noch einmal wiederholen?", 2]
+          ]
+        },
+        {
+          "id": "c4-karten", "typ": "matrix", "kontext": "Regeln",
+          "frage": "Zu welchem Bereich gehört die Regel?",
+          "wahl": ["Parken", "Datenschutz", "Pause", "Notfall"],
+          "aussagen": [
+            ["den Parkausweis gut sichtbar ins Auto legen", 0], ["einen Antrag für einen Firmenparkplatz stellen", 0],
+            ["den Bildschirm sperren, wenn man den Platz verlässt", 1], ["sichere Passwörter benutzen und niemandem verraten", 1],
+            ["Die Pausenzeit wird automatisch abgezogen.", 2], ["das Geschirr in die Spülmaschine räumen", 2],
+            ["den Rettungsdienst unter 112 rufen", 3], ["im Brandfall den Aufzug nicht benutzen", 3]
+          ]
+        },
+        { "id": "c4-m1", "typ": "mc", "kontext": "Redemittel", "frage": "Eine Kollegin erklärt Ihnen die Parkregeln. Sie sind nicht sicher, ob Sie alles richtig verstanden haben. Was sagen Sie?", "opts": ["Habe ich richtig verstanden, dass ich den Ausweis ins Auto legen muss?", "Das habe ich mir schon gedacht.", "Ja, das kenne ich auch so.", "Ach so, alles klar."], "l": 0 },
+        { "id": "c4-m2", "typ": "mc", "kontext": "Landeskunde", "frage": "Welche Nummer wählt man in Deutschland bei einem medizinischen Notfall oder Feuer?", "opts": ["112", "110", "115", "911"], "l": 0, "x": "112 = Rettungsdienst und Feuerwehr · 110 = Polizei" }
+      ]
+    },
+    {
+      "titel": "Small Talk",
+      "icon": "☕",
+      "kurz": "passende Themen · beginnen, reagieren, Thema wechseln, beenden · duzen und siezen",
+      "aufgaben": [
+        {
+          "id": "c5-themen", "typ": "matrix", "kontext": "Themen",
+          "frage": "Small Talk mit Kolleginnen und Kollegen: gut geeignet oder eher vermeiden?",
+          "wahl": ["gut geeignet", "eher vermeiden"],
+          "aussagen": [
+            ["das Wetter", 0], ["das letzte Wochenende", 0], ["Hobbys und Freizeit", 0], ["das Essen in der Kantine", 0],
+            ["das Gehalt der Kollegen", 1], ["Politik und Religion", 1], ["eigene Krankheiten", 1], ["Klatsch über andere Kollegen", 1]
+          ],
+          "x": "Im deutschen Berufsleben gelten diese Themen meistens als heikel. In anderen Ländern kann das ganz anders sein."
+        },
+        {
+          "id": "c5-rm", "typ": "matrix", "kontext": "Redemittel",
+          "frage": "Was macht man mit diesem Satz?",
+          "wahl": ["beginnen", "reagieren", "Thema wechseln", "beenden"],
+          "aussagen": [
+            ["Ganz schön kalt heute, oder?", 0], ["Wie war denn Ihr Wochenende?", 0], ["Sind Sie auch mit dem Bus gekommen?", 0],
+            ["Das klingt spannend!", 1], ["Ach, das wusste ich gar nicht.", 1],
+            ["Übrigens, haben Sie schon gehört, dass …?", 2], ["Ach, da fällt mir ein: …", 2],
+            ["Oh, schon so spät? Ich muss leider los.", 3], ["Es war nett, mit Ihnen zu sprechen.", 3]
+          ]
+        },
+        {
+          "id": "c5-tipps", "typ": "matrix", "kontext": "Tipps",
+          "frage": "Gute Tipps für Small Talk?",
+          "wahl": ["guter Tipp", "schlechter Tipp"],
+          "aussagen": [
+            ["Warten Sie lieber, bis die andere Person das Gespräch beginnt.", 1],
+            ["Das Wetter ist fast immer ein guter Gesprächsanlass.", 0],
+            ["Stellen Sie offene Fragen, damit das Gespräch weitergeht.", 0],
+            ["Erzählen Sie ruhig Negatives über Kollegen – das schafft Nähe.", 1],
+            ["Suchen Sie Blickkontakt und lächeln Sie.", 0],
+            ["Ein Small Talk sollte möglichst lange dauern.", 1]
+          ]
+        },
+        {
+          "id": "c5-dial", "typ": "ordnen", "kontext": "Gespräch",
+          "frage": "Ein Small Talk in der Kantine. Bringen Sie das Gespräch in die richtige Reihenfolge.",
+          "zeilen": [
+            "◀ Hallo! Ganz schön voll heute in der Kantine, oder?",
+            "▶ Ja, wirklich. Sind Sie neu hier? Ich habe Sie noch nie gesehen.",
+            "◀ Ja, ich arbeite seit Montag in der Buchhaltung. Ich bin Leyla Aziz.",
+            "▶ Freut mich, Jan Peters aus dem Vertrieb. Und, wie gefällt es Ihnen bisher?",
+            "◀ Sehr gut, alle sind total nett. Übrigens: Ist das Essen hier immer so gut?",
+            "▶ Meistens schon. Probieren Sie mal donnerstags die Suppe! – Oh, schon halb eins, ich muss los. Bis bald!"
+          ]
+        },
+        { "id": "c5-m1", "typ": "mc", "kontext": "Reagieren", "frage": "„Am Wochenende war ich mit meiner Familie an der Ostsee.“ – Was ist eine gute Reaktion?", "opts": ["Oh, schön! Wo genau waren Sie denn?", "Ich mag das Meer nicht.", "Aha.", "Das interessiert mich nicht so."], "l": 0 },
+        { "id": "c5-m2", "typ": "mc", "kontext": "Reagieren", "frage": "Welche Frage hält das Gespräch am besten in Gang?", "opts": ["Was machen Sie am liebsten in Ihrer Freizeit?", "Haben Sie Hobbys?", "Ist das Ihr Kaffee?", "Sind Sie müde?"], "l": 0, "x": "Offene W-Fragen bringen mehr als Ja/Nein-Fragen." },
+        { "id": "c5-du1", "typ": "mc", "kontext": "duzen und siezen", "frage": "Die neue Kollegin sagt: „Wir duzen uns hier alle.“ Was bedeutet das?", "opts": ["Man sagt „du“ und benutzt den Vornamen.", "Man sagt „Sie“ und benutzt den Nachnamen.", "Man spricht nur Englisch.", "Man darf nicht miteinander sprechen."], "l": 0 },
+        { "id": "c5-du2", "typ": "mc", "kontext": "duzen und siezen", "frage": "Wer bietet in Deutschland normalerweise das „Du“ an?", "opts": ["die ältere oder ranghöhere Person", "immer die jüngere Person", "die Person, die zuerst spricht", "niemand – man duzt sofort alle"], "l": 0 }
+      ]
+    },
+    {
+      "titel": "Das Wort „es“",
+      "icon": "🔤",
+      "kurz": "es als Subjekt und Objekt · feste Ausdrücke · es als Verweis auf Nebensätze",
+      "aufgaben": [
+        {
+          "id": "c6-so", "typ": "matrix", "kontext": "Subjekt oder Objekt?",
+          "frage": "Welche Funktion hat „es“ im Satz?",
+          "wahl": ["Subjekt", "Objekt"],
+          "aussagen": [
+            ["Ich habe es heute sehr eilig.", 1], ["Es klingelt an der Tür.", 0], ["Wie geht es Ihnen?", 0], ["Du hast es gut!", 1],
+            ["Es gibt in der Nähe eine Kantine.", 0], ["Sie meint es ernst.", 1], ["Es regnet schon den ganzen Tag.", 0], ["Er hat es im Job weit gebracht.", 1]
+          ]
+        },
+        {
+          "id": "c6-kat", "typ": "matrix", "kontext": "es als Subjekt",
+          "frage": "Wofür steht „es“ hier?",
+          "wahl": ["Wetter", "Tages- / Jahreszeit", "Geräusch", "fester Ausdruck"],
+          "aussagen": [
+            ["Es schneit.", 0], ["Es hagelt.", 0], ["Es ist schon Abend.", 1], ["Es wird Frühling.", 1],
+            ["Es klopft.", 2], ["Es klingelt.", 2], ["Es geht um den neuen Dienstplan.", 3], ["Es kommt auf das Wetter an.", 3]
+          ]
+        },
+        { "id": "c6-p1", "typ": "mc", "kontext": "es als Verweis", "frage": "„Es ist wichtig, dass man Small Talk übt.“ – Der dass-Satz steht jetzt auf Position 1:", "opts": ["Dass man Small Talk übt, ist wichtig.", "Dass man Small Talk übt, ist es wichtig.", "Dass man Small Talk übt, es ist wichtig.", "Es dass man Small Talk übt, ist wichtig."], "l": 0, "x": "Steht der Nebensatz auf **Position 1**, **entfällt es**." },
+        { "id": "c6-p2", "typ": "mc", "kontext": "es als Verweis", "frage": "„Es hängt vom Kunden ab, ob wir den Auftrag bekommen.“ – Der ob-Satz steht jetzt auf Position 1:", "opts": ["Ob wir den Auftrag bekommen, hängt vom Kunden ab.", "Ob wir den Auftrag bekommen, hängt es vom Kunden ab.", "Ob wir den Auftrag bekommen, es hängt vom Kunden ab.", "Ob bekommen wir den Auftrag, hängt vom Kunden ab."], "l": 0 },
+        { "id": "c6-b1", "typ": "bau", "kontext": "es als Verweis", "frage": "„Man sollte es vermeiden, beim Small Talk über Politik zu sprechen.“ – Beginnen Sie mit dem Infinitivsatz.", "steine": ["Beim Small Talk", "über Politik", "zu sprechen,", "sollte", "man", "vermeiden."] },
+        { "id": "c6-b2", "typ": "bau", "kontext": "es als Verweis", "frage": "„Es ist wichtig, dass man im Gespräch positiv bleibt.“ – Beginnen Sie mit dem dass-Satz.", "steine": ["Dass", "man", "im Gespräch", "positiv", "bleibt,", "ist", "wichtig."] },
+        {
+          "id": "c6-rf", "typ": "matrix", "kontext": "Grammatik",
+          "frage": "Ist der Satz grammatisch richtig?",
+          "aussagen": [
+            ["Heute ist es aber wieder windig.", true],
+            ["Es ich habe eilig.", false],
+            ["Ich finde es schwierig, ein Gespräch zu beginnen.", true],
+            ["Ob es morgen schneit, es ist noch unklar.", false],
+            ["Morgen soll es sogar schneien.", true],
+            ["Dass du kommst, freut es mich.", false]
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Mails, Aufträge, Besprechungen",
+      "icon": "📧",
+      "kurz": "Abkürzungen · Wer muss was machen? · Arbeitsaufträge erklären und verstehen",
+      "aufgaben": [
+        { "id": "c7-abk", "typ": "zu", "kontext": "Abkürzungen", "frage": "Abkürzungen im Büroalltag: Was bedeuten sie?", "paare": [
+          ["Cc", "Kopie an weitere Empfänger"],
+          ["Bcc", "Blindkopie – die anderen sehen diesen Empfänger nicht"],
+          ["AW / Re", "Antwort auf eine Mail"],
+          ["WG / Fwd", "weitergeleitete Mail"],
+          ["der TOP", "der Tagesordnungspunkt"],
+          ["die Telko", "die Telefonkonferenz"]
+        ]},
+        { "id": "c7-orga", "typ": "mc", "kontext": "Abkürzungen", "frage": "„Wer übernimmt die Orga für das Sommerfest?“ – „Orga“ bedeutet …", "opts": ["Organisation.", "Orgel.", "Organ.", "Ordnung."], "l": 0 },
+        {
+          "id": "c7-todo", "typ": "matrix", "kontext": "Lesen",
+          "frage": "Lesen Sie die Mails. Wer muss was machen?",
+          "posts": [
+            { "name": "Carla Reuter", "info": "an Malik Haddou · Cc: Tina Vogt", "text": "Lieber Herr Haddou, wie weit sind Sie mit der Planung der Brandschutzschulung? Die Termine müssten bald an alle gehen. Bitte achten Sie dabei auf den Schichtplan. Außerdem sollten wir im Team abfragen, welche Schulungen sich die Kolleginnen und Kollegen fürs nächste Jahr wünschen. Viele Grüße, Carla Reuter" },
+            { "name": "Malik Haddou", "info": "AW · an Carla Reuter · Cc: Tina Vogt", "text": "Liebe Frau Reuter, die Schulung ist inhaltlich fertig. Für die Termine brauche ich noch den Schichtplan von Frau Vogt – sie ist ja für die Schichtplanung zuständig. Die Umfrage zu den Schulungswünschen schicke ich nächste Woche herum. Haben Sie übrigens schon mit der Haustechnik über die neuen Feuerlöscher gesprochen? Herzliche Grüße, Malik Haddou" },
+            { "name": "Carla Reuter", "info": "AW · an Malik Haddou, Tina Vogt", "text": "Mit der Haustechnik telefoniere ich heute noch. Frau Vogt, könnten Sie Herrn Haddou bitte den Schichtplan schicken? Und noch eine Frage: Wie weit sind die Einladungen zur Weihnachtsfeier? Beste Grüße, Carla Reuter" },
+            { "name": "Tina Vogt", "info": "AW · an Carla Reuter, Malik Haddou", "text": "Den Schichtplan erstelle ich heute Nachmittag und schicke ihn dann sofort. Die Einladungen zur Weihnachtsfeier gehen Ende der Woche raus – ich warte nur noch auf das Angebot vom Restaurant. Frau Reuter, Ihre Belege für die Fahrtkosten fehlen mir übrigens noch für die Abrechnung. Viele Grüße, Tina Vogt" }
+          ],
+          "wahl": ["Frau Reuter", "Herr Haddou", "Frau Vogt"],
+          "aussagen": [
+            ["mit der Haustechnik telefonieren", 0], ["die Belege für die Fahrtkosten abgeben", 0],
+            ["die Umfrage zu Schulungswünschen verschicken", 1], ["die Termine für die Brandschutzschulung festlegen", 1],
+            ["den Schichtplan erstellen", 2], ["die Einladungen zur Weihnachtsfeier verschicken", 2]
+          ]
+        },
+        { "id": "c7-cc", "typ": "mc", "kontext": "Mails", "frage": "Frau Vogt bekommt eine Mail „in Cc“. Was bedeutet das?", "opts": ["Sie bekommt eine Kopie zur Information.", "Sie muss sofort antworten.", "Die anderen sehen nicht, dass sie die Mail bekommt.", "Die Mail ist nur für sie."], "l": 0 },
+        {
+          "id": "c7-auftr", "typ": "matrix", "kontext": "Redemittel",
+          "frage": "Arbeitsaufträge: Wer sagt das?",
+          "wahl": ["Auftrag erklären", "Verstehen zeigen"],
+          "aussagen": [
+            ["Achten Sie bitte darauf, dass …", 0], ["Denken Sie auch daran, …", 0], ["Ganz wichtig ist, dass …", 0], ["Zuerst …, dann …", 0],
+            ["Okay, dann mache ich also Folgendes: …", 1], ["Das heißt, ich … und …, richtig?", 1], ["In Ordnung, ich muss also … und außerdem …", 1], ["Muss ich eigentlich auch …?", 1]
+          ]
+        },
+        {
+          "id": "c7-lager", "typ": "luecke", "kontext": "Arbeitsaufträge",
+          "frage": "Ein Arbeitsauftrag im Lager. Ergänzen Sie das Gespräch.",
+          "text": "▶ Also: Wenn eine Lieferung an Tor B ankommt, vergleichen Sie {0} den Lieferschein mit der Bestellung. {1} unterschreiben Sie den Lieferschein. Achten Sie bitte darauf, {2} Sie jede Ware scannen – sonst steht sie nicht im System.\n◀ Okay, das {3} also: erst vergleichen, dann unterschreiben und scannen, richtig?\n▶ Genau. Und denken Sie auch {4}, das Verpackungsmaterial in den gelben Container zu werfen.\n◀ In Ordnung. {5} ich die Ware auch selbst ins Regal einräumen?\n▶ Ja, bitte. Die Regale sind beschriftet.",
+          "gaps": [
+            { "opts": ["zuerst", "zuletzt", "zwischendurch"], "l": 0 },
+            { "opts": ["Danach", "Davor", "Damals"], "l": 0 },
+            { "opts": ["dass", "ob", "wenn"], "l": 0 },
+            { "opts": ["heißt", "nennt", "bedeutet sich"], "l": 0 },
+            { "opts": ["daran", "darauf", "dafür"], "l": 0 },
+            { "opts": ["Muss", "Werde", "Habe"], "l": 0 }
+          ]
+        },
+        { "id": "c7-top", "typ": "mc", "kontext": "Besprechungen", "frage": "Auf der Tagesordnung steht „TOP 3: Urlaubsplanung“. Was bedeutet das?", "opts": ["Über die Urlaubsplanung spricht man als dritten Punkt.", "Die Urlaubsplanung ist die beste Idee.", "Drei Personen planen ihren Urlaub.", "Die Besprechung beginnt um drei Uhr."], "l": 0 }
+      ]
+    },
+    {
+      "titel": "Prüfungstraining",
+      "icon": "🏁",
+      "kurz": "Sprachbausteine · Lesen (richtig/falsch + a, b, c) · gemischter Wortschatz",
+      "aufgaben": [
+        {
+          "id": "c8-sb", "typ": "luecke", "kontext": "Sprachbausteine",
+          "frage": "Sprachbausteine: Lesen Sie die Rundmail und wählen Sie für jede Lücke die richtige Lösung.",
+          "text": "Liebe Kolleginnen und Kollegen,\n\nab dem 1. Januar führen wir ein neues System {0} Zeiterfassung ein. Statt der alten Chipkarten nutzen Sie dann eine App, {1} Sie auf Ihr Diensthandy laden können. Die App ist einfacher zu bedienen {2} das bisherige System und zeigt Ihnen jederzeit Ihr aktuelles Stundenkonto.\n\nUm Sie gut auf die Umstellung vorzubereiten, bieten wir im Dezember mehrere Schulungen {3}. Bitte melden Sie sich bis zum 30. November {4} Ihrer Teamleitung an. {5} Sie kein Diensthandy haben, können Sie Ihre Zeiten auch weiterhin am Terminal im Eingangsbereich erfassen.\n\nJe früher Sie sich anmelden, {6} leichter können wir die Termine planen. Bei Fragen wenden Sie sich gern {7} uns.\n\nViele Grüße\nIhre Personalabteilung",
+          "gaps": [
+            { "opts": ["zur", "zum", "zu"], "l": 0 },
+            { "opts": ["die", "der", "das"], "l": 0 },
+            { "opts": ["als", "wie", "dass"], "l": 0 },
+            { "opts": ["an", "vor", "aus"], "l": 0 },
+            { "opts": ["bei", "an", "mit"], "l": 0 },
+            { "opts": ["Falls", "Ob", "Obwohl"], "l": 0 },
+            { "opts": ["desto", "je", "als"], "l": 0 },
+            { "opts": ["an", "bei", "zu"], "l": 0 }
+          ]
+        },
+        {
+          "id": "c8-lesen", "typ": "lesen", "kontext": "Lesen",
+          "frage": "Hausordnung: Lesen Sie den Text und lösen Sie die Aufgaben.",
+          "textTitel": "Kantine und Pausenräume",
+          "text": "Die Kantine im 2. Stock ist montags bis freitags von 11:30 bis 14:00 Uhr geöffnet. Bezahlt wird ausschließlich mit dem Mitarbeiterausweis; Bargeld wird nicht angenommen. Guthaben laden Sie an den Automaten neben dem Eingang der Kantine auf.\n\nIn den Pausenräumen auf jeder Etage gibt es Kühlschränke für mitgebrachtes Essen. Bitte beschriften Sie Ihre Lebensmittel mit Namen und Datum. Jeden Freitag um 15 Uhr werden die Kühlschränke geleert – alles, was dann noch darin steht, wird entsorgt.\n\nGeschirr aus der Kantine bringen Sie bitte nach dem Essen zur Geschirrrückgabe. Eigenes Geschirr in den Pausenräumen räumen Sie selbst in die Spülmaschine. Wer die Spülmaschine ausräumt, regelt der Wochenplan an der Tür.",
+          "fragen": [
+            { "f": "In der Kantine kann man auch bar bezahlen.", "opts": ["richtig", "falsch"], "l": 1 },
+            { "f": "Wo lädt man Geld auf den Ausweis?", "opts": ["an Automaten am Kantineneingang", "in der Personalabteilung", "an der Kasse"], "l": 0 },
+            { "f": "Was passiert freitags um 15 Uhr?", "opts": ["Die Kühlschränke werden geleert.", "Die Kantine schließt.", "Die Spülmaschine wird ausgeräumt."], "l": 0 },
+            { "f": "Jeder entscheidet selbst, wann er die Spülmaschine ausräumt.", "opts": ["richtig", "falsch"], "l": 1 }
+          ]
+        },
+        { "id": "c8-w1", "typ": "mc", "kontext": "Wortschatz", "frage": "Die Beschäftigten wählen eine Vertretung, die ihre Interessen gegenüber der Firma vertritt: den ___.", "opts": ["Betriebsrat", "Vorstand", "Vertrieb", "Kundenservice"], "l": 0 },
+        { "id": "c8-w2", "typ": "mc", "kontext": "Redemittel", "frage": "Sie haben nicht verstanden, wie man die Maschine startet. Was sagen Sie?", "opts": ["Könnten Sie mir das noch mal erklären?", "Das habe ich mir schon gedacht.", "Ach so, klar.", "Ja, mache ich."], "l": 0 },
+        { "id": "c8-w3", "typ": "mc", "kontext": "Vergleiche", "frage": "Die Kantine ist viel besser, ___ ich gedacht habe.", "opts": ["als", "wie", "so", "dann"], "l": 0 },
+        { "id": "c8-w4", "typ": "mc", "kontext": "das Wort es", "frage": "___ gibt hier in der Nähe ein schönes Café.", "opts": ["Es", "Das", "Er", "Man"], "l": 0 },
+        { "id": "c8-b1", "typ": "bau", "kontext": "je … desto", "frage": "Bilden Sie den Satz.", "steine": ["Je genauer", "Sie die Regeln kennen,", "desto sicherer", "arbeiten", "Sie."] }
+      ]
+    }
+  ]
+}

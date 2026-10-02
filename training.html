@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Training – Übungszentrale</title>
-<link rel="stylesheet" href="stil.css?v=20261002">
+<link rel="stylesheet" href="stil.css?v=20261002b">
 <style>
   body{background:#f1f3f5}
   .held{background:var(--akzent);color:#fff;border-radius:0 0 22px 22px;padding:22px 18px 26px;margin:0 -16px 18px}
@@ -64,9 +64,9 @@ window.__ok = false;
 </script>
 <script type="module">
 window.__ok = true;
-import { starte, sitzung } from './spieler.js?v=20261002';
-import { zeige, ziehe, punkte, labels, fmt } from './aufgaben.js?v=20261002';
-import { esc } from './db.js?v=20261002';
+import { starte, sitzung } from './spieler.js?v=20261002b';
+import { zeige, ziehe, punkte, labels, fmt } from './aufgaben.js?v=20261002b';
+import { esc } from './db.js?v=20261002b';
 
 const app = document.getElementById('app');
 const setId = (new URLSearchParams(location.search).get('set') || '').replace(/[^a-zA-Z0-9_-]/g, '');
