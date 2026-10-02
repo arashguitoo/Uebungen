@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Konsole – Übungszentrale</title>
 <meta name="robots" content="noindex">
-<link rel="stylesheet" href="stil.css">
+<link rel="stylesheet" href="stil.css?v=20261002">
 <style>
   :root{--akzent:#2f3f46;--akzent-hell:#e7edef}
   body{font-size:16px}
@@ -73,9 +73,30 @@
 </div></header>
 <main class="wrap" id="app"></main>
 
+<script>
+/* Wächter: zeigt eine verständliche Meldung statt einer leeren Seite */
+window.__ok = false;
+(function () {
+  function zeige(msg) {
+    msg = String(msg || 'unbekannter Fehler');
+    var fb = /firebase|gstatic/i.test(msg);
+    var ziel = document.getElementById('app') || document.body;
+    ziel.innerHTML = '<div class="karte" style="max-width:580px;margin:40px auto;border-color:#f1c6be;background:#fbe9e6">' +
+      '<h2>Die Seite konnte nicht geladen werden</h2>' +
+      (fb ? '<p>Die Verbindung zu Firebase hat nicht geklappt. Bitte prüfe die Internetverbindung und schalte einen Werbeblocker für diese Seite aus.</p>'
+          : '<p>Bitte lade die Seite einmal komplett neu: Windows <b>Strg + F5</b>, Mac <b>Cmd + Shift + R</b>. Wenn das nicht hilft: Sind wirklich alle Dateien des Ordners hochgeladen?</p>') +
+      '<p style="font-size:.85rem;color:#666">Technische Meldung: ' + msg.replace(/</g, '&lt;') + '</p></div>';
+  }
+  window.__fehler = zeige;
+  addEventListener('error', function (e) { if (!window.__ok) zeige(e.message); });
+  addEventListener('unhandledrejection', function (e) { var m = e.reason && e.reason.message || e.reason; if (!window.__ok || /firebase|gstatic/i.test(String(m))) zeige(m); });
+  setTimeout(function () { if (!window.__ok) zeige('Die Programmdateien wurden nicht vollständig geladen.'); }, 12000);
+})();
+</script>
 <script type="module">
-import { db, DEMO, zufall, esc, mitDemo } from './db.js';
-import { KATALOG, exById } from './katalog.js';
+window.__ok = true;
+import { db, DEMO, zufall, esc, mitDemo } from './db.js?v=20261002';
+import { KATALOG, exById } from './katalog.js?v=20261002';
 
 if (DEMO) document.getElementById('demo').innerHTML = '<div class="demo-band">DEMO-MODUS – Anmeldung mit beliebigen Daten, alles bleibt in diesem Browser</div>';
 const $ = s => document.querySelector(s), app = $('#app');
@@ -93,8 +114,10 @@ const kursName = kid => (D.kurse[kid] || {}).name || (kid ? '(gelöschter Kurs)'
 const kursListe = () => Object.entries(D.kurse || {}).sort((a, b) => (a[1].name || '').localeCompare(b[1].name || ''));
 
 /* ---------------- Anmeldung ---------------- */
-db.onAuth((u, admin) => {
-  offs.forEach(f => f()); offs = [];
+let angemeldet = false;
+db.onAuth((u, admin, err) => {
+  offs.forEach(f => f()); offs = []; angemeldet = !!(u && admin);
+  if (err) { window.__fehler('Firebase: ' + (err.message || err)); return; }
   if (!u || !admin) {
     $('#tabs').classList.add('versteckt'); $('#aus').classList.add('versteckt'); $('#wer').textContent = '';
     app.innerHTML = `<form class="karte" id="login" style="max-width:420px;margin:50px auto">
@@ -116,7 +139,7 @@ $('#aus').onclick = () => db.logout();
 document.querySelectorAll('.tab').forEach(b => b.onclick = () => {
   document.querySelectorAll('.tab').forEach(x => x.classList.toggle('an', x === b)); tab = b.dataset.t; zeichne();
 });
-setInterval(() => { if (tab === 'live' && !document.querySelector('#app input:focus,#app select:focus')) zeichne('tick'); }, 5000);
+setInterval(() => { if (angemeldet && tab === 'live' && !document.querySelector('#app input:focus,#app select:focus')) zeichne('tick'); }, 5000);
 
 let zTimer = null;
 function zeichne(quelle) {

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Die Satzpresse – Übungszentrale</title>
-<link rel="stylesheet" href="stil.css">
+<link rel="stylesheet" href="stil.css?v=20261002">
 <style>
   :root{--akzent:#7a3b69;--akzent-hell:#f3e8f0;--stahl:#5d6670}
   body{background:#efedf0}
@@ -42,10 +42,31 @@
 <body>
 <main class="wrap" id="app"><p class="leise" style="text-align:center;margin-top:40px">Lädt …</p></main>
 
+<script>
+/* Wächter: zeigt eine verständliche Meldung statt einer leeren Seite */
+window.__ok = false;
+(function () {
+  function zeige(msg) {
+    msg = String(msg || 'unbekannter Fehler');
+    var fb = /firebase|gstatic/i.test(msg);
+    var ziel = document.getElementById('app') || document.body;
+    ziel.innerHTML = '<div class="karte" style="max-width:580px;margin:40px auto;border-color:#f1c6be;background:#fbe9e6">' +
+      '<h2>Die Seite konnte nicht geladen werden</h2>' +
+      (fb ? '<p>Die Verbindung zu Firebase hat nicht geklappt. Bitte prüfe die Internetverbindung und schalte einen Werbeblocker für diese Seite aus.</p>'
+          : '<p>Bitte lade die Seite einmal komplett neu: Windows <b>Strg + F5</b>, Mac <b>Cmd + Shift + R</b>. Wenn das nicht hilft: Sind wirklich alle Dateien des Ordners hochgeladen?</p>') +
+      '<p style="font-size:.85rem;color:#666">Technische Meldung: ' + msg.replace(/</g, '&lt;') + '</p></div>';
+  }
+  window.__fehler = zeige;
+  addEventListener('error', function (e) { if (!window.__ok) zeige(e.message); });
+  addEventListener('unhandledrejection', function (e) { var m = e.reason && e.reason.message || e.reason; if (!window.__ok || /firebase|gstatic/i.test(String(m))) zeige(m); });
+  setTimeout(function () { if (!window.__ok) zeige('Die Programmdateien wurden nicht vollständig geladen.'); }, 12000);
+})();
+</script>
 <script type="module">
-import { starte } from './spieler.js';
-import { zeige, ziehe, label } from './aufgaben.js';
-import { esc } from './db.js';
+window.__ok = true;
+import { starte } from './spieler.js?v=20261002';
+import { zeige, ziehe, label } from './aufgaben.js?v=20261002';
+import { esc } from './db.js?v=20261002';
 
 /* ======================= INHALT ======================= */
 const STUFEN = [

@@ -1,5 +1,5 @@
 // db.js – Datenzugriff: Firebase Realtime Database oder DEMO-Modus (localStorage).
-import { FIREBASE_CONFIG, ADMIN_UID, ROOT } from './config.js';
+import { FIREBASE_CONFIG, ADMIN_UID, ROOT } from './config.js?v=20261002';
 
 const qs = new URLSearchParams(location.search);
 if (qs.has('demo')) sessionStorage.setItem('ueb_demo', '1');
@@ -31,7 +31,7 @@ const Fire = {
   },
   async login(email, pw) { const f = await F(); await f.signInWithEmailAndPassword(f.auth, email, pw); },
   async logout() { const f = await F(); await f.signOut(f.auth); },
-  onAuth(cb) { F().then(f => f.onAuthStateChanged(f.auth, u => cb(u, !!u && u.uid === ADMIN_UID))); }
+  onAuth(cb) { F().then(f => f.onAuthStateChanged(f.auth, u => cb(u, !!u && u.uid === ADMIN_UID))).catch(e => cb(null, false, e)); }
 };
 
 /* ---------------- DEMO (localStorage) ---------------- */
