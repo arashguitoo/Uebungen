@@ -1,0 +1,673 @@
+{
+  "id": "digital-im-job",
+  "titel": "Digital im Job",
+  "untertitel": "Medien im Alltag · je … desto/umso · Grafiken beschreiben · Reklamation · Nomen-Verb-Verbindungen · Jobsuche mit Social Media",
+  "niveau": "B1/B2",
+  "reihe": "Prüfungstraining B1/B2",
+  "farbe": "#3a6ea5",
+  "mix": 15,
+  "intro": "Sieben Teile rund um Medien in Alltag und Beruf – jeder Teil kann einzeln gespielt werden. Der **Prüfungsmix** zieht zufällig Aufgaben aus allen Teilen.",
+  "kompakt": [
+    {
+      "titel": "je + Komparativ …, desto/umso + Komparativ …",
+      "zeilen": [
+        "**Je** öfter ich das Handy aus**schalte**, **desto** entspannter **lebe** ich.",
+        "**Je** mehr Nachrichten ich **bekomme**, **umso** besser **fühle** ich mich.",
+        "Nebensatz mit *je*: Verb am Ende. Hauptsatz mit *desto/umso*: Komparativ direkt danach, dann das Verb."
+      ]
+    },
+    {
+      "titel": "Eine Grafik beschreiben",
+      "zeilen": [
+        "Die Grafik zeigt, … · Sie stammt aus dem Jahr … · Für die Untersuchung wurden … befragt.",
+        "Die am meisten genutzte Funktion ist … · 90 % der Befragten … · Weniger als die Hälfte … · Ungefähr zwei Drittel …",
+        "An letzter Stelle steht … · Nur die wenigsten … · Beide Grafiken zeigen … · Sowohl … als auch …"
+      ]
+    },
+    {
+      "titel": "Nomen-Verb-Verbindungen",
+      "zeilen": [
+        "auf etwas Bezug **nehmen** · etwas in Erfahrung **bringen** · etwas in Anspruch **nehmen**",
+        "einen Auftrag **erteilen** · sich mit jemandem in Verbindung **setzen** · in Betracht **kommen**",
+        "zur Folge **haben** · jemandem einen Vorschlag **unterbreiten**"
+      ]
+    },
+    {
+      "titel": "Eine Reklamation schreiben",
+      "zeilen": [
+        "Inhalt: Betreff · Ort und Datum des Kaufs · Produkt- und Typenbezeichnung · Kaufpreis · Fehlerbeschreibung",
+        "Ich nehme Bezug auf … · Ich möchte hiermit … reklamieren. · Falls dabei Kosten entstehen sollten, … · Ich lege die Originalrechnung bei."
+      ]
+    }
+  ],
+  "module": [
+    {
+      "titel": "Einen Monat offline",
+      "icon": "📵",
+      "kurz": "Text lesen · je … desto",
+      "aufgaben": [
+        {
+          "id": "m1-text",
+          "typ": "lesen",
+          "kontext": "Lesen",
+          "frage": "Lesen Sie den Blogbeitrag und beantworten Sie die Fragen.",
+          "textTitel": "Mein Monat ohne Smartphone",
+          "text": "Letzten Winter habe ich gemerkt, dass ich mein Handy über 100-mal am Tag in die Hand nehme. Ich war ständig nervös und konnte mich bei der Arbeit kaum noch konzentrieren. Also habe ich es für einen Monat in die Schublade gelegt.\n\nAm schwersten war die erste Woche: Ich wusste nicht, ob mir jemand geschrieben hatte, und ich fühlte mich ausgeschlossen. Mit meinen Freunden habe ich in dieser Zeit telefoniert – mit dem Festnetz! – oder wir haben uns einfach getroffen.\n\nDas Beste war die Ruhe. Ich habe wieder Bücher gelesen und besser geschlafen. Heute benutze ich das Smartphone wieder, aber nach 20 Uhr bleibt es aus, und die meisten Benachrichtigungen habe ich abgeschaltet.",
+          "fragen": [
+            {
+              "f": "Warum hat der Autor auf das Handy verzichtet?",
+              "opts": [
+                "Er war nervös und unkonzentriert.",
+                "Sein Handy war kaputt.",
+                "Sein Chef hat es verlangt.",
+                "Er wollte Geld sparen."
+              ],
+              "l": 0
+            },
+            {
+              "f": "Was war am Anfang schwer?",
+              "opts": [
+                "Er fühlte sich ausgeschlossen.",
+                "Er hatte zu viel Arbeit.",
+                "Seine Freunde haben ihn nicht mehr angerufen.",
+                "Er konnte nicht schlafen."
+              ],
+              "l": 0
+            },
+            {
+              "f": "Wie hat er mit Freunden kommuniziert?",
+              "opts": [
+                "per Festnetz oder persönlich",
+                "nur über E-Mail am Computer",
+                "gar nicht, er war allein",
+                "über den Laptop seiner Schwester"
+              ],
+              "l": 0
+            },
+            {
+              "f": "Wie nutzt er das Handy heute?",
+              "opts": [
+                "mit klaren Regeln",
+                "gar nicht mehr",
+                "genauso viel wie früher",
+                "nur noch beruflich"
+              ],
+              "l": 0
+            }
+          ]
+        },
+        {
+          "id": "m1-je",
+          "typ": "matrix",
+          "kontext": "je … desto",
+          "frage": "Passt die Aussage zum Autor des Blogs?",
+          "wahl": [
+            "passt",
+            "passt nicht"
+          ],
+          "aussagen": [
+            [
+              "Je öfter ich das Handy ausschalte, desto entspannter lebe ich.",
+              0
+            ],
+            [
+              "Je mehr Nachrichten ich bekomme, umso besser fühle ich mich.",
+              1
+            ],
+            [
+              "Je häufiger ich auf das Internet verzichte, umso mehr Zeit habe ich für andere Sachen.",
+              0
+            ],
+            [
+              "Je länger ich ohne Handy lebe, desto unglücklicher werde ich.",
+              1
+            ]
+          ]
+        },
+        {
+          "id": "m1-b1",
+          "typ": "bau",
+          "kontext": "je … desto",
+          "frage": "Bilden Sie den Satz.",
+          "steine": [
+            "Je",
+            "länger",
+            "ich im Internet",
+            "surfe,",
+            "desto",
+            "müder",
+            "bin",
+            "ich."
+          ]
+        },
+        {
+          "id": "m1-b2",
+          "typ": "bau",
+          "kontext": "je … umso",
+          "frage": "Bilden Sie den Satz.",
+          "steine": [
+            "Je",
+            "besser",
+            "ich Deutsch",
+            "verstehe,",
+            "umso",
+            "leichter",
+            "finde",
+            "ich eine Stelle."
+          ]
+        },
+        {
+          "id": "m1-1",
+          "typ": "mc",
+          "kontext": "je … desto",
+          "frage": "Je mehr Apps ich verwende, ___",
+          "opts": [
+            "desto weniger Speicher habe ich.",
+            "desto ich habe weniger Speicher.",
+            "desto weniger Speicher ich habe.",
+            "dann habe ich weniger Speicher."
+          ],
+          "l": 0
+        }
+      ]
+    },
+    {
+      "titel": "Mediennutzung",
+      "icon": "📊",
+      "kurz": "Eine Grafik verstehen und beschreiben",
+      "aufgaben": [
+        {
+          "id": "m2-gr",
+          "typ": "lesen",
+          "kontext": "Grafik",
+          "frage": "Lesen Sie die Daten der Umfrage und beantworten Sie die Fragen.",
+          "textTitel": "Wofür Erwachsene ihr Smartphone nutzen (Umfrage, Angaben in Prozent)",
+          "text": "Telefonieren: 100 · Foto-/Videokamera: 90 · Suchmaschine: 79 · Musik hören: 69 · Nachrichten: 69 · Soziale Netzwerke: 68 · Navigation: 64 · Online-Banking: 46 · Online-Shopping: 43 · Dating: 22\n\nBefragt wurden 757 Smartphone-Nutzer ab 14 Jahren.",
+          "fragen": [
+            {
+              "f": "Die am meisten genutzte Funktion ist …",
+              "opts": [
+                "das Telefonieren.",
+                "die Kamera.",
+                "die Suchmaschine.",
+                "die Navigation."
+              ],
+              "l": 0
+            },
+            {
+              "f": "Musik hören …",
+              "opts": [
+                "mehr als die Hälfte der Befragten.",
+                "weniger als die Hälfte der Befragten.",
+                "nur die wenigsten.",
+                "alle Befragten."
+              ],
+              "l": 0
+            },
+            {
+              "f": "Ungefähr zwei Drittel nutzen das Smartphone …",
+              "opts": [
+                "als Navi.",
+                "zum Dating.",
+                "für Online-Banking.",
+                "zum Einkaufen."
+              ],
+              "l": 0
+            },
+            {
+              "f": "An letzter Stelle steht …",
+              "opts": [
+                "Dating.",
+                "Online-Shopping.",
+                "Online-Banking.",
+                "Telefonieren."
+              ],
+              "l": 0
+            },
+            {
+              "f": "Wer wurde befragt?",
+              "opts": [
+                "Jugendliche und Erwachsene ab 14",
+                "nur Kinder unter 14 Jahren",
+                "nur Erwachsene über 30",
+                "nur Berufstätige in Firmen"
+              ],
+              "l": 0
+            }
+          ]
+        },
+        {
+          "id": "m2-rm",
+          "typ": "matrix",
+          "kontext": "Redemittel",
+          "frage": "Wozu passt der Ausdruck?",
+          "wahl": [
+            "Thema/Quelle nennen",
+            "Zahlen beschreiben",
+            "vergleichen"
+          ],
+          "aussagen": [
+            [
+              "Die Grafik zeigt, wofür …",
+              0
+            ],
+            [
+              "Sie stammt aus dem Jahr …",
+              0
+            ],
+            [
+              "Für die Untersuchung wurden … befragt.",
+              0
+            ],
+            [
+              "Weniger als die Hälfte der Befragten …",
+              1
+            ],
+            [
+              "An letzter Stelle steht …",
+              1
+            ],
+            [
+              "Beide Grafiken zeigen …",
+              2
+            ],
+            [
+              "Sowohl Jugendliche als auch Erwachsene …",
+              2
+            ]
+          ]
+        },
+        {
+          "id": "m2-1",
+          "typ": "mc",
+          "kontext": "Zahlen",
+          "frage": "64 % – das ist …",
+          "opts": [
+            "ungefähr zwei Drittel.",
+            "ungefähr ein Viertel.",
+            "etwa die Hälfte.",
+            "fast alle."
+          ],
+          "l": 0
+        }
+      ]
+    },
+    {
+      "titel": "Eine Reklamation",
+      "icon": "🖨️",
+      "kurz": "Reklamationsschreiben · Inhalt",
+      "aufgaben": [
+        {
+          "id": "m3-inh",
+          "typ": "matrix",
+          "kontext": "Reklamation",
+          "frage": "Gehört diese Information in eine schriftliche Reklamation?",
+          "wahl": [
+            "ja",
+            "nein"
+          ],
+          "aussagen": [
+            [
+              "Betreff",
+              0
+            ],
+            [
+              "Ort und Datum des Kaufs",
+              0
+            ],
+            [
+              "Fehlerbeschreibung",
+              0
+            ],
+            [
+              "Kaufpreis",
+              0
+            ],
+            [
+              "Typenbezeichnung",
+              0
+            ],
+            [
+              "Größe des Geräts",
+              1
+            ],
+            [
+              "Produktionsdatum",
+              1
+            ]
+          ]
+        },
+        {
+          "id": "m3-brief",
+          "typ": "luecke",
+          "kontext": "Reklamation",
+          "frage": "Ergänzen Sie das Reklamationsschreiben.",
+          "text": "Reklamation Kaffeevollautomat CX 300\n\nSehr geehrte Frau Albers,\n\nich nehme Bezug auf {0} Telefongespräch vom Dienstag und möchte hiermit unseren Kaffeeautomaten {1} Typ CX 300 reklamieren. Das Gerät ist defekt und zeigt den Fehler E12. {2} ich im Internet in Erfahrung gebracht habe, tritt das Problem häufiger auf.\n\nWir möchten Ihren Reparaturservice in Anspruch nehmen. {3} dabei Kosten entstehen sollten, bitte ich Sie, sich vorher mit mir in Verbindung zu setzen. Natürlich käme auch der Austausch des Geräts {4} ein anderes in Betracht.\n\nIch lege die Originalrechnung bei und bitte Sie, mir den Eingang meiner Reklamation schriftlich {5} bestätigen.\n\nMit freundlichen Grüßen\nTomás Ferreira",
+          "gaps": [
+            {
+              "opts": [
+                "unser",
+                "unseren",
+                "unserem"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "vom",
+                "zum",
+                "beim"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "Wie",
+                "Was",
+                "Ob"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "Falls",
+                "Ob",
+                "Damit"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "gegen",
+                "für",
+                "mit"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "zu",
+                "um",
+                "für"
+              ],
+              "l": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Nomen-Verb-Verbindungen",
+      "icon": "🔗",
+      "kurz": "Feste Ausdrücke im Geschäftsbrief",
+      "aufgaben": [
+        {
+          "id": "m4-zu",
+          "typ": "zu",
+          "kontext": "Nomen-Verb",
+          "frage": "Welches Verb gehört zum Ausdruck?",
+          "paare": [
+            [
+              "auf etwas Bezug …",
+              "nehmen"
+            ],
+            [
+              "etwas in Erfahrung …",
+              "bringen"
+            ],
+            [
+              "einen Auftrag …",
+              "erteilen"
+            ],
+            [
+              "sich mit jemandem in Verbindung …",
+              "setzen"
+            ],
+            [
+              "in Betracht …",
+              "kommen"
+            ],
+            [
+              "jemandem einen Vorschlag …",
+              "unterbreiten"
+            ]
+          ]
+        },
+        {
+          "id": "m4-bed",
+          "typ": "zu",
+          "kontext": "Bedeutung",
+          "frage": "Was bedeutet der Ausdruck?",
+          "paare": [
+            [
+              "etwas in Anspruch nehmen",
+              "etwas nutzen"
+            ],
+            [
+              "etwas zur Folge haben",
+              "zu einem Ergebnis führen"
+            ],
+            [
+              "etwas in Erfahrung bringen",
+              "etwas herausfinden"
+            ],
+            [
+              "sich in Verbindung setzen",
+              "Kontakt aufnehmen"
+            ],
+            [
+              "in Betracht kommen",
+              "möglich sein"
+            ]
+          ]
+        },
+        {
+          "id": "m4-1",
+          "typ": "mc",
+          "kontext": "Nomen-Verb",
+          "frage": "Wir haben ein großes Projekt bekommen. Das hat zur ___, dass wir viele Überstunden machen müssen.",
+          "opts": [
+            "Folge",
+            "Wirkung",
+            "Ursache",
+            "Frage"
+          ],
+          "l": 0
+        }
+      ]
+    },
+    {
+      "titel": "Antwort auf eine Reklamation",
+      "icon": "📨",
+      "kurz": "Textteile ordnen",
+      "aufgaben": [
+        {
+          "id": "m5-ord",
+          "typ": "ordnen",
+          "kontext": "Antwortbrief",
+          "frage": "Ein Kunde hat einen defekten Monitor reklamiert. Bringen Sie die Antwort des Kundenservice in die richtige Reihenfolge.",
+          "zeilen": [
+            "Ihr Schreiben vom 12. Oktober: Reklamation",
+            "Sehr geehrter Herr Ramos,",
+            "vielen Dank für Ihre E-Mail. Wir bedauern sehr, dass Ihr Monitor nicht mehr funktioniert.",
+            "Bitte senden Sie ihn an unseren Reparaturservice und legen Sie die Originalrechnung bei.",
+            "Handelt es sich um einen Gerätefehler, ist die Reparatur kostenlos, da das Gerät noch Garantie hat.",
+            "Wir bitten Sie, die Unannehmlichkeiten zu entschuldigen.",
+            "Mit freundlichen Grüßen – Kundenservice"
+          ]
+        },
+        {
+          "id": "m5-1",
+          "typ": "mc",
+          "kontext": "Antwortbrief",
+          "frage": "Was macht die Firma, wenn **kein** Gerätefehler vorliegt?",
+          "opts": [
+            "Sie schickt einen Kostenvoranschlag.",
+            "Sie repariert kostenlos.",
+            "Sie tauscht das Gerät sofort.",
+            "Sie antwortet nicht."
+          ],
+          "l": 0
+        }
+      ]
+    },
+    {
+      "titel": "Jobsuche mit Social Media",
+      "icon": "🌐",
+      "kurz": "Ratgeber lesen · Wortschatz",
+      "aufgaben": [
+        {
+          "id": "m6-text",
+          "typ": "lesen",
+          "kontext": "Lesen",
+          "frage": "Lesen Sie den Ratgeber. Welche Aussage steht im Text?",
+          "textTitel": "Netzwerken statt nur bewerben",
+          "text": "Wer eine Stelle sucht, braucht vor allem eins: Kontakte. Und die kann man online sehr gut ausbauen. Bewerben Sie sich weiter wie bisher, aber testen Sie zusätzlich neue Wege.\n\n**Business-Netzwerke:** Hier können Sie gezielt nach Personen und Firmen suchen. Viele Unternehmen mit Personalbedarf sind dort aktiv. Optimieren Sie Ihr Profil – dann melden sich vielleicht sogar Headhunter bei Ihnen.\n\n**Private Profile:** Folgen Sie in sozialen Netzwerken auch potenziellen Arbeitgebern. Viele Firmen veröffentlichen dort Stellenangebote.\n\n**Suchen Sie das Gespräch:** Ob Party oder Messe – erzählen Sie allen, dass Sie eine Stelle suchen. Falsche Scham ist nicht nötig: Wer auf eine Firma zugeht, spart ihr Zeit bei der Mitarbeitersuche. In Business-Netzwerken sehen Sie oft auch, wer zu einer Veranstaltung kommt – sprechen Sie diese Personen dort gezielt an.",
+          "fragen": [
+            {
+              "f": "Für die Jobsuche sind besonders wichtig:",
+              "opts": [
+                "Kontakte",
+                "Zeugnisse",
+                "Fremdsprachen",
+                "Auslandserfahrung"
+              ],
+              "l": 0
+            },
+            {
+              "f": "Klassische Bewerbungen …",
+              "opts": [
+                "soll man weiter schreiben.",
+                "braucht man nicht mehr.",
+                "soll man nur online schicken.",
+                "sind verboten."
+              ],
+              "l": 0
+            },
+            {
+              "f": "Wenn man Firmen von sich aus kontaktiert, …",
+              "opts": [
+                "ist das hilfreich für die Firmen.",
+                "stört man die Firmen.",
+                "muss man sich schämen.",
+                "bekommt man keine Antwort."
+              ],
+              "l": 0
+            },
+            {
+              "f": "In Business-Netzwerken findet man auch …",
+              "opts": [
+                "Infos über Veranstaltungen und Teilnehmer.",
+                "private Fotos von Personalchefs.",
+                "Gehaltslisten von großen Firmen.",
+                "fertige Arbeitsverträge zum Unterschreiben."
+              ],
+              "l": 0
+            }
+          ]
+        },
+        {
+          "id": "m6-zu",
+          "typ": "zu",
+          "kontext": "Wortschatz",
+          "frage": "Was bedeuten die Begriffe?",
+          "paare": [
+            [
+              "der Personalbedarf",
+              "eine Firma braucht Mitarbeiter"
+            ],
+            [
+              "die Initiativ-Bewerbung",
+              "Bewerbung ohne Stellenanzeige"
+            ],
+            [
+              "die Branche",
+              "Wirtschaftsbereich, z. B. IT oder Handel"
+            ],
+            [
+              "fest angestellt",
+              "mit einem unbefristeten Arbeitsvertrag"
+            ],
+            [
+              "potenziell",
+              "möglich, eventuell"
+            ],
+            [
+              "optimieren",
+              "verbessern"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Prüfungstraining",
+      "icon": "🏁",
+      "kurz": "Sprachbausteine · Meinung äußern",
+      "aufgaben": [
+        {
+          "id": "m7-sb",
+          "typ": "luecke",
+          "kontext": "Sprachbausteine",
+          "frage": "Sprachbausteine: Kommentar in einem Forum. Wählen Sie die richtige Lösung.",
+          "text": "Ich bin der Auffassung, {0} soziale Netzwerke für die Jobsuche sehr nützlich sind. {1} mehr Kontakte man hat, {2} schneller erfährt man von freien Stellen. Ich habe die Erfahrung gemacht, dass Firmen gern auf Bewerber {3}, die sich selbst melden.\n\nEinerseits kann man so viel erreichen, {4} sollte man vorsichtig mit privaten Fotos sein.",
+          "gaps": [
+            {
+              "opts": [
+                "dass",
+                "ob",
+                "wenn"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "Je",
+                "Desto",
+                "Wie"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "desto",
+                "je",
+                "als"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "zugehen",
+                "zugeht",
+                "zugegangen"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "andererseits",
+                "außerdem",
+                "deshalb"
+              ],
+              "l": 0
+            }
+          ]
+        },
+        {
+          "id": "m7-1",
+          "typ": "mc",
+          "kontext": "Meinung",
+          "frage": "Welcher Satz drückt **Bedenken** aus?",
+          "opts": [
+            "Ich sehe die Gefahr, dass private Daten öffentlich werden.",
+            "Die Ideen der Autorin finde ich wirklich super.",
+            "Ein Bekannter hat so eine tolle Stelle gefunden.",
+            "Ich habe die gleiche Erfahrung gemacht wie sie."
+          ],
+          "l": 0
+        }
+      ]
+    }
+  ]
+}

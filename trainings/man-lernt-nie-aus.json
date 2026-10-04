@@ -1,0 +1,694 @@
+{
+  "id": "man-lernt-nie-aus",
+  "titel": "Man lernt nie aus",
+  "untertitel": "Lernbiografien · Eigenschaften · Konjunktiv I · Förderprogramme · Anfrage an ein Weiterbildungsinstitut · Lernen und Emotionen · als ob",
+  "niveau": "B1/B2",
+  "reihe": "Prüfungstraining B1/B2",
+  "farbe": "#5b6bb0",
+  "mix": 15,
+  "intro": "Sieben Teile rund um Bildung, Weiterbildung und erfolgreiches Lernen – jeder Teil kann einzeln gespielt werden. Der **Prüfungsmix** zieht zufällig Aufgaben aus allen Teilen.",
+  "kompakt": [
+    {
+      "titel": "Konjunktiv I – indirekte Rede",
+      "zeilen": [
+        "Der Enkel sagt: „Der alte Herr **sitzt** meistens am Schreibtisch.“ → In der Zeitung: Der alte Herr **sitze** meistens am Schreibtisch, sagt der Enkel.",
+        "Formen (er/sie/es/man): **sei · habe · müsse · könne · wolle · gebe** – Achtung: sie/Sie **seien**",
+        "Wenn Konjunktiv I = Indikativ, nimmt man Konjunktiv II: Sie sagen, sie **hätten** keine Zeit. / sie **würden** kommen.",
+        "Mit dem Konjunktiv I zeigt der Schreiber, dass er die Aussage einer anderen Person wiedergibt."
+      ]
+    },
+    {
+      "titel": "Irreale Vergleichssätze: als ob / als wenn / als",
+      "zeilen": [
+        "Er fühlt sich, **als ob** er an einem Wettkampf **teilnehmen würde**. (Er nimmt aber nicht teil.)",
+        "Er fühlt sich, **als** **würde** er an einem Wettkampf **teilnehmen**. ← bei *als* steht das Verb direkt danach!",
+        "Vergangenheit: …, als ob ich im Lotto **gewonnen hätte**. · …, als wäre ich komplett unvorbereitet."
+      ]
+    },
+    {
+      "titel": "Förderung der Weiterbildung",
+      "zeilen": [
+        "**Bildungsprämie:** für Erwerbstätige mit geringem Einkommen – der Staat übernimmt 50 %.",
+        "**Stipendien:** z. B. für ausländische Akademiker, die in Deutschland studieren oder forschen.",
+        "**Anerkennung:** Im Ausland erworbene Qualifikationen werden geprüft und anerkannt.",
+        "**Agentur für Arbeit:** übernimmt Kosten z. B. bei (drohender) Arbeitslosigkeit – vorher Beratung!"
+      ]
+    }
+  ],
+  "module": [
+    {
+      "titel": "Bildungsgeschichten",
+      "icon": "🎓",
+      "kurz": "Wortschatz Bildung",
+      "aufgaben": [
+        {
+          "id": "w1-zu",
+          "typ": "zu",
+          "kontext": "Wortschatz",
+          "frage": "Was bedeuten die Begriffe?",
+          "paare": [
+            [
+              "die Umschulung",
+              "eine Ausbildung für einen neuen Beruf"
+            ],
+            [
+              "das Abendgymnasium",
+              "Schule, an der Erwachsene das Abitur nachholen"
+            ],
+            [
+              "die Fernuniversität",
+              "Studium von zu Hause aus"
+            ],
+            [
+              "der Schulabschluss",
+              "Zeugnis am Ende der Schulzeit"
+            ],
+            [
+              "die Weiterbildung",
+              "neue Qualifikationen im Beruf erwerben"
+            ],
+            [
+              "die frühkindliche Förderung",
+              "Unterstützung von kleinen Kindern beim Lernen"
+            ]
+          ]
+        },
+        {
+          "id": "w1-rm",
+          "typ": "matrix",
+          "kontext": "Über sich erzählen",
+          "frage": "Spricht die Person über ihre Vergangenheit oder über ihre Pläne?",
+          "wahl": [
+            "Vergangenheit",
+            "Pläne"
+          ],
+          "aussagen": [
+            [
+              "Mein Weg war ein bisschen kompliziert, weil ich früh Mutter wurde.",
+              0
+            ],
+            [
+              "Meine Familie wollte, dass ich Ärztin werde.",
+              0
+            ],
+            [
+              "Durch den Umzug nach Deutschland habe ich neu angefangen.",
+              0
+            ],
+            [
+              "Nach dem Sprachkurs möchte ich eine Umschulung machen.",
+              1
+            ],
+            [
+              "In zwei Jahren will ich den Meister machen.",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Besondere Lernbiografien",
+      "icon": "📰",
+      "kurz": "Zeitungsmeldungen · Eigenschaften",
+      "aufgaben": [
+        {
+          "id": "w2-text",
+          "typ": "lesen",
+          "kontext": "Lesen",
+          "frage": "Lesen Sie die Meldungen und beantworten Sie die Fragen.",
+          "textTitel": "Man lernt nie aus",
+          "text": "**1** Darko Petrović kam aus Serbien nach Deutschland, weil er hier Arbeit gefunden hatte. Er ist Elektriker und hilft in seiner Freizeit Jugendlichen in einem Jugendzentrum bei Reparaturen. Er wisse, wie es sei, wenn man in ein fremdes Land komme, sagt er. Obwohl er viel zu tun hat, sucht er eine berufliche Weiterbildung.\n\n**2** Er hört nicht mehr gut und läuft langsam, aber geistig fühlt er sich fit wie eh und je: Der 93-jährige Ernesto Ruiz ist der älteste Student an der Universität von Sevilla. Er sitze meistens am Schreibtisch und lese, berichtet seine Enkelin.\n\n**3** Mariam Haidari musste als Kind in Afghanistan jeden Tag einen langen Schulweg zurücklegen. Heute macht sie in Deutschland eine Ausbildung zur Elektronikerin und möchte danach studieren. Mit einigen Kollegen gebe es manchmal Probleme, weil viele Frauen in technischen Berufen nichts zutrauen würden.\n\n**4** Jonas Keller ist Lehrer an einer Berufsschule. Seit einem Unfall sitzt er im Rollstuhl. Das sei ein langer Lernprozess gewesen, betont er. Er kümmert sich besonders darum, für seine Schülerinnen und Schüler gute Ausbildungsplätze zu finden.",
+          "fragen": [
+            {
+              "f": "Warum versteht Darko die Jugendlichen gut?",
+              "opts": [
+                "Er hat selbst Erfahrung mit Migration.",
+                "Er hat früher Pädagogik studiert.",
+                "Er hat selbst drei Kinder in dem Alter.",
+                "Er arbeitet hauptberuflich im Jugendzentrum."
+              ],
+              "l": 0
+            },
+            {
+              "f": "Was ist an Ernesto besonders?",
+              "opts": [
+                "Er studiert mit über 90 Jahren.",
+                "Er ist Professor an der Universität.",
+                "Er hat nie in seinem Leben gearbeitet.",
+                "Er hat gerade seinen Doktor gemacht."
+              ],
+              "l": 0
+            },
+            {
+              "f": "Welches Problem hat Mariam?",
+              "opts": [
+                "Manche Kollegen trauen Frauen in der Technik wenig zu.",
+                "Sie findet nach der Schule keinen Ausbildungsplatz.",
+                "Ihr Weg zur Berufsschule ist sehr lang und gefährlich.",
+                "Sie versteht die Fachsprache im Betrieb noch nicht."
+              ],
+              "l": 0
+            },
+            {
+              "f": "Wofür engagiert sich Jonas?",
+              "opts": [
+                "für Ausbildungsplätze seiner Schüler",
+                "für mehr Sportangebote an Schulen",
+                "für bessere Noten in seinen Klassen",
+                "für höhere Gehälter von Lehrkräften"
+              ],
+              "l": 0
+            }
+          ]
+        },
+        {
+          "id": "w2-adj",
+          "typ": "zu",
+          "kontext": "Eigenschaften",
+          "frage": "Welche Erklärung passt zum Adjektiv?",
+          "paare": [
+            [
+              "zielstrebig",
+              "verfolgt ein Ziel ohne Umwege"
+            ],
+            [
+              "belastbar",
+              "kann viel Stress aushalten"
+            ],
+            [
+              "zäh",
+              "gibt nicht auf, auch wenn es schwer ist"
+            ],
+            [
+              "hilfsbereit",
+              "hilft anderen gern"
+            ],
+            [
+              "verantwortungsbewusst",
+              "denkt an die Folgen seines Handelns"
+            ],
+            [
+              "kämpferisch",
+              "setzt sich mit Energie für etwas ein"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Konjunktiv I – indirekte Rede",
+      "icon": "🗞️",
+      "kurz": "Aussagen wiedergeben",
+      "aufgaben": [
+        {
+          "id": "w3-zu",
+          "typ": "zu",
+          "kontext": "Konjunktiv I",
+          "frage": "Welche Form der indirekten Rede passt?",
+          "paare": [
+            [
+              "Ich weiß, wie es ist.",
+              "Er wisse, wie es sei."
+            ],
+            [
+              "Der alte Herr sitzt am Schreibtisch.",
+              "Der alte Herr sitze am Schreibtisch."
+            ],
+            [
+              "Alles ist gut gegangen.",
+              "Alles sei gut gegangen."
+            ],
+            [
+              "Man muss viel neu lernen.",
+              "Man müsse viel neu lernen."
+            ],
+            [
+              "Sie hat ein offenes Ohr.",
+              "Sie habe ein offenes Ohr."
+            ],
+            [
+              "Ich kann nicht ohne Physik leben.",
+              "Er könne nicht ohne Physik leben."
+            ]
+          ]
+        },
+        {
+          "id": "w3-ma",
+          "typ": "matrix",
+          "kontext": "Konjunktiv I oder II?",
+          "frage": "Welche Form verwendet man in der indirekten Rede?",
+          "wahl": [
+            "Konjunktiv I",
+            "Konjunktiv II (Ersatz)"
+          ],
+          "aussagen": [
+            [
+              "Die Schülerin sagt, sie ___ (sein) mit Fieber in die Schule gekommen. → sei",
+              0
+            ],
+            [
+              "Der Minister meint, man ___ (müssen) sonst Schulen schließen. → müsse",
+              0
+            ],
+            [
+              "Die Schüler sagen, sie ___ (haben) keine Angst vor ihr. → hätten",
+              1
+            ],
+            [
+              "Die Eltern meinen, sie ___ (können) nicht helfen. → könnten",
+              1
+            ],
+            [
+              "Die Jury sagt, Frau Kapp ___ (geben) gute Tipps. → gebe",
+              0
+            ]
+          ]
+        },
+        {
+          "id": "w3-1",
+          "typ": "mc",
+          "kontext": "Konjunktiv I",
+          "frage": "Die Schüler stellten fest, die Lehrerin ___ zwar nicht immer die besten Noten, aber sie lache gern.",
+          "opts": [
+            "gebe",
+            "gibt",
+            "gäbe",
+            "geben"
+          ],
+          "l": 0
+        },
+        {
+          "id": "w3-2",
+          "typ": "mc",
+          "kontext": "Konjunktiv I",
+          "frage": "Wozu benutzt man den Konjunktiv I in der Zeitung?",
+          "opts": [
+            "um zu zeigen, dass man die Worte einer anderen Person wiedergibt",
+            "um Wünsche und Träume für die Zukunft auszudrücken",
+            "um besonders höflich nach etwas zu fragen",
+            "um zu zeigen, dass die Information sicher stimmt"
+          ],
+          "l": 0
+        },
+        {
+          "id": "w3-b1",
+          "typ": "bau",
+          "kontext": "Satzbau",
+          "frage": "Nesrin: „Maschinenbau ist noch ein Männerberuf.“ – Indirekte Rede:",
+          "steine": [
+            "Maschinenbau",
+            "sei",
+            "noch",
+            "ein Männerberuf,",
+            "stellt",
+            "sie fest."
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Hilfen für die berufliche Entwicklung",
+      "icon": "💶",
+      "kurz": "Förderprogramme · Wer bekommt was?",
+      "aufgaben": [
+        {
+          "id": "w4-prog",
+          "typ": "lesen",
+          "kontext": "Lesen",
+          "frage": "Lesen Sie die Beschreibungen der Förderprogramme und beantworten Sie die Fragen.",
+          "textTitel": "Wie kann ich eine Weiterbildung bezahlen?",
+          "text": "**Bildungsprämie:** Einen Prämiengutschein bekommen Personen ab 25 Jahren, die mindestens 15 Stunden pro Woche erwerbstätig sind. Das zu versteuernde Jahreseinkommen darf 20 000 Euro nicht übersteigen. Gefördert werden Kurse bis 1 000 Euro; der Staat übernimmt 50 %.\n\n**Stipendien:** Ausländische Akademiker, die in Deutschland studieren, promovieren oder forschen wollen, finden Angebote in einer Stipendiendatenbank.\n\n**Anerkennungszuschuss:** Fachkräfte, die ihre Qualifikation im Ausland erworben haben, können sie anerkennen lassen. Der Staat unterstützt alle, die keine andere Unterstützung erhalten.\n\n**Agentur für Arbeit:** Sie übernimmt die Kosten, z. B. bei (drohender) Arbeitslosigkeit. Man braucht eine Berufsausbildung oder drei Jahre Berufserfahrung und muss sich vorher beraten lassen.",
+          "fragen": [
+            {
+              "f": "Ein Elektriker verdient 19 000 € im Jahr und arbeitet Teilzeit (20 Std.). Was passt?",
+              "opts": [
+                "Bildungsprämie",
+                "Stipendium",
+                "Anerkennungszuschuss",
+                "keine Förderung"
+              ],
+              "l": 0
+            },
+            {
+              "f": "Eine Ingenieurin aus Kenia möchte in Deutschland einen Master machen.",
+              "opts": [
+                "Stipendium",
+                "Bildungsprämie",
+                "Agentur für Arbeit",
+                "keine Förderung"
+              ],
+              "l": 0
+            },
+            {
+              "f": "Ein Physiotherapeut mit Abschluss aus dem Irak möchte in Deutschland arbeiten.",
+              "opts": [
+                "Anerkennungszuschuss",
+                "Bildungsprämie",
+                "Stipendium",
+                "keine Förderung"
+              ],
+              "l": 0
+            },
+            {
+              "f": "Eine arbeitslose Hauswirtschafterin will zur Altenpflegerin umschulen.",
+              "opts": [
+                "Agentur für Arbeit",
+                "Stipendium",
+                "Anerkennungszuschuss",
+                "keine Förderung"
+              ],
+              "l": 0
+            },
+            {
+              "f": "Eine Angestellte verdient 23 000 € im Jahr und will einen Kurs machen.",
+              "opts": [
+                "keine der genannten Förderungen",
+                "Bildungsprämie (50 % der Kosten)",
+                "ein Stipendium aus der Datenbank",
+                "Anerkennungszuschuss vom Staat"
+              ],
+              "l": 0
+            }
+          ]
+        },
+        {
+          "id": "w4-zu",
+          "typ": "zu",
+          "kontext": "Wortschatz",
+          "frage": "Was bedeutet das?",
+          "paare": [
+            [
+              "erwerbstätig",
+              "man arbeitet und verdient Geld"
+            ],
+            [
+              "das Jahreseinkommen",
+              "das Geld, das man in einem Jahr verdient"
+            ],
+            [
+              "versteuern",
+              "Steuern für etwas bezahlen"
+            ],
+            [
+              "anerkennen",
+              "offiziell als gleichwertig akzeptieren"
+            ],
+            [
+              "das Teilstipendium",
+              "eine finanzielle Hilfe für einen Teil der Kosten"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Eine Weiterbildung anfragen",
+      "icon": "🚗",
+      "kurz": "Anzeige und Antwortmail",
+      "aufgaben": [
+        {
+          "id": "w5-mail",
+          "typ": "lesen",
+          "kontext": "Lesen",
+          "frage": "Ein Kfz-Mechatroniker interessiert sich für einen Kurs. Lesen Sie Anzeige und Antwort.",
+          "textTitel": "Einsteigerkurs Elektromobilität – Antwort des Instituts",
+          "text": "**Anzeige:** Einsteigerkurs für Fachkräfte aus der Fahrzeugtechnik. Voraussetzung: allgemeine Computerkenntnisse, keine weiteren Vorerfahrungen. Am Ende erhalten Sie ein Zertifikat über Ihre Teilnahme. Ort: Regensburg, 3. bis 17. März.\n\n**E-Mail:** Sehr geehrter Herr Horvat, vielen Dank für Ihr Interesse. Anbei finden Sie unseren Flyer, dem Sie Kosten, Termine sowie Merkmale unserer Weiterbildungen entnehmen können. Eine detaillierte Beschreibung finden Sie auf unserer Homepage. Bitte beachten Sie: Bis zum 31.1. gilt ein Frühbucherpreis! Denken Sie auch an die Möglichkeit, eine Bildungsprämie zu beantragen. Offene Fragen klären wir gern per E-Mail oder Telefon. Mit freundlichen Grüßen, Esther Barbosa",
+          "fragen": [
+            {
+              "f": "Gibt es eine Abschlussprüfung?",
+              "opts": [
+                "Nein, man bekommt eine Teilnahmebestätigung.",
+                "Ja, am Ende gibt es eine schriftliche Prüfung.",
+                "Ja, es gibt eine praktische Prüfung in der Werkstatt.",
+                "Das erfährt man erst am ersten Kurstag."
+              ],
+              "l": 0
+            },
+            {
+              "f": "Was muss man mitbringen?",
+              "opts": [
+                "Computerkenntnisse",
+                "Erfahrung mit E-Autos",
+                "ein Studium",
+                "ein eigenes Auto"
+              ],
+              "l": 0
+            },
+            {
+              "f": "Wo stehen die Kosten?",
+              "opts": [
+                "im Flyer",
+                "in der E-Mail",
+                "in der Anzeige",
+                "nirgends"
+              ],
+              "l": 0
+            },
+            {
+              "f": "Warum soll man sich bis zum 31.1. anmelden?",
+              "opts": [
+                "Dann ist der Kurs günstiger.",
+                "Dann ist Anmeldeschluss.",
+                "Dann beginnt der Kurs.",
+                "Dann gibt es ein Stipendium."
+              ],
+              "l": 0
+            }
+          ]
+        },
+        {
+          "id": "w5-ord",
+          "typ": "ordnen",
+          "kontext": "Anfrage schreiben",
+          "frage": "Bringen Sie die Teile der Anfrage an das Institut in die richtige Reihenfolge.",
+          "zeilen": [
+            "Sehr geehrte Frau Barbosa,",
+            "vielen Dank für Ihre schnelle Antwort und den Flyer.",
+            "Ich interessiere mich sehr für den Einsteigerkurs Elektromobilität.",
+            "Leider habe ich im März keine Zeit. Gibt es auch Termine in der zweiten Jahreshälfte?",
+            "Außerdem möchte ich wissen, ob man am Kursort übernachten kann.",
+            "Über eine baldige Antwort würde ich mich freuen.",
+            "Mit freundlichen Grüßen"
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Lernen und Emotionen",
+      "icon": "🧠",
+      "kurz": "Sachtext · Synonyme · als ob",
+      "aufgaben": [
+        {
+          "id": "w6-text",
+          "typ": "lesen",
+          "kontext": "Lesen",
+          "frage": "Lesen Sie den Artikel und beantworten Sie die Fragen.",
+          "textTitel": "Lernen und Emotionen",
+          "text": "„Vor jeder Prüfung habe ich das Gefühl, als würde etwas ganz Schlimmes passieren. Mein Kopf ist leer.“ Was Anna (22) beschreibt, kennen viele: Angst blockiert das Gehirn.\n\nStudien zeigen, dass Gefühle beim Lernen eine große Rolle spielen. Inhalte, die unter Angst gelernt werden, verknüpfen wir mit der Angst. Ruft man sie wieder ab, wird auch die Angst aktiviert – das schränkt das kreative Potenzial ein.\n\nMan muss aber zwischen Angst und Stress unterscheiden. Starker Stress senkt die Speicherfähigkeit des Gehirns; eine gesunde Anspannung kann die Leistung dagegen fördern. Man spricht von „positivem Stress“. Kemal (34), der gerade seinen Schulabschluss nachholt, sagt: „Kurz vor einer Prüfung fühle ich mich, als ob ich an einem Wettkampf teilnehmen würde. Dann lerne ich sehr schnell.“\n\nTipps: Schaffen Sie sich eine angenehme Lernumgebung. Setzen Sie sich realistische, aber anspruchsvolle Ziele. Zeigen Sie Durchhaltevermögen und belohnen Sie sich für Teilziele. Machen Sie Pausen, und lernen Sie hin und wieder mit anderen – mit Empathie und Respekt.",
+          "fragen": [
+            {
+              "f": "Wie wirkt starke Angst auf das Lernen?",
+              "opts": [
+                "Sie blockiert das Gehirn.",
+                "Sie hilft beim Merken.",
+                "Sie hat keine Wirkung.",
+                "Sie macht kreativer."
+              ],
+              "l": 0
+            },
+            {
+              "f": "Was ist „positiver Stress“?",
+              "opts": [
+                "eine gesunde Anspannung, die motiviert",
+                "Stress, der auf Dauer krank macht",
+                "die Angst vor wichtigen Prüfungen",
+                "Stress, den man im Urlaub vergisst"
+              ],
+              "l": 0
+            },
+            {
+              "f": "Welcher Tipp steht im Text?",
+              "opts": [
+                "sich für Teilziele belohnen",
+                "ohne Pausen lernen",
+                "nur allein lernen",
+                "sehr niedrige Ziele setzen"
+              ],
+              "l": 0
+            }
+          ]
+        },
+        {
+          "id": "w6-syn",
+          "typ": "zu",
+          "kontext": "Synonyme",
+          "frage": "Welcher Ausdruck aus dem Text hat eine ähnliche Bedeutung?",
+          "paare": [
+            [
+              "Ausdauer",
+              "das Durchhaltevermögen"
+            ],
+            [
+              "Mitgefühl",
+              "die Empathie"
+            ],
+            [
+              "Möglichkeit",
+              "das Potenzial"
+            ],
+            [
+              "passend",
+              "adäquat"
+            ],
+            [
+              "Gefühle",
+              "die Emotionen"
+            ],
+            [
+              "stoppen, lahmlegen",
+              "blockieren"
+            ],
+            [
+              "profitieren",
+              "Nutzen ziehen"
+            ]
+          ]
+        },
+        {
+          "id": "w6-ao",
+          "typ": "matrix",
+          "kontext": "als ob / als",
+          "frage": "Ist der Satz grammatisch richtig?",
+          "wahl": [
+            "richtig",
+            "falsch"
+          ],
+          "aussagen": [
+            [
+              "Er fühlt sich, als würde er an einem Wettkampf teilnehmen.",
+              0
+            ],
+            [
+              "Er fühlt sich, als ob er an einem Wettkampf teilnehmen würde.",
+              0
+            ],
+            [
+              "Er fühlt sich, als er würde an einem Wettkampf teilnehmen.",
+              1
+            ],
+            [
+              "Ich habe mich gefühlt, als ob ich im Lotto gewonnen hätte.",
+              0
+            ],
+            [
+              "Es sah so aus, als ob mein Kopf ganz leer wäre.",
+              0
+            ],
+            [
+              "Ich fühle mich, als wenn ich wäre ein Kind.",
+              1
+            ]
+          ]
+        },
+        {
+          "id": "w6-b1",
+          "typ": "bau",
+          "kontext": "als ob",
+          "frage": "Bilden Sie den Satz.",
+          "steine": [
+            "Nach der Schule",
+            "habe",
+            "ich mich gefühlt,",
+            "als ob",
+            "die Welt",
+            "mir",
+            "gehören würde."
+          ]
+        },
+        {
+          "id": "w6-1",
+          "typ": "mc",
+          "kontext": "als",
+          "frage": "Vor der Prüfung fühlte ich mich, als ___ ich vor Gericht.",
+          "opts": [
+            "wäre",
+            "bin",
+            "ob",
+            "war"
+          ],
+          "l": 0
+        }
+      ]
+    },
+    {
+      "titel": "Prüfungstraining",
+      "icon": "🏁",
+      "kurz": "Sprachbausteine",
+      "aufgaben": [
+        {
+          "id": "w7-sb",
+          "typ": "luecke",
+          "kontext": "Sprachbausteine",
+          "frage": "Sprachbausteine: Zeitungsmeldung. Wählen Sie die richtige Lösung.",
+          "text": "Beste Lehrerin des Jahres\n\nÜber 100 000 Schülerinnen und Schüler haben im Internet ihre Lieblingslehrkräfte vorgeschlagen. Die Gewinnerin überzeugte die Jury: Sie {0} nie genervt und könne gut erklären, hieß es. Eine Schülerin meinte, wegen dieser Lehrerin sei sie einmal sogar mit Fieber in die Schule {1}. Die Schüler {2}, sie hätten durch sie Freude an Mathe bekommen.\n\nDie Ministerin gratulierte. Ohne engagierte Lehrkräfte {3} man die Schulen schließen, sagte sie. Die Preisträgerin {4} stellvertretend für viele andere.",
+          "gaps": [
+            {
+              "opts": [
+                "sei",
+                "ist",
+                "wäre"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "gekommen",
+                "kommen",
+                "gekommt"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "berichteten",
+                "berichtet",
+                "berichte"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "müsse",
+                "muss",
+                "müssen"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "stehe",
+                "stehen",
+                "gestanden"
+              ],
+              "l": 0
+            }
+          ]
+        },
+        {
+          "id": "w7-1",
+          "typ": "mc",
+          "kontext": "Weiterbildung",
+          "frage": "„Weiterbildung bedeutet, dass man …“",
+          "opts": [
+            "im Beruf Qualifikationen in neuen Bereichen erwirbt.",
+            "seinen alten Beruf aufgibt und etwas ganz anderes macht.",
+            "zum ersten Mal in seinem Leben zur Schule geht.",
+            "nur in seiner Freizeit und im Urlaub etwas lernt."
+          ],
+          "l": 0
+        }
+      ]
+    }
+  ]
+}

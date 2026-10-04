@@ -1,0 +1,1435 @@
+{
+ "id": "zusammenarbeit-im-team",
+ "titel": "Zusammenarbeit im Team",
+ "untertitel": "Besprechungen · Relativsätze mit wer · Konflikte lösen · Übergaben · Nomen-Verb-Verbindungen · Protokolle",
+ "niveau": "B1/B2",
+ "reihe": "Prüfungstraining B1/B2",
+ "farbe": "#5b5fa8",
+ "mix": 15,
+ "intro": "Sieben Teile – jeder Teil kann einzeln gespielt werden. Der **Prüfungsmix** zieht zufällig Aufgaben aus allen Teilen.",
+ "kompakt": [
+  {
+   "titel": "Relativsätze mit wer",
+   "zeilen": [
+    "Relativsätze mit **wer** beschreiben eine **unbestimmte Person** näher: Wer … = jeder, der …",
+    "Der **Nebensatz** beginnt mit **wer / wen / wem**, der **Hauptsatz** mit **der / den / dem**.",
+    "Den **Kasus** bestimmt das Verb im jeweiligen Satz: **Wem** etwas nicht klar ist (unklar sein + Dativ), **der** (fragen + Nom.) sollte nachfragen.",
+    "Sind beide Pronomen im **gleichen Kasus** (meist wer – der), kann **der** entfallen: Wer zu spät kommt, (der) entschuldigt sich.",
+    "Verb im wer-Satz am **Ende**, im Hauptsatz steht das Verb direkt nach dem Komma: Wer …, **der kann** …"
+   ]
+  },
+  {
+   "titel": "Effektive Besprechungen",
+   "zeilen": [
+    "**Vorher:** Tagesordnung festlegen, Ziele und Zeit pro Punkt planen, Unterlagen vorab verschicken, nur Beteiligte einladen",
+    "**Währenddessen:** pünktlich beginnen und enden, ausreden lassen, sachlich bleiben, Handy weg",
+    "**Online:** Mikrofon stumm schalten, ruhiger Hintergrund, Kamera auf Augenhöhe",
+    "**Danach:** Ergebnisse und nächste Schritte notieren, Protokoll an alle verschicken"
+   ]
+  },
+  {
+   "titel": "Konfliktgespräche führen",
+   "zeilen": [
+    "**Problem ansprechen:** Können wir mal kurz unter vier Augen reden? · Mir ist aufgefallen, dass … · Es ist ein paar Mal vorgekommen, dass …",
+    "**Auswirkungen erklären:** Für mich ist das unangenehm, weil … · Das Problem ist, dass …",
+    "**Verhalten erklären / sich entschuldigen:** Das tut mir leid. · Ich wusste nicht, dass … · Ich kann gut nachvollziehen, dass …",
+    "**Lösungen vorschlagen:** Was halten Sie davon, wenn …? · Wie wäre es, wenn …? · Ich würde mir wünschen, dass …",
+    "**Ich-Botschaften** statt Vorwürfe: „Ich bin verunsichert, wenn …“ statt „Du machst immer …“"
+   ]
+  },
+  {
+   "titel": "Nomen-Verb-Verbindungen",
+   "zeilen": [
+    "Das **Verb** hat nur grammatische Funktion, das **Nomen** trägt die Bedeutung. Manchmal kommt eine **Präposition** dazu.",
+    "Gleiche Bedeutung wie das Verb: eine Entscheidung treffen = entscheiden · eine Frage stellen = fragen · Bescheid geben = informieren · eine Rolle spielen …",
+    "Nicht direkt ableitbar: **unter Druck stehen** = gestresst sein · **in Angriff nehmen** = beginnen · **eine große Rolle spielen** = sehr wichtig sein · **in Kauf nehmen** = akzeptieren",
+    "Weitere: sich Sorgen machen · Verspätung haben · einen Antrag stellen · zur Verfügung stellen · in Frage kommen · Kritik üben · Rücksicht nehmen"
+   ]
+  },
+  {
+   "titel": "Protokolle",
+   "zeilen": [
+    "**Protokollkopf:** Datum, Uhrzeit, Ort, Anwesende, Protokollant/in",
+    "**TOP-Übersicht:** welche Themen besprochen werden",
+    "**TOPs:** Stand der Dinge, Beschlüsse, Aufgaben, Verantwortliche, Fristen",
+    "**Abkürzungen:** TOP · To-do · Prio 1 (= sehr dringend) · asap (so schnell wie möglich) · KW (Kalenderwoche) · GF (Geschäftsführung) · HR (Personalabteilung)"
+   ]
+  },
+  {
+   "titel": "Sich an Besprechungen beteiligen",
+   "zeilen": [
+    "**Meinung:** Ich bin der Ansicht, dass … · Meines Erachtens … · Ich stehe auf dem Standpunkt, dass …",
+    "**Vorschlag:** Ich schlage vor, dass … · Wir könnten … · **Gegenvorschlag:** Ich hätte eine andere Idee: … · Es wäre besser, …",
+    "**Zustimmung:** Da kann ich nur zustimmen. · **Widerspruch:** Das halte ich für problematisch. · Da bin ich anderer Meinung.",
+    "**Nachfragen:** Meinen Sie damit, dass …? · **Wort bitten:** Dürfte ich dazu kurz etwas sagen? · **Beschlüsse:** Dann können wir also festhalten, dass …"
+   ]
+  }
+ ],
+ "module": [
+  {
+   "titel": "Besprechungen effektiv gestalten",
+   "icon": "🗓️",
+   "kurz": "Artikel lesen · Tipps zuordnen · Online-Meetings",
+   "aufgaben": [
+    {
+     "id": "d1-art",
+     "typ": "lesen",
+     "kontext": "Lesen",
+     "frage": "Lesen Sie den Ratgeber und beantworten Sie die Fragen.",
+     "textTitel": "Schluss mit Zeitfressern: So gelingen Meetings",
+     "text": "Viele Beschäftigte verbringen mehrere Stunden pro Woche in Besprechungen – und haben danach oft das Gefühl, nichts erreicht zu haben. Das muss nicht sein.\n\n**Gut geplant ist halb gewonnen.** Wer zu einer Besprechung einlädt, sollte vorher klären, was am Ende herauskommen soll. Eine Tagesordnung mit Zeitangaben für jeden Punkt hilft, den Überblick zu behalten. Unterlagen werden spätestens zwei Tage vorher verschickt, damit sich alle vorbereiten können. Und: Eingeladen werden nur Personen, die wirklich etwas beitragen können oder eine Entscheidung treffen müssen.\n\n**Fair diskutieren.** Pünktlich anfangen und pünktlich aufhören – das zeigt Respekt vor der Zeit der anderen. Wer eine andere Meinung hat, darf sie selbstverständlich äußern, solange die Diskussion sachlich bleibt. Am wichtigsten ist aber das Zuhören: Unterbrechungen machen jede Diskussion länger.\n\n**Online gelten eigene Regeln.** Wer gerade nicht spricht, schaltet das Mikrofon stumm. Ein ruhiger Hintergrund und eine Kamera auf Augenhöhe wirken professionell.\n\n**Nichts geht verloren.** Ergebnisse werden noch in der Besprechung für alle sichtbar festgehalten. Am Ende wird geklärt, wer bis wann was erledigt. Das Protokoll geht danach an alle Teilnehmenden.",
+     "fragen": [
+      {
+       "f": "Was soll die einladende Person vor dem Meeting klären?",
+       "opts": [
+        "welches Ergebnis das Meeting haben soll",
+        "wer das Protokoll schreibt",
+        "welcher Raum frei ist",
+        "wer zu spät kommt"
+       ],
+       "l": 0
+      },
+      {
+       "f": "Warum werden Unterlagen vorher verschickt?",
+       "opts": [
+        "damit sich alle vorbereiten können",
+        "damit niemand Fragen stellt",
+        "weil das Gesetz es verlangt",
+        "damit das Meeting ausfallen kann"
+       ],
+       "l": 0
+      },
+      {
+       "f": "Wer soll eingeladen werden?",
+       "opts": [
+        "nur Personen, die beitragen oder entscheiden",
+        "alle Mitarbeitenden der Firma",
+        "nur die Geschäftsleitung",
+        "möglichst viele Gäste"
+       ],
+       "l": 0
+      },
+      {
+       "f": "Was ist laut Text in Diskussionen am wichtigsten?",
+       "opts": [
+        "zuhören",
+        "laut sprechen",
+        "schnell entscheiden",
+        "viele Fragen stellen"
+       ],
+       "l": 0
+      },
+      {
+       "f": "Was passiert am Ende des Meetings?",
+       "opts": [
+        "Man klärt, wer bis wann was erledigt.",
+        "Alle schreiben ein eigenes Protokoll.",
+        "Man plant das nächste Meeting.",
+        "Die Unterlagen werden verschickt."
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "d1-phase",
+     "typ": "matrix",
+     "kontext": "Tipps",
+     "frage": "Wann ist dieser Tipp wichtig?",
+     "wahl": [
+      "vor dem Meeting",
+      "während des Meetings",
+      "nach dem Meeting"
+     ],
+     "aussagen": [
+      [
+       "eine Tagesordnung festlegen",
+       0
+      ],
+      [
+       "Unterlagen an alle verschicken",
+       0
+      ],
+      [
+       "die richtigen Personen einladen",
+       0
+      ],
+      [
+       "andere ausreden lassen",
+       1
+      ],
+      [
+       "das Handy weglegen",
+       1
+      ],
+      [
+       "Ergebnisse für alle sichtbar notieren",
+       1
+      ],
+      [
+       "das Protokoll an alle schicken",
+       2
+      ],
+      [
+       "die vereinbarten Aufgaben erledigen",
+       2
+      ]
+     ]
+    },
+    {
+     "id": "d1-online",
+     "typ": "matrix",
+     "kontext": "Online-Meetings",
+     "frage": "Professionell in Videokonferenzen?",
+     "wahl": [
+      "professionell",
+      "unprofessionell"
+     ],
+     "aussagen": [
+      [
+       "Ich schalte das Mikrofon stumm, wenn ich nicht spreche.",
+       0
+      ],
+      [
+       "Im Hintergrund läuft der Fernseher.",
+       1
+      ],
+      [
+       "Die Kamera ist auf Augenhöhe.",
+       0
+      ],
+      [
+       "Ich esse während der Konferenz mein Mittagessen.",
+       1
+      ],
+      [
+       "Ich sitze an einem aufgeräumten Platz.",
+       0
+      ],
+      [
+       "Ich schreibe nebenbei private Nachrichten.",
+       1
+      ]
+     ]
+    },
+    {
+     "id": "d1-w1",
+     "typ": "mc",
+     "kontext": "Wortschatz",
+     "frage": "Die Liste der Themen, über die in einer Besprechung gesprochen wird, heißt …",
+     "opts": [
+      "Tagesordnung.",
+      "Protokoll.",
+      "Einladung.",
+      "Zeitplan."
+     ],
+     "l": 0,
+     "x": "Ein anderes Wort dafür ist **Agenda**."
+    },
+    {
+     "id": "d1-w2",
+     "typ": "mc",
+     "kontext": "Wortschatz",
+     "frage": "Im Meeting wird sachlich diskutiert. Das heißt …",
+     "opts": [
+      "man bleibt beim Thema und wird nicht persönlich.",
+      "man spricht nur über Sachen.",
+      "man diskutiert sehr laut.",
+      "man darf keine Meinung haben."
+     ],
+     "l": 0
+    },
+    {
+     "id": "d1-b1",
+     "typ": "bau",
+     "kontext": "Satzbau",
+     "frage": "Bilden Sie den Tipp.",
+     "steine": [
+      "Die Unterlagen",
+      "werden",
+      "vor dem Termin",
+      "an alle Teilnehmenden",
+      "verschickt."
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Relativsätze mit wer",
+   "icon": "👤",
+   "kurz": "wer – der · wen – dem · wem – der · Hauptsatz und Nebensatz",
+   "aufgaben": [
+    {
+     "id": "d2-1",
+     "typ": "mc",
+     "kontext": "wer – der",
+     "frage": "Wer das Meeting organisiert, ___ legt vorab eine Tagesordnung fest.",
+     "opts": [
+      "der",
+      "den",
+      "dem",
+      "wer"
+     ],
+     "l": 0,
+     "x": "organisieren → wer (Nom.) · festlegen → der (Nom.). Gleicher Kasus: **der** kann auch entfallen."
+    },
+    {
+     "id": "d2-2",
+     "typ": "mc",
+     "kontext": "wen – dem",
+     "frage": "___ Themen nicht betreffen, dem nutzt die Teilnahme nicht.",
+     "opts": [
+      "Wen",
+      "Wer",
+      "Wem",
+      "Den"
+     ],
+     "l": 0,
+     "x": "betreffen + Akkusativ → **wen**."
+    },
+    {
+     "id": "d2-3",
+     "typ": "mc",
+     "kontext": "wem – der",
+     "frage": "___ etwas nicht klar ist, der kann gezielt nachfragen.",
+     "opts": [
+      "Wem",
+      "Wer",
+      "Wen",
+      "Dem"
+     ],
+     "l": 0,
+     "x": "klar sein + Dativ → **wem**."
+    },
+    {
+     "id": "d2-4",
+     "typ": "mc",
+     "kontext": "wer – dem",
+     "frage": "Wer zu spät kommt, ___ fehlen wichtige Informationen.",
+     "opts": [
+      "dem",
+      "der",
+      "den",
+      "wem"
+     ],
+     "l": 0,
+     "x": "fehlen + Dativ → **dem**."
+    },
+    {
+     "id": "d2-5",
+     "typ": "mc",
+     "kontext": "wer – den",
+     "frage": "Wer im Meeting ständig unterbricht, ___ nimmt bald niemand mehr ernst.",
+     "opts": [
+      "den",
+      "der",
+      "dem",
+      "wen"
+     ],
+     "l": 0,
+     "x": "jemanden ernst nehmen → Akkusativ **den**."
+    },
+    {
+     "id": "d2-kasus",
+     "typ": "matrix",
+     "kontext": "Kasus",
+     "frage": "Welches Pronomen passt am Anfang des Satzes?",
+     "wahl": [
+      "Wer",
+      "Wen",
+      "Wem"
+     ],
+     "aussagen": [
+      [
+       "___ an einem Online-Meeting teilnimmt, der sollte das Mikrofon stumm schalten.",
+       0
+      ],
+      [
+       "___ Informationen fehlen, der sollte die Organisatorin fragen.",
+       2
+      ],
+      [
+       "___ das Thema nicht interessiert, den sollte man nicht einladen.",
+       1
+      ],
+      [
+       "___ Argumente nicht überzeugen, der darf widersprechen.",
+       1
+      ],
+      [
+       "___ die Fristen unklar sind, der schaut ins Protokoll.",
+       2
+      ],
+      [
+       "___ etwas nicht versteht, der fragt nach.",
+       0
+      ]
+     ]
+    },
+    {
+     "id": "d2-regel",
+     "typ": "matrix",
+     "kontext": "Regel",
+     "frage": "Stimmen die Regeln?",
+     "aussagen": [
+      [
+       "Relativsätze mit wer beschreiben eine unbestimmte Person näher.",
+       true
+      ],
+      [
+       "Der Hauptsatz beginnt mit wer.",
+       false
+      ],
+      [
+       "Den Kasus der Pronomen bestimmt das Verb im jeweiligen Satz.",
+       true
+      ],
+      [
+       "Wenn beide Pronomen im gleichen Kasus stehen, kann der entfallen.",
+       true
+      ],
+      [
+       "Im wer-Satz steht das Verb an zweiter Stelle.",
+       false
+      ]
+     ]
+    },
+    {
+     "id": "d2-b1",
+     "typ": "bau",
+     "kontext": "Satzbau",
+     "frage": "Bilden Sie den Satz.",
+     "steine": [
+      "Wer",
+      "rechtzeitig",
+      "informiert wurde,",
+      "der",
+      "kann sich",
+      "gut vorbereiten."
+     ]
+    },
+    {
+     "id": "d2-b2",
+     "typ": "bau",
+     "kontext": "Satzbau",
+     "frage": "Bilden Sie den Satz.",
+     "steine": [
+      "Wem",
+      "eine Aufgabe",
+      "übertragen wurde,",
+      "der",
+      "findet",
+      "alle Fristen",
+      "im Protokoll."
+     ]
+    },
+    {
+     "id": "d2-um",
+     "typ": "mc",
+     "kontext": "Umformen",
+     "frage": "„Jeder, der an einem Projekt beteiligt ist, sollte zum Meeting kommen.“ – Mit wer:",
+     "opts": [
+      "Wer an einem Projekt beteiligt ist, sollte zum Meeting kommen.",
+      "Wer ist an einem Projekt beteiligt, sollte zum Meeting kommen.",
+      "Wem an einem Projekt beteiligt ist, sollte zum Meeting kommen.",
+      "Wer an einem Projekt beteiligt ist, der zum Meeting kommen sollte."
+     ],
+     "l": 0
+    }
+   ]
+  },
+  {
+   "titel": "Konflikte am Arbeitsplatz",
+   "icon": "⚡",
+   "kurz": "hilfreich oder nicht? · Konfliktgespräch · Ich-Botschaften · Redemittel",
+   "aufgaben": [
+    {
+     "id": "d3-hilf",
+     "typ": "matrix",
+     "kontext": "Strategien",
+     "frage": "Konflikte lösen: Was ist hilfreich, was nicht?",
+     "wahl": [
+      "hilfreich",
+      "nicht hilfreich"
+     ],
+     "aussagen": [
+      [
+       "sachlich argumentieren",
+       0
+      ],
+      [
+       "zuhören",
+       0
+      ],
+      [
+       "Fehler zugeben",
+       0
+      ],
+      [
+       "Kompromisse finden",
+       0
+      ],
+      [
+       "Ich-Botschaften formulieren",
+       0
+      ],
+      [
+       "andere Perspektiven einnehmen",
+       0
+      ],
+      [
+       "Probleme hinter dem Rücken besprechen",
+       1
+      ],
+      [
+       "andere bloßstellen",
+       1
+      ],
+      [
+       "auf dem eigenen Standpunkt beharren",
+       1
+      ],
+      [
+       "jemanden persönlich beleidigen",
+       1
+      ],
+      [
+       "Fehler ignorieren",
+       1
+      ]
+     ]
+    },
+    {
+     "id": "d3-dial",
+     "typ": "lesen",
+     "kontext": "Lesen",
+     "frage": "Lesen Sie das Gespräch zwischen zwei Pflegekräften und beantworten Sie die Fragen.",
+     "textTitel": "Im Stationszimmer",
+     "text": "**Lena:** Jonas, hast du kurz Zeit? Ich würde gern mal unter vier Augen mit dir über die Übergaben sprechen.\n**Jonas:** Klar, was ist los?\n**Lena:** Mir ist aufgefallen, dass du in letzter Zeit oft erst zehn Minuten nach Schichtbeginn kommst. Dann muss ich die Übergabe allein machen und schaffe meine eigenen Patienten nicht pünktlich.\n**Jonas:** Oh. Das tut mir leid. Ich wusste nicht, dass das für dich so ein Problem ist. Seit die Kita meines Sohnes umgezogen ist, schaffe ich den Bus nicht mehr.\n**Lena:** Das kann ich gut nachvollziehen. Aber für mich ist das trotzdem ziemlich stressig.\n**Jonas:** Verstehe. Wie wäre es, wenn ich mit der Stationsleitung spreche? Vielleicht kann ich später anfangen und dafür länger bleiben.\n**Lena:** Das wäre super. Und bis das geklärt ist: Schreib mir bitte kurz, wenn du dich verspätest.\n**Jonas:** Mache ich. Danke, dass du es direkt angesprochen hast.",
+     "fragen": [
+      {
+       "f": "Was ist das Problem?",
+       "opts": [
+        "Jonas kommt oft zu spät zur Schicht.",
+        "Lena macht die Übergabe nicht richtig.",
+        "Die Stationsleitung ist unfreundlich.",
+        "Die Patienten beschweren sich."
+       ],
+       "l": 0
+      },
+      {
+       "f": "Warum kommt Jonas zu spät?",
+       "opts": [
+        "Er schafft wegen der Kita den Bus nicht.",
+        "Er verschläft oft.",
+        "Er arbeitet noch in einem anderen Job.",
+        "Er wusste den Schichtbeginn nicht."
+       ],
+       "l": 0
+      },
+      {
+       "f": "Welche Lösung schlägt Jonas vor?",
+       "opts": [
+        "mit der Stationsleitung über andere Arbeitszeiten sprechen",
+        "die Station wechseln",
+        "früher aufstehen",
+        "keine Übergaben mehr machen"
+       ],
+       "l": 0
+      },
+      {
+       "f": "Wie spricht Lena das Problem an?",
+       "opts": [
+        "direkt, aber freundlich",
+        "vor allen Kollegen",
+        "per E-Mail an die Leitung",
+        "gar nicht – sie ignoriert es"
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "d3-rm",
+     "typ": "matrix",
+     "kontext": "Redemittel",
+     "frage": "Konfliktgespräche: Was macht man mit diesem Satz?",
+     "wahl": [
+      "Problem ansprechen",
+      "Auswirkung erklären",
+      "Verhalten erklären",
+      "Lösung vorschlagen"
+     ],
+     "aussagen": [
+      [
+       "Können wir mal kurz in Ruhe reden?",
+       0
+      ],
+      [
+       "Es ist ein paar Mal vorgekommen, dass …",
+       0
+      ],
+      [
+       "Für das Team ist das sehr unangenehm.",
+       1
+      ],
+      [
+       "Das Problem ist, dass ich dann länger bleiben muss.",
+       1
+      ],
+      [
+       "Ich wusste nicht, dass …",
+       2
+      ],
+      [
+       "Für mich war neu, dass …",
+       2
+      ],
+      [
+       "Was hältst du davon, wenn …?",
+       3
+      ],
+      [
+       "Ich würde mir wünschen, dass …",
+       3
+      ]
+     ]
+    },
+    {
+     "id": "d3-ich",
+     "typ": "mc",
+     "kontext": "Ich-Botschaften",
+     "frage": "Welcher Satz ist eine Ich-Botschaft?",
+     "opts": [
+      "Ich bin unsicher, wenn ich die Informationen erst kurz vorher bekomme.",
+      "Du informierst mich immer zu spät!",
+      "Sie machen das ständig falsch.",
+      "Typisch, dass das wieder passiert."
+     ],
+     "l": 0,
+     "x": "Ich-Botschaften beschreiben die eigenen Gefühle – ohne Vorwurf. So kann der andere besser zuhören."
+    },
+    {
+     "id": "d3-m1",
+     "typ": "mc",
+     "kontext": "Wortschatz",
+     "frage": "Eine Kollegin gibt einen Fehler zu und sagt „Entschuldigung“. Was ist eine konstruktive Reaktion?",
+     "opts": [
+      "Danke, Entschuldigung angenommen. Wie lösen wir das jetzt?",
+      "Das hätte ich mir denken können.",
+      "Das sage ich dem Chef.",
+      "Egal, ich mache das ab jetzt allein."
+     ],
+     "l": 0
+    },
+    {
+     "id": "d3-m2",
+     "typ": "mc",
+     "kontext": "Wortschatz",
+     "frage": "„Wir haben uns in der Mitte getroffen.“ Das bedeutet: Wir haben …",
+     "opts": [
+      "einen Kompromiss gefunden.",
+      "uns im Flur getroffen.",
+      "uns gestritten.",
+      "das Problem ignoriert."
+     ],
+     "l": 0
+    },
+    {
+     "id": "d3-b1",
+     "typ": "bau",
+     "kontext": "Satzbau",
+     "frage": "Bilden Sie den Satz.",
+     "steine": [
+      "Mir",
+      "ist aufgefallen,",
+      "dass",
+      "die Übergaben",
+      "in letzter Zeit",
+      "oft",
+      "zu kurz",
+      "sind."
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Übergaben und Nomen-Verb-Verbindungen",
+   "icon": "🔁",
+   "kurz": "Übergabegespräch · Notizen · feste Verbindungen aus Nomen und Verb",
+   "aufgaben": [
+    {
+     "id": "d4-ueb",
+     "typ": "matrix",
+     "kontext": "Lesen",
+     "frage": "Herr Okoro geht in Urlaub und übergibt an seine Vertretung. Lesen Sie seine Notizen. Richtig oder falsch?",
+     "textTitel": "Übergabe Lager – Notizen für Frau Petersen",
+     "text": "• Wareneingang: tägl. ab 7:00 Uhr, Lieferscheine prüfen → ins System\n• Montags: Regale kontrollieren + nachbestellen (Liste im Ordner „Bestand“)\n• Sicherheitsschuhe Pflicht!\n• Probleme mit dem Scanner → Herr Lück (IT), Durchwahl -233\n• 14.–16.: Inventur! Ablauf erklärt Frau Demir\n• Schlüssel für Tor B: Schrank im Büro, nur bis Feierabend ausleihen, immer in Liste eintragen\n• Fragen? → Frau Demir (Teamleitung)",
+     "aussagen": [
+      [
+       "Frau Petersen muss jeden Montag die Regale kontrollieren.",
+       true
+      ],
+      [
+       "Bei Problemen mit dem Scanner ruft sie Frau Demir an.",
+       false
+      ],
+      [
+       "Die Inventur erklärt ihr Herr Okoro vor dem Urlaub.",
+       false
+      ],
+      [
+       "Den Schlüssel für Tor B darf man nicht über Nacht behalten.",
+       true
+      ],
+      [
+       "Wer den Schlüssel nimmt, muss sich in eine Liste eintragen.",
+       true
+      ],
+      [
+       "Sicherheitsschuhe sind nur bei der Inventur Pflicht.",
+       false
+      ]
+     ]
+    },
+    {
+     "id": "d4-check",
+     "typ": "matrix",
+     "kontext": "Übergabe",
+     "frage": "Zu welchem Punkt der Checkliste gehört die Information?",
+     "wahl": [
+      "regelmäßige Aufgaben",
+      "besondere Termine",
+      "Vorgehen bei Problemen",
+      "Ansprechpartner"
+     ],
+     "aussagen": [
+      [
+       "Jeden Freitag die Kasse abrechnen.",
+       0
+      ],
+      [
+       "Täglich die Post sortieren.",
+       0
+      ],
+      [
+       "Am 12. kommt der Wirtschaftsprüfer.",
+       1
+      ],
+      [
+       "Die Frist für den Bericht endet am 30.",
+       1
+      ],
+      [
+       "Wenn der Drucker streikt, zuerst neu starten.",
+       2
+      ],
+      [
+       "Bei Stromausfall den Hausmeister rufen.",
+       2
+      ],
+      [
+       "Für Personalfragen: Frau Ünal.",
+       3
+      ],
+      [
+       "Bei Fragen zur Software: das IT-Team.",
+       3
+      ]
+     ]
+    },
+    {
+     "id": "d4-nvv",
+     "typ": "zu",
+     "kontext": "Nomen-Verb-Verbindungen",
+     "frage": "Welches Verb passt zum Nomen?",
+     "paare": [
+      [
+       "eine Entscheidung",
+       "treffen"
+      ],
+      [
+       "sich Sorgen",
+       "machen"
+      ],
+      [
+       "eine Frage",
+       "stellen"
+      ],
+      [
+       "Verspätung",
+       "haben"
+      ],
+      [
+       "Rücksicht",
+       "nehmen"
+      ],
+      [
+       "Kritik",
+       "üben"
+      ]
+     ]
+    },
+    {
+     "id": "d4-bed",
+     "typ": "matrix",
+     "kontext": "Bedeutung",
+     "frage": "Was bedeutet die Nomen-Verb-Verbindung?",
+     "wahl": [
+      "entscheiden",
+      "fragen",
+      "informieren",
+      "sehr wichtig sein",
+      "gestresst sein",
+      "beginnen"
+     ],
+     "aussagen": [
+      [
+       "eine Entscheidung treffen",
+       0
+      ],
+      [
+       "eine Frage stellen",
+       1
+      ],
+      [
+       "Bescheid geben",
+       2
+      ],
+      [
+       "eine große Rolle spielen",
+       3
+      ],
+      [
+       "unter Druck stehen",
+       4
+      ],
+      [
+       "in Angriff nehmen",
+       5
+      ]
+     ]
+    },
+    {
+     "id": "d4-u1",
+     "typ": "mc",
+     "kontext": "Umformen",
+     "frage": "„Die Leitung hat gestern eine Entscheidung getroffen.“ – Mit Verb:",
+     "opts": [
+      "Die Leitung hat gestern entschieden.",
+      "Die Leitung hat gestern getroffen.",
+      "Die Leitung hat sich gestern entschieden getroffen.",
+      "Die Leitung hat gestern eine Entscheidung."
+     ],
+     "l": 0
+    },
+    {
+     "id": "d4-u2",
+     "typ": "mc",
+     "kontext": "Umformen",
+     "frage": "„Wir stehen diese Woche sehr unter Druck.“ Das bedeutet:",
+     "opts": [
+      "Wir sind diese Woche sehr gestresst.",
+      "Wir drücken diese Woche viel.",
+      "Wir stehen diese Woche oft.",
+      "Wir haben diese Woche frei."
+     ],
+     "l": 0
+    },
+    {
+     "id": "d4-lt",
+     "typ": "luecke",
+     "kontext": "Nomen-Verb-Verbindungen",
+     "frage": "Ein Gespräch bei der Übergabe. Ergänzen Sie.",
+     "text": "▶ Die Leitung hat gestern eine wichtige Entscheidung {0}: Ab Montag arbeiten wir im Zweischichtsystem.\n◀ Oh, davon wusste ich nichts. Muss ich mir jetzt Sorgen {1}?\n▶ Nein, keine Sorge. Die Kundenzufriedenheit {2} eine große Rolle, deshalb brauchen wir mehr Personal.\n◀ Verstehe. Und die Wartungsarbeiten am Band?\n▶ Die haben leider Verspätung {3}. Ich nehme die Sache aber gleich in {4}.\n◀ Gut. Die Bestellung für die Ersatzteile habe ich übrigens schon {5}.",
+     "gaps": [
+      {
+       "opts": [
+        "getroffen",
+        "gemacht",
+        "gestellt"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "machen",
+        "haben",
+        "nehmen"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "spielt",
+        "hat",
+        "macht"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "gehabt",
+        "genommen",
+        "gemacht"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "Angriff",
+        "Anfang",
+        "Auftrag"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "aufgegeben",
+        "gestellt",
+        "getroffen"
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "d4-b1",
+     "typ": "bau",
+     "kontext": "Satzbau",
+     "frage": "Bilden Sie den Satz.",
+     "steine": [
+      "Bitte",
+      "geben Sie",
+      "mir",
+      "rechtzeitig",
+      "Bescheid,",
+      "wenn",
+      "die Lieferung",
+      "kommt."
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Fürs Protokoll",
+   "icon": "📝",
+   "kurz": "Protokoll lesen · Protokollkopf, TOP-Übersicht, TOPs · Abkürzungen",
+   "aufgaben": [
+    {
+     "id": "d5-prot",
+     "typ": "lesen",
+     "kontext": "Lesen",
+     "frage": "Lesen Sie das Protokoll und lösen Sie die Aufgaben.",
+     "textTitel": "Ergebnisprotokoll Abteilungsleitersitzung",
+     "text": "**Datum:** 12.3. · **Uhrzeit:** 9:00–10:30 Uhr · **Ort:** Raum 2.04\n**Anwesende:** Ruth Albers (RA, GF), Deniz Kaya (DK, HR), Petra Lohse (PL, Vertrieb), Samuel Mensah (SM, Produktion), Ivana Horvat (IH, IT)\n**Protokoll:** Deniz Kaya\n\n**TOP 1 Begrüßung:** RA begrüßt alle. Frau Engel (Marketing) ist krank; der geplante Bericht zur Werbekampagne wird auf die nächste Sitzung verschoben.\n\n**TOP 2 Neue Kantine:** Die Kantine wird ab Mai renoviert. Während der Umbauzeit liefert ein externer Caterer. Verantwortlich: DK. Info an alle Mitarbeitenden bis KW 14.\n\n**TOP 3 Produktion:** SM berichtet über die hohe Nachfrage. Beschluss: Ab Juli wird in zwei Schichten gearbeitet. Mit der Suche nach neuem Personal beginnt HR sofort (Prio 1).\n\n**TOP 4 IT-Sicherheit:** IH informiert über neue Passwortregeln. Alle Mitarbeitenden müssen bis Ende April an einer Online-Schulung teilnehmen.\n\n**TOP 5 Sonstiges:** PL fragt nach dem Termin für das Sommerfest. Er wird asap per Mail mitgeteilt.",
+     "fragen": [
+      {
+       "f": "Wer hat das Protokoll geschrieben?",
+       "opts": [
+        "die Personalabteilung",
+        "die Geschäftsführung",
+        "der Vertrieb",
+        "die IT"
+       ],
+       "l": 0
+      },
+      {
+       "f": "Warum wird ein Bericht verschoben?",
+       "opts": [
+        "Die zuständige Person ist krank.",
+        "Es fehlt die Zeit.",
+        "Die Kampagne wurde gestoppt.",
+        "Der Raum war belegt."
+       ],
+       "l": 0
+      },
+      {
+       "f": "Was passiert während der Renovierung der Kantine?",
+       "opts": [
+        "Das Essen kommt von einer anderen Firma.",
+        "Es gibt kein Mittagessen.",
+        "Die Mitarbeitenden essen im Raum 2.04.",
+        "Die Pausen werden kürzer."
+       ],
+       "l": 0
+      },
+      {
+       "f": "Was wurde zur Produktion beschlossen?",
+       "opts": [
+        "Ab Juli gibt es zwei Schichten.",
+        "Die Produktion wird verkleinert.",
+        "Die Nachfrage soll sinken.",
+        "HR sucht ab Juli Personal."
+       ],
+       "l": 0
+      },
+      {
+       "f": "Bis wann muss man an der IT-Schulung teilnehmen?",
+       "opts": [
+        "bis Ende April",
+        "bis KW 14",
+        "bis Juli",
+        "so schnell wie möglich"
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "d5-wo",
+     "typ": "matrix",
+     "kontext": "Aufbau",
+     "frage": "Wo findet man die Information im Protokoll?",
+     "wahl": [
+      "Protokollkopf",
+      "TOP-Übersicht",
+      "in den TOPs"
+     ],
+     "aussagen": [
+      [
+       "wann das Meeting stattgefunden hat",
+       0
+      ],
+      [
+       "wo die Sitzung war",
+       0
+      ],
+      [
+       "wer teilgenommen hat",
+       0
+      ],
+      [
+       "wer das Protokoll geschrieben hat",
+       0
+      ],
+      [
+       "welche Themen besprochen wurden",
+       1
+      ],
+      [
+       "was genau beschlossen wurde",
+       2
+      ],
+      [
+       "wer für eine Aufgabe verantwortlich ist",
+       2
+      ],
+      [
+       "bis wann Aufgaben erledigt werden müssen",
+       2
+      ]
+     ]
+    },
+    {
+     "id": "d5-abk",
+     "typ": "zu",
+     "kontext": "Abkürzungen",
+     "frage": "Abkürzungen in Protokollen: Was bedeuten sie?",
+     "paare": [
+      [
+       "asap",
+       "so schnell wie möglich"
+      ],
+      [
+       "KW",
+       "die Kalenderwoche"
+      ],
+      [
+       "Prio 1",
+       "sehr dringend"
+      ],
+      [
+       "GF",
+       "die Geschäftsführung"
+      ],
+      [
+       "HR",
+       "die Personalabteilung"
+      ],
+      [
+       "To-do",
+       "eine Aufgabe, die erledigt werden muss"
+      ]
+     ]
+    },
+    {
+     "id": "d5-erg",
+     "typ": "mc",
+     "kontext": "Protokolle",
+     "frage": "Was steht in einem Ergebnisprotokoll?",
+     "opts": [
+      "nur Ergebnisse, Beschlüsse, Aufgaben und Verantwortliche",
+      "jedes Wort, das gesagt wurde",
+      "nur die Namen der Teilnehmenden",
+      "die persönliche Meinung der Protokollantin"
+     ],
+     "l": 0
+    },
+    {
+     "id": "d5-not",
+     "typ": "mc",
+     "kontext": "Notizen",
+     "frage": "Welche Notiz fürs Protokoll ist am besten?",
+     "opts": [
+      "Kantine: Umbau ab Mai, ext. Caterer; Info bis KW 14 (DK)",
+      "Frau Kaya hat gesagt, dass die Kantine im Mai umgebaut wird und so weiter.",
+      "Kantine???",
+      "Wir haben lange über die Kantine gesprochen."
+     ],
+     "l": 0
+    },
+    {
+     "id": "d5-b1",
+     "typ": "bau",
+     "kontext": "Satzbau",
+     "frage": "Formulieren Sie den Satz fürs Protokoll.",
+     "steine": [
+      "Ab Juli",
+      "wird",
+      "in zwei Schichten",
+      "gearbeitet."
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Sich an Besprechungen beteiligen",
+   "icon": "🙋",
+   "kurz": "Meinung · Vorschlag · Zustimmung · Widerspruch · Nachfragen · Beschlüsse",
+   "aufgaben": [
+    {
+     "id": "d6-rm",
+     "typ": "matrix",
+     "kontext": "Redemittel",
+     "frage": "Wozu benutzt man den Ausdruck?",
+     "wahl": [
+      "Meinung vertreten",
+      "Vorschlag machen",
+      "zustimmen",
+      "widersprechen"
+     ],
+     "aussagen": [
+      [
+       "Ich bin der Überzeugung, dass …",
+       0
+      ],
+      [
+       "Meines Erachtens …",
+       0
+      ],
+      [
+       "Ich stehe auf dem Standpunkt, dass …",
+       0
+      ],
+      [
+       "Ich schlage vor, dass …",
+       1
+      ],
+      [
+       "Ich hätte folgenden Vorschlag: …",
+       1
+      ],
+      [
+       "Da kann ich nur zustimmen.",
+       2
+      ],
+      [
+       "Ich halte den Vorschlag für sehr gut.",
+       2
+      ],
+      [
+       "Ich habe meine Zweifel, ob …",
+       3
+      ],
+      [
+       "Das halte ich für problematisch.",
+       3
+      ]
+     ]
+    },
+    {
+     "id": "d6-rm2",
+     "typ": "matrix",
+     "kontext": "Redemittel",
+     "frage": "Nachfragen, Gegenvorschläge, Wort ergreifen: Wozu dient der Ausdruck?",
+     "wahl": [
+      "nachfragen",
+      "Gegenvorschlag",
+      "um das Wort bitten",
+      "Beschlüsse festhalten"
+     ],
+     "aussagen": [
+      [
+       "Meinen Sie damit, dass …?",
+       0
+      ],
+      [
+       "Ich verstehe nicht ganz, warum …",
+       0
+      ],
+      [
+       "Ich hätte eine andere Idee: …",
+       1
+      ],
+      [
+       "Ich glaube, es wäre besser, …",
+       1
+      ],
+      [
+       "Dürfte ich dazu kurz etwas sagen?",
+       2
+      ],
+      [
+       "Entschuldigung, dass ich unterbreche, aber …",
+       2
+      ],
+      [
+       "Dann können wir also festhalten, dass …",
+       3
+      ],
+      [
+       "Noch einmal fürs Protokoll: …",
+       3
+      ]
+     ]
+    },
+    {
+     "id": "d6-ord",
+     "typ": "ordnen",
+     "kontext": "Besprechung",
+     "frage": "Besprechung zum Firmenjubiläum: Bringen Sie den Ausschnitt in eine sinnvolle Reihenfolge.",
+     "zeilen": [
+      "▶ Kommen wir zur Musik. Was halten Sie von einer Live-Band?",
+      "◀ Ich habe meine Zweifel, ob das ins Budget passt.",
+      "◆ Ich hätte einen anderen Vorschlag: Wir könnten einen DJ buchen – das ist günstiger.",
+      "◀ Das sehe ich genauso, das halte ich für eine gute Lösung.",
+      "▶ Gut. Dann können wir also festhalten: Wir buchen einen DJ. Frau Kılıç holt bis Freitag Angebote ein."
+     ]
+    },
+    {
+     "id": "d6-m1",
+     "typ": "mc",
+     "kontext": "Situationen",
+     "frage": "Ein Kollege spricht gerade. Sie möchten unbedingt etwas ergänzen. Was sagen Sie?",
+     "opts": [
+      "Entschuldigung, dass ich unterbreche, aber dazu würde ich gern etwas ergänzen.",
+      "Moment, jetzt rede ich!",
+      "Das ist doch falsch.",
+      "Können wir bitte über etwas anderes sprechen?"
+     ],
+     "l": 0
+    },
+    {
+     "id": "d6-m2",
+     "typ": "mc",
+     "kontext": "Situationen",
+     "frage": "Sie leiten die Besprechung und möchten das Ergebnis zusammenfassen. Was sagen Sie?",
+     "opts": [
+      "Ich fasse kurz zusammen: Das Fest findet am 20. Juni statt.",
+      "Was halten Sie davon?",
+      "Ich bin anderer Meinung.",
+      "Dürfte ich kurz etwas sagen?"
+     ],
+     "l": 0
+    },
+    {
+     "id": "d6-b1",
+     "typ": "bau",
+     "kontext": "Satzbau",
+     "frage": "Bilden Sie den Satz.",
+     "steine": [
+      "Dann",
+      "sind",
+      "also alle",
+      "damit einverstanden,",
+      "dass",
+      "wir",
+      "einen DJ",
+      "buchen."
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Prüfungstraining",
+   "icon": "🏁",
+   "kurz": "Sprachbausteine · Protokoll (a, b, c) · gemischte Aufgaben",
+   "aufgaben": [
+    {
+     "id": "d7-sb",
+     "typ": "luecke",
+     "kontext": "Sprachbausteine",
+     "frage": "Sprachbausteine: Lesen Sie die Einladung und wählen Sie für jede Lücke die richtige Lösung.",
+     "text": "Liebe Kolleginnen und Kollegen,\n\nhiermit lade ich Sie herzlich {0} unserer Teambesprechung am Donnerstag um 10 Uhr ein. Die Tagesordnung und alle Unterlagen finden Sie im Anhang. Bitte lesen Sie diese vorab, {1} wir die Zeit gut nutzen können.\n\n{2} an der Besprechung nicht teilnehmen kann, der gibt mir bitte bis Mittwoch Bescheid. Wichtig ist mir außerdem, dass wir {3} Zeitplan bleiben – die Besprechung endet pünktlich um 11 Uhr.\n\nUnter TOP 3 soll eine Entscheidung über das neue Schichtsystem {4} werden. Falls Sie dazu Vorschläge haben, schicken Sie sie mir gern {5}. Das Protokoll erhalten alle Teilnehmenden {6} nach der Besprechung.\n\nViele Grüße\nAnna Weiß",
+     "gaps": [
+      {
+       "opts": [
+        "zu",
+        "an",
+        "für"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "damit",
+        "um",
+        "obwohl"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "Wer",
+        "Wen",
+        "Wem"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "im",
+        "am",
+        "um den"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "getroffen",
+        "gemacht",
+        "gestellt"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "vorher",
+        "nachher",
+        "danach"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "direkt",
+        "vorher",
+        "bevor"
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "d7-kon",
+     "typ": "matrix",
+     "kontext": "Lesen",
+     "frage": "Welche Lösung passt zu welchem Problem? Für ein Problem gibt es keine passende Lösung.",
+     "posts": [
+      {
+       "name": "A",
+       "text": "Wir legen fest, wer wann die Kaffeeküche aufräumt, und hängen einen Plan an die Tür."
+      },
+      {
+       "name": "B",
+       "text": "Telefonate werden ab sofort in den kleinen Besprechungsräumen geführt."
+      },
+      {
+       "name": "C",
+       "text": "Zu Beginn jeder Besprechung wird geklärt, wer das Protokoll schreibt."
+      },
+      {
+       "name": "D",
+       "text": "Aufgaben werden im gemeinsamen Online-Kalender mit Frist eingetragen."
+      }
+     ],
+     "wahl": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "keine"
+     ],
+     "aussagen": [
+      [
+       "Im Großraumbüro ist es durch lange Telefongespräche sehr laut.",
+       1
+      ],
+      [
+       "Nach Meetings weiß niemand mehr, was beschlossen wurde.",
+       2
+      ],
+      [
+       "In der Küche stapelt sich das schmutzige Geschirr.",
+       0
+      ],
+      [
+       "Niemand weiß, bis wann welche Aufgaben erledigt sein müssen.",
+       3
+      ],
+      [
+       "Zwei Kollegen streiten sich über die Urlaubsplanung.",
+       4
+      ]
+     ]
+    },
+    {
+     "id": "d7-w1",
+     "typ": "mc",
+     "kontext": "Relativsätze",
+     "frage": "___ das Protokoll schreibt, der verschickt es auch an alle.",
+     "opts": [
+      "Wer",
+      "Wen",
+      "Wem",
+      "Der"
+     ],
+     "l": 0
+    },
+    {
+     "id": "d7-w2",
+     "typ": "mc",
+     "kontext": "Nomen-Verb",
+     "frage": "Den Vorschlag halte ich für gut, die Nachteile nehme ich gern in ___.",
+     "opts": [
+      "Kauf",
+      "Angriff",
+      "Frage",
+      "Druck"
+     ],
+     "l": 0
+    },
+    {
+     "id": "d7-w3",
+     "typ": "mc",
+     "kontext": "Redemittel",
+     "frage": "Welcher Satz drückt höflich Widerspruch aus?",
+     "opts": [
+      "Das stimmt zwar, aber wir sollten auch die Kosten bedenken.",
+      "Das ist Quatsch.",
+      "Da kann ich nur zustimmen.",
+      "Ich fasse kurz zusammen."
+     ],
+     "l": 0
+    },
+    {
+     "id": "d7-b1",
+     "typ": "bau",
+     "kontext": "Satzbau",
+     "frage": "Bilden Sie den Satz.",
+     "steine": [
+      "Wem",
+      "eine Frist",
+      "unklar ist,",
+      "der",
+      "fragt",
+      "am besten",
+      "direkt",
+      "nach."
+     ]
+    }
+   ]
+  }
+ ]
+}

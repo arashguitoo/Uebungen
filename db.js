@@ -1,5 +1,5 @@
 // db.js – Datenzugriff: Firebase Realtime Database oder DEMO-Modus (localStorage).
-import { FIREBASE_CONFIG, ADMIN_UID, ROOT } from './config.js?v=20261002b';
+import { FIREBASE_CONFIG, ADMIN_UID, ROOT } from './config.js?v=20261004c';
 
 const qs = new URLSearchParams(location.search);
 if (qs.has('demo')) sessionStorage.setItem('ueb_demo', '1');

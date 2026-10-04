@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Konsole – Übungszentrale</title>
 <meta name="robots" content="noindex">
-<link rel="stylesheet" href="stil.css?v=20261002b">
+<link rel="stylesheet" href="stil.css?v=20261004c">
 <style>
   :root{--akzent:#2f3f46;--akzent-hell:#e7edef}
   body{font-size:16px}
@@ -55,6 +55,7 @@
   .schalter input{width:18px;height:18px}
   .icon{background:none;border:0;cursor:pointer;font-size:1rem;padding:4px 6px;border-radius:6px}
   .icon:hover{background:#eee}
+  .quelle{display:inline-block;font-size:.75rem;font-weight:600;background:#fff3d6;color:#7a5a00;border:1px solid #f0dca8;border-radius:99px;padding:1px 8px;vertical-align:middle;text-transform:none;letter-spacing:0}
   .meldung{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#1f2328;color:#fff;padding:10px 18px;border-radius:10px;z-index:99;box-shadow:var(--schatten)}
 </style>
 </head>
@@ -95,14 +96,14 @@ window.__ok = false;
 </script>
 <script type="module">
 window.__ok = true;
-import { db, DEMO, zufall, esc, mitDemo } from './db.js?v=20261002b';
-import { KATALOG, exById } from './katalog.js?v=20261002b';
+import { db, DEMO, zufall, esc, mitDemo } from './db.js?v=20261004c';
+import { KATALOG, exById } from './katalog.js?v=20261004c';
 
 if (DEMO) document.getElementById('demo').innerHTML = '<div class="demo-band">DEMO-MODUS – Anmeldung mit beliebigen Daten, alles bleibt in diesem Browser</div>';
 const $ = s => document.querySelector(s), app = $('#app');
 const D = { kurse: {}, pub: {}, live: {}, res: {}, items: {} };
 let tab = 'live', offs = [], gewKurs = null;
-const F = { lkurs: 'alle', lex: 'alle', nurAktiv: false, ekurs: 'alle', eex: 'alle', mehr: false };
+const F = { werk: 'alle', lkurs: 'alle', lex: 'alle', nurAktiv: false, ekurs: 'alle', eex: 'alle', mehr: false };
 const BASE = location.href.replace(/[?#].*$/, '').replace(/[^/]*$/, '');
 const meld = t => { const m = document.createElement('div'); m.className = 'meldung'; m.textContent = t; document.body.append(m); setTimeout(() => m.remove(), 2200); };
 const zeit = t => t ? new Date(t).toLocaleString('de-DE', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }) : '';
@@ -110,6 +111,9 @@ const dauer = s => s >= 3600 ? Math.floor(s / 3600) + ' h ' + Math.floor(s % 360
 const vor = t => { const s = Math.max(0, Math.round((Date.now() - t) / 1000)); return s < 60 ? 'vor ' + s + ' s' : s < 3600 ? 'vor ' + Math.floor(s / 60) + ' min' : s < 86400 ? 'vor ' + Math.floor(s / 3600) + ' h' : zeit(t); };
 const farbe = p => p >= 85 ? '#d9f2e2' : p >= 65 ? '#eef6d5' : p >= 45 ? '#fdf0cf' : '#fbe0db';
 const exName = id => (exById(id) || { titel: id }).titel;
+const qKurz = e => e && e.quelle ? `${e.quelle.werk}${e.quelle.lektion ? ' ' + (typeof e.quelle.lektion === 'number' ? 'L' + e.quelle.lektion : e.quelle.lektion.replace('Haltestelle ', 'HS ')) : ''}` : '';
+const qBadge = e => e && e.quelle ? `<span class="quelle" title="Nur in der Konsole sichtbar">📚 ${esc(e.quelle.werk)}${e.quelle.lektion ? ' · ' + (typeof e.quelle.lektion === 'number' ? 'Lektion ' : '') + esc(e.quelle.lektion) : ''}</span>` : '';
+const werke = () => [...new Set(KATALOG.filter(e => e.quelle).map(e => e.quelle.werk))];
 const kursName = kid => (D.kurse[kid] || {}).name || (kid ? '(gelöschter Kurs)' : 'Gast');
 const kursListe = () => Object.entries(D.kurse || {}).sort((a, b) => (a[1].name || '').localeCompare(b[1].name || ''));
 
@@ -157,7 +161,7 @@ function kursOptionen(wert, mitGast = true) {
   return `<option value="alle">Alle Kurse</option>${mitGast ? `<option value="gast" ${wert === 'gast' ? 'selected' : ''}>Ohne Code (Gäste)</option>` : ''}` +
     kursListe().map(([k, v]) => `<option value="${k}" ${wert === k ? 'selected' : ''}>${esc(v.name)}</option>`).join('');
 }
-const exOptionen = wert => `<option value="alle">Alle Übungen</option>` + KATALOG.map(e => `<option value="${e.id}" ${wert === e.id ? 'selected' : ''}>${esc(e.titel)}</option>`).join('');
+const exOptionen = wert => `<option value="alle">Alle Übungen</option>` + KATALOG.map(e => `<option value="${e.id}" ${wert === e.id ? 'selected' : ''}>${esc(e.titel)}${qKurz(e) ? ' [' + esc(qKurz(e)) + ']' : ''}</option>`).join('');
 const passtKurs = (kid, f) => f === 'alle' || (f === 'gast' ? !kid : kid === f);
 
 function live() {
@@ -177,7 +181,7 @@ function live() {
     ${l.length ? `<div class="live">${l.map(v => {
       const pr = v.n ? Math.min(100, Math.round(100 * v.i / v.n)) : 0, pz = v.pm ? Math.round(100 * v.p / v.pm) : 0;
       return `<div class="lk ${v.s}"><div class="n"><span>${esc(v.name)}</span><span class="st ${v.s}">${ST[v.s]}</span></div>
-        <div class="klein leise">${esc(v.kid ? kursName(v.kid) : 'ohne Code')} · ${esc(exName(v.ex))}</div>
+        <div class="klein leise">${esc(v.kid ? kursName(v.kid) : 'ohne Code')} · ${esc(exName(v.ex))}${qKurz(exById(v.ex)) ? ' · <span class="quelle">' + esc(qKurz(exById(v.ex))) + '</span>' : ''}</div>
         <div class="balken"><i style="width:${pr}%"></i></div>
         <div class="zeile klein" style="justify-content:space-between"><span>Aufgabe ${v.i} / ${v.n}</span><span><b>${v.p}</b> von ${v.pa ?? v.i ?? 0} richtig${(v.pa ?? v.i) ? ' (' + Math.round(100 * v.p / (v.pa ?? v.i)) + ' %)' : ''}</span></div>
         ${v.info ? `<div class="klein">📍 ${esc(v.info)}</div>` : ''}
@@ -219,7 +223,7 @@ function erg() {
     const zug = (D.pub.kurse && D.pub.kurse[F.ekurs] && D.pub.kurse[F.ekurs].ex) || {};
     const exs = KATALOG.filter(e => (F.eex === 'alle' || e.id === F.eex) && (zug[e.id] || l.some(v => v.ex === e.id)));
     h += `<h2 style="margin-top:20px">Übersicht ${esc(D.kurse[F.ekurs].name)}</h2><p class="leise klein">Bestes Ergebnis je Person (Anzahl Durchgänge in Klammern). Bei Trainings mit mehreren Teilen: Durchschnitt der besten Ergebnisse je Teil – Maus auf die Zelle zeigt die Teile.</p>`;
-    h += exs.length && tn.length ? `<div class="tabwrap"><table class="t"><tr><th>Name</th>${exs.map(e => `<th>${esc(e.titel)}</th>`).join('')}</tr>${tn.map(([pid, p]) => `<tr><td><b>${esc(p.name)}</b></td>${exs.map(e => {
+    h += exs.length && tn.length ? `<div class="tabwrap"><table class="t"><tr><th>Name</th>${exs.map(e => `<th>${esc(e.titel)}${qKurz(e) ? '<br><span class="quelle">' + esc(qKurz(e)) + '</span>' : ''}</th>`).join('')}</tr>${tn.map(([pid, p]) => `<tr><td><b>${esc(p.name)}</b></td>${exs.map(e => {
       const vs = l.filter(v => v.pid === pid && v.ex === e.id); if (!vs.length) return '<td class="leise">–</td>';
       if (e.teile) { const best = {}; vs.forEach(v => { const t = teilVon(v) || '?'; best[t] = Math.max(best[t] ?? 0, v.pct || 0); });
         const tt = Object.entries(best).filter(([t]) => t !== 'Prüfungsmix'), d = tt.length ? Math.round(tt.reduce((s, [, x]) => s + x, 0) / tt.length) : (best['Prüfungsmix'] ?? 0);
@@ -287,7 +291,7 @@ function kurse() {
       <form id="ntn" style="margin-top:14px"><label class="klein leise">Namen eintragen – ein Name pro Zeile. Jede Person bekommt automatisch einen Code.</label>
         <textarea id="ntnt" placeholder="Amina&#10;Bashir&#10;Carla"></textarea><button class="btn klein" style="margin-top:8px">Eintragen</button></form>
       <h3 style="margin-top:22px">Übungen für diesen Kurs</h3><p class="leise klein" style="margin-top:0">Angehakte Übungen erscheinen bei den Teilnehmenden unter „Deine Übungen“ – auch wenn sie nicht öffentlich sind.</p>
-      <div style="display:grid;gap:6px">${KATALOG.map(e => `<label class="schalter"><input type="checkbox" data-zu="${e.id}" ${zug[e.id] ? 'checked' : ''}> <b>${esc(e.titel)}</b> <span class="leise klein">${esc(e.niveau)} · ${esc(e.untertitel || '')}</span></label>`).join('')}</div>
+      <div style="display:grid;gap:6px">${KATALOG.map(e => `<label class="schalter"><input type="checkbox" data-zu="${e.id}" ${zug[e.id] ? 'checked' : ''}> <b>${esc(e.titel)}</b> ${qBadge(e)} <span class="leise klein">${esc(e.niveau)}</span></label>`).join('')}</div>
     </div>` : '<div class="karte"><h2>Noch kein Kurs</h2><p class="leise">Lege links deinen ersten Kurs an. Danach trägst du die Namen ein und druckst die Codekarten.</p></div>'}</div></div>`;
   app.querySelectorAll('.kursbtn').forEach(b => b.onclick = () => { gewKurs = b.dataset.k; kurse(); });
   $('#nk').onsubmit = async e => { e.preventDefault(); const name = $('#nkn').value.trim(); if (!name) return;
@@ -336,19 +340,29 @@ function druck(k, tn) {
 
 /* ---------------- ÜBUNGEN ---------------- */
 function uebungen() {
-  const alle = versuche(), kl = kursListe();
-  app.innerHTML = `<p class="leise" style="margin-top:16px">Alle Übungen aus <code>katalog.js</code>. <b>Öffentlich</b> = in der Zentrale für alle sichtbar und ohne Code spielbar. Ist eine Übung nicht öffentlich, sehen sie nur die Kurse, denen du sie zuweist.</p>
-    <div style="display:grid;gap:12px">${KATALOG.map(e => {
+  const alle = versuche(), kl = kursListe(), ws = werke();
+  const passt = e => F.werk === 'alle' || (F.werk === 'ohne' ? !e.quelle : e.quelle && e.quelle.werk === F.werk);
+  const liste = KATALOG.filter(passt).slice().sort((a, b) => {
+    const wa = a.quelle ? a.quelle.werk : '\uffff', wb = b.quelle ? b.quelle.werk : '\uffff';
+    return wa.localeCompare(wb) || KATALOG.indexOf(a) - KATALOG.indexOf(b);
+  });
+  const gruppe = e => e.quelle ? e.quelle.werk : 'Ohne Lehrwerk';
+  let letzte = null;
+  app.innerHTML = `<p class="leise" style="margin-top:16px">Alle Übungen aus <code>katalog.js</code>. <b>Öffentlich</b> = in der Zentrale für alle sichtbar und ohne Code spielbar. Ist eine Übung nicht öffentlich, sehen sie nur die Kurse, denen du sie zuweist. Die Angaben 📚 zu Lehrwerk und Lektion siehst nur du.</p>
+    <div class="leiste"><label for="wf">Lehrwerk:</label><select id="wf"><option value="alle">Alle</option>${ws.map(w => `<option value="${esc(w)}" ${F.werk === w ? 'selected' : ''}>${esc(w)} (${KATALOG.filter(e => e.quelle && e.quelle.werk === w).length})</option>`).join('')}<option value="ohne" ${F.werk === 'ohne' ? 'selected' : ''}>Ohne Lehrwerk (${KATALOG.filter(e => !e.quelle).length})</option></select></div>
+    <div style="display:grid;gap:12px">${liste.map(e => {
       const p = (D.pub.ex || {})[e.id], offen = p && typeof p.offen === 'boolean' ? p.offen : e.offen !== false;
       const vs = alle.filter(v => v.ex === e.id), d = vs.length ? Math.round(vs.reduce((a, v) => a + (v.pct || 0), 0) / vs.length) : null;
       const aktiv = Object.values(D.live || {}).filter(v => v.ex === e.id && status(v) === 'aktiv').length;
-      return `<div class="exk"><div class="kopfz"><div class="farbe" style="background:${e.farbe}"></div><div style="flex:1"><h3 style="margin:0">${esc(e.titel)}</h3>
+      const kopf = gruppe(e) !== letzte ? (letzte = gruppe(e), `<h2 style="margin:14px 0 0">${e.quelle ? '📚 ' : ''}${esc(letzte)}</h2>`) : '';
+      return kopf + `<div class="exk"><div class="kopfz"><div class="farbe" style="background:${e.farbe}"></div><div style="flex:1"><h3 style="margin:0">${esc(e.titel)} ${qBadge(e)}</h3>
         <div class="klein leise">${esc(e.typ)} · ${esc(e.niveau)} · ${esc(e.untertitel || '')}</div></div>
         <a class="btn zweit klein" href="${mitDemo(e.datei)}" target="_blank">Öffnen</a><button class="btn zweit klein" data-cp="${e.datei}">🔗 Link</button></div>
         <div class="zeile klein"><span><b>${vs.length}</b> Durchgänge</span><span>Ø <b>${d == null ? '–' : d + ' %'}</b></span>${aktiv ? `<span style="color:#1e7a45"><span class="puls"></span>${aktiv} spielen gerade</span>` : ''}
         <span style="flex:1"></span><button class="btn zweit klein" data-st="${e.id}">Statistik →</button></div>
         <div class="zeile"><label class="schalter"><input type="checkbox" data-of="${e.id}" ${offen ? 'checked' : ''}> <b>Öffentlich</b> (ohne Code spielbar)</label></div>
         ${kl.length ? `<div class="zeile klein"><span class="leise">Kurse:</span>${kl.map(([kid, k]) => `<label class="schalter"><input type="checkbox" data-k="${kid}" data-e="${e.id}" ${D.pub.kurse && D.pub.kurse[kid] && D.pub.kurse[kid].ex && D.pub.kurse[kid].ex[e.id] ? 'checked' : ''}> ${esc(k.name)}</label>`).join('')}</div>` : ''}</div>`; }).join('')}</div>`;
+  $('#wf').onchange = ev => { F.werk = ev.target.value; uebungen(); };
   app.querySelectorAll('[data-of]').forEach(c => c.onchange = () => db.set('pub/ex/' + c.dataset.of + '/offen', c.checked));
   app.querySelectorAll('[data-k]').forEach(c => c.onchange = () => db.set('pub/kurse/' + c.dataset.k + '/ex/' + c.dataset.e, c.checked ? true : null));
   app.querySelectorAll('[data-cp]').forEach(b => b.onclick = () => navigator.clipboard.writeText(BASE + b.dataset.cp).then(() => meld('Link kopiert.'), () => prompt('Link:', BASE + b.dataset.cp)));

@@ -1,0 +1,566 @@
+{
+  "id": "ankommen-in-der-welt",
+  "titel": "Ankommen in der Welt",
+  "untertitel": "Globalisierung · Willkommensbrief · Folgen ausdrücken · Arbeitsalltag in Deutschland · Kommunikation im Betrieb · Präpositionen · Fernbeziehungen",
+  "niveau": "B1/B2",
+  "reihe": "Prüfungstraining B1/B2",
+  "farbe": "#2e7d6b",
+  "mix": 15,
+  "intro": "Sieben Teile rund um Arbeit und Leben in einer globalisierten Welt – jeder Teil kann einzeln gespielt werden. Der **Prüfungsmix** zieht zufällig Aufgaben aus allen Teilen.",
+  "kompakt": [
+    {
+      "titel": "Folgen ausdrücken",
+      "zeilen": [
+        "**sodass** (Nebensatz, Verb am Ende): In einem neuen Land ist vieles ungewohnt, **sodass** man für viele Dinge mehr Zeit **braucht**.",
+        "**deshalb · folglich · infolgedessen** (Hauptsatz, Verb direkt danach): Man kann nicht alles wissen, **folglich braucht** man Hilfe.",
+        "Auch möglich: …, man **braucht** **deshalb** Hilfe."
+      ]
+    },
+    {
+      "titel": "Verben, Nomen und Adjektive mit Präpositionen",
+      "zeilen": [
+        "sich vorbereiten **auf** + A · die Vorbereitung **auf** + A · vorbereitet **auf** + A",
+        "sprechen **über** + A / das Gespräch **über** + A · sprechen **mit** + D / das Gespräch **mit** + D",
+        "sich ärgern **über** + A / der Ärger **über** + A / ärgerlich **über** + A",
+        "danken **für** + A / der Dank **für** + A / dankbar **für** + A · informieren **über** + A / die Information **über** + A / informiert **über** + A",
+        "Tipp: Lernen Sie solche Ausdrücke immer mit einem Beispielsatz."
+      ]
+    },
+    {
+      "titel": "Probleme im Betrieb besprechen",
+      "zeilen": [
+        "**ein Problem schildern:** Es gibt da ein Problem. · Es geht um Folgendes: … · Ich habe ein Problem mit …",
+        "**um Erklärung bitten:** Erzählen Sie mal genau, wie das passiert ist. · Was hatten Sie denn vereinbart?",
+        "**sich entschuldigen:** Das habe ich übersehen. · Ich bitte um Entschuldigung. · Das kommt nicht wieder vor."
+      ]
+    }
+  ],
+  "module": [
+    {
+      "titel": "Aspekte der Globalisierung",
+      "icon": "🌐",
+      "kurz": "Wortschatz",
+      "aufgaben": [
+        {
+          "id": "g1-zu",
+          "typ": "zu",
+          "kontext": "Wortschatz",
+          "frage": "Was bedeuten die Wörter?",
+          "paare": [
+            [
+              "die Sprachbarriere",
+              "Probleme, weil man die Sprache nicht gut kann"
+            ],
+            [
+              "die Vielfalt",
+              "viele verschiedene Formen"
+            ],
+            [
+              "die Verständigung",
+              "sich gegenseitig verstehen"
+            ],
+            [
+              "die Trennung",
+              "Menschen leben nicht mehr zusammen"
+            ],
+            [
+              "der Austausch",
+              "etwas geben und bekommen, z. B. Ideen"
+            ],
+            [
+              "der Lernprozess",
+              "die Zeit, in der man etwas Neues lernt"
+            ]
+          ]
+        },
+        {
+          "id": "g1-1",
+          "typ": "mc",
+          "kontext": "Wortschatz",
+          "frage": "Ein Mitarbeiter bekommt am ersten Tag eine ___ mit allen wichtigen Informationen.",
+          "opts": [
+            "Willkommensmappe",
+            "Kündigung",
+            "Gehaltsabrechnung",
+            "Krankmeldung"
+          ],
+          "l": 0
+        }
+      ]
+    },
+    {
+      "titel": "Willkommen in der Firma",
+      "icon": "📁",
+      "kurz": "Brief lesen · Folgen ausdrücken",
+      "aufgaben": [
+        {
+          "id": "g2-brief",
+          "typ": "lesen",
+          "kontext": "Lesen",
+          "frage": "Lesen Sie den Brief und beantworten Sie die Fragen.",
+          "textTitel": "Herzlich willkommen bei SolarVita",
+          "text": "Sehr geehrte Frau Haddad,\n\nherzlich willkommen! Wie Sie wissen, stehen unsere neuen Solarmodule kurz vor der weltweiten Markteinführung. Infolgedessen sind wir besonders froh, Sie ab sofort im Team zu haben.\n\nWir sehen uns als weltoffenes Unternehmen, folglich ist es uns wichtig, dass Sie sich schnell bei uns zu Hause fühlen. Aus Erfahrung wissen wir, dass die erste Zeit in einem neuen Land eine große Herausforderung ist. Vieles ist neu, sodass auch einfache Aufgaben viel Kraft kosten. Deshalb hat ein internationales Team diese Willkommensmappe erarbeitet. Sie soll Ihnen helfen, sich in der Firma und in der Region zurechtzufinden. Bitte lesen Sie besonders die Hinweise zur Arbeitszeit und zum Unfallschutz.\n\nSie hatten ja bereits Kontakt mit Ihrem Mentor, Herrn Brandt. Wenden Sie sich jederzeit an ihn, wenn Sie bei einem Problem nicht weiterkommen.\n\nFür Verbesserungsvorschläge zur Mappe sind wir immer dankbar.\n\nMit freundlichen Grüßen\nJulia Weber (Personalabteilung)",
+          "fragen": [
+            {
+              "f": "Warum ist die Firma froh, dass Frau Haddad jetzt kommt?",
+              "opts": [
+                "Die neuen Produkte kommen bald weltweit auf den Markt.",
+                "Eine Kollegin hat überraschend gekündigt.",
+                "Die Firma zieht nächsten Monat in ein neues Gebäude.",
+                "Im Herbst findet eine wichtige Messe statt."
+              ],
+              "l": 0
+            },
+            {
+              "f": "Wozu dient die Mappe?",
+              "opts": [
+                "Sie soll beim Zurechtfinden in Firma und Region helfen.",
+                "Sie enthält den Arbeitsvertrag und das Gehalt.",
+                "Sie ist ein Geschenk für die wichtigsten Kunden.",
+                "Sie beschreibt die Technik der neuen Solarmodule."
+              ],
+              "l": 0
+            },
+            {
+              "f": "Welche Informationen sind besonders wichtig?",
+              "opts": [
+                "Arbeitszeit und Unfallschutz",
+                "Urlaub und Gehalt",
+                "Sportvereine",
+                "Restaurants in der Region"
+              ],
+              "l": 0
+            },
+            {
+              "f": "Bei Problemen kann sie sich wenden an …",
+              "opts": [
+                "ihren Mentor.",
+                "den Betriebsrat.",
+                "die Geschäftsführung.",
+                "niemanden."
+              ],
+              "l": 0
+            }
+          ]
+        },
+        {
+          "id": "g2-ko",
+          "typ": "matrix",
+          "kontext": "Folgen ausdrücken",
+          "frage": "Welcher Konnektor passt? Achten Sie auf die Stellung des Verbs.",
+          "wahl": [
+            "sodass",
+            "folglich"
+          ],
+          "aussagen": [
+            [
+              "In einem neuen Land ist vieles ungewohnt, ___ man für viele Dinge mehr Zeit braucht.",
+              0
+            ],
+            [
+              "Man kann nicht alles wissen, ___ braucht man Hilfe.",
+              1
+            ],
+            [
+              "Die Arbeitswelt ändert sich sehr schnell, ___ muss man ständig dazulernen.",
+              1
+            ],
+            [
+              "Ich habe Überstunden abgebaut, ___ ich jetzt mehr Zeit für mich habe.",
+              0
+            ],
+            [
+              "Der Mentor hat alles gut erklärt, ___ ich mich schnell zurechtgefunden habe.",
+              0
+            ],
+            [
+              "Die Firma ist international, ___ ist Englisch sehr wichtig.",
+              1
+            ]
+          ]
+        },
+        {
+          "id": "g2-b1",
+          "typ": "bau",
+          "kontext": "Satzbau",
+          "frage": "Bilden Sie den Satz mit *infolgedessen*.",
+          "steine": [
+            "Die Anlage",
+            "kommt bald",
+            "auf den Markt,",
+            "infolgedessen",
+            "brauchen",
+            "wir",
+            "neue Mitarbeiter."
+          ]
+        },
+        {
+          "id": "g2-b2",
+          "typ": "bau",
+          "kontext": "Satzbau",
+          "frage": "Bilden Sie den Satz mit *sodass*.",
+          "steine": [
+            "Man muss",
+            "viele Dinge",
+            "neu lernen,",
+            "sodass",
+            "man",
+            "am Anfang",
+            "oft müde ist."
+          ]
+        },
+        {
+          "id": "g2-1",
+          "typ": "mc",
+          "kontext": "Folgen",
+          "frage": "Ich möchte mehr Zeit für mich haben, deshalb ___",
+          "opts": [
+            "arbeite ich jetzt Teilzeit.",
+            "ich arbeite jetzt Teilzeit.",
+            "ich jetzt Teilzeit arbeite.",
+            "jetzt Teilzeit ich arbeite."
+          ],
+          "l": 0
+        }
+      ]
+    },
+    {
+      "titel": "Manches ähnlich – vieles neu",
+      "icon": "🧳",
+      "kurz": "Arbeitsalltag in Deutschland",
+      "aufgaben": [
+        {
+          "id": "g3-st",
+          "typ": "matrix",
+          "kontext": "Arbeitsalltag",
+          "frage": "Über welchen Aspekt des Arbeitsalltags spricht die Person?",
+          "wahl": [
+            "Bürokleidung",
+            "Anredeformen",
+            "Urlaubsplanung",
+            "Feiern im Büro",
+            "Arbeitszeiten",
+            "Bürokratie"
+          ],
+          "aussagen": [
+            [
+              "„Bei uns trug man im Büro immer Anzug – hier kommen manche in Jeans.“",
+              0
+            ],
+            [
+              "„Ich wusste lange nicht, ob ich meine Kollegen duzen oder siezen soll.“",
+              1
+            ],
+            [
+              "„Hier plant man den Sommerurlaub schon im Januar!“",
+              2
+            ],
+            [
+              "„Wer Geburtstag hat, bringt selbst Kuchen für alle mit.“",
+              3
+            ],
+            [
+              "„Um 17 Uhr ist das Büro leer – das kannte ich so nicht.“",
+              4
+            ],
+            [
+              "„Für alles braucht man ein Formular und eine Unterschrift.“",
+              5
+            ]
+          ]
+        },
+        {
+          "id": "g3-1",
+          "typ": "mc",
+          "kontext": "Redemittel",
+          "frage": "Welcher Satz drückt aus, dass etwas **noch immer** schwierig ist?",
+          "opts": [
+            "Es ist für mich bis heute schwierig, dass …",
+            "Mein erster Eindruck war, dass …",
+            "An … habe ich mich sehr schnell gewöhnt.",
+            "Ich finde vieles gar nicht so anders."
+          ],
+          "l": 0
+        }
+      ]
+    },
+    {
+      "titel": "Kommunikation im Betrieb",
+      "icon": "📧",
+      "kurz": "E-Mails verstehen · Betreffzeilen",
+      "aufgaben": [
+        {
+          "id": "g4-zu",
+          "typ": "zu",
+          "kontext": "E-Mails",
+          "frage": "Welche Betreffzeile passt zur E-Mail?",
+          "paare": [
+            [
+              "„Wir haben die Fortbildung auf den 15.–18. Mai gelegt. Können wir auch gleich einen Termin für das Mitarbeitergespräch vereinbaren?“",
+              "zwei Termine"
+            ],
+            [
+              "„Ich habe von Kollegen gehört, dass der Termin feststeht. Warum habe ich keine Information bekommen?“",
+              "Nachfrage"
+            ],
+            [
+              "„Die Dokumentation ist noch nicht fertig. Wir sollten die Veranstaltung um vier Wochen verschieben.“",
+              "Fortbildung verschieben"
+            ],
+            [
+              "„Unsere nächste Betriebsversammlung findet am 2. Juni statt. Die Teilnahme wird als Arbeitszeit vergütet.“",
+              "Der Betriebsrat lädt ein."
+            ],
+            [
+              "„In unserer Reihe ‚Die Welt bei uns‘ stellt ein Kollege sein Heimatland vor.“",
+              "Ankündigung"
+            ]
+          ]
+        },
+        {
+          "id": "g4-rm",
+          "typ": "matrix",
+          "kontext": "Redemittel",
+          "frage": "Was macht die Person mit diesem Satz?",
+          "wahl": [
+            "ein Problem schildern",
+            "um Erklärung bitten",
+            "sich entschuldigen"
+          ],
+          "aussagen": [
+            [
+              "Es gibt da eine Beschwerde.",
+              0
+            ],
+            [
+              "Es geht um Folgendes: …",
+              0
+            ],
+            [
+              "Erzählen Sie mal genau, wie das passiert ist.",
+              1
+            ],
+            [
+              "Was hatten Sie denn vereinbart?",
+              1
+            ],
+            [
+              "Das habe ich übersehen.",
+              2
+            ],
+            [
+              "Das kommt nicht wieder vor.",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Wörter mit Präpositionen",
+      "icon": "🧩",
+      "kurz": "Verben, Nomen und Adjektive mit Präposition",
+      "aufgaben": [
+        {
+          "id": "g5-pr",
+          "typ": "matrix",
+          "kontext": "Präpositionen",
+          "frage": "Welche Präposition passt?",
+          "wahl": [
+            "auf",
+            "über",
+            "mit",
+            "für"
+          ],
+          "aussagen": [
+            [
+              "Ich bereite mich ___ die Prüfung vor.",
+              0
+            ],
+            [
+              "Bist du gut ___ das Gespräch vorbereitet?",
+              0
+            ],
+            [
+              "Der Ärger ___ die späte Information war groß.",
+              1
+            ],
+            [
+              "Sind Sie schon ___ den neuen Termin informiert?",
+              1
+            ],
+            [
+              "Morgen habe ich ein Gespräch ___ meinem Mentor.",
+              2
+            ],
+            [
+              "Wir sind Ihnen sehr dankbar ___ Ihre Hilfe.",
+              3
+            ],
+            [
+              "Vielen Dank ___ die Einladung!",
+              3
+            ]
+          ]
+        },
+        {
+          "id": "g5-1",
+          "typ": "mc",
+          "kontext": "Präpositionen",
+          "frage": "Beppo ist ärgerlich ___ den neuen Termin.",
+          "opts": [
+            "über",
+            "auf",
+            "für",
+            "mit"
+          ],
+          "l": 0
+        },
+        {
+          "id": "g5-2",
+          "typ": "mc",
+          "kontext": "Präpositionen",
+          "frage": "Das Gespräch über ___ Projekt dauerte zwei Stunden.",
+          "opts": [
+            "das",
+            "dem",
+            "des",
+            "der"
+          ],
+          "l": 0
+        }
+      ]
+    },
+    {
+      "titel": "Beziehungen in einer globalisierten Welt",
+      "icon": "💬",
+      "kurz": "Zeitungsartikel · Leseverstehen",
+      "aufgaben": [
+        {
+          "id": "g6-text",
+          "typ": "lesen",
+          "kontext": "Lesen",
+          "frage": "Lesen Sie den Artikel. Entscheiden Sie: Was steht im Text?",
+          "textTitel": "Liebe auf Distanz",
+          "text": "Lena arbeitet in Hamburg, ihr Partner Tobias in Stuttgart. Sie sehen sich an den Wochenenden – mal hier, mal dort. Samir lebt in Deutschland, seine Eltern und Geschwister in Jordanien und Kanada; er hält über Videoanrufe Kontakt. Durch Globalisierung und Migration entstehen für Partnerschaft und Familie neue Herausforderungen. Schätzungen zufolge wird in Deutschland mindestens jede achte Beziehung zumindest zeitweise auf Distanz geführt.\n\nEin Kernproblem: Die Partner leben lange in verschiedenen Alltagswelten. Je länger die Trennung dauert, desto größer wird das Konfliktpotenzial. Paare müssen viel Zeit investieren, um ihre Erlebnisse miteinander zu teilen.\n\nLena und Tobias sehen ihre Fernbeziehung aber auch als Chance: Beide nutzen ihre Freiräume, und die verschiedenen Lebenswelten machen die Beziehung interessanter. Für Samir dagegen ist die Trennung von der Familie sehr belastend; die Sorge um seine Lieben erschwert ihm die Integration.\n\nAußerdem gibt es immer mehr „Weltfamilien“, in denen Menschen aus verschiedenen Kulturen zusammenleben. Als die Brasilianerin Ana mit ihrem deutschen Mann nach Leipzig zog, fand sie zuerst keine Arbeit und war finanziell von ihm abhängig – eine schwierige Zeit für sie.",
+          "fragen": [
+            {
+              "f": "Viele Menschen …",
+              "opts": [
+                "leben in Beziehungen auf Distanz.",
+                "möchten allein sein.",
+                "treffen ihre Partner zu selten."
+              ],
+              "l": 0
+            },
+            {
+              "f": "Ein Problem von Beziehungen auf Distanz ist …",
+              "opts": [
+                "die Häufigkeit der Konflikte.",
+                "die Angst vor Verlust.",
+                "die Art der Kommunikation."
+              ],
+              "l": 0
+            },
+            {
+              "f": "Trennungen auf Zeit …",
+              "opts": [
+                "können auch anregend sein.",
+                "sind für Frauen schwierig.",
+                "sind immer schlecht."
+              ],
+              "l": 0
+            },
+            {
+              "f": "In „Weltfamilien“ …",
+              "opts": [
+                "kommen die Partner aus verschiedenen Ländern.",
+                "leben die Verwandten im Ausland.",
+                "führen die Partner eine Scheinehe."
+              ],
+              "l": 0
+            },
+            {
+              "f": "Für Ana war der Wechsel nach Deutschland …",
+              "opts": [
+                "zu Beginn nicht einfach.",
+                "ein Karrieresprung.",
+                "mit viel Angst verbunden."
+              ],
+              "l": 0
+            }
+          ]
+        },
+        {
+          "id": "g6-1",
+          "typ": "mc",
+          "kontext": "Prüfungstipp",
+          "frage": "Bei solchen Leseaufgaben ist wichtig, …",
+          "opts": [
+            "was im Text steht.",
+            "was Sie selbst glauben.",
+            "was Sie schon wissen.",
+            "was am logischsten klingt."
+          ],
+          "l": 0
+        }
+      ]
+    },
+    {
+      "titel": "Prüfungstraining",
+      "icon": "🏁",
+      "kurz": "Sprachbausteine",
+      "aufgaben": [
+        {
+          "id": "g7-sb",
+          "typ": "luecke",
+          "kontext": "Sprachbausteine",
+          "frage": "Sprachbausteine: Antwort an die Personalabteilung. Wählen Sie die richtige Lösung.",
+          "text": "Liebe Frau Weber,\n\nvielen Dank {0} die Willkommensmappe. Ich habe sie gleich am ersten Abend gelesen, {1} ich mich schon gut auf die erste Woche vorbereitet fühle.\n\nEin Vorschlag: Die Informationen {2} Unfallschutz waren sehr hilfreich, aber zum Thema Wohnungssuche fehlt mir noch etwas. Viele Kolleginnen und Kollegen kommen aus dem Ausland, {3} wäre eine Liste mit Maklern sicher nützlich.\n\nMit meinem Mentor habe ich schon ein Gespräch {4} meine Aufgaben geführt.\n\nViele Grüße\nNour Haddad",
+          "gaps": [
+            {
+              "opts": [
+                "für",
+                "über",
+                "auf"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "sodass",
+                "deshalb",
+                "folglich"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "zum",
+                "vom",
+                "beim"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "deshalb",
+                "sodass",
+                "obwohl"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "über",
+                "auf",
+                "für"
+              ],
+              "l": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,385 @@
+{
+  "id": "gutes-klima-im-team",
+  "titel": "Gutes Klima im Team",
+  "untertitel": "Teamfähigkeit · als, als ob, als wenn · Telefonieren · Passiv mit sein · Hotel und Service · Defekte melden · Online-Konferenzen",
+  "niveau": "B1/B2",
+  "reihe": "Prüfungstraining B1/B2",
+  "farbe": "#2f7d5c",
+  "mix": 15,
+  "intro": "Acht Teile – jeder Teil kann einzeln gespielt werden. Der **Prüfungsmix** zieht zufällig Aufgaben aus allen Teilen.",
+  "kompakt": [
+    { "titel": "Irreale Vergleiche: als, als ob, als wenn", "zeilen": [
+      "Sie drücken einen **irrealen** Vergleich aus – deshalb steht der **Konjunktiv II**.",
+      "Nach **als** steht das Verb **auf Position 2**: Er tut so, **als wäre** er der Chef.",
+      "Nach **als ob / als wenn** steht das Verb **am Ende**: Er tut so, **als ob** er der Chef **wäre**.",
+      "Typische Einleitungen: Ich habe das Gefühl, … · Es kommt mir so vor, … · Es sieht so aus, … · Er benimmt sich, … · Sie tut so, … · Es scheint, …"
+    ]},
+    { "titel": "Gefallen und Missfallen", "zeilen": [
+      "**Gefallen:** Mir gefällt besonders, dass … · Positiv ist … · Sehr zufrieden bin ich mit …",
+      "**Missfallen:** Nicht so gut gefällt mir, dass … · Negativ ist … · Ich komme nicht so gut damit klar, dass … · … ist nicht ideal."
+    ]},
+    { "titel": "Telefonieren", "zeilen": [
+      "**Begrüßen:** Firma …, mein Name ist …, was kann ich für Sie tun?",
+      "**Verbinden:** Könnten Sie mich bitte mit … verbinden? · Einen Augenblick, ich stelle Sie durch.",
+      "**Falsch verbunden:** Entschuldigung, bin ich bei Ihnen richtig? · Da sind Sie bei mir leider nicht richtig.",
+      "**Nachricht:** Möchten Sie eine Nachricht hinterlassen? · Soll ich Frau … etwas ausrichten?",
+      "**Sich vergewissern:** Könnten Sie das bitte wiederholen? · Sie meinen also, …",
+      "**Zusammenfassen:** Wir verbleiben also so: … · **Beenden:** Ich hoffe, ich konnte Ihnen weiterhelfen. Auf Wiederhören."
+    ]},
+    { "titel": "Passiv mit werden und sein", "zeilen": [
+      "**werden** + Partizip II = **Vorgang**: Was passiert gerade? – Das Boot **wird** gebaut.",
+      "**sein** + Partizip II = **Zustand / Ergebnis**: Das Boot **ist** gebaut. (= fertig)",
+      "Präteritum: Das Boot **wurde** gebaut. (Vorgang) · Das Boot **war** gebaut. (Zustand)",
+      "Im Alltag: Die Rechnung **ist** storniert. · Das Geschäft **ist** geschlossen. · Der Tisch **ist** gedeckt."
+    ]},
+    { "titel": "Einen Defekt melden", "zeilen": [
+      "**Informieren:** Es gibt ein Problem mit … · … funktioniert nicht richtig. · … lässt sich nicht starten.",
+      "**Ratschläge:** Vielleicht muss … gereinigt werden? · Haben Sie schon … überprüft? · Schalten Sie zuerst … aus.",
+      "**Reagieren:** Okay, das probiere ich gleich aus. · Das habe ich schon versucht. · Danke für Ihre Hilfe."
+    ]},
+    { "titel": "Online-Konferenzen", "zeilen": [
+      "**Vorher:** rechtzeitig einloggen · Kamera, Ton und Internet prüfen · Präsentation vorbereiten · Smartphone lautlos",
+      "**Während:** Mikrofon stumm schalten · andere ausreden lassen · per Handzeichen melden · Bescheid sagen, wenn man kurz weg muss",
+      "**Typische Sätze:** Sie müssen Ihr Mikro noch einschalten. · Ihr Bild ist eingefroren. · Ich teile meinen Bildschirm."
+    ]}
+  ],
+  "module": [
+    {
+      "titel": "Teamfähig?",
+      "icon": "🤝",
+      "kurz": "Eigenschaften · Tipps für ein gutes Arbeitsklima lesen",
+      "aufgaben": [
+        { "id": "f1-eig", "typ": "zu", "kontext": "Wortschatz", "frage": "Welche Eigenschaft ist gemeint?", "paare": [
+          ["Hilfsbereitschaft", "Man unterstützt andere gern."],
+          ["Kritikfähigkeit", "Man kann Kritik annehmen und sachlich kritisieren."],
+          ["Durchhaltevermögen", "Man gibt auch bei Schwierigkeiten nicht auf."],
+          ["Wertschätzung", "Man zeigt anderen, dass man ihre Arbeit schätzt."],
+          ["Fachkompetenz", "Man kennt sich in seinem Beruf gut aus."],
+          ["aktives Zuhören", "Man hört genau zu und fragt nach."]
+        ]},
+        {
+          "id": "f1-tipps", "typ": "matrix", "kontext": "Lesen",
+          "frage": "Lesen Sie die Tipps. Welche Überschrift passt?",
+          "posts": [
+            { "name": "A", "text": "Mails und Chats sind praktisch, aber sie ersetzen kein Gespräch. Wenn es Probleme gibt, sprechen Sie lieber persönlich mit den Kolleginnen und Kollegen – am Telefon oder noch besser von Angesicht zu Angesicht." },
+            { "name": "B", "text": "Ein „Guten Morgen“, ein kurzes „Danke“ für eine Information: Kleine Gesten kosten nichts, zeigen aber Respekt. Wer sich nicht grüßt und schlecht übereinander redet, verdirbt die Atmosphäre." },
+            { "name": "C", "text": "Kritik gehört zum Arbeitsalltag. Aber überlegen Sie vorher: Was genau stört mich? Was soll sich ändern? Ist jetzt der richtige Moment? Und geben Sie der anderen Person immer die Chance, sich zu erklären." },
+            { "name": "D", "text": "Jeder Mensch freut sich über Anerkennung. Ein Lob in der Teambesprechung oder eine nette Nachricht nach einem gelungenen Projekt zeigt, dass man die Leistung anderer sieht." }
+          ],
+          "wahl": ["A", "B", "C", "D"],
+          "aussagen": [
+            ["Freundlich miteinander umgehen", 1],
+            ["Fair kritisieren", 2],
+            ["Persönlich kommunizieren", 0],
+            ["Leistungen würdigen", 3]
+          ]
+        },
+        {
+          "id": "f1-rf", "typ": "matrix", "kontext": "Lesen",
+          "frage": "Was sagen die Tipps? Richtig oder falsch?",
+          "aussagen": [
+            ["Bei Problemen sind Chats besser als Gespräche.", false],
+            ["Kleine Gesten wie ein Gruß zeigen Respekt.", true],
+            ["Man sollte am Arbeitsplatz nie kritisieren.", false],
+            ["Wer kritisiert wird, soll sich erklären dürfen.", true],
+            ["Lob ist im Berufsleben unwichtig.", false]
+          ]
+        },
+        { "id": "f1-w1", "typ": "mc", "kontext": "Wortschatz", "frage": "„Das Arbeitsklima“ meint …", "opts": ["die Stimmung zwischen den Beschäftigten.", "die Temperatur im Büro.", "das Wetter am Arbeitsort.", "die Klimaanlage."], "l": 0 },
+        { "id": "f1-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz.", "steine": ["Ein kurzer Dank", "ist", "ein einfaches Mittel,", "um", "Respekt", "zu zeigen."] }
+      ]
+    },
+    {
+      "titel": "als, als ob, als wenn",
+      "icon": "🎭",
+      "kurz": "irreale Vergleichssätze mit Konjunktiv II · Gefallen und Missfallen",
+      "aufgaben": [
+        { "id": "f2-1", "typ": "mc", "kontext": "als ob", "frage": "Die Kollegen tun ständig so, als ob sie alle perfekt ___.", "opts": ["wären", "sind", "waren", "sein"], "l": 0 },
+        { "id": "f2-2", "typ": "mc", "kontext": "als", "frage": "Es kommt mir so vor, als ___ ich nicht in dieses Team passen.", "opts": ["würde", "werde", "ob würde", "wenn"], "l": 0, "x": "Nach **als** folgt direkt das Verb (Position 2)." },
+        { "id": "f2-3", "typ": "mc", "kontext": "Wortstellung", "frage": "Welcher Satz ist richtig?", "opts": ["Er behandelt uns, als wären wir gleichberechtigte Partner.", "Er behandelt uns, als wir gleichberechtigte Partner wären.", "Er behandelt uns, als ob wären wir gleichberechtigte Partner.", "Er behandelt uns, als wenn wären wir Partner."], "l": 0 },
+        {
+          "id": "f2-wahl", "typ": "matrix", "kontext": "als oder als ob",
+          "frage": "Was passt in die Lücke?",
+          "wahl": ["als", "als ob"],
+          "aussagen": [
+            ["Sie tut immer so, ___ wüsste sie alles.", 0],
+            ["Sie tut immer so, ___ sie alles wüsste.", 1],
+            ["Es sieht so aus, ___ wir beste Freunde wären.", 1],
+            ["Er verhält sich, ___ wäre das Büro sein Zuhause.", 0],
+            ["Ich habe das Gefühl, ___ mich niemand verstehen würde.", 1],
+            ["Es scheint, ___ hätte sie keine Lust.", 0]
+          ]
+        },
+        {
+          "id": "f2-regel", "typ": "matrix", "kontext": "Regel",
+          "frage": "Stimmen die Regeln?",
+          "aussagen": [
+            ["Sätze mit als ob drücken einen irrealen Vergleich aus.", true],
+            ["In irrealen Vergleichssätzen steht der Indikativ.", false],
+            ["Nach als steht das konjugierte Verb auf Position 2.", true],
+            ["Nach als ob steht das konjugierte Verb am Ende.", true],
+            ["Der Konjunktiv II drückt hier Höflichkeit aus.", false]
+          ]
+        },
+        { "id": "f2-b1", "typ": "bau", "kontext": "Satzbau", "frage": "„Frau Kern verhält sich manchmal so, als ob … (sie / die Chefin / sein)“", "steine": ["Frau Kern", "verhält sich", "manchmal so,", "als ob", "sie", "die Chefin", "wäre."] },
+        { "id": "f2-b2", "typ": "bau", "kontext": "Satzbau", "frage": "„Herr Lenz wirkt oft so, als … (die anderen / ihn / nicht interessieren)“", "steine": ["Herr Lenz", "wirkt oft so,", "als", "würden", "ihn", "die anderen", "nicht interessieren."], "alt": [["Herr Lenz", "wirkt oft so,", "als", "würden", "die anderen", "ihn", "nicht interessieren."]] },
+        {
+          "id": "f2-gef", "typ": "matrix", "kontext": "Redemittel",
+          "frage": "Gefallen oder Missfallen?",
+          "wahl": ["Gefallen", "Missfallen"],
+          "aussagen": [
+            ["Mir gefällt besonders, dass wir flexible Arbeitszeiten haben.", 0],
+            ["Ich komme nicht so gut damit klar, dass es so laut ist.", 1],
+            ["Positiv ist die gute Stimmung im Team.", 0],
+            ["Der lange Arbeitsweg ist nicht ideal.", 1],
+            ["Sehr zufrieden bin ich mit meiner Chefin.", 0],
+            ["Nicht so gut gefällt mir, dass wir so viele Überstunden machen.", 1]
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Am Telefon",
+      "icon": "☎️",
+      "kurz": "Redemittel für berufliche Telefonate · Gespräch ordnen",
+      "aufgaben": [
+        {
+          "id": "f3-rm", "typ": "matrix", "kontext": "Redemittel",
+          "frage": "Welche Aktivität passt zum Ausdruck?",
+          "wahl": ["begrüßen", "verbinden", "falsch verbunden", "Nachricht", "vergewissern", "zusammenfassen", "beenden"],
+          "aussagen": [
+            ["Firma Nordlicht, mein Name ist Berg, was kann ich für Sie tun?", 0],
+            ["Einen Augenblick, ich stelle Sie durch.", 1],
+            ["Könnten Sie mir vielleicht die Durchwahl geben?", 1],
+            ["Entschuldigung, bin ich bei Ihnen richtig?", 2],
+            ["Soll ich Frau Ates etwas ausrichten?", 3],
+            ["Ich bin mir nicht ganz sicher, ob ich Sie richtig verstanden habe.", 4],
+            ["Wir verbleiben also so: …", 5],
+            ["Ich hoffe, ich konnte Ihnen weiterhelfen. Auf Wiederhören.", 6]
+          ]
+        },
+        {
+          "id": "f3-dial", "typ": "ordnen", "kontext": "Gespräch",
+          "frage": "Ein Anruf bei einer Sprachschule. Bringen Sie das Gespräch in die richtige Reihenfolge.",
+          "zeilen": [
+            "▶ Sprachschule Lingua Nord, Kaya, guten Tag. Was kann ich für Sie tun?",
+            "◀ Guten Tag, hier spricht Mia Roth von der Spedition Hafenblick. Könnten Sie mich bitte mit Herrn Weber verbinden?",
+            "▶ Herr Weber ist gerade in einer Besprechung. Möchten Sie eine Nachricht hinterlassen?",
+            "◀ Ja, gern. Wir suchen einen Englischkurs für acht Mitarbeitende, am liebsten dienstags.",
+            "▶ Ich habe notiert: acht Personen, dienstags. Herr Weber ruft Sie heute Nachmittag zurück.",
+            "◀ Wunderbar, vielen Dank. Auf Wiederhören!"
+          ]
+        },
+        { "id": "f3-m1", "typ": "mc", "kontext": "Situationen", "frage": "Sie haben die Telefonnummer nicht richtig verstanden. Was sagen Sie?", "opts": ["Könnten Sie die Nummer bitte noch einmal wiederholen?", "Was? Noch mal!", "Das ist falsch.", "Ich verbinde Sie."], "l": 0 },
+        { "id": "f3-m2", "typ": "mc", "kontext": "Situationen", "frage": "Ein Anrufer möchte Frau Brandt sprechen, aber sie ist heute nicht da. Was sagen Sie?", "opts": ["Frau Brandt ist heute leider nicht im Haus. Kann ich ihr etwas ausrichten?", "Die ist nicht da. Tschüss.", "Rufen Sie nie wieder an.", "Bin ich bei Ihnen richtig?"], "l": 0 },
+        { "id": "f3-m3", "typ": "mc", "kontext": "Wortschatz", "frage": "Die direkte Telefonnummer einer Person in der Firma heißt …", "opts": ["Durchwahl.", "Durchsage.", "Vorwahl.", "Zentrale."], "l": 0 },
+        { "id": "f3-tipp", "typ": "mc", "kontext": "Strategie", "frage": "Wie bereitet man sich am besten auf ein wichtiges Telefonat auf Deutsch vor?", "opts": ["Man notiert vorher Redemittel, Fragen und wichtige Wörter.", "Man ruft spontan an und improvisiert.", "Man spricht möglichst schnell.", "Man schreibt lieber eine SMS."], "l": 0 },
+        { "id": "f3-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz.", "steine": ["Könnten Sie", "mich", "bitte", "mit Frau Lenz", "aus der Buchhaltung", "verbinden?"] }
+      ]
+    },
+    {
+      "titel": "Teamgeist und Passiv mit sein",
+      "icon": "🚣",
+      "kurz": "Einladung zum Team-Tag · Vorgang oder Zustand? · Begeisterung und Ablehnung",
+      "aufgaben": [
+        {
+          "id": "f4-einl", "typ": "lesen", "kontext": "Lesen",
+          "frage": "Lesen Sie die Einladung und beantworten Sie die Fragen.",
+          "textTitel": "Einladung zum Team-Tag",
+          "text": "Liebe Kolleginnen und Kollegen,\n\nam Freitag, den 16. Mai, tauschen wir Schreibtisch gegen Kochlöffel: Wir kochen gemeinsam ein Fünf-Gänge-Menü in der Kochschule am Hafen!\n\nAlles ist schon organisiert: Der Raum ist reserviert, die Zutaten sind bestellt und die Rezepte sind ausgewählt. In Teams zu je fünf Personen bereitet jede Gruppe einen Gang zu. Eine Köchin zeigt uns die wichtigsten Tricks. Am Abend essen wir dann alle zusammen.\n\n**Treffpunkt:** 14:00 Uhr vor dem Büro – wir fahren gemeinsam mit der Straßenbahn.\n**Bitte mitbringen:** bequeme Kleidung. Schürzen sind vorhanden.\n**Ende:** gegen 21 Uhr\n\nBitte sagt bis zum 2. Mai Bescheid, ob ihr Allergien habt.\n\nWir freuen uns auf einen leckeren Tag!\nEure Geschäftsleitung",
+          "fragen": [
+            { "f": "Was ist beim Team-Tag geplant?", "opts": ["gemeinsam kochen", "ein Boot bauen", "eine Wanderung", "ein Fußballspiel"], "l": 0 },
+            { "f": "Was müssen die Mitarbeitenden noch tun?", "opts": ["Bescheid sagen, ob sie Allergien haben", "Zutaten kaufen", "den Raum reservieren", "Rezepte aussuchen"], "l": 0 },
+            { "f": "Was muss man mitbringen?", "opts": ["bequeme Kleidung", "eine Schürze", "Geschirr", "ein Rezept"], "l": 0 },
+            { "f": "Wie kommen alle zur Kochschule?", "opts": ["mit der Straßenbahn", "mit dem Bus", "mit dem eigenen Auto", "zu Fuß"], "l": 0 }
+          ]
+        },
+        {
+          "id": "f4-vz", "typ": "matrix", "kontext": "Passiv",
+          "frage": "Vorgang oder Zustand?",
+          "wahl": ["Vorgang (werden)", "Zustand (sein)"],
+          "aussagen": [
+            ["Das Boot wird gerade gebaut.", 0], ["Das Boot ist gebaut.", 1],
+            ["Die Tische werden gedeckt.", 0], ["Die Tische sind gedeckt.", 1],
+            ["Der Grill wurde angezündet.", 0], ["Das Geschäft ist bis zum 18.8. geschlossen.", 1],
+            ["Die Rechnung ist leider storniert.", 1], ["Der Salat wird zubereitet.", 0]
+          ]
+        },
+        { "id": "f4-1", "typ": "mc", "kontext": "Passiv mit sein", "frage": "Wir können anfangen: Die Zutaten ___ schon geschnitten.", "opts": ["sind", "werden", "wurden", "haben"], "l": 0, "x": "Das Ergebnis zählt → Zustandspassiv mit **sein**." },
+        { "id": "f4-2", "typ": "mc", "kontext": "Passiv mit sein", "frage": "Als wir ankamen, ___ die Würstchen schon gegrillt.", "opts": ["waren", "wurden", "sind", "werden"], "l": 0, "x": "Zustand in der Vergangenheit → **war/waren** + Partizip II." },
+        {
+          "id": "f4-forum", "typ": "luecke", "kontext": "Passiv mit sein",
+          "frage": "Rückmeldungen im Firmenforum. Ergänzen Sie das Passiv mit sein im Präteritum.",
+          "text": "Hey, wie fandet ihr den Team-Tag?\n\nIch fand es super! Toll, dass alles so gut {0} war.\n\nStimmt, sogar die Getränke {1} schon kalt gestellt, als wir ankamen.\n\nNur leider {2} der Bus nicht richtig gereinigt.\n\nWie cool, dass am Ende alle Gerichte fertig {3}!",
+          "gaps": [
+            { "opts": ["vorbereitet", "vorbereiten", "vorbereitete"], "l": 0 },
+            { "opts": ["waren", "wurden", "sind"], "l": 0 },
+            { "opts": ["war", "wurde", "ist"], "l": 0 },
+            { "opts": ["gekocht waren", "gekocht wurden", "gekocht werden"], "l": 0 }
+          ]
+        },
+        {
+          "id": "f4-beg", "typ": "matrix", "kontext": "Redemittel",
+          "frage": "Begeisterung oder Ablehnung?",
+          "wahl": ["Begeisterung", "Ablehnung"],
+          "aussagen": [
+            ["Das finde ich echt cool!", 0], ["Muss das sein?", 1], ["Ich glaube, das wird voll witzig!", 0],
+            ["Das passt mir gar nicht.", 1], ["Das wird bestimmt total lustig!", 0], ["Na super …", 1]
+          ],
+          "x": "„Na super …“ ist ironisch gemeint – also Ablehnung."
+        }
+      ]
+    },
+    {
+      "titel": "Arbeiten im Hotel",
+      "icon": "🛎️",
+      "kurz": "Berufsporträt lesen · Wortschatz · fehlende Produkte melden",
+      "aufgaben": [
+        {
+          "id": "f5-art", "typ": "matrix", "kontext": "Lesen",
+          "frage": "Lesen Sie das Berufsporträt. In welchem Bereich macht man das?",
+          "textTitel": "Hotelfachkraft im Hotel Seeblick – das erwartet Sie",
+          "text": "Bei uns steht das Wohl der Gäste im Mittelpunkt. Damit alles reibungslos funktioniert, müssen alle Bereiche eng zusammenarbeiten – Teamfähigkeit ist also eine Grundvoraussetzung. Die Bereitschaft zu Schicht- und Wochenendarbeit setzen wir voraus.\n\n**Restaurant und Küche:** Sie decken die Tische ein, beraten die Gäste bei der Auswahl der Speisen und servieren. In der Küche helfen Sie z. B. beim Schneiden von Gemüse.\n\n**Rezeption:** Sie führen den Check-in durch, informieren über den Service im Hotel und beantworten telefonische Anfragen. Buchungen werden mit einer speziellen Software abgewickelt.\n\n**Büro:** Sie kümmern sich um die Schichtplanung und die Koordination des Urlaubs. Wenn das Hotel im Internet eine schlechte Bewertung bekommt, reagieren Sie sachlich darauf.\n\n**Housekeeping:** Sie kontrollieren, ob die Zimmer in einwandfreiem Zustand sind, und füllen die Minibar und die Hygieneartikel auf.",
+          "wahl": ["Restaurant", "Rezeption", "Büro", "Housekeeping"],
+          "aussagen": [
+            ["Gäste bei der Auswahl der Speisen beraten", 0],
+            ["Tische eindecken", 0],
+            ["Check-ins durchführen", 1],
+            ["Zimmerbuchungen mit der Software bearbeiten", 1],
+            ["Schichtpläne erstellen", 2],
+            ["auf Online-Bewertungen antworten", 2],
+            ["die Minibar auffüllen", 3],
+            ["die Sauberkeit der Zimmer kontrollieren", 3]
+          ]
+        },
+        { "id": "f5-wort", "typ": "zu", "kontext": "Wortschatz", "frage": "Was bedeuten die Ausdrücke?", "paare": [
+          ["vielfältig", "abwechslungsreich"],
+          ["reibungslos funktionieren", "ohne Schwierigkeiten laufen"],
+          ["etwas voraussetzen", "annehmen, dass etwas vorhanden ist"],
+          ["abwickeln", "ausführen, erledigen"],
+          ["einwandfrei", "ohne Fehler oder Mängel"],
+          ["für etwas sorgen", "sich um etwas kümmern"]
+        ]},
+        {
+          "id": "f5-mail", "typ": "luecke", "kontext": "Schreiben",
+          "frage": "Eine Mitarbeiterin im Housekeeping meldet fehlende Produkte. Ergänzen Sie die Mail.",
+          "text": "Liebe Frau Morelli,\n\nwie {0} schicke ich Ihnen hiermit die Liste der fehlenden Produkte. Die Überprüfung des Bestands hat {1}, dass wir dringend Seife brauchen: Es {2} etwa 400 Stück. Bei den Handtüchern haben wir nur {3} 30 Stück. Auch Duschgel und Zahnputzsets müssen {4} werden.\n\nVielen Dank und viele Grüße\nLena Aigner",
+          "gaps": [
+            { "opts": ["vereinbart", "vereinbaren", "vereinbarte"], "l": 0 },
+            { "opts": ["ergeben", "gegeben", "erhalten"], "l": 0 },
+            { "opts": ["fehlen", "fehlt", "gefehlt"], "l": 0 },
+            { "opts": ["noch", "schon", "nicht"], "l": 0 },
+            { "opts": ["nachbestellt", "nachbestellen", "nachgestellt"], "l": 0 }
+          ]
+        },
+        { "id": "f5-m1", "typ": "mc", "kontext": "Wortschatz", "frage": "Die Bewirtung der Gäste bedeutet …", "opts": ["die Gäste mit Essen und Getränken versorgen.", "die Gäste begrüßen.", "die Rechnung schreiben.", "die Zimmer putzen."], "l": 0 }
+      ]
+    },
+    {
+      "titel": "Defekte melden",
+      "icon": "🔧",
+      "kurz": "Geräte und Probleme · Ratschläge geben und darauf reagieren",
+      "aufgaben": [
+        {
+          "id": "f6-rat", "typ": "matrix", "kontext": "Ratschläge",
+          "frage": "Welcher Ratschlag passt zum Problem?",
+          "wahl": ["Entkalken Sie das Gerät.", "Entfernen Sie den Staub vom Filter.", "Ziehen Sie sie mit Schwung nach oben.", "Starten Sie das Gerät neu."],
+          "aussagen": [
+            ["Die Kaffeemaschine läuft ganz langsam und das Wasser tropft nur.", 0],
+            ["Der Föhn wird heiß und riecht komisch.", 1],
+            ["Die Jalousie geht nicht hoch.", 2],
+            ["Das Tablet reagiert nicht mehr.", 3]
+          ]
+        },
+        {
+          "id": "f6-rm", "typ": "matrix", "kontext": "Redemittel",
+          "frage": "Wer sagt das?",
+          "wahl": ["über Defekt informieren", "Ratschlag geben", "auf Ratschlag reagieren"],
+          "aussagen": [
+            ["Es gibt ein Problem mit dem Kopierer.", 0], ["Der Drucker lässt sich nicht starten.", 0], ["Könnten Sie mir zeigen, wie das geht?", 0],
+            ["Haben Sie schon das Kabel überprüft?", 1], ["Vielleicht muss der Filter gereinigt werden?", 1], ["Wenden Sie sich lieber an die Haustechnik.", 1],
+            ["Okay, das probiere ich gleich aus.", 2], ["Das habe ich schon versucht.", 2]
+          ]
+        },
+        {
+          "id": "f6-dial", "typ": "ordnen", "kontext": "Gespräch",
+          "frage": "Ein Anruf bei der Haustechnik: Bringen Sie das Gespräch in die richtige Reihenfolge.",
+          "zeilen": [
+            "◀ Hallo, hier ist Aigner vom Housekeeping. In Zimmer 143 funktioniert der Wasserkocher nicht.",
+            "▶ Was genau passiert denn?",
+            "◀ Er wird gar nicht warm, das Licht geht aber an.",
+            "▶ Haben Sie schon geprüft, ob Kalk am Boden ist? Dann entkalken Sie ihn bitte einmal.",
+            "◀ Okay, das probiere ich gleich aus. Und wenn es dann nicht geht?",
+            "▶ Dann bringen Sie ihn bitte zu uns, wir tauschen ihn aus."
+          ]
+        },
+        { "id": "f6-m1", "typ": "mc", "kontext": "Passiv", "frage": "Vielleicht muss der Toner ___ werden?", "opts": ["ausgewechselt", "auswechseln", "ausgewechselt worden", "gewechselt aus"], "l": 0 },
+        { "id": "f6-m2", "typ": "mc", "kontext": "Wortschatz", "frage": "Wasserkocher und Kaffeemaschinen müssen regelmäßig ___ werden.", "opts": ["entkalkt", "entstaubt", "entsorgt", "entfernt"], "l": 0 },
+        { "id": "f6-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Ratschlag.", "steine": ["Schalten Sie", "zuerst", "das Gerät", "aus", "und", "reinigen Sie", "den Filter."] }
+      ]
+    },
+    {
+      "titel": "Online-Konferenzen",
+      "icon": "💻",
+      "kurz": "Etikette vor und während der Konferenz · typische Sätze",
+      "aufgaben": [
+        {
+          "id": "f7-et", "typ": "matrix", "kontext": "Etikette",
+          "frage": "Wann ist das wichtig?",
+          "wahl": ["vor der Konferenz", "während der Konferenz"],
+          "aussagen": [
+            ["sich rechtzeitig einloggen", 0], ["Kamera und Ton überprüfen", 0], ["auf stabiles Internet achten", 0], ["die Präsentation vorbereiten", 0], ["Personen im selben Raum informieren", 0],
+            ["die anderen ausreden lassen", 1], ["sich per Handzeichen zu Wort melden", 1], ["Bescheid sagen, wenn man kurz weg muss", 1], ["aufmerksam bleiben", 1]
+          ]
+        },
+        {
+          "id": "f7-lt", "typ": "luecke", "kontext": "Typische Sätze",
+          "frage": "Der Beginn einer Online-Konferenz. Ergänzen Sie die Teamleiterin.",
+          "text": "„Guten Morgen zusammen! Herr Ilić, ich kann Sie nicht hören. Sie müssen Ihr Mikro noch {0}. – Frau Sander, Entschuldigung, Ihr Bild ist {1}. Gehen Sie am besten noch mal aus dem Meeting raus und loggen sich dann erneut {2}. – Herr Park, Sie sind sehr leise. Können Sie Ihr Mikro bitte {3} stellen? – So, jetzt {4} ich meinen Bildschirm und zeige Ihnen die Präsentation. Bitte schalten Sie nun alle Ihre Mikros {5}. Fragen können Sie gerne im Chat stellen.“",
+          "gaps": [
+            { "opts": ["einschalten", "ausschalten", "abschalten"], "l": 0 },
+            { "opts": ["eingefroren", "eingeschlafen", "eingepackt"], "l": 0 },
+            { "opts": ["ein", "an", "auf"], "l": 0 },
+            { "opts": ["lauter", "leiser", "lauterer"], "l": 0 },
+            { "opts": ["teile", "zeige", "gebe"], "l": 0 },
+            { "opts": ["stumm", "laut", "an"], "l": 0 }
+          ]
+        },
+        {
+          "id": "f7-vn", "typ": "matrix", "kontext": "Vor- und Nachteile",
+          "frage": "Vorteil oder Nachteil von Online-Konferenzen?",
+          "wahl": ["Vorteil", "Nachteil"],
+          "aussagen": [
+            ["Man spart Reisekosten.", 0], ["Man kann von überall teilnehmen.", 0], ["Langes Sitzen vor dem Bildschirm ist anstrengend.", 1],
+            ["Technische Probleme unterbrechen das Gespräch.", 1], ["Man spart Zeit für den Weg.", 0], ["Körpersprache ist schwer zu erkennen.", 1]
+          ]
+        },
+        { "id": "f7-m1", "typ": "mc", "kontext": "Situationen", "frage": "Ihr Kind kommt während der Konferenz ins Zimmer. Was machen Sie?", "opts": ["Kurz Bescheid sagen, Kamera und Mikro ausschalten und gleich zurückkommen.", "Einfach weitermachen und laut mit dem Kind sprechen.", "Den Laptop zuklappen, ohne etwas zu sagen.", "Das Meeting für alle beenden."], "l": 0 }
+      ]
+    },
+    {
+      "titel": "Prüfungstraining",
+      "icon": "🏁",
+      "kurz": "Sprachbausteine · gemischte Aufgaben",
+      "aufgaben": [
+        {
+          "id": "f8-sb", "typ": "luecke", "kontext": "Sprachbausteine",
+          "frage": "Sprachbausteine: Lesen Sie die Mail und wählen Sie die richtige Lösung.",
+          "text": "Liebes Team,\n\nvielen Dank für den schönen Team-Tag! Als wir ankamen, {0} schon alles perfekt vorbereitet: Die Tische waren gedeckt und der Grill war angezündet. Mir hat besonders gefallen, {1} wir so viel gelacht haben.\n\nEin Kollege meinte danach, es habe sich angefühlt, {2} wir uns schon seit Jahren kennen würden. Genau das war das Ziel!\n\nLeider ist mir aufgefallen, dass der Beamer im Konferenzraum nicht mehr richtig {3}. Ich habe den Defekt schon bei der Haustechnik {4}. Bis er repariert ist, nutzen wir bitte Raum 3.\n\nFür Fragen bin ich wie immer unter meiner {5} 214 zu erreichen.\n\nViele Grüße\nNina",
+          "gaps": [
+            { "opts": ["war", "wurde", "hatte"], "l": 0 },
+            { "opts": ["dass", "ob", "wenn"], "l": 0 },
+            { "opts": ["als ob", "als", "wie"], "l": 0 },
+            { "opts": ["funktioniert", "funktionieren", "funktionierte"], "l": 0 },
+            { "opts": ["gemeldet", "gesagt", "gestellt"], "l": 0 },
+            { "opts": ["Durchwahl", "Vorwahl", "Nachricht"], "l": 0 }
+          ]
+        },
+        { "id": "f8-1", "typ": "mc", "kontext": "als ob", "frage": "Er spricht so laut, als ob wir alle schwerhörig ___.", "opts": ["wären", "sind", "waren", "würden"], "l": 0 },
+        { "id": "f8-2", "typ": "mc", "kontext": "Passiv mit sein", "frage": "Sie können hereinkommen, die Tür ___ geöffnet.", "opts": ["ist", "wird", "hat", "wurde"], "l": 0 },
+        { "id": "f8-3", "typ": "mc", "kontext": "Telefonieren", "frage": "Sie haben die falsche Nummer gewählt. Die Person am Telefon sagt:", "opts": ["Da sind Sie bei mir leider nicht richtig.", "Ich stelle Sie durch.", "Wir verbleiben also so.", "Möchten Sie etwas ausrichten?"], "l": 0 },
+        { "id": "f8-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz.", "steine": ["Es", "kommt", "mir", "so vor,", "als", "hätte", "niemand", "meine Mail", "gelesen."] }
+      ]
+    }
+  ]
+}

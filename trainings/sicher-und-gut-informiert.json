@@ -1,0 +1,444 @@
+{
+  "id": "sicher-und-gut-informiert",
+  "titel": "Sicher und gut informiert",
+  "untertitel": "Schilder und Warnzeichen · Elternzeit und Elterngeld · Wörter mit Präposition · Geräte erklären · indirekte Rede · Dienstpläne · Arbeitsrecht",
+  "niveau": "B1/B2",
+  "reihe": "Prüfungstraining B1/B2",
+  "farbe": "#3b6ea5",
+  "mix": 15,
+  "intro": "Acht Teile – jeder Teil kann einzeln gespielt werden. Der **Prüfungsmix** zieht zufällig Aufgaben aus allen Teilen.",
+  "kompakt": [
+    { "titel": "Schilder am Arbeitsplatz", "zeilen": [
+      "**Warnzeichen** (gelbes Dreieck): Achtung, Gefahr! – z. B. Rutschgefahr, Gabelstapler",
+      "**Verbotszeichen** (roter Kreis, durchgestrichen): Das ist nicht erlaubt. – z. B. Zutritt verboten, Handy verboten",
+      "**Gebotszeichen** (blauer Kreis): Das muss man tun. – z. B. Sicherheitsschuhe tragen, Hände waschen",
+      "**Rettungszeichen** (grün): Notausgang, Fluchtweg, Erste Hilfe, Defibrillator",
+      "**Brandschutzzeichen** (rot): Feuerlöscher, Brandmelder"
+    ]},
+    { "titel": "Nomen, Verben und Adjektive mit Präposition", "zeilen": [
+      "die Hilfe **bei** + D · helfen **bei** + D",
+      "der Antrag **auf** + A · beantragen (ohne Präp.) · die Antwort **auf** + A · antworten **auf** + A",
+      "die Suche **nach** + D · suchen **nach** + D · die Angst **vor** + D · Angst haben **vor** + D",
+      "die Bitte **um** + A · bitten **um** + A · das Recht **auf** + A",
+      "das Interesse **an** + D / **für** + A · sich interessieren **für** + A · interessiert **an** + D",
+      "die Teilnahme **an** + D · teilnehmen **an** + D · die Neugier **auf** + A · neugierig **auf** + A",
+      "sich entscheiden **für** + A · abhängen **von** + D · abhängig **von** + D · sich freuen **über** (Vergangenes) / **auf** (Zukünftiges) + A"
+    ]},
+    { "titel": "Geräte erklären", "zeilen": [
+      "**Nutzen:** Wir brauchen …, um … · Man verwendet es für/bei … · Das Gute daran ist, dass … · … ist besonders nützlich für …",
+      "**Bedienung:** Man schaltet es ein, indem … · Zunächst einmal muss man … · Als nächsten Schritt betätigt man … · Wenn … erscheint, muss man … · Man darf nicht vergessen, …",
+      "**Tipps für Anleitungen:** Schritt für Schritt (zuerst, dann, danach), nur das Wichtigste, einfache Wörter, Imperativ oder Modalverben, Hauptsätze"
+    ]},
+    { "titel": "Indirekte Rede mit Konjunktiv I", "zeilen": [
+      "Man zeigt: Das sind **die Worte einer anderen Person**, nicht meine Meinung. Typisch für Zeitungen, Berichte, Nachrichten.",
+      "**Konjunktiv I Gegenwart:** Infinitivstamm + Endung, 3. Person Sg.: er/sie **komme, habe, müsse**",
+      "**sein:** er/sie **sei** · **haben:** er/sie **habe**",
+      "**Vergangenheit:** **habe/sei** + Partizip II – Sie sagte, sie **habe** schon mehrfach gefragt.",
+      "Ist der Konjunktiv I **gleich wie der Indikativ** (meist im Plural: sie haben), nimmt man den **Konjunktiv II** oder **würde** + Infinitiv.",
+      "Gesprochene Sprache: oft Indikativ (Sie hat gesagt, dass sie keine Zeit hat).",
+      "**Einleitende Verben:** sagen, betonen, entgegnen, kritisieren, hinzufügen, erklären, meinen"
+    ]},
+    { "titel": "Arbeitszeit und Urlaub (Grundregeln)", "zeilen": [
+      "Arbeitszeit pro Tag: in der Regel höchstens **8 Stunden**, in Ausnahmefällen **10 Stunden**",
+      "Pausen: bei mehr als 6 bis 9 Stunden mindestens **30 Minuten**, bei mehr als 9 Stunden **45 Minuten**",
+      "Ruhezeit zwischen zwei Schichten: normalerweise mindestens **11 Stunden**",
+      "Mindesturlaub: **24 Werktage** bei einer Sechs-Tage-Woche, **20 Tage** bei einer Fünf-Tage-Woche – auch für Teilzeit und Aushilfen",
+      "Mehr Urlaub durch Vertrag oder Tarifvertrag ist erlaubt, weniger nicht."
+    ]},
+    { "titel": "Mitleid und gute Wünsche", "zeilen": [
+      "Es tut mir sehr leid! · Hoffentlich ist es nicht so schlimm. · Ich hoffe, es geht dir bald wieder besser! · Gute Besserung! · Sag Bescheid, wenn du Unterstützung brauchst."
+    ]}
+  ],
+  "module": [
+    {
+      "titel": "Schilder und Warnzeichen",
+      "icon": "⚠️",
+      "kurz": "Was bedeutet das Schild? · Arten von Zeichen · Regeln am Arbeitsplatz",
+      "aufgaben": [
+        {
+          "id": "h1-art", "typ": "matrix", "kontext": "Zeichen",
+          "frage": "Was für ein Zeichen ist das?",
+          "wahl": ["Warnzeichen", "Verbotszeichen", "Gebotszeichen", "Rettungszeichen", "Brandschutzzeichen"],
+          "aussagen": [
+            ["gelbes Dreieck: eine Person rutscht aus", 0],
+            ["gelbes Dreieck: ein Gabelstapler", 0],
+            ["roter Kreis, durchgestrichen: eine Hand – kein Zutritt", 1],
+            ["roter Kreis, durchgestrichen: ein Handy", 1],
+            ["blauer Kreis: Sicherheitsschuhe", 2],
+            ["blauer Kreis: Hände waschen", 2],
+            ["grünes Schild: Person läuft zu einer Tür – Notausgang", 3],
+            ["grünes Schild: Herz mit Blitz – Defibrillator", 3],
+            ["rotes Schild: Finger drückt einen Knopf – Brandmelder", 4]
+          ]
+        },
+        { "id": "h1-bed", "typ": "zu", "kontext": "Bedeutung", "frage": "Was bedeutet das Schild?", "paare": [
+          ["Rutschgefahr", "Vorsicht, der Boden kann nass oder glatt sein."],
+          ["Zutritt für Unbefugte verboten", "Nur Mitarbeitende mit Erlaubnis dürfen hinein."],
+          ["Fußschutz benutzen", "Hier muss man Sicherheitsschuhe tragen."],
+          ["Videoüberwachung", "Der Bereich wird mit Kameras beobachtet."],
+          ["Rollstuhlgerecht", "Hier können Rollstuhlfahrer ohne Hindernisse hinein."],
+          ["Notausstieg mit Fluchtleiter", "Im Notfall kann man hier über eine Leiter hinaus."]
+        ]},
+        {
+          "id": "h1-wo", "typ": "matrix", "kontext": "Aussagen",
+          "frage": "Zu welchem Schild passt die Aussage?",
+          "wahl": ["Handyverbot", "Händewaschen", "Gabelstapler", "Pause", "Defibrillator"],
+          "aussagen": [
+            ["„Im OP-Bereich bitte unbedingt das Telefon ausschalten.“", 0],
+            ["„Bevor Sie das Essen anfassen, gründlich mit Seife waschen!“", 1],
+            ["„Achtung, in dieser Halle wird ständig mit schweren Paletten gefahren.“", 2],
+            ["„Hier im Raum darf man in Ruhe Kaffee trinken und sich ausruhen.“", 3],
+            ["„Das Gerät hängt neben dem Aufzug. Es gibt Sprachanweisungen, man kann nichts falsch machen.“", 4]
+          ]
+        },
+        { "id": "h1-m1", "typ": "mc", "kontext": "Wortschatz", "frage": "Ein Unfall bei der Arbeit oder auf dem Weg zur Arbeit heißt …", "opts": ["Arbeitsunfall.", "Arbeitsfall.", "Unfallarbeit.", "Werkunfall."], "l": 0 },
+        { "id": "h1-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie die Regel.", "steine": ["Im ganzen Lager", "muss", "man", "Sicherheitsschuhe", "tragen."] }
+      ]
+    },
+    {
+      "titel": "Elternzeit und Elterngeld",
+      "icon": "👶",
+      "kurz": "Informationen aus Grafik, Text und Forum zusammentragen",
+      "aufgaben": [
+        {
+          "id": "h2-forum", "typ": "lesen", "kontext": "Lesen",
+          "frage": "Lesen Sie den Infotext und den Forumsbeitrag. Beantworten Sie die Fragen.",
+          "posts": [
+            { "name": "Infotext: Das Elterngeld", "text": "Elterngeld unterstützt Eltern, die nach der Geburt weniger oder gar nicht arbeiten, um ihr Kind zu betreuen. **Basiselterngeld** beträgt in der Regel 65 % des wegfallenden Netto-Einkommens, mindestens 300 € und höchstens 1.800 € im Monat. Ein Elternteil kann es mindestens 2 und bis zu 12 Monate bekommen; nehmen beide Eltern Elterngeld, sind es zusammen bis zu 14 Monate. Statt einem Monat Basiselterngeld kann man auch zwei Monate **ElterngeldPlus** bekommen – dann ist der Betrag halb so hoch. Den Antrag stellt man bei der Elterngeldstelle des Bundeslandes, in vielen Ländern auch online." },
+            { "name": "Forum – Mila_K", "text": "Wann muss ich den Antrag stellen? Und wo melde ich die Elternzeit an?" },
+            { "name": "Forum – Papa_Jonas", "text": "Den Antrag auf Elterngeld stellst du nach der Geburt. Warte nicht zu lange: Rückwirkend gibt es das Geld nur für die letzten drei Monate vor dem Antrag. Die Elternzeit beantragst du bei deinem Arbeitgeber – schriftlich und spätestens sieben Wochen vor dem Beginn. Lass dir am besten den Eingang bestätigen. Und frag vorher nach einem Zwischenzeugnis, das ist nie verkehrt!" }
+          ],
+          "fragen": [
+            { "f": "Wie hoch ist das Basiselterngeld höchstens?", "opts": ["1.800 € im Monat", "300 € im Monat", "65 % des Bruttoeinkommens", "900 € im Monat"], "l": 0 },
+            { "f": "Wie lange kann ein Elternteil allein Basiselterngeld bekommen?", "opts": ["2 bis 12 Monate", "nur 2 Monate", "genau 14 Monate", "3 Jahre"], "l": 0 },
+            { "f": "Was passiert bei ElterngeldPlus?", "opts": ["Man bekommt es doppelt so lange, aber nur halb so viel pro Monat.", "Man bekommt doppelt so viel Geld.", "Man muss nichts beantragen.", "Man bekommt es nur, wenn man nicht arbeitet."], "l": 0 },
+            { "f": "Warum soll Mila den Antrag nicht zu spät stellen?", "opts": ["Rückwirkend gibt es nur Geld für drei Monate.", "Sonst verliert sie ihre Stelle.", "Die Elterngeldstelle schließt.", "Der Arbeitgeber braucht ihn sofort."], "l": 0 },
+            { "f": "Wo beantragt man die Elternzeit?", "opts": ["beim Arbeitgeber", "bei der Elterngeldstelle", "bei der Krankenkasse", "beim Jobcenter"], "l": 0 }
+          ]
+        },
+        {
+          "id": "h2-rf", "typ": "matrix", "kontext": "Lesen",
+          "frage": "Richtig oder falsch?",
+          "aussagen": [
+            ["Elterngeld gibt es für Mütter und Väter.", true],
+            ["Die Elternzeit muss man mindestens sieben Wochen vorher schriftlich beantragen.", true],
+            ["Elterngeld bekommt man automatisch, ohne Antrag.", false],
+            ["Wenn beide Eltern Elterngeld nehmen, gibt es zusammen bis zu 14 Monate.", true],
+            ["Den Antrag auf Elterngeld stellt man beim Arbeitgeber.", false]
+          ]
+        },
+        {
+          "id": "h2-wo", "typ": "matrix", "kontext": "Informationen ordnen",
+          "frage": "Zu welcher Frage gehört die Information?",
+          "wahl": ["Wie bekommt man Elterngeld?", "Wie lange bekommt man es?", "Was muss man bei der Elternzeit beachten?"],
+          "aussagen": [
+            ["Antrag bei der Elterngeldstelle, oft auch online", 0],
+            ["Geburtsbescheinigung und Einkommensnachweise beilegen", 0],
+            ["ein Elternteil: 2 bis 12 Monate", 1],
+            ["mit ElterngeldPlus doppelt so lange", 1],
+            ["spätestens sieben Wochen vorher schriftlich beim Arbeitgeber", 2],
+            ["Eingang schriftlich bestätigen lassen", 2]
+          ]
+        },
+        { "id": "h2-m1", "typ": "mc", "kontext": "Wortschatz", "frage": "Was ist eine Mindmap?", "opts": ["eine Skizze mit Stichwörtern um ein zentrales Thema", "ein Antrag bei einer Behörde", "eine Landkarte", "ein langer Fließtext"], "l": 0, "x": "Mit einer Mindmap fasst man Informationen aus mehreren Texten übersichtlich zusammen." }
+      ]
+    },
+    {
+      "titel": "Wörter mit Präposition",
+      "icon": "🧷",
+      "kurz": "Nomen, Verben und Adjektive mit Präposition und Kasus",
+      "aufgaben": [
+        {
+          "id": "h3-n", "typ": "matrix", "kontext": "Nomen",
+          "frage": "Welche Präposition gehört zum Nomen?",
+          "wahl": ["an", "auf", "bei", "nach", "um", "vor"],
+          "aussagen": [
+            ["die Hilfe ___", 2], ["der Antrag ___", 1], ["die Suche ___", 3], ["die Angst ___", 5],
+            ["die Bitte ___", 4], ["das Recht ___", 1], ["die Antwort ___", 1], ["die Teilnahme ___", 0]
+          ]
+        },
+        {
+          "id": "h3-k", "typ": "matrix", "kontext": "Kasus",
+          "frage": "Dativ oder Akkusativ?",
+          "wahl": ["Dativ", "Akkusativ"],
+          "aussagen": [
+            ["die Hilfe bei", 0], ["der Antrag auf", 1], ["die Suche nach", 0], ["die Angst vor", 0],
+            ["die Bitte um", 1], ["das Recht auf", 1], ["die Teilnahme an", 0], ["sich entscheiden für", 1]
+          ]
+        },
+        { "id": "h3-1", "typ": "mc", "kontext": "Verben", "frage": "Ob ich die Stelle bekomme, hängt ___ meinen Deutschkenntnissen ab.", "opts": ["von", "an", "mit", "für"], "l": 0 },
+        { "id": "h3-2", "typ": "mc", "kontext": "Adjektive", "frage": "Viele Kollegen sind sehr interessiert ___ der neuen Regelung.", "opts": ["an", "für", "auf", "über"], "l": 0, "x": "interessiert **an** + D · sich interessieren **für** + A" },
+        { "id": "h3-3", "typ": "mc", "kontext": "Verben", "frage": "Wir freuen uns schon ___ das Sommerfest nächste Woche.", "opts": ["auf", "über", "an", "für"], "l": 0, "x": "sich freuen **auf** = etwas kommt noch · sich freuen **über** = etwas ist schon passiert" },
+        { "id": "h3-4", "typ": "mc", "kontext": "Adjektive", "frage": "Die Kinder sind sehr neugierig ___ den Ausflug.", "opts": ["auf", "an", "nach", "für"], "l": 0 },
+        { "id": "h3-5", "typ": "mc", "kontext": "Nomen", "frage": "Hast du schon eine Antwort ___ deine Bewerbung bekommen?", "opts": ["auf", "an", "für", "zu"], "l": 0 },
+        {
+          "id": "h3-lt", "typ": "luecke", "kontext": "Präpositionen",
+          "frage": "Eine Nachricht an die Kollegin. Ergänzen Sie.",
+          "text": "Hallo Sevgi,\n\nvielen Dank {0} deine Hilfe {1} dem Antrag! Ich habe mich jetzt {2} drei Monate Elternzeit entschieden. Ehrlich gesagt hatte ich ein bisschen Angst {3} dem Gespräch mit dem Chef, aber er hat sofort Verständnis gezeigt. Ob ich danach wieder Vollzeit arbeite, hängt {4} der Kita ab. Ich freue mich schon {5} die Zeit mit meiner Tochter!\n\nViele Grüße\nDaniel",
+          "gaps": [
+            { "opts": ["für", "über", "an"], "l": 0 },
+            { "opts": ["bei", "mit", "an"], "l": 0 },
+            { "opts": ["für", "auf", "über"], "l": 0 },
+            { "opts": ["vor", "von", "an"], "l": 0 },
+            { "opts": ["von", "an", "mit"], "l": 0 },
+            { "opts": ["auf", "über", "an"], "l": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Geräte erklären",
+      "icon": "📟",
+      "kurz": "Geräte und Funktionen · Bedienung Schritt für Schritt · Redemittel",
+      "aufgaben": [
+        {
+          "id": "h4-wo", "typ": "matrix", "kontext": "Geräte",
+          "frage": "Wo verwendet man das Gerät?",
+          "wahl": ["Lager/Event", "Pflege", "Gastronomie", "Handel", "Bau/Montage"],
+          "aussagen": [
+            ["der Ticketscanner", 0], ["die Aufstehhilfe", 1], ["die Espressomaschine", 2],
+            ["das Kartenlesegerät", 3], ["die Hebebühne", 4]
+          ]
+        },
+        { "id": "h4-ausdr", "typ": "zu", "kontext": "Wortschatz", "frage": "Welche Handlung passt zum Gerät?", "paare": [
+          ["die Aufstehhilfe", "den Gurt anlegen"],
+          ["der Ticketscanner", "einen Barcode scannen"],
+          ["die Hebebühne", "die Höhe einstellen"],
+          ["die Drohne", "die Speicherkarte einstecken"],
+          ["die Espressomaschine", "das Programm auswählen"]
+        ]},
+        {
+          "id": "h4-ord", "typ": "ordnen", "kontext": "Anleitung",
+          "frage": "So funktioniert der Ticketscanner. Bringen Sie die Schritte in die richtige Reihenfolge.",
+          "zeilen": [
+            "Zuerst schalten Sie das Gerät ein, indem Sie den Schalter an der rechten Seite nach unten schieben.",
+            "Dann wählen Sie das Programm aus: Drücken Sie oben auf das Display, bis ein „B“ erscheint.",
+            "Halten Sie jetzt den Barcode des Tickets vor das Gerät.",
+            "Wenn ein grüner Haken erscheint, ist das Ticket gültig und der Gast darf hinein."
+          ]
+        },
+        {
+          "id": "h4-rm", "typ": "matrix", "kontext": "Redemittel",
+          "frage": "Erklärt der Satz den Nutzen oder die Bedienung?",
+          "wahl": ["Nutzen/Funktion", "Bedienung"],
+          "aussagen": [
+            ["Wir brauchen das Gerät, um Tickets schnell zu prüfen.", 0],
+            ["Man verwendet es bei großen Veranstaltungen.", 0],
+            ["Das Gute daran ist, dass es sehr leicht ist.", 0],
+            ["Es ist besonders nützlich für die Pflege im Bett.", 0],
+            ["Zunächst einmal muss man den Akku aufladen.", 1],
+            ["Als nächsten Schritt betätigt man den grünen Knopf.", 1],
+            ["Wenn das Symbol erscheint, muss man bestätigen.", 1],
+            ["Man darf nicht vergessen, den Gurt zu schließen.", 1]
+          ]
+        },
+        {
+          "id": "h4-tipps", "typ": "matrix", "kontext": "Strategie",
+          "frage": "Eine gute Anleitung formulieren – guter Tipp?",
+          "wahl": ["guter Tipp", "schlechter Tipp"],
+          "aussagen": [
+            ["Schritt für Schritt erklären (zuerst, dann, danach)", 0],
+            ["möglichst viele technische Fachwörter benutzen", 1],
+            ["nur die wichtigsten Details beschreiben", 0],
+            ["Imperativ oder Modalverben verwenden", 0],
+            ["lange, komplizierte Nebensätze bilden", 1]
+          ]
+        },
+        { "id": "h4-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz.", "steine": ["Man", "schaltet", "das Gerät", "ein,", "indem", "man", "den blauen Knopf", "drückt."] }
+      ]
+    },
+    {
+      "titel": "Indirekte Rede",
+      "icon": "🗞️",
+      "kurz": "Zeitungsartikel lesen · Konjunktiv I und II · Aussagen wiedergeben",
+      "aufgaben": [
+        {
+          "id": "h5-art", "typ": "lesen", "kontext": "Lesen",
+          "frage": "Lesen Sie den Artikel aus einer Verbandszeitschrift und beantworten Sie die Fragen.",
+          "textTitel": "Neues Qualitätssystem in den Pflegeheimen eingeführt",
+          "text": "Im Frühjahr hat der Trägerverband seiner acht Pflegeheime das neue Qualitätssystem „Pflege plus“ beschlossen. Alle Häuser verpflichten sich damit, ihre Arbeit regelmäßig zu überprüfen. Die Pflegeplanung jeder Bewohnerin und jedes Bewohners wird dokumentiert und mit den Angehörigen besprochen. Alle drei Monate werden die Ergebnisse ausgewertet; außerdem sind regelmäßige Fortbildungen geplant.\n\nDie Mitarbeitenden haben die Neuerungen unterschiedlich aufgenommen. Die Heimleiterin von Haus Lindenhof, Olga Weber, sagte, sie sei froh über die klaren Regeln. Man müsse mit der Zeit gehen. Pflegefachkraft Tomasz Nowak entgegnete jedoch, das System sei viel zu kompliziert. Er habe keine Zeit für noch mehr Dokumentation. Seine Kollegin Hana Sato kritisierte, einige Vorgaben seien kaum umsetzbar; sie habe schon mehrfach um Änderungen gebeten.\n\nGeschäftsführer Frank Heller betonte, die Kritik werde ernst genommen. Es würden zusätzliche Schulungen angeboten.",
+          "fragen": [
+            { "f": "Was ist „Pflege plus“?", "opts": ["ein System zur Qualitätssicherung", "ein neues Pflegeheim", "eine Fortbildung für Angehörige", "eine Versicherung"], "l": 0 },
+            { "f": "Wie findet Olga Weber das System?", "opts": ["positiv", "zu kompliziert", "nicht umsetzbar", "unwichtig"], "l": 0 },
+            { "f": "Was kritisiert Tomasz Nowak?", "opts": ["zu viel Dokumentation", "zu wenige Fortbildungen", "zu wenige Bewohner", "die Heimleitung"], "l": 0 },
+            { "f": "Wie reagiert der Geschäftsführer auf die Kritik?", "opts": ["Er kündigt zusätzliche Schulungen an.", "Er ignoriert sie.", "Er stoppt das System.", "Er entlässt Mitarbeitende."], "l": 0 }
+          ]
+        },
+        {
+          "id": "h5-wer", "typ": "matrix", "kontext": "Lesen",
+          "frage": "Wer ist für das neue System, wer ist dagegen?",
+          "wahl": ["eher dafür", "eher dagegen"],
+          "aussagen": [["Olga Weber", 0], ["Tomasz Nowak", 1], ["Hana Sato", 1], ["Frank Heller", 0]]
+        },
+        { "id": "h5-1", "typ": "mc", "kontext": "Konjunktiv I", "frage": "„Ich habe keine Zeit.“ → Er sagte, er ___ keine Zeit.", "opts": ["habe", "hat", "hätte gehabt", "haben"], "l": 0 },
+        { "id": "h5-2", "typ": "mc", "kontext": "Konjunktiv I", "frage": "„Das System ist zu kompliziert.“ → Sie meinte, das System ___ zu kompliziert.", "opts": ["sei", "ist", "wäre gewesen", "seien"], "l": 0 },
+        { "id": "h5-3", "typ": "mc", "kontext": "Vergangenheit", "frage": "„Ich habe mehrfach um Änderungen gebeten.“ → Sie kritisierte, sie ___ mehrfach um Änderungen gebeten.", "opts": ["habe", "sei", "hatte", "würde"], "l": 0 },
+        { "id": "h5-4", "typ": "mc", "kontext": "Konjunktiv II", "frage": "„Die Vorgesetzten haben die Regeln zu schnell gemacht.“ → Sie sagte, die Vorgesetzten ___ die Regeln zu schnell gemacht.", "opts": ["hätten", "haben", "habe", "seien"], "l": 0, "x": "Konjunktiv I „haben“ = Indikativ → man nimmt Konjunktiv II: **hätten**." },
+        { "id": "h5-5", "typ": "mc", "kontext": "würde", "frage": "„Die Bewohner profitieren nicht davon.“ → Er meinte, die Bewohner ___ nicht davon profitieren.", "opts": ["würden", "profitieren", "werden", "würde"], "l": 0 },
+        {
+          "id": "h5-um", "typ": "luecke", "kontext": "indirekte Rede",
+          "frage": "Meinungen aus dem Team in indirekter Rede. Ergänzen Sie.",
+          "text": "Herr Fettke sagte, er {0} nicht, was Qualitätssicherung bedeute. Frau Li meinte, mit den neuen Regeln {1} vieles klarer geworden. Frau Paulsen betonte, die neuen Methoden {2} den Arbeitsalltag positiv verändert. Herr Abdi fügte hinzu, er {3} jetzt mehr Zeit für die Bewohner.",
+          "gaps": [
+            { "opts": ["verstehe", "versteht", "verstanden"], "l": 0 },
+            { "opts": ["sei", "ist", "habe"], "l": 0 },
+            { "opts": ["hätten", "haben", "habe"], "l": 0 },
+            { "opts": ["habe", "hat", "haben"], "l": 0 }
+          ]
+        },
+        { "id": "h5-wann", "typ": "mc", "kontext": "Gebrauch", "frage": "Wo verwendet man den Konjunktiv I vor allem?", "opts": ["in Zeitungsartikeln, Berichten und Nachrichten", "im Gespräch mit Freunden", "in SMS", "beim Einkaufen"], "l": 0 }
+      ]
+    },
+    {
+      "titel": "Wer kann einspringen?",
+      "icon": "🗓️",
+      "kurz": "Dienstplan lesen · Kollegin anrufen · Arbeitsunfall · gute Wünsche",
+      "aufgaben": [
+        {
+          "id": "h6-plan", "typ": "lesen", "kontext": "Dienstplan",
+          "frage": "Lesen Sie den Dienstplan und beantworten Sie die Fragen.",
+          "textTitel": "Pflegeheim Am Park – Station 2, Mittwoch bis Freitag",
+          "text": "**Frühdienst 6–14 Uhr:** Mi Aylin · Do Aylin · Fr Jonas\n**Spätdienst 13:30–21:30 Uhr:** Mi ~~Petra~~ (krank) · Do Petra · Fr Petra\n**Spät extra 17–21 Uhr:** Mi Karim · Do Karim · Fr Karim\n**Nachtdienst 21:30–6:30 Uhr:** Mi Lisa · Do Lisa · Fr Marek\n\nJonas hat Mittwoch und Donnerstag frei. Marek hat Mittwoch frei.",
+          "fragen": [
+            { "f": "Welche Schicht ist am Mittwoch nicht besetzt?", "opts": ["der Spätdienst", "der Frühdienst", "der Nachtdienst", "Spät extra"], "l": 0 },
+            { "f": "Warum kann Aylin nicht einfach einspringen?", "opts": ["Sie hat am Donnerstag Frühdienst – dazwischen wären keine 11 Stunden Ruhe.", "Sie hat an diesem Tag Urlaub.", "Sie arbeitet nur nachts.", "Sie ist auch krank."], "l": 0 },
+            { "f": "Wer könnte am Mittwoch am ehesten den Spätdienst übernehmen?", "opts": ["Jonas, er hat frei", "Lisa, sie hat Nachtdienst", "Karim, er arbeitet schon ab 17 Uhr", "Aylin, sie hat Frühdienst"], "l": 0 }
+          ]
+        },
+        {
+          "id": "h6-dial", "typ": "ordnen", "kontext": "Telefonat",
+          "frage": "Aylin ruft Jonas an. Bringen Sie das Gespräch in die richtige Reihenfolge.",
+          "zeilen": [
+            "▶ Hallo Jonas, hier ist Aylin. Entschuldige, dass ich an deinem freien Tag störe.",
+            "◀ Hallo Aylin, kein Problem. Was ist los?",
+            "▶ Petra ist krank. Könntest du vielleicht heute den Spätdienst übernehmen?",
+            "◀ Hm, eigentlich bin ich zum Picknick verabredet … Aber gut, ich springe ein.",
+            "▶ Vielen Dank, das ist wirklich nett von dir! Beim nächsten Mal helfe ich dir."
+          ]
+        },
+        {
+          "id": "h6-unf", "typ": "ordnen", "kontext": "Arbeitsunfall",
+          "frage": "Ein Arbeitsunfall: Bringen Sie die Schritte in eine sinnvolle Reihenfolge.",
+          "zeilen": [
+            "ruhig bleiben und um Unterstützung bitten",
+            "die oder den Vorgesetzten informieren",
+            "zum Arzt oder ins Krankenhaus gehen",
+            "sich eine Krankschreibung ausstellen lassen",
+            "einen Unfallbericht schreiben"
+          ],
+          "x": "Es gibt auch andere sinnvolle Reihenfolgen – wichtig ist: zuerst die Gesundheit, dann informieren und dokumentieren."
+        },
+        { "id": "h6-weg", "typ": "mc", "kontext": "Wortschatz", "frage": "Ein Unfall auf dem Weg zur Arbeit oder nach Hause heißt …", "opts": ["Wegeunfall.", "Unterwegsunfall.", "Arbeitswegunfall.", "Straßenfall."], "l": 0 },
+        {
+          "id": "h6-mit", "typ": "matrix", "kontext": "Redemittel",
+          "frage": "Passt der Satz in eine Nachricht an eine verletzte Kollegin?",
+          "wahl": ["passt", "passt nicht"],
+          "aussagen": [
+            ["Es tut mir sehr leid!", 0],
+            ["Hoffentlich ist es nicht so schlimm.", 0],
+            ["Gute Besserung!", 0],
+            ["Sag Bescheid, wenn du Unterstützung brauchst.", 0],
+            ["Selbst schuld, du hättest besser aufpassen sollen.", 1],
+            ["Wann kommst du endlich wieder? Wir haben so viel Arbeit.", 1]
+          ]
+        },
+        {
+          "id": "h6-mail", "typ": "luecke", "kontext": "Schreiben",
+          "frage": "Eine Mail an die Vorgesetzte nach einem Unfall. Ergänzen Sie.",
+          "text": "Sehr geehrte Frau Agosti,\n\nleider muss ich Ihnen {0}, dass ich mir heute Morgen in der Küche an der Fritteuse die Hand verbrannt habe. In der Notaufnahme hat der Arzt mich für zwei Wochen {1}. Die Bescheinigung schicke ich Ihnen heute noch.\n\nFür meine Schichten am Wochenende könnte vielleicht Herr Krause {2}. Den Unfall habe ich {3} schon in der Küche gemeldet.\n\nMit freundlichen Grüßen\nLeon Fischer",
+          "gaps": [
+            { "opts": ["mitteilen", "erzählen", "berichten"], "l": 0 },
+            { "opts": ["krankgeschrieben", "krank geschrieben worden", "krankgemacht"], "l": 0 },
+            { "opts": ["einspringen", "einspringt", "aufspringen"], "l": 0 },
+            { "opts": ["außerdem", "trotzdem", "deshalb"], "l": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Arbeitsrecht",
+      "icon": "⚖️",
+      "kurz": "Arbeitszeit, Pausen, Urlaub, Mindestlohn · Fragen stellen und erklären",
+      "aufgaben": [
+        {
+          "id": "h7-zeit", "typ": "luecke", "kontext": "Arbeitszeit",
+          "frage": "Der Betriebsrat informiert. Ergänzen Sie die Zeitangaben.",
+          "text": "Die maximal zulässige tägliche Arbeitszeit beträgt in der Regel {0}, in Ausnahmefällen sind {1} möglich. Pausen müssen eingehalten werden: Bei 6 bis 9 Stunden Arbeit sind das mindestens {2}, bei mehr als {3} mindestens 45 Minuten. Zwischen zwei Schichten müssen normalerweise mindestens {4} Ruhezeit liegen.",
+          "gaps": [
+            { "opts": ["8 Stunden", "10 Stunden", "11 Stunden"], "l": 0 },
+            { "opts": ["10 Stunden", "8 Stunden", "12 Stunden"], "l": 0 },
+            { "opts": ["30 Minuten", "45 Minuten", "15 Minuten"], "l": 0 },
+            { "opts": ["9 Stunden", "6 Stunden", "11 Stunden"], "l": 0 },
+            { "opts": ["11 Stunden", "9 Stunden", "8 Stunden"], "l": 0 }
+          ]
+        },
+        {
+          "id": "h7-rf", "typ": "matrix", "kontext": "Lesen",
+          "frage": "Urlaub und Mindestlohn: Richtig oder falsch?",
+          "textTitel": "Der Betriebsrat informiert",
+          "text": "**Mindesturlaub:** Urlaub dient der Erholung; das Gehalt wird weitergezahlt. Bei einer Sechs-Tage-Woche beträgt der gesetzliche Mindesturlaub 24 Werktage, bei einer Fünf-Tage-Woche 20 Tage. Das gilt auch für Teilzeitkräfte und Aushilfen. Mehr Urlaub durch Arbeitsvertrag oder Tarifvertrag ist erlaubt, weniger nicht.\n\n**Mindestlohn:** Seit 2015 gibt es in Deutschland einen gesetzlichen Mindestlohn. Ausgenommen sind zum Beispiel Minderjährige ohne Berufsabschluss, Auszubildende und Personen im Pflichtpraktikum. Eine Kommission entscheidet regelmäßig, ob er erhöht wird.",
+          "aussagen": [
+            ["Bei einer Sechs-Tage-Woche hat man Anspruch auf mindestens 24 Tage Urlaub.", true],
+            ["Aushilfen haben grundsätzlich keinen Urlaubsanspruch.", false],
+            ["Ein Arbeitsvertrag darf weniger Urlaub als das Gesetz vorsehen.", false],
+            ["Auszubildende fallen nicht unter den gesetzlichen Mindestlohn.", true],
+            ["Die Höhe des Mindestlohns wird regelmäßig überprüft.", true]
+          ]
+        },
+        {
+          "id": "h7-rm", "typ": "matrix", "kontext": "Redemittel",
+          "frage": "Gespräch mit dem Betriebsrat: Wer sagt das?",
+          "wahl": ["Mitarbeiterin fragt", "Betriebsrat erklärt"],
+          "aussagen": [
+            ["Ich habe eine Frage zu meinem Urlaubsanspruch, und zwar: …", 0],
+            ["Habe ich einen Anspruch auf Bildungsurlaub?", 0],
+            ["Darf mein Vorgesetzter das verlangen?", 0],
+            ["Wo bekomme ich nähere Auskünfte dazu?", 0],
+            ["Sie haben das Recht auf mindestens 20 Urlaubstage.", 1],
+            ["Das hängt davon ab, ob Sie Vollzeit arbeiten.", 1],
+            ["Das sollte in Ihrem Arbeitsvertrag stehen.", 1],
+            ["Da muss ich mich erst genauer erkundigen.", 1]
+          ]
+        },
+        { "id": "h7-br", "typ": "mc", "kontext": "Wortschatz", "frage": "Was macht der Betriebsrat?", "opts": ["Er vertritt die Interessen der Beschäftigten.", "Er zahlt die Gehälter aus.", "Er stellt neue Mitarbeitende ein.", "Er leitet die Firma."], "l": 0 }
+      ]
+    },
+    {
+      "titel": "Prüfungstraining",
+      "icon": "🏁",
+      "kurz": "Telefonnotiz · Sprachbausteine · gemischte Aufgaben",
+      "aufgaben": [
+        {
+          "id": "h8-notiz", "typ": "matrix", "kontext": "Telefonnotiz",
+          "frage": "Nachricht auf der Mailbox: „Guten Tag, hier ist Nadia Sadik aus der Personalabteilung, heute ist Montag, 10:15 Uhr. Am Donnerstag, den 14., findet um 9 Uhr im Raum 1.12 eine Schulung zum Thema Datenschutz statt – sie dauert bis etwa 15 Uhr. Bitte geben Sie die Information an Ihr Team weiter und melden Sie mir bis Mittwoch, wie viele Personen kommen. Für das Mittagessen bringt bitte jeder etwas mit.“ – Was gehört in welches Feld?",
+          "wahl": ["Anruferin", "Datum/Uhrzeit des Anrufs", "Grund", "Termin", "To-do", "weitere Information"],
+          "aussagen": [
+            ["Nadia Sadik, Personalabteilung", 0],
+            ["Montag, 10:15 Uhr", 1],
+            ["Schulung Datenschutz", 2],
+            ["Do, 14., 9–15 Uhr, Raum 1.12", 3],
+            ["Team informieren, Teilnehmerzahl bis Mi melden", 4],
+            ["Essen für die Mittagspause mitbringen", 5]
+          ]
+        },
+        {
+          "id": "h8-sb", "typ": "luecke", "kontext": "Sprachbausteine",
+          "frage": "Sprachbausteine: Lesen Sie die Rundmail und wählen Sie die richtige Lösung.",
+          "text": "Liebe Kolleginnen und Kollegen,\n\nab dem 1. Juni hängen in allen Hallen neue Sicherheitsschilder. Bitte achten Sie besonders {0} die blauen Gebotszeichen: In der Produktion müssen Sie ab sofort Gehörschutz tragen.\n\nWer Fragen {1} den neuen Regeln hat, kann an unserer Informationsveranstaltung teilnehmen. Unser Sicherheitsbeauftragter erklärt dort, wie die neuen Geräte {2}. Er betonte bereits, die Schulung {3} für alle Mitarbeitenden in der Produktion verpflichtend.\n\nBitte melden Sie sich bis Freitag {4}. Wir freuen uns {5} Ihre Teilnahme.\n\nIhr Betriebsrat",
+          "gaps": [
+            { "opts": ["auf", "an", "für"], "l": 0 },
+            { "opts": ["zu", "für", "nach"], "l": 0 },
+            { "opts": ["funktionieren", "funktioniert", "funktioniere"], "l": 0 },
+            { "opts": ["sei", "ist gewesen", "seien"], "l": 0 },
+            { "opts": ["an", "ab", "auf"], "l": 0 },
+            { "opts": ["über", "an", "für"], "l": 0 }
+          ]
+        },
+        { "id": "h8-1", "typ": "mc", "kontext": "Präpositionen", "frage": "Ich habe einen Antrag ___ Elterngeld gestellt.", "opts": ["auf", "für", "nach", "um"], "l": 0 },
+        { "id": "h8-2", "typ": "mc", "kontext": "indirekte Rede", "frage": "Die Chefin sagte, sie ___ morgen nicht im Büro.", "opts": ["sei", "ist gewesen", "seien", "wäre gewesen"], "l": 0 },
+        { "id": "h8-3", "typ": "mc", "kontext": "Schilder", "frage": "Ein blaues rundes Schild mit Sicherheitsschuhen bedeutet:", "opts": ["Hier muss man Sicherheitsschuhe tragen.", "Hier sind Schuhe verboten.", "Hier kann man Schuhe kaufen.", "Achtung, Schuhe können rutschen."], "l": 0 },
+        { "id": "h8-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz.", "steine": ["Der Betriebsrat", "erklärte,", "jeder", "habe", "ein Recht", "auf", "Pausen."] }
+      ]
+    }
+  ]
+}

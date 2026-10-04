@@ -1,0 +1,299 @@
+{
+  "id": "arbeiten-wo-andere-urlaub-machen",
+  "titel": "Arbeiten, wo andere Urlaub machen",
+  "untertitel": "Reiseformen · Angebote und Anfragen · Konjunktiv II der Vergangenheit · Berufe im Tourismus · Bewerbung · Gründe und Folgen",
+  "niveau": "B1/B2",
+  "reihe": "Prüfungstraining B1/B2",
+  "farbe": "#1f86a8",
+  "mix": 15,
+  "intro": "Sieben Teile – jeder Teil kann einzeln gespielt werden. Der **Prüfungsmix** zieht zufällig Aufgaben aus allen Teilen.",
+  "kompakt": [
+    { "titel": "Konjunktiv II der Vergangenheit", "zeilen": [
+      "**hätte/wäre + Partizip II** – für Dinge, die nicht passiert sind: An deiner Stelle **hätte** ich eine Versicherung **abgeschlossen**. · Die Versicherung **wäre** für die Kosten **aufgekommen**.",
+      "**mit Modalverb:** hätte + Verb im Infinitiv + Modalverb im Infinitiv – Du **hättest** die Reise früher **stornieren müssen**.",
+      "**Ratschlag, obwohl es zu spät ist:** Sie hätte den Vertrag genau lesen sollen. · An ihrer Stelle hätte ich früher angerufen.",
+      "**wäre** bei Verben mit sein im Perfekt: An deiner Stelle **wäre** ich früher **losgefahren**."
+    ]},
+    { "titel": "Gründe und Folgen", "zeilen": [
+      "**Grund:** weil · da · denn · wegen + Genitiv – Ich bin Reiseleiter, **weil** ich Menschen mag.",
+      "**Folge (Position 1, Verb danach):** deshalb · deswegen · daher · darum · aus diesem Grund – Ich mag Menschen, **deshalb** ist das mein Traumberuf.",
+      "**sonst** = wenn nicht: Man sollte nicht unsicher wirken, **sonst** verlieren die Gäste das Vertrauen.",
+      "**sodass** = mit der Folge: Ich bleibe ruhig, **sodass** ich selten nervös werde."
+    ]},
+    { "titel": "Reisewortschatz", "zeilen": [
+      "die Pauschalreise (alles organisiert) · die Individualreise · der Campingurlaub · die Städtereise · die Fahrradtour",
+      "Halbpension (Frühstück + Abendessen) · Vollpension (alle Mahlzeiten) · all inclusive",
+      "der Frühbucherrabatt · die Anzahlung · stornieren · die Reiserücktrittsversicherung · die allgemeinen Geschäftsbedingungen (AGB) · der Transfer"
+    ]},
+    { "titel": "Präsentieren", "zeilen": [
+      "**Einleitung:** Ich möchte eine kurze Präsentation über … halten. · In meinem Vortrag geht es um …",
+      "**Hauptteil:** Mein Vortrag besteht aus … Teilen. · Zuerst möchte ich …, danach … · Als Nächstes möchte ich über … sprechen.",
+      "**Schluss:** Zum Schluss möchte ich noch erwähnen, dass … · Vielen Dank für Ihre Aufmerksamkeit."
+    ]}
+  ],
+  "module": [
+    {
+      "titel": "Reiseformen und Kundenwünsche",
+      "icon": "🧳",
+      "kurz": "Wortschatz Reisen · Vor- und Nachteile",
+      "aufgaben": [
+        {
+          "id": "o1-form", "typ": "matrix", "kontext": "Wortschatz",
+          "frage": "Zu welcher Reiseform passt das am besten?",
+          "wahl": ["Pauschalreise", "Individualreise", "Campingurlaub", "Städtereise"],
+          "aussagen": [
+            ["alles inklusive, Hotelanlage mit Pool", 0], ["Flug, Transfer und Halbpension zu einem Preis", 0],
+            ["Route selbst planen, mit Rucksack unterwegs", 1], ["spontan entscheiden, wo man übernachtet", 1],
+            ["im Zelt schlafen", 2], ["auf dem Platz selbst kochen", 2],
+            ["Museen und Sehenswürdigkeiten besichtigen", 3], ["mit dem Bus durch die Altstadt", 3]
+          ]
+        },
+        { "id": "o1-zu", "typ": "zu", "kontext": "Wortschatz", "frage": "Was bedeutet das?", "paare": [
+          ["die Halbpension", "Frühstück und Abendessen im Hotel"],
+          ["die Vollpension", "alle Mahlzeiten im Hotel"],
+          ["der Frühbucherrabatt", "günstigerer Preis, wenn man früh bucht"],
+          ["der Transfer", "Fahrt vom Flughafen zum Hotel"],
+          ["die Anzahlung", "ein Teil des Preises, den man vorher bezahlt"]
+        ]},
+        {
+          "id": "o1-vn", "typ": "matrix", "kontext": "Meinung",
+          "frage": "Reisen in einer Gruppe: Vorteil oder Nachteil?",
+          "wahl": ["Vorteil", "Nachteil"],
+          "aussagen": [
+            ["Man muss sich um nichts kümmern.", 0], ["Man kann nicht spontan entscheiden.", 1],
+            ["Man lernt schnell neue Leute kennen.", 0], ["Man ist an einen festen Zeitplan gebunden.", 1],
+            ["Eine Reiseleitung erklärt alles.", 0]
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Reiseangebote",
+      "icon": "🏖️",
+      "kurz": "Anfrage und Angebote lesen · welches Angebot passt?",
+      "aufgaben": [
+        {
+          "id": "o2-anf", "typ": "lesen", "kontext": "Lesen",
+          "frage": "Lesen Sie die Anfrage und die beiden Angebote. Beantworten Sie die Fragen.",
+          "posts": [
+            { "name": "Anfrage von Jana Roth", "text": "Sehr geehrte Damen und Herren, ich suche ein Angebot am Mittelmeer für Mai oder Juni – beim Datum und beim Ort bin ich flexibel. Ich reise allein und möchte mich vor allem erholen. Das Hotel sollte ruhig und nicht zu groß sein, in Strandnähe liegen und einen schönen Pool haben. Animationsprogramme brauche ich nicht. Ein bisschen Kultur wäre schön. Am liebsten mit Frühbucherrabatt. Mit freundlichen Grüßen, Jana Roth" },
+            { "name": "Angebot A: Resort Mareblu, Sizilien", "text": "Große Hotelanlage mit 6 Pools · täglich Show- und Sportprogramm · Halbpension · Flug und Transfer inklusive · ab 920 € pro Woche" },
+            { "name": "Angebot B: Kleines Hotel Ilios, Kreta", "text": "15 Zimmer, ruhige Lage, 200 m zum Strand, Pool im Garten · Ausflüge zu historischen Stätten buchbar · Halbpension, Flug und Transfer inklusive · mit Frühbucherrabatt ab 690 € pro Woche" }
+          ],
+          "fragen": [
+            { "f": "Welches Angebot passt zu Frau Roth?", "opts": ["Angebot B", "Angebot A", "beide", "keins"], "l": 0 },
+            { "f": "Warum passt Angebot A nicht?", "opts": ["Die Anlage ist groß und es gibt viel Programm.", "Es gibt keinen Pool.", "Es liegt nicht am Mittelmeer.", "Der Flug ist nicht inklusive."], "l": 0 },
+            { "f": "Was ist Frau Roth in diesem Urlaub am wichtigsten?", "opts": ["Erholung", "Sport", "Partys", "Einkaufen"], "l": 0 }
+          ]
+        },
+        {
+          "id": "o2-zu", "typ": "zu", "kontext": "Lesen",
+          "frage": "Was gehört zusammen?",
+          "paare": [
+            ["Frau Roth möchte einen Urlaub,", "in dem sie sich vom Alltag erholen kann."],
+            ["Der Reiseberater warnt sie, dass", "das Hotel schnell ausgebucht sein könnte."],
+            ["Er sagt, dass", "die Pauschalangebote günstiger sind."],
+            ["Frau Roth fragt,", "ob es bei dem Angebot noch weitere Kosten gibt."]
+          ]
+        },
+        {
+          "id": "o2-lt", "typ": "luecke", "kontext": "Schreiben",
+          "frage": "Eine Anfrage an ein Reisebüro. Ergänzen Sie.",
+          "text": "Sehr geehrte Damen und Herren,\n\nich suche {0} einem Angebot für eine Städtereise nach Wien im Herbst. {1} des genauen Datums bin ich flexibel. Wir sind zu zweit und möchten ein zentral gelegenes Hotel. Wichtig ist uns, dass das Hotel {2} ein gutes Frühstück verfügt. Ein Konzertbesuch wäre schön. Könnten Sie mir bitte ein paar Angebote {3} lassen?\n\nMit freundlichen Grüßen\nKarim Haddad",
+          "gaps": [
+            { "opts": ["nach", "für", "um"], "l": 0 },
+            { "opts": ["Bezüglich", "Wegen dem", "Trotz"], "l": 0 },
+            { "opts": ["über", "mit", "an"], "l": 0 },
+            { "opts": ["zukommen", "zubringen", "ankommen"], "l": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Hätte ich doch …",
+      "icon": "⏮️",
+      "kurz": "Konjunktiv II der Vergangenheit · Ratschläge, wenn es zu spät ist",
+      "aufgaben": [
+        {
+          "id": "o3-text", "typ": "matrix", "kontext": "Lesen",
+          "frage": "Jana muss ihre Reise absagen und hat keine Versicherung. Ihr Freund sagt danach: Welche Aussagen sind sinnvolle Ratschläge im Konjunktiv II?",
+          "wahl": ["sinnvoll", "nicht sinnvoll"],
+          "aussagen": [
+            ["An deiner Stelle hätte ich eine Reiserücktrittsversicherung abgeschlossen.", 0],
+            ["Die Versicherung wäre für die Kosten aufgekommen.", 0],
+            ["Du hättest die Reise früher stornieren müssen.", 0],
+            ["An deiner Stelle wäre ich sowieso zu Hause geblieben.", 1],
+            ["Ich hätte die Geschäftsbedingungen nicht akzeptiert.", 1]
+          ]
+        },
+        { "id": "o3-1", "typ": "mc", "kontext": "hätte/wäre", "frage": "Die Versicherung ___ für die Kosten aufgekommen.", "opts": ["wäre", "hätte", "würde", "wurde"], "l": 0, "x": "aufkommen bildet das Perfekt mit sein → **wäre** aufgekommen." },
+        { "id": "o3-2", "typ": "mc", "kontext": "hätte/wäre", "frage": "An deiner Stelle ___ ich den Vertrag genau gelesen.", "opts": ["hätte", "wäre", "würde", "habe"], "l": 0 },
+        { "id": "o3-3", "typ": "mc", "kontext": "Modalverb", "frage": "Du hättest die Reise früher ___.", "opts": ["stornieren müssen", "storniert müssen", "stornieren gemusst", "müssen stornieren"], "l": 0 },
+        { "id": "o3-4", "typ": "mc", "kontext": "hätte/wäre", "frage": "Ich bin zu spät losgefahren und habe den Flug verpasst. – An deiner Stelle ___ ich früher losgefahren.", "opts": ["wäre", "hätte", "würde", "bin"], "l": 0 },
+        {
+          "id": "o3-lt", "typ": "luecke", "kontext": "Ratschläge",
+          "frage": "Was hätte Jana tun sollen? Ergänzen Sie.",
+          "text": "Sie {0} den Vertrag genau lesen sollen. Sie hätte die Geschäftsbedingungen {1} sollen. An ihrer Stelle {2} ich eine Versicherung abgeschlossen. Sie hätte früher mit dem Veranstalter sprechen {3}. Und sie {4} ihren Freund vorher fragen können!",
+          "gaps": [
+            { "opts": ["hätte", "wäre", "würde"], "l": 0 },
+            { "opts": ["durchlesen", "durchgelesen", "durchzulesen"], "l": 0 },
+            { "opts": ["hätte", "wäre", "würde"], "l": 0 },
+            { "opts": ["müssen", "gemusst", "muss"], "l": 0 },
+            { "opts": ["hätte", "wäre", "hat"], "l": 0 }
+          ]
+        },
+        { "id": "o3-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Zu viel Gepäck – Übergepäck bezahlt. Geben Sie einen Ratschlag.", "steine": ["Du", "hättest", "weniger", "einpacken", "sollen."] },
+        { "id": "o3-b2", "typ": "bau", "kontext": "Satzbau", "frage": "In den falschen Bus eingestiegen. Geben Sie einen Ratschlag.", "steine": ["An deiner Stelle", "hätte", "ich", "den Fahrer", "vorher", "gefragt."] }
+      ]
+    },
+    {
+      "titel": "Berufe im Tourismus",
+      "icon": "🛎️",
+      "kurz": "Porträts lesen · wer macht was? · Wortschatz",
+      "aufgaben": [
+        {
+          "id": "o4-por", "typ": "matrix", "kontext": "Lesen",
+          "frage": "Drei Menschen arbeiten, wo andere Urlaub machen. Wer sagt das?",
+          "posts": [
+            { "name": "Yusuf (31), Stadtführer in Berlin", "text": "Ich habe Geschichte studiert und mich auf türkischsprachige Gäste spezialisiert. Ich mache Stadtführungen und betreue Gruppen manchmal mehrere Tage lang. Dann muss ich rund um die Uhr zur Verfügung stehen – manche Gäste sind sehr anspruchsvoll. Ein Nachteil: Ich habe kein festes Einkommen." },
+            { "name": "Lena (27), Rezeptionistin an der Ostsee", "text": "Die Rezeption ist die Visitenkarte des Hauses. Ich mache Check-in und Check-out, koordiniere die Betreuung im Hotel und gebe Tipps für die Region. Es gibt auch schwierige Gäste, aber die Arbeit ist abwechslungsreich. Das Grundgehalt ist nicht hoch, aber es gibt Aufstiegsmöglichkeiten." },
+            { "name": "Grace (29), Kinderanimateurin auf Mallorca", "text": "Ich bin für das Kinderprogramm zuständig: Wir malen, basteln, tanzen und machen Strandausflüge. Die Begeisterung der Kinder ist die größte Anerkennung. Anstrengend ist, dass ich jeden Abend auch noch auf der Bühne stehe. Danach falle ich todmüde ins Bett – für ein Privatleben bleibt kaum Zeit." }
+          ],
+          "wahl": ["Yusuf", "Lena", "Grace"],
+          "aussagen": [
+            ["… verdient nicht jeden Monat gleich viel.", 0],
+            ["… hat sich auf eine Gruppe von Gästen spezialisiert.", 0],
+            ["… gibt Informationen über die Umgebung.", 1],
+            ["… kann im Beruf aufsteigen.", 1],
+            ["… arbeitet auch abends als Unterhalterin.", 2],
+            ["… hat wenig Freizeit.", 2]
+          ]
+        },
+        { "id": "o4-zu", "typ": "zu", "kontext": "Wortschatz", "frage": "Was bedeuten die Ausdrücke?", "paare": [
+          ["sich spezialisieren", "sich auf ein bestimmtes Gebiet konzentrieren"],
+          ["zur Verfügung stehen", "da sein, wenn man gebraucht wird"],
+          ["das feste Einkommen", "jeden Monat das gleiche Geld"],
+          ["reibungslos", "ohne Probleme"],
+          ["das Grundgehalt", "Lohn ohne Zuschläge und Extras"],
+          ["todmüde", "sehr, sehr müde"]
+        ]}
+      ]
+    },
+    {
+      "titel": "Beruflich weiterkommen",
+      "icon": "📈",
+      "kurz": "Stellenanzeige lesen · telefonisch nachfragen",
+      "aufgaben": [
+        {
+          "id": "o5-anz", "typ": "matrix", "kontext": "Lesen",
+          "frage": "Lesen Sie die Stellenanzeige. Was gehört wohin?",
+          "textTitel": "Wir suchen ab sofort Reiseleiter/innen für Marokko und Tunesien",
+          "text": "**Ihre Aufgaben:** Empfang und Betreuung unserer Gäste · Abrechnung der Ausflüge, Ablage · Entwicklung von Ausflugsprogrammen\n\n**Wir erwarten:** abgeschlossene kaufmännische Ausbildung · eine touristische Ausbildung wäre von Vorteil · Kenntnisse in den üblichen Computerprogrammen · neben Deutsch zwei weitere Fremdsprachen · Serviceorientierung, höfliches Auftreten · Team- und Kommunikationsfähigkeit\n\n**Wir bieten:** einen festen Arbeitsvertrag und freie Unterkunft im Einsatzgebiet\n\nBitte senden Sie Ihre Unterlagen per E-Mail. Telefonkontakt: Frau Berger",
+          "wahl": ["Aufgabe", "Anforderung", "Angebot der Firma"],
+          "aussagen": [
+            ["Gäste empfangen und betreuen", 0], ["Ausflugsprogramme entwickeln", 0],
+            ["zwei Fremdsprachen außer Deutsch", 1], ["höfliches Auftreten", 1], ["kaufmännische Ausbildung", 1],
+            ["fester Arbeitsvertrag", 2], ["kostenlose Unterkunft", 2]
+          ]
+        },
+        {
+          "id": "o5-tel", "typ": "ordnen", "kontext": "Telefonat",
+          "frage": "Yusuf ruft vor seiner Bewerbung bei der Firma an. Bringen Sie das Gespräch in die richtige Reihenfolge.",
+          "zeilen": [
+            "◀ Guten Tag, Yusuf Demir hier. Ich habe einige Fragen zu Ihrer Anzeige für Reiseleiter.",
+            "▶ Gern, was möchten Sie wissen?",
+            "◀ Muss ich die ganze Saison im Zielland leben?",
+            "▶ Ja, Sie leben etwa vier Monate weitgehend vor Ort.",
+            "◀ Verstehe. Und wann beginnt das Auswahlverfahren?",
+            "▶ Es hat noch nicht begonnen – wir sammeln bis Ende des Monats Bewerbungen."
+          ]
+        },
+        {
+          "id": "o5-fr", "typ": "matrix", "kontext": "Telefonat",
+          "frage": "Telefonisches Vorgespräch: Ist die Frage passend und professionell?",
+          "wahl": ["passend", "eher nicht"],
+          "aussagen": [
+            ["Wie lange dauert ein Einsatz im Zielland?", 0],
+            ["Mit welchen Computerprogrammen arbeiten Sie?", 0],
+            ["Bis wann kann ich mich bewerben?", 0],
+            ["Muss ich da wirklich arbeiten oder ist das eher Urlaub?", 1],
+            ["Wie alt ist eigentlich die Chefin?", 1]
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Gründe und Folgen",
+      "icon": "🔀",
+      "kurz": "Satire lesen · weil, deshalb, sonst, sodass, wegen",
+      "aufgaben": [
+        {
+          "id": "o6-sat", "typ": "lesen", "kontext": "Lesen",
+          "frage": "Lesen Sie den nicht ganz ernst gemeinten Text und beantworten Sie die Fragen.",
+          "textTitel": "Ich bin Hotelfachfrau",
+          "text": "Ich bin Hotelfachfrau. Deshalb kann ich gleichzeitig vier Gäste einchecken, das Telefon bedienen und das Frühstücksbuffet auffüllen. Weil ich zwölf Sprachen spreche, verstehe ich jeden Gast sofort. Ich kenne jedes Restaurant der Stadt, daher habe ich für jeden Geschmack eine Empfehlung. Wegen meiner hellseherischen Fähigkeiten weiß ich schon vor der Ankunft, welches Kissen ein Gast möchte. Da ich nie müde werde, arbeite ich gern drei Schichten hintereinander. Ich brauche kein Privatleben, denn mein Leben gehört den Gästen.",
+          "fragen": [
+            { "f": "Warum ist der Text nicht ernst gemeint?", "opts": ["Die Fähigkeiten sind stark übertrieben.", "Er enthält viele Fehler.", "Er beschreibt einen Kinofilm.", "Er ist eine echte Stellenanzeige."], "l": 0 },
+            { "f": "Welches Wort nennt im Text einen Grund?", "opts": ["weil", "deshalb", "daher", "sonst"], "l": 0 },
+            { "f": "Welches Wort nennt im Text eine Folge?", "opts": ["deshalb", "weil", "da", "denn"], "l": 0 }
+          ]
+        },
+        {
+          "id": "o6-gf", "typ": "matrix", "kontext": "Konnektoren",
+          "frage": "Nennt das Wort einen Grund oder eine Folge?",
+          "wahl": ["Grund", "Folge"],
+          "aussagen": [["weil", 0], ["da", 0], ["denn", 0], ["wegen", 0], ["deshalb", 1], ["daher", 1], ["aus diesem Grund", 1], ["sodass", 1]]
+        },
+        {
+          "id": "o6-lt", "typ": "luecke", "kontext": "Konnektoren",
+          "frage": "Ergänzen Sie die Sätze.",
+          "text": "Reiseleiter ist mein Traumberuf. {0} arbeite ich schon sehr lange in diesem Beruf. Ich mag Menschen, {1} ist das der ideale Beruf für mich. Ich komme mit den meisten Gästen gut zurecht, {2} ich nicht leicht nervös werde. Man sollte nicht unsicher wirken, {3} verlieren die Gäste das Vertrauen. Es hat sich noch nie jemand {4} meiner direkten Art beschwert. Diesen Beruf macht man weniger wegen des Geldes, sondern {5} er Spaß macht.",
+          "gaps": [
+            { "opts": ["Aus diesem Grund", "Weil", "Wegen"], "l": 0 },
+            { "opts": ["deshalb", "weil", "denn"], "l": 0 },
+            { "opts": ["weil", "deshalb", "sonst"], "l": 0 },
+            { "opts": ["sonst", "weil", "deshalb"], "l": 0 },
+            { "opts": ["wegen", "weil", "daher"], "l": 0 },
+            { "opts": ["weil", "deshalb", "sonst"], "l": 0 }
+          ]
+        },
+        { "id": "o6-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz.", "steine": ["Ich", "kann", "gut mit Jugendlichen umgehen,", "aus diesem Grund", "möchte", "ich", "Erzieherin", "werden."] }
+      ]
+    },
+    {
+      "titel": "Prüfungstraining",
+      "icon": "🏁",
+      "kurz": "Präsentation · Sprachbausteine · gemischte Aufgaben",
+      "aufgaben": [
+        {
+          "id": "o7-pr", "typ": "matrix", "kontext": "Präsentation",
+          "frage": "Präsentation über eine Reise: In welchen Teil gehört der Satz?",
+          "wahl": ["Einleitung", "Hauptteil", "Schluss"],
+          "aussagen": [
+            ["Ich möchte eine kurze Präsentation über meine Reise nach Georgien halten.", 0],
+            ["In meinem Vortrag geht es um eine Fahrradtour an der Donau.", 0],
+            ["Mein Vortrag besteht aus drei Teilen.", 1],
+            ["Ich komme jetzt zum zweiten Teil.", 1],
+            ["Als Nächstes möchte ich über die Aktivitäten sprechen.", 1],
+            ["Zum Schluss möchte ich noch erwähnen, dass die Reise sehr günstig war.", 2],
+            ["Vielen Dank für Ihre Aufmerksamkeit.", 2]
+          ]
+        },
+        {
+          "id": "o7-sb", "typ": "luecke", "kontext": "Sprachbausteine",
+          "frage": "Sprachbausteine: Eine Antwort des Reisebüros. Wählen Sie die richtige Lösung.",
+          "text": "Sehr geehrte Frau Roth,\n\nvielen Dank für Ihr Interesse. Im Anhang finden Sie einige Angebote, die ich für Sie zusammengestellt {0}. Besonders hinweisen möchte ich Sie {1} ein kleines Hotel auf Kreta. Es liegt nur 200 Meter vom Strand entfernt und ist {2} seiner ruhigen Lage sehr beliebt. {3} das etwas für Sie ist, sollten Sie sich schnell entscheiden, {4} das Interesse sehr groß ist. Es entstehen keine weiteren Kosten außer der Anzahlung.\n\nMit freundlichen Grüßen\nMarco Lenz",
+          "gaps": [
+            { "opts": ["habe", "bin", "wurde"], "l": 0 },
+            { "opts": ["auf", "an", "für"], "l": 0 },
+            { "opts": ["wegen", "weil", "deshalb"], "l": 0 },
+            { "opts": ["Wenn", "Ob", "Als"], "l": 0 },
+            { "opts": ["da", "deshalb", "sodass"], "l": 0 }
+          ]
+        },
+        { "id": "o7-1", "typ": "mc", "kontext": "Konjunktiv II", "frage": "Wir haben den Zug verpasst. Wir ___ früher aufstehen sollen.", "opts": ["hätten", "wären", "würden", "haben"], "l": 0 },
+        { "id": "o7-2", "typ": "mc", "kontext": "Wortschatz", "frage": "Eine Reise absagen heißt …", "opts": ["stornieren.", "buchen.", "anzahlen.", "verlängern."], "l": 0 }
+      ]
+    }
+  ]
+}

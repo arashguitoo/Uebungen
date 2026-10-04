@@ -1,0 +1,323 @@
+{
+  "id": "arbeitsformen-und-logistik",
+  "titel": "Arbeitsformen und Logistik",
+  "untertitel": "Vollzeit, Minijob, Zeitarbeit · Lohn und Vertrag · logistische Ketten · Probleme am Telefon lösen · Arbeitsbedingungen verhandeln · Telefonnotizen",
+  "niveau": "B1/B2",
+  "reihe": "Prüfungstraining B1/B2",
+  "farbe": "#b5562f",
+  "mix": 15,
+  "intro": "Sieben Teile – jeder Teil kann einzeln gespielt werden. Der **Prüfungsmix** zieht zufällig Aufgaben aus allen Teilen. Beträge wie Mindestlohn oder Minijob-Grenze ändern sich regelmäßig – aktuelle Werte findet man bei der Agentur für Arbeit.",
+  "kompakt": [
+    { "titel": "Arbeitsformen", "zeilen": [
+      "**Vollzeit / Teilzeit:** meist 35–40 Stunden pro Woche bzw. weniger Stunden",
+      "**freiberuflich / selbstständig:** schreibt Rechnungen, zahlt Steuern und Sozialversicherung selbst",
+      "**Saisonarbeit:** nur zeitweise angestellt, z. B. in Landwirtschaft und Gastronomie",
+      "**Zeitarbeit:** Vertrag mit einer Firma, die einen an andere Betriebe verleiht",
+      "**Minijob:** geringer Verdienst bis zu einer festen Grenze, meist ohne eigene Steuern und Abgaben",
+      "**befristeter Vertrag:** Vertrag auf Zeit – endet ohne Kündigung, kann verlängert werden",
+      "**Schwarzarbeit:** Arbeit ohne offizielle Meldung – verboten und strafbar"
+    ]},
+    { "titel": "Lohn und Geld", "zeilen": [
+      "**Bruttolohn** = Lohn ohne Abzüge · **Nettolohn** = was nach Steuern und Versicherungen übrig bleibt",
+      "**Tariflohn** (laut Tarifvertrag) · **Mindestlohn** (niedrigster erlaubter Lohn) · **Sonderzahlung** (Urlaubs-, Weihnachtsgeld)",
+      "**Equal Pay** in der Zeitarbeit: nach einer bestimmten Zeit im selben Betrieb gleiche Bezahlung wie Festangestellte"
+    ]},
+    { "titel": "Zu- und abraten", "zeilen": [
+      "**Gründe nennen:** Zeitarbeit hat den Vorteil, dass … · Ich würde mich auf … bewerben, denn … · Meiner Erfahrung nach …",
+      "**Einwände:** Das stimmt schon, aber du hast den Nachteil, dass … · Das ist zwar richtig, aber … · Es kommt darauf an, ob … · Einerseits …, andererseits …"
+    ]},
+    { "titel": "Probleme am Telefon lösen", "zeilen": [
+      "**Fahrer/in:** Das Problem ist folgendes: … · Ich kann den Termin nicht einhalten. · Was soll ich als Nächstes tun?",
+      "**Disponent/in:** Können Sie das Problem genauer beschreiben? · Ich versuche, eine Lösung zu finden. · Wir lösen das Problem so: … · Ich informiere die Firma … darüber, dass …",
+      "**Effektiv telefonieren:** freundlicher Ton, klar und deutlich, positive Sprache, keine Floskeln, einfache Sätze, Verständnis zeigen"
+    ]},
+    { "titel": "Telefonnotiz in der Prüfung", "zeilen": [
+      "Zuerst den **Grund** erkennen: Angebot – Bestellung/Buchung – Beschwerde",
+      "Bis zum Ende hören, **Stichpunkte** notieren, keine ganzen Sätze",
+      "Der **Name** wird buchstabiert, die **Telefonnummer** nur einmal genannt",
+      "**Zu erledigen:** Was muss die Kollegin/der Kollege konkret tun?"
+    ]}
+  ],
+  "module": [
+    {
+      "titel": "Arbeitsformen",
+      "icon": "📑",
+      "kurz": "Begriffe zuordnen · Anzeigen · Vor- und Nachteile",
+      "aufgaben": [
+        {
+          "id": "p1-gl", "typ": "matrix", "kontext": "Glossar",
+          "frage": "Welche Arbeitsform wird beschrieben?",
+          "wahl": ["Vollzeit/Teilzeit", "freiberuflich", "Saisonarbeit", "Zeitarbeit", "Minijob", "befristeter Vertrag"],
+          "aussagen": [
+            ["Laut Tarifvertrag arbeitet man 35 bis 40 Stunden pro Woche – oder weniger.", 0],
+            ["Man schreibt Rechnungen und zahlt Steuern und Sozialversicherung selbst.", 1],
+            ["Man arbeitet nur zur Erntezeit oder in der Hauptreisezeit.", 2],
+            ["Eine Firma verleiht ihre Beschäftigten an andere Betriebe.", 3],
+            ["Man verdient wenig und muss meist keine eigenen Abgaben zahlen.", 4],
+            ["Das Arbeitsverhältnis endet automatisch zu einem bestimmten Datum.", 5]
+          ]
+        },
+        {
+          "id": "p1-anz", "typ": "matrix", "kontext": "Anzeigen",
+          "frage": "Zu welcher Arbeitsform passt die Anzeige?",
+          "wahl": ["Zeitarbeit", "Saisonarbeit", "Minijob", "Vollzeit (fest)"],
+          "aussagen": [
+            ["„Personalvermittlung Nord sucht für einen Kunden: Lagerlogistiker in Vollzeit.“", 0],
+            ["„Strandcafé sucht vom 1.5. bis 30.9. Bedienungen und Küchenhilfen.“", 1],
+            ["„Kiosk am Bahnhof sucht Aushilfen auf Minijob-Basis, Arbeitszeiten frei vereinbar.“", 2],
+            ["„Wir bieten eine unbefristete Stelle mit 39 Wochenstunden.“", 3]
+          ]
+        },
+        {
+          "id": "p1-vn", "typ": "matrix", "kontext": "Vor- und Nachteile",
+          "frage": "Zeitarbeit: Vorteil oder Nachteil für Beschäftigte?",
+          "wahl": ["Vorteil", "Nachteil"],
+          "aussagen": [
+            ["Man lernt verschiedene Betriebe kennen.", 0],
+            ["Der Lohn ist oft niedriger als bei Festangestellten.", 1],
+            ["Man kann von einem Betrieb übernommen werden.", 0],
+            ["Man weiß nicht genau, wie lange man in einem Betrieb bleibt.", 1],
+            ["Man sammelt schnell Berufserfahrung.", 0]
+          ]
+        },
+        {
+          "id": "p1-rm", "typ": "matrix", "kontext": "Redemittel",
+          "frage": "Gründe nennen oder Einwand formulieren?",
+          "wahl": ["Grund nennen", "Einwand"],
+          "aussagen": [
+            ["Zeitarbeit hat den Vorteil, dass …", 0], ["Ich würde mich auf die Stelle bewerben, denn …", 0], ["Meiner Erfahrung nach …", 0],
+            ["Das stimmt schon, aber du hast den Nachteil, dass …", 1], ["Das ist zwar richtig, aber …", 1], ["Es kommt darauf an, ob …", 1]
+          ]
+        },
+        { "id": "p1-1", "typ": "mc", "kontext": "Wortschatz", "frage": "Arbeit ohne offizielle Meldung beim Amt nennt man …", "opts": ["Schwarzarbeit.", "Zeitarbeit.", "Saisonarbeit.", "Kurzarbeit."], "l": 0, "x": "Schwarzarbeit ist verboten und strafbar." }
+      ]
+    },
+    {
+      "titel": "Lohn, Vertrag, Versicherung",
+      "icon": "💶",
+      "kurz": "Berufssprache · Informationen zur Zeitarbeit",
+      "aufgaben": [
+        { "id": "p2-zu", "typ": "zu", "kontext": "Berufssprache", "frage": "Was bedeuten die Begriffe?", "paare": [
+          ["der Bruttolohn", "der Lohn ohne Abzüge"],
+          ["der Nettolohn", "der Lohn nach Steuern und Versicherungen"],
+          ["der Tarifvertrag", "regelt Löhne und Arbeitsbedingungen einer Branche"],
+          ["die Sonderzahlung", "z. B. Urlaubs- oder Weihnachtsgeld"],
+          ["die Sozialversicherung", "Renten-, Kranken-, Pflege- und Arbeitslosenversicherung"],
+          ["die Branche", "ein Bereich der Wirtschaft"]
+        ]},
+        {
+          "id": "p2-text", "typ": "lesen", "kontext": "Lesen",
+          "frage": "Lesen Sie die Informationen zur Zeitarbeit und beantworten Sie die Fragen.",
+          "textTitel": "Informationen zur Zeitarbeit",
+          "text": "In der Zeitarbeitsbranche gelten besondere Tarifverträge. Das Gehalt von Zeitarbeiterinnen und Zeitarbeitern liegt oft deutlich unter dem Gehalt fest angestellter Mitarbeitender.\n\nWichtig ist: Die Ausbildung beeinflusst das Gehalt, denn es gibt verschiedene Gehaltsstufen. Wer eine lange Berufsausbildung oder ein abgeschlossenes Studium hat, kommt in die höchste Gruppe. Die niedrigste Stufe gilt für ungelernte Kräfte.\n\nWer mehr als neun Monate im selben Betrieb arbeitet, für den gilt die sogenannte Equal-Pay-Regel: Zeitarbeitskräfte müssen dann genauso bezahlt werden wie vergleichbare Festangestellte des Betriebs.",
+          "fragen": [
+            { "f": "Was ist der Unterschied in der Bezahlung?", "opts": ["Zeitarbeitskräfte verdienen oft weniger.", "Zeitarbeitskräfte verdienen immer mehr.", "Es gibt keinen Unterschied.", "Festangestellte bekommen keinen Tarif."], "l": 0 },
+            { "f": "Wovon hängt die Gehaltsstufe ab?", "opts": ["von der Ausbildung", "vom Alter", "von der Wohnung", "vom Wetter"], "l": 0 },
+            { "f": "Wer verdient am meisten?", "opts": ["wer studiert oder lange gelernt hat", "ungelernte Kräfte", "Saisonkräfte", "Minijobber"], "l": 0 },
+            { "f": "Was bedeutet Equal Pay?", "opts": ["nach neun Monaten gleiche Bezahlung wie Festangestellte", "alle bekommen den Mindestlohn", "gleiche Arbeitszeit für alle", "doppelter Lohn am Wochenende"], "l": 0 }
+          ]
+        },
+        {
+          "id": "p2-lt", "typ": "luecke", "kontext": "Berufssprache",
+          "frage": "Ergänzen Sie die Sätze.",
+          "text": "Der Lohn ohne Abzüge ist der {0}. Was nach Steuern und Versicherungen übrig bleibt, ist der {1}. Viele Zeitarbeiter hoffen, dass sie später von ihrer Firma mit einem unbefristeten Vertrag {2} werden. Am Jahresende gibt es bei manchen Firmen eine {3}.",
+          "gaps": [
+            { "opts": ["Bruttolohn", "Nettolohn", "Mindestlohn"], "l": 0 },
+            { "opts": ["Nettolohn", "Bruttolohn", "Tariflohn"], "l": 0 },
+            { "opts": ["übernommen", "unternommen", "angenommen"], "l": 0 },
+            { "opts": ["Sonderzahlung", "Schwarzarbeit", "Saisonarbeit"], "l": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Arbeitsabläufe und logistische Ketten",
+      "icon": "🚢",
+      "kurz": "vom Feld bis zum Kunden · Container-Revolution · Wortschatz Logistik",
+      "aufgaben": [
+        {
+          "id": "p3-kette", "typ": "ordnen", "kontext": "Logistische Kette",
+          "frage": "Der Weg einer Banane: Bringen Sie die Schritte in die richtige Reihenfolge.",
+          "zeilen": [
+            "Die Bananen werden geerntet.",
+            "Die Bananen werden exportiert.",
+            "Die Bananen kommen in den Großmarkt.",
+            "Die Obst- und Gemüsehändlerin kauft die Bananen.",
+            "Die Bananen werden an die Endkunden verkauft.",
+            "Die Endkunden essen die Bananen."
+          ]
+        },
+        {
+          "id": "p3-kaffee", "typ": "ordnen", "kontext": "Logistische Kette",
+          "frage": "Und der Weg einer Jeans? Bringen Sie die Schritte in eine sinnvolle Reihenfolge.",
+          "zeilen": ["Die Baumwolle wird angebaut und geerntet.", "In einer Fabrik wird die Jeans genäht.", "Die Jeans werden in Containern verschifft.", "Ein Lkw bringt sie ins Lager eines Modehändlers.", "Die Jeans werden im Geschäft verkauft."]
+        },
+        {
+          "id": "p3-cont", "typ": "lesen", "kontext": "Lesen",
+          "frage": "Lesen Sie den Text und beantworten Sie die Fragen.",
+          "textTitel": "Die Kiste, die die Welt verändert hat",
+          "text": "Früher brauchten viele Hafenarbeiter mehrere Tage, um ein großes Schiff zu be- oder entladen. Jeder Sack und jede Kiste wurde einzeln getragen. Das kostete viel Zeit und viel Geld.\n\nDann setzte sich eine einfache Idee durch: gleich große, stapelbare Kisten aus Stahl – die Container. Sie werden beim Absender beladen, mit dem Lkw zum Hafen gebracht und dort von riesigen Kränen auf das Schiff gehoben. Heute liegen Schiffe oft nur noch wenige Stunden im Hafen.\n\nDer Vorteil ist die Standardisierung: Weil alle Container gleich groß sind, passen sie auf jedes Schiff, jeden Lkw und jeden Eisenbahnwaggon. Inzwischen gibt es sogar Terminals, die fast vollautomatisch arbeiten. Menschen werden dort vor allem für die Kontrolle gebraucht.",
+          "fragen": [
+            { "f": "Was war früher das Problem?", "opts": ["Das Be- und Entladen dauerte sehr lange.", "Es gab keine Schiffe.", "Die Häfen waren zu klein.", "Die Waren waren zu leicht."], "l": 0 },
+            { "f": "Warum sind Container so praktisch?", "opts": ["Sie sind alle gleich groß.", "Sie sind aus Holz.", "Sie sind sehr billig.", "Man braucht keine Kräne."], "l": 0 },
+            { "f": "Wozu braucht man in automatischen Terminals noch Menschen?", "opts": ["für die Kontrolle", "zum Tragen der Kisten", "zum Fahren der Schiffe", "gar nicht"], "l": 0 }
+          ]
+        },
+        { "id": "p3-zu", "typ": "zu", "kontext": "Berufssprache", "frage": "Was bedeuten die Wörter?", "paare": [
+          ["die Spedition", "Firma, die Waren transportiert"],
+          ["der Disponent", "plant und kontrolliert die Aufträge"],
+          ["die Auslastung", "die Lkw sollen dauernd Aufträge haben"],
+          ["beladen", "Waren auf einen Lkw oder ein Schiff bringen"],
+          ["die Liegezeit", "die Zeit, die ein Schiff im Hafen ist"],
+          ["stapelbar", "kann aufeinandergestellt werden"]
+        ]},
+        { "id": "p3-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz im Passiv.", "steine": ["Die Container", "werden", "beim Absender", "beladen", "und", "zum Hafen", "transportiert."] }
+      ]
+    },
+    {
+      "titel": "Probleme am Telefon lösen",
+      "icon": "🚚",
+      "kurz": "Panne, Unfall, Schaden · Fahrer und Disponent · effektiv telefonieren",
+      "aufgaben": [
+        {
+          "id": "p4-lt", "typ": "luecke", "kontext": "Berufssprache",
+          "frage": "Ergänzen Sie: Panne, Unfall, Fehler, Defekt, Schaden.",
+          "text": "Auf der A7 gab es einen schweren {0} mit zwei Verletzten. Der {1} beträgt eine Million Euro. Der Lkw kommt später, weil er eine {2} hatte und der Fahrer einen Reifen wechseln musste. Das Fahrzeug hat einen {3} an der Elektronik. Eine Technikerin sucht nach dem {4}.",
+          "gaps": [
+            { "opts": ["Unfall", "Fehler", "Defekt"], "l": 0 },
+            { "opts": ["Schaden", "Fehler", "Unfall"], "l": 0 },
+            { "opts": ["Panne", "Schaden", "Fehler"], "l": 0 },
+            { "opts": ["Defekt", "Unfall", "Panne"], "l": 0 },
+            { "opts": ["Fehler", "Unfall", "Schaden"], "l": 0 }
+          ]
+        },
+        {
+          "id": "p4-wer", "typ": "matrix", "kontext": "Redemittel",
+          "frage": "Wer sagt das am Telefon – Fahrer/in oder Disponent/in?",
+          "wahl": ["Fahrer/in", "Disponent/in"],
+          "aussagen": [
+            ["Das Problem ist folgendes: Der Kunde nimmt die Ware nicht an.", 0],
+            ["Ich kann den Termin nicht einhalten.", 0],
+            ["Was soll ich als Nächstes tun?", 0],
+            ["Können Sie das Problem genauer beschreiben?", 1],
+            ["Warten Sie, ich rufe den Kunden gleich an.", 1],
+            ["Wir lösen das Problem so: Sie fahren zum Lieferanten zurück.", 1]
+          ]
+        },
+        {
+          "id": "p4-ton", "typ": "matrix", "kontext": "Effektiv telefonieren",
+          "frage": "Ist die Formulierung mitfühlend/positiv oder distanziert/negativ?",
+          "wahl": ["positiv", "negativ"],
+          "aussagen": [
+            ["Danke, dass Sie gewartet haben.", 0], ["Das ist nicht mein Problem.", 1],
+            ["Ich kann verstehen, wie Sie sich fühlen.", 0], ["Haben Sie das jetzt verstanden?", 1],
+            ["Darf ich eine Frage dazu stellen?", 0], ["Immer mit der Ruhe.", 1],
+            ["Haben Sie Fragen dazu?", 0], ["Ich kann nichts dafür, dass Sie gewartet haben.", 1]
+          ]
+        },
+        { "id": "p4-tipp", "typ": "mc", "kontext": "Effektiv telefonieren", "frage": "Was gehört NICHT zu den Tipps für effektives Telefonieren?", "opts": ["möglichst viele Floskeln benutzen", "freundlich und deutlich sprechen", "einfache Sätze bilden", "Verständnis zeigen"], "l": 0 },
+        { "id": "p4-wort", "typ": "mc", "kontext": "Wortschatz", "frage": "Der Kunde akzeptiert die Lieferung nicht. Er …", "opts": ["verweigert die Annahme.", "trifft den Fahrer an.", "lädt die Ware ab.", "bestätigt die Lieferung."], "l": 0 }
+      ]
+    },
+    {
+      "titel": "Über Arbeitsbedingungen verhandeln",
+      "icon": "🤝",
+      "kurz": "Tipps fürs Gespräch · Redemittel · Kommunikationsverhalten",
+      "aufgaben": [
+        {
+          "id": "p5-tipps", "typ": "matrix", "kontext": "Tipps",
+          "frage": "Sie möchten nach der Zeitarbeit fest übernommen werden. Guter Tipp fürs Gespräch?",
+          "wahl": ["guter Tipp", "schlechter Tipp"],
+          "aussagen": [
+            ["Sich vorher erkundigen, wie die Auftragslage ist.", 0],
+            ["Überlegen, was man will und wo Kompromisse möglich sind.", 0],
+            ["Dem Chef erst in Ruhe zuhören und dann argumentieren.", 0],
+            ["Gleich am Anfang mit Kündigung drohen.", 1],
+            ["Zeigen, dass man sich gut eingearbeitet hat.", 0],
+            ["Sofort jedes Angebot ablehnen.", 1]
+          ]
+        },
+        {
+          "id": "p5-wer", "typ": "matrix", "kontext": "Gespräch",
+          "frage": "Wer sagt das – der Mitarbeiter oder der Abteilungsleiter?",
+          "wahl": ["Mitarbeiter", "Abteilungsleiter"],
+          "aussagen": [
+            ["Ich denke, dass ich mich sehr gut eingearbeitet habe.", 0],
+            ["Wir müssen die Kosten im Auge behalten.", 1],
+            ["Ich hatte den Eindruck, dass Sie Arbeitskräfte brauchen.", 0],
+            ["Wir haben sehr großes Interesse an Ihnen.", 1],
+            ["Könnten Sie sich vorstellen, in Teilzeit zu arbeiten?", 1],
+            ["Meinen Sie nicht, dass wir da einen Kompromiss finden können?", 0]
+          ]
+        },
+        {
+          "id": "p5-kom", "typ": "lesen", "kontext": "Lesen",
+          "frage": "Lesen Sie den Text über Kommunikation im Beruf und beantworten Sie die Fragen.",
+          "textTitel": "Direkt zum Punkt?",
+          "text": "In deutschen Firmen ist der Smalltalk vor Verhandlungen oft kurz. Viele sehen Direktheit als ehrlich und effizient: Man sagt klar, was man will. Menschen aus anderen Kulturen empfinden das manchmal als unhöflich. Auch bei Feedback kommen Vorgesetzte oft schnell zum Punkt – Kritik kann dadurch härter klingen, als sie gemeint ist. Im Zweifel hilft es, nachzufragen. Und: „Die“ Deutschen gibt es genauso wenig wie „die“ Chinesen. Am wichtigsten ist, sich auf die konkrete Person einzulassen.",
+          "fragen": [
+            { "f": "Wie ist der Smalltalk vor Verhandlungen oft in Deutschland?", "opts": ["kurz", "sehr lang", "verboten", "nur auf Englisch"], "l": 0 },
+            { "f": "Was hilft, wenn Kritik zu hart wirkt?", "opts": ["nachfragen", "schweigen", "kündigen", "sich beschweren"], "l": 0 },
+            { "f": "Was ist der wichtigste Tipp?", "opts": ["sich auf die konkrete Person einlassen", "immer direkt sein", "nie Kritik geben", "Stereotype nutzen"], "l": 0 }
+          ]
+        },
+        { "id": "p5-1", "typ": "mc", "kontext": "Wortschatz", "frage": "„Wir müssen die Kosten im Auge behalten.“ bedeutet:", "opts": ["Wir müssen die Kosten beobachten.", "Wir müssen die Kosten vergessen.", "Wir müssen zum Augenarzt.", "Die Kosten sind egal."], "l": 0 }
+      ]
+    },
+    {
+      "titel": "Hören und Schreiben: Telefonnotiz",
+      "icon": "☎️",
+      "kurz": "Grund des Anrufs · Notiz ausfüllen · zu erledigen",
+      "aufgaben": [
+        {
+          "id": "p6-tipps", "typ": "matrix", "kontext": "Prüfungstipps",
+          "frage": "Telefonnotiz in der Prüfung: Stimmt der Tipp?",
+          "aussagen": [
+            ["Die Nachricht bis zum Ende hören, bevor man ankreuzt.", true],
+            ["Während des Hörens Stichworte notieren.", true],
+            ["Die Telefonnummer wird mehrmals genannt.", false],
+            ["Der Name der Kontaktperson wird buchstabiert.", true],
+            ["In die Notiz schreibt man ganze Sätze.", false]
+          ]
+        },
+        {
+          "id": "p6-notiz", "typ": "matrix", "kontext": "Telefonnotiz",
+          "frage": "Nachricht: „Guten Tag, Petra Wilk von der Firma Hagen. Ich möchte den Flug für unseren Geschäftsführer Herrn Sommer umbuchen: Er fliegt doch nicht am Dienstag, sondern schon Montag früh um 7:10 Uhr nach Wien. Rückflug bleibt Donnerstag. Bitte bestätigen Sie mir das heute noch. Wilk, W-I-L-K, Telefon 0431 7728 19.“ – Was gehört wohin?",
+          "wahl": ["Grund", "Name", "Kontakt", "weitere Information", "zu erledigen"],
+          "aussagen": [
+            ["Buchung (Umbuchung)", 0],
+            ["Frau Wilk, Firma Hagen", 1],
+            ["0431 7728 19", 2],
+            ["Hinflug: Mo 7:10 Uhr nach Wien statt Di", 3],
+            ["Rückflug Do unverändert", 3],
+            ["Umbuchung heute noch bestätigen", 4]
+          ]
+        },
+        { "id": "p6-grund", "typ": "mc", "kontext": "Grund", "frage": "„Wir haben gestern 30 Stühle bekommen, aber fünf sind kaputt. Das ist schon das zweite Mal!“ – Was ist der Grund des Anrufs?", "opts": ["Beschwerde", "Angebot", "Bestellung/Buchung", "Einladung"], "l": 0 },
+        { "id": "p6-grund2", "typ": "mc", "kontext": "Grund", "frage": "„Könnten Sie uns bitte die Preise für 200 Kartons schicken?“ – Was ist der Grund?", "opts": ["Angebot (Anfrage)", "Beschwerde", "Buchung", "Kündigung"], "l": 0 }
+      ]
+    },
+    {
+      "titel": "Prüfungstraining",
+      "icon": "🏁",
+      "kurz": "Sprachbausteine · gemischte Aufgaben",
+      "aufgaben": [
+        {
+          "id": "p7-sb", "typ": "luecke", "kontext": "Sprachbausteine",
+          "frage": "Sprachbausteine: Eine Beschwerde an eine Spedition. Wählen Sie die richtige Lösung.",
+          "text": "Sehr geehrte Frau Seitz,\n\nam 12. März haben wir bei Ihnen einen Container bestellt, {0} bei uns beladen und nach Ghana geschickt werden sollte. Leider ist der Container bis heute nicht {1}. Auf unsere Anrufe hat bisher niemand reagiert.\n\nFür uns {2} guter Kundenservice, dass man zuverlässig informiert wird. Unsere Kunden in Ghana warten dringend {3} die Ware.\n\nWir erwarten, dass Sie uns bis morgen einen neuen Termin nennen. {4} das nicht möglich ist, müssen wir eine andere Spedition beauftragen.\n\nMit freundlichen Grüßen\nKai Mertens, TechSport",
+          "gaps": [
+            { "opts": ["der", "den", "dem"], "l": 0 },
+            { "opts": ["angekommen", "ankommen", "angekommt"], "l": 0 },
+            { "opts": ["bedeutet", "meint", "heißt das"], "l": 0 },
+            { "opts": ["auf", "für", "nach"], "l": 0 },
+            { "opts": ["Falls", "Ob", "Damit"], "l": 0 }
+          ]
+        },
+        { "id": "p7-1", "typ": "mc", "kontext": "Wortschatz", "frage": "Eine Firma hat viele Aufträge für die nächsten Monate. Die ___ ist gut.", "opts": ["Auftragslage", "Liegezeit", "Auslastung des Hafens", "Schwarzarbeit"], "l": 0 },
+        { "id": "p7-2", "typ": "mc", "kontext": "Wortschatz", "frage": "Eine Aufgabe erledigen heißt in der Logistik oft …", "opts": ["einen Auftrag abwickeln.", "einen Auftrag stapeln.", "einen Auftrag beladen.", "einen Auftrag verweigern."], "l": 0 },
+        { "id": "p7-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz.", "steine": ["Ich", "kann", "den Liefertermin", "leider", "nicht", "einhalten,", "weil", "mein Lkw", "eine Panne", "hat."] }
+      ]
+    }
+  ]
+}

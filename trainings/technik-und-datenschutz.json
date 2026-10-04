@@ -1,0 +1,856 @@
+{
+  "id": "technik-und-datenschutz",
+  "titel": "Technik und Datenschutz",
+  "untertitel": "Produkte beschreiben · Computerprobleme melden · eine Schulung planen · Datenschutz (DSGVO) · erklären, wie etwas funktioniert",
+  "niveau": "B1/B2",
+  "reihe": "Prüfungstraining B1/B2",
+  "farbe": "#c0624f",
+  "mix": 15,
+  "intro": "Sieben Teile rund um Produkte, IT und Datenschutz im Beruf – jeder Teil kann einzeln gespielt werden. Der **Prüfungsmix** zieht zufällig Aufgaben aus allen Teilen.",
+  "kompakt": [
+    {
+      "titel": "Ein Produkt beschreiben und verkaufen",
+      "zeilen": [
+        "**Material:** … ist aus … · … besteht aus … · … wird aus … hergestellt.",
+        "**Funktion:** Damit kann man … · … verwendet man, um … zu … · … dient dazu, …",
+        "**Pluspunkte:** Das Besondere daran ist, dass … · Es ist besonders praktisch, wenn … · Ich würde es jedem empfehlen, der …"
+      ]
+    },
+    {
+      "titel": "Computerprobleme",
+      "zeilen": [
+        "Der Bildschirm **friert ein** / bleibt schwarz. · Das Programm **stürzt ab**. · Es liegt keine **Fehlermeldung** vor.",
+        "IT: Hast du das Programm beendet und **neu gestartet**? · Hast du den **Stecker** gezogen und wieder reingesteckt? · Ich schaue es mir mal an.",
+        "Beruhigen: Nur die Ruhe. · Nur nicht nervös werden. · Ganz ruhig bleiben."
+      ]
+    },
+    {
+      "titel": "Datenschutz",
+      "zeilen": [
+        "Die **DSGVO** (Datenschutz-Grundverordnung) gilt EU-weit für alle, die **personenbezogene Daten** verarbeiten – auch für Firmen außerhalb Europas.",
+        "**verarbeiten** = übermitteln, speichern, bearbeiten · Newsletter nur, wenn Kunden ihr **Einverständnis erklärt** haben.",
+        "Stellung nehmen: Viele sind der Meinung, dass …, aber ich … · Es ist zwar richtig, dass …, dennoch … · Ich bin der Auffassung, dass …"
+      ]
+    },
+    {
+      "titel": "Erklären, wie etwas funktioniert",
+      "zeilen": [
+        "Zuerst müssen Sie … öffnen. · Geben Sie … ein. · Sehen Sie den Button …? · Da klicken Sie bitte drauf. · Wiederholen Sie …",
+        "Typische Verben: öffnen · einschalten · auswählen · aktivieren · navigieren · koppeln · eingeben"
+      ]
+    }
+  ],
+  "module": [
+    {
+      "titel": "Lustige Erfindungen",
+      "icon": "💡",
+      "kurz": "Produktbeschreibungen lesen · Redemittel",
+      "aufgaben": [
+        {
+          "id": "d1-text",
+          "typ": "lesen",
+          "kontext": "Lesen",
+          "frage": "Lesen Sie die Produktbeschreibungen und beantworten Sie die Fragen.",
+          "textTitel": "Praktisches für jeden Tag",
+          "text": "**Putz-Pantoffeln:** Haben Sie schon immer davon geträumt, ganz nebenbei zu putzen? An unseren aus Mikrofasern hergestellten Hausschuhen bleiben Schmutz und Staub einfach hängen – Sie müssen nur durch die Wohnung gehen! Die Überzieher können in der Waschmaschine gewaschen werden.\n\n**Brillen-Schlaufe:** Praktisch und modisch! Mit vier kleinen Gummibändchen machen Sie aus jeder Kette mit Ringverschluss eine Brillenkette, die farblich zu Ihrer Kleidung passt. Ein Bändchen steckt man durch den Verschluss, das andere wickelt man darum – fertig sind zwei Schlaufen.\n\n**Flaschen-Kappe:** Im Sommer draußen trinken macht Spaß – lästig sind nur Wespen. Die bunten Deckelchen aus Kunststoff steckt man einfach auf die Flasche, und kein Insekt kommt mehr hinein. Gleichzeitig sorgen die Farben dafür, dass alle ihre Flasche wiedererkennen.",
+          "fragen": [
+            {
+              "f": "Woraus sind die Putz-Pantoffeln?",
+              "opts": [
+                "aus Mikrofasern",
+                "aus Gummi",
+                "aus Kunststoff",
+                "aus Wolle"
+              ],
+              "l": 0
+            },
+            {
+              "f": "Wie reinigt man die Pantoffeln?",
+              "opts": [
+                "in der Maschine",
+                "mit der Hand",
+                "gar nicht – man wirft sie weg",
+                "mit einem Staubsauger"
+              ],
+              "l": 0
+            },
+            {
+              "f": "Was braucht man für die Brillenkette?",
+              "opts": [
+                "eine Kette und vier Bändchen",
+                "eine neue Brille und Kleber",
+                "spezielles Werkzeug",
+                "einen Ring aus Gold"
+              ],
+              "l": 0
+            },
+            {
+              "f": "Die Flaschen-Kappe hat zwei Vorteile: Schutz vor Insekten und …",
+              "opts": [
+                "man erkennt die eigene Flasche.",
+                "das Getränk bleibt kalt.",
+                "die Flasche geht nicht kaputt.",
+                "sie ist umsonst."
+              ],
+              "l": 0
+            }
+          ]
+        },
+        {
+          "id": "d1-rm",
+          "typ": "matrix",
+          "kontext": "Redemittel",
+          "frage": "Was beschreibt der Satz – das Material, die Funktion oder einen Pluspunkt?",
+          "wahl": [
+            "Material",
+            "Funktion",
+            "Pluspunkt"
+          ],
+          "aussagen": [
+            [
+              "Die Kappe besteht aus Kunststoff.",
+              0
+            ],
+            [
+              "Die Hausschuhe werden aus Mikrofasern hergestellt.",
+              0
+            ],
+            [
+              "Damit kann man nebenbei die Wohnung putzen.",
+              1
+            ],
+            [
+              "Die Kappe dient dazu, Wespen fernzuhalten.",
+              1
+            ],
+            [
+              "Das Besondere daran ist, dass jede Kette zur Brillenkette wird.",
+              2
+            ],
+            [
+              "Ich würde es jedem empfehlen, der gern draußen isst.",
+              2
+            ]
+          ]
+        },
+        {
+          "id": "d1-1",
+          "typ": "mc",
+          "kontext": "Redemittel",
+          "frage": "Die Kette ___ man, um die Brille immer dabeizuhaben.",
+          "opts": [
+            "verwendet",
+            "besteht",
+            "dient",
+            "stellt her"
+          ],
+          "l": 0
+        }
+      ]
+    },
+    {
+      "titel": "Anruf bei der IT",
+      "icon": "💻",
+      "kurz": "Computerprobleme · Wer sagt was?",
+      "aufgaben": [
+        {
+          "id": "d2-wer",
+          "typ": "matrix",
+          "kontext": "Telefonat",
+          "frage": "Wer sagt das eher – die IT-Spezialistin oder der Anrufer?",
+          "wahl": [
+            "IT-Spezialistin",
+            "Anrufer/in"
+          ],
+          "aussagen": [
+            [
+              "Hast du das Programm beendet und neu gestartet?",
+              0
+            ],
+            [
+              "Hast du den Stecker gezogen und wieder reingesteckt?",
+              0
+            ],
+            [
+              "Ich bin gleich bei dir.",
+              0
+            ],
+            [
+              "Nur nicht nervös werden.",
+              0
+            ],
+            [
+              "Das traue ich mich nicht.",
+              1
+            ],
+            [
+              "Ich krieg die Krise!",
+              1
+            ],
+            [
+              "Mein Bildschirm bleibt schwarz.",
+              1
+            ],
+            [
+              "Ich höre ein Brummen.",
+              1
+            ]
+          ]
+        },
+        {
+          "id": "d2-zu",
+          "typ": "zu",
+          "kontext": "Berufssprache",
+          "frage": "Was bedeutet das?",
+          "paare": [
+            [
+              "das Backup",
+              "Kopie der Daten, z. B. in der Cloud"
+            ],
+            [
+              "einfrieren",
+              "Das Bild auf dem Bildschirm ändert sich nicht mehr."
+            ],
+            [
+              "formatieren",
+              "eine Festplatte für die Speicherung vorbereiten"
+            ],
+            [
+              "der Programmabsturz",
+              "Ein Programm funktioniert plötzlich nicht mehr."
+            ],
+            [
+              "das Update",
+              "ein Programm aktualisieren"
+            ],
+            [
+              "extern",
+              "angeschlossen, nicht im Gerät eingebaut"
+            ]
+          ]
+        },
+        {
+          "id": "d2-1",
+          "typ": "mc",
+          "kontext": "Berufssprache",
+          "frage": "Es macht mich ___, wenn ein Programm abstürzt.",
+          "opts": [
+            "wahnsinnig",
+            "verzweifelt",
+            "eingefroren",
+            "vorhanden"
+          ],
+          "l": 0
+        },
+        {
+          "id": "d2-2",
+          "typ": "mc",
+          "kontext": "Berufssprache",
+          "frage": "Statt auf internen und ___ Festplatten speichert man heute die Daten häufig in der Cloud.",
+          "opts": [
+            "externen",
+            "sicheren",
+            "kaputten",
+            "gezogenen"
+          ],
+          "l": 0
+        },
+        {
+          "id": "d2-fm",
+          "typ": "matrix",
+          "kontext": "Fehlermeldungen",
+          "frage": "Diese Fehlermeldungen gab es wirklich. Ist die Meldung logisch oder unsinnig?",
+          "wahl": [
+            "logisch",
+            "unsinnig"
+          ],
+          "aussagen": [
+            [
+              "Es ist ein nicht vorhandener Fehler aufgetreten.",
+              1
+            ],
+            [
+              "Sie müssen eine Zahl zwischen 1 und 1 eingeben.",
+              1
+            ],
+            [
+              "Kopieren: 16 589 023 Minuten verbleibend.",
+              1
+            ],
+            [
+              "Das Dokument konnte nicht gespeichert werden. Der Speicher ist voll.",
+              0
+            ],
+            [
+              "Das Gerät wurde erkannt und ist jetzt bereit.",
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Eine Schulung planen",
+      "icon": "📋",
+      "kurz": "Planung ordnen · Nomen bilden",
+      "aufgaben": [
+        {
+          "id": "d3-pl",
+          "typ": "matrix",
+          "kontext": "Planung",
+          "frage": "Zu welcher Phase gehört die Aufgabe?",
+          "wahl": [
+            "organisatorische Planung",
+            "inhaltliche Planung",
+            "Nachbereitung"
+          ],
+          "aussagen": [
+            [
+              "Termin und Ort festlegen",
+              0
+            ],
+            [
+              "Einladungen versenden",
+              0
+            ],
+            [
+              "Essen und Trinken bestellen",
+              0
+            ],
+            [
+              "technische Ausstattung festlegen",
+              0
+            ],
+            [
+              "Thema formulieren",
+              1
+            ],
+            [
+              "Folien vorbereiten",
+              1
+            ],
+            [
+              "Arbeitsphasen gliedern",
+              1
+            ],
+            [
+              "Verbesserungsideen notieren",
+              2
+            ]
+          ]
+        },
+        {
+          "id": "d3-no",
+          "typ": "zu",
+          "kontext": "Wortbildung",
+          "frage": "Welches Nomen gehört zum Verb oder Adjektiv?",
+          "paare": [
+            [
+              "inhaltlich",
+              "der Inhalt"
+            ],
+            [
+              "organisatorisch",
+              "die Organisation"
+            ],
+            [
+              "juristisch",
+              "die Justiz"
+            ],
+            [
+              "nachbereiten",
+              "die Nachbereitung"
+            ],
+            [
+              "begrenzen",
+              "die Grenze"
+            ],
+            [
+              "teilnehmen",
+              "die Teilnahme"
+            ],
+            [
+              "verbessern",
+              "die Verbesserung"
+            ]
+          ]
+        },
+        {
+          "id": "d3-rm",
+          "typ": "matrix",
+          "kontext": "Redemittel",
+          "frage": "Was macht die Person – vorschlagen, zustimmen oder widersprechen?",
+          "wahl": [
+            "vorschlagen",
+            "zustimmen",
+            "nachfragen/widersprechen"
+          ],
+          "aussagen": [
+            [
+              "Ich dachte, dass es gut wäre, wenn …",
+              0
+            ],
+            [
+              "Bezüglich der Pausen schlage ich vor, dass …",
+              0
+            ],
+            [
+              "Damit bin ich einverstanden.",
+              1
+            ],
+            [
+              "Gut, dann besorgst du also die Getränke, während ich …",
+              1
+            ],
+            [
+              "Meinst du wirklich, dass das reicht?",
+              2
+            ],
+            [
+              "Wäre es nicht einfacher, wenn …?",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Einladung zur Schulung",
+      "icon": "✉️",
+      "kurz": "Einladungsschreiben · Lückentext",
+      "aufgaben": [
+        {
+          "id": "d4-ein",
+          "typ": "luecke",
+          "kontext": "Einladung",
+          "frage": "Lesen Sie die Einladung und ergänzen Sie die Lücken.",
+          "text": "Liebe Kolleginnen und Kollegen,\n\nDatenschutz wird immer wichtiger und komplexer. Seit einiger Zeit ist die EU-Datenschutz-Grundverordnung {0} und inzwischen gibt es eine Reihe von Gerichtsurteilen, die den {1} dieser Verordnung konkretisieren. Deshalb bieten wir eine weitere {2} diesem Thema an. Ziel ist, dass die Teilnehmenden größere {3} technischen und juristischen Fragen gewinnen.\n\nDie {4} dieser Veranstaltung ist freiwillig. Teilnehmende Kolleginnen und Kollegen werden {5} freigestellt. Die Teilnehmerzahl ist auf 20 begrenzt.\n\nTermin: 24.02., 10–17 Uhr, Raum Neptun",
+          "gaps": [
+            {
+              "opts": [
+                "in Kraft",
+                "in Ordnung",
+                "im Gang"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "Umgang mit",
+                "Umzug von",
+                "Unterschied zu"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "Fortbildungsveranstaltung zu",
+                "Betriebsversammlung über",
+                "Gerichtsverhandlung mit"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "Sicherheit in",
+                "Sicherheit von",
+                "Sicherung bei"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "Teilnahme an",
+                "Teilnehmer bei",
+                "Anmeldung zu"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "von der Arbeit",
+                "vom Urlaub",
+                "aus dem Vertrag"
+              ],
+              "l": 0
+            }
+          ]
+        },
+        {
+          "id": "d4-rf",
+          "typ": "matrix",
+          "kontext": "Leseverstehen",
+          "frage": "Richtig oder falsch? Achten Sie genau auf den Text.",
+          "wahl": [
+            "richtig",
+            "falsch"
+          ],
+          "aussagen": [
+            [
+              "Die Veranstaltung findet wegen eines Gerichtsurteils statt.",
+              1
+            ],
+            [
+              "Es sollen neue Datenschutztechniken trainiert werden.",
+              1
+            ],
+            [
+              "Wer teilnimmt, muss sich dafür freinehmen.",
+              1
+            ],
+            [
+              "Man sollte sich möglichst bald anmelden.",
+              0
+            ],
+            [
+              "Es gibt zwei Trainer.",
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Datenschutz",
+      "icon": "🔒",
+      "kurz": "DSGVO-Text · Berufssprache",
+      "aufgaben": [
+        {
+          "id": "d5-text",
+          "typ": "lesen",
+          "kontext": "Lesen",
+          "frage": "Lesen Sie den Text und beantworten Sie die Fragen.",
+          "textTitel": "Datenschutzgemeinschaft Europa",
+          "text": "Es ist oft kompliziert, aber dennoch kommt der Prozess der europäischen Einigung voran: Im Mai 2018 ist die europäische Datenschutz-Grundverordnung (DSGVO) in Kraft getreten, die die Regeln für den Umgang mit Daten EU-weit vereinheitlicht. Sie gilt für alle Personen und Unternehmen, die personenbezogene Daten verarbeiten. „Verarbeiten“ bedeutet hier das Übermitteln, Speichern und Bearbeiten von Daten. Das vermutlich Wichtigste: Die Verordnung gilt für alle Anbieter, die Daten von EU-Bürgern nutzen, auch wenn deren Firmensitz nicht in Europa ist.\n\nUnternehmen, die international Handel treiben, profitieren von den einheitlichen gesetzlichen Anforderungen und können alle Kunden aus EU-Ländern gleich behandeln.\n\nKonkret sieht man das an Newslettern: Unter dem Button zur Anmeldung muss man darüber informieren, was mit den Daten passiert, und einen Link zur Datenschutzerklärung anbieten. Auf keinen Fall darf man Kunden Newsletter schicken, wenn diese nicht ihr Einverständnis erklärt haben.",
+          "fragen": [
+            {
+              "f": "Wo gilt die DSGVO?",
+              "opts": [
+                "in der ganzen EU",
+                "nur in Deutschland",
+                "weltweit für alle Daten",
+                "nur in großen Firmen"
+              ],
+              "l": 0
+            },
+            {
+              "f": "Für wen gilt sie auch?",
+              "opts": [
+                "für Firmen außerhalb Europas, die Daten von EU-Bürgern nutzen",
+                "nur für Firmen, deren Sitz in einem EU-Land ist",
+                "nur für Privatpersonen mit einem eigenen Blog",
+                "nur für Behörden und staatliche Einrichtungen"
+              ],
+              "l": 0
+            },
+            {
+              "f": "Was ist das Ziel?",
+              "opts": [
+                "einheitliche Regeln für den Umgang mit Daten",
+                "mehr Werbung für europäische Firmen",
+                "höhere Strafen für alle Internetnutzer",
+                "weniger Newsletter und weniger E-Mails"
+              ],
+              "l": 0
+            },
+            {
+              "f": "Wem darf man einen Newsletter schicken?",
+              "opts": [
+                "nur Kunden, die zugestimmt haben",
+                "allen Kunden, die etwas gekauft haben",
+                "allen EU-Bürgern mit E-Mail-Adresse",
+                "nur Kunden in Deutschland"
+              ],
+              "l": 0
+            }
+          ]
+        },
+        {
+          "id": "d5-syn",
+          "typ": "zu",
+          "kontext": "Berufssprache",
+          "frage": "Welcher Ausdruck aus dem Text passt?",
+          "paare": [
+            [
+              "zugestimmt",
+              "ihr Einverständnis erklärt"
+            ],
+            [
+              "ist gültig geworden",
+              "ist in Kraft getreten"
+            ],
+            [
+              "Gebiet mit den gleichen Gesetzen",
+              "der Rechtsraum"
+            ],
+            [
+              "gewinnen durch",
+              "profitieren von"
+            ],
+            [
+              "Informationen zum Umgang mit Daten",
+              "die Datenschutzerklärung"
+            ]
+          ]
+        },
+        {
+          "id": "d5-ok",
+          "typ": "matrix",
+          "kontext": "Datenschutz praktisch",
+          "frage": "Ist das nach der DSGVO vermutlich in Ordnung?",
+          "wahl": [
+            "in Ordnung",
+            "problematisch"
+          ],
+          "aussagen": [
+            [
+              "Sie fotografieren im Urlaub Menschen und nutzen die Fotos nur privat.",
+              0
+            ],
+            [
+              "Die Referentin lässt die Teilnehmerliste mit E-Mail-Adressen offen auf dem Tisch liegen.",
+              1
+            ],
+            [
+              "Ein Lieferant zeigt Sie ohne Erlaubnis auf einem Foto auf seiner Website.",
+              1
+            ],
+            [
+              "Sie fotografieren Besucherinnen und informieren sie vorher, wofür Sie die Fotos verwenden.",
+              0
+            ],
+            [
+              "Die Firma gibt Ihre Daten ohne Erlaubnis an eine Werbeagentur weiter.",
+              1
+            ]
+          ]
+        },
+        {
+          "id": "d5-1",
+          "typ": "mc",
+          "kontext": "Datenschutz",
+          "frage": "Bei schweren Verstößen muss eine Firma im Extremfall bis zu 4 % ihres ___ bezahlen.",
+          "opts": [
+            "Jahresumsatzes",
+            "Gewinns pro Monat",
+            "Personalbudgets",
+            "Werbebudgets"
+          ],
+          "l": 0
+        }
+      ]
+    },
+    {
+      "titel": "Erklären, wie etwas funktioniert",
+      "icon": "🎧",
+      "kurz": "Anleitungen · englische Begriffe",
+      "aufgaben": [
+        {
+          "id": "d6-pw",
+          "typ": "ordnen",
+          "kontext": "Anleitung",
+          "frage": "Frau Berger soll ihr Passwort im Filesharing-System ändern. Bringen Sie die Schritte in die richtige Reihenfolge.",
+          "zeilen": [
+            "(Filesharing-Server-)Adresse eingeben",
+            "Benutzernamen eingeben",
+            "Passwort aus der Mail eingeben",
+            "neues Passwort eingeben",
+            "neues Passwort wiederholen",
+            "neues Passwort merken"
+          ]
+        },
+        {
+          "id": "d6-en",
+          "typ": "zu",
+          "kontext": "Englische Begriffe",
+          "frage": "Welche Erklärung passt?",
+          "paare": [
+            [
+              "der Account",
+              "ein Konto bei einem Internetanbieter"
+            ],
+            [
+              "die Cloud",
+              "ein Netzwerk von vielen Rechnern, die zusammenarbeiten"
+            ],
+            [
+              "Bluetooth",
+              "kabellose Datenübertragung auf kurze Distanz"
+            ],
+            [
+              "das Headset",
+              "Kopfhörer mit Mikrofon zum Telefonieren"
+            ],
+            [
+              "das Handy",
+              "deutsche Wort-Erfindung für ein mobiles Telefon"
+            ],
+            [
+              "das Filesharing",
+              "Dateien mit jemandem teilen"
+            ]
+          ]
+        },
+        {
+          "id": "d6-bt",
+          "typ": "luecke",
+          "kontext": "Bedienungsanleitung",
+          "frage": "Bluetooth-Headset mit Smartphone verbinden – welches Verb passt?",
+          "text": "1. {0} Sie als Erstes die App „Einstellungen“ auf Ihrem Smartphone.\n2. {1} Sie hier zur Kategorie „Bluetooth“ und aktivieren Sie die Funktion.\n3. Schalten Sie Ihr Headset ein und halten Sie den Verbindungs-Button gedrückt.\n4. Anschließend sollte das Headset auf Ihrem Smartphone {2}.\n5. Ist das nicht der Fall, klicken Sie unten auf „Suchen“.\n6. {3} Sie nun das Headset aus. Die beiden Geräte werden automatisch miteinander {4}.",
+          "gaps": [
+            {
+              "opts": [
+                "Öffnen",
+                "Erscheinen",
+                "Navigieren"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "Navigieren",
+                "Öffnen",
+                "Koppeln"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "erscheinen",
+                "aktivieren",
+                "öffnen"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "Wählen",
+                "Schalten",
+                "Geben"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "gekoppelt",
+                "gekoppelte",
+                "koppeln"
+              ],
+              "l": 0
+            }
+          ]
+        },
+        {
+          "id": "d6-1",
+          "typ": "mc",
+          "kontext": "Wortschatz",
+          "frage": "„Bitte halten Sie Ihre Zugangsdaten unter Verschluss“ bedeutet:",
+          "opts": [
+            "Niemand anders soll sie sehen.",
+            "Schreiben Sie sie auf einen Zettel.",
+            "Schicken Sie sie an Kollegen.",
+            "Ändern Sie sie nie."
+          ],
+          "l": 0
+        },
+        {
+          "id": "d6-2",
+          "typ": "mc",
+          "kontext": "Wortschatz",
+          "frage": "Wir empfehlen Ihnen, das Kennwort ___ zu ändern. (= bald)",
+          "opts": [
+            "zeitnah",
+            "zeitweise",
+            "rechtzeitig",
+            "zeitlos"
+          ],
+          "l": 0
+        }
+      ]
+    },
+    {
+      "titel": "Prüfungstraining",
+      "icon": "🏁",
+      "kurz": "Eine Fehlermeldung schreiben",
+      "aufgaben": [
+        {
+          "id": "d7-sb",
+          "typ": "luecke",
+          "kontext": "Sprachbausteine",
+          "frage": "Sprachbausteine: E-Mail an die IT-Abteilung. Wählen Sie die richtige Lösung.",
+          "text": "Liebe Kolleginnen und Kollegen,\n\nseit gestern habe ich ein Problem {0} meinem Computer. Er startet normal, aber nach einer Stunde werden alle Programme langsam. Nach zwei Stunden {1} der Bildschirm ein. {2} einem Neustart passiert genau das Gleiche.\n\nZu diesem Zeitpunkt hatte ich gerade ein Update installiert. Könnten Sie sich das bitte {3} ansehen? Ich muss bis Freitag eine Präsentation fertig machen, {4} ist es sehr dringend.\n\nVielen Dank und viele Grüße\nPetra Lindner",
+          "gaps": [
+            {
+              "opts": [
+                "mit",
+                "an",
+                "für"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "friert",
+                "frieren",
+                "gefroren"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "Nach",
+                "Vor",
+                "Seit"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "möglichst bald",
+                "irgendwann",
+                "nie"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "deshalb",
+                "obwohl",
+                "trotzdem"
+              ],
+              "l": 0
+            }
+          ]
+        },
+        {
+          "id": "d7-st",
+          "typ": "matrix",
+          "kontext": "Stellung nehmen",
+          "frage": "„Datenschutz macht alles nur komplizierter!“ – Stimmt die Person eher zu oder widerspricht sie?",
+          "wahl": [
+            "stimmt eher zu",
+            "widerspricht eher"
+          ],
+          "aussagen": [
+            [
+              "Viele sind der Meinung, dass Datenschutz stört, aber ich finde ihn wichtig.",
+              1
+            ],
+            [
+              "Es ist zwar richtig, dass es mehr Formulare gibt, dennoch schützt das unsere Daten.",
+              1
+            ],
+            [
+              "Ich bin der Auffassung, dass die vielen Regeln kleine Firmen überfordern.",
+              0
+            ],
+            [
+              "Für mich ist der bürokratische Aufwand einfach zu groß.",
+              0
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

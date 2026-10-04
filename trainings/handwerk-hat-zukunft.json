@@ -1,0 +1,290 @@
+{
+  "id": "handwerk-hat-zukunft",
+  "titel": "Handwerk hat Zukunft",
+  "untertitel": "Handwerksberufe und Werkzeuge · Vorgangspassiv · Zustandspassiv · Abläufe beschreiben · Verbesserungsvorschläge · trennbare und untrennbare Verben",
+  "niveau": "B1/B2",
+  "reihe": "Prüfungstraining B1/B2",
+  "farbe": "#8a6d1f",
+  "mix": 15,
+  "intro": "Sieben Teile – jeder Teil kann einzeln gespielt werden. Der **Prüfungsmix** zieht zufällig Aufgaben aus allen Teilen.",
+  "kompakt": [
+    { "titel": "Vorgangspassiv", "zeilen": [
+      "**Präsens:** werden + Partizip II – Kreative Berufe **werden** häufig von Frauen **gewählt**.",
+      "**Präteritum:** wurden + Partizip II – Berufe wie Klempner **wurden** vor allem von Männern **gewählt**.",
+      "**Perfekt:** sein + Partizip II + **worden** – Viele Fragen **sind** beantwortet **worden**."
+    ]},
+    { "titel": "Zustandspassiv", "zeilen": [
+      "**sein (konjugiert) + Partizip II** – Wichtig ist das **Ergebnis**, der neue Zustand.",
+      "Die Wand **ist gestrichen**. · Das Werkzeug **ist aufgeräumt**. · Die Regale **sind repariert**.",
+      "Hast du die Maschine schon ausgeschaltet? – Ja klar, die Maschine **ist** schon lange **ausgeschaltet**!"
+    ]},
+    { "titel": "Abläufe beschreiben", "zeilen": [
+      "Zuerst muss man … · Danach wird/werden … · Dann … · Anschließend … · Als Nächstes … · Zum Schluss …",
+      "Eine Dichtung auswechseln: Haupthahn zudrehen → Deckel und Griffe entfernen → Ventil aufschrauben und herausnehmen → Mutter aufschrauben → neue Dichtung einsetzen → alles zuschrauben → Haupthahn aufdrehen"
+    ]},
+    { "titel": "Verbesserungsvorschläge", "zeilen": [
+      "Ich mache in meinem Arbeitsbereich die Erfahrung, dass … · Ich möchte Sie auf ein Problem hinweisen.",
+      "… könnte/sollte geändert/verbessert werden. · Es wäre besser, wenn wir in Zukunft … · Für dieses Problem möchte ich eine Lösung vorschlagen. · Der Vorteil davon wäre, dass …"
+    ]},
+    { "titel": "Trennbare und untrennbare Verben", "zeilen": [
+      "**durch-, über-, um-, unter-, wider-, wieder-** können trennbar oder untrennbar sein.",
+      "**trennbar** – Betonung auf dem Präfix: **durch**führen → Wir führen die Arbeit nicht **durch**. · **wieder**kommen → Die Kunden kommen **wieder**.",
+      "**untrennbar** – Betonung auf dem Verbstamm: durch**lau**fen · über**le**gen · unter**schrei**ben · wider**spre**chen · wieder**ho**len",
+      "Partizip: durch**ge**führt (trennbar) ↔ überlegt, wiederholt (untrennbar, ohne ge-)"
+    ]}
+  ],
+  "module": [
+    {
+      "titel": "Handwerkliche Berufe",
+      "icon": "🔨",
+      "kurz": "Wer macht was? · Werkzeuge · um … zu",
+      "aufgaben": [
+        {
+          "id": "q1-wer", "typ": "matrix", "kontext": "Wortschatz",
+          "frage": "Wer macht das?",
+          "wahl": ["Elektriker/in", "Installateur/in", "Maler/in", "Dachdecker/in", "Schweißer/in", "Schreiner/in"],
+          "aussagen": [
+            ["neue Steckdosen anbringen", 0], ["Stromleitungen verlegen", 0],
+            ["einen verstopften Abfluss reinigen", 1], ["Waschbecken montieren", 1], ["Dichtungen auswechseln", 1],
+            ["Wände tapezieren", 2], ["Fenster streichen", 2],
+            ["das Dach decken", 3],
+            ["Metallstücke zusammenschweißen", 4],
+            ["Möbel aufbauen", 5]
+          ]
+        },
+        { "id": "q1-wz", "typ": "zu", "kontext": "Werkzeuge", "frage": "Was braucht man dafür?", "paare": [
+          ["Wände streichen", "Eimer, Pinsel, Farbe"],
+          ["eine Schraube festdrehen", "Schraubenzieher"],
+          ["ein Loch in die Wand machen", "Bohrmaschine"],
+          ["einen Nagel einschlagen", "Hammer"],
+          ["Holz zersägen", "Säge"],
+          ["eine Mutter lösen", "Schraubenschlüssel"]
+        ]},
+        { "id": "q1-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz.", "steine": ["Um", "Wände", "zu streichen,", "braucht", "man", "einen Eimer,", "einen Pinsel", "und Farbe."] },
+        { "id": "q1-1", "typ": "mc", "kontext": "Wortschatz", "frage": "Schweißer schweißen Metallstücke ___.", "opts": ["zusammen", "auseinander", "durch", "weg"], "l": 0 }
+      ]
+    },
+    {
+      "titel": "Frauen im Handwerk – Vorgangspassiv",
+      "icon": "👷‍♀️",
+      "kurz": "Text lesen · Passiv in Präsens, Präteritum, Perfekt",
+      "aufgaben": [
+        {
+          "id": "q2-text", "typ": "lesen", "kontext": "Lesen",
+          "frage": "Lesen Sie den Text und beantworten Sie die Fragen.",
+          "textTitel": "Frauen im Handwerk",
+          "text": "Kreative Handwerksberufe wie Maßschneiderin, Goldschmiedin oder Konditorin werden in Deutschland häufig von Frauen gewählt: Der größte Teil der Auszubildenden in diesen Berufen ist weiblich. Insgesamt ist das Handwerk aber immer noch in Männerhand – und es werden viele Fachkräfte gesucht.\n\nBesonders schwierig ist die Lage in Berufen, die selten von Frauen ausgeübt werden: Elektriker, Klimatechniker oder Heizungsbauer wurden in den letzten Jahren vor allem von Männern gewählt. Bei Gerüstbauern oder Maurern sind nur sehr wenige Ausbildungsplätze von Frauen besetzt worden.\n\nUm das zu ändern, werden in vielen Baumärkten inzwischen Kurse nur für Frauen angeboten. In der „Ladies Night“ wird gebohrt, gesägt und geschraubt – und die Teilnahme ist kostenlos.",
+          "fragen": [
+            { "f": "Welche Überschrift passt am besten?", "opts": ["Das Handwerk sucht Frauen", "Zu wenig männliche Auszubildende", "Baumärkte schließen", "Goldschmiede sind arbeitslos"], "l": 0 },
+            { "f": "Welche Berufe wählen viele Frauen?", "opts": ["kreative Berufe wie Konditorin", "Maurer und Gerüstbauer", "Heizungsbauer", "Klimatechniker"], "l": 0 },
+            { "f": "Was gibt es in der „Ladies Night“?", "opts": ["kostenlose Handwerkskurse für Frauen", "Rabatt auf Werkzeuge", "Partys im Baumarkt", "Stellenangebote"], "l": 0 }
+          ]
+        },
+        {
+          "id": "q2-zeit", "typ": "matrix", "kontext": "Passiv",
+          "frage": "In welcher Zeit steht das Passiv?",
+          "wahl": ["Präsens", "Präteritum", "Perfekt"],
+          "aussagen": [
+            ["Kreative Berufe werden häufig von Frauen gewählt.", 0],
+            ["Klempner wurden vor allem von Männern gewählt.", 1],
+            ["Wenige Ausbildungsplätze sind von Frauen gewählt worden.", 2],
+            ["In der Ladies Night wird gebohrt und gesägt.", 0],
+            ["Viele Fragen sind beantwortet worden.", 2],
+            ["Gestern wurden Dichtungen ausgewechselt.", 1]
+          ]
+        },
+        {
+          "id": "q2-lt", "typ": "luecke", "kontext": "Passiv Perfekt",
+          "frage": "Was ist in der Ladies Night gemacht worden? Ergänzen Sie.",
+          "text": "Viele Fragen sind beantwortet {0}. Dichtungen {1} ausgewechselt worden. Holz ist {2} worden. Der Umgang mit Maschinen ist {3} worden. Und viele Dinge sind {4} worden.",
+          "gaps": [
+            { "opts": ["worden", "geworden", "werden"], "l": 0 },
+            { "opts": ["sind", "haben", "werden"], "l": 0 },
+            { "opts": ["bearbeitet", "bearbeiten", "bearbeitete"], "l": 0 },
+            { "opts": ["geübt", "üben", "übte"], "l": 0 },
+            { "opts": ["ausprobiert", "ausprobieren", "ausgeprobiert"], "l": 0 }
+          ]
+        },
+        { "id": "q2-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz im Passiv Präteritum.", "steine": ["Im letzten Jahr", "wurden", "über 150.000 offene Stellen", "im Handwerk", "gemeldet."] }
+      ]
+    },
+    {
+      "titel": "Das ist schon erledigt! – Zustandspassiv",
+      "icon": "✅",
+      "kurz": "schon oder noch nicht? · Vorgang oder Zustand?",
+      "aufgaben": [
+        {
+          "id": "q3-check", "typ": "matrix", "kontext": "Lesen",
+          "frage": "Der Chef kontrolliert die neue Werkstatt. Lesen Sie die Notiz. Was ist schon erledigt?",
+          "textTitel": "Kontrolle Werkstatt – Montag 16 Uhr",
+          "text": "Teppich: noch voller Staub ✗ · Müll: zwei Säcke stehen noch da ✗ · Regale: repariert ✓ · Fenster: sauber ✓ · Wand: frisch gestrichen ✓ · Lampen: hängen ✓ · Schreibtische: stehen ✓ · Steckdosen: fehlen noch ✗ · Drucker: angeschlossen ✓ · Werkzeug: liegt überall herum ✗",
+          "wahl": ["schon", "noch nicht"],
+          "aussagen": [
+            ["Der Teppich ist ___ gereinigt.", 1],
+            ["Der Müll ist ___ weggebracht.", 1],
+            ["Die Regale sind ___ repariert.", 0],
+            ["Die Wand ist ___ gestrichen.", 0],
+            ["Die Steckdosen sind ___ angebracht.", 1],
+            ["Der Drucker ist ___ angeschlossen.", 0],
+            ["Das Werkzeug ist ___ aufgeräumt.", 1]
+          ]
+        },
+        {
+          "id": "q3-vz", "typ": "matrix", "kontext": "Vorgang oder Zustand",
+          "frage": "Vorgangspassiv oder Zustandspassiv?",
+          "wahl": ["Vorgang (werden)", "Zustand (sein)"],
+          "aussagen": [
+            ["Die Wand wird gerade gestrichen.", 0], ["Die Wand ist gestrichen.", 1],
+            ["Die Maschine ist ausgeschaltet.", 1], ["Der Transporter wird beladen.", 0],
+            ["Die Abfälle sind entsorgt.", 1], ["Die Rohre werden geschweißt.", 0]
+          ]
+        },
+        { "id": "q3-1", "typ": "mc", "kontext": "Zustandspassiv", "frage": "„Hast du die Werkstatt schon aufgeräumt?“ – „Ja klar, die Werkstatt ___ schon lange aufgeräumt!“", "opts": ["ist", "wird", "hat", "wurde"], "l": 0 },
+        { "id": "q3-2", "typ": "mc", "kontext": "Zustandspassiv", "frage": "„Hast du die Chefin informiert?“ – „Ja, die Chefin ___ informiert.“", "opts": ["ist", "wird", "hat", "worden"], "l": 0 },
+        { "id": "q3-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Antworten Sie mit dem Zustandspassiv: „Habt ihr die Rohre geschweißt?“", "steine": ["Ja,", "die Rohre", "sind", "schon", "geschweißt."] }
+      ]
+    },
+    {
+      "titel": "Können Sie mir helfen?",
+      "icon": "🚰",
+      "kurz": "Notdienst-Anzeige · eine Dichtung auswechseln · Ablauf beschreiben",
+      "aufgaben": [
+        {
+          "id": "q4-anz", "typ": "matrix", "kontext": "Lesen",
+          "frage": "Lesen Sie die Anzeige. Bietet der Notdienst das an?",
+          "textTitel": "Heimwerker-Hilfe rund um die Uhr",
+          "text": "Sie kommen beim Renovieren nicht weiter, weil Ihnen das richtige Werkzeug fehlt? Wir leihen es Ihnen! Sie verstehen die Montageanleitung Ihrer neuen Küche nicht? Wir helfen! Wir sind für Sie da – auch abends und am Wochenende. Gut für Ihren Geldbeutel: Wir helfen nur so lange, bis Sie wieder allein klarkommen. Auch kleinere Aufträge übernehmen wir – zu fairen Preisen.",
+          "aussagen": [
+            ["Man kann Werkzeug ausleihen.", true],
+            ["Der Notdienst arbeitet nur werktags.", false],
+            ["Er hilft auch beim Aufbau von Möbeln.", true],
+            ["Er übernimmt immer die ganze Arbeit.", false],
+            ["Auch kleine Aufträge sind möglich.", true]
+          ]
+        },
+        {
+          "id": "q4-ord", "typ": "ordnen", "kontext": "Ablauf",
+          "frage": "Eine Dichtung im Wasserhahn auswechseln – so geht's! Bringen Sie die Schritte in die richtige Reihenfolge.",
+          "zeilen": [
+            "den Haupthahn zudrehen",
+            "die Deckel an den Griffen entfernen",
+            "die Schrauben lösen und die Griffe abnehmen",
+            "das Ventil aufschrauben und herausnehmen",
+            "die Mutter aufschrauben, die die Dichtung hält",
+            "die Ersatzdichtung einsetzen",
+            "alles wieder zuschrauben",
+            "den Haupthahn wieder aufdrehen"
+          ]
+        },
+        {
+          "id": "q4-lt", "typ": "luecke", "kontext": "Ablauf beschreiben",
+          "frage": "Beschreiben Sie den Ablauf. Ergänzen Sie.",
+          "text": "{0} muss man den Haupthahn zudrehen. {1} werden die Deckel an den Griffen entfernt. Dann {2} das Ventil aufgeschraubt. {3} setzt man die neue Dichtung ein. {4} wird der Haupthahn wieder aufgedreht.",
+          "gaps": [
+            { "opts": ["Zuerst", "Zum Schluss", "Danach"], "l": 0 },
+            { "opts": ["Danach", "Zuerst", "Zum Schluss"], "l": 0 },
+            { "opts": ["wird", "werden", "ist"], "l": 0 },
+            { "opts": ["Anschließend", "Zuerst", "Vorher"], "l": 0 },
+            { "opts": ["Zum Schluss", "Zuerst", "Als Erstes"], "l": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Das kann man besser machen",
+      "icon": "💡",
+      "kurz": "Probleme am Arbeitsplatz · Verbesserungsvorschlag schreiben",
+      "aufgaben": [
+        {
+          "id": "q5-ber", "typ": "matrix", "kontext": "Probleme",
+          "frage": "Zu welchem Bereich gehört das Problem?",
+          "wahl": ["Arbeitsmittel", "Arbeitsplatz", "Arbeitsorganisation", "soziale Beziehungen"],
+          "aussagen": [
+            ["schlechtes Werkzeug", 0], ["kaputte Bohrmaschine", 0],
+            ["zu viel Lärm", 1], ["zu wenig Licht", 1],
+            ["die PCs sind zu langsam", 2], ["lange Schlangen am Kopierer", 2],
+            ["Mobbing", 3], ["Streit im Team", 3]
+          ]
+        },
+        {
+          "id": "q5-mail", "typ": "lesen", "kontext": "Lesen",
+          "frage": "Lesen Sie die E-Mail und beantworten Sie die Fragen.",
+          "textTitel": "Verbesserungsvorschlag",
+          "text": "Sehr geehrte Frau Großmann,\n\nes gibt immer wieder lange Schlangen am Kopierer, oft gerade dann, wenn man dringend eine Kopie braucht. Das stört auch die anderen Kolleginnen und Kollegen in meiner Abteilung. Deshalb schlagen wir vor, dass Druckaufträge über 50 Seiten in Zukunft nur noch in unserer hauseigenen Druckerei erledigt werden. Der Vorteil davon wäre, dass niemand mehr lange warten muss.\n\nMit freundlichen Grüßen\nOmar Kurt, Sachbearbeiter",
+          "fragen": [
+            { "f": "Welches Problem hat Herr Kurt?", "opts": ["Am Kopierer muss man lange warten.", "Der Kopierer ist kaputt.", "Die Druckerei ist zu teuer.", "Es gibt kein Papier."], "l": 0 },
+            { "f": "Was schlägt er vor?", "opts": ["Große Druckaufträge sollen in der Druckerei gemacht werden.", "einen neuen Kopierer kaufen", "weniger kopieren", "die Abteilung wechseln"], "l": 0 }
+          ]
+        },
+        {
+          "id": "q5-rm", "typ": "matrix", "kontext": "Redemittel",
+          "frage": "Problem beschreiben oder Lösung vorschlagen?",
+          "wahl": ["Problem beschreiben", "Lösung vorschlagen"],
+          "aussagen": [
+            ["Ich mache in meinem Arbeitsbereich die Erfahrung, dass …", 0],
+            ["Ich möchte Sie auf ein Problem hinweisen.", 0],
+            ["Es wäre besser, wenn wir in Zukunft …", 1],
+            ["Für dieses Problem möchte ich eine Lösung vorschlagen.", 1],
+            ["Der Vorteil davon wäre, dass …", 1]
+          ]
+        },
+        { "id": "q5-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz.", "steine": ["Die Arbeitsabläufe", "könnten", "durch neue Software", "verbessert", "werden."] }
+      ]
+    },
+    {
+      "titel": "Die Zukunft des Handwerks",
+      "icon": "🔮",
+      "kurz": "Artikel lesen · Überschriften · trennbare und untrennbare Verben",
+      "aufgaben": [
+        {
+          "id": "q6-art", "typ": "matrix", "kontext": "Lesen",
+          "frage": "Lesen Sie die Abschnitte. Welche Zwischenüberschrift passt?",
+          "posts": [
+            { "name": "1", "text": "Immer mehr Schulabgänger möchten lieber studieren, als eine Ausbildung zu machen. Das Handwerk wirbt deshalb mit großen Kampagnen um junge Menschen. Viele Meister bilden außerdem Geflüchtete aus." },
+            { "name": "2", "text": "Klimafreundlich und nachhaltig bauen – dafür brauchen die Kunden viel Beratung. Wer verständlich erklärt, dessen Kunden kommen wieder. Ein Installateur, der auch Solarmodule montiert, hat gute Chancen." },
+            { "name": "3", "text": "Viele ältere Menschen möchten nicht umziehen und lassen ihre Wohnung umbauen: Treppenlifte, Haltegriffe im Bad, Duschen ohne Stufe. Das ist ein wachsender Markt." },
+            { "name": "4", "text": "Gemessen wird heute elektronisch, und wie das neue Bad aussehen wird, zeigt der Handwerker gleich in 3D. Die Digitalisierung macht die Arbeit spannender." }
+          ],
+          "wahl": ["Es gibt zu wenig Nachwuchs!", "Gute Beratung – der Schlüssel zum Erfolg", "Umbauen fürs Alter", "Neue Techniken im Handwerk"],
+          "aussagen": [["Abschnitt 1", 0], ["Abschnitt 2", 1], ["Abschnitt 3", 2], ["Abschnitt 4", 3]]
+        },
+        {
+          "id": "q6-tr", "typ": "matrix", "kontext": "Verben",
+          "frage": "Trennbar oder untrennbar?",
+          "wahl": ["trennbar", "untrennbar"],
+          "aussagen": [
+            ["durchführen (Wir führen die Arbeit durch.)", 0], ["durchlaufen (Er durchläuft die Ausbildung.)", 1],
+            ["überlegen", 1], ["umziehen", 0], ["unterschreiben", 1], ["widersprechen", 1],
+            ["wiederholen", 1], ["wiederkommen", 0]
+          ]
+        },
+        { "id": "q6-1", "typ": "mc", "kontext": "Verben", "frage": "Weil es regnet, ___ wir die Arbeit am Dach nicht ___.", "opts": ["führen … durch", "durchführen … –", "führen … durchgeführt", "durchführt … –"], "l": 0 },
+        { "id": "q6-2", "typ": "mc", "kontext": "Verben", "frage": "Die Kundin ___ den Vertrag.", "opts": ["unterschreibt", "schreibt … unter", "unterschreiben", "untergeschrieben"], "l": 0 },
+        { "id": "q6-3", "typ": "mc", "kontext": "Verben", "frage": "Der Ausbilder ___ die Anweisung ein zweites Mal.", "opts": ["wiederholt", "holt … wieder", "wiedergeholt", "wiederholen"], "l": 0, "x": "**wiederholen** (= noch einmal sagen) ist untrennbar. **wieder holen** (= zurückholen) wäre etwas anderes." },
+        { "id": "q6-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz.", "steine": ["Die Kunden", "kommen", "wieder,", "weil", "ich", "sie", "mit guter Arbeit", "überzeuge."] }
+      ]
+    },
+    {
+      "titel": "Prüfungstraining",
+      "icon": "🏁",
+      "kurz": "Sprachbausteine · gemischte Aufgaben",
+      "aufgaben": [
+        {
+          "id": "q7-sb", "typ": "luecke", "kontext": "Sprachbausteine",
+          "frage": "Sprachbausteine: Eine Rückmeldung an die Kundin. Wählen Sie die richtige Lösung.",
+          "text": "Sehr geehrte Frau Becker,\n\nwir freuen uns, Ihnen mitzuteilen, dass die Arbeiten in Ihrem Bad abgeschlossen sind. Die Haltegriffe {0} angebracht und die neue Dusche ist eingebaut. Die alte Badewanne {1} gestern von unseren Mitarbeitern entsorgt.\n\nLeider konnte der Spiegel noch nicht montiert {2}, weil er falsch geliefert wurde. Wir {3} Ihnen, den neuen Spiegel am Freitag einzubauen.\n\nBitte {4} Sie die Abnahme des Bades bis Ende der Woche. {5} Sie Fragen haben, rufen Sie uns gern an.\n\nMit freundlichen Grüßen\nIhr Team von Bau & Bad",
+          "gaps": [
+            { "opts": ["sind", "werden", "haben"], "l": 0 },
+            { "opts": ["wurde", "ist", "hat"], "l": 0 },
+            { "opts": ["werden", "worden", "wurden"], "l": 0 },
+            { "opts": ["versprechen", "sprechen … ver", "versprochen"], "l": 0 },
+            { "opts": ["unterschreiben", "schreiben … unter", "unterschrieben"], "l": 0 },
+            { "opts": ["Falls", "Ob", "Damit"], "l": 0 }
+          ]
+        },
+        { "id": "q7-1", "typ": "mc", "kontext": "Zustandspassiv", "frage": "Vorsicht, die Tür ___ frisch gestrichen!", "opts": ["ist", "wird", "hat", "worden"], "l": 0 },
+        { "id": "q7-2", "typ": "mc", "kontext": "Vorgangspassiv", "frage": "Im letzten Jahr ___ viele neue Lehrlinge ausgebildet.", "opts": ["wurden", "sind", "haben", "werden worden"], "l": 0 }
+      ]
+    }
+  ]
+}

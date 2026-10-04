@@ -1,0 +1,396 @@
+{
+  "id": "das-unternehmen-praesentieren",
+  "titel": "Das Unternehmen präsentieren",
+  "untertitel": "Firmenporträt · Passiv und Ersatzformen · Messestand · Indefinitpronomen · Kundenanfragen · Präsentationen",
+  "niveau": "B1/B2",
+  "reihe": "Prüfungstraining B1/B2",
+  "farbe": "#8a5a2b",
+  "mix": 15,
+  "intro": "Acht Teile – jeder Teil kann einzeln gespielt werden. Der **Prüfungsmix** zieht zufällig Aufgaben aus allen Teilen.",
+  "kompakt": [
+    { "titel": "Passiv", "zeilen": [
+      "**Präsens:** werden + Partizip II – Heute **werden** 2.000 Menschen **beschäftigt**.",
+      "**Präteritum:** wurde + Partizip II – Die Firma **wurde** 1921 **gegründet**.",
+      "**Perfekt:** sein + Partizip II + **worden** – Es **sind** viele Lampen **verkauft worden**.",
+      "**mit Modalverb:** Modalverb + Partizip II + **werden** – Es **konnten** keine Gewinne **gemacht werden**.",
+      "Wer etwas tut, steht mit **von** + Dativ: Die Firma wurde **von** Greta Holm gegründet."
+    ]},
+    { "titel": "Ersatzformen für das Passiv", "zeilen": [
+      "**man:** Man hat die Firma in vier Bereiche aufgeteilt. (= Die Firma ist … aufgeteilt worden.)",
+      "**sein + zu + Infinitiv:** Die Umsätze **sind zu steigern**. (= müssen / können / sollen gesteigert werden)",
+      "**sich lassen + Infinitiv:** Die Kosten **lassen sich senken**. (= können gesenkt werden)",
+      "**-bar / -lich:** Das Produkt ist **realisierbar** / nicht **verkäuflich**. (= kann (nicht) realisiert / verkauft werden)"
+    ]},
+    { "titel": "Indefinitpronomen", "zeilen": [
+      "**Personen:** man · jemand · einer/eine · irgendwer → verneint: niemand · keiner",
+      "**Dinge:** etwas · irgendetwas · eins → verneint: nichts · keins",
+      "**Orte:** irgendwo · irgendwohin · irgendwoher → verneint: nirgendwo / nirgends · nirgendwohin · nirgendwoher",
+      "**Zeiten:** irgendwann → verneint: nie · niemals",
+      "**jemand:** Akk. jemanden · Dat. jemandem · **niemand:** niemanden · niemandem · **irgendwer:** irgendwen · irgendwem",
+      "**man** gibt es nur im Nominativ; im Akk. / Dat. nimmt man **einen / einem**."
+    ]},
+    { "titel": "Am Messestand", "zeilen": [
+      "**Kunden ansprechen:** Kann ich Ihnen behilflich sein? · Darf ich Ihnen unser Angebot zeigen?",
+      "**Interesse wecken:** Wir haben hier etwas ganz Neues. · Wir haben damit sehr gute Erfahrungen gemacht.",
+      "**Produkt erklären:** Es hat den Vorteil, dass … · … zeichnet sich vor allem durch … aus.",
+      "**Kunden binden:** Darf ich Ihnen Informationsmaterial zuschicken? · Dürfen wir Sie über neue Aktionen informieren?",
+      "**Besucher – Interesse:** Könnten Sie mir bei … weiterhelfen? · **ablehnen:** Danke, ich sehe mich nur um."
+    ]},
+    { "titel": "Kundenanfragen beantworten", "zeilen": [
+      "**Einleiten:** Herzlichen Dank für Ihre Mail, auf die ich Ihnen gerne antworte.",
+      "**Bezug:** Zu Ihren Fragen kann ich Ihnen mitteilen, dass … · Ich kann Ihnen versichern, dass …",
+      "**Details:** Dank der Ausstattung mit … ist die Anlage sehr leise. · Laut Vertrag bieten wir Ihnen eine jährliche Wartung.",
+      "**Abschluss:** Für weitere Fragen stehe ich Ihnen gerne zur Verfügung."
+    ]},
+    { "titel": "Präsentieren", "zeilen": [
+      "**Einleitung:** Ich freue mich, Ihnen heute … zu präsentieren. · Herzlichen Dank für die Einladung.",
+      "**Interesse wecken:** Wussten Sie eigentlich, dass …? · Ist Ihnen schon einmal aufgefallen, dass …?",
+      "**Struktur:** Zuerst spreche ich über …, dann komme ich zu … · Soweit zum ersten Punkt – haben Sie noch Fragen?",
+      "**Folien:** Auf dieser Folie sehen Sie … · Die Grafik zeigt Ihnen …",
+      "**Abschluss:** Zusammenfassend kann ich sagen, dass … · Vielen Dank für Ihre Aufmerksamkeit.",
+      "**Denkpausen:** Moment, wie war das noch mal? · Das ist eine gute Frage.",
+      "**Wörter umschreiben:** Das braucht man, um … · Das ist so ähnlich wie … · Das ist aus Holz/Metall …"
+    ]}
+  ],
+  "module": [
+    {
+      "titel": "Ein Firmenporträt",
+      "icon": "🏭",
+      "kurz": "Unternehmensgeschichte lesen · Wortschatz Unternehmen",
+      "aufgaben": [
+        {
+          "id": "e1-por", "typ": "lesen", "kontext": "Lesen",
+          "frage": "Lesen Sie das Firmenporträt und beantworten Sie die Fragen.",
+          "textTitel": "Vom Hinterhof zum Weltmarktführer",
+          "text": "Im Frühjahr 1921 gründete die junge Ingenieurin Greta Holm in einem Lübecker Hinterhof eine kleine Werkstatt für Fahrradlampen. Die ersten Jahre waren schwierig: Das Geld war knapp und die Lampen verkauften sich schlecht. Doch Holm hielt an ihrer Idee fest. 1928 gelang der Durchbruch: Sie entwickelte eine Lampe, die ohne Batterie funktionierte und ihren Strom beim Fahren selbst erzeugte. Schon im ersten Jahr wurden über 30.000 Stück verkauft.\n\nHeute ist die **Holm Licht AG** ein international tätiges Unternehmen mit rund 6.500 Beschäftigten an Standorten in zwölf Ländern. Der jährliche Umsatz liegt bei 1,8 Milliarden Euro.\n\nDas Unternehmen ist in drei Bereiche gegliedert: **Mobility** stellt Beleuchtung für Fahrräder und E-Scooter her. **City** entwickelt intelligente Straßenlaternen, die nur hell werden, wenn jemand vorbeikommt. **Home** bietet Leuchten für Wohnungen und Büros an.\n\nDas Ziel des Konzerns: Licht soll weniger Energie verbrauchen und besser vernetzt sein. Bis 2030 sollen alle Produkte aus recycelten Materialien hergestellt werden.",
+          "fragen": [
+            { "f": "Wie war der Anfang der Firma?", "opts": ["schwierig – die Lampen verkauften sich schlecht", "sehr erfolgreich", "die Firma hatte sofort viele Kunden", "Greta Holm gab die Idee schnell auf"], "l": 0 },
+            { "f": "Was war das Besondere an der Lampe von 1928?", "opts": ["Sie brauchte keine Batterie.", "Sie war besonders billig.", "Sie war aus Holz.", "Sie leuchtete in vielen Farben."], "l": 0 },
+            { "f": "Wofür ist der Bereich „City“ zuständig?", "opts": ["für Straßenbeleuchtung", "für Fahrradlampen", "für Büroleuchten", "für Werbung"], "l": 0 },
+            { "f": "Welches Ziel hat das Unternehmen?", "opts": ["energiesparendes, vernetztes Licht", "mehr Standorte in Deutschland", "billigere Fahrräder", "nur noch Lampen für Wohnungen"], "l": 0 }
+          ]
+        },
+        { "id": "e1-zu", "typ": "zu", "kontext": "Wortschatz", "frage": "Was bedeuten die Ausdrücke?", "paare": [
+          ["die Unternehmerin", "eine Person, der eine Firma gehört"],
+          ["an Plänen festhalten", "ein Ziel weiterverfolgen"],
+          ["der Durchbruch gelingt", "etwas wird plötzlich erfolgreich"],
+          ["der Weltkonzern", "eine international tätige große Firma"],
+          ["vernetzt sein", "miteinander verbunden sein"],
+          ["der Umsatz", "das Geld, das eine Firma durch Verkäufe einnimmt"]
+        ]},
+        {
+          "id": "e1-abs", "typ": "matrix", "kontext": "Lesen",
+          "frage": "Welche Überschrift passt zu welcher Information aus dem Porträt?",
+          "wahl": ["Geschichte der Firma", "die Firma heute", "Struktur des Konzerns", "Ziele"],
+          "aussagen": [
+            ["1928 gelang der Durchbruch.", 0], ["Gegründet wurde die Firma in einem Hinterhof.", 0],
+            ["Rund 6.500 Menschen arbeiten für Holm Licht.", 1], ["Der Umsatz liegt bei 1,8 Milliarden Euro.", 1],
+            ["Es gibt die Bereiche Mobility, City und Home.", 2],
+            ["Bis 2030 sollen alle Produkte aus recycelten Materialien sein.", 3]
+          ]
+        },
+        { "id": "e1-w1", "typ": "mc", "kontext": "Wortschatz", "frage": "Die Firma ist in der ___ Medizintechnik tätig.", "opts": ["Branche", "Brache", "Abteilung", "Bereichung"], "l": 0, "x": "**Branche** = Wirtschaftszweig (z. B. Automobilbranche, IT-Branche)." },
+        { "id": "e1-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz.", "steine": ["Trotz", "der Probleme", "hielt", "die Gründerin", "an ihrer Idee", "fest."] }
+      ]
+    },
+    {
+      "titel": "Das Passiv",
+      "icon": "⚙️",
+      "kurz": "Präsens · Präteritum · Perfekt · Passiv mit Modalverb",
+      "aufgaben": [
+        {
+          "id": "e2-zeit", "typ": "matrix", "kontext": "Zeitformen",
+          "frage": "In welcher Zeitform steht das Passiv?",
+          "wahl": ["Präsens", "Präteritum", "Perfekt", "mit Modalverb"],
+          "aussagen": [
+            ["Heute werden 6.500 Menschen beschäftigt.", 0], ["Die Lampen werden in Lübeck produziert.", 0],
+            ["Die Firma wurde 1921 gegründet.", 1], ["Schon 1928 wurden 30.000 Lampen verkauft.", 1],
+            ["Es sind neue Standorte eröffnet worden.", 2], ["Die Anlage ist letzte Woche installiert worden.", 2],
+            ["Am Anfang konnten keine Gewinne gemacht werden.", 3], ["Die Kosten müssen gesenkt werden.", 3]
+          ]
+        },
+        { "id": "e2-1", "typ": "mc", "kontext": "Präsens", "frage": "In unserer Firma ___ jedes Jahr neue Produkte entwickelt.", "opts": ["werden", "wird", "wurden", "worden"], "l": 0 },
+        { "id": "e2-2", "typ": "mc", "kontext": "Präteritum", "frage": "Die erste Werkstatt ___ 1921 von Greta Holm eröffnet.", "opts": ["wurde", "wird", "ist", "worden"], "l": 0 },
+        { "id": "e2-3", "typ": "mc", "kontext": "Perfekt", "frage": "Bis heute sind über zehn Millionen Lampen verkauft ___.", "opts": ["worden", "geworden", "werden", "wurden"], "l": 0, "x": "Im Passiv Perfekt heißt es **worden** – nicht „geworden“." },
+        { "id": "e2-4", "typ": "mc", "kontext": "Modalverb", "frage": "In den ersten Jahren konnten kaum Gewinne gemacht ___.", "opts": ["werden", "worden", "wurden", "geworden"], "l": 0 },
+        { "id": "e2-5", "typ": "mc", "kontext": "von + Dativ", "frage": "Die Anlage wurde ___ unseren Technikern installiert.", "opts": ["von", "durch den", "mit", "bei"], "l": 0 },
+        { "id": "e2-u1", "typ": "mc", "kontext": "Umformen", "frage": "Aktiv: „Die Firma stellt Leuchten für Büros her.“ – Passiv Präsens:", "opts": ["Leuchten für Büros werden von der Firma hergestellt.", "Leuchten für Büros wurden von der Firma hergestellt.", "Leuchten für Büros werden von der Firma herstellen.", "Leuchten für Büros sind von der Firma hergestellt worden."], "l": 0 },
+        { "id": "e2-u2", "typ": "mc", "kontext": "Umformen", "frage": "Aktiv: „Wir haben die Kunden überzeugt.“ – Passiv Perfekt:", "opts": ["Die Kunden sind überzeugt worden.", "Die Kunden haben überzeugt worden.", "Die Kunden sind überzeugt geworden.", "Die Kunden wurden überzeugt worden."], "l": 0 },
+        { "id": "e2-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz im Passiv Perfekt.", "steine": ["Im letzten Jahr", "sind", "zwei neue Standorte", "eröffnet", "worden."] },
+        { "id": "e2-b2", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz im Passiv mit Modalverb.", "steine": ["Die Produkte", "müssen", "regelmäßig", "weiterentwickelt", "werden."] }
+      ]
+    },
+    {
+      "titel": "Ersatzformen für das Passiv",
+      "icon": "🔄",
+      "kurz": "man · sein + zu · sich lassen · -bar / -lich",
+      "aufgaben": [
+        {
+          "id": "e3-sort", "typ": "matrix", "kontext": "Ersatzformen",
+          "frage": "Welche Ersatzform wird benutzt?",
+          "wahl": ["man", "sein + zu", "sich lassen", "-bar / -lich"],
+          "aussagen": [
+            ["Man hat die Firma in drei Bereiche gegliedert.", 0],
+            ["Man kann die Lampe per App steuern.", 0],
+            ["Die Umsätze sind zu steigern.", 1],
+            ["Die Fristen sind unbedingt einzuhalten.", 1],
+            ["Die Kosten lassen sich senken.", 2],
+            ["Das Problem lässt sich leicht lösen.", 2],
+            ["Das Projekt ist realisierbar.", 3],
+            ["Das Modell ist nicht mehr verkäuflich.", 3]
+          ]
+        },
+        { "id": "e3-1", "typ": "mc", "kontext": "sich lassen", "frage": "„Die Gewinne können maximiert werden.“ = Die Gewinne ___.", "opts": ["lassen sich maximieren", "lassen maximieren", "lassen sich maximiert", "sind sich zu maximieren"], "l": 0 },
+        { "id": "e3-2", "typ": "mc", "kontext": "sein + zu", "frage": "„Die Unterlagen müssen bis Freitag abgegeben werden.“ = Die Unterlagen sind bis Freitag ___.", "opts": ["abzugeben", "zu abgeben", "abgegeben zu", "abgeben"], "l": 0, "x": "Trennbares Verb: ab**zu**geben." },
+        { "id": "e3-3", "typ": "mc", "kontext": "-bar", "frage": "„Die Lampe kann recycelt werden.“ = Die Lampe ist ___.", "opts": ["recycelbar", "recyclich", "recycelt", "zu recyceln bar"], "l": 0 },
+        { "id": "e3-4", "typ": "mc", "kontext": "-lich", "frage": "„Diesen Text kann man nicht verstehen.“ = Der Text ist ___.", "opts": ["unverständlich", "unverstehbar", "nicht verständig", "unverstanden"], "l": 0 },
+        { "id": "e3-5", "typ": "mc", "kontext": "man", "frage": "„Die Aktivitäten sind in drei Bereiche aufgeteilt worden.“ – Mit man:", "opts": ["Man hat die Aktivitäten in drei Bereiche aufgeteilt.", "Man ist die Aktivitäten in drei Bereiche aufgeteilt.", "Man hat in drei Bereiche aufgeteilt worden.", "Man wurde die Aktivitäten aufgeteilt."], "l": 0 },
+        {
+          "id": "e3-lt", "typ": "luecke", "kontext": "Ersatzformen",
+          "frage": "Aus dem Bericht der Geschäftsführung. Ergänzen Sie.",
+          "text": "Unsere neue Straßenlaterne ist vollständig {0} und spart bis zu 70 % Energie. Die Helligkeit lässt sich per App {1}. Die Ziele für das nächste Jahr sind klar: Die Kosten sind weiter zu {2}, und neue Märkte lassen {3} nur mit guten Partnern erschließen. Ein Ausbau des Standorts in Polen ist bereits {4} – die Finanzierung ist gesichert. {5} hat außerdem beschlossen, zwanzig neue Fachkräfte einzustellen.",
+          "gaps": [
+            { "opts": ["recycelbar", "recycelt worden", "recyceln"], "l": 0 },
+            { "opts": ["steuern", "gesteuert", "zu steuern"], "l": 0 },
+            { "opts": ["senken", "gesenkt", "senkbar"], "l": 0 },
+            { "opts": ["sich", "man", "es"], "l": 0 },
+            { "opts": ["machbar", "zu machbar", "gemacht werden"], "l": 0 },
+            { "opts": ["Man", "Es", "Sich"], "l": 0 }
+          ]
+        },
+        { "id": "e3-b1", "typ": "bau", "kontext": "Satzbau", "frage": "„Nicht alle Projekte können finanziert werden.“ – Mit sich lassen:", "steine": ["Nicht alle Projekte", "lassen", "sich", "finanzieren."] }
+      ]
+    },
+    {
+      "titel": "Am Messestand",
+      "icon": "🎪",
+      "kurz": "Tipps für Standdienste · Redemittel für Mitarbeitende und Besucher",
+      "aufgaben": [
+        {
+          "id": "e4-mail", "typ": "matrix", "kontext": "Lesen",
+          "frage": "Lesen Sie die Mail der Vertriebsleiterin. Richtig oder falsch?",
+          "textTitel": "Tipps für unseren Messestand",
+          "text": "Liebe Kolleginnen und Kollegen,\n\nnächste Woche ist es wieder so weit: Wir sind mit einem großen Stand auf der Lichtmesse in Frankfurt (Halle 3). Hier noch einmal die wichtigsten Tipps für alle, die Standdienst haben:\n\n1. Lasst die Besucherinnen und Besucher erst einmal ankommen – sprecht sie nicht schon am Eingang des Standes an.\n2. Sucht Blickkontakt und grüßt freundlich. Wer nicht zurückschaut, möchte sich vermutlich in Ruhe umsehen – dann bitte keine weiteren Fragen.\n3. Stellt euch immer mit Namen vor und erzählt kurz etwas über unser Unternehmen.\n4. Prospekte dürfen gern mitgenommen werden. Noch besser: Notiert die Adresse und schickt die Unterlagen zu. Fragt dabei, ob wir über Aktionen informieren dürfen.\n5. Notiert Kritik und Anregungen – sie sind wertvoll für uns.\n6. Bietet interessierten Gästen etwas zu trinken an.\n7. Tragt euer Namensschild immer gut sichtbar.\n\nBis nächste Woche!\nMaren Voss, Leiterin Vertrieb",
+          "aussagen": [
+            ["Man soll Besucher sofort ansprechen, wenn sie den Stand betreten.", false],
+            ["Wer keinen Blickkontakt sucht, möchte sich wahrscheinlich allein umsehen.", true],
+            ["Die Mitarbeitenden sollen sich mit Namen vorstellen.", true],
+            ["Besucher dürfen keine Prospekte mitnehmen.", false],
+            ["Kritik von Besuchern soll man aufschreiben.", true],
+            ["Das Namensschild trägt man nur am ersten Tag.", false]
+          ]
+        },
+        {
+          "id": "e4-rm", "typ": "matrix", "kontext": "Redemittel",
+          "frage": "Standmitarbeiter/in: Was macht man mit diesem Satz?",
+          "wahl": ["Kunden ansprechen", "Interesse wecken", "Produkt erklären", "Kunden binden"],
+          "aussagen": [
+            ["Kann ich Ihnen behilflich sein?", 0], ["Ich sehe, Sie interessieren sich für unseren Stand.", 0],
+            ["Wir haben hier etwas ganz Neues.", 1], ["Wir haben damit sehr gute Erfahrungen gemacht.", 1],
+            ["Es hat den Vorteil, dass es sehr leise ist.", 2], ["Die Lampe zeichnet sich vor allem durch ihr Design aus.", 2],
+            ["Darf ich Ihnen ausführliche Prospekte zuschicken?", 3], ["Dürfen wir Sie über neue Aktionen informieren?", 3]
+          ]
+        },
+        {
+          "id": "e4-bes", "typ": "matrix", "kontext": "Redemittel",
+          "frage": "Besucher/in am Stand: Interesse oder Ablehnung?",
+          "wahl": ["Interesse zeigen", "ablehnend reagieren"],
+          "aussagen": [
+            ["Entschuldigung, dürfte ich Sie etwas fragen?", 0], ["Könnten Sie mir bei der Auswahl weiterhelfen?", 0], ["Und aus welchem Material ist das genau?", 0],
+            ["Vielen Dank, ich sehe mich nur um.", 1], ["Danke, ich melde mich, wenn ich Fragen habe.", 1], ["Danke, ich muss leider gleich weiter.", 1]
+          ]
+        },
+        {
+          "id": "e4-dial", "typ": "ordnen", "kontext": "Gespräch",
+          "frage": "Ein gutes Gespräch am Messestand: Bringen Sie es in die richtige Reihenfolge.",
+          "zeilen": [
+            "▶ Guten Tag! Ich sehe, Sie interessieren sich für unsere Schreibtischlampen.",
+            "◀ Ja, ich suche eine Lampe für unser neues Büro.",
+            "▶ Mein Name ist Jan Kraus von Holm Licht. Darf ich Ihnen unser neuestes Modell zeigen?",
+            "◀ Gern. Was ist das Besondere daran?",
+            "▶ Sie hat den Vorteil, dass sich das Licht automatisch an die Tageszeit anpasst.",
+            "◀ Interessant. Könnten Sie mir Informationen zuschicken?",
+            "▶ Natürlich, darf ich Ihre Adresse notieren?"
+          ]
+        },
+        { "id": "e4-m1", "typ": "mc", "kontext": "Wortschatz", "frage": "Kleine Geschenke, die Firmen an Besucher verteilen (Kugelschreiber, Taschen …), heißen …", "opts": ["Give-aways", "Prospekte", "Proben", "Messestände"], "l": 0 }
+      ]
+    },
+    {
+      "titel": "Unterwegs: Indefinitpronomen",
+      "icon": "📢",
+      "kurz": "Durchsagen verstehen · jemand, niemand, irgendwo, nirgends …",
+      "aufgaben": [
+        {
+          "id": "e5-durch", "typ": "matrix", "kontext": "Durchsagen",
+          "frage": "Auf dem Weg zur Messe hört Herr Rahimi Durchsagen. Wo hört er sie?",
+          "wahl": ["Bahnhof", "Flughafen", "Autoradio", "Messehalle"],
+          "aussagen": [
+            ["„Die S-Bahn nach Flughafen fällt heute aus. Bitte benutzen Sie den Ersatzbus vor dem Bahnhof.“", 0],
+            ["„Familien mit kleinen Kindern dürfen jetzt an Gate B12 einsteigen.“", 1],
+            ["„Auf der A5 Richtung Frankfurt fünf Kilometer Stau nach einem Unfall.“", 2],
+            ["„Bitte verlassen Sie die Halle über die Notausgänge. Benutzen Sie keine Aufzüge.“", 3],
+            ["„Wegen eines Sturms hat der Flug nach Berlin etwa 30 Minuten Verspätung.“", 1],
+            ["„Der Vortrag in Saal 2 wird nach einer kurzen Pause in 15 Minuten fortgesetzt.“", 3]
+          ]
+        },
+        {
+          "id": "e5-art", "typ": "matrix", "kontext": "Indefinitpronomen",
+          "frage": "Worauf bezieht sich das Indefinitpronomen?",
+          "wahl": ["Person", "Ding", "Ort", "Zeit"],
+          "aussagen": [
+            ["jemand", 0], ["irgendwer", 0], ["niemand", 0],
+            ["etwas", 1], ["nichts", 1],
+            ["irgendwo", 2], ["nirgends", 2],
+            ["irgendwann", 3], ["niemals", 3]
+          ]
+        },
+        { "id": "e5-gegen", "typ": "zu", "kontext": "Verneinung", "frage": "Was ist das Gegenteil?", "paare": [
+          ["jemand", "niemand"],
+          ["etwas", "nichts"],
+          ["irgendwo", "nirgendwo"],
+          ["irgendwohin", "nirgendwohin"],
+          ["irgendwann", "nie"],
+          ["eins", "keins"]
+        ]},
+        { "id": "e5-1", "typ": "mc", "kontext": "Kasus", "frage": "Die Lautsprecher sind zu laut. Ich muss das ___ sagen!", "opts": ["jemandem", "jemand", "jemanden", "jemandes"], "l": 0, "x": "sagen + Dativ → **jemandem**." },
+        { "id": "e5-2", "typ": "mc", "kontext": "Kasus", "frage": "Ich suche die Toilette. Ich muss ___ fragen.", "opts": ["irgendwen", "irgendwem", "irgendwer", "irgendwas"], "l": 0, "x": "fragen + Akkusativ → **irgendwen**." },
+        { "id": "e5-3", "typ": "mc", "kontext": "Verneinung", "frage": "Ich habe überall gesucht, aber mein Ticket ist ___.", "opts": ["nirgends", "irgendwo", "niemand", "nie"], "l": 0 },
+        { "id": "e5-4", "typ": "mc", "kontext": "Verneinung", "frage": "Hier hört wieder ___ zu, wenn die Durchsage kommt!", "opts": ["keiner", "keins", "nichts", "nirgends"], "l": 0 },
+        { "id": "e5-5", "typ": "mc", "kontext": "man", "frage": "Hier wird ___ wirklich gut beraten.", "opts": ["man", "einen", "einem", "jemanden"], "l": 0, "x": "**man** im Nominativ – Akkusativ: einen, Dativ: einem." },
+        { "id": "e5-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie die Durchsage.", "steine": ["Hat", "jemand", "am Bahnsteig 3", "ein schwarzes Handy", "gefunden?"] }
+      ]
+    },
+    {
+      "titel": "Kundenanfragen beantworten",
+      "icon": "📨",
+      "kurz": "Anfrage und Vertrag lesen · Antwortmail schreiben",
+      "aufgaben": [
+        {
+          "id": "e6-anf", "typ": "lesen", "kontext": "Lesen",
+          "frage": "Lesen Sie die Kundenanfrage und den Auszug aus dem Vertrag. Beantworten Sie dann die Fragen des Kunden.",
+          "posts": [
+            { "name": "Mail von Lukas Brandt", "info": "Büroservice Nord", "text": "Sehr geehrte Damen und Herren, vielen Dank für die Präsentation Ihrer neuen Bürobeleuchtung „Holm Office“. Wir haben noch einige Fragen: 1. Wie oft wird die Anlage gewartet? 2. Ist die Beleuchtung im Betrieb zu hören? 3. Werden unsere Mitarbeitenden während der Installation gestört? 4. Kann man die Beleuchtung am Wochenende ausschalten? Mit freundlichen Grüßen, Lukas Brandt" },
+            { "name": "Auszug aus dem Vertragsangebot", "text": "§ 3 Technik: Holm Office, Energieklasse A, geräuschlos, sensorgesteuert, Zeitplan per App einstellbar (z. B. Abschaltung am Wochenende). § 4 Installation: Die Arbeiten werden außerhalb der Bürozeiten an einem Samstag durchgeführt, sodass der Betrieb nicht beeinträchtigt wird. § 5 Wartung: Der Vertrag umfasst eine Wartung pro Jahr sowie eine monatliche Fernkontrolle der Anlage." }
+          ],
+          "fragen": [
+            { "f": "Wie oft wird die Anlage vor Ort gewartet?", "opts": ["einmal im Jahr", "jeden Monat", "jede Woche", "nie"], "l": 0 },
+            { "f": "Ist die Anlage im Betrieb zu hören?", "opts": ["Nein, sie ist geräuschlos.", "Ja, aber nur leise.", "Ja, am Wochenende.", "Das steht nicht im Vertrag."], "l": 0 },
+            { "f": "Werden die Mitarbeitenden bei der Installation gestört?", "opts": ["Nein, es wird an einem Samstag installiert.", "Ja, eine Woche lang.", "Ja, aber nur nachmittags.", "Die Mitarbeitenden müssen selbst installieren."], "l": 0 },
+            { "f": "Kann die Beleuchtung am Wochenende ausgeschaltet werden?", "opts": ["Ja, per Zeitplan in der App.", "Nein, sie läuft immer.", "Nur durch einen Techniker.", "Nur in Energieklasse B."], "l": 0 }
+          ]
+        },
+        {
+          "id": "e6-rm", "typ": "matrix", "kontext": "Redemittel",
+          "frage": "In welchen Teil der Antwortmail gehört der Satz?",
+          "wahl": ["Einleitung", "Bezug auf die Fragen", "Details", "Abschluss"],
+          "aussagen": [
+            ["Herzlichen Dank für Ihre Mail, auf die ich Ihnen gerne antworte.", 0], ["Vielen Dank für Ihr Interesse an unserem Produkt.", 0],
+            ["Zu Ihren Fragen kann ich Ihnen mitteilen, dass …", 1], ["Ich kann Ihnen versichern, dass …", 1],
+            ["Dank der Sensoren ist die Anlage sehr effizient.", 2], ["Laut Vertrag bieten wir Ihnen eine jährliche Wartung.", 2],
+            ["Für weitere Fragen stehe ich Ihnen gerne zur Verfügung.", 3], ["Kontaktieren Sie mich gerne, wenn Sie noch Fragen haben.", 3]
+          ]
+        },
+        {
+          "id": "e6-ant", "typ": "luecke", "kontext": "Schreiben",
+          "frage": "Ergänzen Sie die Antwort an Herrn Brandt.",
+          "text": "Sehr geehrter Herr Brandt,\n\nherzlichen Dank für Ihre Mail, {0} ich Ihnen gerne antworte. Zu Ihren Fragen kann ich Ihnen {1}, dass die Anlage einmal im Jahr von einem Techniker gewartet wird. Zusätzlich wird sie jeden Monat aus der Ferne {2}.\n\nDank der modernen Technik ist „Holm Office“ völlig {3}. Ich kann Ihnen außerdem {4}, dass Ihre Mitarbeitenden nicht gestört werden: Die Installation {5} an einem Samstag durchgeführt. Über unsere App lässt sich die Beleuchtung am Wochenende ganz einfach {6}.\n\nFür weitere Fragen stehe ich Ihnen gerne {7} Verfügung.\n\nMit freundlichen Grüßen\nSina Wolff",
+          "gaps": [
+            { "opts": ["auf die", "die", "der"], "l": 0 },
+            { "opts": ["mitteilen", "erzählen", "berichten über"], "l": 0 },
+            { "opts": ["kontrolliert", "kontrollieren", "kontrolliert worden"], "l": 0 },
+            { "opts": ["geräuschlos", "geräuschvoll", "geräuschbar"], "l": 0 },
+            { "opts": ["versichern", "sichern", "versprechen sich"], "l": 0 },
+            { "opts": ["wird", "ist", "hat"], "l": 0 },
+            { "opts": ["ausschalten", "ausgeschaltet", "auszuschalten"], "l": 0 },
+            { "opts": ["zur", "zu", "in"], "l": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Präsentieren und erklären",
+      "icon": "🎤",
+      "kurz": "Tipps für Präsentationen · Redemittel · Wörter umschreiben",
+      "aufgaben": [
+        {
+          "id": "e7-tipps", "typ": "matrix", "kontext": "Tipps",
+          "frage": "Gute Tipps für eine Präsentation?",
+          "wahl": ["guter Tipp", "schlechter Tipp"],
+          "aussagen": [
+            ["Beginnen Sie mit einer kleinen Geschichte.", 0],
+            ["Setzen Sie sich hinter einen Tisch, dann sind Sie nicht so nervös.", 1],
+            ["Lassen Sie Ihren Blick über das Publikum schweifen.", 0],
+            ["Lesen Sie alles Wort für Wort von den Folien ab.", 1],
+            ["Nutzen Sie große, gut erkennbare Bilder.", 0],
+            ["Nennen Sie am Anfang die Ziele und fassen Sie am Ende zusammen.", 0],
+            ["Üben Sie lieber nicht vorher – dann klingt es natürlicher.", 1],
+            ["Schreiben Sie möglichst viel Text auf jede Folie.", 1]
+          ]
+        },
+        {
+          "id": "e7-rm", "typ": "matrix", "kontext": "Redemittel",
+          "frage": "Zu welchem Teil der Präsentation passt der Satz?",
+          "wahl": ["Einleitung", "Interesse wecken", "Struktur", "auf Folien verweisen", "Abschluss"],
+          "aussagen": [
+            ["Ich freue mich, Ihnen heute unser neues Modell zu präsentieren.", 0],
+            ["Herzlichen Dank für die Einladung.", 0],
+            ["Wussten Sie eigentlich, dass …?", 1],
+            ["Ist Ihnen schon einmal aufgefallen, dass …?", 1],
+            ["Zuerst spreche ich über …, dann komme ich zu …", 2],
+            ["Soweit zum ersten Punkt. Haben Sie noch Fragen?", 2],
+            ["Auf dieser Folie sehen Sie …", 3],
+            ["Zusammenfassend kann ich sagen, dass …", 4],
+            ["Vielen Dank für Ihre Aufmerksamkeit.", 4]
+          ]
+        },
+        { "id": "e7-denk", "typ": "mc", "kontext": "Denkpausen", "frage": "Jemand stellt eine schwierige Frage und Sie brauchen kurz Zeit. Was sagen Sie?", "opts": ["Das ist eine gute Frage. Moment, da muss ich kurz nachdenken.", "Keine Ahnung.", "Die Frage ist falsch.", "Fragen bitte erst morgen."], "l": 0 },
+        {
+          "id": "e7-strat", "typ": "matrix", "kontext": "Umschreiben",
+          "frage": "Ihnen fehlt ein Wort. Welche Strategie benutzen Sie?",
+          "wahl": ["beschreiben", "ähnliches Wort", "andere Sprache", "zeigen"],
+          "aussagen": [
+            ["„Ich brauche etwas, um meinen Becher abzutrocknen.“", 0],
+            ["„Das ist aus Papier und man wischt sich damit die Hände ab.“", 0],
+            ["„Ich brauche so eine Tasche … so ähnlich wie ein Rucksack.“", 1],
+            ["„Auf Englisch sagt man scotch tape.“", 2],
+            ["„Ich zeige dir, was ich meine – das hier!“", 3]
+          ]
+        },
+        { "id": "e7-rate", "typ": "zu", "kontext": "Umschreiben", "frage": "Was ist gemeint?", "paare": [
+          ["Das braucht man, um ein Paket zuzukleben.", "das Klebeband"],
+          ["Das ist so ähnlich wie ein Rucksack, aber man trägt es an der Seite.", "die Umhängetasche"],
+          ["Damit trocknet man Geschirr ab.", "das Geschirrtuch"],
+          ["Das braucht man, wenn man mit vielen Leuten eine Präsentation sehen will.", "der Beamer"],
+          ["Damit schreibt man auf ein Flipchart.", "der Marker"]
+        ]},
+        { "id": "e7-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz.", "steine": ["Ich", "möchte", "noch einmal", "besonders", "betonen,", "dass", "die Lampe", "sehr wenig Energie", "verbraucht."] }
+      ]
+    },
+    {
+      "titel": "Prüfungstraining",
+      "icon": "🏁",
+      "kurz": "Sprachbausteine · Lesen · gemischte Aufgaben",
+      "aufgaben": [
+        {
+          "id": "e8-sb", "typ": "luecke", "kontext": "Sprachbausteine",
+          "frage": "Sprachbausteine: Lesen Sie die Pressemitteilung und wählen Sie die richtige Lösung.",
+          "text": "Holm Licht eröffnet neues Werk\n\nAm vergangenen Montag {0} in Danzig das neue Werk der Holm Licht AG eröffnet. In der modernen Fabrik werden ab sofort Lampen für Fahrräder und E-Scooter {1}. Rund 300 neue Arbeitsplätze sind dort entstanden.\n\n„Die Nachfrage ist in den letzten Jahren stark gestiegen. Mit unseren alten Anlagen {2} sie nicht mehr gedeckt werden“, erklärte die Vorstandsvorsitzende. Das neue Werk arbeitet fast vollständig mit Solarstrom. So lassen {3} die Energiekosten deutlich senken.\n\nAuch für die Zukunft ist viel geplant: Bis 2030 {4} alle Produkte aus recycelten Materialien hergestellt werden. {5} Kunden Fragen zum neuen Werk haben, wenden sie sich gern an die Pressestelle.",
+          "gaps": [
+            { "opts": ["wurde", "wird", "ist"], "l": 0 },
+            { "opts": ["produziert", "produzieren", "produziert worden"], "l": 0 },
+            { "opts": ["konnte", "kann worden", "konnten"], "l": 0 },
+            { "opts": ["sich", "man", "es"], "l": 0 },
+            { "opts": ["sollen", "werden", "worden"], "l": 0 },
+            { "opts": ["Wenn", "Ob", "Damit"], "l": 0 }
+          ]
+        },
+        { "id": "e8-1", "typ": "mc", "kontext": "Passiv", "frage": "Der Vertrag ist gestern unterschrieben ___.", "opts": ["worden", "geworden", "werden", "wurde"], "l": 0 },
+        { "id": "e8-2", "typ": "mc", "kontext": "Ersatzform", "frage": "„Das Gerät kann leicht bedient werden.“ = Das Gerät ist leicht ___.", "opts": ["bedienbar", "bedienlich", "bedient", "zu bedient"], "l": 0 },
+        { "id": "e8-3", "typ": "mc", "kontext": "Indefinitpronomen", "frage": "„Hat irgendwer meinen Ausweis gesehen?“ – „Nein, leider ___.“", "opts": ["niemand", "nichts", "nirgends", "nie"], "l": 0 },
+        { "id": "e8-4", "typ": "mc", "kontext": "Messe", "frage": "Ein Besucher möchte sich nur umsehen. Was sagen Sie?", "opts": ["Sehr gern. Wenn Sie Fragen haben, bin ich hier.", "Dann können Sie gleich wieder gehen.", "Darf ich Ihnen jetzt alles zeigen?", "Warum interessieren Sie sich nicht?"], "l": 0 },
+        { "id": "e8-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz.", "steine": ["Die Anlage", "wird", "einmal im Jahr", "von einem Techniker", "gewartet."] }
+      ]
+    }
+  ]
+}

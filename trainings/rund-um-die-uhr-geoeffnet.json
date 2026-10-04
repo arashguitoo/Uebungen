@@ -1,0 +1,991 @@
+{
+ "id": "rund-um-die-uhr-geoeffnet",
+ "titel": "Rund um die Uhr geöffnet",
+ "untertitel": "Kleine Läden und Arbeitszeiten · Verneinung mit nicht · Selbstständigkeit · Negationswörter · Dienstplan · Arbeitsaufträge",
+ "niveau": "B1/B2",
+ "reihe": "Prüfungstraining B1/B2",
+ "farbe": "#c0562e",
+ "mix": 15,
+ "intro": "Sieben Teile – jeder Teil kann einzeln gespielt werden. Der **Prüfungsmix** zieht zufällig Aufgaben aus allen Teilen.",
+ "kompakt": [
+  {
+   "titel": "Verneinung mit nicht",
+   "zeilen": [
+    "**Teilverneinung:** nicht steht **links** vom Element, das verneint wird. – Ich kaufe **nicht im Supermarkt** ein. · Ich heiße **nicht Otto**.",
+    "**Satzverneinung:** nicht steht am **Satzende** oder **vor dem zweiten Teil der Satzklammer**. – Ich vergesse den Einkauf **nicht**. · Ich kaufe morgen **nicht ein**.",
+    "Vor Adjektiven und Adverbien der Art und Weise: Anna arbeitet **nicht freiberuflich**.",
+    "Vor Präpositionalergänzungen und Ortsangaben: Sie arbeitet **nicht in einer Redaktion**."
+   ]
+  },
+  {
+   "titel": "Negationswörter",
+   "zeilen": [
+    "jemand / alle ↔ **niemand**",
+    "etwas / alles ↔ **nichts**",
+    "immer ↔ **nie / niemals**",
+    "überall ↔ **nirgends / nirgendwo**",
+    "Kurze Antwort: Warst du schon mal in Potsdam? – Nein, leider noch **nie**."
+   ]
+  },
+  {
+   "titel": "Arbeitszeiten aushandeln",
+   "zeilen": [
+    "Ich kann am … arbeiten. · Also, ich könnte am … von … bis … Uhr. · Ich kann … übernehmen.",
+    "Am … kann ich leider nicht, weil … · Ich habe am … einen Termin. Aber am … kann ich. · Am …? Das geht bei mir nicht. Aber …"
+   ]
+  },
+  {
+   "titel": "Arbeitsaufträge",
+   "zeilen": [
+    "**geben:** Bitte rufen Sie Frau … an. · Könnten Sie bitte heute …? · Wäre es möglich, dass Sie …? · … Geht das?",
+    "**entgegennehmen:** Ja, natürlich. Das mache ich. · Ja, das erledige ich sofort. · Selbstverständlich.",
+    "**verhandeln:** Das kann ich leider erst später erledigen. · Ja, aber dafür brauche ich mehr Zeit. · Tut mir leid, dafür bin ich nicht zuständig.",
+    "**Verständnis sichern:** Haben Sie noch Fragen? · Ist alles klar? · **Nachfragen:** Haben Sie schon … erledigt? · Sind Sie fertig mit …?"
+   ]
+  },
+  {
+   "titel": "Wichtige Wörter zur Selbstständigkeit",
+   "zeilen": [
+    "einen Laden **betreiben** · ein Geschäft **gründen** · die **Buchführung** machen · der **Lieferant** · die **Filiale** · die **Lage** · der **Pachtvertrag** · das **Sortiment** · der **Businessplan** · finanzielle **Rücklagen** · **pleitegehen** · einen **Kredit** aufnehmen"
+   ]
+  }
+ ],
+ "module": [
+  {
+   "titel": "Der Laden um die Ecke",
+   "icon": "🏪",
+   "kurz": "Blog und Kommentare lesen · Vor- und Nachteile langer Öffnungszeiten",
+   "aufgaben": [
+    {
+     "id": "l1-blog",
+     "typ": "lesen",
+     "kontext": "Lesen",
+     "frage": "Lesen Sie den Blogeintrag und beantworten Sie die Fragen.",
+     "textTitel": "Jonas' Blog: Mein Lieblingsladen",
+     "text": "Heute stelle ich euch Leylas Kiosk vor – direkt bei mir um die Ecke in Hamburg-Altona. Für alle, die nicht aus Hamburg kommen: Hier sagt man oft „Kiosk“ zu einem kleinen Laden, der viel länger geöffnet hat als normale Geschäfte, manchmal sogar die ganze Nacht.\n\nBei Leyla bekommt man fast alles, was man im Alltag braucht: Milch, Brot, Obst, Zeitungen, Getränke und natürlich Süßigkeiten. Am Sonntagabend keine Batterien mehr für die Taschenlampe? Kein Problem!\n\nDer Kiosk ist aber mehr als ein Laden. Im Sommer sitzen abends die Nachbarn auf der Bank davor, Studierende und Rentner kommen ins Gespräch. Leyla kennt fast alle Kunden mit Namen und hat immer Zeit für ein kurzes Gespräch.\n\nFür mich ist der Kiosk ein Glück: Ich bin Grafiker und arbeite freiberuflich. Meine Arbeitszeiten kann ich mir zwar selbst einteilen, aber wenn ein Auftrag schnell erledigt werden muss, sitze ich oft bis 23 Uhr am Computer. Dann sind die Supermärkte längst zu – Leyla aber nicht.",
+     "fragen": [
+      {
+       "f": "Was ist besonders an Leylas Kiosk?",
+       "opts": [
+        "Er hat sehr lange geöffnet.",
+        "Er ist besonders billig.",
+        "Er verkauft nur Zeitungen.",
+        "Er hat sonntags geschlossen."
+       ],
+       "l": 0
+      },
+      {
+       "f": "Warum ist der Kiosk auch ein Treffpunkt?",
+       "opts": [
+        "Nachbarn sitzen abends davor und unterhalten sich.",
+        "Es gibt dort ein Restaurant.",
+        "Leyla organisiert Partys.",
+        "Dort finden Kurse statt."
+       ],
+       "l": 0
+      },
+      {
+       "f": "Warum kauft Jonas oft spät ein?",
+       "opts": [
+        "Er arbeitet manchmal bis spät in den Abend.",
+        "Er arbeitet nur nachts.",
+        "Er schläft tagsüber immer.",
+        "Die Supermärkte sind zu teuer."
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "l1-kom",
+     "typ": "matrix",
+     "kontext": "Lesen",
+     "frage": "Kommentare zum Blog: Wer sagt was?",
+     "posts": [
+      {
+       "name": "Mara",
+       "text": "Ich gehe auch gern hin! Bei uns in der Firma gibt es leider keine Gleitzeit, ich muss um halb sieben anfangen. Deshalb bin ich froh, dass ich morgens am Kiosk einen Kaffee bekomme. Nur frisches Gemüse gibt es dort nicht. Schade!"
+      },
+      {
+       "name": "Deniz",
+       "text": "Ich bin Pfleger und arbeite im Schichtdienst. Nach der Spätschicht kann ich auf dem Heimweg noch Brot für den nächsten Morgen kaufen. Super praktisch!"
+      },
+      {
+       "name": "Frau Brandt",
+       "text": "Bei uns am Platz gibt es auch so einen Laden. Ich finde nicht gut, dass man dort bis tief in die Nacht einkaufen kann. Es ist laut, weil die Leute davor noch trinken, und meine Kinder können nicht schlafen. Außerdem: Auch Verkäufer brauchen einen Feierabend!"
+      }
+     ],
+     "wahl": [
+      "Mara",
+      "Deniz",
+      "Frau Brandt"
+     ],
+     "aussagen": [
+      [
+       "… beginnt sehr früh mit der Arbeit.",
+       0
+      ],
+      [
+       "… vermisst etwas im Angebot.",
+       0
+      ],
+      [
+       "… arbeitet zu wechselnden Zeiten.",
+       1
+      ],
+      [
+       "… kauft nach der Arbeit für den nächsten Tag ein.",
+       1
+      ],
+      [
+       "… ärgert sich über den Lärm.",
+       2
+      ],
+      [
+       "… denkt auch an die Beschäftigten.",
+       2
+      ]
+     ]
+    },
+    {
+     "id": "l1-wort",
+     "typ": "zu",
+     "kontext": "Wortschatz",
+     "frage": "Was bedeuten die Begriffe?",
+     "paare": [
+      [
+       "freiberuflich arbeiten",
+       "selbstständig arbeiten, ohne festen Arbeitgeber"
+      ],
+      [
+       "sich die Arbeitszeit einteilen",
+       "selbst bestimmen, wann man arbeitet"
+      ],
+      [
+       "die Gleitzeit",
+       "flexibler Arbeitsbeginn und flexibles Arbeitsende"
+      ],
+      [
+       "der Schichtdienst",
+       "Arbeit zu wechselnden Zeiten, z. B. früh, spät, nachts"
+      ],
+      [
+       "etwas erledigen",
+       "eine Aufgabe fertig machen"
+      ],
+      [
+       "der Feierabend",
+       "das Ende des Arbeitstages"
+      ]
+     ]
+    },
+    {
+     "id": "l1-vn",
+     "typ": "matrix",
+     "kontext": "Meinung",
+     "frage": "Öffnungszeiten rund um die Uhr: Vorteil oder Nachteil?",
+     "wahl": [
+      "Vorteil",
+      "Nachteil"
+     ],
+     "aussagen": [
+      [
+       "Man kann auch nach der Spätschicht einkaufen.",
+       0
+      ],
+      [
+       "Nachts ist es vor dem Laden oft laut.",
+       1
+      ],
+      [
+       "Die Verkäuferinnen haben kaum Feierabend.",
+       1
+      ],
+      [
+       "Menschen mit ungewöhnlichen Arbeitszeiten werden versorgt.",
+       0
+      ],
+      [
+       "Der Laden ist ein Treffpunkt für die Nachbarschaft.",
+       0
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Verneinung mit nicht",
+   "icon": "🚫",
+   "kurz": "Satzverneinung oder Teilverneinung · Stellung von nicht",
+   "aufgaben": [
+    {
+     "id": "l2-art",
+     "typ": "matrix",
+     "kontext": "Regel",
+     "frage": "Wird der ganze Satz oder nur ein Teil verneint?",
+     "wahl": [
+      "Teil des Satzes",
+      "ganzer Satz"
+     ],
+     "aussagen": [
+      [
+       "Ich will nicht jeden Abend in den Supermarkt gehen.",
+       0
+      ],
+      [
+       "Frische Säfte werden im Kiosk nicht angeboten.",
+       1
+      ],
+      [
+       "Leylas Kiosk kenne ich nicht.",
+       1
+      ],
+      [
+       "Manchmal sind die Sachen in kleinen Läden nicht frisch.",
+       0
+      ],
+      [
+       "Man muss nicht zu jeder Tages- und Nachtzeit einkaufen können.",
+       0
+      ],
+      [
+       "Meine Kinder können wegen des Lärms nicht schlafen.",
+       1
+      ]
+     ]
+    },
+    {
+     "id": "l2-1",
+     "typ": "mc",
+     "kontext": "Stellung",
+     "frage": "Wo steht nicht richtig? „Maria kauft am Abend ein.“ (ganzer Satz)",
+     "opts": [
+      "Maria kauft am Abend nicht ein.",
+      "Maria nicht kauft am Abend ein.",
+      "Maria kauft nicht am Abend nicht ein.",
+      "Maria kauft am Abend ein nicht."
+     ],
+     "l": 0,
+     "x": "Satzverneinung: nicht vor dem zweiten Teil der Satzklammer (**ein**)."
+    },
+    {
+     "id": "l2-2",
+     "typ": "mc",
+     "kontext": "Stellung",
+     "frage": "„Jonas arbeitet freiberuflich.“ – verneint:",
+     "opts": [
+      "Jonas arbeitet nicht freiberuflich.",
+      "Jonas arbeitet freiberuflich nicht.",
+      "Jonas nicht arbeitet freiberuflich.",
+      "Nicht Jonas arbeitet freiberuflich nicht."
+     ],
+     "l": 0
+    },
+    {
+     "id": "l2-3",
+     "typ": "mc",
+     "kontext": "Stellung",
+     "frage": "„Mara hat die Packung Kaffee gekauft.“ – verneint:",
+     "opts": [
+      "Mara hat die Packung Kaffee nicht gekauft.",
+      "Mara hat nicht die Packung Kaffee gekauft nicht.",
+      "Mara nicht hat die Packung Kaffee gekauft.",
+      "Mara hat die Packung Kaffee gekauft nicht."
+     ],
+     "l": 0
+    },
+    {
+     "id": "l2-4",
+     "typ": "mc",
+     "kontext": "Stellung",
+     "frage": "„Frau Brandt findet gut, dass es abends laut ist.“ – verneint:",
+     "opts": [
+      "Frau Brandt findet nicht gut, dass es abends laut ist.",
+      "Frau Brandt nicht findet gut, dass es abends laut ist.",
+      "Frau Brandt findet gut nicht, dass es abends laut ist.",
+      "Frau Brandt findet gut, dass es nicht abends laut nicht ist."
+     ],
+     "l": 0
+    },
+    {
+     "id": "l2-5",
+     "typ": "mc",
+     "kontext": "Stellung",
+     "frage": "„An manchen Feiertagen wird der Kiosk geöffnet.“ – verneint:",
+     "opts": [
+      "An manchen Feiertagen wird der Kiosk nicht geöffnet.",
+      "An manchen Feiertagen nicht wird der Kiosk geöffnet.",
+      "An manchen Feiertagen wird nicht der Kiosk geöffnet nicht.",
+      "An manchen Feiertagen wird der Kiosk geöffnet nicht."
+     ],
+     "l": 0
+    },
+    {
+     "id": "l2-b1",
+     "typ": "bau",
+     "kontext": "Satzbau",
+     "frage": "Verneinen Sie nur den Ort: Sie kauft woanders ein.",
+     "steine": [
+      "Ich",
+      "kaufe",
+      "nicht",
+      "im Supermarkt",
+      "ein,",
+      "sondern",
+      "im Kiosk."
+     ]
+    },
+    {
+     "id": "l2-b2",
+     "typ": "bau",
+     "kontext": "Satzbau",
+     "frage": "Verneinen Sie den ganzen Satz.",
+     "steine": [
+      "Ich",
+      "vergesse",
+      "den Einkauf",
+      "heute",
+      "bestimmt",
+      "nicht."
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Ein eigenes Geschäft",
+   "icon": "📋",
+   "kurz": "Wortschatz Selbstständigkeit · Interview mit einer Kioskbetreiberin",
+   "aufgaben": [
+    {
+     "id": "l3-zu",
+     "typ": "zu",
+     "kontext": "Wortschatz",
+     "frage": "Was bedeuten die Wörter?",
+     "paare": [
+      [
+       "einen Kiosk betreiben",
+       "Besitzer/in eines Kiosks sein"
+      ],
+      [
+       "die Buchführung machen",
+       "Einnahmen und Ausgaben aufschreiben"
+      ],
+      [
+       "der Lieferant",
+       "Firma, von der man Waren bekommt"
+      ],
+      [
+       "die Filiale",
+       "Geschäft, das zu einer Kette gehört"
+      ],
+      [
+       "die Lage",
+       "wo sich das Geschäft befindet"
+      ],
+      [
+       "das Sortiment",
+       "die Auswahl der Waren"
+      ]
+     ]
+    },
+    {
+     "id": "l3-zu2",
+     "typ": "zu",
+     "kontext": "Wortschatz",
+     "frage": "Und diese Wörter?",
+     "paare": [
+      [
+       "der Pachtvertrag",
+       "Mietvertrag für gewerbliche Räume"
+      ],
+      [
+       "gründen",
+       "eröffnen, neu starten"
+      ],
+      [
+       "der Businessplan",
+       "Konzept für die Ziele eines Unternehmens"
+      ],
+      [
+       "finanzielle Rücklagen",
+       "Geld, das als Reserve dient"
+      ]
+     ]
+    },
+    {
+     "id": "l3-int",
+     "typ": "lesen",
+     "kontext": "Lesen",
+     "frage": "Lesen Sie das Interview mit Leyla Demir und beantworten Sie die Fragen.",
+     "textTitel": "„Meine Kunden sind wie eine große Familie“",
+     "text": "**Frau Demir, seit wann haben Sie den Kiosk?**\nSeit sieben Jahren. Morgens hilft mir mein Mann, nachmittags arbeitet mein Neffe als Aushilfe – er hat einen Minijob bei mir.\n\n**Wie sind Sie dazu gekommen?**\nIch habe zwölf Jahre in einem Supermarkt gearbeitet. Mit der Zeit war ich dort immer unzufriedener – alles musste schnell gehen, für die Kunden hatte ich keine Zeit. Das ist mir aber sehr wichtig.\n\n**War der Anfang schwer?**\nIch hatte Glück. Der Vorbesitzer war ein Bekannter. Er hat mir gezeigt, wie die Buchführung funktioniert, und mich mit den Lieferanten bekannt gemacht.\n\n**Was raten Sie Leuten, die sich selbstständig machen wollen?**\nBesuchen Sie unbedingt ein Seminar für Existenzgründer! Dort lernt man, einen Businessplan zu schreiben – und man merkt schnell, ob die eigene Idee funktionieren kann.",
+     "fragen": [
+      {
+       "f": "Wer arbeitet im Kiosk mit?",
+       "opts": [
+        "ihr Mann und ihr Neffe",
+        "nur sie allein",
+        "ihre Tochter",
+        "drei Angestellte"
+       ],
+       "l": 0
+      },
+      {
+       "f": "Warum hat Frau Demir den Supermarkt verlassen?",
+       "opts": [
+        "Sie hatte dort keine Zeit für die Kunden.",
+        "Sie wurde gekündigt.",
+        "Sie hat zu wenig verdient.",
+        "Der Supermarkt hat geschlossen."
+       ],
+       "l": 0
+      },
+      {
+       "f": "Wer hat ihr am Anfang geholfen?",
+       "opts": [
+        "der frühere Besitzer des Kiosks",
+        "eine Bank",
+        "ihr Neffe",
+        "das Jobcenter"
+       ],
+       "l": 0
+      },
+      {
+       "f": "Was rät sie Gründerinnen und Gründern?",
+       "opts": [
+        "ein Existenzgründerseminar zu besuchen",
+        "sofort einen Kredit aufzunehmen",
+        "ohne Plan anzufangen",
+        "nur im Internet zu verkaufen"
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "l3-m1",
+     "typ": "mc",
+     "kontext": "Wortschatz",
+     "frage": "Ein Job mit wenigen Stunden und einem kleinen Verdienst heißt …",
+     "opts": [
+      "Minijob.",
+      "Vollzeitjob.",
+      "Schichtdienst.",
+      "Pachtvertrag."
+     ],
+     "l": 0
+    }
+   ]
+  },
+  {
+   "titel": "Im Gründerforum",
+   "icon": "💬",
+   "kurz": "Forumsbeiträge lesen · Tipps · Negationswörter",
+   "aufgaben": [
+    {
+     "id": "l4-forum",
+     "typ": "matrix",
+     "kontext": "Lesen",
+     "frage": "Lesen Sie die Beiträge. Wer berichtet von positiven Erfahrungen, wer von negativen, wer gibt vor allem Tipps?",
+     "posts": [
+      {
+       "name": "Lina",
+       "info": "Frage",
+       "text": "Hallo zusammen, ich backe seit Jahren Torten für Freunde und überlege, ein kleines Café aufzumachen. Ich habe aber keine Ausbildung als Konditorin. Hat jemand Erfahrung? Habt ihr Tipps?"
+      },
+      {
+       "name": "Sven",
+       "text": "Ich bin seit vier Jahren selbstständig und war noch nie so zufrieden! Aber man muss viel arbeiten. Im Internet gibt es Tests, die bei der Entscheidung helfen."
+      },
+      {
+       "name": "Omar",
+       "text": "Pass auf: Eine Freundin von mir ist mit ihrem Buchladen pleitegegangen. Sie hatte einen Kredit aufgenommen und konnte ihn nicht zurückzahlen. Niemand hat ihr geholfen."
+      },
+      {
+       "name": "Nadine",
+       "text": "Prüf auf jeden Fall, ob du genug Rücklagen hast. Crowdfunding ist auch eine gute Möglichkeit. Und achte auf die Lage – wenn dein Café an der falschen Stelle ist, kommt niemand vorbei!"
+      }
+     ],
+     "wahl": [
+      "positive Erfahrungen",
+      "negative Erfahrungen",
+      "vor allem Tipps"
+     ],
+     "aussagen": [
+      [
+       "Sven",
+       0
+      ],
+      [
+       "Omar",
+       1
+      ],
+      [
+       "Nadine",
+       2
+      ]
+     ]
+    },
+    {
+     "id": "l4-gegen",
+     "typ": "zu",
+     "kontext": "Negationswörter",
+     "frage": "Was ist das Gegenteil?",
+     "paare": [
+      [
+       "jemand",
+       "niemand"
+      ],
+      [
+       "etwas",
+       "nichts"
+      ],
+      [
+       "immer",
+       "nie"
+      ],
+      [
+       "überall",
+       "nirgends"
+      ]
+     ]
+    },
+    {
+     "id": "l4-lt",
+     "typ": "luecke",
+     "kontext": "Negationswörter",
+     "frage": "Ein Beitrag von Sven. Ergänzen Sie nichts, nie, niemand, nirgends.",
+     "text": "Früher hatte ich {0} daran gedacht, mich selbstständig zu machen. Am Anfang habe ich {1} einen bezahlbaren Laden gefunden – alles war zu teuer. Aber ich habe {2} aufgegeben. Heute macht mich {3} so glücklich wie mein eigenes Geschäft. Und aus meinem Laden geht {4} unzufrieden raus!",
+     "gaps": [
+      {
+       "opts": [
+        "nie",
+        "nichts",
+        "niemand"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "nirgends",
+        "niemand",
+        "nichts"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "nie",
+        "nirgends",
+        "niemand"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "nichts",
+        "nie",
+        "nirgends"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "niemand",
+        "nichts",
+        "nie"
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "l4-1",
+     "typ": "mc",
+     "kontext": "Kurzantwort",
+     "frage": "„Warst du schon mal in Potsdam?“ – „Nein, leider noch ___.“",
+     "opts": [
+      "nie",
+      "nichts",
+      "niemand",
+      "nirgends"
+     ],
+     "l": 0
+    },
+    {
+     "id": "l4-2",
+     "typ": "mc",
+     "kontext": "Kurzantwort",
+     "frage": "„Hast du etwas zu essen gekauft?“ – „Nein, ich habe ___ gekauft.“",
+     "opts": [
+      "nichts",
+      "nie",
+      "niemand",
+      "nirgends"
+     ],
+     "l": 0
+    }
+   ]
+  },
+  {
+   "titel": "Der Dienstplan",
+   "icon": "🗓️",
+   "kurz": "Dienstplan lesen · Arbeitszeiten aushandeln · Mail an den Chef",
+   "aufgaben": [
+    {
+     "id": "l5-plan",
+     "typ": "lesen",
+     "kontext": "Lesen",
+     "frage": "Lesen Sie die Nachrichten im Team-Chat und beantworten Sie die Fragen.",
+     "posts": [
+      {
+       "name": "Leyla (Chefin)",
+       "text": "Hallo ihr drei, ich brauche den Plan für Donnerstag und Freitag. Wer kann wann?"
+      },
+      {
+       "name": "Tim",
+       "text": "Donnerstag kann ich morgens und nachmittags. Freitag habe ich vormittags Uni, aber nachmittags geht's."
+      },
+      {
+       "name": "Sara",
+       "text": "Donnerstag habe ich den ganzen Tag einen Kurs, sorry. Freitag kann ich morgens übernehmen."
+      },
+      {
+       "name": "Ilyas",
+       "text": "Ich könnte Donnerstagabend und Freitagnachmittag. Freitagmorgen habe ich einen Arzttermin."
+      }
+     ],
+     "fragen": [
+      {
+       "f": "Wer arbeitet am Donnerstagabend?",
+       "opts": [
+        "Ilyas",
+        "Tim",
+        "Sara",
+        "niemand"
+       ],
+       "l": 0
+      },
+      {
+       "f": "Wer kann am Freitagmorgen arbeiten?",
+       "opts": [
+        "Sara",
+        "Tim",
+        "Ilyas",
+        "Tim und Ilyas"
+       ],
+       "l": 0
+      },
+      {
+       "f": "Warum kann Sara am Donnerstag nicht?",
+       "opts": [
+        "Sie hat einen Kurs.",
+        "Sie ist krank.",
+        "Sie hat Uni.",
+        "Sie hat einen Arzttermin."
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "l5-rm",
+     "typ": "matrix",
+     "kontext": "Redemittel",
+     "frage": "Arbeitszeiten aushandeln: Sagt die Person zu oder ab?",
+     "wahl": [
+      "kann arbeiten",
+      "kann nicht"
+     ],
+     "aussagen": [
+      [
+       "Also, ich könnte am Dienstag von 8 bis 14 Uhr.",
+       0
+      ],
+      [
+       "Ich kann die Spätschicht übernehmen.",
+       0
+      ],
+      [
+       "Am Mittwoch kann ich leider nicht, weil ich zum Arzt muss.",
+       1
+      ],
+      [
+       "Am Samstag? Das geht bei mir nicht.",
+       1
+      ],
+      [
+       "Ich habe am Montag einen Termin. Aber am Dienstag kann ich.",
+       1
+      ]
+     ],
+     "x": "Der letzte Satz sagt ab – macht aber gleich einen Gegenvorschlag. Das ist im Beruf sehr hilfreich."
+    },
+    {
+     "id": "l5-mail",
+     "typ": "ordnen",
+     "kontext": "Schreiben",
+     "frage": "Sie können den Dienstplan nicht einhalten. Bringen Sie die Mail an Ihre Chefin in die richtige Reihenfolge.",
+     "zeilen": [
+      "Liebe Leyla,",
+      "laut Dienstplan arbeite ich nächste Woche jeden Vormittag von 7 bis 13 Uhr.",
+      "Leider habe ich am Mittwoch zwischen 10 und 14 Uhr einen wichtigen Termin beim Amt.",
+      "Es tut mir leid, dass ich das erst jetzt schreibe.",
+      "Ich könnte am Mittwoch mit Ilyas tauschen und dafür am Donnerstag die Spätschicht übernehmen.",
+      "Viele Grüße\nSara"
+     ]
+    },
+    {
+     "id": "l5-du",
+     "typ": "mc",
+     "kontext": "Situation",
+     "frage": "Im Team-Chat duzen sich alle, auch mit der Chefin. Welche Anrede passt in Saras Mail?",
+     "opts": [
+      "Liebe Leyla,",
+      "Sehr geehrte Frau Demir,",
+      "Hallo Chefin!!!",
+      "Sehr geehrte Damen und Herren,"
+     ],
+     "l": 0
+    }
+   ]
+  },
+  {
+   "titel": "Arbeitsaufträge",
+   "icon": "📝",
+   "kurz": "Notiz verstehen · Aufträge geben, annehmen, verhandeln",
+   "aufgaben": [
+    {
+     "id": "l6-notiz",
+     "typ": "matrix",
+     "kontext": "Lesen",
+     "frage": "Lesen Sie die Notiz. Was soll Tim tun?",
+     "textTitel": "Notiz von Leyla",
+     "text": "Hallo Tim,\ndanke, dass du heute früh für mich einspringst! Kurz das Wichtigste:\n– Heute Morgen soll die Lieferung von Nord-Getränke kommen. Wenn bis 10 Uhr niemand da ist, bitte unbedingt dort anrufen – wir brauchen die Getränke dringend!\n– Bitte die Zeitschriften, die wir zurückgeben, in Kisten packen. Sie werden heute Nachmittag abgeholt.\n– Die Kartons mit den Süßigkeiten kannst du stehen lassen, die packt Ilyas nachmittags aus.\nIch bin auf dem Handy erreichbar.\nLeyla",
+     "wahl": [
+      "Tim soll das machen",
+      "Tim soll das nicht machen"
+     ],
+     "aussagen": [
+      [
+       "bei Nord-Getränke anrufen, wenn um 10 Uhr noch keine Lieferung da ist",
+       0
+      ],
+      [
+       "die Zeitschriften für die Rückgabe vorbereiten",
+       0
+      ],
+      [
+       "die Süßigkeiten auspacken",
+       1
+      ],
+      [
+       "die Zeitschriften selbst wegbringen",
+       1
+      ]
+     ]
+    },
+    {
+     "id": "l6-rm",
+     "typ": "matrix",
+     "kontext": "Redemittel",
+     "frage": "Was macht man mit diesem Satz?",
+     "wahl": [
+      "Auftrag geben",
+      "Auftrag annehmen",
+      "Auftrag verhandeln",
+      "Verständnis sichern",
+      "nachfragen"
+     ],
+     "aussagen": [
+      [
+       "Könnten Sie bitte heute die E-Mail an Herrn Kaya schreiben?",
+       0
+      ],
+      [
+       "Wäre es möglich, dass Sie die Kartons auspacken?",
+       0
+      ],
+      [
+       "Ja, das erledige ich sofort.",
+       1
+      ],
+      [
+       "Selbstverständlich.",
+       1
+      ],
+      [
+       "Ja, aber dafür brauche ich mehr Zeit.",
+       2
+      ],
+      [
+       "Tut mir leid, aber dafür bin ich nicht zuständig.",
+       2
+      ],
+      [
+       "Ist alles klar?",
+       3
+      ],
+      [
+       "Verstehen Sie, was ich damit sagen möchte?",
+       3
+      ],
+      [
+       "Sind Sie schon fertig mit der Bestellung?",
+       4
+      ]
+     ]
+    },
+    {
+     "id": "l6-1",
+     "typ": "mc",
+     "kontext": "Situationen",
+     "frage": "Ihr Chef bittet Sie, sofort die Kasse abzurechnen. Sie bedienen aber gerade einen Kunden. Was sagen Sie?",
+     "opts": [
+      "Das kann ich leider erst in fünf Minuten erledigen.",
+      "Nein.",
+      "Das ist mir egal.",
+      "Ist alles klar?"
+     ],
+     "l": 0
+    },
+    {
+     "id": "l6-b1",
+     "typ": "bau",
+     "kontext": "Satzbau",
+     "frage": "Bilden Sie den Auftrag.",
+     "steine": [
+      "Wenn",
+      "bis 10 Uhr",
+      "niemand",
+      "gekommen ist,",
+      "rufen",
+      "Sie",
+      "bitte",
+      "beim Lieferanten",
+      "an."
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Prüfungstraining",
+   "icon": "🏁",
+   "kurz": "Sprachbausteine · gemischte Aufgaben",
+   "aufgaben": [
+    {
+     "id": "l7-sb",
+     "typ": "luecke",
+     "kontext": "Sprachbausteine",
+     "frage": "Sprachbausteine: Eine Bitte um Informationsmaterial. Wählen Sie die richtige Lösung.",
+     "text": "Sehr geehrte Damen und Herren,\n\n{0} Ihrer Webseite habe ich gelesen, dass Sie Seminare für Existenzgründer anbieten. Ich möchte gern einen kleinen Laden für Fahrradzubehör eröffnen, habe aber {1} keine Erfahrung mit der Selbstständigkeit.\n\nKönnten Sie mir bitte Informationsmaterial {2} Ihren Kursen schicken? Besonders interessiert mich, {3} man in dem Seminar auch lernt, einen Businessplan zu schreiben. Außerdem möchte ich wissen, wie viel die Teilnahme {4}.\n\nVielen Dank {5} voraus!\n\nMit freundlichen Grüßen\nKarim Haddad",
+     "gaps": [
+      {
+       "opts": [
+        "Auf",
+        "In",
+        "An"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "noch",
+        "nie",
+        "nichts"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "zu",
+        "für",
+        "an"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "ob",
+        "dass",
+        "wenn"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "kostet",
+        "kosten",
+        "gekostet"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "im",
+        "in",
+        "zum"
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "l7-1",
+     "typ": "mc",
+     "kontext": "nicht",
+     "frage": "Welcher Satz ist richtig verneint?",
+     "opts": [
+      "Der Kiosk öffnet am Sonntag nicht.",
+      "Der Kiosk nicht öffnet am Sonntag.",
+      "Der Kiosk öffnet nicht am Sonntag nicht.",
+      "Nicht der Kiosk öffnet am Sonntag nicht."
+     ],
+     "l": 0
+    },
+    {
+     "id": "l7-2",
+     "typ": "mc",
+     "kontext": "Negationswörter",
+     "frage": "Ich habe überall gesucht, aber meinen Schlüssel ___ gefunden.",
+     "opts": [
+      "nirgends",
+      "niemand",
+      "nichts",
+      "nie"
+     ],
+     "l": 0
+    },
+    {
+     "id": "l7-3",
+     "typ": "mc",
+     "kontext": "Wortschatz",
+     "frage": "Ein Geschäft, das kein Geld mehr hat und schließen muss, ist …",
+     "opts": [
+      "pleitegegangen.",
+      "gegründet.",
+      "eröffnet.",
+      "verpachtet."
+     ],
+     "l": 0
+    },
+    {
+     "id": "l7-b1",
+     "typ": "bau",
+     "kontext": "Satzbau",
+     "frage": "Bilden Sie den Satz.",
+     "steine": [
+      "Am Samstag",
+      "kann",
+      "ich",
+      "leider",
+      "nicht,",
+      "aber",
+      "am Sonntag",
+      "geht es."
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,786 @@
+{
+  "id": "gut-geregelt-im-job",
+  "titel": "Gut geregelt im Job",
+  "untertitel": "Arbeitsvertrag · Vertragssprache · Regeln im Betrieb · Präpositionen mit Genitiv · Gespräche mit Vorgesetzten · Kündigung · Arbeitsschutz",
+  "niveau": "B1/B2",
+  "reihe": "Prüfungstraining B1/B2",
+  "farbe": "#4f7d4a",
+  "mix": 15,
+  "intro": "Sieben Teile rund um Rechte und Pflichten am Arbeitsplatz – jeder Teil kann einzeln gespielt werden. Der **Prüfungsmix** zieht zufällig Aufgaben aus allen Teilen.",
+  "kompakt": [
+    {
+      "titel": "Präpositionen mit Genitiv",
+      "zeilen": [
+        "**während** der Arbeitszeit · **anlässlich** unserer Betriebsversammlung · **statt** eines Betriebsausflugs",
+        "**wegen** des Feiertags · **aufgrund** des Auftragsmangels · **trotz** des Mangels an Arbeitskräften",
+        "**innerhalb** des Gebäudes · **außerhalb** des Betriebes",
+        "Beim Sprechen verwendet man nach *wegen, trotz, statt* oft den Dativ: wegen dem Feiertag."
+      ]
+    },
+    {
+      "titel": "Der Arbeitsvertrag",
+      "zeilen": [
+        "Er regelt die **Rechte und Pflichten** zwischen Arbeitgeber/in und Arbeitnehmer/in.",
+        "Typische Punkte: Beginn des Arbeitsverhältnisses · Probezeit · Tätigkeit · Vergütung · Arbeitszeit · Urlaub · Krankheit · Nebentätigkeit · Verschwiegenheit · Kündigung",
+        "Das Arbeitsverhältnis muss im Rahmen der **Gesetze** bleiben. Es können ein **Tarifvertrag** (für die Branche) oder eine **Betriebsvereinbarung** (Betriebsrat + Arbeitgeber) gelten."
+      ]
+    },
+    {
+      "titel": "Kündigung",
+      "zeilen": [
+        "**ordentliche Kündigung:** fristgerecht – gesetzlich vier Wochen zum 15. oder zum Monatsende; in Verträgen oft anders geregelt",
+        "**außerordentliche Kündigung:** nur mit triftigem Grund, meistens **fristlos** (z. B. Diebstahl, Gewalt, Belästigung; für Beschäftigte z. B. kein Lohn, Mobbing)"
+      ]
+    },
+    {
+      "titel": "Mit Vorgesetzten sprechen",
+      "zeilen": [
+        "Vorgesetzte: Unsere Kernzeit beginnt um … · Sie sollten im Team eine Lösung finden. · Wir bezahlen Sie ja schon über Tarif.",
+        "Beschäftigte: Ich weiß, aber … · Könnte ich bis … etwas später anfangen? · Ich kann nur im … Urlaub nehmen, weil … · Ich finde, dass … Euro mehr angemessen wären."
+      ]
+    }
+  ],
+  "module": [
+    {
+      "titel": "Eine neue Stelle – viele Fragen",
+      "icon": "❓",
+      "kurz": "Fragen zu Arbeitsbedingungen",
+      "aufgaben": [
+        {
+          "id": "r1-th",
+          "typ": "matrix",
+          "kontext": "Arbeitsbedingungen",
+          "frage": "Zu welchem Thema gehört die Frage?",
+          "wahl": [
+            "Arbeitszeit",
+            "Urlaub",
+            "Gehalt",
+            "Arbeitsort",
+            "Krankheit",
+            "Kinder"
+          ],
+          "aussagen": [
+            [
+              "Gibt es Gleitzeit?",
+              0
+            ],
+            [
+              "Von wann bis wann ist die Kernarbeitszeit?",
+              0
+            ],
+            [
+              "Kann ich meine Urlaubszeit frei wählen?",
+              1
+            ],
+            [
+              "Wie viele Tage Urlaub habe ich im Jahr?",
+              1
+            ],
+            [
+              "Was bleibt von meinem Gehalt netto übrig?",
+              2
+            ],
+            [
+              "Gibt es die Möglichkeit, im Homeoffice zu arbeiten?",
+              3
+            ],
+            [
+              "Was muss ich tun, wenn ich krank bin?",
+              4
+            ],
+            [
+              "Kann ich im Notfall mein Kind zur Arbeit bringen?",
+              5
+            ]
+          ]
+        },
+        {
+          "id": "r1-1",
+          "typ": "mc",
+          "kontext": "Wortschatz",
+          "frage": "Das Gehalt **vor** Abzug von Steuern und Abgaben ist das …",
+          "opts": [
+            "Bruttogehalt.",
+            "Nettogehalt.",
+            "Urlaubsgeld.",
+            "Trinkgeld."
+          ],
+          "l": 0
+        },
+        {
+          "id": "r1-2",
+          "typ": "mc",
+          "kontext": "Wortschatz",
+          "frage": "Bei ___ kann man Arbeitsbeginn und -ende selbst wählen, nur die Kernzeit ist fest.",
+          "opts": [
+            "Gleitzeit",
+            "Teilzeit",
+            "Probezeit",
+            "Schichtarbeit"
+          ],
+          "l": 0
+        }
+      ]
+    },
+    {
+      "titel": "Der Arbeitsvertrag",
+      "icon": "📝",
+      "kurz": "Vertrag lesen · Überschriften · Wortschatz",
+      "aufgaben": [
+        {
+          "id": "r2-text",
+          "typ": "lesen",
+          "kontext": "Lesen",
+          "frage": "Lesen Sie den Vertrag und beantworten Sie die Fragen.",
+          "textTitel": "Arbeitsvertrag – Druckerei Hansen (Arbeitgeber) und Frau Leyla Aydın (Arbeitnehmerin)",
+          "text": "§1 Das Arbeitsverhältnis beginnt am 1. März.\n\n§2 Als Probezeit werden 6 Monate vereinbart. Während der Probezeit kann das Arbeitsverhältnis von beiden Seiten mit einer Frist von 2 Wochen gekündigt werden.\n\n§3 Frau Aydın wird als Mediengestalterin eingestellt. Sie ist verpflichtet, auch andere zumutbare Arbeiten auszuführen, die ihren Vorkenntnissen entsprechen.\n\n§4 Die monatliche Bruttovergütung beträgt 3.050 €. Die Vergütung wird am Ende eines Monats gezahlt.\n\n§5 Die regelmäßige Arbeitszeit beträgt wöchentlich ohne die Berücksichtigung von Pausen 38 Stunden.\n\n§6 Die Arbeitnehmerin hat Anspruch auf 28 Arbeitstage Urlaub. Die Festlegung des Urlaubs ist mit dem Arbeitgeber abzustimmen.",
+          "fragen": [
+            {
+              "f": "Wie lange kann man in der Probezeit kündigen?",
+              "opts": [
+                "mit einer Frist von 2 Wochen",
+                "gar nicht",
+                "mit einer Frist von 6 Monaten",
+                "nur zum Monatsende"
+              ],
+              "l": 0
+            },
+            {
+              "f": "Was muss Frau Aydın außer ihrer Haupttätigkeit machen?",
+              "opts": [
+                "andere zumutbare Arbeiten, die zu ihren Kenntnissen passen",
+                "jede Arbeit, die im Betrieb gerade anfällt",
+                "Überstunden am Wochenende ohne Bezahlung",
+                "Aufgaben in der Buchhaltung und im Verkauf"
+              ],
+              "l": 0
+            },
+            {
+              "f": "Die 38 Stunden …",
+              "opts": [
+                "enthalten keine Pausen.",
+                "enthalten die Pausen.",
+                "gelten nur in der Probezeit.",
+                "sind Überstunden."
+              ],
+              "l": 0
+            },
+            {
+              "f": "Den Urlaub …",
+              "opts": [
+                "muss sie mit dem Arbeitgeber abstimmen.",
+                "kann sie frei festlegen.",
+                "bestimmt nur der Arbeitgeber.",
+                "bekommt sie erst nach einem Jahr."
+              ],
+              "l": 0
+            }
+          ]
+        },
+        {
+          "id": "r2-ue",
+          "typ": "matrix",
+          "kontext": "Vertragsaufbau",
+          "frage": "Welche Überschrift passt zu dem Paragrafen?",
+          "wahl": [
+            "Beginn des Arbeitsverhältnisses",
+            "Probezeit",
+            "Tätigkeit",
+            "Vergütung",
+            "Arbeitszeit",
+            "Urlaub"
+          ],
+          "aussagen": [
+            [
+              "§1 – Das Arbeitsverhältnis beginnt am 1. März.",
+              0
+            ],
+            [
+              "§2 – Als Probezeit werden 6 Monate vereinbart.",
+              1
+            ],
+            [
+              "§3 – Frau Aydın wird als Mediengestalterin eingestellt.",
+              2
+            ],
+            [
+              "§4 – Die monatliche Bruttovergütung beträgt 3.050 €.",
+              3
+            ],
+            [
+              "§5 – Die regelmäßige Arbeitszeit beträgt 38 Stunden.",
+              4
+            ],
+            [
+              "§6 – Sie hat Anspruch auf 28 Arbeitstage Urlaub.",
+              5
+            ]
+          ]
+        },
+        {
+          "id": "r2-zu",
+          "typ": "zu",
+          "kontext": "Wortschatz",
+          "frage": "Welche Erklärung passt?",
+          "paare": [
+            [
+              "abstimmen",
+              "etwas absprechen, koordinieren"
+            ],
+            [
+              "die Probezeit",
+              "Phase, wenn man neu in einer Firma ist"
+            ],
+            [
+              "die Vorkenntnisse",
+              "Wissen und Erfahrungen, die man mitbringt"
+            ],
+            [
+              "die Bruttovergütung",
+              "der Lohn vor Abzug von Steuern und Abgaben"
+            ],
+            [
+              "ohne Berücksichtigung",
+              "etwas wird nicht mitgerechnet"
+            ],
+            [
+              "das Arbeitsverhältnis",
+              "vertraglich geregelte Beziehung zwischen Arbeitgeber und Arbeitnehmer"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Vertragssprache",
+      "icon": "⚖️",
+      "kurz": "Funktion eines Vertrags · typische Formulierungen",
+      "aufgaben": [
+        {
+          "id": "r3-fu",
+          "typ": "luecke",
+          "kontext": "Vertragssprache",
+          "frage": "Die Funktion eines Arbeitsvertrags – ergänzen Sie.",
+          "text": "Der Arbeitsvertrag regelt die {0} und Pflichten zwischen Arbeitgeber/in und {1}. Hier steht zum Beispiel, wie hoch das Gehalt ist und wie viele Stunden die wöchentliche Arbeitszeit beträgt.\n\nDas Arbeitsverhältnis muss sich im Rahmen der {2} bewegen. Gibt es für die Branche einen {3}, so gelten die Regelungen dieses Vertrages. Gibt es eine {4}, d. h. eine Absprache zwischen Betriebsrat und Arbeitgeber/in, so gelten die Regelungen dieser Vereinbarung.",
+          "gaps": [
+            {
+              "opts": [
+                "Rechte",
+                "Gesetze",
+                "Vorteile"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "Arbeitnehmer/in",
+                "Betriebsrat",
+                "Gewerkschaft"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "Gesetze",
+                "Rechte",
+                "Wünsche"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "Tarifvertrag",
+                "Kaufvertrag",
+                "Mietvertrag"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "Betriebsvereinbarung",
+                "Betriebsversammlung",
+                "Betriebsfeier"
+              ],
+              "l": 0
+            }
+          ]
+        },
+        {
+          "id": "r3-zu",
+          "typ": "zu",
+          "kontext": "Vertragssprache",
+          "frage": "Welcher Satz aus einem Vertrag passt zum Thema?",
+          "paare": [
+            [
+              "Nebentätigkeit",
+              "Während der Beschäftigung ist jede Nebentätigkeit untersagt."
+            ],
+            [
+              "Überstunden",
+              "Der Arbeitgeber kann Überstunden anordnen."
+            ],
+            [
+              "Krankheit",
+              "Erkrankungen sind unverzüglich mitzuteilen."
+            ],
+            [
+              "Verschwiegenheit",
+              "Über betriebliche Angelegenheiten ist Stillschweigen zu bewahren."
+            ],
+            [
+              "Ende des Arbeitsverhältnisses",
+              "Nach der Probezeit ist eine Kündigung nur mit einer Frist zulässig."
+            ],
+            [
+              "Erholungsurlaub",
+              "Der Arbeitnehmer erhält 30 Arbeitstage Urlaub im Kalenderjahr."
+            ]
+          ]
+        },
+        {
+          "id": "r3-1",
+          "typ": "mc",
+          "kontext": "Vertragssprache",
+          "frage": "„Spätestens am dritten Werktag muss man eine ärztliche ___ vorlegen.“",
+          "opts": [
+            "Bescheinigung",
+            "Rechnung",
+            "Bewerbung",
+            "Genehmigung"
+          ],
+          "l": 0
+        },
+        {
+          "id": "r3-2",
+          "typ": "mc",
+          "kontext": "Vertragssprache",
+          "frage": "„Jede Nebentätigkeit ist untersagt“ bedeutet:",
+          "opts": [
+            "Ein zweiter Job ist verboten.",
+            "Ein zweiter Job ist erwünscht.",
+            "Man muss Überstunden machen.",
+            "Man darf nicht krank werden."
+          ],
+          "l": 0
+        }
+      ]
+    },
+    {
+      "titel": "Regeln im Betrieb",
+      "icon": "🏢",
+      "kurz": "Rechte und Pflichten · Präpositionen mit Genitiv",
+      "aufgaben": [
+        {
+          "id": "r4-zu",
+          "typ": "zu",
+          "kontext": "Ausdrücke",
+          "frage": "Welcher Ausdruck hat dieselbe Bedeutung?",
+          "paare": [
+            [
+              "statt der Alltagskleidung",
+              "anstelle von normaler Kleidung"
+            ],
+            [
+              "innerhalb des Betriebs",
+              "im Betrieb"
+            ],
+            [
+              "während der Arbeitszeit",
+              "in der Arbeitszeit"
+            ],
+            [
+              "außerhalb der Arbeitszeit",
+              "in der Freizeit"
+            ],
+            [
+              "trotz aller Unterschiede",
+              "obwohl alle unterschiedlich sind"
+            ],
+            [
+              "aufgrund der Auftragslage",
+              "weil genug Aufträge da sind"
+            ],
+            [
+              "wegen Gewissenskonflikten",
+              "weil es mit dem Gewissen nicht vereinbar ist"
+            ]
+          ]
+        },
+        {
+          "id": "r4-pr",
+          "typ": "matrix",
+          "kontext": "Präpositionen mit Genitiv",
+          "frage": "Welche Präposition passt?",
+          "wahl": [
+            "während",
+            "wegen",
+            "trotz",
+            "statt",
+            "außerhalb",
+            "anlässlich"
+          ],
+          "aussagen": [
+            [
+              "___ der Arbeitszeit darf man nicht privat telefonieren.",
+              0
+            ],
+            [
+              "___ des Feiertags bleibt das Büro geschlossen.",
+              1
+            ],
+            [
+              "___ des Mangels an Arbeitskräften nehmen wir neue Aufträge an.",
+              2
+            ],
+            [
+              "___ eines Betriebsausflugs gibt es dieses Jahr ein Sommerfest.",
+              3
+            ],
+            [
+              "___ des Betriebes darf man machen, was man will.",
+              4
+            ],
+            [
+              "___ unserer Betriebsversammlung gibt es Kaffee und Kuchen.",
+              5
+            ]
+          ]
+        },
+        {
+          "id": "r4-1",
+          "typ": "mc",
+          "kontext": "Genitiv",
+          "frage": "Aufgrund ___ Auftragsmangels gibt es Kurzarbeit.",
+          "opts": [
+            "des",
+            "dem",
+            "der",
+            "den"
+          ],
+          "l": 0
+        },
+        {
+          "id": "r4-2",
+          "typ": "mc",
+          "kontext": "Genitiv",
+          "frage": "Innerhalb ___ Gebäudes ist Rauchen verboten.",
+          "opts": [
+            "des",
+            "dem",
+            "das",
+            "der"
+          ],
+          "l": 0
+        },
+        {
+          "id": "r4-b1",
+          "typ": "bau",
+          "kontext": "Satzbau",
+          "frage": "Bilden Sie den Satz.",
+          "steine": [
+            "Ich habe",
+            "das Recht,",
+            "während",
+            "der Arbeitszeit",
+            "auf die Toilette",
+            "zu gehen."
+          ]
+        },
+        {
+          "id": "r4-3",
+          "typ": "mc",
+          "kontext": "Rechte",
+          "frage": "Darf man im Betrieb seine Meinung sagen?",
+          "opts": [
+            "Ja, solange man den Betriebsfrieden nicht gefährdet.",
+            "Nein, Meinungen sind während der Arbeit verboten.",
+            "Ja, auch mit politischer Werbung für Parteien.",
+            "Nur in der Pause und außerhalb des Gebäudes."
+          ],
+          "l": 0
+        }
+      ]
+    },
+    {
+      "titel": "Gespräche mit Vorgesetzten",
+      "icon": "🗣️",
+      "kurz": "Wer sagt was? · Redemittel",
+      "aufgaben": [
+        {
+          "id": "r5-wer",
+          "typ": "matrix",
+          "kontext": "Redemittel",
+          "frage": "Wer sagt das eher – die Chefin oder der Mitarbeiter?",
+          "wahl": [
+            "Vorgesetzte/r",
+            "Arbeitnehmer/in"
+          ],
+          "aussagen": [
+            [
+              "Trotz unserer Gleitzeitregelungen müssen Sie pünktlich zur Arbeit erscheinen.",
+              0
+            ],
+            [
+              "Sie können nicht einfach Urlaub nehmen, wann Sie wollen.",
+              0
+            ],
+            [
+              "Da müssen Sie im Team eine Lösung finden.",
+              0
+            ],
+            [
+              "Wir bezahlen Sie ja schon über Tarif.",
+              0
+            ],
+            [
+              "Wegen meiner Tochter muss ich immer pünktlich gehen.",
+              1
+            ],
+            [
+              "Könnte ich bis halb neun etwas später anfangen?",
+              1
+            ],
+            [
+              "Ich finde, dass 200 Euro mehr pro Monat angemessen wären.",
+              1
+            ],
+            [
+              "Ich habe schon 25 Überstunden, deshalb brauche ich Unterstützung.",
+              1
+            ]
+          ]
+        },
+        {
+          "id": "r5-dia",
+          "typ": "lesen",
+          "kontext": "Lesen",
+          "frage": "Lesen Sie das Gespräch und beantworten Sie die Fragen.",
+          "textTitel": "Im Büro der Abteilungsleiterin",
+          "text": "**Frau Kraus:** Herr Novak, Sie leisten sehr gute Arbeit. Aber ich habe gehört, dass es Probleme mit Ihrer Gruppenleiterin gibt.\n**Herr Novak:** Ja. Sie ärgert sich, weil ich jeden Tag um 16 Uhr gehe. Wegen meines Sohnes muss ich pünktlich weg, die Kita schließt um halb fünf.\n**Frau Kraus:** Verstehe. Unsere Kernzeit endet um 15 Uhr, das ist also in Ordnung. Aber morgens kommen Sie manchmal nach neun.\n**Herr Novak:** Das stimmt, das tut mir leid. Das kommt nicht wieder vor.\n**Frau Kraus:** Gut. Und noch etwas: Sie möchten im August Urlaub, aber da wollen alle Urlaub. Sie sollten im Team eine Lösung finden.",
+          "fragen": [
+            {
+              "f": "Was hält Frau Kraus von Herrn Novaks Arbeit?",
+              "opts": [
+                "Sie findet sie sehr gut.",
+                "Sie ist unzufrieden.",
+                "Sie sagt nichts dazu.",
+                "Sie will ihm kündigen."
+              ],
+              "l": 0
+            },
+            {
+              "f": "Warum geht Herr Novak um 16 Uhr?",
+              "opts": [
+                "Er muss seinen Sohn von der Kita abholen.",
+                "Er hat am Nachmittag einen zweiten Job.",
+                "Er besucht abends einen Deutschkurs.",
+                "Er hat schon genug Überstunden gemacht."
+              ],
+              "l": 0
+            },
+            {
+              "f": "Was ist das eigentliche Problem?",
+              "opts": [
+                "Er kommt morgens manchmal zu spät.",
+                "Er geht zu früh nach Hause.",
+                "Er macht zu viele Pausen.",
+                "Er arbeitet zu langsam."
+              ],
+              "l": 0
+            },
+            {
+              "f": "Was sagt Frau Kraus zum Urlaub?",
+              "opts": [
+                "Die Urlaubszeiten müssen im Team abgestimmt werden.",
+                "Er bekommt im August keinen Urlaub.",
+                "Er kann im August ohne Probleme Urlaub nehmen.",
+                "Die Gruppenleiterin entscheidet allein darüber."
+              ],
+              "l": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Kündigung",
+      "icon": "✉️",
+      "kurz": "Ordentlich oder außerordentlich?",
+      "aufgaben": [
+        {
+          "id": "r6-text",
+          "typ": "lesen",
+          "kontext": "Lesen",
+          "frage": "Lesen Sie die Information und beantworten Sie die Fragen.",
+          "textTitel": "Info: Kündigung",
+          "text": "Im Arbeitsrecht unterscheidet man zwei Arten von Kündigungen: die ordentliche und die außerordentliche.\n\nDie **ordentliche Kündigung** beendet das Arbeitsverhältnis fristgerecht, also mit Ablauf der Kündigungsfrist. Nach dem Gesetz gilt eine Frist von vier Wochen zum 15. oder zum Ende eines Monats. In Arbeitsverträgen oder Tarifverträgen sind oft andere Fristen vereinbart, häufig zum Beispiel sechs Wochen zum Quartalsende.\n\nFür die **außerordentliche Kündigung** braucht man einen triftigen Grund. Sie ist meistens fristlos, d. h. sie gilt sofort. Wer zum Beispiel stiehlt oder sich mit Kollegen prügelt, kann fristlos entlassen werden. Auch Belästigung und diskriminierende Äußerungen können dazu führen.\n\nAuch Beschäftigte können außerordentlich kündigen, z. B. wenn der Lohn längere Zeit nicht gezahlt wird, wenn sie gemobbt werden oder ständig Aufgaben erledigen müssen, die nicht im Vertrag stehen.",
+          "fragen": [
+            {
+              "f": "Welche Frist gilt nach dem Gesetz bei einer ordentlichen Kündigung?",
+              "opts": [
+                "vier Wochen zum 15. oder zum Monatsende",
+                "sechs Wochen zum Ende eines Quartals",
+                "sofort, ohne jede Frist",
+                "zwei Wochen zum Ende der Probezeit"
+              ],
+              "l": 0
+            },
+            {
+              "f": "„Fristlos“ bedeutet:",
+              "opts": [
+                "Die Kündigung gilt sofort.",
+                "Die Kündigung gilt nach vier Wochen.",
+                "Man darf nicht kündigen.",
+                "Die Frist steht im Tarifvertrag."
+              ],
+              "l": 0
+            },
+            {
+              "f": "Wann können Beschäftigte außerordentlich kündigen?",
+              "opts": [
+                "wenn sie längere Zeit keinen Lohn bekommen",
+                "wenn sie mehr Urlaub möchten",
+                "wenn sie eine neue Stelle gefunden haben",
+                "wenn die Probezeit vorbei ist"
+              ],
+              "l": 0
+            }
+          ]
+        },
+        {
+          "id": "r6-art",
+          "typ": "matrix",
+          "kontext": "Kündigung",
+          "frage": "Welche Kündigung ist hier wahrscheinlich?",
+          "wahl": [
+            "ordentlich (mit Frist)",
+            "außerordentlich (fristlos)"
+          ],
+          "aussagen": [
+            [
+              "Eine Mitarbeiterin hat Geld aus der Kasse genommen.",
+              1
+            ],
+            [
+              "Ein Mitarbeiter hat einen Kollegen geschlagen.",
+              1
+            ],
+            [
+              "Die Firma hat zu wenig Aufträge und muss Personal abbauen.",
+              0
+            ],
+            [
+              "Ein Mitarbeiter hat eine neue Stelle in einer anderen Stadt.",
+              0
+            ],
+            [
+              "Ein Kollege macht immer wieder diskriminierende Äußerungen.",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Arbeitsschutz & Prüfungstraining",
+      "icon": "🦺",
+      "kurz": "Schutzrechte · Sprachbausteine",
+      "aufgaben": [
+        {
+          "id": "r7-zu",
+          "typ": "zu",
+          "kontext": "Arbeitsschutz",
+          "frage": "Welche Erklärung passt zum Stichwort?",
+          "paare": [
+            [
+              "das Mutterschaftsgeld",
+              "Geld für Frauen vor und nach der Geburt"
+            ],
+            [
+              "die Kinderarbeit",
+              "unter 13 Jahren verboten"
+            ],
+            [
+              "der Betriebsrat",
+              "vertritt die Interessen der Beschäftigten im Betrieb"
+            ],
+            [
+              "die Gewerkschaft",
+              "Organisation, die Arbeitnehmer berät und Tarife verhandelt"
+            ],
+            [
+              "die Ruhezeiten",
+              "vorgeschriebene Pausen, z. B. für Lkw-Fahrer"
+            ],
+            [
+              "der Gesundheitsschutz",
+              "Maßnahmen gegen Krankheiten durch die Arbeit"
+            ]
+          ]
+        },
+        {
+          "id": "r7-sb",
+          "typ": "luecke",
+          "kontext": "Sprachbausteine",
+          "frage": "Sprachbausteine: E-Mail an den Betriebsrat. Wählen Sie die richtige Lösung.",
+          "text": "Sehr geehrte Damen und Herren,\n\nich arbeite seit zwei Jahren in der Logistik. {0} des hohen Auftragsvolumens müssen wir seit Monaten Überstunden machen – oft auch {1} der Wochenenden. In meinem Arbeitsvertrag steht, dass der Arbeitgeber Überstunden {2} kann, aber nicht, wie viele.\n\n{3} mehrerer Gespräche mit meinem Gruppenleiter hat sich nichts geändert. Könnten Sie mir sagen, welche {4} ich in dieser Situation habe?\n\nMit freundlichen Grüßen\nMarek Zieliński",
+          "gaps": [
+            {
+              "opts": [
+                "Aufgrund",
+                "Trotz",
+                "Statt"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "während",
+                "wegen",
+                "trotz"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "anordnen",
+                "verweigern",
+                "kündigen"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "Trotz",
+                "Wegen",
+                "Innerhalb"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "Rechte",
+                "Pflichten",
+                "Urlaube"
+              ],
+              "l": 0
+            }
+          ]
+        },
+        {
+          "id": "r7-1",
+          "typ": "mc",
+          "kontext": "Arbeitsschutz",
+          "frage": "Eine schwangere Lagerarbeiterin …",
+          "opts": [
+            "darf bestimmte schwere Arbeiten nicht mehr machen.",
+            "muss das Arbeitsverhältnis sofort kündigen.",
+            "bekommt ab sofort keinen Lohn mehr.",
+            "muss in der Schwangerschaft mehr Überstunden machen."
+          ],
+          "l": 0
+        }
+      ]
+    }
+  ]
+}

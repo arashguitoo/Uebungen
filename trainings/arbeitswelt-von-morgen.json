@@ -1,0 +1,329 @@
+{
+  "id": "arbeitswelt-von-morgen",
+  "titel": "Arbeitswelt von morgen",
+  "untertitel": "Digitalisierung · Roboter · Partizipien als Adjektive · Selbstständigkeit · Bescheid und Widerspruch · während und Präpositionen mit Genitiv · Weiterbildung",
+  "niveau": "B1/B2",
+  "reihe": "Prüfungstraining B1/B2",
+  "farbe": "#2a6f97",
+  "mix": 15,
+  "intro": "Acht Teile – jeder Teil kann einzeln gespielt werden. Der **Prüfungsmix** zieht zufällig Aufgaben aus allen Teilen.",
+  "kompakt": [
+    { "titel": "Partizipien als Adjektive", "zeilen": [
+      "Partizipien können als **Adjektive** gebraucht werden. Vor einem Nomen brauchen sie eine **Adjektivendung**.",
+      "**Partizip I** (Infinitiv + d): aktiv, **gleichzeitig** – selbstfahrende Busse = Busse, die selbst fahren",
+      "**Partizip II**: meist **passiv**, gleichzeitig oder **vorher** – die von Robotern unterstützten Kinder = die Kinder, die von Robotern unterstützt werden",
+      "Vor dem Partizip können **Erweiterungen** stehen: der fließend drei Sprachen sprechende Roboter"
+    ]},
+    { "titel": "Bescheide verstehen – Widerspruch einlegen", "zeilen": [
+      "Zuerst die **entscheidende Information** suchen: Bewilligung oder Ablehnung? Oft steht sie schon im Betreff.",
+      "**Ablehnungsbescheid:** Dem Antrag kann nicht entsprochen werden. = Der Antrag wird abgelehnt.",
+      "**Rechtsbehelfsbelehrung:** Gegen diesen Bescheid ist der Widerspruch zulässig – schriftlich, meist **binnen eines Monats**.",
+      "**Widerspruch:** Ihr Bescheid vom … · Aktenzeichen … · gegen den oben genannten Bescheid lege ich hiermit Widerspruch ein. · Begründung: … · Nachweise sind beigefügt. · Ich bitte Sie, den Bescheid nochmals zu prüfen."
+    ]},
+    { "titel": "Der Konnektor während", "zeilen": [
+      "**temporal** (gleichzeitig): **Während** ich arbeite, höre ich Musik.",
+      "**adversativ** (Gegensatz): **Während** die einen einen festen Berufswunsch haben, wissen andere es nicht.",
+      "Nebensatz – das Verb steht **am Ende**."
+    ]},
+    { "titel": "Präpositionen mit Genitiv", "zeilen": [
+      "**Zeit:** innerhalb · während · außerhalb (zeitlich)",
+      "**Ort:** innerhalb · außerhalb",
+      "**Grund/Folge:** dank · wegen · aufgrund · infolge",
+      "**Gegengrund:** trotz",
+      "Beispiel: **Trotz des hohen Gehalts** sucht er eine neue Stelle. · **Dank einer guten Ausbildung** findet sie problemlos einen Job."
+    ]},
+    { "titel": "Argumentieren", "zeilen": [
+      "**Argumente nennen:** Ein weiterer Vorteil ist … · Es gibt noch den Aspekt, dass … · Man darf nicht vergessen, dass …",
+      "**Zustimmen:** … ist sicherlich sinnvoll, da … · Ihre Argumente finde ich einleuchtend. · Da sind wir uns einig.",
+      "**Gegenargumente:** Das stimmt zwar, aber … · Das kann man zwar sagen, doch … · Vielleicht ist das so, aber …",
+      "**Nachdruck:** Aber das ist nicht das, was ich machen möchte. · … ist im Moment sehr gefragt. · Es ist aber auch zu bedenken, dass …"
+    ]},
+    { "titel": "Feedback und Interessen durchsetzen", "zeilen": [
+      "**Erwartungen:** Durch die Anzeige entsteht der Eindruck, dass … · **Positives:** Sehr gut gefallen hat mir … · **Probleme:** Leider musste ich feststellen, dass … · **Empfehlung:** Ich würde Ihnen daher empfehlen, …",
+      "**Gespräch mit Vorgesetzten:** Hätten Sie vielleicht einen Moment Zeit? · Ich muss leider sagen, dass … · Daher wollte ich Sie fragen, ob es möglich wäre, … · Eigene **Lösungsvorschläge** machen und **begründen**."
+    ]}
+  ],
+  "module": [
+    {
+      "titel": "Die neue Arbeitswelt",
+      "icon": "🌐",
+      "kurz": "Veränderungen in der Arbeitswelt · Meinungen verstehen",
+      "aufgaben": [
+        {
+          "id": "j1-thema", "typ": "matrix", "kontext": "Lesen",
+          "frage": "Zu welchem Thema passt die Aussage?",
+          "wahl": ["Weiterbildung", "Chatbots", "weltweites Arbeiten", "Drohnen", "Pflegeroboter"],
+          "aussagen": [
+            ["„Den Beruf, den ich vor fünf Jahren gelernt habe, gibt es vielleicht bald nicht mehr. Ich muss mich ständig neu qualifizieren.“", 0],
+            ["„Wann habt ihr eigentlich das letzte Mal mit einem echten Menschen vom Kundenservice gesprochen?“", 1],
+            ["„Mein Team sitzt auf drei Kontinenten – feste Arbeitszeiten gibt es bei uns nicht mehr.“", 2],
+            ["„Der Chef will jetzt Pakete per Luft liefern lassen. Verlieren wir alle bald unseren Job?“", 3],
+            ["„Die Bevölkerung wird älter, es fehlt Personal. Können Maschinen in Heimen helfen?“", 4]
+          ]
+        },
+        { "id": "j1-wort", "typ": "zu", "kontext": "Wortschatz", "frage": "Was bedeuten die Ausdrücke?", "paare": [
+          ["die Umschulung", "man lernt einen ganz neuen Beruf"],
+          ["die Fachkraft", "eine Person mit Berufsausbildung oder Studium"],
+          ["automatisiert", "von Maschinen erledigt"],
+          ["die Branche", "ein Bereich der Wirtschaft"],
+          ["zukunftssicher", "auch in vielen Jahren noch gebraucht"]
+        ]},
+        { "id": "j1-m1", "typ": "mc", "kontext": "Wortschatz", "frage": "Im Supermarkt gibt es immer mehr Kassen, an denen die Kunden selbst scannen. Das nennt man …", "opts": ["Selbstbedienungskassen.", "Kassenautomaten für Mitarbeiter.", "Bargeldkassen.", "Sammelkassen."], "l": 0 }
+      ]
+    },
+    {
+      "titel": "Roboter im Einsatz",
+      "icon": "🤖",
+      "kurz": "Texte über Roboter · Vor- und Nachteile · argumentieren",
+      "aufgaben": [
+        {
+          "id": "j2-texte", "typ": "matrix", "kontext": "Lesen",
+          "frage": "Lesen Sie die Texte. Welche Überschrift passt?",
+          "posts": [
+            { "name": "A", "text": "Prognosen zufolge könnte in Zukunft ein großer Teil der heutigen Tätigkeiten von Maschinen übernommen werden. Viele Aufgaben erledigen Roboter genauer als Menschen. Schwer zu ersetzen sind aber Berufe, in denen Einfühlungsvermögen, Verhandlungsgeschick oder Überzeugungskraft wichtig sind." },
+            { "name": "B", "text": "In mehreren deutschen Städten fahren schon Kleinbusse ohne Fahrer – allerdings nur auf genau festgelegten Strecken. Bis Privatautos völlig allein fahren dürfen, wird es wegen Sicherheitsbedenken wohl noch dauern." },
+            { "name": "C", "text": "Kinder, die lange im Krankenhaus liegen, können über einen kleinen Roboter am Unterricht teilnehmen. Er sitzt im Klassenzimmer und überträgt alles auf ein Tablet. Über das Tablet steuern die Kinder den Roboter und sprechen mit ihrer Klasse." },
+            { "name": "D", "text": "In Pflegeheimen bringen erste Roboter das Essen, Hebehilfen entlasten das Personal bei der Körperpflege und weiche Roboter-Tiere reagieren auf Sprache und Berührung." }
+          ],
+          "wahl": ["A", "B", "C", "D"],
+          "aussagen": [["Ersetzen Roboter unsere Jobs?", 0], ["Unterwegs ohne Fahrer", 1], ["Im Klassenzimmer, obwohl im Krankenhaus", 2], ["Hilfe für Pflege und Betreuung", 3]]
+        },
+        {
+          "id": "j2-vn", "typ": "matrix", "kontext": "Argumente",
+          "frage": "Vorteil oder Nachteil von Robotern?",
+          "wahl": ["Vorteil", "Nachteil"],
+          "aussagen": [
+            ["Sie entlasten das Personal bei schweren Arbeiten.", 0],
+            ["Arbeitsplätze können wegfallen.", 1],
+            ["Sie arbeiten sehr genau und werden nicht müde.", 0],
+            ["Menschliche Nähe kann eine Maschine nicht ersetzen.", 1],
+            ["Kranke Kinder bleiben mit ihrer Klasse in Kontakt.", 0],
+            ["Die Anschaffung ist sehr teuer.", 1]
+          ]
+        },
+        {
+          "id": "j2-rm", "typ": "matrix", "kontext": "Redemittel",
+          "frage": "Was macht man mit dem Ausdruck?",
+          "wahl": ["Argument nennen", "zustimmen", "Gegenargument"],
+          "aussagen": [
+            ["Ein anderes Argument dafür ist …", 0], ["Man darf nicht vergessen, dass …", 0], ["Man muss auch daran denken, dass …", 0],
+            ["Deine Argumente finde ich einleuchtend.", 1], ["Ich stimme Ihnen zu, dass …", 1],
+            ["Das stimmt zwar, aber …", 2], ["Das kann man zwar sagen, doch …", 2], ["Vielleicht ist das so, aber …", 2]
+          ]
+        },
+        { "id": "j2-m1", "typ": "mc", "kontext": "Wortschatz", "frage": "Fahrzeuge, die ohne Fahrer fahren, nennt man …", "opts": ["autonom.", "automatisch gestartet.", "fahrerfreundlich.", "elektrisch."], "l": 0 }
+      ]
+    },
+    {
+      "titel": "Partizipien als Adjektive",
+      "icon": "⚙️",
+      "kurz": "Partizip I und II · Relativsatz ↔ Partizip · Erweiterungen",
+      "aufgaben": [
+        {
+          "id": "j3-p", "typ": "matrix", "kontext": "Partizip I oder II",
+          "frage": "Partizip I oder Partizip II?",
+          "wahl": ["Partizip I", "Partizip II"],
+          "aussagen": [
+            ["selbstfahrende Busse", 0], ["die unterstützten Kinder", 1], ["ein selbstständig denkender Roboter", 0],
+            ["speziell entwickelte Geräte", 1], ["auf streng festgelegten Strecken", 1], ["Emotionen zeigende Roboter", 0]
+          ]
+        },
+        { "id": "j3-1", "typ": "mc", "kontext": "Relativsatz", "frage": "„Ein selbstständig denkender Roboter bringt das Essen.“ = Ein Roboter, ___, bringt das Essen.", "opts": ["der selbstständig denkt", "der selbstständig gedacht wird", "den selbstständig denkt", "der selbstständig gedacht hat"], "l": 0 },
+        { "id": "j3-2", "typ": "mc", "kontext": "Relativsatz", "frage": "„Die von Robotern unterstützten Kinder nehmen am Unterricht teil.“ = Die Kinder, ___, nehmen am Unterricht teil.", "opts": ["die von Robotern unterstützt werden", "die Roboter unterstützen", "die von Robotern unterstützen", "denen von Robotern unterstützt werden"], "l": 0 },
+        { "id": "j3-3", "typ": "mc", "kontext": "Umformen", "frage": "„Roboter, die Emotionen zeigen, faszinieren viele Menschen.“ →", "opts": ["Emotionen zeigende Roboter faszinieren viele Menschen.", "Emotionen gezeigte Roboter faszinieren viele Menschen.", "Zeigende Emotionen Roboter faszinieren viele Menschen.", "Emotionen zeigenden Roboter faszinieren viele Menschen."], "l": 0 },
+        { "id": "j3-4", "typ": "mc", "kontext": "Umformen", "frage": "„Ein autonomer Bus, der lange getestet wurde, wird jetzt eingesetzt.“ →", "opts": ["Ein lange getesteter autonomer Bus wird jetzt eingesetzt.", "Ein lange testender autonomer Bus wird jetzt eingesetzt.", "Ein getestet langer autonomer Bus wird jetzt eingesetzt.", "Ein lange getestete autonomer Bus wird jetzt eingesetzt."], "l": 0 },
+        { "id": "j3-5", "typ": "mc", "kontext": "Umformen", "frage": "„Geräte, die von Robotern gebaut werden, haben weniger Defekte.“ →", "opts": ["Von Robotern gebaute Geräte haben weniger Defekte.", "Von Robotern bauende Geräte haben weniger Defekte.", "Robotern gebaute Geräte haben weniger Defekte.", "Von Robotern gebauten Geräte haben weniger Defekte."], "l": 0 },
+        { "id": "j3-b1", "typ": "bau", "kontext": "Erweiterungen", "frage": "Erweitern Sie: „der sprechende Roboter“ → der Roboter spricht fließend drei Sprachen.", "steine": ["der", "fließend", "drei Sprachen", "sprechende", "Roboter"] },
+        { "id": "j3-b2", "typ": "bau", "kontext": "Erweiterungen", "frage": "Erweitern Sie: „der unterschriebene Vertrag“ → der Vertrag wurde gestern von beiden Seiten unterschrieben.", "steine": ["der", "gestern", "von beiden Seiten", "unterschriebene", "Vertrag"], "alt": [["der", "von beiden Seiten", "gestern", "unterschriebene", "Vertrag"]] }
+      ]
+    },
+    {
+      "titel": "Selbstständig machen",
+      "icon": "🚀",
+      "kurz": "Mail über eine Gründung · Gründungszuschuss · Bescheid verstehen · Widerspruch",
+      "aufgaben": [
+        {
+          "id": "j4-mail", "typ": "lesen", "kontext": "Lesen",
+          "frage": "Lesen Sie die Mail von Selma an einen Freund und beantworten Sie die Fragen.",
+          "textTitel": "Re: Mein neues Abenteuer",
+          "text": "Hallo Tarek,\n\nschön, von dir zu hören! Ja, seit vier Monaten bin ich offiziell meine eigene Chefin – mit meinem kleinen Kaffeefahrrad auf dem Wochenmarkt. Das ist ganz schön aufregend.\n\nDu besuchst ein Gründerseminar? Das ist ein guter Schritt. Dort lernt man zum Beispiel, wie man einen Businessplan schreibt – das war für mich ganz wichtig, um zu sehen, ob mein Plan realistisch ist. Recherchier unbedingt auch, welche Förderungen es gibt. Das Fahrrad und die Kaffeemaschine hat mir meine Schwester geliehen. Aber um sicher anfangen zu können, brauchte ich noch den Gründungszuschuss von der Agentur für Arbeit. Den gibt es für Menschen, die arbeitslos sind: sechs Monate lang das Arbeitslosengeld und zusätzlich 300 Euro im Monat. Ohne diese Hilfe hätte ich es nicht geschafft.\n\nIm Sommer verdiene ich genug. Im Winter wird es schwieriger, da muss ich mir Weihnachtsmärkte suchen. Deshalb habe ich eine Verlängerung der Förderung beantragt – die muss aber neu bewilligt werden. Drück mir die Daumen!\n\nViel Erfolg mit deiner Idee – ein eigenes Fahrradgeschäft, toll!\nSelma",
+          "fragen": [
+            { "f": "Wer hat Selma das Startkapital geliehen?", "opts": ["ihre Schwester", "die Agentur für Arbeit", "eine Bank", "Tarek"], "l": 0 },
+            { "f": "Wer kann den Gründungszuschuss bekommen?", "opts": ["Menschen, die arbeitslos sind", "alle Studierenden", "nur Frauen", "Menschen mit eigenem Laden"], "l": 0 },
+            { "f": "Warum hat Selma eine Verlängerung beantragt?", "opts": ["Im Winter verdient sie weniger.", "Sie möchte ein zweites Fahrrad kaufen.", "Das Seminar ist teuer.", "Sie hat keine Kunden."], "l": 0 },
+            { "f": "Was ist Tareks Plan?", "opts": ["ein eigenes Fahrradgeschäft", "ein Kaffeefahrrad", "ein Gründerseminar leiten", "bei der Agentur arbeiten"], "l": 0 }
+          ]
+        },
+        {
+          "id": "j4-bes", "typ": "lesen", "kontext": "Bescheid",
+          "frage": "Lesen Sie den Brief. Lösen Sie die Aufgaben.",
+          "textTitel": "Bundesagentur für Arbeit – Gründungszuschuss, Aktenzeichen 7kq2 – Ablehnungsbescheid",
+          "text": "Sehr geehrte Frau Arslan,\n\nIhrem Antrag vom 12.08. auf Weitergewährung des Gründungszuschusses kann leider nicht entsprochen werden.\n\nDie Voraussetzungen sind nicht erfüllt, da Sie im Betrachtungszeitraum einen Gewinn angegeben haben, der so stabil ist, dass Ihre Selbstständigkeit aus eigener Kraft gesichert ist.\n\nGegen diesen Bescheid ist der Widerspruch zulässig. Der Widerspruch ist schriftlich binnen eines Monats bei der Agentur für Arbeit einzureichen.\n\nMit freundlichen Grüßen\nIm Auftrag",
+          "fragen": [
+            { "f": "Bekommt Frau Arslan die Verlängerung?", "opts": ["Nein, der Antrag wird abgelehnt.", "Ja, für weitere neun Monate.", "Ja, aber erst im Winter.", "Das steht nicht im Brief."], "l": 0 },
+            { "f": "Warum?", "opts": ["Sie hat bisher genug verdient.", "Sie hat den Antrag zu spät gestellt.", "Sie ist nicht arbeitslos gewesen.", "Ihr Businessplan fehlt."], "l": 0 },
+            { "f": "Was kann sie tun?", "opts": ["innerhalb eines Monats schriftlich widersprechen", "nichts mehr", "sofort telefonisch widersprechen", "einen neuen Antrag in einem Jahr stellen"], "l": 0 }
+          ]
+        },
+        {
+          "id": "j4-wid", "typ": "ordnen", "kontext": "Widerspruch",
+          "frage": "Bringen Sie den Widerspruch in die richtige Reihenfolge.",
+          "zeilen": [
+            "Ihr Bescheid vom 2. September, Aktenzeichen 7kq2",
+            "Sehr geehrte Damen und Herren,",
+            "gegen den oben genannten Bescheid lege ich hiermit Widerspruch ein.",
+            "Begründung: Mein Gewinn im Sommer ist saisonbedingt. In den Wintermonaten verdiene ich deutlich weniger.",
+            "Entsprechende Nachweise sind diesem Schreiben beigefügt.",
+            "Ich bitte Sie, den Bescheid nochmals zu prüfen.",
+            "Mit freundlichen Grüßen\nSelma Arslan"
+          ]
+        },
+        { "id": "j4-m1", "typ": "mc", "kontext": "Behördendeutsch", "frage": "„Ihrem Antrag kann nicht entsprochen werden.“ bedeutet …", "opts": ["Ihr Antrag wird abgelehnt.", "Ihr Antrag ist angekommen.", "Ihr Antrag wird bewilligt.", "Ihr Antrag ist unvollständig."], "l": 0 }
+      ]
+    },
+    {
+      "titel": "während und Präpositionen mit Genitiv",
+      "icon": "⏳",
+      "kurz": "während temporal oder adversativ · dank, trotz, wegen, infolge, innerhalb …",
+      "aufgaben": [
+        {
+          "id": "j5-waehr", "typ": "matrix", "kontext": "während",
+          "frage": "Welche Bedeutung hat während?",
+          "wahl": ["temporal (gleichzeitig)", "adversativ (Gegensatz)"],
+          "aussagen": [
+            ["Während die einen schon immer einen Berufswunsch hatten, wissen andere es bis zum Abschluss nicht.", 1],
+            ["Während der Moderator mit der Expertin spricht, können Hörer Fragen im Chat stellen.", 0],
+            ["Während es für alte Berufe eine Ausbildung gibt, kann man neue oft nicht klassisch lernen.", 1],
+            ["Während ich in der Arbeit bin, kümmert sich meine Mutter um die Kinder.", 0],
+            ["Während mein Bruder gern im Büro sitzt, arbeite ich lieber draußen.", 1]
+          ]
+        },
+        {
+          "id": "j5-pr", "typ": "matrix", "kontext": "Genitiv",
+          "frage": "Was drückt die Präposition aus?",
+          "wahl": ["Zeit", "Ort", "Grund/Folge", "Gegengrund"],
+          "aussagen": [
+            ["innerhalb der letzten Jahre", 0], ["während der Schulzeit", 0],
+            ["außerhalb der Hochschulen", 1], ["innerhalb der Universitäten", 1],
+            ["dank ihres Berufs", 2], ["infolge der Digitalisierung", 2], ["aufgrund ihrer Ausbildung", 2], ["wegen der Belastung", 2],
+            ["trotz der Veränderungen", 3]
+          ]
+        },
+        { "id": "j5-1", "typ": "mc", "kontext": "Genitiv", "frage": "___ des hohen Gehalts sucht Abed eine neue Stelle.", "opts": ["Trotz", "Dank", "Wegen", "Innerhalb"], "l": 0 },
+        { "id": "j5-2", "typ": "mc", "kontext": "Genitiv", "frage": "Dank ___ guten Ausbildung findet Lina problemlos einen Job.", "opts": ["einer", "eine", "einem", "ein"], "l": 0 },
+        { "id": "j5-3", "typ": "mc", "kontext": "Genitiv", "frage": "Infolge ___ großen Belastung werden viele Mitarbeitende krank.", "opts": ["der", "die", "den", "dem"], "l": 0 },
+        { "id": "j5-4", "typ": "mc", "kontext": "Genitiv", "frage": "Wegen ___ netten Chefs hat Tom viel Spaß an der Arbeit.", "opts": ["des", "dem", "den", "der"], "l": 0 },
+        { "id": "j5-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz.", "steine": ["Innerhalb", "der letzten Jahre", "sind", "viele neue Berufe", "entstanden."] },
+        { "id": "j5-b2", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz mit während (Gegensatz).", "steine": ["Während", "meine Freunde", "eine Ausbildung", "machen,", "studiere", "ich", "Informatik."] }
+      ]
+    },
+    {
+      "titel": "Man lernt nie aus",
+      "icon": "🎓",
+      "kurz": "Weiterbildung oder Umschulung · Forum · Argumente im Beratungsgespräch",
+      "aufgaben": [
+        { "id": "j6-zu", "typ": "zu", "kontext": "Wortschatz", "frage": "Was bedeuten die Ausdrücke?", "paare": [
+          ["sich erkundigen", "nach Informationen fragen"],
+          ["sich etwas finanzieren lassen", "etwas bezahlt bekommen, z. B. von einem Amt"],
+          ["auf dem neuesten Stand sein", "gut informiert sein"],
+          ["etwas nachweisen", "zeigen, dass etwas so ist, wie man sagt"],
+          ["Eigeninitiative ergreifen", "sich selbst um etwas kümmern"]
+        ]},
+        {
+          "id": "j6-forum", "typ": "lesen", "kontext": "Lesen",
+          "frage": "Lesen Sie die Beiträge im Forum „Lernen für den Job“ und beantworten Sie die Fragen.",
+          "posts": [
+            { "name": "Ahmad_K", "info": "Frage", "text": "Ich bin zurzeit arbeitslos. Mein Berater sagt, eine Weiterbildung wird bezahlt. Stimmt das? Und was ist eigentlich der Unterschied zur Umschulung?" },
+            { "name": "Nele", "text": "Ja, die Agentur für Arbeit oder das Jobcenter bezahlt manche Weiterbildungen komplett, zum Beispiel mit einem Bildungsgutschein. Auf der Seite der Agentur kann man Kurse suchen – auch wenn man nicht arbeitslos ist." },
+            { "name": "Bogdan", "text": "Mit einer Weiterbildung bleibst du in deinem Beruf auf dem neuesten Stand oder qualifizierst dich für eine bessere Stelle. Bei einer Umschulung lernst du einen ganz neuen Beruf. Ich war Pfleger und musste wegen Rückenschmerzen aufhören – jetzt bin ich Ernährungsberater. Die Umschulung wurde mir finanziert." },
+            { "name": "Tina_R", "text": "Wichtig: Das Amt zahlt nicht einfach irgendwas. Du musst begründen, dass du mit dem Kurs bessere Chancen hast. Ergreif Eigeninitiative, such dir selbst einen passenden Kurs und frag beim Anbieter nach freien Plätzen." }
+          ],
+          "fragen": [
+            { "f": "Wer bezahlt manche Weiterbildungen?", "opts": ["die Agentur für Arbeit oder das Jobcenter", "nur der Arbeitgeber", "die Krankenkasse", "niemand"], "l": 0 },
+            { "f": "Was ist eine Umschulung?", "opts": ["Man lernt einen neuen Beruf.", "Man wechselt die Schule.", "Ein Kurs für einen Nachmittag.", "Ein Sprachkurs."], "l": 0 },
+            { "f": "Warum hat Bogdan eine Umschulung gemacht?", "opts": ["aus gesundheitlichen Gründen", "weil er mehr verdienen wollte", "weil er umgezogen ist", "weil sein Chef es wollte"], "l": 0 },
+            { "f": "Was rät Tina?", "opts": ["selbst aktiv einen passenden Kurs suchen", "einfach jeden Kurs annehmen", "keine Weiterbildung machen", "nur online lernen"], "l": 0 }
+          ]
+        },
+        {
+          "id": "j6-rm", "typ": "matrix", "kontext": "Redemittel",
+          "frage": "Im Beratungsgespräch: Argument nennen oder Nachdruck verleihen?",
+          "wahl": ["Argument nennen", "Nachdruck verleihen"],
+          "aussagen": [
+            ["Für meinen Beruf ist dieser Kurs besonders relevant.", 0],
+            ["Mit der passenden Qualifikation habe ich im Bereich Logistik gute Chancen.", 0],
+            ["Damit bin ich für den Arbeitsmarkt besser aufgestellt.", 0],
+            ["Aber das ist nicht das, was ich machen möchte.", 1],
+            ["Fachkräfte für Lager und Logistik sind im Moment sehr gefragt.", 1],
+            ["Es ist aber auch zu bedenken, dass …", 1]
+          ]
+        },
+        { "id": "j6-m1", "typ": "mc", "kontext": "Wortschatz", "frage": "Ein Schein, mit dem die Agentur für Arbeit einen Kurs bezahlt, heißt …", "opts": ["Bildungsgutschein.", "Bildungsurlaub.", "Kursausweis.", "Lehrbrief."], "l": 0 }
+      ]
+    },
+    {
+      "titel": "Feedback geben und Interessen vertreten",
+      "icon": "📝",
+      "kurz": "schriftliches Feedback · zustimmen ohne Ja · eigene Interessen durchsetzen",
+      "aufgaben": [
+        {
+          "id": "j7-fb", "typ": "matrix", "kontext": "Feedback",
+          "frage": "Schriftliches Feedback: Was macht man mit dem Satz?",
+          "wahl": ["Erwartungen beschreiben", "Positives herausstellen", "Probleme schildern", "Empfehlungen geben"],
+          "aussagen": [
+            ["Durch die Anzeige entsteht der Eindruck, dass …", 0], ["In der Anzeige steht, …", 0],
+            ["Sehr gut gefallen hat mir …", 1], ["Genau wie in der Anzeige erwähnt, gab es …", 1],
+            ["Leider musste ich feststellen, dass …", 2], ["Ich war sehr enttäuscht, als …", 2],
+            ["Ich würde Ihnen daher empfehlen, dass …", 3], ["Zukünftig wäre es sicher besser, wenn …", 3]
+          ]
+        },
+        {
+          "id": "j7-ja", "typ": "matrix", "kontext": "Zustimmen",
+          "frage": "Stimmt die Person zu?",
+          "wahl": ["Zustimmung", "keine Zustimmung"],
+          "aussagen": [
+            ["Da würde ich Ihnen zustimmen.", 0], ["Das sehe ich ganz genau so.", 0], ["Da sind wir uns einig.", 0],
+            ["Richtig, daran habe ich noch gar nicht gedacht.", 0], ["Das sehe ich ganz anders.", 1], ["Da habe ich meine Zweifel.", 1]
+          ]
+        },
+        {
+          "id": "j7-lt", "typ": "luecke", "kontext": "Interessen durchsetzen",
+          "frage": "Ein Gespräch mit dem Vorgesetzten. Ergänzen Sie.",
+          "text": "▶ Guten Morgen, Herr Özcan. {0} Es geht um das Projekt in Hagendorf.\n◀ Ja, natürlich, kommen Sie in mein Büro.\n▶ Danke. Das Projekt läuft gut. {1}, dass die Koordination vor Ort für mich allein zu viel wird.\n◀ Das stimmt, das ist mir auch schon aufgefallen.\n▶ Daher wollte ich Sie fragen, {2}, die Koordination abzugeben. Dann würde die Fahrzeit wegfallen und {3}.\n◀ Hm, da muss ich mal sehen, wie das gehen könnte.\n▶ {4} Frau Becker würde gern mehr Verantwortung übernehmen.\n◀ Das ist eine gute Idee. Ich denke darüber nach.",
+          "gaps": [
+            { "opts": ["Hätten Sie vielleicht einen Moment Zeit?", "Ich habe keine Zeit.", "Das bleibt unter uns."], "l": 0 },
+            { "opts": ["Ich muss leider sagen", "Ich bin froh", "Ich weiß nicht"], "l": 0 },
+            { "opts": ["ob es möglich wäre", "dass es möglich ist", "wenn es möglich wäre"], "l": 0 },
+            { "opts": ["ich hätte mehr Zeit hier", "ich hätte weniger Arbeit gehabt", "ich würde mehr fahren"], "l": 0 },
+            { "opts": ["Das habe ich mir auch schon überlegt.", "Das ist nicht mein Problem.", "Das geht leider nicht."], "l": 0 }
+          ]
+        },
+        { "id": "j7-tipp", "typ": "mc", "kontext": "Strategie", "frage": "Sie möchten bei Ihrer Chefin mehr Homeoffice erreichen. Was ist am erfolgreichsten?", "opts": ["eine eigene Lösung vorschlagen und begründen, warum sie gut für die Arbeit ist", "sich beschweren, dass das Büro zu laut ist", "einfach zu Hause bleiben", "warten, bis die Chefin selbst fragt"], "l": 0 }
+      ]
+    },
+    {
+      "titel": "Prüfungstraining",
+      "icon": "🏁",
+      "kurz": "Sprachbausteine · gemischte Aufgaben",
+      "aufgaben": [
+        {
+          "id": "j8-sb", "typ": "luecke", "kontext": "Sprachbausteine",
+          "frage": "Sprachbausteine: Eine Feedback-Mail an die Personalabteilung. Wählen Sie die richtige Lösung.",
+          "text": "Sehr geehrter Herr Maurer,\n\nvom 12. bis 13. Februar habe ich an dem Seminar „Kommunikation für neue Führungskräfte“ teilgenommen, {0} von unserer Firma bezahlt wurde. Durch die Anzeige {1} der Eindruck, dass wir viele Rollenspiele machen würden. Leider musste ich feststellen, dass wir {2} der zwei Tage fast nur Vorträge gehört haben.\n\nSehr gut gefallen {3} mir dagegen die Einzelgespräche mit der Trainerin. {4} dieser Gespräche weiß ich jetzt besser, wie ich mich im Team durchsetzen kann.\n\nIch würde Ihnen daher empfehlen, das Seminar nur {5} weiterzuempfehlen, wenn der Anbieter mehr praktische Übungen anbietet.\n\nMit freundlichen Grüßen\nLeyla Aksoy",
+          "gaps": [
+            { "opts": ["das", "der", "die"], "l": 0 },
+            { "opts": ["entsteht", "entstehen", "entstanden"], "l": 0 },
+            { "opts": ["während", "trotz", "wegen"], "l": 0 },
+            { "opts": ["haben", "hat", "ist"], "l": 0 },
+            { "opts": ["Dank", "Trotz", "Statt"], "l": 0 },
+            { "opts": ["dann", "denn", "damit"], "l": 0 }
+          ]
+        },
+        { "id": "j8-1", "typ": "mc", "kontext": "Partizip", "frage": "Die ___ Busse fahren nur auf festgelegten Strecken.", "opts": ["selbstfahrenden", "selbstgefahrenen", "selbstfahrende", "selbstfahrend"], "l": 0 },
+        { "id": "j8-2", "typ": "mc", "kontext": "Genitiv", "frage": "Trotz ___ Regens fand das Firmenfest draußen statt.", "opts": ["des", "dem", "den", "die"], "l": 0 },
+        { "id": "j8-3", "typ": "mc", "kontext": "Bescheid", "frage": "Wie lange hat man normalerweise Zeit für einen Widerspruch?", "opts": ["einen Monat", "eine Woche", "ein Jahr", "drei Tage"], "l": 0 },
+        { "id": "j8-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz.", "steine": ["Gegen", "den Bescheid", "vom 2. September", "lege", "ich", "hiermit", "Widerspruch", "ein."] }
+      ]
+    }
+  ]
+}

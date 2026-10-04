@@ -1,0 +1,1429 @@
+{
+ "id": "der-kunde-im-mittelpunkt",
+ "titel": "Der Kunde im Mittelpunkt",
+ "untertitel": "Kundenkontakt · Mails an Kunden · Textzusammenhang · Angebote · Bestellungen · dadurch, dass und indem · Reklamationen · Entscheidungen",
+ "niveau": "B1/B2",
+ "reihe": "Prüfungstraining B1/B2",
+ "farbe": "#b0413e",
+ "mix": 15,
+ "intro": "Acht Teile – jeder Teil kann einzeln gespielt werden. Der **Prüfungsmix** zieht zufällig Aufgaben aus allen Teilen.",
+ "kompakt": [
+  {
+   "titel": "Mails an Kunden",
+   "zeilen": [
+    "**Betreff:** kurz und prägnant, Stichworte statt Sätze; neues Thema = neue Mail mit neuem Betreff",
+    "**Anrede:** „Guten Tag, Frau …“ wirkt persönlicher als „Sehr geehrte …“; „Hallo“ nur in bestimmten Fällen",
+    "**Gruß passt zur Anrede:** „Mit freundlichen Grüßen“ zu „Sehr geehrte …“ · freundlicher: „Herzliche Grüße aus Kiel“",
+    "**Inhalt:** kurz und klar, pro Satz eine Information, logische Reihenfolge, Absätze",
+    "**Stil:** keine Floskeln wie „Bezugnehmend auf …“ – lieber persönlich: „Haben Sie noch Fragen? Rufen Sie mich gern an.“",
+    "**Vor dem Absenden korrigieren!** · Small Talk: Ich hoffe, Sie hatten erholsame Feiertage. · Einen guten Start in die Woche!"
+   ]
+  },
+  {
+   "titel": "Textzusammenhang",
+   "zeilen": [
+    "Sätze werden logisch verbunden durch:",
+    "**Artikelwörter:** das, dieser, diese … · **Pronomen:** er, es, sie, ihn …",
+    "**Orts- und Zeitangaben:** heute, hier, dort, danach … · **Konnektoren:** denn, deshalb, aber, sondern …",
+    "**Präpositionaladverbien:** darauf, damit, dafür … · **Synonyme:** lang = endlos, Mail = Nachricht",
+    "Statt: „Ich habe Ihren Artikel gelesen. Der Artikel gefällt mir.“ → „Ich habe Ihren Artikel gelesen. **Er** gefällt mir sehr.“"
+   ]
+  },
+  {
+   "titel": "Modalsätze mit dadurch, dass und indem",
+   "zeilen": [
+    "Modalsätze sagen, **wie** (auf welche Art, mit welchem Mittel) etwas geschieht.",
+    "**dadurch, dass** hat **zwei Teile**: **dadurch** steht im **Hauptsatz**, **dass** leitet den **Nebensatz** ein.",
+    "Wir halten die Kosten niedrig, **dadurch, dass** wir direkt beim Hersteller kaufen. · **Dadurch, dass** wir direkt kaufen, sind die Kosten niedrig.",
+    "**dadurch, dass** hat oft auch **kausale** Bedeutung (= weil): Dadurch, dass das Material gut ist, hält es lange.",
+    "**indem** leitet einen modalen **Nebensatz** ein und nennt das **Mittel**: Stärken Sie Ihren Rücken, **indem** Sie täglich trainieren."
+   ]
+  },
+  {
+   "titel": "Eine Bestellung aufgeben",
+   "zeilen": [
+    "Sehr geehrte/r Frau/Herr … · wir danken Ihnen für Ihr Angebot vom …",
+    "Gerne bestellen wir zu den im Angebot genannten Bedingungen: …",
+    "Wir bitten, die Lieferzeit von … unbedingt einzuhalten. / Unser Wunschtermin für die Lieferung ist …",
+    "Bitte schicken Sie uns eine Auftragsbestätigung. · Mit freundlichen Grüßen"
+   ]
+  },
+  {
+   "titel": "Reklamationen",
+   "zeilen": [
+    "**Käufer – Problem schildern:** Ich finde es sehr ärgerlich, dass … · Wir sind sehr unzufrieden, weil …",
+    "**Käufer – Forderungen:** Ich bitte um eine schnelle Lösung. · Dann erwarte ich aber … · Ich gehe davon aus, dass Sie uns entgegenkommen.",
+    "**Verkäufer – entschuldigen:** Das ist außerordentlich bedauerlich. · Ich entschuldige mich noch einmal für …",
+    "**Verkäufer – erklären:** Der Grund dafür war … · **Entschädigung:** Als Entschädigung kann ich Ihnen … anbieten. · Wären Sie mit … als Ausgleich einverstanden?",
+    "**Lösungen:** Preisnachlass · Umtausch · Gutschrift · Gutschein · kostenlose Reparatur · Geld zurück (Erstattung) · Verlängerung der Garantie"
+   ]
+  },
+  {
+   "titel": "Entscheidungen herbeiführen",
+   "zeilen": [
+    "**Beraten:** Was suchen Sie denn? · Wenn Sie mich fragen, ist … eine wirklich gute Wahl. · Ich garantiere Ihnen, … · Sie haben die richtige Entscheidung getroffen.",
+    "**Unsicher sein:** Können Sie mir helfen? · Ich kann mich gar nicht entscheiden. · Ich bin da etwas skeptisch. · Können Sie nicht … empfehlen?",
+    "**Überzeugt:** Gut, Sie haben mich überzeugt. · Vielen Dank für Ihre Beratung."
+   ]
+  }
+ ],
+ "module": [
+  {
+   "titel": "Im Kundenkontakt",
+   "icon": "🙋",
+   "kurz": "höflich reagieren · weiterverweisen · typische Situationen",
+   "aufgaben": [
+    {
+     "id": "g1-hoefl",
+     "typ": "matrix",
+     "kontext": "Höflichkeit",
+     "frage": "Leider nicht zuständig: Ist die Reaktion höflich oder unhöflich?",
+     "wahl": [
+      "höflich",
+      "unhöflich"
+     ],
+     "aussagen": [
+      [
+       "Da bin ich leider nicht zuständig. Aber fragen Sie gern meine Kollegin an der Kasse.",
+       0
+      ],
+      [
+       "Dabei kann ich Ihnen echt nicht helfen.",
+       1
+      ],
+      [
+       "Das tut mir leid. Ich sehe mal nach, wer Ihnen helfen kann.",
+       0
+      ],
+      [
+       "Sind Sie sicher, dass das Problem auf unserer Seite liegt?",
+       1
+      ],
+      [
+       "Darum kann sich meine Kollegin kümmern. Ich hole sie schnell.",
+       0
+      ],
+      [
+       "Das kann nicht sein, da müssen Sie einen Fehler gemacht haben.",
+       1
+      ],
+      [
+       "Mit dem Problem würde ich Sie gern an unseren Kundenservice verweisen.",
+       0
+      ],
+      [
+       "Fragen Sie am besten mal irgendwen aus der Technikabteilung.",
+       1
+      ]
+     ]
+    },
+    {
+     "id": "g1-1",
+     "typ": "mc",
+     "kontext": "Situationen",
+     "frage": "Ein Kunde möchte einen Fernseher kaufen und fragt nach einem Rabatt. Sie dürfen auf ältere Modelle Nachlass geben. Was sagen Sie?",
+     "opts": [
+      "Auf dieses Modell leider nicht, aber das Vorjahresmodell kann ich Ihnen 15 % günstiger anbieten.",
+      "Rabatt? Das gibt es bei uns nicht.",
+      "Kaufen Sie doch im Internet.",
+      "Fragen Sie morgen noch mal."
+     ],
+     "l": 0
+    },
+    {
+     "id": "g1-2",
+     "typ": "mc",
+     "kontext": "Situationen",
+     "frage": "Ein Kunde hat sich lange beraten lassen, kann sich aber noch nicht entscheiden. Was ist eine gute Reaktion?",
+     "opts": [
+      "Kein Problem. Hier ist meine Karte – melden Sie sich gern, wenn Sie Fragen haben.",
+      "Dann haben Sie meine Zeit verschwendet.",
+      "Sie müssen sich jetzt entscheiden.",
+      "Dann gehen Sie bitte."
+     ],
+     "l": 0
+    },
+    {
+     "id": "g1-3",
+     "typ": "mc",
+     "kontext": "Situationen",
+     "frage": "Eine Kundin hat eine Frage zu einem Gerät, aber Sie kennen sich damit nicht aus. Was ist am besten?",
+     "opts": [
+      "Ich hole Ihnen gern einen Kollegen, der sich damit genau auskennt.",
+      "Das weiß ich nicht.",
+      "Lesen Sie doch die Anleitung.",
+      "Ich rate einfach mal: Ja."
+     ],
+     "l": 0
+    },
+    {
+     "id": "g1-4",
+     "typ": "mc",
+     "kontext": "Situationen",
+     "frage": "Sie haben einen Termin mit einer Kundin. Welcher Grund für eine Absage ist professionell?",
+     "opts": [
+      "Leider bin ich heute krank geworden. Können wir einen neuen Termin vereinbaren?",
+      "Ich habe keine Lust.",
+      "Das Wetter ist zu schlecht.",
+      "Ich habe den Termin vergessen, egal."
+     ],
+     "l": 0
+    },
+    {
+     "id": "g1-b1",
+     "typ": "bau",
+     "kontext": "Satzbau",
+     "frage": "Bilden Sie den Satz.",
+     "steine": [
+      "Da",
+      "bin",
+      "ich",
+      "leider",
+      "nicht zuständig,",
+      "aber",
+      "meine Kollegin",
+      "hilft Ihnen",
+      "gern."
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Mails an Kunden",
+   "icon": "✉️",
+   "kurz": "Tipps lesen · Betreff · Anrede und Gruß · Stil",
+   "aufgaben": [
+    {
+     "id": "g2-art",
+     "typ": "matrix",
+     "kontext": "Lesen",
+     "frage": "Lesen Sie die Tipps einer Kommunikationstrainerin. Welche Überschrift passt?",
+     "posts": [
+      {
+       "name": "A",
+       "text": "Der Empfänger sieht ihn als Erstes. Er soll das Thema sofort zeigen – mit wenigen Stichworten, nicht mit einem langen Satz. Ändert sich das Thema, schreiben Sie lieber eine neue Mail."
+      },
+      {
+       "name": "B",
+       "text": "„Sehr geehrte …“ ist korrekt, wirkt aber oft distanziert. „Guten Tag, Frau …“ klingt persönlicher. Achten Sie darauf, dass der Schluss zum Anfang passt."
+      },
+      {
+       "name": "C",
+       "text": "Lange Mails liest niemand gern. Schreiben Sie nur, was wichtig ist – pro Satz eine Information. Kurz und knapp gilt in Deutschland nicht als unhöflich."
+      },
+      {
+       "name": "D",
+       "text": "Vermeiden Sie steife Floskeln aus dem Amtsdeutsch. Finden Sie einen eigenen, freundlichen Ton. Und: Lesen Sie die Mail vor dem Absenden noch einmal – Fehler wirken unprofessionell."
+      }
+     ],
+     "wahl": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "aussagen": [
+      [
+       "Betreff",
+       0
+      ],
+      [
+       "Anrede und Gruß",
+       1
+      ],
+      [
+       "Inhalt",
+       2
+      ],
+      [
+       "Stil",
+       3
+      ]
+     ]
+    },
+    {
+     "id": "g2-rf",
+     "typ": "matrix",
+     "kontext": "Lesen",
+     "frage": "Was sagen die Tipps? Richtig oder falsch?",
+     "aussagen": [
+      [
+       "Im Betreff sollte das Anliegen ausführlich erklärt werden.",
+       false
+      ],
+      [
+       "„Sehr geehrte …“ ist nicht immer die beste Lösung.",
+       true
+      ],
+      [
+       "Grußformeln kann man auch individuell formulieren.",
+       true
+      ],
+      [
+       "Kurze Sätze sind unhöflich.",
+       false
+      ],
+      [
+       "Kleine Fehler sind kein Problem.",
+       false
+      ]
+     ]
+    },
+    {
+     "id": "g2-bt",
+     "typ": "matrix",
+     "kontext": "Betreff",
+     "frage": "Ein guter Betreff?",
+     "wahl": [
+      "gut",
+      "nicht gut"
+     ],
+     "aussagen": [
+      [
+       "Ihre Bestellung Nr. 4471 – Liefertermin",
+       0
+      ],
+      [
+       "Hallo!",
+       1
+      ],
+      [
+       "Angebot Workshop Kundenkommunikation",
+       0
+      ],
+      [
+       "Ich schreibe Ihnen, weil wir letzte Woche telefoniert haben und ich noch eine Frage habe",
+       1
+      ],
+      [
+       "Frage",
+       1
+      ],
+      [
+       "Rechnung März – Korrektur",
+       0
+      ]
+     ]
+    },
+    {
+     "id": "g2-gruss",
+     "typ": "zu",
+     "kontext": "Anrede und Gruß",
+     "frage": "Welche Grußformel passt zur Anrede?",
+     "paare": [
+      [
+       "Sehr geehrte Frau Lindner,",
+       "Mit freundlichen Grüßen"
+      ],
+      [
+       "Guten Tag, Herr Hoek,",
+       "Herzliche Grüße aus Kiel"
+      ],
+      [
+       "Liebe Anna,",
+       "Liebe Grüße"
+      ],
+      [
+       "Sehr geehrte Damen und Herren,",
+       "Mit freundlichen Grüßen, i. A. Tom Berg"
+      ]
+     ]
+    },
+    {
+     "id": "g2-st",
+     "typ": "mc",
+     "kontext": "Stil",
+     "frage": "Welcher Satz ist freundlich und nicht floskelhaft?",
+     "opts": [
+      "Haben Sie noch Fragen? Dann rufen Sie mich gern unter 0431-2210 an.",
+      "Bezugnehmend auf Ihr Schreiben teilen wir Ihnen mit, …",
+      "Bei Rückfragen stehen wir Ihnen selbstverständlich jederzeit zur Verfügung.",
+      "Wir verbleiben hochachtungsvoll."
+     ],
+     "l": 0
+    },
+    {
+     "id": "g2-st2",
+     "typ": "mc",
+     "kontext": "Inhalt",
+     "frage": "Welcher Satz folgt der Regel „pro Satz eine Information“?",
+     "opts": [
+      "Herzlichen Dank für Ihre Mail vom 18.8. Wir liefern selbstverständlich auch in die Schweiz.",
+      "Sie haben uns ja letzte Woche eine Mail, die ich leider erst heute lesen konnte, weil ich in Urlaub war, geschrieben, in der Sie wissen wollten, ob wir auch in die Schweiz liefern.",
+      "Mail, Schweiz, Lieferung, ja.",
+      "Ich war im Urlaub und deshalb und weil es so viele Mails gab, habe ich Ihre Frage nicht gelesen."
+     ],
+     "l": 0
+    },
+    {
+     "id": "g2-small",
+     "typ": "matrix",
+     "kontext": "Small Talk",
+     "frage": "Passt der Satz als freundlicher „Small Talk“ in eine berufliche Mail?",
+     "wahl": [
+      "passt",
+      "passt nicht"
+     ],
+     "aussagen": [
+      [
+       "Ich hoffe, Sie hatten erholsame Feiertage.",
+       0
+      ],
+      [
+       "Einen guten Start in die Woche!",
+       0
+      ],
+      [
+       "Grüßen Sie doch Frau Berg von mir.",
+       0
+      ],
+      [
+       "Wie viel verdienen Sie eigentlich?",
+       1
+      ],
+      [
+       "Ich wünsche Ihnen ein schönes Wochenende.",
+       0
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Textzusammenhang",
+   "icon": "🔗",
+   "kurz": "Pronomen, Artikelwörter, Konnektoren, Präpositionaladverbien, Synonyme",
+   "aufgaben": [
+    {
+     "id": "g3-art",
+     "typ": "matrix",
+     "kontext": "Mittel",
+     "frage": "Was für ein Wort sorgt hier für Textzusammenhang?",
+     "wahl": [
+      "Pronomen",
+      "Konnektor",
+      "Ort/Zeit",
+      "Präpositionaladverb",
+      "Artikelwort"
+     ],
+     "aussagen": [
+      [
+       "Ich habe Ihren Artikel gelesen. **Er** gefällt mir sehr.",
+       0
+      ],
+      [
+       "Wir brauchen einen Workshop, **denn** Kundenkommunikation ist uns wichtig.",
+       1
+      ],
+      [
+       "In unserer Firma gibt es einen großen Seminarraum. **Dort** könnte der Workshop stattfinden.",
+       2
+      ],
+      [
+       "Wir hätten gern Unterstützung. **Dafür** wären wir Ihnen sehr dankbar.",
+       3
+      ],
+      [
+       "Wir haben einen neuen Kunden. **Dieser** Kunde bestellt jede Woche.",
+       4
+      ],
+      [
+       "Im August renovieren wir. **Deshalb** wäre der September besser.",
+       1
+      ],
+      [
+       "Die Lieferung kam am Montag. **Danach** haben wir alles geprüft.",
+       2
+      ]
+     ]
+    },
+    {
+     "id": "g3-lt",
+     "typ": "luecke",
+     "kontext": "Textzusammenhang",
+     "frage": "Herr Hoek hat seine Mail verbessert. Ergänzen Sie die Wörter, die die Sätze verbinden.",
+     "text": "Guten Morgen, Frau Lindner,\n\nich habe Ihren Artikel über Kundenmails gelesen. {0} gefällt mir sehr gut, {1} die Tipps sind wirklich hilfreich. Ich interessiere mich für einen Workshop, {2} für mein ganzes Team wichtig wäre. {3} wir wissen, wie wichtig Kundenkommunikation ist, hätten wir gern Ihre Hilfe.\n\nKönnten Sie den Workshop bei uns durchführen? In unserer Firma gibt es einen großen Seminarraum – {4} hätten wir genug Platz. Am besten wäre der September, {5} im August renovieren wir. Wäre der Workshop eintägig oder zweitägig, und was würde {6} kosten?\n\nVielen Dank und beste Grüße\nAnton Hoek",
+     "gaps": [
+      {
+       "opts": [
+        "Er",
+        "Sie",
+        "Es"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "denn",
+        "deshalb",
+        "obwohl"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "der",
+        "den",
+        "dem"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "Da",
+        "Dort",
+        "Dann"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "dort",
+        "dann",
+        "damals"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "denn",
+        "deshalb",
+        "trotzdem"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "er",
+        "sie",
+        "es"
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "g3-1",
+     "typ": "mc",
+     "kontext": "Präpositionaladverbien",
+     "frage": "Wir haben Ihre Bestellung erhalten. Wir kümmern uns sofort ___.",
+     "opts": [
+      "darum",
+      "dafür",
+      "daran",
+      "davon"
+     ],
+     "l": 0,
+     "x": "sich kümmern **um** → **darum**."
+    },
+    {
+     "id": "g3-2",
+     "typ": "mc",
+     "kontext": "Synonyme",
+     "frage": "„Dieser Satz ist lang, umständlich und …“ – Welches Synonym für „lang“ passt?",
+     "opts": [
+      "endlos",
+      "kurz",
+      "knapp",
+      "klar"
+     ],
+     "l": 0
+    },
+    {
+     "id": "g3-ord",
+     "typ": "ordnen",
+     "kontext": "Textzusammenhang",
+     "frage": "Bringen Sie die Sätze in eine logische Reihenfolge.",
+     "zeilen": [
+      "Wenn Kunden Ihre Mail bekommen, sehen sie zuerst den Betreff.",
+      "Dort sollte direkt das Thema erkennbar sein.",
+      "Vermeiden Sie deshalb lange Sätze, denn damit verwirrt man schnell.",
+      "Stichworte, die das Thema zusammenfassen, genügen."
+     ]
+    },
+    {
+     "id": "g3-b1",
+     "typ": "bau",
+     "kontext": "Satzbau",
+     "frage": "Verbinden Sie: „Wir können den Workshop nicht durchführen. Wir sind im September ausgebucht.“",
+     "steine": [
+      "Leider",
+      "können wir",
+      "den Workshop",
+      "nicht durchführen,",
+      "denn",
+      "wir sind",
+      "im September",
+      "ausgebucht."
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Ein Angebot einholen",
+   "icon": "🛠️",
+   "kurz": "Handwerksberufe · Telefonat mit dem Handwerksbetrieb · Angebot lesen · Telefonnotiz",
+   "aufgaben": [
+    {
+     "id": "g4-beruf",
+     "typ": "matrix",
+     "kontext": "Wortschatz",
+     "frage": "Wer macht das?",
+     "wahl": [
+      "Elektrotechnikerin",
+      "Maler und Lackierer",
+      "Dachdecker",
+      "Anlagenmechanikerin"
+     ],
+     "aussagen": [
+      [
+       "Stromleitungen überprüfen",
+       0
+      ],
+      [
+       "Steckdosen anbringen",
+       0
+      ],
+      [
+       "Wände streichen",
+       1
+      ],
+      [
+       "tapezieren",
+       1
+      ],
+      [
+       "Regenrinnen anbringen",
+       2
+      ],
+      [
+       "Dachfenster einbauen",
+       2
+      ],
+      [
+       "Heizungen installieren",
+       3
+      ],
+      [
+       "Wasseranschlüsse reparieren",
+       3
+      ]
+     ]
+    },
+    {
+     "id": "g4-wer",
+     "typ": "matrix",
+     "kontext": "Telefonat",
+     "frage": "Wer sagt das: der Handwerksbetrieb oder der Auftraggeber?",
+     "wahl": [
+      "Handwerksbetrieb",
+      "Auftraggeber"
+     ],
+     "aussagen": [
+      [
+       "Wir sind sehr interessiert an dem Auftrag.",
+       0
+      ],
+      [
+       "Für einen Kostenvoranschlag müssten wir die Räume vorher besichtigen.",
+       0
+      ],
+      [
+       "Können Sie mir schon ungefähr sagen, wie hoch die Kosten sein werden?",
+       1
+      ],
+      [
+       "Sie können grob mit 12 Euro pro Quadratmeter rechnen.",
+       0
+      ],
+      [
+       "Das ist ja schon mal ein guter Anhaltspunkt.",
+       1
+      ],
+      [
+       "Bis Ende Oktober muss alles fertig sein.",
+       1
+      ],
+      [
+       "Das schaffen wir auf jeden Fall.",
+       0
+      ]
+     ]
+    },
+    {
+     "id": "g4-ang",
+     "typ": "lesen",
+     "kontext": "Lesen",
+     "frage": "Lesen Sie das Angebot und beantworten Sie die Fragen.",
+     "textTitel": "Malerbetrieb Kroll – Angebot Nr. 24-117",
+     "text": "Büroräume 180 m² inkl. Decken\n– streichen\n– Farbe: Sandbeige\n\nSumme netto: 2.160,00 EUR\nzzgl. 19 % MwSt.: 410,40 EUR\n**Summe brutto: 2.570,40 EUR**\n\nDie Arbeiten können in der KW 42 ab dem 14.10. durchgeführt werden. Dauer: ca. 4 Arbeitstage. Das Angebot ist 30 Tage gültig.",
+     "fragen": [
+      {
+       "f": "Wie viel kostet der Quadratmeter ohne Mehrwertsteuer?",
+       "opts": [
+        "12 Euro",
+        "14,28 Euro",
+        "19 Euro",
+        "2,16 Euro"
+       ],
+       "l": 0
+      },
+      {
+       "f": "Was bedeutet „zzgl.“?",
+       "opts": [
+        "zuzüglich – dazu kommt noch",
+        "zusammen gezahlt",
+        "zurück gezahlt",
+        "zum Teil gültig"
+       ],
+       "l": 0
+      },
+      {
+       "f": "Wann können die Arbeiten beginnen?",
+       "opts": [
+        "am 14. Oktober",
+        "sofort",
+        "in 30 Tagen",
+        "am 4. Oktober"
+       ],
+       "l": 0
+      },
+      {
+       "f": "Wie lange dauern die Arbeiten?",
+       "opts": [
+        "etwa vier Tage",
+        "eine Kalenderwoche plus Wochenende",
+        "30 Tage",
+        "einen Tag"
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "g4-notiz",
+     "typ": "matrix",
+     "kontext": "Telefonnotiz",
+     "frage": "Eine Mitteilung auf dem Anrufbeantworter: „Hallo, hier ist Selin Arslan von Elektro Nord. Es geht um Ihre Anfrage zu den neuen Deckenleuchten im Fitnessstudio. Wir müssten die Räume vorher ansehen. Ich könnte am Donnerstag um 9 Uhr vorbeikommen. Bitte rufen Sie mich zurück unter 0431-55 80 12, ob das passt.“ – Was gehört in welches Feld der Telefonnotiz?",
+     "wahl": [
+      "Grund",
+      "Name/Firma",
+      "Telefon",
+      "weitere Information",
+      "zu erledigen"
+     ],
+     "aussagen": [
+      [
+       "Angebot – Deckenleuchten",
+       0
+      ],
+      [
+       "Selin Arslan, Elektro Nord",
+       1
+      ],
+      [
+       "0431-55 80 12",
+       2
+      ],
+      [
+       "Besichtigung nötig, Vorschlag: Do 9 Uhr",
+       3
+      ],
+      [
+       "zurückrufen: Passt der Termin?",
+       4
+      ]
+     ]
+    },
+    {
+     "id": "g4-m1",
+     "typ": "mc",
+     "kontext": "Wortschatz",
+     "frage": "„Ich kann Ihnen keine verbindliche Auskunft geben.“ Das bedeutet:",
+     "opts": [
+      "Ich kann noch nichts Sicheres sagen.",
+      "Ich darf nicht mit Ihnen sprechen.",
+      "Die Auskunft kostet Geld.",
+      "Ich weiß es ganz genau."
+     ],
+     "l": 0
+    }
+   ]
+  },
+  {
+   "titel": "Die Bestellung",
+   "icon": "🛒",
+   "kurz": "Produktbeschreibung · dadurch, dass und indem · Bestellung schreiben",
+   "aufgaben": [
+    {
+     "id": "g5-text",
+     "typ": "lesen",
+     "kontext": "Lesen",
+     "frage": "Lesen Sie die Produktbeschreibung und beantworten Sie die Fragen.",
+     "textTitel": "Balance-Board „StandFit“ – Training für Rücken und Gleichgewicht",
+     "text": "Unser Balance-Board wird von Physiotherapeutinnen und Ärzten empfohlen.\n\n**Verarbeitung:** Dadurch, dass wir nur heimisches Buchenholz und eine rutschfeste Gummifläche verwenden, ist das Board besonders stabil und langlebig.\n\n**Training:** Verbessern Sie Ihr Gleichgewicht ganz einfach im Büro, indem Sie täglich fünf Minuten auf dem Board stehen. Ihre Rückenmuskulatur wird dabei automatisch gestärkt.\n\n**Reha:** Nach Verletzungen am Knie oder Fuß eignet sich das Board dadurch, dass sich der Schwierigkeitsgrad in drei Stufen einstellen lässt.",
+     "fragen": [
+      {
+       "f": "Warum ist das Board stabil?",
+       "opts": [
+        "weil hochwertige Materialien verwendet werden",
+        "weil es aus Kunststoff ist",
+        "weil es sehr schwer ist",
+        "weil es Ärzte gebaut haben"
+       ],
+       "l": 0
+      },
+      {
+       "f": "Wie verbessert man das Gleichgewicht?",
+       "opts": [
+        "indem man täglich kurz darauf steht",
+        "indem man es mit Gummi reinigt",
+        "indem man es zur Physiotherapie bringt",
+        "indem man es jeden Tag einstellt"
+       ],
+       "l": 0
+      },
+      {
+       "f": "Warum ist das Board für die Reha geeignet?",
+       "opts": [
+        "Der Schwierigkeitsgrad ist einstellbar.",
+        "Es ist besonders billig.",
+        "Es ist sehr leicht.",
+        "Man braucht keinen Therapeuten."
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "g5-regel",
+     "typ": "matrix",
+     "kontext": "Regel",
+     "frage": "Stimmen die Regeln?",
+     "aussagen": [
+      [
+       "Modalsätze beschreiben, wie etwas geschieht.",
+       true
+      ],
+      [
+       "Der Konnektor dadurch, dass hat zwei Teile.",
+       true
+      ],
+      [
+       "dadurch steht im Nebensatz, dass im Hauptsatz.",
+       false
+      ],
+      [
+       "dadurch, dass hat oft auch eine kausale Bedeutung (wie weil).",
+       true
+      ],
+      [
+       "indem leitet einen Hauptsatz ein.",
+       false
+      ],
+      [
+       "indem nennt oft das Mittel einer Handlung.",
+       true
+      ]
+     ]
+    },
+    {
+     "id": "g5-1",
+     "typ": "mc",
+     "kontext": "indem",
+     "frage": "Ich trainiere meine Ausdauer, ___ ich jeden Tag mit dem Rad zur Arbeit fahre.",
+     "opts": [
+      "indem",
+      "dadurch",
+      "damit",
+      "ohne"
+     ],
+     "l": 0
+    },
+    {
+     "id": "g5-2",
+     "typ": "mc",
+     "kontext": "dadurch, dass",
+     "frage": "___, dass ich kein Fleisch esse, ernähre ich mich gesünder.",
+     "opts": [
+      "Dadurch",
+      "Indem",
+      "Damit",
+      "Davon"
+     ],
+     "l": 0
+    },
+    {
+     "id": "g5-3",
+     "typ": "mc",
+     "kontext": "dadurch, dass",
+     "frage": "Ich entspanne mich ___, dass ich abends spazieren gehe.",
+     "opts": [
+      "dadurch",
+      "indem",
+      "dafür",
+      "deshalb"
+     ],
+     "l": 0
+    },
+    {
+     "id": "g5-u",
+     "typ": "mc",
+     "kontext": "Umformen",
+     "frage": "„Weil wir hochwertige Materialien verwenden, halten die Boards lange.“ – Mit dadurch, dass:",
+     "opts": [
+      "Dadurch, dass wir hochwertige Materialien verwenden, halten die Boards lange.",
+      "Dadurch, dass wir verwenden hochwertige Materialien, halten die Boards lange.",
+      "Dadurch wir hochwertige Materialien verwenden, dass die Boards lange halten.",
+      "Indem dass wir hochwertige Materialien verwenden, halten die Boards lange."
+     ],
+     "l": 0
+    },
+    {
+     "id": "g5-b1",
+     "typ": "bau",
+     "kontext": "Satzbau",
+     "frage": "Bilden Sie den Satz mit indem.",
+     "steine": [
+      "Meine Rückenschmerzen",
+      "bekämpfe",
+      "ich,",
+      "indem",
+      "ich",
+      "regelmäßig",
+      "trainiere."
+     ]
+    },
+    {
+     "id": "g5-best",
+     "typ": "ordnen",
+     "kontext": "Schreiben",
+     "frage": "Eine Bestellung aufgeben: Bringen Sie die Teile in die richtige Reihenfolge.",
+     "zeilen": [
+      "Sehr geehrter Herr Ruf,",
+      "wir danken Ihnen für Ihr Angebot vom 26.04.",
+      "Gerne bestellen wir zu den im Angebot genannten Bedingungen: 4 Trampoline Typ aktiv und 6 Trampoline Typ swing.",
+      "Wir bitten, die Lieferzeit von vier Wochen unbedingt einzuhalten.",
+      "Bitte schicken Sie uns eine Auftragsbestätigung.",
+      "Mit freundlichen Grüßen\nJonas Bauer"
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Reklamationen",
+   "icon": "📦",
+   "kurz": "Lösungen · Redemittel für Käufer und Verkäufer · Reklamationsmails",
+   "aufgaben": [
+    {
+     "id": "g6-loes",
+     "typ": "zu",
+     "kontext": "Lösungen",
+     "frage": "Lösungen bei Reklamationen: Was bedeutet das?",
+     "paare": [
+      [
+       "der Preisnachlass",
+       "Man bezahlt weniger."
+      ],
+      [
+       "der Umtausch",
+       "Man bekommt statt der defekten Ware eine neue."
+      ],
+      [
+       "die Gutschrift",
+       "Der Betrag wird beim nächsten Kauf angerechnet."
+      ],
+      [
+       "die Erstattung",
+       "Man bekommt das Geld zurück."
+      ],
+      [
+       "die kostenlose Reparatur",
+       "Der Fehler wird ohne Kosten behoben."
+      ],
+      [
+       "die Verlängerung der Garantie",
+       "Die Garantie gilt länger als vorher."
+      ]
+     ]
+    },
+    {
+     "id": "g6-rm",
+     "typ": "matrix",
+     "kontext": "Redemittel",
+     "frage": "Etwas reklamieren: Wer sagt das und wozu?",
+     "wahl": [
+      "Käufer: Problem/Ärger",
+      "Käufer: Forderung",
+      "Verkäufer: Entschuldigung",
+      "Verkäufer: Erklärung",
+      "Verkäufer: Entschädigung"
+     ],
+     "aussagen": [
+      [
+       "Ich finde es schon sehr ärgerlich, dass …",
+       0
+      ],
+      [
+       "Wir sind sehr unzufrieden, weil …",
+       0
+      ],
+      [
+       "Ich bitte um eine schnelle Lösung.",
+       1
+      ],
+      [
+       "Ich gehe davon aus, dass Sie uns entgegenkommen.",
+       1
+      ],
+      [
+       "Das ist außerordentlich bedauerlich.",
+       2
+      ],
+      [
+       "Ich entschuldige mich noch einmal für …",
+       2
+      ],
+      [
+       "Der Grund dafür war ein Fehler bei der Herstellung.",
+       3
+      ],
+      [
+       "Als Entschädigung kann ich Ihnen 10 % Rabatt anbieten.",
+       4
+      ],
+      [
+       "Wären Sie mit einem Gutschein als Ausgleich einverstanden?",
+       4
+      ]
+     ]
+    },
+    {
+     "id": "g6-mails",
+     "typ": "lesen",
+     "kontext": "Lesen",
+     "frage": "Lesen Sie die Reklamation und die Antwort. Beantworten Sie die Fragen.",
+     "posts": [
+      {
+       "name": "Lars Brenner, Einkauf",
+       "info": "Betreff: Reklamation Bürostühle Auftrag 7712",
+       "text": "Sehr geehrte Frau Okoye, wie besprochen hier unsere schriftliche Reklamation: Die Lieferung kam schon drei Wochen zu spät. Jetzt mussten wir feststellen, dass bei fünf der zwanzig Stühle die Rollen abbrechen. Vereinbart war ein Preis von 4.000 Euro. Wir erwarten für jeden defekten Stuhl einen Nachlass von 80 Euro und gehen von einem Endpreis von 3.600 Euro aus. Mit freundlichen Grüßen, Lars Brenner"
+      },
+      {
+       "name": "Ada Okoye, Vertrieb",
+       "info": "Betreff: Re: Reklamation Bürostühle Auftrag 7712",
+       "text": "Sehr geehrter Herr Brenner, wir bedauern sehr, dass es zu Problemen mit den Rollen gekommen ist. Inzwischen wissen wir, dass ein Zulieferer fehlerhafte Teile geliefert hat. Den geforderten Nachlass können wir leider nicht gewähren, da Sie bereits 10 % Mengenrabatt erhalten haben. Wir tauschen aber alle Rollen der fünf Stühle kostenlos aus und reduzieren den Preis pro defektem Stuhl um 40 Euro. Zusätzlich verlängern wir die Garantie auf drei Jahre. Mit freundlichen Grüßen, Ada Okoye"
+      }
+     ],
+     "fragen": [
+      {
+       "f": "Was war das erste Problem?",
+       "opts": [
+        "Die Lieferung kam zu spät.",
+        "Es kamen zu wenige Stühle.",
+        "Die Rechnung war falsch.",
+        "Die Stühle hatten die falsche Farbe."
+       ],
+       "l": 0
+      },
+      {
+       "f": "Wie viel Nachlass fordert Herr Brenner insgesamt?",
+       "opts": [
+        "400 Euro",
+        "80 Euro",
+        "200 Euro",
+        "3.600 Euro"
+       ],
+       "l": 0
+      },
+      {
+       "f": "Was war der Grund für die defekten Rollen?",
+       "opts": [
+        "fehlerhafte Teile eines Zulieferers",
+        "ein Transportschaden",
+        "falsche Benutzung",
+        "ein Fehler im Lager"
+       ],
+       "l": 0
+      },
+      {
+       "f": "Warum gewährt die Firma den geforderten Nachlass nicht?",
+       "opts": [
+        "Der Kunde hat schon Mengenrabatt bekommen.",
+        "Die Stühle sind nicht defekt.",
+        "Die Garantie ist abgelaufen.",
+        "Die Reklamation kam zu spät."
+       ],
+       "l": 0
+      },
+      {
+       "f": "Welchen Endpreis bietet Frau Okoye an?",
+       "opts": [
+        "3.800 Euro",
+        "3.600 Euro",
+        "4.000 Euro",
+        "3.960 Euro"
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "g6-m1",
+     "typ": "mc",
+     "kontext": "Wortschatz",
+     "frage": "Ein Lieferant hat nicht genug Ware und kann nicht liefern. Er hat einen …",
+     "opts": [
+      "Lieferengpass.",
+      "Lieferschein.",
+      "Liefertermin.",
+      "Lieferwagen."
+     ],
+     "l": 0
+    },
+    {
+     "id": "g6-b1",
+     "typ": "bau",
+     "kontext": "Satzbau",
+     "frage": "Bilden Sie den Satz.",
+     "steine": [
+      "Als Entschädigung",
+      "können",
+      "wir",
+      "Ihnen",
+      "einen Gutschein",
+      "über 50 Euro",
+      "anbieten."
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Entscheidungen herbeiführen",
+   "icon": "⚖️",
+   "kurz": "Kunden beraten · unsicher sein · überzeugen",
+   "aufgaben": [
+    {
+     "id": "g7-wer",
+     "typ": "matrix",
+     "kontext": "Redemittel",
+     "frage": "Im Geschäft: Wer sagt das, die Verkäuferin oder der Kunde?",
+     "wahl": [
+      "Verkäuferin",
+      "Kunde"
+     ],
+     "aussagen": [
+      [
+       "Was suchen Sie denn?",
+       0
+      ],
+      [
+       "Können Sie mir helfen?",
+       1
+      ],
+      [
+       "Wenn Sie mich fragen, ist dieses Modell eine wirklich gute Wahl.",
+       0
+      ],
+      [
+       "Und nun kann ich mich gar nicht entscheiden.",
+       1
+      ],
+      [
+       "Ich garantiere Ihnen, Sie werden zufrieden sein.",
+       0
+      ],
+      [
+       "Ich weiß nicht, ich bin da etwas skeptisch.",
+       1
+      ],
+      [
+       "Ich finde, Sie haben die richtige Entscheidung getroffen.",
+       0
+      ],
+      [
+       "Gut, Sie haben mich überzeugt.",
+       1
+      ]
+     ]
+    },
+    {
+     "id": "g7-chef",
+     "typ": "matrix",
+     "kontext": "Gespräch",
+     "frage": "Eine Chefin überlegt, ob sie ein großes Angebot annehmen soll. Unsicher oder zuversichtlich?",
+     "wahl": [
+      "unsicher",
+      "zuversichtlich"
+     ],
+     "aussagen": [
+      [
+       "Das ist eine schwierige Entscheidung.",
+       0
+      ],
+      [
+       "Ich weiß nicht, was ich machen soll.",
+       0
+      ],
+      [
+       "Das ist doch ein tolles Angebot!",
+       1
+      ],
+      [
+       "Wir können das schaffen, da bin ich sicher.",
+       1
+      ],
+      [
+       "Ich habe Angst, viele Kunden zu verlieren.",
+       0
+      ],
+      [
+       "Ich denke, das hätte auch viele Vorteile.",
+       1
+      ]
+     ]
+    },
+    {
+     "id": "g7-lt",
+     "typ": "luecke",
+     "kontext": "Gespräch",
+     "frage": "Im Restaurant: Ergänzen Sie das Gespräch.",
+     "text": "▶ Guten Abend! Haben Sie schon gewählt?\n◀ Nein, ich kann mich gar nicht {0}: Salat mit Pilzen oder Schnitzel?\n▶ Wenn Sie mich {1}, ist der Salat heute eine wirklich gute {2}. Das Gemüse kommt direkt vom Hof nebenan.\n◀ Hm, ich bin da etwas {3}. Macht ein Salat denn satt?\n▶ Ich {4} Ihnen, er ist eine große Portion.\n◀ Gut, Sie haben mich {5}. Vielen Dank für Ihre {6}!",
+     "gaps": [
+      {
+       "opts": [
+        "entscheiden",
+        "empfehlen",
+        "überzeugen"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "fragen",
+        "suchen",
+        "helfen"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "Wahl",
+        "Frage",
+        "Hilfe"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "skeptisch",
+        "überzeugt",
+        "richtig"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "garantiere",
+        "entscheide",
+        "frage"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "überzeugt",
+        "entschieden",
+        "beraten"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "Beratung",
+        "Entscheidung",
+        "Wahl"
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "g7-m1",
+     "typ": "mc",
+     "kontext": "Situationen",
+     "frage": "Ein Kunde zögert. Was ist eine gute, nicht aufdringliche Reaktion?",
+     "opts": [
+      "Nehmen Sie sich ruhig Zeit. Darf ich Ihnen die Unterschiede noch einmal zeigen?",
+      "Sie müssen jetzt kaufen, morgen ist es teurer!",
+      "Andere Kunden entscheiden sich schneller.",
+      "Dann kann ich Ihnen nicht helfen."
+     ],
+     "l": 0
+    }
+   ]
+  },
+  {
+   "titel": "Prüfungstraining",
+   "icon": "🏁",
+   "kurz": "Beschwerde lesen (a, b, c) · Sprachbausteine · gemischte Aufgaben",
+   "aufgaben": [
+    {
+     "id": "g8-besch",
+     "typ": "lesen",
+     "kontext": "Lesen",
+     "frage": "Ihr Teamleiter leitet Ihnen eine Beschwerde weiter. Lesen Sie die Mails und lösen Sie die Aufgaben.",
+     "posts": [
+      {
+       "name": "Klaus Wegner, Teamleiter",
+       "info": "FW: Probleme mit Lieferungen",
+       "text": "Hallo, bitte kümmern Sie sich um die angehängte Mail und antworten Sie der Kundin höflich. Frau Moreau ist seit vielen Jahren unsere Kundin – ich möchte sie auf keinen Fall verlieren. Erklären Sie ihr, warum es zu den Problemen kommt und welche Lösung wir anbieten können."
+      },
+      {
+       "name": "Claire Moreau",
+       "info": "Probleme mit Lieferungen",
+       "text": "Sehr geehrter Herr Wegner, leider gab es bei Ihrer letzten Lieferung wieder Fehler. Wir sind seit Jahren Kunden und waren immer zufrieden, aber seit einigen Monaten müssen wir ständig nachhaken: Einmal kam viel zu viel Kopierpapier, dann passten die Umschläge nicht zur Bestellung. Bei der Lieferung vom 17.3. fehlten nun 50 Bögen Etiketten, und das Briefpapier hatte nicht die bestellte Qualität. Ich erwarte, dass Sie das umgehend in Ordnung bringen. Sollte es weiter Probleme geben, müssen wir eine andere Druckerei beauftragen. Mit freundlichen Grüßen, Claire Moreau"
+      }
+     ],
+     "fragen": [
+      {
+       "f": "Frau Moreau …",
+       "opts": [
+        "hat zu wenige Etiketten bekommen.",
+        "beschwert sich über die Qualität des Kopierpapiers.",
+        "hat weniger Etiketten bestellt, als geliefert wurden."
+       ],
+       "l": 0
+      },
+      {
+       "f": "Die Firma von Herrn Wegner …",
+       "opts": [
+        "verkauft Material für den Postversand.",
+        "hat in letzter Zeit nicht auf Beschwerden reagiert.",
+        "nimmt keine Aufträge mehr an."
+       ],
+       "l": 0
+      },
+      {
+       "f": "Was soll in der Antwort an Frau Moreau stehen?",
+       "opts": [
+        "eine Erklärung und ein Lösungsangebot",
+        "nur eine kurze Entschuldigung",
+        "eine neue Rechnung"
+       ],
+       "l": 0
+      },
+      {
+       "f": "Wie ist Frau Moreaus Ton?",
+       "opts": [
+        "verärgert, aber sachlich",
+        "sehr unhöflich",
+        "freundlich und zufrieden"
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "g8-sb",
+     "typ": "luecke",
+     "kontext": "Sprachbausteine",
+     "frage": "Sprachbausteine: Die Antwort an Frau Moreau. Wählen Sie die richtige Lösung.",
+     "text": "Guten Tag, Frau Moreau,\n\nvielen Dank für Ihre Nachricht. Es tut uns sehr leid, {0} es bei den letzten Lieferungen zu Fehlern gekommen ist. Der Grund {1} war die Umstellung auf ein neues Lagersystem. Inzwischen haben wir das Problem gelöst, {2} wir alle Bestellungen zusätzlich von Hand kontrollieren.\n\nDie fehlenden Etiketten schicken wir Ihnen noch heute. Das Briefpapier tauschen wir selbstverständlich kostenlos {3}. Als Entschädigung bieten wir Ihnen {4} einen Preisnachlass von 15 % auf Ihre nächste Bestellung an.\n\nWir hoffen, dass Sie mit dieser Lösung {5} sind, und freuen uns auf die weitere Zusammenarbeit.\n\nHerzliche Grüße aus Kiel\nAnna Petersen",
+     "gaps": [
+      {
+       "opts": [
+        "dass",
+        "ob",
+        "weil"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "dafür",
+        "davon",
+        "darum"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "indem",
+        "damit",
+        "obwohl"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "um",
+        "an",
+        "aus"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "außerdem",
+        "trotzdem",
+        "deshalb"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "einverstanden",
+        "zufrieden mit",
+        "verstanden"
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "g8-1",
+     "typ": "mc",
+     "kontext": "indem",
+     "frage": "Wir sparen Versandkosten, ___ wir Lieferungen bündeln.",
+     "opts": [
+      "indem",
+      "dadurch",
+      "sodass",
+      "obwohl"
+     ],
+     "l": 0
+    },
+    {
+     "id": "g8-2",
+     "typ": "mc",
+     "kontext": "Textzusammenhang",
+     "frage": "„Wir haben einen neuen Katalog. ___ schicken wir Ihnen gern zu.“",
+     "opts": [
+      "Den",
+      "Der",
+      "Dem",
+      "Das"
+     ],
+     "l": 0
+    },
+    {
+     "id": "g8-b1",
+     "typ": "bau",
+     "kontext": "Satzbau",
+     "frage": "Bilden Sie den Satz.",
+     "steine": [
+      "Dadurch,",
+      "dass",
+      "wir",
+      "schnell",
+      "reagiert haben,",
+      "ist",
+      "die Kundin",
+      "zufrieden."
+     ]
+    }
+   ]
+  }
+ ]
+}

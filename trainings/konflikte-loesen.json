@@ -1,0 +1,661 @@
+{
+  "id": "konflikte-loesen",
+  "titel": "Konflikte fair lösen",
+  "untertitel": "Streit im Arbeitsalltag · Lösungen finden · berufliche Telefongespräche · irreale Bedingungen in der Vergangenheit · Bestätigungsmail · Relativsätze im Genitiv",
+  "niveau": "B1/B2",
+  "reihe": "Prüfungstraining B1/B2",
+  "farbe": "#8a5a2b",
+  "mix": 15,
+  "intro": "Sieben Teile rund um Konflikte, Telefonate und neue Rollen in Beruf und Familie – jeder Teil kann einzeln gespielt werden. Der **Prüfungsmix** zieht zufällig Aufgaben aus allen Teilen.",
+  "kompakt": [
+    {
+      "titel": "Irreale Konditionalsätze in der Vergangenheit",
+      "zeilen": [
+        "Realität: Ich habe das leider nicht gewusst.",
+        "**Wenn** ich das **gewusst hätte**, **hätte** ich Sie früher **kontaktieren können**.",
+        "**Wenn** der Service besser **gewesen wäre**, **wäre** ich bei der anderen Firma **geblieben**.",
+        "Form: hätte/wäre + Partizip II · mit Modalverb: hätte + Infinitiv + Modalverb im Infinitiv"
+      ]
+    },
+    {
+      "titel": "Relativsätze im Genitiv",
+      "zeilen": [
+        "der/das → **dessen** · die (Sg. und Pl.) → **deren**",
+        "Ihr Freund, **dessen** Gehalt niedriger ist, war sauer. · Eine Frau, **deren** Karriere unterstützt wird, …",
+        "Die Großeltern, auf **deren** Hilfe sie angewiesen sind, … · Das Nomen nach dessen/deren hat **keinen Artikel**."
+      ]
+    },
+    {
+      "titel": "Konflikte ansprechen und lösen",
+      "zeilen": [
+        "**Vorwürfe:** Ich ärgere mich darüber, dass … · Mich stört es, wenn … · Ich finde es nicht in Ordnung, dass …",
+        "**reagieren:** Das tut mir ja auch leid, aber … · Das sehe ich ein bisschen anders.",
+        "**Missverständnisse klären:** Ich dachte, … · Wollten Sie nicht immer …?",
+        "**Lösungen und Kompromisse:** Wie wäre es, wenn wir …? · Warum machen wir es in Zukunft nicht so: …? · Von mir aus gerne."
+      ]
+    },
+    {
+      "titel": "Bestätigungsmail",
+      "zeilen": [
+        "Wie soeben telefonisch vereinbart, … · Unser Angebot beinhaltet … · Bitte teilen Sie uns noch mit, … · Die Preise finden Sie in unserem Flyer, den ich an diese Mail anhänge.",
+        "Wir freuen uns auf die Zusammenarbeit. · Bei Rückfragen können Sie sich jederzeit an mich wenden. · Sie erreichen mich werktags von 9 bis 17 Uhr."
+      ]
+    }
+  ],
+  "module": [
+    {
+      "titel": "Das finde ich nicht in Ordnung!",
+      "icon": "😤",
+      "kurz": "Konflikte im Arbeitsalltag · Gespräch lesen",
+      "aufgaben": [
+        {
+          "id": "k1-dia",
+          "typ": "lesen",
+          "kontext": "Lesen",
+          "frage": "Lesen Sie das Gespräch zwischen zwei Kollegen, die zusammen in einer Agentur arbeiten.",
+          "textTitel": "Kurz nach Feierabend",
+          "text": "**Ron:** Gabriela, hast du kurz Zeit? Es gibt da ein Problem.\n**Gabriela:** Klar. Worum geht's?\n**Ron:** Ich habe in den letzten zwei Wochen fast jeden Abend deine Telefonate übernommen, weil du pünktlich gehen musstest. Ich mache das gern mal, aber es wird zu viel.\n**Gabriela:** Oh, das tut mir leid. Meine Tagesmutter ist krank, und mein Mann ist auf Dienstreise. Ich hätte dir das sagen sollen.\n**Ron:** Ehrlich gesagt hatte ich den Eindruck, dass es dir egal ist.\n**Gabriela:** Nein, gar nicht! Ich bin dir wirklich dankbar, dass du mir hilfst. Nächste Woche, wenn die Messe vorbei ist, übernehme ich deine Kunden am Freitag – dann kannst du früher ins Wochenende.\n**Ron:** Das ist doch eine gute Lösung.",
+          "fragen": [
+            {
+              "f": "Was stört Ron?",
+              "opts": [
+                "Er macht ständig Gabrielas Telefonate.",
+                "Gabriela kommt immer zu spät.",
+                "Gabriela ist unfreundlich zu Kunden.",
+                "Er hat zu wenig Arbeit."
+              ],
+              "l": 0
+            },
+            {
+              "f": "Warum muss Gabriela pünktlich gehen?",
+              "opts": [
+                "Die Kinderbetreuung fällt aus.",
+                "Sie hat einen zweiten Job.",
+                "Sie ist selbst krank.",
+                "Sie macht eine Weiterbildung."
+              ],
+              "l": 0
+            },
+            {
+              "f": "Wofür entschuldigt sie sich?",
+              "opts": [
+                "dass sie Ron nicht informiert hat",
+                "dass sie krank war",
+                "dass die Messe ausfällt",
+                "dass sie Kunden verloren hat"
+              ],
+              "l": 0
+            },
+            {
+              "f": "Wie lösen die beiden das Problem?",
+              "opts": [
+                "Gabriela übernimmt nächste Woche Rons Freitagskunden.",
+                "Ron spricht mit dem Chef über Gabrielas Arbeitszeiten.",
+                "Gabriela arbeitet ab jetzt jeden Abend länger.",
+                "Sie organisieren gemeinsam einen Babysitter."
+              ],
+              "l": 0
+            }
+          ]
+        },
+        {
+          "id": "k1-zu",
+          "typ": "zu",
+          "kontext": "Konfliktsituationen",
+          "frage": "Welches Problem zeigt die Situation?",
+          "paare": [
+            [
+              "Die Kaffeeküche ist voller schmutziger Tassen.",
+              "Niemand räumt auf."
+            ],
+            [
+              "Eine Kollegin reißt das Fenster auf, die andere friert.",
+              "unterschiedliches Temperaturempfinden"
+            ],
+            [
+              "Der Meister zeigt auf die unaufgeräumte Werkstatt.",
+              "Der Lehrling hat nicht sauber gemacht."
+            ],
+            [
+              "Eine Kellnerin trägt die Teller allein, die Kollegin schaut zu.",
+              "ungleiche Verteilung der Arbeit"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Gemeinsam Lösungen finden",
+      "icon": "🤝",
+      "kurz": "Was hilft? · Redemittel",
+      "aufgaben": [
+        {
+          "id": "k2-hilft",
+          "typ": "matrix",
+          "kontext": "Konfliktlösung",
+          "frage": "Hilft das eher, einen Konflikt zu lösen, oder macht es ihn schlimmer?",
+          "wahl": [
+            "hilft",
+            "schadet"
+          ],
+          "aussagen": [
+            [
+              "sich gegenseitig ausreden lassen",
+              0
+            ],
+            [
+              "Konflikte gleich ansprechen",
+              0
+            ],
+            [
+              "eine dritte Person als Streitschlichter einschalten",
+              0
+            ],
+            [
+              "über die eigenen Gefühle sprechen",
+              0
+            ],
+            [
+              "dem anderen alte Fehler immer wieder vorwerfen",
+              1
+            ],
+            [
+              "Probleme lange in sich hineinfressen",
+              1
+            ],
+            [
+              "die andere Person unterbrechen",
+              1
+            ]
+          ]
+        },
+        {
+          "id": "k2-rm",
+          "typ": "matrix",
+          "kontext": "Redemittel",
+          "frage": "Wozu passt die Äußerung?",
+          "wahl": [
+            "Vorwurf machen",
+            "reagieren",
+            "Missverständnis klären",
+            "Lösung anbieten",
+            "Kompromiss annehmen"
+          ],
+          "aussagen": [
+            [
+              "Mich stört es, wenn du die Tassen stehen lässt.",
+              0
+            ],
+            [
+              "Ich ärgere mich darüber, dass ich immer allein aufräume.",
+              0
+            ],
+            [
+              "Das sehe ich ein bisschen anders.",
+              1
+            ],
+            [
+              "Ich dachte, du wolltest das Fenster offen haben.",
+              2
+            ],
+            [
+              "Wie wäre es, wenn wir einen Putzplan machen?",
+              3
+            ],
+            [
+              "Von mir aus gerne.",
+              4
+            ]
+          ]
+        },
+        {
+          "id": "k2-1",
+          "typ": "mc",
+          "kontext": "Wortschatz",
+          "frage": "Wer einen Streit schnell vergisst und sich nicht rächt, ist …",
+          "opts": [
+            "nicht nachtragend.",
+            "nicht aufmerksam.",
+            "nicht respektvoll.",
+            "nicht direkt."
+          ],
+          "l": 0
+        }
+      ]
+    },
+    {
+      "titel": "Berufliche Telefongespräche",
+      "icon": "📞",
+      "kurz": "Vor, während, nach dem Gespräch · Notiz",
+      "aufgaben": [
+        {
+          "id": "k3-ph",
+          "typ": "matrix",
+          "kontext": "Telefonieren",
+          "frage": "Wann ist das wichtig?",
+          "wahl": [
+            "vor dem Gespräch",
+            "während des Gesprächs",
+            "nach dem Gespräch"
+          ],
+          "aussagen": [
+            [
+              "eine Liste mit den Punkten machen, die man besprechen will",
+              0
+            ],
+            [
+              "Kalender, Stift und Papier zurechtlegen",
+              0
+            ],
+            [
+              "dafür sorgen, dass man nicht gestört wird",
+              0
+            ],
+            [
+              "sich mit Namen und Firma melden",
+              1
+            ],
+            [
+              "lieber einmal zu viel als zu wenig nachfragen",
+              1
+            ],
+            [
+              "freundlich und gelassen bleiben",
+              1
+            ],
+            [
+              "die Notizen durchlesen und vervollständigen",
+              2
+            ],
+            [
+              "andere Personen über das Ergebnis informieren",
+              2
+            ]
+          ]
+        },
+        {
+          "id": "k3-notiz",
+          "typ": "lesen",
+          "kontext": "Gesprächsnotiz",
+          "frage": "Lesen Sie das Telefongespräch und die Fragen zur Gesprächsnotiz.",
+          "textTitel": "Messeservice Stilbruch – Anruf am 14.10., 11:30 Uhr",
+          "text": "**Bergmann:** Stilbruch Modemessen, Gabriela Bergmann, was kann ich für Sie tun?\n**Mommsen:** Guten Tag, Henrik Mommsen von der Firma Nordwind Textil. Wir möchten auf der Fashion Week im November einen Stand buchen.\n**Bergmann:** Sehr gern. An welche Tage hatten Sie gedacht?\n**Mommsen:** Am 8. und 9. November. Wir bräuchten ungefähr 40 Quadratmeter.\n**Bergmann:** Das ist möglich. Brauchen Sie auch Werbematerial?\n**Mommsen:** Ja, Flyer und ein großes Banner. Und zwei Hostessen für den Stand.\n**Bergmann:** Gut, ich schicke Ihnen heute noch eine Bestätigung per Mail.",
+          "fragen": [
+            {
+              "f": "Firma:",
+              "opts": [
+                "Nordwind Textil",
+                "Stilbruch",
+                "Fashion Week",
+                "Bergmann & Co."
+              ],
+              "l": 0
+            },
+            {
+              "f": "Grund des Anrufs:",
+              "opts": [
+                "einen Messestand buchen",
+                "sich beschweren",
+                "eine Rechnung reklamieren",
+                "Personal suchen"
+              ],
+              "l": 0
+            },
+            {
+              "f": "Standfläche:",
+              "opts": [
+                "ca. 40 m²",
+                "ca. 8 m²",
+                "ca. 9 m²",
+                "ca. 400 m²"
+              ],
+              "l": 0
+            },
+            {
+              "f": "Personal:",
+              "opts": [
+                "zwei Hostessen",
+                "keins",
+                "ein Fotograf",
+                "vier Verkäufer"
+              ],
+              "l": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Wenn ich das gewusst hätte …",
+      "icon": "⏪",
+      "kurz": "Irreale Konditionalsätze (Vergangenheit)",
+      "aufgaben": [
+        {
+          "id": "k4-ma",
+          "typ": "matrix",
+          "kontext": "Irreale Bedingung",
+          "frage": "Welche Form passt in die Lücke?",
+          "wahl": [
+            "hätte",
+            "wäre"
+          ],
+          "aussagen": [
+            [
+              "Wenn ich das gewusst ___, hätte ich Sie früher angerufen.",
+              0
+            ],
+            [
+              "Wenn der Service besser gewesen ___, wäre ich geblieben.",
+              1
+            ],
+            [
+              "Wenn ich pünktlich gekommen ___, hätten die Kunden nicht warten müssen.",
+              1
+            ],
+            [
+              "Wenn ich mir eine Liste gemacht ___, hätte ich nichts vergessen.",
+              0
+            ],
+            [
+              "Wenn wir rechtzeitig angefangen ___, wären wir pünktlich fertig geworden.",
+              0
+            ],
+            [
+              "Wenn er nicht krank geworden ___, hätte er die Präsentation gehalten.",
+              1
+            ]
+          ]
+        },
+        {
+          "id": "k4-b1",
+          "typ": "bau",
+          "kontext": "Satzbau",
+          "frage": "Die Präsentation war schlecht. Der Chef war unzufrieden. Bilden Sie den Satz.",
+          "steine": [
+            "Wenn",
+            "ich die Präsentation",
+            "besser gestaltet",
+            "hätte,",
+            "wäre",
+            "der Chef",
+            "zufrieden gewesen."
+          ]
+        },
+        {
+          "id": "k4-b2",
+          "typ": "bau",
+          "kontext": "Satzbau",
+          "frage": "Mit Modalverb: Ich wusste nichts davon. Deshalb habe ich nicht früher angerufen.",
+          "steine": [
+            "Wenn",
+            "ich davon",
+            "gewusst",
+            "hätte,",
+            "hätte",
+            "ich früher",
+            "anrufen",
+            "können."
+          ]
+        },
+        {
+          "id": "k4-1",
+          "typ": "mc",
+          "kontext": "Irreale Bedingung",
+          "frage": "Wenn mein Designer die Entwürfe früher geschickt hätte, ___",
+          "opts": [
+            "wäre es nicht so stressig geworden.",
+            "ist es nicht so stressig geworden.",
+            "würde es nicht so stressig geworden.",
+            "hätte es nicht so stressig geworden."
+          ],
+          "l": 0
+        },
+        {
+          "id": "k4-2",
+          "typ": "mc",
+          "kontext": "Bedeutung",
+          "frage": "„Wenn der Service besser gewesen wäre, wäre ich bei der anderen Firma geblieben.“ – Was ist passiert?",
+          "opts": [
+            "Der Service war schlecht, deshalb hat die Kundin die Firma gewechselt.",
+            "Der Service war gut, deshalb ist die Kundin bei der Firma geblieben.",
+            "Die Kundin wechselt vielleicht später, wenn der Service schlecht wird.",
+            "Die andere Firma hat der Kundin wegen Problemen gekündigt."
+          ],
+          "l": 0
+        }
+      ]
+    },
+    {
+      "titel": "Die Bestätigungsmail",
+      "icon": "📧",
+      "kurz": "Feste Wendungen ergänzen",
+      "aufgaben": [
+        {
+          "id": "k5-mail",
+          "typ": "luecke",
+          "kontext": "Bestätigungsmail",
+          "frage": "Ergänzen Sie die Bestätigungsmail an Herrn Mommsen.",
+          "text": "Sehr geehrter Herr Mommsen,\n\n{0}, organisieren wir gerne Ihren Messeauftritt während der Fashion Week am 8. und 9. November. {1} Aufbau und Abbau, die Gestaltung der Standfläche und die Bereitstellung von Personal.\n\n{2}, welches Werbematerial wir für Sie produzieren lassen sollen, damit ich Ihnen ein detailliertes Angebot unterbreiten kann. Die Preise {3} unserem Flyer, den ich an diese Mail anhänge.\n\nWir {4} die Zusammenarbeit mit Ihnen. Bei Rückfragen können Sie sich jederzeit gerne an mich wenden.\n\nMit freundlichen Grüßen\nGabriela Bergmann",
+          "gaps": [
+            {
+              "opts": [
+                "Wie soeben telefonisch vereinbart",
+                "Wie Sie sicher wissen",
+                "Wie leider befürchtet"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "Unser Angebot beinhaltet",
+                "Unsere Rechnung enthält",
+                "Ihr Auftrag kostet"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "Bitte teilen Sie uns noch mit",
+                "Bitte beschweren Sie sich",
+                "Wir bitten um Entschuldigung"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "finden Sie in",
+                "sehen Sie an",
+                "stehen Sie auf"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "freuen uns auf",
+                "freuen uns über",
+                "bedanken uns für"
+              ],
+              "l": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Veränderte Rollen",
+      "icon": "👨‍👧",
+      "kurz": "Artikel lesen · Relativsätze im Genitiv",
+      "aufgaben": [
+        {
+          "id": "k6-text",
+          "typ": "lesen",
+          "kontext": "Lesen",
+          "frage": "Lesen Sie den Artikel und beantworten Sie die Fragen.",
+          "textTitel": "Von Frauennetzwerken und Vätergruppen",
+          "text": "Vor ein paar Tagen war ich mit einer Freundin und ihrem neuen Freund essen. Als die Rechnung kam, zahlte sie einfach. Ihr Freund, dessen Gehalt deutlich niedriger ist als ihres, war sauer. Den Ärger konnte sie nicht nachvollziehen.\n\nEin extremes Beispiel? Mag sein. Dabei nimmt die Zahl der Frauen, deren Partner weniger verdienen, kontinuierlich zu. In Deutschland verdienen heute schon über 20 % der berufstätigen Frauen mehr als ihre Partner. Immer mehr Frauen studieren, und viele Firmen fördern weibliche Nachwuchskräfte mit Mentorinnen-Programmen. Eine Frau, deren Karriere so unterstützt wird, übernimmt eher Führungsaufgaben.\n\nUmgekehrt wollen viele junge Männer die ersten Lebensjahre ihrer Kinder bewusst miterleben. Doch die Familiengründung ist auch eine Belastungsprobe: Das Baby, dessen Betreuung organisiert werden muss, stellt die Eltern vor große Herausforderungen.\n\nFrüher waren Hausmänner oft Einzelkämpfer. Heute werden organisierte Vätergruppen immer beliebter. Solche Modelle gegenseitiger Unterstützung werden wichtiger, denn immer weniger Eltern haben das Glück, dass die Großeltern, auf deren Hilfe sie angewiesen sind, in derselben Stadt wohnen.",
+          "fragen": [
+            {
+              "f": "Warum war der Freund sauer?",
+              "opts": [
+                "Sie hatte ohne Absprache bezahlt.",
+                "Das Essen im Restaurant war schlecht.",
+                "Sie war eine Stunde zu spät gekommen.",
+                "Er musste die ganze Rechnung allein zahlen."
+              ],
+              "l": 0
+            },
+            {
+              "f": "Warum verdienen mehr Frauen mehr als ihre Partner?",
+              "opts": [
+                "Mehr Frauen studieren und werden gefördert.",
+                "Männer arbeiten heute deutlich weniger.",
+                "Frauen arbeiten fast nur noch Vollzeit.",
+                "Es gibt neue Gesetze für gleiche Löhne."
+              ],
+              "l": 0
+            },
+            {
+              "f": "Was wollen viele junge Väter?",
+              "opts": [
+                "mehr Zeit mit ihren kleinen Kindern",
+                "mehr Überstunden und eine Karriere",
+                "eine Teilzeitstelle für ihre Partnerin",
+                "näher bei ihren eigenen Eltern wohnen"
+              ],
+              "l": 0
+            },
+            {
+              "f": "Warum werden Vätergruppen wichtiger?",
+              "opts": [
+                "Die Großeltern wohnen oft weit weg.",
+                "Väter haben heute mehr Geld als früher.",
+                "Die Mütter wollen das so organisieren.",
+                "Die Firmen bezahlen solche Gruppen."
+              ],
+              "l": 0
+            }
+          ]
+        },
+        {
+          "id": "k6-gen",
+          "typ": "matrix",
+          "kontext": "Relativsätze im Genitiv",
+          "frage": "dessen oder deren?",
+          "wahl": [
+            "dessen",
+            "deren"
+          ],
+          "aussagen": [
+            [
+              "Ihr Freund, ___ Gehalt niedriger ist, war sauer.",
+              0
+            ],
+            [
+              "Das Baby, ___ Betreuung organisiert werden muss, …",
+              0
+            ],
+            [
+              "Eine Frau, ___ Karriere unterstützt wird, …",
+              1
+            ],
+            [
+              "Die Zahl der Frauen, ___ Partner weniger verdienen, …",
+              1
+            ],
+            [
+              "Die Großeltern, auf ___ Hilfe sie angewiesen sind, …",
+              1
+            ],
+            [
+              "Ich habe einen Kollegen, ___ PC kaputt ist.",
+              0
+            ]
+          ]
+        },
+        {
+          "id": "k6-b1",
+          "typ": "bau",
+          "kontext": "Satzbau",
+          "frage": "Verbinden Sie: Die Firma sucht Ingenieurinnen. Ihre Projekte sind international.",
+          "steine": [
+            "Die Firma",
+            "sucht",
+            "Ingenieurinnen,",
+            "deren",
+            "Projekte",
+            "international sind."
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Prüfungstraining",
+      "icon": "🏁",
+      "kurz": "Sprachbausteine · gemischt",
+      "aufgaben": [
+        {
+          "id": "k7-sb",
+          "typ": "luecke",
+          "kontext": "Sprachbausteine",
+          "frage": "Sprachbausteine: E-Mail an eine Kollegin nach einem Streit. Wählen Sie die richtige Lösung.",
+          "text": "Liebe Svenja,\n\nich möchte mich noch einmal wegen gestern melden. Es tut mir leid, dass ich so laut geworden bin. Wenn ich gewusst {0}, dass du krank warst, hätte ich anders reagiert.\n\nTrotzdem stört es mich, {1} die Kaffeeküche abends nie aufgeräumt ist. Wie {2} es, wenn wir einen Putzplan machen? Unser Teamleiter, {3} Meinung uns allen wichtig ist, findet die Idee gut.\n\nIch hoffe, wir können das Thema {4} klären.\n\nViele Grüße\nAylin",
+          "gaps": [
+            {
+              "opts": [
+                "hätte",
+                "wäre",
+                "habe"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "dass",
+                "ob",
+                "weil"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "wäre",
+                "hätte",
+                "ist"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "dessen",
+                "deren",
+                "dem"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "in Ruhe",
+                "auf Ruhe",
+                "mit Ruhe"
+              ],
+              "l": 0
+            }
+          ]
+        },
+        {
+          "id": "k7-1",
+          "typ": "mc",
+          "kontext": "Telefon",
+          "frage": "Wie meldet man sich am besten am Telefon in der Firma?",
+          "opts": [
+            "Firma Stilbruch, Sie sprechen mit Gabriela Bergmann, was kann ich für Sie tun?",
+            "Hallo, hier ist Gabriela, wer ist denn da bitte am Apparat?",
+            "Ja, bitte? Ich höre. Sagen Sie mir einfach, was Sie wollen.",
+            "Stilbruch, guten Tag. Moment, ich muss erst meinen Kaffee holen."
+          ],
+          "l": 0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,292 @@
+{
+  "id": "gesund-bleiben-im-beruf",
+  "titel": "Gesund bleiben im Beruf",
+  "untertitel": "Gesundheitsangebote · Meinungen und Abwägen · Infinitiv mit zu · Arbeitstag in der Pflege · Probleme melden · Pflegebericht · einfacher leben",
+  "niveau": "B1/B2",
+  "reihe": "Prüfungstraining B1/B2",
+  "farbe": "#2f8f83",
+  "mix": 15,
+  "intro": "Sieben Teile – jeder Teil kann einzeln gespielt werden. Der **Prüfungsmix** zieht zufällig Aufgaben aus allen Teilen.",
+  "kompakt": [
+    { "titel": "Meinung, Abwägen, Widersprechen", "zeilen": [
+      "**Meinung:** Gesundheit heißt für mich, dass … · Meiner Ansicht nach sollte man …",
+      "**Abwägen:** Viele Leute meinen, dass …, aber … · Ich bin da geteilter Meinung: Einerseits …, andererseits …",
+      "**Widersprechen:** Das sehe ich anders: … · Im Gegenteil, meiner Ansicht nach … · Das finde ich schwierig, denn …"
+    ]},
+    { "titel": "Infinitiv mit zu", "zeilen": [
+      "Es war normal, den ganzen Tag Fußball **zu spielen**.",
+      "**trennbares Verb:** zu in der Mitte – Ich hatte mehr Lust, auf meine Geschwister auf**zu**passen.",
+      "**mit Modalverb:** Infinitiv + zu + Modalverb – …, mit den Ärzten diskutieren **zu müssen**.",
+      "**Passiv:** Partizip II + zu + werden – …, dauernd von den Patienten gerufen **zu werden**.",
+      "**Nach diesen Ausdrücken:** Ich habe (keine) Zeit/Lust/die Chance … · Es ist normal/wichtig/anstrengend … · Ich beabsichtige/habe vor/plane/versuche … · Ich hoffe/freue mich/befürchte/ärgere mich …"
+    ]},
+    { "titel": "Um Rat bitten und Vorschläge machen", "zeilen": [
+      "**um Rat bitten:** Wie soll ich mit dem Kunden jetzt umgehen? · Wen muss ich jetzt anrufen? · Was würden Sie mir empfehlen? · Wie kann ich das Problem in den Griff bekommen?",
+      "**Vorschläge:** Das Wichtigste ist, dass Sie … · Sie sollten zuerst …, später können Sie dann … · Bitten Sie den Apotheker darum, … · Besorgen Sie auf jeden Fall zuerst …"
+    ]},
+    { "titel": "Berichte im Beruf", "zeilen": [
+      "nur **Fakten**, keine subjektiven Einschätzungen · den Bericht **unterschreiben** · so kurz wie möglich, so ausführlich wie nötig · **Stichworte und Abkürzungen** · immer genau **Datum, Uhrzeit, Namen**"
+    ]},
+    { "titel": "Ausdrücke mit es", "zeilen": [
+      "es sich leichter machen · es eilig haben · es gut/schwer haben · es geht um … · es gibt … · es kommt darauf an · es ist nie zu spät"
+    ]}
+  ],
+  "module": [
+    {
+      "titel": "Gesundheitsangebote",
+      "icon": "🩺",
+      "kurz": "Angebote lesen und Personen zuordnen · Meinung äußern",
+      "aufgaben": [
+        {
+          "id": "s1-ang", "typ": "matrix", "kontext": "Lesen",
+          "frage": "Lesen Sie die Angebote. Welches Angebot passt zu welcher Person?",
+          "posts": [
+            { "name": "A", "text": "**Entspannungskurs:** Sie können abends nicht abschalten und schlafen schlecht? Wir zeigen Ihnen einfache Übungen aus dem Achtsamkeitstraining und der Muskelentspannung, die Sie leicht in den Alltag einbauen können." },
+            { "name": "B", "text": "**Rückenschmerzen?** In unserem Präventionskurs lernen Sie, Ihre Rückenmuskeln gezielt zu trainieren, und bekommen Tipps zum rückenfreundlichen Heben und Tragen. Zuschuss Ihrer Krankenkasse möglich!" },
+            { "name": "C", "text": "**Gesundheitscheck:** Viele schwere Krankheiten können gut behandelt werden, wenn man sie früh erkennt. Ihre Krankenkasse lädt Sie zu einer kostenlosen Untersuchung ein." },
+            { "name": "D", "text": "**Impfpass schon gecheckt?** Lassen Sie in Ihrer Arztpraxis kontrollieren, ob Ihr Impfschutz noch aktuell ist." }
+          ],
+          "wahl": ["A", "B", "C", "D"],
+          "aussagen": [
+            ["Paula arbeitet viel, liegt nachts wach und denkt an die Arbeit.", 0],
+            ["Wanda ist Pflegerin und hat vom vielen Heben Schmerzen.", 1],
+            ["Herr Kant ist 50 und war seit Jahren nicht beim Arzt zur Vorsorge.", 2],
+            ["Oliver fährt nächsten Monat in ein Land, in dem Masern verbreitet sind.", 3]
+          ]
+        },
+        {
+          "id": "s1-rm", "typ": "matrix", "kontext": "Redemittel",
+          "frage": "Meinung, abwägen oder widersprechen?",
+          "wahl": ["Meinung formulieren", "abwägen", "widersprechen"],
+          "aussagen": [
+            ["Gesundheit heißt für mich, dass ich mich wohlfühle.", 0], ["Meiner Ansicht nach sollte man jeden Tag Sport machen.", 0],
+            ["Viele Leute meinen, dass Arbeit krank macht, aber …", 1], ["Ich bin da geteilter Meinung: Einerseits …, andererseits …", 1],
+            ["Das sehe ich anders: …", 2], ["Im Gegenteil, meiner Ansicht nach …", 2], ["Das finde ich schwierig, denn …", 2]
+          ]
+        },
+        { "id": "s1-zit", "typ": "mc", "kontext": "Zitate", "frage": "„Gesundheit ist nicht alles, aber ohne Gesundheit ist alles nichts.“ – Was bedeutet das?", "opts": ["Ohne Gesundheit kann man nichts genießen.", "Gesundheit ist unwichtig.", "Geld ist wichtiger als Gesundheit.", "Man braucht nichts außer Gesundheit."], "l": 0 }
+      ]
+    },
+    {
+      "titel": "Infinitiv mit zu",
+      "icon": "✏️",
+      "kurz": "einfach · trennbar · Modalverb · Passiv · typische Ausdrücke",
+      "aufgaben": [
+        {
+          "id": "s2-art", "typ": "matrix", "kontext": "Formen",
+          "frage": "Welche Form des Infinitivs mit zu ist das?",
+          "wahl": ["einfach", "trennbares Verb", "mit Modalverb", "Passiv"],
+          "aussagen": [
+            ["… den ganzen Tag Fußball zu spielen.", 0],
+            ["… auf meine Geschwister aufzupassen.", 1],
+            ["… mit den Ärzten diskutieren zu müssen.", 2],
+            ["… dauernd von den Patienten gerufen zu werden.", 3],
+            ["… rund um die Uhr versorgt zu werden.", 3],
+            ["… mich weiterbilden zu können.", 2],
+            ["… früh aufzustehen.", 1]
+          ]
+        },
+        { "id": "s2-1", "typ": "mc", "kontext": "trennbar", "frage": "Ich hatte keine Lust, mein Zimmer ___.", "opts": ["aufzuräumen", "zu aufräumen", "aufräumen zu", "aufgeräumt zu"], "l": 0 },
+        { "id": "s2-2", "typ": "mc", "kontext": "Passiv", "frage": "Manche Patienten sind darauf angewiesen, rund um die Uhr versorgt ___.", "opts": ["zu werden", "werden zu", "zu worden", "zu wurden"], "l": 0 },
+        { "id": "s2-3", "typ": "mc", "kontext": "Modalverb", "frage": "Ich hoffe, mich bald weiterbilden ___.", "opts": ["zu können", "können zu", "zu kann", "zukönnen"], "l": 0 },
+        { "id": "s2-4", "typ": "mc", "kontext": "Ausdrücke", "frage": "Nach welchem Ausdruck steht KEIN Infinitiv mit zu?", "opts": ["Ich muss …", "Ich habe vor, …", "Es ist wichtig, …", "Ich habe die Chance, …"], "l": 0, "x": "Nach **Modalverben** (müssen, können …) steht der Infinitiv ohne zu." },
+        {
+          "id": "s2-lt", "typ": "luecke", "kontext": "Infinitiv mit zu",
+          "frage": "Ein Krankenpfleger erzählt. Ergänzen Sie.",
+          "text": "Als Kind war es für mich normal, den ganzen Tag Fußball {0}. In der Klinik war es stressig, dauernd von den Patienten {1}. Heute arbeite ich im ambulanten Dienst. Ich habe die Chance, mich {2}. Und ich freue mich darauf, bald ein neues Team {3}.",
+          "gaps": [
+            { "opts": ["zu spielen", "spielen", "gespielt zu"], "l": 0 },
+            { "opts": ["gerufen zu werden", "zu rufen", "rufen zu werden"], "l": 0 },
+            { "opts": ["zu spezialisieren", "spezialisieren", "spezialisiert"], "l": 0 },
+            { "opts": ["aufzubauen", "zu aufbauen", "aufbauen"], "l": 0 }
+          ]
+        },
+        { "id": "s2-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz.", "steine": ["Es", "ist", "eine Herausforderung,", "sich", "dauernd", "weiterzubilden."] }
+      ]
+    },
+    {
+      "titel": "Ein Arbeitstag in der Pflege",
+      "icon": "🏥",
+      "kurz": "Arbeitsplan · Wortschatz Pflege · Probleme und Lösungen",
+      "aufgaben": [
+        {
+          "id": "s3-plan", "typ": "lesen", "kontext": "Lesen",
+          "frage": "Lesen Sie den Text. Beantworten Sie die Fragen.",
+          "textTitel": "Pflegeteam Nordstadt – Datum: 2.12.",
+          "text": "Liebe Frau Nowak,\n\nbitte machen Sie die Tour wie besprochen. Wichtig: Immer alles dokumentieren, auch wenn alles normal ist!\n\n**Herr Petz:** hatte gestern Kreislaufprobleme; bitte Blutdruck und Puls messen. Fragen, welche Lebensmittel er braucht, und diese besorgen.\n**Herr Klein:** Einnahme des Parkinsonmittels kontrollieren; genug Vorrat da?\n**Frau Seidel:** hat gestern kaum gegessen. Beim Essen helfen; bitte Geduld haben und gut zureden.\n**Frau Wolf:** Schlüssel für die Wohnung anbei.\n\nMit Dank und Gruß\nOskar Wehr, Pflegedienstleitung",
+          "fragen": [
+            { "f": "Was für eine Textsorte ist das?", "opts": ["ein Arbeitsplan", "ein Protokoll", "ein Vertrag", "ein Bericht"], "l": 0 },
+            { "f": "Was soll Frau Nowak bei Herrn Petz tun?", "opts": ["Blutdruck messen und einkaufen", "ihm beim Essen helfen", "seine Tabletten zählen", "den Schlüssel abgeben"], "l": 0 },
+            { "f": "Warum braucht Frau Seidel Hilfe?", "opts": ["Sie hat gestern kaum gegessen.", "Sie hatte Kreislaufprobleme.", "Ihr Medikament fehlt.", "Sie hat keinen Schlüssel."], "l": 0 },
+            { "f": "Was ist besonders wichtig?", "opts": ["alles dokumentieren", "schnell arbeiten", "nichts aufschreiben", "die Angehörigen anrufen"], "l": 0 }
+          ]
+        },
+        { "id": "s3-wort", "typ": "zu", "kontext": "Wortschatz", "frage": "Was bedeuten die Wörter?", "paare": [
+          ["ambulant", "der Patient bleibt zu Hause bzw. geht nach der Behandlung heim"],
+          ["stationär", "der Patient bleibt im Krankenhaus"],
+          ["akut", "plötzlich und stark"],
+          ["die Übergabe", "Informationen an die nächste Schicht geben"],
+          ["das Hospiz", "Einrichtung für schwer kranke Menschen am Lebensende"],
+          ["lagern", "einen Patienten bequem hinlegen"]
+        ]},
+        {
+          "id": "s3-pl", "typ": "matrix", "kontext": "Probleme lösen",
+          "frage": "Welche Lösung passt zu welchem Problem?",
+          "wahl": ["zur Apotheke gehen, Rezept nachreichen", "Wohnung verlassen, Verhalten dokumentieren, Angehörige informieren", "zuerst klingeln und anrufen, dann mit dem Schlüssel hinein"],
+          "aussagen": [
+            ["Ein wichtiges Medikament ist fast alle, die Arztpraxis ist schon geschlossen.", 0],
+            ["Eine Kundin wird beim Essen aggressiv und wirft mit Besteck.", 1],
+            ["Eine Kundin, die sonst immer öffnet, macht die Tür nicht auf.", 2]
+          ]
+        },
+        {
+          "id": "s3-rm", "typ": "matrix", "kontext": "Redemittel",
+          "frage": "Um Rat bitten oder einen Vorschlag machen?",
+          "wahl": ["um Rat bitten", "Vorschlag machen"],
+          "aussagen": [
+            ["Wie soll ich mit dem Kunden jetzt umgehen?", 0], ["Wen muss ich jetzt anrufen?", 0], ["Wie kann ich das Problem in den Griff bekommen?", 0],
+            ["Das Wichtigste ist, dass Sie ruhig bleiben.", 1], ["Sie sollten zuerst den Arzt anrufen.", 1], ["Besorgen Sie auf jeden Fall zuerst das Medikament.", 1]
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Der Pflegebericht",
+      "icon": "📋",
+      "kurz": "Tipps für Berichte · Fakten oder Meinung? · Bericht formulieren",
+      "aufgaben": [
+        {
+          "id": "s4-fakt", "typ": "matrix", "kontext": "Bericht",
+          "frage": "Passt der Satz in einen Pflegebericht?",
+          "wahl": ["passt (Fakt)", "passt nicht (subjektiv)"],
+          "aussagen": [
+            ["12:40 Herrn P. auf dem Boden liegend angetroffen.", 0],
+            ["Er jammerte über furchtbare Schmerzen, der Arme!", 1],
+            ["hatte Schwindel und Schmerzen im rechten Knie", 0],
+            ["Krankenhaus verständigt, Sanitäter 12:55 eingetroffen", 0],
+            ["Ich glaube, er hat nicht aufgepasst.", 1],
+            ["PDL informiert die Angehörigen.", 0]
+          ]
+        },
+        {
+          "id": "s4-tipp", "typ": "matrix", "kontext": "Tipps",
+          "frage": "Tipps für Berichte im Beruf: Stimmt das?",
+          "aussagen": [
+            ["Nur Fakten aufschreiben, keine eigene Einschätzung.", true],
+            ["Den Bericht unterschreiben.", true],
+            ["Möglichst lang und ausführlich schreiben.", false],
+            ["Stichworte und Abkürzungen verwenden.", true],
+            ["Uhrzeit und Datum sind nicht so wichtig.", false]
+          ]
+        },
+        {
+          "id": "s4-ord", "typ": "ordnen", "kontext": "Bericht",
+          "frage": "Bringen Sie den Pflegebericht zu Frau Seidel in die richtige Reihenfolge.",
+          "zeilen": [
+            "Pflegebericht vom 2.12., 13:00 Uhr – Kundin: Frau Seidel",
+            "12:50 Frau S. saß im Bett",
+            "reagierte nicht auf Begrüßung, schimpfte über das Essen",
+            "warf beim Motivieren zum Essen eine Gabel, beleidigte die Pflegekraft",
+            "Wohnung verlassen, PDL Herrn Wehr angerufen",
+            "PDL informiert die Angehörigen – Nowak"
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Einfacher leben",
+      "icon": "🌿",
+      "kurz": "Ratgebertext lesen · Ausdrücke · Stress",
+      "aufgaben": [
+        {
+          "id": "s5-text", "typ": "matrix", "kontext": "Lesen",
+          "frage": "Lesen Sie den Ratgeber. Zu welcher Stufe passt die Aussage?",
+          "posts": [
+            { "name": "Stufe 1: Ihre Sachen", "text": "Beginnen Sie mit Ihrem Schreibtisch und genießen Sie das herrliche Gefühl, dass Sie Ihren Papierkram beherrschen – und nicht er Sie." },
+            { "name": "Stufe 2: Ihr Geld", "text": "Klarheit bei Geldangelegenheiten zu gewinnen ist oft schwerer als Aufräumen. Denken Sie auch über Ihre Einstellung zum Geld nach." },
+            { "name": "Stufe 3: Ihre Zeit", "text": "Jeder hat 24 Stunden zur Verfügung. Prüfen Sie, womit Sie Ihre Zeit verbringen – und wo die Zeit für Sie selbst bleibt." },
+            { "name": "Stufe 4: Ihre Gesundheit", "text": "Wir achten oft erst auf den Körper, wenn er nicht mehr funktioniert. Beugen Sie Krankheiten vor." },
+            { "name": "Stufe 5: Ihre Mitmenschen", "text": "Sind Sie nur noch für andere da? Überlegen Sie, welche Beziehungen Ihnen guttun." },
+            { "name": "Stufe 6: Ihr Partner", "text": "Erfolg im Beruf muss nicht bedeuten, dass die Partnerschaft darunter leidet." }
+          ],
+          "wahl": ["1", "2", "3", "4", "5", "6"],
+          "aussagen": [
+            ["Man sollte zuerst den Schreibtisch gründlich aufräumen.", 0],
+            ["Es ist wichtig, über die eigene Einstellung zum Geld nachzudenken.", 1],
+            ["Man sollte prüfen, womit man die 24 Stunden verbringt.", 2],
+            ["Wir achten meist erst auf die Gesundheit, wenn es Probleme gibt.", 3],
+            ["Man sollte überlegen, welche Beziehungen gut für einen sind.", 4],
+            ["Man kann im Beruf erfolgreich sein, ohne dass die Liebe leidet.", 5]
+          ]
+        },
+        { "id": "s5-ausd", "typ": "zu", "kontext": "Ausdrücke", "frage": "Was bedeuten die Ausdrücke?", "paare": [
+          ["etwas zur Verfügung haben", "etwas besitzen, nutzen können"],
+          ["sich von etwas auffressen lassen", "so viel Kraft für etwas geben, dass man selbst leidet"],
+          ["Schluss machen mit etwas", "mit etwas aufhören"],
+          ["sich dreht alles um …", "etwas ist das Wichtigste"],
+          ["es sich leichter machen", "etwas einfacher machen"]
+        ]},
+        {
+          "id": "s5-es", "typ": "luecke", "kontext": "Ausdrücke mit es",
+          "frage": "Ergänzen Sie die Ausdrücke mit es.",
+          "text": "Ich habe {0} immer eilig. Jetzt versuche ich, {1} mir leichter zu machen. Es {2} darauf an, Prioritäten zu setzen. Und: Es ist nie zu {3}, etwas zu ändern!",
+          "gaps": [
+            { "opts": ["es", "das", "man"], "l": 0 },
+            { "opts": ["es", "das", "sich"], "l": 0 },
+            { "opts": ["kommt", "geht", "gibt"], "l": 0 },
+            { "opts": ["spät", "früh", "schwer"], "l": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Gymnastik im Betrieb?",
+      "icon": "🧘",
+      "kurz": "Rollen in einer Diskussion · Argumente",
+      "aufgaben": [
+        {
+          "id": "s6-rolle", "typ": "matrix", "kontext": "Diskussion",
+          "frage": "Täglich eine Viertelstunde Gymnastik für alle? Wer sagt das wahrscheinlich?",
+          "wahl": ["Beschäftigte", "Betriebsrat", "Personalchefin", "Geschäftsleitung"],
+          "aussagen": [
+            ["Wir haben schon jetzt kaum Zeit für unsere Pausen – die Gymnastik darf keine Pause ersetzen.", 0],
+            ["Wir müssen sicherstellen, dass die Gymnastik freiwillig ist und als Arbeitszeit zählt.", 1],
+            ["Gesunde Mitarbeitende sind seltener krank – das zeigen unsere Zahlen.", 2],
+            ["Eine Viertelstunde pro Tag kostet uns viel Produktionszeit. Rechnet sich das?", 3]
+          ]
+        },
+        {
+          "id": "s6-vn", "typ": "matrix", "kontext": "Argumente",
+          "frage": "Argument dafür oder dagegen?",
+          "wahl": ["dafür", "dagegen"],
+          "aussagen": [
+            ["Bewegung beugt Rückenschmerzen vor.", 0], ["Nicht alle Beschäftigten mögen Sport.", 1],
+            ["Das Team-Gefühl wird gestärkt.", 0], ["Die Arbeitszeit wird knapper.", 1], ["Weniger Krankheitstage", 0]
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Prüfungstraining",
+      "icon": "🏁",
+      "kurz": "Sprachbausteine · gemischte Aufgaben",
+      "aufgaben": [
+        {
+          "id": "s7-sb", "typ": "luecke", "kontext": "Sprachbausteine",
+          "frage": "Sprachbausteine: Ein Leserbrief zum Thema Stress. Wählen Sie die richtige Lösung.",
+          "text": "Liebe Redaktion,\n\nIhr Artikel über Stress im Beruf hat mich sehr angesprochen. Ich arbeite in der Pflege und es ist für mich ganz normal, zwei Schichten hintereinander {0}. Lange habe ich versucht, alles allein {1}.\n\nVor einem Jahr habe ich dann {2} einem Entspannungskurs teilgenommen. {3} habe ich gelernt, auch einmal Nein zu sagen. Ich bin überzeugt, dass {4} nie zu spät ist, etwas zu ändern.\n\nMit freundlichen Grüßen\nNadia Rauch",
+          "gaps": [
+            { "opts": ["zu arbeiten", "arbeiten", "gearbeitet"], "l": 0 },
+            { "opts": ["zu schaffen", "schaffen zu", "geschafft"], "l": 0 },
+            { "opts": ["an", "bei", "für"], "l": 0 },
+            { "opts": ["Dort", "Damit", "Deshalb"], "l": 0 },
+            { "opts": ["es", "das", "man"], "l": 0 }
+          ]
+        },
+        { "id": "s7-1", "typ": "mc", "kontext": "Infinitiv mit zu", "frage": "Ich plane, nächstes Jahr eine Weiterbildung ___.", "opts": ["zu machen", "machen", "gemacht", "machen zu können zu"], "l": 0 },
+        { "id": "s7-2", "typ": "mc", "kontext": "Wortschatz", "frage": "Eine Untersuchung, damit Krankheiten früh erkannt werden, heißt …", "opts": ["Vorsorgeuntersuchung.", "Notaufnahme.", "Pflegebericht.", "Übergabe."], "l": 0 },
+        { "id": "s7-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz.", "steine": ["Ich", "habe", "keine Lust,", "jeden Abend", "vor dem Computer", "zu sitzen."] }
+      ]
+    }
+  ]
+}

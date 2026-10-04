@@ -1,0 +1,304 @@
+{
+  "id": "umzug-ins-neue-buero",
+  "titel": "Umzug ins neue Büro",
+  "untertitel": "Arbeitsräume und Geräte · Bürosuche · etwas machen lassen · Umzugsfirma · Wann-warum-wie-wo · Mängel melden",
+  "niveau": "B1/B2",
+  "reihe": "Prüfungstraining B1/B2",
+  "farbe": "#5a8f5c",
+  "mix": 15,
+  "intro": "Sieben Teile – jeder Teil kann einzeln gespielt werden. Der **Prüfungsmix** zieht zufällig Aufgaben aus allen Teilen.",
+  "kompakt": [
+    { "titel": "Etwas machen lassen", "zeilen": [
+      "**lassen + Infinitiv:** Jemand anderes macht es für mich. – Wir **lassen** die Böden **abschleifen**.",
+      "Wer es macht, steht mit **von + Dativ**: Wir lassen die Wände **von einem Spezialisten** sanieren.",
+      "**Perfekt:** haben + Infinitiv + **lassen** – Wir **haben** die Küche renovieren **lassen**. (nicht: gelassen)",
+      "Selbst machen ↔ machen lassen: Die Computer schließen wir **selbst** an, den Server **lassen** wir **installieren**."
+    ]},
+    { "titel": "Angaben im Satz: Wann – warum – wie – wo", "zeilen": [
+      "Reihenfolge im Mittelfeld: **Zeit – Grund – Art und Weise – Ort** (te – ka – mo – lo)",
+      "Ich bin **vor einem Monat** **aus beruflichen Gründen** **spontan** **nach Stralsund** gezogen.",
+      "Die **Akkusativergänzung** steht meistens vor der Ortsangabe: Ich habe trotz der hohen Preise schnell **eine Wohnung** in der Altstadt gefunden.",
+      "Jede Angabe kann auf **Position 1** stehen – dann folgt das Verb: **Aus beruflichen Gründen** bin ich …"
+    ]},
+    { "titel": "Mit der Umzugsfirma sprechen", "zeilen": [
+      "**Angebot einholen:** Ich würde gern ein Angebot für einen Umzug einholen. · Könnten Sie mir bitte ein Angebot schicken?",
+      "**Firma fragt nach:** Wo genau ist Ihr Büro? · Im wievielten Stock? · An welchem Termin wollen Sie umziehen? · Wie groß ist das jetzige Büro?",
+      "**Details klären:** Die Spülmaschine nehmen wir mit. · Können Sie die alten Regale entsorgen? · Wo können wir parken? · Packen Sie die Kartons selbst?",
+      "**Verhandeln:** Sind Sie bezüglich des Termins flexibel? · Haben Sie beim Preis noch etwas Spielraum? – Wir sind bis … ausgebucht. · Wir können Ihnen beim Termin entgegenkommen. · Wir haben Fixpreise."
+    ]},
+    { "titel": "Passiv mit Modalverb", "zeilen": [
+      "Die Türklinke **muss repariert werden**. = Man muss die Türklinke reparieren.",
+      "Der Rollladen **kann nicht hochgezogen werden**. · Die Heizung **muss entlüftet werden**."
+    ]},
+    { "titel": "Eine E-Mail an die Hausverwaltung", "zeilen": [
+      "**Einleitung:** Ich beziehe mich auf unser heutiges Telefongespräch. · Wie soeben telefonisch besprochen …",
+      "**Grund:** Hiermit möchte ich Sie bitten … · Ich möchte Sie noch einmal daran erinnern, … · Wir hatten vereinbart, dass …",
+      "**Problem schildern:** Leider … · Wir können deshalb … nicht benutzen.",
+      "**Bitte um schnelle Erledigung:** Deshalb bitte ich Sie dringend, so schnell wie möglich …",
+      "**Erreichbarkeit:** Falls Sie Rückfragen haben, erreichen Sie mich unter … · Wir sind täglich von … bis … Uhr im Büro."
+    ]}
+  ],
+  "module": [
+    {
+      "titel": "Arbeitsräume und Geräte",
+      "icon": "🛠️",
+      "kurz": "Wortschatz: Räume, Möbel, Geräte, Handwerksberufe",
+      "aufgaben": [
+        {
+          "id": "k1-raum", "typ": "matrix", "kontext": "Wortschatz",
+          "frage": "Wo findet man das am ehesten?",
+          "wahl": ["Kaffeeküche", "Werkstatt", "Büro"],
+          "aussagen": [
+            ["die Kaffeemaschine", 0], ["der Hocker", 0], ["die Spülmaschine", 0],
+            ["die Werkbank", 1], ["die Arbeitsschürze", 1], ["die Leiter", 1],
+            ["das Büroregal", 2], ["der Bildschirm", 2], ["der Arbeitstisch", 2]
+          ]
+        },
+        { "id": "k1-art", "typ": "matrix", "kontext": "Artikel", "frage": "der, die oder das?", "wahl": ["der", "die", "das"],
+          "aussagen": [["Helm", 0], ["Werkzeugkasten", 0], ["Putzeimer", 0], ["Klimaanlage", 1], ["Leiter", 1], ["Werkbank", 1], ["Büroregal", 2], ["Display", 2]] },
+        { "id": "k1-beruf", "typ": "zu", "kontext": "Handwerksberufe", "frage": "Wer macht was?", "paare": [
+          ["der Fliesenleger", "bringt Fliesen im Bad an"],
+          ["die Elektrikerin", "legt Leitungen und Steckdosen"],
+          ["der Installateur", "repariert Wasserhähne und Abflüsse"],
+          ["die Malerin", "streicht Wände und Decken"],
+          ["der Bodenleger", "verlegt Parkett und Teppich"],
+          ["die Heizungsbauerin", "installiert und wartet Heizungen"]
+        ]},
+        { "id": "k1-m1", "typ": "mc", "kontext": "Wortschatz", "frage": "Eine Party, bei der man neue Räume zum ersten Mal mit Gästen feiert, heißt …", "opts": ["Einweihungsparty.", "Abschiedsparty.", "Umzugsparty.", "Eröffnungsrede."], "l": 0 },
+        { "id": "k1-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz.", "steine": ["In der neuen Kaffeeküche", "kann", "man", "sich", "das Essen", "warm machen."] }
+      ]
+    },
+    {
+      "titel": "Die Suche nach neuen Räumen",
+      "icon": "🔍",
+      "kurz": "Blog einer Firma lesen · Überschriften · Umzug in der richtigen Reihenfolge",
+      "aufgaben": [
+        {
+          "id": "k2-blog", "typ": "matrix", "kontext": "Lesen",
+          "frage": "Lesen Sie den Blog der Werbeagentur „Blickfang“. Welche Überschrift passt zu welchem Eintrag?",
+          "posts": [
+            { "name": "12.06.", "text": "Schlechte Nachrichten: Unser Gebäude wurde verkauft und der neue Eigentümer will die Miete um ein Viertel erhöhen. Unsere Aufträge laufen gut, aber das können wir uns nicht leisten. Wir brauchen ein Büro in derselben Größe, das nicht teurer ist. Heute haben wir stundenlang in Portalen gesucht – fünf Angebote sehen interessant aus." },
+            { "name": "25.06.", "text": "Was für eine Woche! Beim ersten Büro standen schon fünfzehn andere Interessenten vor der Tür. Das zweite war wunderschön, aber im vierten Stock ohne Aufzug – für unsere Kundschaft keine Option. Das dritte war viel zu dunkel. Erst beim vierten hatten wir Glück: Erdgeschoss, große Fenster, nur ein bisschen weit vom Zentrum. Wir haben uns sofort vormerken lassen." },
+            { "name": "04.07.", "text": "Das Telefon klingelt – die Hausverwaltung! Wir bekommen die Räume und können Anfang September einziehen. Sie sind zwar etwas teurer als unser altes Büro, aber wir freuen uns riesig." },
+            { "name": "10.07.", "text": "Heute haben wir mit dem Team geplant. Die Wände lassen wir von einem Maler streichen, die Böden von einem Fachbetrieb abschleifen. Für das Netzwerk brauchen wir einen Techniker, die Computer schließen wir selbst an. Den Transport lassen wir von einer Spedition machen – nur die Festplatten nehmen wir selbst mit." },
+            { "name": "02.09.", "text": "Geschafft! Die Möbelpacker waren super schnell. Am Abend haben wir im neuen Büro auf dem Sofa gesessen und angestoßen. Morgen geht's weiter: Schränke einräumen, Kabel verlegen …" }
+          ],
+          "wahl": ["Mieterhöhung!", "Die Suche", "Die Zusage", "Renovierung: Wer macht was?", "Der Umzugstag"],
+          "aussagen": [["12.06.", 0], ["25.06.", 1], ["04.07.", 2], ["10.07.", 3], ["02.09.", 4]]
+        },
+        {
+          "id": "k2-abc", "typ": "lesen", "kontext": "Lesen",
+          "frage": "Was steht im Blog? Wählen Sie die richtige Antwort.",
+          "fragen": [
+            { "f": "Die Agentur sucht neue Räume, weil …", "opts": ["die Miete erhöht werden soll.", "sie zu wenige Aufträge hat.", "die alten Räume zu klein sind.", "das Gebäude abgerissen wird."], "l": 0 },
+            { "f": "Warum kam das zweite Büro nicht in Frage?", "opts": ["Es gab keinen Aufzug.", "Es war zu dunkel.", "Es war zu teuer.", "Es gab zu viele Interessenten."], "l": 0 },
+            { "f": "Was machen die Mitarbeitenden selbst?", "opts": ["die Computer anschließen", "die Böden abschleifen", "die Wände streichen", "das Netzwerk einrichten"], "l": 0 },
+            { "f": "Was stimmt über die neuen Räume?", "opts": ["Sie sind etwas teurer als die alten.", "Sie liegen mitten im Zentrum.", "Sie sind billiger als die alten.", "Sie liegen im vierten Stock."], "l": 0 }
+          ]
+        },
+        {
+          "id": "k2-ord", "typ": "ordnen", "kontext": "Umzug",
+          "frage": "Ein Umzug: Was passiert zuerst, was dann? Bringen Sie die Schritte in eine sinnvolle Reihenfolge.",
+          "zeilen": [
+            "im Internetportal nach freien Objekten suchen",
+            "Objekte besichtigen",
+            "sich für ein Objekt vormerken lassen",
+            "den Mietvertrag unterschreiben",
+            "eine Umzugsfirma beauftragen",
+            "die Umzugskartons packen",
+            "zur Einweihungsparty einladen"
+          ],
+          "x": "Auch andere Reihenfolgen sind möglich – aber der Mietvertrag kommt immer vor dem Umzug."
+        },
+        { "id": "k2-zu", "typ": "zu", "kontext": "Wortschatz", "frage": "Was bedeuten die Ausdrücke?", "paare": [
+          ["eine Kaution hinterlegen", "Geld als Sicherheit beim Vermieter lassen"],
+          ["einen Nachsendeantrag stellen", "die Post bittet, Briefe an die neue Adresse zu schicken"],
+          ["sich ummelden", "die neue Adresse beim Amt angeben"],
+          ["der Grundriss", "Zeichnung, wie die Räume aufgeteilt sind"],
+          ["einen Einkommensnachweis abgeben", "zeigen, wie viel man verdient"]
+        ]}
+      ]
+    },
+    {
+      "titel": "Etwas machen lassen",
+      "icon": "🧑‍🔧",
+      "kurz": "lassen + Infinitiv · Perfekt mit lassen · selbst machen oder machen lassen",
+      "aufgaben": [
+        {
+          "id": "k3-wer", "typ": "matrix", "kontext": "selbst oder lassen?",
+          "frage": "Lesen Sie den Eintrag vom 10.07. noch einmal: Was macht das Team selbst, was lässt es machen?",
+          "wahl": ["selbst", "machen lassen"],
+          "aussagen": [
+            ["die Wände streichen", 1], ["die Böden abschleifen", 1], ["das Netzwerk einrichten", 1],
+            ["die Computer anschließen", 0], ["die Möbel transportieren", 1], ["die Festplatten transportieren", 0]
+          ]
+        },
+        { "id": "k3-1", "typ": "mc", "kontext": "lassen", "frage": "Wir ___ die Leitungen von einer Elektrikerin legen.", "opts": ["lassen", "lässt", "gelassen", "lasst"], "l": 0 },
+        { "id": "k3-2", "typ": "mc", "kontext": "Perfekt", "frage": "Wir haben die Küche letzten Monat renovieren ___.", "opts": ["lassen", "gelassen", "zu lassen", "lässt"], "l": 0, "x": "Perfekt mit zwei Infinitiven: haben … renovieren **lassen**." },
+        { "id": "k3-3", "typ": "mc", "kontext": "lassen", "frage": "Mein Bruder ___ sich die Haare immer beim selben Friseur schneiden.", "opts": ["lässt", "lasst", "lassen", "ließen"], "l": 0 },
+        { "id": "k3-4", "typ": "mc", "kontext": "selbst oder lassen?", "frage": "„Wände streiche ich selbst, aber Fliesen legen – das kann ich nicht.“ Was macht die Person?", "opts": ["Sie lässt die Fliesen von einem Fliesenleger legen.", "Sie legt die Fliesen selbst.", "Sie lässt die Wände streichen.", "Sie macht gar nichts selbst."], "l": 0 },
+        { "id": "k3-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz.", "steine": ["Die Böden", "lassen", "wir", "von einem Handwerker", "abschleifen."] },
+        { "id": "k3-b2", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz im Perfekt.", "steine": ["Wir", "haben", "den Server", "von einem Techniker", "installieren", "lassen."] }
+      ]
+    },
+    {
+      "titel": "Mit der Umzugsfirma sprechen",
+      "icon": "🚚",
+      "kurz": "Angebote einholen · Details klären · verhandeln",
+      "aufgaben": [
+        {
+          "id": "k4-rm", "typ": "matrix", "kontext": "Redemittel",
+          "frage": "Wozu dient der Satz?",
+          "wahl": ["Angebot einholen / nachfragen", "Details klären", "verhandeln"],
+          "aussagen": [
+            ["Ich würde gern ein Angebot für einen Umzug einholen.", 0],
+            ["Im wievielten Stockwerk ist das neue Büro?", 0],
+            ["Wie groß ist das jetzige Büro?", 0],
+            ["Können Sie die alten Regale entsorgen?", 1],
+            ["Wo können wir am Umzugstag parken?", 1],
+            ["Möchten Sie die Möbel selbst abbauen?", 1],
+            ["Haben Sie beim Preis noch etwas Spielraum?", 2],
+            ["Wir können Ihnen beim Termin entgegenkommen.", 2],
+            ["Wir haben Fixpreise, da kann ich leider nichts machen.", 2]
+          ]
+        },
+        {
+          "id": "k4-wer", "typ": "matrix", "kontext": "Rollen",
+          "frage": "Wer sagt das – Kunde oder Umzugsfirma?",
+          "wahl": ["Kunde/Kundin", "Umzugsfirma"],
+          "aussagen": [
+            ["Könnten Sie mir bitte ein Angebot schicken?", 0], ["An welchem Termin wollen Sie umziehen?", 1],
+            ["Sind Sie bezüglich des Termins flexibel?", 0], ["Wir sind bis Anfang Dezember ausgebucht.", 1],
+            ["Die Spülmaschine nehmen wir mit.", 0], ["Packen Sie die Kartons selbst?", 1]
+          ]
+        },
+        {
+          "id": "k4-dial", "typ": "luecke", "kontext": "Telefonat",
+          "frage": "Ein Anruf bei der Umzugsfirma. Ergänzen Sie.",
+          "text": "▶ Umzugsfirma „Hin und weg“, was kann ich für Sie tun?\n◀ Guten Tag, mein Name ist Krüger. Ich würde gern ein Angebot für einen Büroumzug {0}.\n▶ Gern. An welchem Termin wollen Sie {1}?\n◀ Am liebsten Ende Oktober.\n▶ Da muss ich Sie enttäuschen, wir sind bis Anfang Dezember {2}.\n◀ Oh. Ist da wirklich nichts früher möglich?\n▶ Ich schaue mal … Am 28. Oktober könnten wir Ihnen {3}.\n◀ Super! Und haben Sie beim Preis vielleicht noch etwas {4}?\n▶ Leider nicht, wir haben {5}. Um ein Angebot machen zu können, müsste ich mir die Räume aber vorher ansehen.",
+          "gaps": [
+            { "opts": ["einholen", "abholen", "einladen"], "l": 0 },
+            { "opts": ["umziehen", "anziehen", "ausziehen sich"], "l": 0 },
+            { "opts": ["ausgebucht", "ausgezogen", "ausgegeben"], "l": 0 },
+            { "opts": ["entgegenkommen", "zuvorkommen", "nachkommen"], "l": 0 },
+            { "opts": ["Spielraum", "Zeitraum", "Freiraum"], "l": 0 },
+            { "opts": ["Fixpreise", "Festpreisen", "Fixpreisen"], "l": 0 }
+          ]
+        },
+        { "id": "k4-m1", "typ": "mc", "kontext": "Situationen", "frage": "Die Firma fragt: „Wo können wir am Umzugstag parken?“ Was ist eine passende Antwort?", "opts": ["Im Hof gibt es zwei Parkplätze, die wir für Sie reservieren.", "Im fünften Stock.", "Ja, wir packen selbst.", "Am liebsten im Oktober."], "l": 0 }
+      ]
+    },
+    {
+      "titel": "Wann – warum – wie – wo",
+      "icon": "🧩",
+      "kurz": "Angaben bestimmen · Reihenfolge im Satz · Position 1",
+      "aufgaben": [
+        {
+          "id": "k5-art", "typ": "matrix", "kontext": "Angaben",
+          "frage": "Was für eine Angabe ist das?",
+          "wahl": ["Zeit (wann?)", "Grund (warum?)", "Art und Weise (wie?)", "Ort (wo/wohin?)"],
+          "aussagen": [
+            ["bald", 0], ["am späten Nachmittag", 0], ["gestern", 0],
+            ["wegen der Ausbildung", 1], ["aus Liebe", 1], ["trotz der hohen Mietpreise", 1], ["aufgrund der guten Verkehrsanbindung", 1],
+            ["ohne Probleme", 2], ["mit viel Glück", 2], ["intensiv", 2],
+            ["im Zentrum", 3], ["nach Görlitz", 3], ["auf dem Land", 3]
+          ]
+        },
+        { "id": "k5-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz nach der Wann-warum-wie-wo-Regel.", "steine": ["Ich", "bin", "vor einem Monat", "aus beruflichen Gründen", "spontan", "nach Stralsund", "gezogen."] },
+        { "id": "k5-b2", "typ": "bau", "kontext": "Satzbau", "frage": "Der Akkusativ steht vor der Ortsangabe. Bilden Sie den Satz.", "steine": ["Ich", "habe", "trotz der hohen Mietpreise", "schnell", "eine günstige Wohnung", "in der Altstadt", "gefunden."] },
+        { "id": "k5-b3", "typ": "bau", "kontext": "Position 1", "frage": "Beginnen Sie mit dem Grund.", "steine": ["Aus beruflichen Gründen", "ist", "Adil", "letztes Jahr", "nach Stralsund", "gezogen."] },
+        { "id": "k5-mc", "typ": "mc", "kontext": "Wortstellung", "frage": "Welcher Satz folgt der Regel?", "opts": ["Wir ziehen nächste Woche wegen der Miete in ein neues Büro.", "Wir ziehen in ein neues Büro wegen der Miete nächste Woche.", "Wir ziehen wegen der Miete in ein neues Büro nächste Woche.", "Wir ziehen in ein neues Büro nächste Woche wegen der Miete."], "l": 0 },
+        {
+          "id": "k5-mail", "typ": "lesen", "kontext": "Lesen",
+          "frage": "Lesen Sie Adils E-Mail und beantworten Sie die Fragen.",
+          "textTitel": "Hallo ihr beiden,",
+          "text": "nochmals herzlichen Glückwunsch zum neuen Büro! Übrigens habe ich auch Neuigkeiten: Ich bin vor einem Monat aus beruflichen Gründen ziemlich spontan nach Stralsund gezogen. Ich habe hier einen tollen Job in einer Firma mit knapp 100 Mitarbeitenden bekommen, die spezielle Möbel für Menschen mit Behinderungen herstellt. Ich bin für den Einkauf verantwortlich und kann sehr selbstständig arbeiten. Den Kontakt habe ich bei einer Fortbildung bekommen. Trotz der hohen Mietpreise habe ich schnell eine günstige Wohnung in der Altstadt gefunden. Ich freue mich schon auf eure Einweihungsparty!\n\nLiebe Grüße\nAdil",
+          "fragen": [
+            { "f": "Warum ist Adil umgezogen?", "opts": ["aus beruflichen Gründen", "aus Liebe", "wegen der Miete", "wegen einer Fortbildung"], "l": 0 },
+            { "f": "Wofür ist er verantwortlich?", "opts": ["für den Einkauf", "für die Produktion", "für die Fortbildungen", "für das Personal"], "l": 0 },
+            { "f": "Wie hat er die Firma kennengelernt?", "opts": ["bei einer Fortbildung", "über eine Anzeige", "durch Freunde", "über ein Jobportal"], "l": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Es gibt da ein Problem",
+      "icon": "🔧",
+      "kurz": "Mängel beschreiben · Lösungen · Passiv mit Modalverb · Gespräch mit der Hausverwaltung",
+      "aufgaben": [
+        {
+          "id": "k6-pl", "typ": "matrix", "kontext": "Problem und Lösung",
+          "frage": "Welche Lösung passt zum Problem?",
+          "wahl": ["muss entlüftet werden", "Abflussreiniger verwenden", "muss wieder angeschraubt werden", "muss abgedichtet werden"],
+          "aussagen": [
+            ["Die Zentralheizung wird nicht warm und gluckert.", 0],
+            ["Der Abfluss vom Spülbecken ist verstopft.", 1],
+            ["Die Tür vom Aktenschrank ist abgegangen.", 2],
+            ["Der Wasserhahn in der Toilette tropft und ist nicht dicht.", 3]
+          ]
+        },
+        { "id": "k6-1", "typ": "mc", "kontext": "Passiv mit Modalverb", "frage": "„Man muss die Türklinke reparieren.“ =", "opts": ["Die Türklinke muss repariert werden.", "Die Türklinke muss reparieren werden.", "Die Türklinke wird repariert müssen.", "Die Türklinke muss repariert worden."], "l": 0 },
+        { "id": "k6-2", "typ": "mc", "kontext": "Passiv mit Modalverb", "frage": "Der Rollladen klemmt – er kann nicht hochgezogen ___.", "opts": ["werden", "worden", "wurde", "geworden"], "l": 0 },
+        { "id": "k6-3", "typ": "mc", "kontext": "Wortschatz", "frage": "Der Fenstergriff ___ – man kann ihn kaum bewegen.", "opts": ["klemmt", "tropft", "ist verstopft", "ist undicht"], "l": 0 },
+        {
+          "id": "k6-zu", "typ": "zu", "kontext": "Telefonat",
+          "frage": "Ein Anruf bei der Hausverwaltung: Was gehört zusammen?",
+          "paare": [
+            ["Wir fühlen uns sehr wohl hier,", "aber es gibt leider ein Problem."],
+            ["Sie haben die Kaffeeküche renovieren lassen,", "aber jetzt bekommt der Boden Risse."],
+            ["Wir können die Küche nicht benutzen,", "weil wir Angst haben, dass noch mehr kaputtgeht."],
+            ["Schildern Sie bitte noch mal", "kurz das Problem."],
+            ["Natürlich, ich kümmere mich", "gleich darum."]
+          ]
+        },
+        { "id": "k6-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz.", "steine": ["Die Sprechanlage", "funktioniert", "nicht", "und", "muss", "dringend", "überprüft werden."] }
+      ]
+    },
+    {
+      "titel": "Eine E-Mail an die Hausverwaltung",
+      "icon": "✉️",
+      "kurz": "Mängel schriftlich melden · Gliederung · Redemittel · Prüfungstraining",
+      "aufgaben": [
+        {
+          "id": "k7-ord", "typ": "ordnen", "kontext": "Schreiben",
+          "frage": "Bringen Sie die E-Mail an die Hausverwaltung in die richtige Reihenfolge.",
+          "zeilen": [
+            "Sehr geehrter Herr Heuer,",
+            "ich beziehe mich auf unser heutiges Telefongespräch.",
+            "Wie soeben besprochen, möchte ich Ihnen hiermit das Problem in unserem Büro schriftlich schildern.",
+            "Vor unserem Einzug wurde die Kaffeeküche renoviert. Leider bekommt der Boden jetzt schon Risse.",
+            "Deshalb bitten wir Sie, so schnell wie möglich die verantwortliche Firma zu verständigen.",
+            "Montag bis Freitag ist zwischen 10 und 18 Uhr jemand im Büro.",
+            "Vielen Dank im Voraus! Mit freundlichen Grüßen, Mirko Thiele"
+          ]
+        },
+        {
+          "id": "k7-teil", "typ": "matrix", "kontext": "Gliederung",
+          "frage": "Zu welchem Teil der E-Mail gehört der Satz?",
+          "wahl": ["Einleitungssatz", "Grund des Schreibens", "Bitte um schnelle Erledigung", "Erreichbarkeit"],
+          "aussagen": [
+            ["Wie soeben telefonisch besprochen …", 0], ["Ich beziehe mich auf Ihre Nachricht vom 3. Mai.", 0],
+            ["Ich möchte Sie noch einmal daran erinnern, dass …", 1], ["Wir hatten vereinbart, dass …", 1],
+            ["Deshalb bitte ich Sie dringend, so schnell wie möglich …", 2], ["Bitte klären Sie bald mit der Firma folgendes Problem: …", 2],
+            ["Falls Sie Rückfragen haben, erreichen Sie mich unter …", 3], ["Wir sind täglich von 8 bis 16 Uhr in der Werkstatt.", 3]
+          ]
+        },
+        {
+          "id": "k7-sb", "typ": "luecke", "kontext": "Sprachbausteine",
+          "frage": "Sprachbausteine: Eine Mail an den Malerbetrieb. Wählen Sie die richtige Lösung.",
+          "text": "Sehr geehrte Frau Kaminski,\n\nich möchte Sie noch einmal {0} erinnern, dass wir Nachbesserungen in unseren Büroräumen vereinbart hatten. Ihre Mitarbeiter haben die Wände zwar {1} gestrichen, aber leider nicht sauber gearbeitet: An mehreren Stellen ist Farbe auf dem Boden. Auf unsere Anrufe hat bisher niemand {2}.\n\nDeshalb bitte ich Sie dringend, die Flecken so schnell wie möglich entfernen zu {3}. Wir sind täglich {4} 9 bis 17 Uhr im Büro. {5} Sie noch Rückfragen haben, können Sie mich gern unter 0381 44 21 90 anrufen.\n\nMit freundlichen Grüßen\nThea Lorenz",
+          "gaps": [
+            { "opts": ["daran", "darauf", "davon"], "l": 0 },
+            { "opts": ["pünktlich", "pünktliche", "Pünktlichkeit"], "l": 0 },
+            { "opts": ["reagiert", "reagieren", "geantwortet an"], "l": 0 },
+            { "opts": ["lassen", "gelassen", "lässt"], "l": 0 },
+            { "opts": ["von", "seit", "zwischen"], "l": 0 },
+            { "opts": ["Falls", "Ob", "Obwohl"], "l": 0 }
+          ]
+        },
+        { "id": "k7-m1", "typ": "mc", "kontext": "Situationen", "frage": "Für Ihre neue Werkstatt fehlt noch ein Schlüssel. Wie beginnen Sie die Bitte in der E-Mail?", "opts": ["Hiermit möchte ich Sie bitten, uns einen Zweitschlüssel für die Werkstatt zu schicken.", "Schlüssel fehlt!!!", "Ich beziehe mich auf nichts.", "Vielen Dank im Voraus! Mit freundlichen Grüßen"], "l": 0 },
+        { "id": "k7-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz.", "steine": ["Der Boiler", "in der Kaffeeküche", "ist", "ausgefallen", "und", "muss", "ausgetauscht werden."] }
+      ]
+    }
+  ]
+}

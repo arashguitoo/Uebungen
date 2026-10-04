@@ -1,0 +1,390 @@
+{
+  "id": "meine-rechte-im-job",
+  "titel": "Meine Rechte im Job",
+  "untertitel": "Arbeit und Familie · Interessen vertreten · Benachteiligung · Abmahnung und Kündigung · Teilzeit · Beschwerden beantworten",
+  "niveau": "B1/B2",
+  "reihe": "Prüfungstraining B1/B2",
+  "farbe": "#c4554d",
+  "mix": 15,
+  "intro": "Sieben Teile – jeder Teil kann einzeln gespielt werden. Der **Prüfungsmix** zieht zufällig Aufgaben aus allen Teilen. Die rechtlichen Informationen sind vereinfacht – im Einzelfall helfen Betriebsrat, Gewerkschaft oder Beratungsstellen.",
+  "kompakt": [
+    { "titel": "Kind krank – was tun?", "zeilen": [
+      "Ist ein Kind krank und niemand sonst kann es betreuen, dürfen berufstätige Eltern zu Hause bleiben (**Freistellung**).",
+      "Voraussetzungen (gesetzlich Versicherte): Kind **unter 12 Jahren** · **Attest** vom Arzt · **keine andere Person im Haushalt** kann betreuen.",
+      "Die **Kinderkrankentage** kommen **zusätzlich** zum Urlaub. Alleinerziehende bekommen **mehr** Tage. Die genaue Zahl wird vom Gesetzgeber festgelegt – aktuelle Infos gibt die Krankenkasse.",
+      "Den Arbeitgeber **sofort informieren** und eine Vertretung nennen, wenn möglich."
+    ]},
+    { "titel": "Sich für die eigenen Interessen einsetzen", "zeilen": [
+      "**Mitarbeiterin:** Es tut mir wirklich leid, aber … · Mein Kind geht vor. · Ich kann doch nicht jederzeit verfügbar sein.",
+      "**Vorgesetzter:** Ich brauche Sie hier ganz dringend. · Ich rechne mit Ihnen. · Ich muss mich auf Sie verlassen können.",
+      "**Benachteiligung ansprechen:** Ich finde Ihre Kritik an meiner Arbeit unangemessen. · Bitte informieren Sie mich rechtzeitig. · Sprechen Sie bitte erst mit mir, bevor Sie meine Arbeit an andere verteilen."
+    ]},
+    { "titel": "Diskriminierung", "zeilen": [
+      "**Diskriminierung** = Ungleichbehandlung **ohne sachlichen Grund**, z. B. wegen Herkunft, Geschlecht, Religion, Alter, sexueller Identität oder Behinderung.",
+      "Nicht jede Ungleichbehandlung ist Diskriminierung: Es kann **sachliche Gründe** geben (z. B. ein Höchstalter bei Berufen mit großer körperlicher Belastung).",
+      "Wer sich diskriminiert fühlt, wendet sich an den **Arbeitgeber** oder den **Betriebsrat**. Arbeitgeber müssen Diskriminierung verhindern oder beseitigen."
+    ]},
+    { "titel": "Abmahnung und Kündigung", "zeilen": [
+      "**Abmahnung:** eine Warnung – ändert sich das Verhalten nicht, kann eine Kündigung folgen.",
+      "**ordentliche Kündigung:** mit **Kündigungsfrist**; **Kündigungsschutz** z. B. für Schwangere und Betriebsräte; der Betriebsrat muss vorher gehört werden.",
+      "**außerordentliche (fristlose) Kündigung:** sofort, nur aus wichtigem Grund, meistens nach einer Abmahnung.",
+      "Nach einer Kündigung: **innerhalb von drei Wochen** Klage beim Arbeitsgericht möglich · **innerhalb von drei Tagen** arbeitssuchend melden · Rat bei Anwalt oder Gewerkschaft holen."
+    ]},
+    { "titel": "Teilzeit", "zeilen": [
+      "Rechtsanspruch auf Teilzeit, wenn: Arbeitsverhältnis **länger als sechs Monate** · Arbeitgeber hat **mehr als 15** Beschäftigte · **kein betrieblicher Grund** dagegen.",
+      "Antrag **schriftlich**, **mindestens drei Monate** vor Beginn; **kein Grund** nötig; gewünschte Stunden und Verteilung angeben.",
+      "**Brückenteilzeit:** befristete Teilzeit mit Rückkehrrecht – nur in Betrieben mit **mindestens 45** Beschäftigten.",
+      "Weniger Verdienst = später **weniger Rente**.",
+      "**Bindestrich** spart Wiederholungen: Vor- und Nachteile · Voll- oder Teilzeitstelle · Renten- und Krankenversicherung"
+    ]},
+    { "titel": "Verhandeln", "zeilen": [
+      "Schritt 1: Vorschlag/Wunsch äußern · 2: nachfragen · 3: begründen, Vorteile nennen · 4: Einwände, Nachteile · 5: weiter diskutieren · 6: sich einigen",
+      "Wir müssen gemeinsam einen Kompromiss finden. · Das kommt für mich nicht in Frage. · Das wäre denkbar. · Ich werde es mir überlegen."
+    ]}
+  ],
+  "module": [
+    {
+      "titel": "Arbeit und Familie",
+      "icon": "👨‍👧",
+      "kurz": "Ein Kind wird krank · Wer sagt was? · Register in Nachrichten",
+      "aufgaben": [
+        {
+          "id": "m1-wer", "typ": "matrix", "kontext": "Gespräch",
+          "frage": "Frau Novak arbeitet am Check-in-Schalter. Die Kita ruft an: Ihre Tochter ist krank. Wer sagt was – Frau Novak, ihre Kollegin oder der Vorgesetzte?",
+          "wahl": ["Frau Novak", "Kollegin", "Vorgesetzter"],
+          "aussagen": [
+            ["Was ist denn passiert?", 1],
+            ["Ich bin schon unterwegs.", 0],
+            ["Kannst du nicht noch etwas bleiben?", 1],
+            ["Aber sag dem Chef Bescheid.", 1],
+            ["Mein Kind geht vor.", 0],
+            ["Ich kann doch nicht jederzeit verfügbar sein.", 0],
+            ["Ich brauche Sie hier ganz dringend.", 2],
+            ["Ich muss mich auf Sie verlassen können.", 2],
+            ["So geht das nicht!", 2]
+          ]
+        },
+        {
+          "id": "m1-reg", "typ": "matrix", "kontext": "Register",
+          "frage": "Frau Novak muss sofort weg. Passt die Nachricht an den Vorgesetzten?",
+          "wahl": ["passt", "passt nicht"],
+          "aussagen": [
+            ["Hallo Herr Gregor, ich muss sofort weg, weil mein Kind krank ist. Frau Kaiser übernimmt den Check-in. Ich melde mich später. Viele Grüße, Ana Novak", 0],
+            ["Bin weg, Kind krank. Tschüss!", 1],
+            ["Herr Gregor, ich gehe jetzt, mir egal, was Sie sagen.", 1],
+            ["Sehr geehrter Herr Gregor, leider muss ich wegen einer Erkrankung meines Kindes sofort gehen. Meine Vertretung ist Frau Kaiser. Ich melde mich später telefonisch.", 0]
+          ],
+          "x": "Gute Nachrichten an Vorgesetzte enthalten: Grund, Vertretung und wann man sich wieder meldet."
+        },
+        {
+          "id": "m1-frei", "typ": "lesen", "kontext": "Lesen",
+          "frage": "Lesen Sie den Text und beantworten Sie die Fragen.",
+          "textTitel": "Wenn das Kind krank ist",
+          "text": "Berufstätige Mütter und Väter dürfen ihren Arbeitsplatz verlassen, wenn ihr Kind krank ist und keine andere Person sich um das Kind kümmern kann. Sind die Eltern gesetzlich krankenversichert, haben sie einen Anspruch auf Freistellung. Diese Kinderkrankentage gibt es zusätzlich zu den Urlaubstagen.\n\nVoraussetzungen sind: Das Kind ist jünger als 12 Jahre. Der Arzt hält die Betreuung für nötig und stellt ein Attest aus. Im Haushalt lebt keine andere Person, die das kranke Kind betreuen kann, zum Beispiel die Großmutter.\n\nWie viele Tage es gibt, hängt davon ab, wie viele Kinder im Haushalt leben und ob ein Elternteil alleinerziehend ist. Alleinerziehende bekommen mehr Tage als Eltern, die zu zweit sind.",
+          "fragen": [
+            { "f": "Wann dürfen Eltern zu Hause bleiben?", "opts": ["wenn das Kind krank ist und sonst niemand betreuen kann", "immer, wenn das Kind keine Lust auf die Schule hat", "nur mit Erlaubnis der Großmutter", "nur in den Ferien"], "l": 0 },
+            { "f": "Was gilt für Kinderkrankentage?", "opts": ["Sie kommen zum Urlaub dazu.", "Sie werden vom Urlaub abgezogen.", "Sie gibt es nur für Mütter.", "Sie gelten für Kinder jeden Alters."], "l": 0 },
+            { "f": "Was braucht man vom Arzt?", "opts": ["ein Attest", "eine Überweisung", "ein Rezept", "nichts"], "l": 0 },
+            { "f": "Wer bekommt mehr Tage?", "opts": ["Alleinerziehende", "Eltern mit älteren Kindern", "Großeltern", "privat Versicherte"], "l": 0 }
+          ]
+        },
+        { "id": "m1-zu", "typ": "zu", "kontext": "Wortschatz", "frage": "Was bedeuten die Wörter?", "paare": [
+          ["das Attest", "eine ärztliche Bescheinigung"],
+          ["die Freistellung", "eine Befreiung von der Arbeit"],
+          ["die Dienstreise", "eine Reise, die man für die Arbeit macht"],
+          ["verfügbar sein", "da sein und Arbeit übernehmen können"],
+          ["mit jemandem rechnen", "sich auf jemanden verlassen"]
+        ]}
+      ]
+    },
+    {
+      "titel": "Die eigenen Interessen vertreten",
+      "icon": "🗣️",
+      "kurz": "Verben mit Präposition · eine Mail an die Chefin",
+      "aufgaben": [
+        {
+          "id": "m2-pr", "typ": "matrix", "kontext": "Verben mit Präposition",
+          "frage": "Welche Präposition passt?",
+          "wahl": ["auf", "um", "mit", "für", "an"],
+          "aussagen": [
+            ["Ich muss mich ___ Sie verlassen können.", 0],
+            ["Ich rechne ___ Ihnen.", 2],
+            ["Ich muss mich ___ mein krankes Kind kümmern.", 1],
+            ["Ich setze mich ___ meine Interessen ein.", 3],
+            ["Ich wende mich ___ den Betriebsrat.", 4],
+            ["Ich warte ___ einen Anruf vom Arzt.", 0]
+          ]
+        },
+        {
+          "id": "m2-mail", "typ": "luecke", "kontext": "Schreiben",
+          "frage": "Ihr Kind muss ins Krankenhaus. Ihre Chefin ist nicht da. Ergänzen Sie die E-Mail.",
+          "text": "Sehr geehrte Frau Weber,\n\nleider muss ich Ihnen {0}, dass ich sofort meinen Arbeitsplatz verlassen muss. Mein Sohn ist in der Schule gestürzt und muss {1} Krankenhaus. Ich weiß noch nicht genau, wie lange ich ihn betreuen muss. {2} Arzt rechne ich mit zwei bis drei Tagen. Das Attest reiche ich {3}.\n\nMeine Kollegin Frau Yilmaz übernimmt meine Termine. Ich habe sie schon {4} alles informiert.\n\nIch melde mich morgen früh {5} Ihnen.\n\nMit freundlichen Grüßen\nAna Novak",
+          "gaps": [
+            { "opts": ["mitteilen", "erzählen", "sprechen"], "l": 0 },
+            { "opts": ["ins", "im", "zum"], "l": 0 },
+            { "opts": ["Laut", "Nach dem", "Von"], "l": 0 },
+            { "opts": ["nach", "ab", "zu"], "l": 0 },
+            { "opts": ["über", "von", "an"], "l": 0 },
+            { "opts": ["bei", "zu", "an"], "l": 0 }
+          ]
+        },
+        { "id": "m2-1", "typ": "mc", "kontext": "Situationen", "frage": "Ihre Chefin möchte, dass Sie am Wochenende arbeiten. Sie sind alleinerziehend. Was ist eine gute Reaktion?", "opts": ["Ich verstehe, dass es dringend ist. Am Wochenende habe ich aber keine Betreuung für meine Kinder. Ich könnte stattdessen am Freitag länger bleiben.", "Nein, auf keinen Fall.", "Das ist mir egal.", "Dann kündige ich."], "l": 0, "x": "Gut: Verständnis zeigen, den eigenen Grund nennen und eine Alternative anbieten." },
+        { "id": "m2-2", "typ": "mc", "kontext": "Situationen", "frage": "Ein Kollege geht immer früh und lässt Sie allein aufräumen. Heute müssen Sie auch früh weg. Was sagen Sie?", "opts": ["Heute muss ich pünktlich gehen. Könntest du bitte das Aufräumen übernehmen?", "Du bist echt faul!", "Ich sage nichts und räume wieder allein auf.", "Ich gehe einfach, ohne etwas zu sagen."], "l": 0 }
+      ]
+    },
+    {
+      "titel": "Sich gegen Benachteiligung wehren",
+      "icon": "🛡️",
+      "kurz": "Formen der Benachteiligung · Reaktionen · Redewendungen · Diskriminierung",
+      "aufgaben": [
+        {
+          "id": "m3-art", "typ": "matrix", "kontext": "Formen",
+          "frage": "Welche Form der Benachteiligung ist das?",
+          "wahl": ["Behinderung der Arbeit", "Sticheleien", "Ausschluss von Fortbildung", "Arbeitsentzug", "starke Kritik", "mangelnde Information"],
+          "aussagen": [
+            ["„Wo ist denn meine Tastatur?“ – „Die hat Herr Grote gebraucht.“", 0],
+            ["„Ach, da ist ja die gestresste Mutti!“", 1],
+            ["„Ich möchte an einer Englisch-Weiterbildung teilnehmen.“ – „Die brauchen Sie doch nicht.“", 2],
+            ["„Herr Dogan ist jetzt für die Dienstpläne zuständig.“ – „Aber das ist doch meine Aufgabe!“", 3],
+            ["„Sie arbeiten viel zu langsam!“", 4],
+            ["„Morgen ist ein Treffen.“ – „Davon wusste ich gar nichts!“", 5]
+          ]
+        },
+        {
+          "id": "m3-reak", "typ": "matrix", "kontext": "Reaktionen",
+          "frage": "Ist die Reaktion entgegenkommend oder nicht?",
+          "wahl": ["entgegenkommend 🙂", "nicht entgegenkommend 🙁"],
+          "aussagen": [
+            ["„Wenn Sie etwas nehmen, legen Sie es bitte zurück.“ – „Ja, mach ich. Tut mir leid.“", 0],
+            ["„Wenn Sie etwas nehmen, legen Sie es bitte zurück.“ – „Bleiben Sie mal auf dem Teppich.“", 1],
+            ["„Ich finde Ihre Kritik unangemessen.“ – „Das kann ich verstehen, aber …“", 0],
+            ["„Ich finde solche Sticheleien nicht schön.“ – „Sie können wohl keinen Scherz vertragen.“", 1],
+            ["„Bitte informieren Sie mich rechtzeitig.“ – „Mach ich. Es kommt nicht wieder vor.“", 0],
+            ["„Wollen Sie sagen, dass Mütter keine Weiterbildung brauchen?“ – „Sie drehen mir das Wort im Mund um.“", 1]
+          ]
+        },
+        { "id": "m3-red", "typ": "zu", "kontext": "Redewendungen", "frage": "Was bedeuten die Redewendungen?", "paare": [
+          ["auf dem Teppich bleiben", "ruhig bleiben und sich nicht aufregen"],
+          ["die Augen verdrehen", "zeigen, dass man genervt ist"],
+          ["jemandem das Wort im Mund herumdrehen", "etwas absichtlich falsch verstehen"]
+        ]},
+        {
+          "id": "m3-text", "typ": "matrix", "kontext": "Lesen",
+          "frage": "Diskriminierung am Arbeitsplatz: Was stimmt?",
+          "textTitel": "Diskriminierung am Arbeitsplatz",
+          "text": "Unter Diskriminierung versteht man jede Handlung oder Äußerung, die einzelne Personen oder Gruppen ohne sachlichen Grund benachteiligt oder herabwürdigt – zum Beispiel wegen der Herkunft, des Geschlechts, der Religion, des Alters, der sexuellen Identität oder einer Behinderung.\n\nAber nicht jede Ungleichbehandlung ist eine Diskriminierung: Es kann auch sachliche Gründe geben. Für Berufe mit besonderer körperlicher Belastung gibt es zum Beispiel ein Höchstalter.\n\nWer sich am Arbeitsplatz diskriminiert fühlt, sollte sich an den Arbeitgeber oder den Betriebsrat wenden. Arbeitgeber sind verpflichtet, Diskriminierung zu verhindern oder zu beseitigen.",
+          "aussagen": [
+            ["Diskriminierung hat nur mit Alter und Geschlecht zu tun.", false],
+            ["Diskriminierung ist eine Ungleichbehandlung ohne sachlichen Grund.", true],
+            ["Jede Ungleichbehandlung ist eine Diskriminierung.", false],
+            ["Arbeitgeber müssen etwas gegen Diskriminierung tun.", true],
+            ["Man kann sich an den Betriebsrat wenden.", true]
+          ]
+        },
+        {
+          "id": "m3-ord", "typ": "ordnen", "kontext": "Schreiben",
+          "frage": "Eine Mail an den Betriebsrat: Bringen Sie die Teile in die richtige Reihenfolge.",
+          "zeilen": [
+            "Sehr geehrte Damen und Herren vom Betriebsrat,",
+            "ich wende mich an Sie, weil ich mich an meinem Arbeitsplatz benachteiligt fühle.",
+            "Seit zwei Monaten werde ich nicht mehr zu den Teamsitzungen eingeladen. Meine Fortbildung wurde abgelehnt mit der Begründung, als Mutter brauche ich sie nicht.",
+            "Ich finde das diskriminierend, weil meine Kollegen ohne Kinder die Fortbildung machen dürfen.",
+            "Könnten Sie mir bitte helfen und einen Gesprächstermin vorschlagen?",
+            "Mit freundlichen Grüßen\nAna Novak"
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Abmahnung und Kündigung",
+      "icon": "⚠️",
+      "kurz": "Gründe für eine Abmahnung · Arten der Kündigung · was man tun sollte",
+      "aufgaben": [
+        {
+          "id": "m4-grund", "typ": "matrix", "kontext": "Abmahnungsgründe",
+          "frage": "Welcher Abmahnungsgrund kommt in Frage?",
+          "wahl": ["Betrug bei der Arbeitszeit", "Verstoß gegen das Rauchverbot", "unerlaubte Nebentätigkeit", "Beleidigung", "Schlägerei", "private Internetnutzung"],
+          "aussagen": [
+            ["Jan arbeitet auf Montage und schreibt jeden Tag eine halbe Stunde mehr auf, als er gearbeitet hat.", 0],
+            ["Mira raucht immer wieder auf der Toilette, obwohl dort „Rauchen verboten“ steht.", 1],
+            ["Olga hat eine Vollzeitstelle und putzt frühmorgens heimlich in einem anderen Büro.", 2],
+            ["Kunden beschweren sich über verletzende Äußerungen eines Mitarbeiters im Außendienst.", 3],
+            ["Zwei Kollegen streiten sich, es kommt zu einer Prügelei in der Halle.", 4],
+            ["Tim surft während der Arbeitszeit ständig in sozialen Netzwerken.", 5]
+          ]
+        },
+        {
+          "id": "m4-art", "typ": "matrix", "kontext": "Kündigungsrecht",
+          "frage": "Was gehört wozu?",
+          "wahl": ["Abmahnung", "ordentliche Kündigung", "fristlose Kündigung"],
+          "aussagen": [
+            ["eine Warnung: Das Verhalten muss sich ändern.", 0],
+            ["Kündigungsfristen müssen eingehalten werden.", 1],
+            ["Es gilt Kündigungsschutz, z. B. für Schwangere.", 1],
+            ["sofortige Beendigung des Arbeitsverhältnisses", 2],
+            ["nur aus einem wichtigen Grund möglich", 2]
+          ]
+        },
+        {
+          "id": "m4-tun", "typ": "matrix", "kontext": "Lesen",
+          "frage": "Sie haben eine Kündigung bekommen. Was sollten Sie tun? Richtig oder falsch?",
+          "aussagen": [
+            ["Notieren, wann man die Kündigung erhalten hat, und den Briefumschlag aufheben.", true],
+            ["Ruhig ein paar Monate warten – es gibt keine Fristen.", false],
+            ["Innerhalb von drei Wochen kann man beim Arbeitsgericht klagen.", true],
+            ["Sich innerhalb von drei Tagen bei der Agentur für Arbeit arbeitssuchend melden.", true],
+            ["Gegen eine Kündigung kann man nichts machen.", false],
+            ["Sich von einem Anwalt oder der Gewerkschaft beraten lassen.", true]
+          ]
+        },
+        {
+          "id": "m4-lt", "typ": "luecke", "kontext": "Berufssprache",
+          "frage": "Ergänzen Sie die Wörter.",
+          "text": "Ein Arbeitnehmer darf den {0} nicht stören, das heißt, er darf seine Kollegen nicht {1} oder eine Schlägerei anfangen. Er darf nicht gegen Regeln im Betrieb {2}. Sonst kann er eine {3} oder sogar eine {4} bekommen.",
+          "gaps": [
+            { "opts": ["Betriebsfrieden", "Betriebsrat", "Betriebsausflug"], "l": 0 },
+            { "opts": ["beleidigen", "begleiten", "beliefern"], "l": 0 },
+            { "opts": ["verstoßen", "verschieben", "versuchen"], "l": 0 },
+            { "opts": ["Abmahnung", "Anmeldung", "Abrechnung"], "l": 0 },
+            { "opts": ["Kündigung", "Kündigungsfrist", "Krankmeldung"], "l": 0 }
+          ]
+        },
+        {
+          "id": "m4-mail", "typ": "ordnen", "kontext": "Schreiben",
+          "frage": "Ihre Chefin hat nach einem Fehler mit Abmahnung gedroht. Ordnen Sie Ihre E-Mail.",
+          "zeilen": [
+            "Sehr geehrte Frau Weber,",
+            "ich schreibe Ihnen wegen meines Fehlers bei der Bestellung am Montag.",
+            "Es tut mir sehr leid, dass dadurch Kosten entstanden sind. Ich prüfe Bestellungen ab jetzt immer zweimal.",
+            "Ich würde gern mit Ihnen persönlich darüber sprechen. Hätten Sie diese Woche Zeit für ein Gespräch?",
+            "Mit freundlichen Grüßen\nAna Novak"
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Eine Lösung finden – Teilzeit",
+      "icon": "⚖️",
+      "kurz": "Verhandeln · Rechtsanspruch auf Teilzeit · Antrag · Bindestriche",
+      "aufgaben": [
+        {
+          "id": "m5-verh", "typ": "ordnen", "kontext": "Verhandeln",
+          "frage": "Gut verhandeln: Bringen Sie die Schritte in die richtige Reihenfolge.",
+          "zeilen": [
+            "A macht einen Vorschlag oder äußert einen Wunsch.",
+            "B fragt nach.",
+            "A begründet den Vorschlag und nennt Vorteile.",
+            "B erhebt Einwände und nennt Nachteile.",
+            "Beide diskutieren weiter.",
+            "Beide einigen sich."
+          ]
+        },
+        {
+          "id": "m5-dial", "typ": "matrix", "kontext": "Gespräch",
+          "frage": "Gespräch über einen Kompromiss: Wer sagt das eher?",
+          "wahl": ["Mitarbeiterin", "Vorgesetzter"],
+          "aussagen": [
+            ["Ich kann nicht rund um die Uhr zur Verfügung stehen.", 0],
+            ["Wir müssen gemeinsam einen Kompromiss finden.", 1],
+            ["Dann schlage ich vor, dass Sie Ihre Stunden reduzieren.", 1],
+            ["Habe ich ein Recht auf Teilzeitarbeit?", 0],
+            ["Eine Halbtagsstelle kommt für mich nicht in Frage.", 0],
+            ["Teilen Sie mir Ihre Entscheidung bitte bis Montag mit.", 1]
+          ]
+        },
+        {
+          "id": "m5-tz", "typ": "lesen", "kontext": "Lesen",
+          "frage": "Lesen Sie die Informationen zur Teilzeit und lösen Sie die Aufgaben.",
+          "textTitel": "Teilzeitarbeit",
+          "text": "Grundsätzlich hat jede Arbeitnehmerin und jeder Arbeitnehmer einen Rechtsanspruch auf Teilzeit. Dafür müssen drei Voraussetzungen erfüllt sein: Das Arbeitsverhältnis besteht länger als sechs Monate. Der Arbeitgeber beschäftigt mehr als 15 Personen. Es gibt keinen betrieblichen Grund, den Wunsch abzulehnen.\n\nWer in Teilzeit arbeitet, verdient weniger – und bekommt später auch weniger Rente. Man sollte sich deshalb beraten lassen.\n\nMit der Brückenteilzeit kann man befristet in Teilzeit gehen und später wieder auf die alte Stundenzahl zurückkehren. Das geht nur in Unternehmen mit mindestens 45 Beschäftigten.\n\nDen Wunsch teilt man schriftlich mit, mindestens drei Monate vor Beginn. Einen Grund muss man nicht angeben, aber die gewünschten Stunden und ihre Verteilung.",
+          "fragen": [
+            { "f": "Arbeitnehmer können ihre Arbeitszeit reduzieren und Teilzeit arbeiten.", "opts": ["richtig", "falsch"], "l": 0 },
+            { "f": "Man kann jederzeit wieder auf eine Vollzeitstelle zurückkehren.", "opts": ["richtig", "falsch"], "l": 1 },
+            { "f": "Man muss ausführlich erklären, warum man in Teilzeit gehen will.", "opts": ["richtig", "falsch"], "l": 1 },
+            { "f": "Welcher Nachteil wird genannt?", "opts": ["weniger Rente", "weniger Urlaub", "kein Kündigungsschutz", "keine Weiterbildung"], "l": 0 },
+            { "f": "Wann muss der Antrag spätestens gestellt werden?", "opts": ["drei Monate vor Beginn", "eine Woche vor Beginn", "sechs Monate vor Beginn", "am ersten Tag der Teilzeit"], "l": 0 }
+          ]
+        },
+        {
+          "id": "m5-bind", "typ": "matrix", "kontext": "Bindestrich",
+          "frage": "Ist die Kurzform mit Bindestrich richtig?",
+          "aussagen": [
+            ["Vorteile und Nachteile → Vor- und Nachteile", true],
+            ["Vollzeitstelle oder Teilzeitstelle → Voll- oder Teilzeitstelle", true],
+            ["Rentenversicherung und Krankenversicherung → Renten- und Krankenversicherung", true],
+            ["Kundenkontakt und Kundenbetreuung → Kunden-kontakt und -betreuung", false],
+            ["Halbtagsarbeit oder Ganztagsarbeit → Halbtags- oder Ganztagsarbeit", true]
+          ],
+          "x": "Gleicher Anfang: Kundenkontakt und -betreuung (Bindestrich vor dem zweiten Wort)."
+        },
+        {
+          "id": "m5-antrag", "typ": "ordnen", "kontext": "Schreiben",
+          "frage": "Ein Antrag auf Teilzeit: Bringen Sie die Textbausteine in die richtige Reihenfolge.",
+          "zeilen": [
+            "Antrag auf Teilzeitbeschäftigung",
+            "Sehr geehrter Herr Gregor,",
+            "hiermit beantrage ich die Reduzierung meiner Arbeitszeit.",
+            "Ab dem 1. September möchte ich statt wie bisher 40 Stunden nur noch 30 Stunden in der Woche arbeiten.",
+            "Ich hätte gern folgende Arbeitszeiten: Montag bis Freitag von 8 bis 14 Uhr.",
+            "Bitte bestätigen Sie mir den Eingang meines Schreibens schriftlich.",
+            "Bei Fragen stehe ich Ihnen gern für ein Gespräch zur Verfügung. Mit freundlichen Grüßen"
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Beschwerden beantworten",
+      "icon": "📦",
+      "kurz": "Produkt oder Service? · formelle Antwortmail",
+      "aufgaben": [
+        {
+          "id": "m6-ps", "typ": "matrix", "kontext": "Beschwerden",
+          "frage": "Bezieht sich die Beschwerde auf das Produkt oder den Service?",
+          "wahl": ["Produkt", "Service"],
+          "aussagen": [
+            ["Die Ware wurde zu spät geliefert.", 1], ["Der Tisch ist beschädigt.", 0], ["Das Personal war unfreundlich.", 1],
+            ["Das Material hat keine gute Qualität.", 0], ["Es fehlen Teile von dem Regal.", 0], ["Die Elektrikerin hatte kein Werkzeug dabei.", 1],
+            ["Der Vorhang ist zu kurz.", 0], ["Die Mitarbeiter haben beim Liefern den Boden beschädigt.", 1]
+          ]
+        },
+        {
+          "id": "m6-form", "typ": "matrix", "kontext": "Register",
+          "frage": "Antwort an eine Kundin: Passt das in eine formelle E-Mail?",
+          "wahl": ["formell – passt", "zu informell"],
+          "aussagen": [
+            ["Sehr geehrte Frau Brast,", 0], ["Hallo Frau Brast,", 1],
+            ["Der Fehler mit der Farbe tut uns sehr leid.", 0], ["Ups, sorry!", 1],
+            ["Bitte setzen Sie sich wegen eines Termins mit uns in Verbindung.", 0], ["Rufen Sie doch mal an, dann schauen wir mal.", 1],
+            ["Als Ausgleich für den Schaden bieten wir Ihnen an, 10 % von der Rechnung abzuziehen.", 0], ["Sie kriegen natürlich einen Rabatt von uns.", 1],
+            ["Wir arbeiten an der Verbesserung unseres Service und hoffen, dass Sie uns treu bleiben.", 0], ["Bis bald!", 1]
+          ]
+        },
+        {
+          "id": "m6-sb", "typ": "luecke", "kontext": "Sprachbausteine",
+          "frage": "Sprachbausteine: Die Antwort des Möbelhauses. Wählen Sie die richtige Lösung.",
+          "text": "Sehr geehrte Frau Brast,\n\nvielen Dank für Ihre Nachricht. Der Fehler mit der Farbe tut uns sehr {0}. Wir entschuldigen uns auch für die verspätete Lieferung. Das richtige Sofa ist auf Lager und wir können es Ihnen sofort {1}. Bitte setzen Sie sich wegen eines Termins mit uns in {2}.\n\nAls Ausgleich {3} den Schaden an Ihrem Boden bieten wir Ihnen an, 10 % von der Rechnung abzuziehen. Wir arbeiten an der Verbesserung unseres Service und hoffen, {4} Sie uns treu bleiben.\n\nMit freundlichen Grüßen\nMarian Wunder",
+          "gaps": [
+            { "opts": ["leid", "schade", "traurig"], "l": 0 },
+            { "opts": ["liefern", "geliefert", "lieferten"], "l": 0 },
+            { "opts": ["Verbindung", "Kontakt", "Beziehung"], "l": 0 },
+            { "opts": ["für", "über", "gegen"], "l": 0 },
+            { "opts": ["dass", "ob", "damit"], "l": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Prüfungstraining",
+      "icon": "🏁",
+      "kurz": "gemischte Aufgaben",
+      "aufgaben": [
+        { "id": "m7-1", "typ": "mc", "kontext": "Kündigungsrecht", "frage": "Eine Abmahnung ist …", "opts": ["eine Warnung des Arbeitgebers.", "eine Kündigung ohne Frist.", "ein Antrag auf Teilzeit.", "eine Gehaltserhöhung."], "l": 0 },
+        { "id": "m7-2", "typ": "mc", "kontext": "Teilzeit", "frage": "Für den Anspruch auf Teilzeit muss das Arbeitsverhältnis länger bestehen als …", "opts": ["sechs Monate.", "eine Woche.", "drei Jahre.", "zehn Jahre."], "l": 0 },
+        { "id": "m7-3", "typ": "mc", "kontext": "Wortschatz", "frage": "Eine Lösung, die alle Beteiligten akzeptieren, heißt …", "opts": ["Kompromiss.", "Abmahnung.", "Widerspruch.", "Stichelei."], "l": 0 },
+        { "id": "m7-4", "typ": "mc", "kontext": "Wortschatz", "frage": "Die Organisation der Arbeitnehmer heißt …", "opts": ["Gewerkschaft.", "Geschäftsleitung.", "Krankenkasse.", "Personalabteilung."], "l": 0 },
+        { "id": "m7-5", "typ": "mc", "kontext": "Präpositionen", "frage": "Ich muss mich ___ meine Mitarbeiter verlassen können.", "opts": ["auf", "an", "mit", "um"], "l": 0 },
+        { "id": "m7-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz.", "steine": ["Wenn", "ein Kind", "krank ist,", "können", "die Eltern", "Kinderkrankentage", "nehmen."] }
+      ]
+    }
+  ]
+}

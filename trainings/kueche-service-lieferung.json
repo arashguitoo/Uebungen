@@ -1,0 +1,254 @@
+{
+  "id": "kueche-service-lieferung",
+  "titel": "Küche, Service, Lieferung",
+  "untertitel": "Restaurantangebote · Adjektivdeklination · Küchengeräte · damit, um … zu, zum · Kompetenzen in der Küche · Lieferungen reklamieren · erfolgreich verhandeln",
+  "niveau": "B1/B2",
+  "reihe": "Prüfungstraining B1/B2",
+  "farbe": "#b24a2b",
+  "mix": 15,
+  "intro": "Sieben Teile – jeder Teil kann einzeln gespielt werden. Der **Prüfungsmix** zieht zufällig Aufgaben aus allen Teilen.",
+  "kompakt": [
+    { "titel": "Adjektiv vor dem Nomen", "zeilen": [
+      "**nach dem bestimmten Artikel:** der interessant**e** Kochkurs · im vegetarisch**en** Restaurant · die richtig**e** Adresse",
+      "**nach dem unbestimmten Artikel:** ein interessant**er** Kochkurs · ein angenehm**es** Ambiente",
+      "**ohne Artikel:** interessant**er** Kochkurs · mit traditionell**en** Gerichten · frisch**er** Fisch",
+      "Faustregel: Wenn der Artikel die Endung schon zeigt, bekommt das Adjektiv meist -e oder -en."
+    ]},
+    { "titel": "Zweck und Ziel", "zeilen": [
+      "**damit** (Nebensatz, Verb am Ende): Er diktiert das Rezept, **damit** die Teilnehmer die Mengen **haben**.",
+      "**um … zu + Infinitiv** (gleiches Subjekt): **Um** einen guten Risotto **zu machen**, braucht man Zeit.",
+      "**zum + substantivierter Infinitiv:** **Zum Einkaufen** macht er sich eine Liste. · **Zum Rühren** nehme ich einen Kochlöffel."
+    ]},
+    { "titel": "Lieferungen reklamieren", "zeilen": [
+      "**Koch:** Ich warte schon seit einer Stunde auf Sie. · Ich möchte die Lieferung erst prüfen. · Das war anders vereinbart. Ich hatte … bestellt. · Ich hatte ausdrücklich darauf hingewiesen, dass …",
+      "**Händler:** Ich bringe Ihre Lieferung. · Wo kann ich die Sachen abstellen? · Da muss ein Missverständnis vorliegen. · Das ist hier nicht auf dem Lieferschein vermerkt. · Wir können Ihnen die Ware bis … nachliefern. · Wäre das eine akzeptable Alternative für Sie?"
+    ]},
+    { "titel": "Erfolgreich verhandeln", "zeilen": [
+      "**Verlangen Sie viel!** Wer mehr verlangt, bekommt auch mehr.",
+      "**Wer fragt, der führt.** Fragen stellen, Forderungen wiederholen, Ausdauer zeigen.",
+      "**Reden ist Silber, Schweigen ist Gold.** Pausen aushalten – Stille zeigt Selbstbewusstsein.",
+      "**Small Talk und Humor:** Interesse zeigen, Gesprächspartner mit Namen ansprechen."
+    ]}
+  ],
+  "module": [
+    {
+      "titel": "Vielfalt des Angebots",
+      "icon": "🍽️",
+      "kurz": "Restaurantanzeigen · Situationen zuordnen · Adjektive",
+      "aufgaben": [
+        {
+          "id": "t1-anz", "typ": "matrix", "kontext": "Lesen",
+          "frage": "Welche Anzeige passt zu welcher Situation? Für eine Situation gibt es keine Anzeige.",
+          "posts": [
+            { "name": "A", "text": "**Restaurant Lotus** – vegetarische Gerichte aus Indien, überwiegend vegan, für Allergiker geeignet. Täglich 12–23 Uhr." },
+            { "name": "B", "text": "**Trattoria Bella Vista** – erstklassige Pasta, Fleisch und Fisch mit Zutaten aus Italien. Wir organisieren Familien- und Betriebsfeiern – bei gutem Wetter auf unserer großen Terrasse. Di–So geöffnet." },
+            { "name": "C", "text": "**Kochkurse für Freunde und Teams:** Verbringen Sie einen Abend einmal anders – wir zeigen Ihnen, wie man knusprige Ente und cremige Suppen zubereitet." },
+            { "name": "D", "text": "**Essen auf Rädern:** Gericht online wählen, bezahlen – wir liefern sofort, auch ins Büro." },
+            { "name": "E", "text": "**Grillhaus am Markt** – Hähnchen, Schnitzel und Salate zum Mitnehmen. Mo–So 11–16 Uhr." },
+            { "name": "F", "text": "**Restaurant Addis** – würzige Spezialitäten aus Äthiopien, mild bis scharf, mit Fladenbrot. Täglich 17–23 Uhr, Sonntag Ruhetag." }
+          ],
+          "wahl": ["A", "B", "C", "D", "E", "F", "keine"],
+          "aussagen": [
+            ["Eine Firma will ihr Jubiläum draußen mit gutem Essen feiern.", 1],
+            ["Ines möchte mit Kolleginnen einen netten Abend verbringen und etwas lernen.", 2],
+            ["Rolf möchte am Montagabend ein gut gewürztes Fleischgericht essen.", 5],
+            ["Das Team eines Reisebüros will im Büro essen, aber nicht kochen.", 3],
+            ["Aisha holt sich schnell etwas für die Mittagspause.", 4],
+            ["Hanna sucht ein Restaurant mit Spielplatz für ihre Kinder.", 6]
+          ]
+        },
+        { "id": "t1-adj", "typ": "zu", "kontext": "Adjektive", "frage": "Was bedeuten die Adjektive?", "paare": [
+          ["würzig", "mit vielen Gewürzen, kräftig im Geschmack"],
+          ["knusprig", "außen fest und kross"],
+          ["cremig", "weich und sämig wie Creme"],
+          ["landestypisch", "typisch für ein Land"],
+          ["gehoben", "von hoher Qualität, elegant"],
+          ["bewährt", "hat sich lange als gut gezeigt"]
+        ]}
+      ]
+    },
+    {
+      "titel": "Adjektivdeklination",
+      "icon": "🔤",
+      "kurz": "nach bestimmtem und unbestimmtem Artikel · ohne Artikel",
+      "aufgaben": [
+        {
+          "id": "t2-art", "typ": "matrix", "kontext": "Artikel",
+          "frage": "Steht das Adjektiv nach dem bestimmten, dem unbestimmten oder ohne Artikel?",
+          "wahl": ["bestimmter Artikel", "unbestimmter Artikel", "ohne Artikel"],
+          "aussagen": [
+            ["im vegetarischen Restaurant", 0], ["die richtige Adresse", 0],
+            ["ein angenehmes Ambiente", 1], ["eine eigene Speisekarte", 1],
+            ["mit traditionellen Gerichten", 2], ["leckere Hähnchen", 2]
+          ]
+        },
+        { "id": "t2-1", "typ": "mc", "kontext": "bestimmter Artikel", "frage": "Der schnell___ Kellner bringt die Suppe.", "opts": ["e", "er", "en", "es"], "l": 0 },
+        { "id": "t2-2", "typ": "mc", "kontext": "bestimmter Artikel", "frage": "Die Köchin gibt dem hungrig___ Gast ein Stück Brot.", "opts": ["en", "e", "er", "em"], "l": 0 },
+        { "id": "t2-3", "typ": "mc", "kontext": "unbestimmter Artikel", "frage": "Ein jung___ Mann isst einen frisch___ Fisch.", "opts": ["er … en", "e … en", "en … er", "er … er"], "l": 0 },
+        { "id": "t2-4", "typ": "mc", "kontext": "unbestimmter Artikel", "frage": "Sie trinkt ein kalt___ Bier in einem modern___ Lokal.", "opts": ["es … en", "e … en", "es … em", "en … es"], "l": 0 },
+        {
+          "id": "t2-bew", "typ": "luecke", "kontext": "ohne Artikel",
+          "frage": "Eine Restaurantbewertung. Ergänzen Sie die Endungen.",
+          "text": "Frisch{0} Fisch und nett{1} Ambiente! In der „Fischküche“ bekommt man gut{2} und lecker{3} Fisch zu günstig{4} Preisen. Weitere Pluspunkte: freundlich{5} Bedienung und schnell{6} Service.",
+          "gaps": [
+            { "opts": ["er", "en", "es"], "l": 0 },
+            { "opts": ["es", "e", "en"], "l": 0 },
+            { "opts": ["en", "er", "es"], "l": 0 },
+            { "opts": ["en", "er", "e"], "l": 0 },
+            { "opts": ["en", "e", "er"], "l": 0 },
+            { "opts": ["e", "er", "en"], "l": 0 },
+            { "opts": ["er", "en", "es"], "l": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Im Kochkurs",
+      "icon": "🍳",
+      "kurz": "Küchengeräte · damit, um … zu, zum",
+      "aufgaben": [
+        { "id": "t3-ger", "typ": "zu", "kontext": "Küchengeräte", "frage": "Welches Küchengerät braucht man wozu?", "paare": [
+          ["die Küchenreibe", "um Käse zu reiben"],
+          ["das Sieb", "um Nudeln abzugießen"],
+          ["die Waage", "um Mehl abzuwiegen"],
+          ["die Knoblauchpresse", "um Knoblauch zu pressen"],
+          ["die Pfanne", "um Fleisch zu braten"],
+          ["der Kochlöffel", "um die Suppe zu rühren"]
+        ]},
+        {
+          "id": "t3-zweck", "typ": "matrix", "kontext": "Zweck",
+          "frage": "Welcher Konnektor passt?",
+          "wahl": ["damit", "um", "zum"],
+          "aussagen": [
+            ["Er diktiert das Rezept, ___ die Teilnehmer die Mengen haben.", 0],
+            ["___ einen guten Risotto zu machen, braucht man Zeit.", 1],
+            ["___ Einkaufen macht er sich eine Liste.", 2],
+            ["Ich nehme einen Kochlöffel, ___ die Soße zu rühren.", 1],
+            ["Sie salzt das Wasser, ___ die Nudeln besser schmecken.", 0],
+            ["___ Schneiden nehme ich ein scharfes Messer.", 2]
+          ]
+        },
+        { "id": "t3-1", "typ": "mc", "kontext": "um … zu", "frage": "Ich benutze ein Küchenmesser, um Kartoffeln ___.", "opts": ["zu schälen", "schälen", "zum Schälen", "geschält"], "l": 0 },
+        { "id": "t3-2", "typ": "mc", "kontext": "zum", "frage": "___ nehme ich einen Mixer.", "opts": ["Zum Pürieren", "Zu pürieren", "Um pürieren", "Damit pürieren"], "l": 0 },
+        { "id": "t3-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz.", "steine": ["Ich", "reibe", "den Parmesan", "frisch,", "damit", "der Risotto", "besser", "schmeckt."] }
+      ]
+    },
+    {
+      "titel": "Berufe rund ums Essen",
+      "icon": "👨‍🍳",
+      "kurz": "Kompetenzen eines Kochs · Nomen-Verb-Verbindungen",
+      "aufgaben": [
+        { "id": "t4-nvv", "typ": "zu", "kontext": "Berufssprache", "frage": "Was gehört zusammen?", "paare": [
+          ["Waren auf Vollständigkeit", "überprüfen"],
+          ["gut mit Stress", "umgehen"],
+          ["auf Sauberkeit und Ordnung", "achten"],
+          ["Speisen", "anrichten"],
+          ["Bestandskontrollen", "durchführen"],
+          ["den Verbrauch", "dokumentieren"],
+          ["Ruhe", "bewahren"],
+          ["für die Instandhaltung der Geräte", "zuständig sein"]
+        ]},
+        {
+          "id": "t4-eig", "typ": "matrix", "kontext": "Kompetenzen",
+          "frage": "Fähigkeit (was man tut) oder Eigenschaft (wie man ist)?",
+          "wahl": ["Fähigkeit", "Eigenschaft"],
+          "aussagen": [
+            ["planen", 0], ["organisieren", 0], ["Geräte programmieren", 0],
+            ["belastbar", 1], ["kreativ", 1], ["ordentlich", 1], ["serviceorientiert", 1]
+          ]
+        },
+        { "id": "t4-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz.", "steine": ["Ein Koch", "muss", "gut mit Stress", "umgehen können,", "weil", "es", "abends", "sehr hektisch", "ist."] }
+      ]
+    },
+    {
+      "titel": "Die Lieferung",
+      "icon": "📦",
+      "kurz": "Bestellung prüfen · Reklamation an der Tür",
+      "aufgaben": [
+        {
+          "id": "t5-best", "typ": "matrix", "kontext": "Lesen",
+          "frage": "Ein Koch hat telefonisch bestellt: „30 Lachsfilets, 10 Gurken, 5 kg Möhren, 12 Salatköpfe und 2 Kisten Tomaten – aber bitte bis spätestens 9 Uhr!“ Die Händlerin hat notiert: Lachsfilet 30 · Gurken 10 · Möhren 10 kg · Salatköpfe 12 · Tomaten 2 Kisten · Lieferung bis 10 Uhr. Was ist richtig notiert?",
+          "wahl": ["richtig notiert", "falsch notiert"],
+          "aussagen": [["Lachsfilet", 0], ["Gurken", 0], ["Möhren", 1], ["Salatköpfe", 0], ["Tomaten", 0], ["Lieferzeit", 1]]
+        },
+        {
+          "id": "t5-wer", "typ": "matrix", "kontext": "Gespräch",
+          "frage": "Wer sagt das – der Koch oder der Händler?",
+          "wahl": ["Koch", "Händler"],
+          "aussagen": [
+            ["Ich bringe Ihre Lieferung.", 1], ["Ich warte schon seit einer Stunde auf Sie.", 0],
+            ["Wo kann ich die Sachen abstellen?", 1], ["Ich möchte die Lieferung erst prüfen.", 0],
+            ["Das war anders vereinbart.", 0], ["Da muss ein Missverständnis vorliegen.", 1],
+            ["Wir können Ihnen die Ware bis Mittwoch nachliefern.", 1], ["Und was sollen wir dann den Gästen servieren?", 0],
+            ["Das ist hier nicht auf dem Lieferschein vermerkt.", 1], ["Vielen Dank für Ihr Entgegenkommen!", 0]
+          ]
+        },
+        {
+          "id": "t5-ord", "typ": "ordnen", "kontext": "Gespräch",
+          "frage": "Im Kiosk fehlen fünf Kisten Bier, dafür sind fünf Kisten Cola da. Bringen Sie das Gespräch in eine sinnvolle Reihenfolge.",
+          "zeilen": [
+            "◀ Moment, ich möchte die Lieferung erst prüfen.",
+            "◀ Das war anders vereinbart. Ich hatte fünf Kisten Bier bestellt, keine Cola.",
+            "▶ Oh, da muss ein Missverständnis vorliegen. Auf dem Lieferschein steht Cola.",
+            "▶ Ich kann Ihnen anbieten, die Cola wieder mitzunehmen und das Bier morgen früh zu bringen.",
+            "◀ Gut, das ist eine akzeptable Lösung. Vielen Dank für Ihr Entgegenkommen!"
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Erfolgreich verhandeln",
+      "icon": "🤝",
+      "kurz": "vier Strategien · Situationen zuordnen",
+      "aufgaben": [
+        {
+          "id": "t6-str", "typ": "matrix", "kontext": "Lesen",
+          "frage": "Lesen Sie die Strategien. Welche Überschrift passt?",
+          "posts": [
+            { "name": "Strategie 1", "text": "Angst und ein zu großes Harmoniebedürfnis schaden jeder Verhandlung. Ein typischer Anfängerfehler: mit zu kleinen Preisen beginnen. Wer mehr verlangt, bekommt auch mehr." },
+            { "name": "Strategie 2", "text": "Erfolgreiche Verhandler stellen doppelt so viele Fragen. So muss der andere reagieren. Bleiben Sie dran, bis Sie Ihr Ziel erreicht haben." },
+            { "name": "Strategie 3", "text": "Wer viel redet, wirkt unsicher. Stille zeigt Selbstbewusstsein: Wenn Sie schweigen, muss der andere Stellung beziehen." },
+            { "name": "Strategie 4", "text": "Ein kurzes persönliches Gespräch am Anfang hilft, sich auf den anderen einzustellen. Zeigen Sie Interesse, nennen Sie den Namen, setzen Sie auf Humor." }
+          ],
+          "wahl": ["Verlangen Sie viel!", "Wer fragt, der führt.", "Schweigen ist Gold.", "Small Talk und Humor"],
+          "aussagen": [["Strategie 1", 0], ["Strategie 2", 1], ["Strategie 3", 2], ["Strategie 4", 3]]
+        },
+        {
+          "id": "t6-sit", "typ": "matrix", "kontext": "Situationen",
+          "frage": "Welche Strategie hilft in dieser Situation?",
+          "wahl": ["1 – viel verlangen", "2 – Fragen stellen", "3 – Pausen aushalten", "4 – Name, Small Talk"],
+          "aussagen": [
+            ["Sie haben den Namen Ihres Gesprächspartners nicht verstanden. Sollen Sie nachfragen?", 3],
+            ["Sie fragen sich, ob Sie am Anfang lieber weniger fordern sollen.", 0],
+            ["Sie haben noch viele Fragen. Sollen Sie sie stellen?", 1],
+            ["Es entstehen unangenehme Pausen. Sollen Sie mehr reden?", 2]
+          ]
+        },
+        { "id": "t6-1", "typ": "mc", "kontext": "Wortschatz", "frage": "„Den Kürzeren ziehen“ bedeutet …", "opts": ["verlieren, weniger bekommen", "gewinnen", "etwas kürzen", "eine Pause machen"], "l": 0 }
+      ]
+    },
+    {
+      "titel": "Prüfungstraining",
+      "icon": "🏁",
+      "kurz": "Sprachbausteine · gemischte Aufgaben",
+      "aufgaben": [
+        {
+          "id": "t7-sb", "typ": "luecke", "kontext": "Sprachbausteine",
+          "frage": "Sprachbausteine: Antwort auf eine Anfrage. Wählen Sie die richtige Lösung.",
+          "text": "Sehr geehrte Frau Weber,\n\nvielen Dank für Ihre Anfrage. Gern organisieren wir Ihre Betriebsfeier auf unserer {0} Terrasse. Für 40 Personen empfehlen wir unser italienisch{1} Buffet mit frisch{2} Salaten, hausgemachter Pasta und einem süß{3} Dessert.\n\n{4} wir gut planen können, bitten wir Sie, uns die genaue Personenzahl bis Freitag mitzuteilen. Bei schlechtem Wetter steht Ihnen unser Saal zur Verfügung.\n\nWir freuen uns {5} Ihren Besuch!\n\nMit freundlichen Grüßen\nLuca Moretti",
+          "gaps": [
+            { "opts": ["großen", "große", "großer"], "l": 0 },
+            { "opts": ["es", "e", "en"], "l": 0 },
+            { "opts": ["en", "em", "e"], "l": 0 },
+            { "opts": ["en", "em", "es"], "l": 0 },
+            { "opts": ["Damit", "Um", "Zum"], "l": 0 },
+            { "opts": ["auf", "über", "an"], "l": 0 }
+          ]
+        },
+        { "id": "t7-1", "typ": "mc", "kontext": "Adjektive", "frage": "Wir suchen einen kompetent___ Koch.", "opts": ["en", "er", "e", "es"], "l": 0 },
+        { "id": "t7-2", "typ": "mc", "kontext": "Zweck", "frage": "___ Abwiegen benutzt man eine Waage.", "opts": ["Zum", "Um", "Damit", "Für zu"], "l": 0 },
+        { "id": "t7-3", "typ": "mc", "kontext": "Reklamation", "frage": "Der Händler bietet an, die fehlende Ware am nächsten Tag zu bringen. Er möchte …", "opts": ["nachliefern.", "abstellen.", "anrichten.", "vermerken."], "l": 0 }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,737 @@
+{
+  "id": "weltweit-im-netz",
+  "titel": "Weltweit im Netz",
+  "untertitel": "Internationaler Handel · kultursensible Webseiten · indem, ohne zu, ohne dass · Beschwerdebrief · Partizipien als Adjektive · …einander · Unternehmensporträt",
+  "niveau": "B1/B2",
+  "reihe": "Prüfungstraining B1/B2",
+  "farbe": "#2f6f9f",
+  "mix": 15,
+  "intro": "Sieben Teile – jeder Teil kann einzeln gespielt werden. Der **Prüfungsmix** zieht zufällig Aufgaben aus allen Teilen. Passend dazu gibt es die Spiele **Das Handelskontor** und **Die Satzpresse**.",
+  "kompakt": [
+    {
+      "titel": "Art und Weise: indem – ohne zu – ohne dass",
+      "zeilen": [
+        "**indem** nennt das Mittel (Wie?): Ein Webauftritt funktioniert weltweit, **indem** er mehrsprachig **ist**.",
+        "**ohne dass** – etwas Erwartetes passiert nicht (verschiedene oder gleiche Subjekte): Der Text muss auf die Seite passen, **ohne dass** man den Stil ändern **muss**.",
+        "**ohne … zu** – nur bei **gleichem Subjekt**: Man sollte nichts veröffentlichen, **ohne zu** recherchieren, wie es wirkt."
+      ]
+    },
+    {
+      "titel": "Partizip I und II als Adjektive",
+      "zeilen": [
+        "**Partizip I** (Infinitiv + d) + Endung: die bestehen**den** Mängel · der gelten**de** Terminplan – Etwas ist **aktuell**.",
+        "**Partizip II** + Endung: die installiert**e** Homepage · der erstellt**e** Entwurf – Etwas ist **geschehen / gemacht worden**.",
+        "Mit Erweiterung: Den **von Ihnen bis zum 10.12.** erstellten Entwurf haben wir kommentiert."
+      ]
+    },
+    {
+      "titel": "…einander",
+      "zeilen": [
+        "Präposition + einander = gegenseitig: Alle sind **miteinander** vernetzt. · Alles greift **ineinander**. · Wir sind **füreinander** da.",
+        "aneinander · aufeinander · beieinander · gegeneinander · hintereinander · nacheinander · untereinander · voneinander · zueinander"
+      ]
+    },
+    {
+      "titel": "Ein Beschwerdebrief",
+      "zeilen": [
+        "Aufbau: Anrede → Benennung des Problems → anfängliche Vereinbarung → Projektverlauf → Konsequenzen → Aufforderung zum Handeln → Gruß",
+        "Die von Ihnen am … installierte Homepage hat nach wie vor große Mängel. · Wir einigten uns auf … · Sie versprachen … · Deshalb können wir den Termin nicht halten. · Wir fordern Sie auf, dafür zu sorgen, dass …"
+      ]
+    },
+    {
+      "titel": "Kultursensible Webseiten",
+      "zeilen": [
+        "**Sprache:** nur ein Teil der Nutzer spricht Englisch → mehrsprachig anbieten; Textlänge unterschiedlich",
+        "**Mimik und Gestik:** Gesten werden unterschiedlich verstanden",
+        "**Layout:** nicht alle Sprachen von links nach rechts → Navigation vertikal",
+        "**Farben:** unterschiedliche Bedeutungen (z. B. Rot: Kraft, Reinheit, Trauer, Glück)"
+      ]
+    }
+  ],
+  "module": [
+    {
+      "titel": "Handel früher und heute",
+      "icon": "🌍",
+      "kurz": "Wortschatz internationaler Handel",
+      "aufgaben": [
+        {
+          "id": "v1-zu",
+          "typ": "zu",
+          "kontext": "Wortschatz",
+          "frage": "Was bedeuten die Begriffe?",
+          "paare": [
+            [
+              "die Zielgruppe",
+              "die Menschen, die man erreichen will"
+            ],
+            [
+              "die Marktlücke",
+              "ein Angebot, das es noch nicht gibt"
+            ],
+            [
+              "der Wechselkurs",
+              "der Preis einer Währung in einer anderen"
+            ],
+            [
+              "expandieren",
+              "das Geschäft vergrößern, auf neue Märkte gehen"
+            ],
+            [
+              "der Internetauftritt",
+              "die Webseite einer Firma"
+            ],
+            [
+              "die Nachhaltigkeit",
+              "Rücksicht auf Umwelt und Zukunft"
+            ]
+          ]
+        },
+        {
+          "id": "v1-sort",
+          "typ": "matrix",
+          "kontext": "Wortschatz",
+          "frage": "Zu welchem Bereich passt das Wort am besten?",
+          "wahl": [
+            "Markt und Verkauf",
+            "Firma und Produktion",
+            "Online"
+          ],
+          "aussagen": [
+            [
+              "die Nachfrage",
+              0
+            ],
+            [
+              "der Export",
+              0
+            ],
+            [
+              "der Umsatz",
+              0
+            ],
+            [
+              "der Firmenstandort",
+              1
+            ],
+            [
+              "die Produktqualität",
+              1
+            ],
+            [
+              "die Umweltstandards",
+              1
+            ],
+            [
+              "die Webseite",
+              2
+            ],
+            [
+              "der Internetauftritt",
+              2
+            ]
+          ]
+        },
+        {
+          "id": "v1-1",
+          "typ": "mc",
+          "kontext": "Wortschatz",
+          "frage": "Für einen guten Internetauftritt muss man die ___ gut kennen.",
+          "opts": [
+            "Zielgruppe",
+            "Währung",
+            "Marktlücke",
+            "Produktion"
+          ],
+          "l": 0
+        }
+      ]
+    },
+    {
+      "titel": "Kultursensible Webseiten",
+      "icon": "💻",
+      "kurz": "Ratgebertext lesen · Wortschatz",
+      "aufgaben": [
+        {
+          "id": "v2-text",
+          "typ": "lesen",
+          "kontext": "Lesen",
+          "frage": "Lesen Sie den Ratgeber und beantworten Sie die Fragen.",
+          "textTitel": "Global erfolgreich online",
+          "text": "Eine Webseite, die in Skandinavien gut ankommt, wird in anderen Teilen der Welt vielleicht gar nicht verstanden. Der Auftritt muss deshalb kulturell flexibel sein.\n\n**Sprache:** Nur ein Viertel der Internetnutzer spricht wirklich Englisch. Bieten Sie Ihre Inhalte in den Sprachen Ihrer Kunden an – und denken Sie daran, dass Übersetzungen unterschiedlich lang sind.\n\n**Bilder und Gesten:** Ein erhobener Daumen bedeutet in Europa Zustimmung, in manchen Ländern ist er unhöflich. Veröffentlichen Sie keine Bilder, ohne ihre Wirkung zu prüfen.\n\n**Layout:** Nicht alle Sprachen werden von links nach rechts gelesen. Eine senkrechte Navigation am linken Rand funktioniert für fast alle Nutzer.\n\n**Farben:** Rot steht in Europa für Kraft und Gefühl, in China für Glück, in Indien für Reinheit, in Südafrika auch für Trauer. Lassen Sie sich beraten, bevor Sie Ihre Seite freischalten.",
+          "fragen": [
+            {
+              "f": "Webseiten …",
+              "opts": [
+                "müssen kulturelle Unterschiede berücksichtigen.",
+                "funktionieren überall gleich.",
+                "werden vor allem in Skandinavien gelesen."
+              ],
+              "l": 0
+            },
+            {
+              "f": "Eine nur englischsprachige Seite …",
+              "opts": [
+                "versteht nur ein Teil der Kunden.",
+                "spricht alle Kunden an.",
+                "lassen die Kunden übersetzen."
+              ],
+              "l": 0
+            },
+            {
+              "f": "Gesten mit der Hand …",
+              "opts": [
+                "werden leicht missverstanden.",
+                "sind überall auf der Welt gleich.",
+                "darf man auf Webseiten nie zeigen."
+              ],
+              "l": 0
+            },
+            {
+              "f": "Man muss beachten, dass …",
+              "opts": [
+                "Sprachen verschiedene Leserichtungen haben.",
+                "alle von links nach rechts lesen.",
+                "horizontale Navigation am besten ist."
+              ],
+              "l": 0
+            },
+            {
+              "f": "Farben sollte man …",
+              "opts": [
+                "passend zu den Zielgruppen einsetzen.",
+                "möglichst wenig verwenden.",
+                "nur nach dem Produkt auswählen."
+              ],
+              "l": 0
+            }
+          ]
+        },
+        {
+          "id": "v2-syn",
+          "typ": "zu",
+          "kontext": "Wortschatz",
+          "frage": "Welches Wort aus dem Text hat dieselbe Bedeutung?",
+          "paare": [
+            [
+              "optisch, bildlich",
+              "visuell"
+            ],
+            [
+              "anpassungsfähig",
+              "flexibel"
+            ],
+            [
+              "Gefühl",
+              "Emotion"
+            ],
+            [
+              "senkrecht",
+              "vertikal"
+            ],
+            [
+              "möglich",
+              "potenziell"
+            ],
+            [
+              "bewirken, hervorrufen",
+              "provozieren"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "indem – ohne zu – ohne dass",
+      "icon": "🧭",
+      "kurz": "Art und Weise ausdrücken",
+      "aufgaben": [
+        {
+          "id": "v3-wahl",
+          "typ": "matrix",
+          "kontext": "Konnektoren",
+          "frage": "Was passt in die Lücke?",
+          "wahl": [
+            "indem",
+            "ohne dass",
+            "ohne … zu"
+          ],
+          "aussagen": [
+            [
+              "Ein Webauftritt funktioniert weltweit, ___ er mehrsprachig ist.",
+              0
+            ],
+            [
+              "Der Text muss auf die Seite passen, ___ man den Stil ändern muss.",
+              1
+            ],
+            [
+              "Man sollte nichts veröffentlichen, ___ vorher ___ recherchieren.",
+              2
+            ],
+            [
+              "Sie machen Ihre Webseite erfolgreicher, ___ Sie sie interkulturell planen.",
+              0
+            ],
+            [
+              "Kunden hält man, ___ man attraktive Angebote macht.",
+              0
+            ],
+            [
+              "Man kann nicht expandieren, ___ ___ investieren.",
+              2
+            ],
+            [
+              "Misserfolge entstehen manchmal, ___ man kulturelle Regeln verletzt.",
+              0
+            ],
+            [
+              "Wenn man Glück hat, macht man gute Geschäfte, ___ man im Internet wirbt.",
+              1
+            ]
+          ]
+        },
+        {
+          "id": "v3-1",
+          "typ": "mc",
+          "kontext": "Konnektoren",
+          "frage": "Neue Kunden kann man nicht gewinnen, ___ Werbung zu machen.",
+          "opts": [
+            "ohne",
+            "ohne dass",
+            "indem",
+            "damit"
+          ],
+          "l": 0
+        },
+        {
+          "id": "v3-2",
+          "typ": "mc",
+          "kontext": "Konnektoren",
+          "frage": "Der Auftrag wurde geändert, ___ wir informiert wurden.",
+          "opts": [
+            "ohne dass",
+            "ohne zu",
+            "indem",
+            "um"
+          ],
+          "l": 0
+        },
+        {
+          "id": "v3-b1",
+          "typ": "bau",
+          "kontext": "Satzbau",
+          "frage": "Bilden Sie den Satz.",
+          "steine": [
+            "Kunden",
+            "hält",
+            "man,",
+            "indem",
+            "man",
+            "attraktive Angebote",
+            "macht."
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Das war nicht optimal – der Beschwerdebrief",
+      "icon": "📮",
+      "kurz": "Brief lesen · Aufbau · Partizipien",
+      "aufgaben": [
+        {
+          "id": "v4-brief",
+          "typ": "lesen",
+          "kontext": "Lesen",
+          "frage": "Lesen Sie den Brief und beantworten Sie die Fragen.",
+          "textTitel": "Probleme mit dem Onlineshop",
+          "text": "Sehr geehrte Frau Varga,\n\nder von Ihnen am 2.3. freigeschaltete Onlineshop hat nach wie vor große Mängel.\n\nIm Oktober einigten wir uns auf die Grundlagen Ihrer Arbeit. Den von Ihnen Ende November erstellten Entwurf haben wir ausführlich kommentiert. Sie versprachen eine Überarbeitung bis Mitte Januar. In der zweiten Version waren die bestehenden Probleme mit dem Bezahlvorgang aber nicht beseitigt. Wir verschoben deshalb die Testphase, in der weitere Fehler auftraten.\n\nDaher können wir den geltenden Terminplan und den für uns wichtigen Start zur Messe am 1.4. nicht halten.\n\nWir fordern Sie auf, dafür zu sorgen, dass der Shop spätestens am 10.4. fehlerfrei online ist.\n\nMit freundlichen Grüßen\ni. A. Jonas Becker",
+          "fragen": [
+            {
+              "f": "Worüber beschwert sich Herr Becker?",
+              "opts": [
+                "Der Onlineshop hat noch Mängel.",
+                "Die Rechnung ist zu hoch.",
+                "Der Entwurf kam zu früh.",
+                "Frau Varga ist unfreundlich."
+              ],
+              "l": 0
+            },
+            {
+              "f": "Was war in Version 2 noch falsch?",
+              "opts": [
+                "der Bezahlvorgang",
+                "die Farben der Startseite",
+                "die Übersetzung der Texte",
+                "das Logo der Firma"
+              ],
+              "l": 0
+            },
+            {
+              "f": "Was ist die Konsequenz?",
+              "opts": [
+                "Der Start zur Messe kann nicht gehalten werden.",
+                "Der Vertrag mit der Agentur wird sofort gekündigt.",
+                "Eine andere Agentur übernimmt das Projekt.",
+                "Die Messe am 1.4. fällt leider aus."
+              ],
+              "l": 0
+            },
+            {
+              "f": "Was fordert er?",
+              "opts": [
+                "einen fehlerfreien Shop bis zum 10.4.",
+                "das ganze Geld für den Auftrag zurück",
+                "eine neue Testphase im Juni",
+                "ein persönliches Gespräch mit dem Chef"
+              ],
+              "l": 0
+            }
+          ]
+        },
+        {
+          "id": "v4-ord",
+          "typ": "ordnen",
+          "kontext": "Aufbau",
+          "frage": "Wie ist ein Beschwerdebrief aufgebaut? Bringen Sie die Elemente in die richtige Reihenfolge.",
+          "zeilen": [
+            "Anrede",
+            "Benennung des Problems",
+            "Beschreibung der anfänglichen Vereinbarung",
+            "Beschreibung des Projektverlaufs",
+            "Konsequenzen der Probleme",
+            "Aufforderung zum Handeln",
+            "Gruß"
+          ]
+        },
+        {
+          "id": "v4-p",
+          "typ": "matrix",
+          "kontext": "Partizipien",
+          "frage": "Partizip I oder Partizip II?",
+          "wahl": [
+            "Partizip I (aktuell)",
+            "Partizip II (geschehen)"
+          ],
+          "aussagen": [
+            [
+              "die bestehenden Mängel",
+              0
+            ],
+            [
+              "der geltende Terminplan",
+              0
+            ],
+            [
+              "die installierte Homepage",
+              1
+            ],
+            [
+              "der erstellte Entwurf",
+              1
+            ],
+            [
+              "die verwendeten Rechner",
+              1
+            ],
+            [
+              "die beschriebenen Probleme",
+              1
+            ]
+          ]
+        },
+        {
+          "id": "v4-b1",
+          "typ": "bau",
+          "kontext": "Partizipien",
+          "frage": "„Ich habe vor vier Wochen bei Ihnen einen Schrank gekauft. Die Lieferung ist noch nicht erfolgt.“ – Bilden Sie einen Satz.",
+          "steine": [
+            "Die Lieferung",
+            "meines",
+            "vor vier Wochen",
+            "bei Ihnen",
+            "gekauften",
+            "Schranks",
+            "ist noch nicht erfolgt."
+          ],
+          "alt": [
+            [
+              "Die Lieferung",
+              "meines",
+              "bei Ihnen",
+              "vor vier Wochen",
+              "gekauften",
+              "Schranks",
+              "ist noch nicht erfolgt."
+            ]
+          ]
+        },
+        {
+          "id": "v4-1",
+          "typ": "mc",
+          "kontext": "Partizipien",
+          "frage": "Für Nachbesserungen ist die den Auftrag ___ Firma zuständig.",
+          "opts": [
+            "ausführende",
+            "ausgeführte",
+            "ausführenden",
+            "ausführen"
+          ],
+          "l": 0
+        }
+      ]
+    },
+    {
+      "titel": "Wir über uns",
+      "icon": "🏭",
+      "kurz": "Unternehmensporträt · …einander",
+      "aufgaben": [
+        {
+          "id": "v5-por",
+          "typ": "lesen",
+          "kontext": "Lesen",
+          "frage": "Lesen Sie das Unternehmensporträt und beantworten Sie die Fragen.",
+          "textTitel": "Das sind wir – Nordlicht Sensorik",
+          "text": "Nordlicht Sensorik entwickelt seit 25 Jahren Sensoren für Windkraftanlagen. Alle Bauteile werden am Standort bei Kiel entwickelt und hergestellt und direkt an die Kunden geliefert. 180 Mitarbeitende arbeiten weltweit miteinander vernetzt.\n\nHeute beliefern wir Märkte in über 40 Ländern. Der Exportanteil liegt bei 60 % und soll in den nächsten Jahren auf 75 % wachsen.\n\n**Unsere Grundwerte:** Wir beraten unsere Kunden gründlich (kompetent). Als Familienunternehmen sind wir füreinander da (familiär). Wir arbeiten nach höchsten Umweltstandards und achten auf niedrigen Energieverbrauch (nachhaltig).",
+          "fragen": [
+            {
+              "f": "Was ist das für eine Textsorte?",
+              "opts": [
+                "ein Unternehmensporträt",
+                "ein Lexikonartikel",
+                "ein Informationsschreiben",
+                "eine Beschwerde"
+              ],
+              "l": 0
+            },
+            {
+              "f": "Wo wird produziert?",
+              "opts": [
+                "nur am Standort bei Kiel",
+                "in über 40 verschiedenen Ländern",
+                "direkt bei den Kunden vor Ort",
+                "in Werken in Asien und Kiel"
+              ],
+              "l": 0
+            },
+            {
+              "f": "Wie will die Firma wachsen?",
+              "opts": [
+                "durch mehr Export",
+                "durch mehr Mitarbeitende in Kiel",
+                "durch einen Onlineshop",
+                "durch neue Produkte"
+              ],
+              "l": 0
+            },
+            {
+              "f": "Was bedeutet hier „nachhaltig“?",
+              "opts": [
+                "umweltfreundlich und energiesparend",
+                "sehr schnell und zuverlässig",
+                "familiär und hilfsbereit",
+                "billig und einfach zu bauen"
+              ],
+              "l": 0
+            }
+          ]
+        },
+        {
+          "id": "v5-ein",
+          "typ": "matrix",
+          "kontext": "…einander",
+          "frage": "Welches Wort passt?",
+          "wahl": [
+            "miteinander",
+            "gegeneinander",
+            "aufeinander",
+            "nacheinander",
+            "aneinander",
+            "ineinander"
+          ],
+          "aussagen": [
+            [
+              "Damit alle informiert sind, tauschen wir uns täglich ___ aus.",
+              0
+            ],
+            [
+              "Auf dem Markt konkurrieren viele Firmen ___.",
+              1
+            ],
+            [
+              "Wir passen ___ auf.",
+              2
+            ],
+            [
+              "Wir arbeiten die Auftragsliste ___ ab.",
+              3
+            ],
+            [
+              "Heute gab es Ärger. Wir sind mit dem Chef ___ geraten.",
+              4
+            ],
+            [
+              "Alles ist gut koordiniert. Alles greift ___.",
+              5
+            ]
+          ]
+        },
+        {
+          "id": "v5-1",
+          "typ": "mc",
+          "kontext": "…einander",
+          "frage": "Wir sind solidarisch. Wir sind ___ da.",
+          "opts": [
+            "füreinander",
+            "gegeneinander",
+            "voneinander",
+            "auseinander"
+          ],
+          "l": 0
+        }
+      ]
+    },
+    {
+      "titel": "Ein Unternehmen vorstellen",
+      "icon": "🎤",
+      "kurz": "Redemittel · Fakten zusammenstellen",
+      "aufgaben": [
+        {
+          "id": "v6-rm",
+          "typ": "matrix",
+          "kontext": "Redemittel",
+          "frage": "Worüber informiert der Satz?",
+          "wahl": [
+            "Produkte/Dienstleistungen",
+            "Zahlen",
+            "Besonderheit",
+            "Situation/Probleme"
+          ],
+          "aussagen": [
+            [
+              "Die Firma produziert Sensoren für Windräder.",
+              0
+            ],
+            [
+              "Das Unternehmen bietet Dienstleistungen im Bereich Wartung an.",
+              0
+            ],
+            [
+              "Der Umsatz betrug im letzten Jahr 40 Millionen Euro.",
+              1
+            ],
+            [
+              "Die Firma hat 180 Mitarbeiter.",
+              1
+            ],
+            [
+              "Das Besondere an der Firma ist, dass sie klimaneutral produziert.",
+              2
+            ],
+            [
+              "Die Firma hatte in der letzten Zeit Probleme, weil Bauteile fehlten.",
+              3
+            ]
+          ]
+        },
+        {
+          "id": "v6-b1",
+          "typ": "bau",
+          "kontext": "Satzbau",
+          "frage": "Bilden Sie den Satz.",
+          "steine": [
+            "Das Besondere",
+            "an der Firma",
+            "ist,",
+            "dass",
+            "alle Mitarbeitenden",
+            "weltweit",
+            "miteinander",
+            "vernetzt sind."
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Prüfungstraining",
+      "icon": "🏁",
+      "kurz": "Sprachbausteine · gemischte Aufgaben",
+      "aufgaben": [
+        {
+          "id": "v7-sb",
+          "typ": "luecke",
+          "kontext": "Sprachbausteine",
+          "frage": "Sprachbausteine: Antwort der Webagentur. Wählen Sie die richtige Lösung.",
+          "text": "Sehr geehrter Herr Becker,\n\nvielen Dank für Ihr Schreiben. Wir bedauern sehr, dass die {0} Probleme noch nicht gelöst sind. Unser Team hat den Fehler im Bezahlvorgang inzwischen gefunden, {1} es alle Funktionen noch einmal getestet hat.\n\nWir versichern Ihnen, dass der Shop am 8.4. online geht, {2} Ihnen zusätzliche Kosten entstehen. Damit alle Abteilungen gut {3} arbeiten, schlagen wir außerdem ein kurzes Treffen vor.\n\n{4} Sie damit einverstanden sind, melden Sie sich bitte bei mir.\n\nMit freundlichen Grüßen\nAnna Varga",
+          "gaps": [
+            {
+              "opts": [
+                "bestehenden",
+                "bestandenen",
+                "bestehende"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "indem",
+                "ohne dass",
+                "damit"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "ohne dass",
+                "indem",
+                "ohne zu"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "miteinander",
+                "gegeneinander",
+                "auseinander"
+              ],
+              "l": 0
+            },
+            {
+              "opts": [
+                "Falls",
+                "Ob",
+                "Obwohl"
+              ],
+              "l": 0
+            }
+          ]
+        },
+        {
+          "id": "v7-1",
+          "typ": "mc",
+          "kontext": "Partizip",
+          "frage": "Die ___ Rechner hatten weitere Probleme.",
+          "opts": [
+            "verwendeten",
+            "verwendenden",
+            "verwendete",
+            "verwenden"
+          ],
+          "l": 0
+        },
+        {
+          "id": "v7-2",
+          "typ": "mc",
+          "kontext": "Konnektoren",
+          "frage": "Er hat die Seite freigeschaltet, ___ sie zu testen.",
+          "opts": [
+            "ohne",
+            "ohne dass",
+            "indem",
+            "statt dass"
+          ],
+          "l": 0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,757 @@
+{
+ "id": "neu-in-der-region",
+ "titel": "Neu in der Region",
+ "untertitel": "Wohnort und Arbeitsplatz · Vermutungen · Reportage · Nomen-Verb-Verbindungen · Bewerbung fürs duale Studium · Arbeitsvertrag · Ausflüge",
+ "niveau": "B1/B2",
+ "reihe": "Prüfungstraining B1/B2",
+ "farbe": "#4b7d3a",
+ "mix": 15,
+ "intro": "Sieben Teile – jeder Teil kann einzeln gespielt werden. Der **Prüfungsmix** zieht zufällig Aufgaben aus allen Teilen.",
+ "kompakt": [
+  {
+   "titel": "Vermutungen äußern",
+   "zeilen": [
+    "Ich gehe davon aus, dass … · Ich nehme an, … · Vermutlich … · Wahrscheinlich … · Ich kann es nicht mit Sicherheit sagen, aber …"
+   ]
+  },
+  {
+   "titel": "Nomen-Verb-Verbindungen",
+   "zeilen": [
+    "Das **Nomen** trägt die Bedeutung, das Verb hat kaum eigene Bedeutung. Häufig in **schriftlichen** Texten.",
+    "**sich Gedanken machen** = beunruhigt sein · **die Kosten tragen** = bezahlen · **ein Gespräch führen** = sprechen",
+    "**Hilfe leisten** = helfen · **Einfluss nehmen** = beeinflussen · **in Kauf nehmen** = akzeptieren · **nicht in Frage kommen** = nicht möglich sein"
+   ]
+  },
+  {
+   "titel": "Ein Bewerbungsschreiben",
+   "zeilen": [
+    "**Einleitung:** Sehr geehrte/r … · mit großem Interesse habe ich Ihre Stellenanzeige gelesen. · hiermit bewerbe ich mich als …",
+    "**Bisherige Tätigkeiten:** Nach erfolgreichem Abschluss meines … · Ein Praktikum bei … hat mir gezeigt, dass … · In meiner jetzigen Tätigkeit als … bin ich …",
+    "**Gründe:** Die Arbeit in Ihrem Unternehmen reizt mich sehr, weil … · Aufgrund meiner Ausbildung glaube ich, dass …",
+    "**Schluss:** Über eine Einladung zu einem persönlichen Gespräch freue ich mich sehr. · Mit freundlichen Grüßen",
+    "**Kein Umgangssprache:** nicht „superinteressant“, „echt ok“, „cool“, „Bis die Tage“"
+   ]
+  },
+  {
+   "titel": "Wichtige Wörter im Arbeitsvertrag",
+   "zeilen": [
+    "**Probezeit:** Kündigung mit kurzer Frist möglich · **Vergütung:** Lohn bei Ausbildung/Studium · **Regelstudienzeit:** Zeit, in der man fertig sein soll",
+    "**Betriebsgeheimnis / Stillschweigen bewahren:** nicht weitererzählen · **Schriftform:** Änderungen nur schriftlich · **Schadensersatz:** Geld für einen Schaden"
+   ]
+  }
+ ],
+ "module": [
+  {
+   "titel": "Eine attraktive Region",
+   "icon": "🏙️",
+   "kurz": "Was macht eine Region attraktiv? · Vermutungen äußern",
+   "aufgaben": [
+    {
+     "id": "r1-bild",
+     "typ": "matrix",
+     "kontext": "Wortschatz",
+     "frage": "Was spricht für die Region? Ordnen Sie zu.",
+     "wahl": [
+      "Arbeit",
+      "Ausbildung/Studium",
+      "Freizeit/Kultur",
+      "Verkehr"
+     ],
+     "aussagen": [
+      [
+       "große Chemie- und Industrieunternehmen",
+       0
+      ],
+      [
+       "viele mittelständische Firmen",
+       0
+      ],
+      [
+       "eine duale Hochschule",
+       1
+      ],
+      [
+       "eine Akademie für Popmusik",
+       1
+      ],
+      [
+       "Altstadt mit Schloss am Fluss",
+       2
+      ],
+      [
+       "ein großes Fußballstadion",
+       2
+      ],
+      [
+       "Parks und Seen",
+       2
+      ],
+      [
+       "ein dichtes S-Bahn-Netz",
+       3
+      ]
+     ]
+    },
+    {
+     "id": "r1-verm",
+     "typ": "matrix",
+     "kontext": "Redemittel",
+     "frage": "Vermutung oder sichere Aussage?",
+     "wahl": [
+      "Vermutung",
+      "sichere Aussage"
+     ],
+     "aussagen": [
+      [
+       "Ich gehe davon aus, dass man dort leicht Arbeit findet.",
+       0
+      ],
+      [
+       "Ich nehme an, die Mieten sind hoch.",
+       0
+      ],
+      [
+       "Vermutlich gibt es viele Studierende.",
+       0
+      ],
+      [
+       "Ich kann es nicht mit Sicherheit sagen, aber …",
+       0
+      ],
+      [
+       "Die Universität wurde 1386 gegründet.",
+       1
+      ],
+      [
+       "Ich weiß genau, dass die Stadt am Rhein liegt.",
+       1
+      ]
+     ]
+    },
+    {
+     "id": "r1-1",
+     "typ": "mc",
+     "kontext": "Wortschatz",
+     "frage": "Eine große Stadt mit vielen Orten in der Umgebung, die wirtschaftlich eng verbunden sind, nennt man …",
+     "opts": [
+      "Metropolregion.",
+      "Dorfgemeinschaft.",
+      "Landkreis.",
+      "Kleinstadt."
+     ],
+     "l": 0
+    }
+   ]
+  },
+  {
+   "titel": "Eine Reportage",
+   "icon": "📰",
+   "kurz": "Zuwanderung in die Region · Leseverstehen",
+   "aufgaben": [
+    {
+     "id": "r2-rep",
+     "typ": "lesen",
+     "kontext": "Lesen",
+     "frage": "Lesen Sie die Reportage und beantworten Sie die Fragen.",
+     "textTitel": "Die Region wird immer attraktiver",
+     "text": "Kofi Mensah (27) strahlt, wenn man ihn fragt, warum er an den Rhein gekommen ist: „Ich kannte die Gegend schon, bevor ich hierher kam. Unser Deutschlehrer hat uns oft Fotos von den alten Städten am Fluss gezeigt.“\n\nFür Kofi war es wie ein Lottogewinn, als er die Chance bekam, hier ein Praktikum zu machen. Er ist einer von vielen, die wegen Arbeit oder Ausbildung gekommen sind. Das ist kein Zufall: Der Region geht es wirtschaftlich gut. Gleichzeitig macht man sich in den Betrieben Gedanken wegen der demografischen Entwicklung – die Bevölkerung schrumpft und der Bedarf an Fachkräften kann nur durch Zuwanderung gedeckt werden.\n\nDie große Stadt kam für Kofi wegen der hohen Mieten als Wohnort nicht in Frage. Er wohnt in einem Dorf zehn Kilometer entfernt und braucht mit der Straßenbahn 30 Minuten zur Arbeit. Die Fahrzeit nimmt er gern in Kauf. Nach dem Praktikum möchte er dual studieren.\n\nBilliger Wohnraum wird knapp. Die Regionalpolitik versucht deshalb, Einfluss auf den Arbeitsmarkt zu nehmen, indem sie kleineren Firmen Hilfe leistet, Fachkräfte zu finden und zu integrieren. Davon profitiert auch Kofi: Eine Integrationshelferin hat ihn bei der Wohnungssuche unterstützt und viele Gespräche mit ihm und für ihn geführt.",
+     "fragen": [
+      {
+       "f": "Woher kannte Kofi die Region?",
+       "opts": [
+        "aus dem Deutschunterricht",
+        "aus einem Urlaub",
+        "von Verwandten",
+        "aus dem Fernsehen"
+       ],
+       "l": 0
+      },
+      {
+       "f": "Warum kommen viele Menschen in die Region?",
+       "opts": [
+        "Es fehlen Fachkräfte.",
+        "Es gibt viele Geburten.",
+        "Die Wirtschaft hat Probleme.",
+        "Die Mieten sind niedrig."
+       ],
+       "l": 0
+      },
+      {
+       "f": "Warum wohnt Kofi nicht in der Stadt?",
+       "opts": [
+        "Die Mieten sind zu hoch.",
+        "Er mag keine Städte.",
+        "Es gibt keine Straßenbahn.",
+        "Seine Firma liegt im Dorf."
+       ],
+       "l": 0
+      },
+      {
+       "f": "Wie hat die Integrationshelferin geholfen?",
+       "opts": [
+        "bei Problemen im Alltag, z. B. der Wohnungssuche",
+        "mit Deutschunterricht",
+        "mit einem Praktikumsplatz",
+        "mit Geld"
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "r2-rf",
+     "typ": "matrix",
+     "kontext": "Lesen",
+     "frage": "Richtig oder falsch?",
+     "aussagen": [
+      [
+       "Kofi macht zurzeit ein Praktikum.",
+       true
+      ],
+      [
+       "Er findet die lange Fahrzeit schlimm.",
+       false
+      ],
+      [
+       "Die einheimische Bevölkerung wird kleiner.",
+       true
+      ],
+      [
+       "Billige Wohnungen gibt es genug.",
+       false
+      ],
+      [
+       "Er möchte später studieren und arbeiten.",
+       true
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Nomen-Verb-Verbindungen",
+   "icon": "🔗",
+   "kurz": "Bedeutung zuordnen · Sätze umformen",
+   "aufgaben": [
+    {
+     "id": "r3-zu",
+     "typ": "zu",
+     "kontext": "Bedeutung",
+     "frage": "Welche Nomen-Verb-Verbindung hat dieselbe Bedeutung?",
+     "paare": [
+      [
+       "beunruhigt sein",
+       "sich Gedanken machen"
+      ],
+      [
+       "etwas bezahlen",
+       "die Kosten tragen"
+      ],
+      [
+       "mit jemandem sprechen",
+       "ein Gespräch führen"
+      ],
+      [
+       "jemandem helfen",
+       "Hilfe leisten"
+      ],
+      [
+       "etwas beeinflussen",
+       "Einfluss nehmen"
+      ],
+      [
+       "etwas akzeptieren",
+       "etwas in Kauf nehmen"
+      ],
+      [
+       "nicht möglich sein",
+       "nicht in Frage kommen"
+      ]
+     ]
+    },
+    {
+     "id": "r3-lt",
+     "typ": "luecke",
+     "kontext": "Nomen-Verb-Verbindungen",
+     "frage": "Ergänzen Sie das passende Verb.",
+     "text": "Ich {0} mir Gedanken wegen meines befristeten Vertrags. Eine Wohnung in der Innenstadt {1} für mich nicht in Frage. Den langen Arbeitsweg {2} ich in Kauf. Die Firma {3} die Kosten für das Jobticket. Gestern habe ich ein langes Gespräch mit meiner Chefin {4}.",
+     "gaps": [
+      {
+       "opts": [
+        "mache",
+        "nehme",
+        "führe"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "kommt",
+        "nimmt",
+        "trägt"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "nehme",
+        "mache",
+        "leiste"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "trägt",
+        "nimmt",
+        "führt"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "geführt",
+        "gemacht",
+        "genommen"
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "r3-1",
+     "typ": "mc",
+     "kontext": "Umformen",
+     "frage": "„Die Politik versucht, Einfluss auf den Arbeitsmarkt zu nehmen.“ =",
+     "opts": [
+      "Die Politik versucht, den Arbeitsmarkt zu beeinflussen.",
+      "Die Politik nimmt den Arbeitsmarkt.",
+      "Die Politik bezahlt den Arbeitsmarkt.",
+      "Die Politik ist beunruhigt."
+     ],
+     "l": 0
+    },
+    {
+     "id": "r3-2",
+     "typ": "mc",
+     "kontext": "Regel",
+     "frage": "Wo findet man Nomen-Verb-Verbindungen besonders häufig?",
+     "opts": [
+      "in schriftlichen Texten",
+      "nur in Liedern",
+      "nur in Kindersprache",
+      "nie im Beruf"
+     ],
+     "l": 0
+    }
+   ]
+  },
+  {
+   "titel": "Bewerbung fürs duale Studium",
+   "icon": "🎓",
+   "kurz": "Stellenanzeige · Anschreiben · formell oder umgangssprachlich?",
+   "aufgaben": [
+    {
+     "id": "r4-anz",
+     "typ": "lesen",
+     "kontext": "Lesen",
+     "frage": "Lesen Sie die Anzeige und beantworten Sie die Fragen.",
+     "textTitel": "Duales Studium – Bachelor of Engineering, Fahrzeugtechnik",
+     "text": "**Ausbildungsdauer:** 3 Jahre · **Ausbildungsort:** Werk Ladenstadt\n**Voraussetzung:** Hochschulzulassung oder abgeschlossene Berufsausbildung mit Berufserfahrung\n**Unser Angebot:** Arbeit in einem führenden Unternehmen der Branche, überdurchschnittliche Vergütung – Sie sind schon während des Studiums finanziell unabhängig.\nIhre Ansprechpartnerin: Frau Ines Brück",
+     "fragen": [
+      {
+       "f": "Wie lange dauert das Studium?",
+       "opts": [
+        "drei Jahre",
+        "sechs Jahre",
+        "ein Jahr",
+        "das steht nicht da"
+       ],
+       "l": 0
+      },
+      {
+       "f": "Wer kann sich bewerben?",
+       "opts": [
+        "wer studieren darf oder eine Ausbildung mit Berufserfahrung hat",
+        "nur Abiturienten unter 20",
+        "nur Ingenieure",
+        "jeder ohne Bedingungen"
+       ],
+       "l": 0
+      },
+      {
+       "f": "Was wird über die Bezahlung gesagt?",
+       "opts": [
+        "Sie ist überdurchschnittlich.",
+        "Es gibt kein Geld.",
+        "Man muss Studiengebühren zahlen.",
+        "Sie ist sehr niedrig."
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "r4-ord",
+     "typ": "ordnen",
+     "kontext": "Anschreiben",
+     "frage": "Bringen Sie die Teile des Anschreibens in die richtige Reihenfolge.",
+     "zeilen": [
+      "Sehr geehrte Frau Brück,",
+      "wie mit Ihnen telefonisch besprochen, sende ich Ihnen meine Bewerbungsunterlagen.",
+      "Zurzeit mache ich ein Praktikum bei einer Firma für Medizintechnik.",
+      "Meine bisherigen Kurse habe ich mit guten Ergebnissen abgeschlossen.",
+      "An Ihrem Unternehmen reizt mich besonders die internationale Ausrichtung.",
+      "Ich habe muttersprachliche Englisch- und sehr gute Deutschkenntnisse.",
+      "Über eine Einladung zu einem persönlichen Gespräch freue ich mich sehr. Mit freundlichen Grüßen"
+     ]
+    },
+    {
+     "id": "r4-reg",
+     "typ": "matrix",
+     "kontext": "Register",
+     "frage": "Formell oder zu umgangssprachlich für eine Bewerbung?",
+     "wahl": [
+      "formell – passt",
+      "zu umgangssprachlich"
+     ],
+     "aussagen": [
+      [
+       "Mit großem Interesse habe ich Ihre Anzeige gelesen.",
+       0
+      ],
+      [
+       "Ihre Anzeige finde ich echt superinteressant.",
+       1
+      ],
+      [
+       "Ein Praktikum hat mir gezeigt, dass mir Technik liegt.",
+       0
+      ],
+      [
+       "Ich find Technik schon seit dem Kindergarten cool.",
+       1
+      ],
+      [
+       "Über eine Einladung zu einem Gespräch freue ich mich sehr.",
+       0
+      ],
+      [
+       "Wär gut, wenn wir uns mal unterhalten könnten.",
+       1
+      ],
+      [
+       "Mit freundlichen Grüßen",
+       0
+      ],
+      [
+       "Bis die Tage",
+       1
+      ]
+     ]
+    },
+    {
+     "id": "r4-b1",
+     "typ": "bau",
+     "kontext": "Satzbau",
+     "frage": "Bilden Sie den Satz.",
+     "steine": [
+      "Die Arbeit",
+      "in Ihrem Unternehmen",
+      "reizt mich",
+      "sehr,",
+      "weil",
+      "ich",
+      "mich für Recyclingtechnik",
+      "interessiere."
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Der Arbeitsvertrag",
+   "icon": "📃",
+   "kurz": "Vertrag lesen · Informationen finden",
+   "aufgaben": [
+    {
+     "id": "r5-ver",
+     "typ": "matrix",
+     "kontext": "Lesen",
+     "frage": "Lesen Sie den Vertrag. In welchem Abschnitt findet man die Antwort?",
+     "textTitel": "Arbeitsvertrag im Rahmen eines dualen Studiums (Auszug)",
+     "text": "**1.** Der Vertrag beginnt am 1. Oktober und endet mit dem Monatsende des Prüfungsmonats. Das Regelstudium dauert 6 Semester.\n**2.** Die Probezeit dauert 3 Monate. In dieser Zeit kann beiderseits mit einer Frist von 2 Wochen gekündigt werden.\n**3.** Die Vergütung beträgt im 1. Studienjahr 900 €, im 2. 1000 €, im 3. 1100 € monatlich.\n**4.** Die wöchentliche Arbeitszeit richtet sich nach den jeweiligen Praxisprojekten.\n**5.** Die Firma verpflichtet sich, dem Studierenden die nötigen Kenntnisse und Erfahrungen zu vermitteln.\n**6.** Der Mitarbeiter verpflichtet sich, über Betriebsgeheimnisse Stillschweigen zu bewahren und bei Krankheit spätestens am 3. Tag eine ärztliche Bescheinigung zu schicken.\n**7.** Der Urlaub richtet sich nach den betrieblichen Regelungen, mindestens 24 Werktage.\n**8.** Die Kündigung muss schriftlich mit Angabe der Gründe erfolgen.",
+     "wahl": [
+      "§1",
+      "§2",
+      "§3",
+      "§4",
+      "§5",
+      "§6",
+      "§7",
+      "§8"
+     ],
+     "aussagen": [
+      [
+       "Wie lange ist die Laufzeit des Vertrags?",
+       0
+      ],
+      [
+       "Wie lange dauert die Probezeit?",
+       1
+      ],
+      [
+       "Wie viel verdiene ich?",
+       2
+      ],
+      [
+       "Wie ist die Arbeitszeit geregelt?",
+       3
+      ],
+      [
+       "Was muss die Firma tun?",
+       4
+      ],
+      [
+       "Was sind meine Pflichten?",
+       5
+      ],
+      [
+       "Wie ist der Urlaub geregelt?",
+       6
+      ],
+      [
+       "Was passiert, wenn ich kündige?",
+       7
+      ]
+     ]
+    },
+    {
+     "id": "r5-fr",
+     "typ": "lesen",
+     "kontext": "Lesen",
+     "frage": "Beantworten Sie die Fragen zum Vertrag.",
+     "fragen": [
+      {
+       "f": "Wie viel verdient Kofi im 2. Studienjahr?",
+       "opts": [
+        "1000 €",
+        "900 €",
+        "1100 €",
+        "24 €"
+       ],
+       "l": 0
+      },
+      {
+       "f": "Bis wann muss er bei Krankheit eine Bescheinigung schicken?",
+       "opts": [
+        "spätestens am 3. Tag",
+        "am 1. Tag",
+        "nach einer Woche",
+        "gar nicht"
+       ],
+       "l": 0
+      },
+      {
+       "f": "Was bedeutet „Stillschweigen bewahren“?",
+       "opts": [
+        "nichts weitererzählen",
+        "laut sprechen",
+        "nicht arbeiten",
+        "kündigen"
+       ],
+       "l": 0
+      },
+      {
+       "f": "Was bedeutet „Regelstudium 6 Semester“?",
+       "opts": [
+        "Normalerweise ist man nach drei Jahren fertig.",
+        "Man muss sechs Prüfungen machen.",
+        "Man studiert sechs Monate.",
+        "Man hat sechs Fächer."
+       ],
+       "l": 0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Die Region kennenlernen",
+   "icon": "🚲",
+   "kurz": "Ausflüge planen · Einladungen · Redemittel",
+   "aufgaben": [
+    {
+     "id": "r6-chat",
+     "typ": "lesen",
+     "kontext": "Lesen",
+     "frage": "Lesen Sie die Nachrichten und beantworten Sie die Fragen.",
+     "posts": [
+      {
+       "name": "Kofi",
+       "text": "Hallo Frau Lin, darf ich Sie zum Dank am Freitag zu einem Ausflug nach Ladenburg einladen? Dort gibt es ein schönes Restaurant."
+      },
+      {
+       "name": "Frau Lin",
+       "text": "Das ist sehr nett, vielen Dank! Am Freitag habe ich leider schon einen Termin. Wie wäre es mit Samstag?"
+      },
+      {
+       "name": "Zelia",
+       "text": "Kofi, wir machen nächstes Wochenende eine Radtour nach Speyer: erst ins Technikmuseum, dann zum Dom. Fahrräder kann man in der S-Bahn mitnehmen. Kommst du mit?"
+      },
+      {
+       "name": "Kofi",
+       "text": "Leider bin ich bis zum 22. Juni jedes Wochenende in Prüfungen. Ab dem 23. habe ich Zeit!"
+      }
+     ],
+     "fragen": [
+      {
+       "f": "Wie reagiert Frau Lin auf die Einladung?",
+       "opts": [
+        "Sie freut sich, schlägt aber einen anderen Tag vor.",
+        "Sie lehnt ab.",
+        "Sie findet die Idee schlecht.",
+        "Sie kommt am Freitag."
+       ],
+       "l": 0
+      },
+      {
+       "f": "Was ist in Speyer geplant?",
+       "opts": [
+        "Technikmuseum und Dom",
+        "ein Konzert im Schloss",
+        "eine Übernachtung",
+        "ein Fußballspiel"
+       ],
+       "l": 0
+      },
+      {
+       "f": "Wann hat Kofi Zeit?",
+       "opts": [
+        "ab dem 23. Juni",
+        "an jedem Wochenende",
+        "nie",
+        "nur freitags"
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "r6-plan",
+     "typ": "ordnen",
+     "kontext": "Planen",
+     "frage": "Einen Betriebsausflug planen: Bringen Sie die Schritte in eine sinnvolle Reihenfolge.",
+     "zeilen": [
+      "Ideen sammeln und ein Ziel auswählen",
+      "Informationen sammeln (Anfahrt, Programm, Kosten)",
+      "die Informationen ordnen",
+      "den Ausflug im Team vorstellen"
+     ]
+    },
+    {
+     "id": "r6-1",
+     "typ": "mc",
+     "kontext": "Redemittel",
+     "frage": "Sie möchten eine Einladung höflich ablehnen. Was sagen Sie?",
+     "opts": [
+      "Vielen Dank für die Einladung, aber da habe ich leider schon einen Termin.",
+      "Keine Lust.",
+      "Das ist langweilig.",
+      "Ich komme nie mit."
+     ],
+     "l": 0
+    }
+   ]
+  },
+  {
+   "titel": "Prüfungstraining",
+   "icon": "🏁",
+   "kurz": "Sprachbausteine · gemischte Aufgaben",
+   "aufgaben": [
+    {
+     "id": "r7-sb",
+     "typ": "luecke",
+     "kontext": "Sprachbausteine",
+     "frage": "Sprachbausteine: Ein Bewerbungsschreiben. Wählen Sie die richtige Lösung.",
+     "text": "Sehr geehrte Frau Brück,\n\n{0} großem Interesse habe ich Ihre Anzeige auf jobportal.de gelesen. Seit zwei Jahren studiere ich Maschinenbau und mache zurzeit ein Praktikum {1} einer Firma in Mannheim.\n\nIch interessiere mich {2} für die Möglichkeit eines dualen Studiums, {3} ich Theorie und Praxis verbinden möchte. Meine Kurse habe ich mit guten Ergebnissen {4}.\n\nÜber eine Einladung zu einem persönlichen Gespräch {5} ich mich sehr.\n\nMit freundlichen Grüßen\nKofi Mensah",
+     "gaps": [
+      {
+       "opts": [
+        "Mit",
+        "Bei",
+        "Von"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "bei",
+        "an",
+        "für"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "deshalb sehr",
+        "darum aber",
+        "trotzdem"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "weil",
+        "deshalb",
+        "obwohl"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "abgeschlossen",
+        "abgeschließt",
+        "geschlossen ab"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "freue",
+        "würde",
+        "freut"
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "r7-1",
+     "typ": "mc",
+     "kontext": "Nomen-Verb",
+     "frage": "Die Firma ___ die Kosten für den Umzug.",
+     "opts": [
+      "trägt",
+      "nimmt",
+      "macht",
+      "führt"
+     ],
+     "l": 0
+    },
+    {
+     "id": "r7-2",
+     "typ": "mc",
+     "kontext": "Vertrag",
+     "frage": "In der ___ kann man mit einer kurzen Frist kündigen.",
+     "opts": [
+      "Probezeit",
+      "Freizeit",
+      "Regelstudienzeit",
+      "Urlaubszeit"
+     ],
+     "l": 0
+    }
+   ]
+  }
+ ]
+}

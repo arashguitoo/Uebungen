@@ -1,0 +1,322 @@
+{
+  "id": "bewerbung-schritt-fuer-schritt",
+  "titel": "Bewerbung Schritt für Schritt",
+  "untertitel": "Berufswortschatz · Jobsuche online · Jobbörsen und Jobmessen · Schlüsselqualifikationen · Anschreiben · Bewerbungsgespräch · Beschwerden beantworten",
+  "niveau": "B1/B2",
+  "reihe": "Prüfungstraining B1/B2",
+  "farbe": "#c4554d",
+  "mix": 15,
+  "intro": "Sieben Teile – jeder Teil kann einzeln gespielt werden. Der **Prüfungsmix** zieht zufällig Aufgaben aus allen Teilen.",
+  "kompakt": [
+    { "titel": "Jobsuche", "zeilen": [
+      "**Jobsuche der Arbeitsagentur:** größte kostenlose Jobbörse · **Berufenet:** Infos zu Berufen und ihren deutschen Bezeichnungen · **BIZ** (Berufsinformationszentrum): kostenlose Beratung vor Ort",
+      "**allgemeine** und **branchenspezifische** Jobbörsen · Stellengesuche und Lebensläufe online stellen",
+      "**Jobmessen:** Überblick über den Arbeitsmarkt, persönliche Kontakte mit Firmenvertretern",
+      "eine Stelle **finden** · einen Überblick **bekommen** · im Stellenteil **recherchieren** · den Lebenslauf online **stellen** · Kontakt **herstellen** · ins Gespräch **kommen**"
+    ]},
+    { "titel": "Schlüsselqualifikationen", "zeilen": [
+      "**Belastbarkeit:** gut mit Druck umgehen · **Flexibilität:** sich leicht an neue Situationen anpassen",
+      "**Kundenorientierung:** Kundenwünsche erfüllen · **Lernbereitschaft:** immer neues Wissen aneignen",
+      "**Motivation:** sich für die Ziele des Unternehmens einsetzen · **Organisationsfähigkeit:** Abläufe planen",
+      "**Selbstständigkeit:** eigenständig entscheiden · **Zuverlässigkeit:** Vereinbarungen einhalten"
+    ]},
+    { "titel": "Das Anschreiben", "zeilen": [
+      "**Wichtig:** passt zur Anzeige · kurze, klare Sätze · freundlich und sachlich · im Aktiv",
+      "**Vermeiden:** allgemeine Floskeln · Umgangssprache · Abkürzungen (u. a., m. M. n.)",
+      "**Aufbau:** Betreff → Bezug auf die Anzeige → Anrede → Begründung → Berufserfahrung → Persönliches → Bitte um Vorstellungsgespräch",
+      "**Redemittel:** Ich habe Erfahrung in … · Ich bin vertraut mit … · Ich bin gewohnt, … zu … · Ich verfüge über … · Ich lege Wert auf …"
+    ]},
+    { "titel": "Phasen des Bewerbungsgesprächs", "zeilen": [
+      "1. Aufwärmphase (Handschlag, Smalltalk) · 2. Qualifikation und Motivation · 3. persönlicher Hintergrund · 4. Informationen über Firma und Arbeitsplatz · 5. Arbeitsbedingungen (Eintritt, Gehalt, Arbeitszeit) · 6. Ihre Fragen · 7. Abschluss",
+      "Fragen nach **Schwangerschaft, Religion, Gewerkschaft, Gesundheit** muss man **nicht** beantworten.",
+      "**Höflich fragen:** Nehmen Sie doch bitte Platz. · Darf ich Ihnen etwas zu trinken anbieten? · Wann wäre es Ihnen möglich anzufangen? · Könnten Sie noch etwas über die Höhe meines Gehalts sagen?"
+    ]}
+  ],
+  "module": [
+    {
+      "titel": "Berufswortschatz wiederholen",
+      "icon": "🧠",
+      "kurz": "Berufe, Arbeitsorte, Werkzeuge · Komposita",
+      "aufgaben": [
+        {
+          "id": "u1-st", "typ": "matrix", "kontext": "Wortschatz",
+          "frage": "„Stadt – Land – Fluss“ mit Berufen: In welche Spalte gehört das Wort?",
+          "wahl": ["Beruf/Tätigkeit", "Arbeitsort", "Werkzeug/Material", "Vorteil/Nachteil"],
+          "aussagen": [
+            ["Handwerkerin", 0], ["Masseur", 0], ["Baustelle", 1], ["Klinik", 1], ["Hammer", 2], ["Bohrmaschine", 2], ["anstrengend", 3], ["abwechslungsreich", 3]
+          ]
+        },
+        { "id": "u1-komp", "typ": "zu", "kontext": "Komposita", "frage": "Was bedeuten die zusammengesetzten Wörter?", "paare": [
+          ["das Familienunternehmen", "eine Firma, die einer Familie gehört"],
+          ["die Elektrofachkraft", "eine ausgebildete Person für Elektroarbeiten"],
+          ["die Blitzschutzanlage", "Einrichtung, die ein Gebäude vor Blitzen schützt"],
+          ["die Höhentauglichkeit", "die Fähigkeit, in großer Höhe zu arbeiten"],
+          ["die Einarbeitungsphase", "die Zeit, in der man die neue Stelle kennenlernt"],
+          ["das Wunsch-Kriterium", "eine Eigenschaft, die gut, aber nicht nötig ist"]
+        ]},
+        { "id": "u1-1", "typ": "mc", "kontext": "Wortschatz", "frage": "„Vergütung“ ist fast das Gleiche wie …", "opts": ["Lohn oder Gehalt.", "Urlaub.", "Kündigung.", "Ausbildung."], "l": 0 }
+      ]
+    },
+    {
+      "titel": "Jobsuche online",
+      "icon": "🔍",
+      "kurz": "Trefferliste lesen · Berufssprache",
+      "aufgaben": [
+        {
+          "id": "u2-tab", "typ": "lesen", "kontext": "Lesen",
+          "frage": "Manuel sucht eine Stelle in Darmstadt. Lesen Sie die Trefferliste und beantworten Sie die Fragen.",
+          "textTitel": "Jobsuche: Elektro, Umkreis Darmstadt",
+          "text": "**Elektroniker – Betriebstechnik** · veröffentlicht 23.03. · Den Recruit Team (Personalvermittlung) · Darmstadt, 0 km · Beginn 09.05.\n**Elektrofachkraft** · 28.04. · Elektro Rahl GmbH · Darmstadt, 0 km · Beginn sofort\n**Elektriker Wind – Quereinsteiger** · 07.05. · zeitjobpartner – Personalmanagement · Weiterstadt, 6 km · Beginn 01.08.\n**Elektroanlagenmonteur/in** · 16.03. · Yannowi Electronics GmbH · Büttelborn, 9 km · Beginn sofort\n**Servicetechniker Außendienst** · 09.05. · ÖsGeTek Personal Recruiting · Frankfurt, 27 km · Beginn sofort\n**Elektroniker/in – Betriebstechnik** · 15.03. · Tratsch & Söhne GmbH · Mannheim, 46 km · Beginn 01.06.",
+          "fragen": [
+            { "f": "Welches Angebot ist am aktuellsten?", "opts": ["Servicetechniker Außendienst (09.05.)", "Elektrofachkraft (28.04.)", "Elektroniker/in Mannheim (15.03.)", "Elektroanlagenmonteur/in (16.03.)"], "l": 0 },
+            { "f": "Welche Firma ist am weitesten entfernt?", "opts": ["Tratsch & Söhne in Mannheim", "Elektro Rahl in Darmstadt", "Yannowi in Büttelborn", "ÖsGeTek in Frankfurt"], "l": 0 },
+            { "f": "Wo könnte Manuel am spätesten anfangen?", "opts": ["beim Elektriker-Angebot in Weiterstadt", "bei Elektro Rahl", "bei Yannowi", "bei ÖsGeTek"], "l": 0 },
+            { "f": "Welches Angebot hat vermutlich die Firma selbst gestellt?", "opts": ["Elektro Rahl GmbH", "zeitjobpartner – Personalmanagement", "ÖsGeTek Personal Recruiting", "Den Recruit Team"], "l": 0 }
+          ]
+        },
+        {
+          "id": "u2-verb", "typ": "luecke", "kontext": "Berufssprache",
+          "frage": "Ergänzen Sie das passende Verb.",
+          "text": "Auf einer Jobmesse kann man eine Stelle {0}, einen Überblick über den Arbeitsmarkt {1} und mit Firmenvertretern ins Gespräch {2}. Zu Hause kann man im Stellenteil der Zeitung {3} oder seinen Lebenslauf online {4}.",
+          "gaps": [
+            { "opts": ["finden", "kommen", "stellen"], "l": 0 },
+            { "opts": ["bekommen", "kommen", "herstellen"], "l": 0 },
+            { "opts": ["kommen", "finden", "stellen"], "l": 0 },
+            { "opts": ["recherchieren", "bekommen", "kommen"], "l": 0 },
+            { "opts": ["stellen", "kommen", "finden"], "l": 0 }
+          ]
+        },
+        { "id": "u2-1", "typ": "mc", "kontext": "Wortschatz", "frage": "Eine Person, die aus einem anderen Berufsfeld kommt und keine Ausbildung für die neue Tätigkeit hat, ist ein …", "opts": ["Quereinsteiger.", "Auszubildender.", "Vertreter.", "Arbeitgeber."], "l": 0 }
+      ]
+    },
+    {
+      "titel": "Jobbörsen und Jobmessen",
+      "icon": "🌐",
+      "kurz": "Infotext lesen · Satzteile verbinden",
+      "aufgaben": [
+        {
+          "id": "u3-text", "typ": "lesen", "kontext": "Lesen",
+          "frage": "Lesen Sie den Text. Welche Aussage stimmt?",
+          "textTitel": "Jobbörsen und Jobmessen",
+          "text": "Immer mehr Menschen nutzen für die Jobsuche das Internet. Online-Jobbörsen sind Plattformen, auf denen man viele Stellenangebote, auch Praktikums- und Ausbildungsplätze, findet. Für die Nutzer sind sie meistens kostenlos. Es gibt allgemeine und branchenspezifische Jobbörsen. Bei vielen kann man auch Stellengesuche und Lebensläufe online stellen. Die größte kostenlose Jobbörse in Deutschland ist die der Bundesagentur für Arbeit.\n\nJobmessen sind Veranstaltungen vor Ort. Arbeitssuchende bekommen einen Überblick über den Arbeitsmarkt und können mit Vertretern von Unternehmen – vielleicht dem künftigen Chef – ins Gespräch kommen. Unternehmen finden dort neue Mitarbeitende.",
+          "fragen": [
+            { "f": "Online-Jobbörsen …", "opts": ["bringen auch Stellengesuche.", "sind meistens kostenpflichtig.", "gibt es nur für bestimmte Branchen."], "l": 0 },
+            { "f": "Jobmessen …", "opts": ["sind eine Möglichkeit, Arbeitgeber persönlich kennenzulernen.", "wenden sich nur an Firmen.", "finden nur im Internet statt."], "l": 0 }
+          ]
+        },
+        { "id": "u3-zu", "typ": "zu", "kontext": "Lesen", "frage": "Verbinden Sie die Satzteile.", "paare": [
+          ["Viele Jobs werden", "in Online-Jobbörsen angeboten."],
+          ["Online lassen sich auch", "Ausbildungs- und Praktikumsstellen finden."],
+          ["Wer ein Stellengesuch aufgeben will,", "kann seinen Lebenslauf online stellen."],
+          ["Bei Jobmessen können Arbeitssuchende", "persönlich mit Firmenvertretern sprechen."],
+          ["Ein Blick in die Liste der Jobmessen-Termine", "kann sich lohnen."]
+        ]},
+        {
+          "id": "u3-mail", "typ": "ordnen", "kontext": "Schreiben",
+          "frage": "Ein Freund fragt, ob Sie mit zur Jobmesse kommen. Bringen Sie Ihre Antwort in die richtige Reihenfolge.",
+          "zeilen": [
+            "Hallo Jonas,",
+            "vielen Dank für die Info zur Jobmesse – davon wusste ich noch gar nichts!",
+            "Ich komme sehr gern mit, weil ich gerade eine neue Stelle suche.",
+            "Besonders interessieren mich die Stände der Logistikfirmen und der Krankenhäuser.",
+            "Wollen wir uns um 10 Uhr am Eingang treffen? Viele Grüße, Amira"
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Schlüsselqualifikationen",
+      "icon": "🗝️",
+      "kurz": "Formulierungen in Stellenanzeigen verstehen",
+      "aufgaben": [
+        {
+          "id": "u4-sq", "typ": "matrix", "kontext": "Lesen",
+          "frage": "Welche Schlüsselqualifikation ist gemeint?",
+          "wahl": ["Belastbarkeit", "Flexibilität", "Kundenorientierung", "Lernbereitschaft", "Motivation", "Organisationsfähigkeit", "Selbstständigkeit", "Zuverlässigkeit"],
+          "aussagen": [
+            ["Sie können gut mit Druck und schwierigen Situationen umgehen.", 0],
+            ["Stressige Arbeitstage sind für Sie kein Problem.", 0],
+            ["Sie passen sich leicht an unterschiedliche Situationen an.", 1],
+            ["Die Interaktion mit Kunden gehört zu Ihren Stärken.", 2],
+            ["Sie sind immer daran interessiert, sich neues Wissen anzueignen.", 3],
+            ["Ihre Bereitschaft, sich für die Ziele des Unternehmens einzusetzen, ist hoch.", 4],
+            ["Sie können Abläufe planen und entwickeln.", 5],
+            ["Sie treffen eigenständig Entscheidungen.", 6],
+            ["Man kann sich jederzeit auf Sie verlassen.", 7],
+            ["Dass Sie Vereinbarungen einhalten, ist für Sie selbstverständlich.", 7]
+          ]
+        },
+        { "id": "u4-1", "typ": "mc", "kontext": "Anschreiben", "frage": "Sie möchten Ihre Kontaktfähigkeit zeigen. Welcher Satz passt am besten in ein Anschreiben?", "opts": ["Ich komme leicht mit Menschen in Kontakt, zum Beispiel mit den Eltern im Kindergarten meiner Tochter.", "Ich bin echt kommunikativ.", "Kontakte sind voll mein Ding.", "Ich rede halt viel."], "l": 0 }
+      ]
+    },
+    {
+      "titel": "Ein Anschreiben schreiben",
+      "icon": "✉️",
+      "kurz": "Teile zuordnen · Redemittel · Anschreiben ordnen",
+      "aufgaben": [
+        {
+          "id": "u5-teil", "typ": "matrix", "kontext": "Aufbau",
+          "frage": "Manuel bewirbt sich als Elektrofachkraft. Zu welchem Teil gehört der Satz?",
+          "wahl": ["Betreff", "Bezug auf die Anzeige", "Anrede", "Begründung", "Berufserfahrung", "Persönliches", "Bitte um Gespräch"],
+          "aussagen": [
+            ["Bewerbung um die Stelle als Elektrofachkraft", 0],
+            ["Ihre Anzeige in der Jobsuche der Arbeitsagentur vom 28.04.", 1],
+            ["Sehr geehrter Herr Phillips,", 2],
+            ["die Anforderungen in Ihrer Anzeige passen hervorragend zu meiner beruflichen Qualifikation.", 3],
+            ["Durch meine 12-jährige Tätigkeit bin ich mit den gängigen Elektroinstallationen vertraut.", 4],
+            ["Ich arbeite sehr gern im Team – das habe ich auch in meinem Fußballverein bewiesen.", 5],
+            ["Auf Ihre Einladung zu einem persönlichen Gespräch freue ich mich.", 6]
+          ]
+        },
+        {
+          "id": "u5-syn", "typ": "zu", "kontext": "Berufssprache",
+          "frage": "Wie sagt man es im Anschreiben?",
+          "paare": [
+            ["passen sehr gut zu", "passen hervorragend zu"],
+            ["Ich kenne die gängigen Installationen.", "Ich bin mit den gängigen Installationen vertraut."],
+            ["ist für mich nichts Neues", "bin ich gewohnt"],
+            ["Wichtig ist mir …", "Ich lege Wert auf …"],
+            ["Das habe ich gezeigt.", "Das habe ich bewiesen."],
+            ["Ich habe den Führerschein.", "Ich verfüge über den Führerschein."]
+          ]
+        },
+        {
+          "id": "u5-tipp", "typ": "matrix", "kontext": "Tipps",
+          "frage": "Anschreiben: Wichtig oder vermeiden?",
+          "wahl": ["wichtig", "vermeiden"],
+          "aussagen": [
+            ["passt genau zur Stellenanzeige", 0], ["kurze und klare Sätze", 0], ["freundlicher und sachlicher Ton", 0], ["im Aktiv schreiben", 0],
+            ["allgemeine Floskeln wie „Hiermit bewerbe ich mich …“", 1], ["„Ich finde Ihre Firma echt cool.“", 1], ["Abkürzungen wie u. a. oder m. M. n.", 1]
+          ]
+        },
+        {
+          "id": "u5-ord", "typ": "ordnen", "kontext": "Lesen",
+          "frage": "Eine Bewerbung als Erzieherin: Bringen Sie die Teile in die richtige Reihenfolge.",
+          "zeilen": [
+            "Bewerbung um eine Ausbildungsstelle als Erzieherin",
+            "Sehr geehrte Damen und Herren,",
+            "mit großem Interesse habe ich Ihre Anzeige gelesen und mich ausführlich auf Ihrer Homepage informiert.",
+            "Ich habe in Syrien Lehramt studiert, musste das Studium aber abbrechen. Die Arbeit mit Kindern war schon immer mein Berufsziel.",
+            "Im Dezember habe ich die B2-Prüfung bestanden und danach ein Praktikum in einer Kita absolviert – mit sehr positiven Rückmeldungen.",
+            "Gern biete ich Ihnen ein Praktikum an, damit Sie sich ein Bild von mir machen können.",
+            "Mit freundlichen Grüßen"
+          ]
+        },
+        { "id": "u5-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz.", "steine": ["Ich", "bin", "gewohnt,", "Arbeiten", "beim Kunden", "selbstständig", "zu erledigen."] }
+      ]
+    },
+    {
+      "titel": "Das Bewerbungsgespräch",
+      "icon": "🤝",
+      "kurz": "Phasen · Fragen und Antworten · höflich fragen · erlaubte Fragen",
+      "aufgaben": [
+        {
+          "id": "u6-ph", "typ": "ordnen", "kontext": "Phasen",
+          "frage": "Bringen Sie die Phasen eines Bewerbungsgesprächs in eine typische Reihenfolge.",
+          "zeilen": [
+            "Smalltalk zu Beginn des Gesprächs",
+            "Fragen nach Qualifikation und Motivation",
+            "Fragen zum persönlichen Hintergrund",
+            "Informationen über Firma und Arbeitsplatz",
+            "wichtige Punkte des Arbeitsvertrags",
+            "Fragen des Bewerbers",
+            "Abschluss des Gesprächs"
+          ]
+        },
+        { "id": "u6-zu", "typ": "zu", "kontext": "Gespräch", "frage": "Welche Antwort passt zur Frage?", "paare": [
+          ["Haben Sie gut hergefunden?", "Ja, danke, problemlos."],
+          ["Warum bewerben Sie sich für diese Stelle?", "Weil sie perfekt zu meiner Berufserfahrung passt."],
+          ["Erzählen Sie doch mehr über Ihren Berufsweg.", "Ja, gerne. Nach meiner Ausbildung habe ich …"],
+          ["Wann könnten Sie bei uns anfangen?", "Ich könnte frühestens im Juli anfangen."],
+          ["Haben Sie selbst noch Fragen?", "Ja, ich habe noch eine Frage zur Einarbeitung."],
+          ["Wir melden uns Ende nächster Woche.", "Ich danke Ihnen sehr für das Gespräch."]
+        ]},
+        { "id": "u6-hoe", "typ": "zu", "kontext": "Höflich sprechen", "frage": "Sagen Sie es höflicher.", "paare": [
+          ["Setzen Sie sich.", "Nehmen Sie doch bitte Platz."],
+          ["Trinken Sie etwas?", "Darf ich Ihnen etwas zu trinken anbieten?"],
+          ["Erzählen Sie noch mehr.", "Darüber würde ich gerne noch mehr erfahren."],
+          ["Wann können Sie anfangen?", "Wann wäre es Ihnen möglich anzufangen?"],
+          ["Wie viel verdiene ich?", "Könnten Sie noch etwas über die Höhe meines Gehalts sagen?"]
+        ]},
+        {
+          "id": "u6-rf", "typ": "matrix", "kontext": "Lesen",
+          "frage": "Phasen des Vorstellungsgesprächs: Richtig oder falsch?",
+          "aussagen": [
+            ["Das Gespräch fängt meistens mit ein bisschen Smalltalk an.", true],
+            ["Auf ein Vorstellungsgespräch kann man sich nicht vorbereiten.", false],
+            ["Man muss nicht auf alle persönlichen Fragen antworten.", true],
+            ["Der Bewerber kann Fragen über das Unternehmen stellen.", true],
+            ["Es werden auch Punkte aus dem Arbeitsvertrag angesprochen.", true],
+            ["Man sollte den Gesprächspartner nicht direkt anschauen.", false]
+          ]
+        },
+        {
+          "id": "u6-fr", "typ": "matrix", "kontext": "Rechte",
+          "frage": "Muss man diese Frage im Bewerbungsgespräch beantworten?",
+          "wahl": ["ja, normale Frage", "nein, muss man nicht"],
+          "aussagen": [
+            ["Welche Erfahrungen haben Sie mit Elektroinstallationen?", 0],
+            ["Sind Sie schwanger?", 1],
+            ["Wann könnten Sie anfangen?", 0],
+            ["Welcher Religion gehören Sie an?", 1],
+            ["Sind Sie Mitglied in einer Gewerkschaft?", 1],
+            ["Warum möchten Sie bei uns arbeiten?", 0]
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Eine Beschwerde beantworten",
+      "icon": "📨",
+      "kurz": "Beschwerde lesen · Probleme, Gründe, Lösungen · Angebote · Sprachbausteine",
+      "aufgaben": [
+        {
+          "id": "u7-mail", "typ": "lesen", "kontext": "Lesen",
+          "frage": "Lesen Sie die E-Mail. Warum beschwert sich Herr Messer?",
+          "textTitel": "An das Team der Kochschule „Pfannenwerk“",
+          "text": "Liebes Team,\n\nleider bin ich von Ihrem Kochkurs am letzten Samstagabend sehr enttäuscht: Wir waren 20 Personen statt wie angekündigt 10. Deshalb war es im Raum viel zu eng. Außerdem haben wir nicht, wie versprochen, die Rezepte bekommen. Am ärgerlichsten fand ich aber, dass der Salat welk und die Zucchini teilweise schon schimmelig waren. Aus diesen Gründen verlange ich 50 Prozent der Kursgebühr zurück.\n\nViele Grüße\nMarkus Messer",
+          "fragen": [
+            { "f": "Was ist laut Herrn Messer das größte Ärgernis?", "opts": ["Die Zutaten waren nicht frisch.", "Es war zu eng.", "Die Rezepte fehlten.", "Der Kurs war zu teuer."], "l": 0 },
+            { "f": "Was verlangt er?", "opts": ["die Hälfte der Kursgebühr zurück", "einen neuen Kurs", "nur eine Entschuldigung", "die ganze Gebühr zurück"], "l": 0 }
+          ]
+        },
+        {
+          "id": "u7-pgl", "typ": "matrix", "kontext": "Probleme und Lösungen",
+          "frage": "Welche Lösung passt zum Problem?",
+          "wahl": ["Anmeldungen werden in Zukunft genau kontrolliert.", "Den Lieferanten gewechselt.", "Die Rezepte werden geschickt."],
+          "aussagen": [
+            ["20 Personen statt 10 (Fehler im Anmeldesystem)", 0],
+            ["Die Zutaten waren nicht frisch (Lieferant hatte Probleme).", 1],
+            ["Rezepte nicht bekommen (Missverständnis mit der Kursleitung)", 2]
+          ]
+        },
+        {
+          "id": "u7-ang", "typ": "matrix", "kontext": "Angebote",
+          "frage": "Welche Angebote passen, um Herrn Messer zu versöhnen?",
+          "wahl": ["passt", "passt nicht"],
+          "aussagen": [
+            ["30 % Rabatt auf den nächsten Kurs", 0],
+            ["zum nächsten Kurs kann gratis eine weitere Person mitkommen", 0],
+            ["Rückerstattung von 50 Euro", 0],
+            ["ein 20-Euro-Gutschein für weitere Buchungen", 0],
+            ["die nächste Reparatur bis 30 Euro ist kostenlos", 1],
+            ["die nächste Überprüfung des Geräts ist kostenlos", 1]
+          ]
+        },
+        {
+          "id": "u7-sb", "typ": "luecke", "kontext": "Sprachbausteine",
+          "frage": "Sprachbausteine: Die Antwort der Kochschule. Wählen Sie die richtige Lösung.",
+          "text": "Sehr geehrter Herr Messer,\n\nvielen Dank für Ihre E-Mail. Es tut uns sehr leid, {0} Sie mit dem Kurs nicht zufrieden waren. Leider gab es einen Fehler {1} unserem Anmeldesystem, {2} doppelt so viele Personen da waren. Inzwischen kontrollieren wir alle Anmeldungen genau. Auch den Lieferanten {3} wir gewechselt. Die Rezepte schicken wir Ihnen im Anhang.\n\nAls Entschädigung {4} wir Ihnen 50 Euro zurück und laden Sie zu einem weiteren Kurs ein. Wir hoffen, {5} Sie uns treu bleiben.\n\nMit freundlichen Grüßen\nIhr Team vom Pfannenwerk",
+          "gaps": [
+            { "opts": ["dass", "ob", "wenn"], "l": 0 },
+            { "opts": ["in", "an", "bei der"], "l": 0 },
+            { "opts": ["sodass", "obwohl", "damit"], "l": 0 },
+            { "opts": ["haben", "sind", "werden"], "l": 0 },
+            { "opts": ["erstatten", "bekommen", "verlangen"], "l": 0 },
+            { "opts": ["dass", "ob", "weil"], "l": 0 }
+          ]
+        }
+      ]
+    }
+  ]
+}

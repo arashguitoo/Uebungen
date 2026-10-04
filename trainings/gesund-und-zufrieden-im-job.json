@@ -1,0 +1,338 @@
+{
+  "id": "gesund-und-zufrieden-im-job",
+  "titel": "Gesund und zufrieden im Job",
+  "untertitel": "Gefühle im Beruf · Gesundheitsförderung · Nominalisierung · gutes Arbeitsumfeld · Modalpartikeln · Mitarbeitergespräch · Kündigung · Kritik",
+  "niveau": "B1/B2",
+  "reihe": "Prüfungstraining B1/B2",
+  "farbe": "#6b8e23",
+  "mix": 15,
+  "intro": "Acht Teile – jeder Teil kann einzeln gespielt werden. Der **Prüfungsmix** zieht zufällig Aufgaben aus allen Teilen.",
+  "kompakt": [
+    { "titel": "Nominalisierung von Verben", "zeilen": [
+      "**Verb ohne Endung** (mit/ohne Vokaländerung): ausbauen → der Ausbau · auswählen → die Auswahl",
+      "**das + Infinitiv:** fehlen → das Fehlen · essen → das Essen",
+      "**die + -ung:** fördern → die Förderung · optimieren → die Optimierung",
+      "**der/die + -er/-erin:** mitarbeiten → der Mitarbeiter / die Mitarbeiterin",
+      "**die/der + -e:** folgen → die Folge · helfen → die Hilfe",
+      "**die/das + -(t)nis:** erkennen → die Erkenntnis · ergeben → das Ergebnis",
+      "**die + -(t)ion:** motivieren → die Motivation",
+      "**Akkusativergänzung** wird zum **Genitiv**: Die Firma führt einen Gesundheitstag ein. → die Einführung **eines Gesundheitstages** durch die Firma",
+      "**Ohne Artikelwort** → **von + D**: Referenten vermitteln Strategien. → die Vermittlung **von Strategien** durch Referenten"
+    ]},
+    { "titel": "Einen Vortrag halten", "zeilen": [
+      "**Einleitung:** Ich spreche über das Thema … · Mein Thema lautet … · Bei mir geht es um …",
+      "**Hauptteil:** Das ist für mich besonders wichtig, weil … · Ich brauche unbedingt … · Ohne … könnte ich nicht gut arbeiten. · Für mich gehört … auf jeden Fall dazu.",
+      "**Schluss:** Zusammenfassend möchte ich sagen, … · Abschließend möchte ich noch erwähnen, dass … · Lassen Sie mich zum Schluss noch sagen: …"
+    ]},
+    { "titel": "Modalpartikeln", "zeilen": [
+      "Typisch für die **gesprochene** Sprache. Sie **verstärken** oder schwächen Gefühle und Absichten ab. Meist stehen sie **nach dem Verb**; die Bedeutung hängt vom **Kontext** und von der **Betonung** ab.",
+      "**aber:** Freundlichkeit (Das ist aber schön!) · Überraschung (Das ist aber ungewöhnlich.)",
+      "**doch:** Freundlichkeit (Das mache ich doch gerne.) · Empörung (Das ist doch unmöglich!) · Vorschlag/Ermunterung (Sprich doch mal mit dem Chef!)",
+      "**ja:** Freundlichkeit (Das ist ja toll.) · Überraschung (Hier sind ja die Verträge!) · Empörung (Das ist ja gemein!)",
+      "**mal:** freundliche Aufforderung (Geben Sie mir bitte mal die Zange.)",
+      "**denn:** Freundlichkeit/Interesse in Fragen (Was gibt's denn Neues?) · Überraschung (Wo kommst du denn jetzt her?)"
+    ]},
+    { "titel": "Um Rat fragen und Rat geben", "zeilen": [
+      "**Fragen:** Ich bin mir nicht sicher, ob … · Was würdest du an meiner Stelle machen? · Hast du einen Tipp für mich? · Sollte ich vielleicht …?",
+      "**Raten:** An deiner Stelle würde ich … · Ich kann dir nur raten, … · Vielleicht solltest du … · Frag doch mal … · Ich würde dir empfehlen, …",
+      "**Vertraulichkeit:** Können wir mal unter vier Augen sprechen? · Das bleibt aber bitte unter uns. · Könnten Sie das vertraulich behandeln?"
+    ]},
+    { "titel": "Kündigung durch Arbeitnehmer", "zeilen": [
+      "Eine Kündigung muss **schriftlich** sein, mit **eigenhändiger Unterschrift** – per Mail oder WhatsApp ist sie **nicht gültig**.",
+      "Gesetzliche Frist für Beschäftigte: **vier Wochen zum 15. oder zum Ende eines Monats**; im Vertrag kann etwas anderes stehen.",
+      "Wichtig: Absender · Empfänger (oft die **Personalabteilung**) · **Datum** · Betreff · „hiermit kündige ich …“ · Termin („fristgerecht zum …“) · Bitte um Bestätigung · Bitte um **qualifiziertes Arbeitszeugnis** · Dank · Unterschrift"
+    ]},
+    { "titel": "Konstruktiv mit Kritik umgehen", "zeilen": [
+      "**Verhalten erklären:** Das stimmt, aber …, weil … · Es ist so, dass … · Es war leider nicht möglich, …",
+      "**Kritik zurückweisen:** Das haben Sie falsch verstanden, es war so: … · Es stimmt nicht, dass … · … war nicht meine Schuld.",
+      "**Kritik annehmen:** Ja, ich habe auch gemerkt, dass … nicht in Ordnung war. · Ich kann gut verstehen, dass Sie das ansprechen müssen. · Danke, dass Sie mich darauf hingewiesen haben."
+    ]}
+  ],
+  "module": [
+    {
+      "titel": "Gefühle im Beruf",
+      "icon": "🙂",
+      "kurz": "Situationen und Emotionen einschätzen",
+      "aufgaben": [
+        {
+          "id": "i1-sit", "typ": "matrix", "kontext": "Situationen",
+          "frage": "Welches Gefühl passt am besten zur Situation?",
+          "wahl": ["Freude", "Ärger", "Unsicherheit", "Stolz", "Stress"],
+          "aussagen": [
+            ["Die Kundin bedankt sich herzlich für die gute Beratung.", 0],
+            ["Der Flug ist schon wieder verschoben worden, und niemand am Schalter kann helfen.", 1],
+            ["Am ersten Tag an der Kasse weiß Mira nicht, welche Taste sie drücken soll.", 2],
+            ["Das Team hat das Projekt rechtzeitig abgeschlossen und die Chefin lobt alle.", 3],
+            ["Drei Kunden warten, das Telefon klingelt und der Drucker streikt.", 4],
+            ["Der Handwerker hat den Termin vergessen und der Kunde steht vor der Tür.", 1]
+          ]
+        },
+        { "id": "i1-wort", "typ": "zu", "kontext": "Wortschatz", "frage": "Was bedeuten die Ausdrücke?", "paare": [
+          ["genervt sein", "sich über etwas ärgern, keine Geduld mehr haben"],
+          ["erleichtert sein", "froh sein, dass etwas Schweres vorbei ist"],
+          ["angespannt sein", "nervös und unruhig sein"],
+          ["gelassen bleiben", "ruhig bleiben, auch wenn es Probleme gibt"],
+          ["enttäuscht sein", "traurig sein, weil etwas nicht so ist wie erwartet"]
+        ]},
+        { "id": "i1-m1", "typ": "mc", "kontext": "Reagieren", "frage": "Ein verärgerter Fluggast schimpft am Schalter. Was ist eine professionelle Reaktion?", "opts": ["Ich verstehe Ihren Ärger. Ich schaue sofort, welche Möglichkeiten es gibt.", "Schreien Sie nicht so!", "Das ist nicht mein Problem.", "Dann fliegen Sie eben mit einer anderen Firma."], "l": 0 },
+        { "id": "i1-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz.", "steine": ["Ich", "war", "total erleichtert,", "als", "die Kundin", "endlich", "zufrieden", "war."] }
+      ]
+    },
+    {
+      "titel": "Gesundheit am Arbeitsplatz",
+      "icon": "🥗",
+      "kurz": "Artikel aus dem Mitarbeitermagazin · Maßnahmen der Gesundheitsförderung",
+      "aufgaben": [
+        {
+          "id": "i2-art", "typ": "lesen", "kontext": "Lesen",
+          "frage": "Lesen Sie den Artikel aus dem Mitarbeitermagazin und beantworten Sie die Fragen.",
+          "textTitel": "Fit im Job – eure Ideen sind gefragt!",
+          "text": "Ein Unternehmen ist nur dann erfolgreich, wenn seine Beschäftigten motiviert, zufrieden und gesund sind. Betriebliche Gesundheitsförderung bedeutet: Arbeitgeber und Arbeitnehmende arbeiten zusammen, um Gesundheit und Wohlbefinden zu stärken – auch wenn die Arbeitsbelastung hoch ist. Wir vom Betriebsrat haben drei Vorschläge gesammelt, die wir an die Geschäftsleitung weitergeben möchten. Schreibt uns, was ihr davon haltet!\n\n**1. Gesundheitstag:** Wie auf einer Messe stellen sich an Ständen Angebote vor, bei denen man mitmachen kann: Vorsorgeuntersuchungen, Übungen zum richtigen Heben und Tragen, ein Entspannungstraining. Die Teilnahme ist kostenlos und freiwillig; die Krankenkassen helfen bei der Organisation.\n\n**2. Seminar gegen Stress:** Stress kann dazu führen, dass Menschen sich nicht mehr wohlfühlen oder krank werden. In einem eintägigen Seminar lernen Interessierte, wie sie besser mit der Belastung umgehen und Stress im Team gemeinsam bewältigen.\n\n**3. Gesünder essen:** Weil die Kantine kaum ausgewogene warme Gerichte anbietet, essen viele Fastfood vom Imbiss. Die Firma sollte den Betreiber zu einem gesünderen Speiseplan verpflichten und das Essen mit einem Zuschuss verbessern.",
+          "fragen": [
+            { "f": "Was ist die Voraussetzung für ein erfolgreiches Unternehmen?", "opts": ["motivierte, zufriedene und gesunde Beschäftigte", "eine große Kantine", "möglichst viele Seminare", "eine hohe Arbeitsbelastung"], "l": 0 },
+            { "f": "Was möchte der Betriebsrat von den Mitarbeitenden?", "opts": ["ihre Meinung zu den Vorschlägen", "Geld für den Gesundheitstag", "dass sie in der Kantine kochen", "dass sie Überstunden machen"], "l": 0 },
+            { "f": "Wer hilft beim Gesundheitstag?", "opts": ["die Krankenkassen", "der Kantinenbetreiber", "die Geschäftsleitung allein", "ein Fitnessstudio"], "l": 0 },
+            { "f": "Was lernt man im Seminar?", "opts": ["besser mit Stress umzugehen", "gesund zu kochen", "richtig zu heben", "Vorsorgeuntersuchungen zu machen"], "l": 0 },
+            { "f": "Warum essen viele Beschäftigte Fastfood?", "opts": ["Die Kantine hat kaum gesunde warme Gerichte.", "Fastfood ist gesünder.", "Die Kantine ist zu teuer.", "Es gibt keine Kantine."], "l": 0 }
+          ]
+        },
+        {
+          "id": "i2-mass", "typ": "matrix", "kontext": "Maßnahmen",
+          "frage": "Zu welchem Vorschlag gehört das?",
+          "wahl": ["Gesundheitstag", "Stressseminar", "Kantine"],
+          "aussagen": [
+            ["Übungen zum richtigen Heben und Tragen", 0], ["Vorsorgeuntersuchungen", 0],
+            ["Strategien zur Stressbewältigung", 1], ["praktische Übungen mit erfahrenen Referenten", 1],
+            ["ein ausgewogener Speiseplan", 2], ["ein Zuschuss für besseres Essen", 2]
+          ]
+        },
+        { "id": "i2-m1", "typ": "mc", "kontext": "Wortschatz", "frage": "„Vorbeugen“ bedeutet …", "opts": ["etwas tun, damit ein Problem gar nicht erst entsteht.", "sich nach vorne beugen.", "einen Fehler zugeben.", "eine Krankheit behandeln."], "l": 0, "x": "Das Nomen dazu: die **Prävention** / die **Vorbeugung**." }
+      ]
+    },
+    {
+      "titel": "Nominalisierung",
+      "icon": "🔤",
+      "kurz": "Nomen aus Verben bilden · Notizen im Nominalstil",
+      "aufgaben": [
+        {
+          "id": "i3-typ", "typ": "matrix", "kontext": "Bildung",
+          "frage": "Wie wird das Verb nominalisiert?",
+          "wahl": ["ohne Endung", "das + Infinitiv", "-ung", "-er/-erin", "-e", "-nis", "-ion"],
+          "aussagen": [
+            ["ausbauen → der Ausbau", 0], ["fehlen → das Fehlen", 1], ["fördern → die Förderung", 2], ["optimieren → die Optimierung", 2],
+            ["mitarbeiten → die Mitarbeiterin", 3], ["folgen → die Folge", 4], ["erkennen → die Erkenntnis", 5], ["motivieren → die Motivation", 6]
+          ]
+        },
+        { "id": "i3-zu", "typ": "zu", "kontext": "Nomen", "frage": "Welches Nomen gehört zum Verb?", "paare": [
+          ["stärken", "die Stärkung"],
+          ["nutzen", "die Nutzung"],
+          ["einführen", "die Einführung"],
+          ["teilnehmen", "die Teilnahme"],
+          ["ergeben", "das Ergebnis"],
+          ["entscheiden", "die Entscheidung"]
+        ]},
+        { "id": "i3-1", "typ": "mc", "kontext": "Genitiv", "frage": "„Die Firma führt einen Gesundheitstag ein.“ → die Einführung ___ durch die Firma", "opts": ["eines Gesundheitstages", "einen Gesundheitstag", "von einen Gesundheitstag", "einem Gesundheitstag"], "l": 0 },
+        { "id": "i3-2", "typ": "mc", "kontext": "von + Dativ", "frage": "„Referenten vermitteln Strategien.“ → die Vermittlung ___ durch Referenten", "opts": ["von Strategien", "der Strategien von", "Strategien", "für Strategien"], "l": 0, "x": "Ohne Artikelwort steht **von + Dativ**." },
+        { "id": "i3-3", "typ": "mc", "kontext": "Notizen", "frage": "„Wir wollen die Bedingungen am Arbeitsplatz optimieren.“ – Welche Notiz passt?", "opts": ["Optimierung der Bedingungen am Arbeitsplatz", "Optimieren Bedingungen Arbeitsplatz wollen", "die Bedingungen optimiert", "Bedingung der Optimierung"], "l": 0 },
+        {
+          "id": "i3-lt", "typ": "luecke", "kontext": "Nominalstil",
+          "frage": "Notizen zum Artikel. Ergänzen Sie die Nomen.",
+          "text": "Bleibt gesund!\n– Ziel: {0} der Gesundheit trotz hoher Arbeitsbelastung\n– {1} und Ausbau vorhandener Ansätze\n– {2} persönlicher Kompetenzen\n– gezieltere {3} zur Mitarbeiterbeteiligung\n– {4}: Stress → Menschen werden krank",
+          "gaps": [
+            { "opts": ["Förderung", "Fördern", "Förderer"], "l": 0 },
+            { "opts": ["Nutzung", "Nutzen", "Nutzer"], "l": 0 },
+            { "opts": ["Stärkung", "Stärke", "Stärken"], "l": 0 },
+            { "opts": ["Motivation", "Motivierung", "Motiv"], "l": 0 },
+            { "opts": ["Erkenntnis", "Erkennung", "Erkannte"], "l": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Ein gutes Arbeitsumfeld",
+      "icon": "🏢",
+      "kurz": "Wichtiges im Beruf · Wörter ordnen · einen Kurzvortrag halten",
+      "aufgaben": [
+        {
+          "id": "i4-ber", "typ": "matrix", "kontext": "Wortschatz",
+          "frage": "Zu welchem Bereich gehört das Wort?",
+          "wahl": ["Team", "Bezahlung", "Arbeitszeiten", "Weiterbildung"],
+          "aussagen": [
+            ["hilfsbereit", 0], ["der Zusammenhalt", 0], ["die Wertschätzung", 0],
+            ["die Prämie", 1], ["das Urlaubsgeld", 1], ["der Tarif", 1],
+            ["die Gleitzeit", 2], ["die Überstunden", 2], ["der Freizeitausgleich", 2],
+            ["die Schulung", 3], ["sich qualifizieren", 3], ["die Zusatzausbildung", 3]
+          ]
+        },
+        {
+          "id": "i4-vortrag", "typ": "matrix", "kontext": "Vortrag",
+          "frage": "In welchen Teil eines Vortrags gehört der Satz?",
+          "wahl": ["Einleitung", "Hauptteil", "Schluss"],
+          "aussagen": [
+            ["Mein Thema lautet: Was macht ein gutes Arbeitsumfeld aus?", 0],
+            ["Bei mir geht es um flexible Arbeitszeiten.", 0],
+            ["Das ist für mich besonders wichtig, weil ich zwei Kinder habe.", 1],
+            ["Ohne nette Kollegen könnte ich nicht gut arbeiten.", 1],
+            ["Für mich gehören Weiterbildungen auf jeden Fall dazu.", 1],
+            ["Zusammenfassend möchte ich sagen, dass Wertschätzung das Wichtigste ist.", 2],
+            ["Lassen Sie mich zum Schluss noch sagen: …", 2]
+          ]
+        },
+        {
+          "id": "i4-ord", "typ": "ordnen", "kontext": "Vortrag",
+          "frage": "Ein Kurzvortrag: Bringen Sie die Sätze in die richtige Reihenfolge.",
+          "zeilen": [
+            "Ich spreche heute über das Thema „Mein ideales Arbeitsumfeld“.",
+            "Am wichtigsten ist für mich ein gutes Arbeitsklima, weil ich jeden Tag acht Stunden mit meinen Kollegen verbringe.",
+            "Außerdem brauche ich unbedingt flexible Arbeitszeiten, denn ich pflege meine Mutter.",
+            "Auch Weiterbildungen gehören für mich dazu – ich möchte mich weiterentwickeln.",
+            "Zusammenfassend möchte ich sagen: Wer sich wohlfühlt, arbeitet auch besser. Vielen Dank fürs Zuhören."
+          ]
+        },
+        { "id": "i4-zus", "typ": "mc", "kontext": "Strategie", "frage": "Sie sollen die Antwort einer Person zusammenfassen. Was ist richtig?", "opts": ["nur die Hauptinformationen frei wiedergeben", "alles Wort für Wort nacherzählen", "die eigenen Notizen ablesen", "die eigene Meinung statt der Antwort sagen"], "l": 0 },
+        { "id": "i4-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz.", "steine": ["Er", "ist", "der Ansicht,", "dass", "auch", "die Mitarbeitenden", "für ein gutes Klima", "sorgen müssen."] }
+      ]
+    },
+    {
+      "titel": "Modalpartikeln",
+      "icon": "💬",
+      "kurz": "aber, doch, ja, mal, denn · Bedeutung im Kontext",
+      "aufgaben": [
+        {
+          "id": "i5-bed", "typ": "matrix", "kontext": "Bedeutung",
+          "frage": "Welche Bedeutung verstärkt die Modalpartikel?",
+          "wahl": ["Freundlichkeit/Interesse", "Überraschung", "Empörung", "Vorschlag/Ermunterung", "freundliche Aufforderung"],
+          "aussagen": [
+            ["Das ist **aber** schön, dass ich dich treffe!", 0],
+            ["Das ist **aber** ungewöhnlich.", 1],
+            ["Wie bitte? Das ist **doch** unmöglich!", 2],
+            ["Sprich **doch** mal mit dem Chef!", 3],
+            ["Geben Sie mir bitte **mal** die Zange.", 4],
+            ["Was gibt's **denn** Neues bei dir?", 0],
+            ["Wo kommst du **denn** jetzt her?", 1],
+            ["Hier sind **ja** die Verträge!", 1],
+            ["Das ist **ja** gemein!", 2]
+          ]
+        },
+        {
+          "id": "i5-regel", "typ": "luecke", "kontext": "Regel",
+          "frage": "Ergänzen Sie die Regel.",
+          "text": "Modalpartikeln sind typisch für die {0} Sprache. Man benutzt sie, um Gefühle und Absichten zu {1} oder abzuschwächen. In Aussagesätzen stehen sie meist hinter dem {2}. Die Bedeutung ist vom {3} und von der Betonung abhängig.",
+          "gaps": [
+            { "opts": ["gesprochene", "geschriebene", "formelle"], "l": 0 },
+            { "opts": ["verstärken", "verändern", "verstecken"], "l": 0 },
+            { "opts": ["Verb", "Subjekt", "Satzende"], "l": 0 },
+            { "opts": ["Kontext", "Kasus", "Artikel"], "l": 0 }
+          ]
+        },
+        { "id": "i5-1", "typ": "mc", "kontext": "Partikeln", "frage": "Das ist ein super Job! Bewirb dich ___ einfach! (Vorschlag)", "opts": ["doch", "denn", "aber", "ja"], "l": 0 },
+        { "id": "i5-2", "typ": "mc", "kontext": "Partikeln", "frage": "Ich finde das Vorgehen interessant. Wie macht man das ___ genau? (Interesse)", "opts": ["denn", "doch", "mal", "aber"], "l": 0 },
+        { "id": "i5-3", "typ": "mc", "kontext": "Partikeln", "frage": "Ich kann das nicht allein. Hilf mir bitte ___! (freundliche Aufforderung)", "opts": ["mal", "denn", "aber", "ja"], "l": 0 },
+        { "id": "i5-4", "typ": "mc", "kontext": "Partikeln", "frage": "Du willst schon wieder früher gehen? Das kannst du ___ nicht machen! (Empörung)", "opts": ["doch", "mal", "denn", "aber gerne"], "l": 0 },
+        { "id": "i5-5", "typ": "mc", "kontext": "Partikeln", "frage": "Das ist ___ großartig! Danke für die tolle Vorarbeit. (Freundlichkeit)", "opts": ["ja", "denn", "mal", "doch nicht"], "l": 0 }
+      ]
+    },
+    {
+      "titel": "Rat suchen und Mitarbeitergespräch",
+      "icon": "🗣️",
+      "kurz": "um Rat fragen · Rat geben · Vertraulichkeit · Mitarbeitergespräch vorbereiten",
+      "aufgaben": [
+        {
+          "id": "i6-rat", "typ": "matrix", "kontext": "Redemittel",
+          "frage": "Fragt man um Rat oder gibt man einen Rat?",
+          "wahl": ["um Rat fragen", "Rat geben"],
+          "aussagen": [
+            ["Ich bin mir nicht sicher, ob …", 0], ["Was würdest du an meiner Stelle machen?", 0], ["Hast du einen Tipp für mich?", 0], ["Denkst du, das ist die richtige Entscheidung?", 0],
+            ["An deiner Stelle würde ich …", 1], ["Ich kann dir nur raten, …", 1], ["Frag doch mal deine Teamleiterin.", 1], ["Ich würde dir empfehlen, …", 1]
+          ]
+        },
+        { "id": "i6-vert", "typ": "mc", "kontext": "Vertraulichkeit", "frage": "Sie möchten mit einem Kollegen über ein privates Problem sprechen. Was sagen Sie?", "opts": ["Können wir mal unter vier Augen sprechen? Das bleibt aber bitte unter uns.", "Ich erzähle das gleich allen.", "Schreib das bitte ins Protokoll.", "Ruf doch die Chefin an."], "l": 0 },
+        {
+          "id": "i6-mag", "typ": "lesen", "kontext": "Lesen",
+          "frage": "Lesen Sie den Text über Mitarbeitergespräche und beantworten Sie die Fragen.",
+          "textTitel": "Das Mitarbeitergespräch",
+          "text": "Mitarbeitergespräche sind strukturierte Gespräche zwischen einer Führungskraft und einem Mitarbeiter oder einer Mitarbeiterin, die meistens einmal im Jahr stattfinden. Sie sollen motivieren, Entwicklungsmöglichkeiten zeigen und Ziele vereinbaren.\n\nViele Führungskräfte und Beschäftigte sehen das Gespräch als lästige Pflicht. Damit es seine Chancen nutzt, sollten sich beide Seiten gut vorbereiten – zum Beispiel mit einem Fragebogen. Er hilft den Mitarbeitenden, eigene Erfolge zu erkennen, die Zusammenarbeit im Team zu beurteilen, Wünsche zur Weiterentwicklung zu formulieren und Probleme zu benennen.\n\nTipps für Führungskräfte: Sorgen Sie für eine angenehme Atmosphäre (Handy aus, Tür zu), stellen Sie Fragen und hören Sie aufmerksam zu. Vereinbaren Sie realistische Ziele und führen Sie Protokoll.",
+          "fragen": [
+            { "f": "Wie oft finden Mitarbeitergespräche meistens statt?", "opts": ["einmal im Jahr", "jeden Monat", "nur bei Problemen", "alle fünf Jahre"], "l": 0 },
+            { "f": "Wozu dient der Fragebogen?", "opts": ["zur Vorbereitung auf das Gespräch", "zur Bewertung der Führungskraft", "zur Kündigung", "zur Gehaltsabrechnung"], "l": 0 },
+            { "f": "Was soll die Führungskraft im Gespräch tun?", "opts": ["Fragen stellen und zuhören", "möglichst viel selbst reden", "nebenbei Mails lesen", "die Ziele allein festlegen"], "l": 0 },
+            { "f": "Wie sehen viele das Mitarbeitergespräch?", "opts": ["als lästige Pflicht", "als Feier", "als Prüfung mit Note", "als Freizeitaktivität"], "l": 0 }
+          ]
+        },
+        {
+          "id": "i6-check", "typ": "matrix", "kontext": "Checkliste",
+          "frage": "Die Notizen der Führungskraft: Zu welchem Punkt gehören sie?",
+          "wahl": ["Rückblick letztes Jahr", "Beurteilung der Arbeit", "Weiterentwicklung", "Erwartungen"],
+          "aussagen": [
+            ["Umsatzziele erreicht, Sonderaufgaben gut bewältigt", 0],
+            ["gewissenhaft, freundlich, kompetent", 1],
+            ["Interesse an Abteilungsleitung? Schulung „Teams leiten“?", 2],
+            ["mehr Eigeninitiative zeigen", 3]
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Kündigung und Kritik",
+      "icon": "📄",
+      "kurz": "ein Kündigungsschreiben prüfen · konstruktiv mit Kritik umgehen",
+      "aufgaben": [
+        {
+          "id": "i7-kue", "typ": "matrix", "kontext": "Kündigung",
+          "frage": "Lesen Sie das Kündigungsschreiben von Lea Brandt. Ein Freund gibt Tipps. Ist der Tipp richtig?",
+          "textTitel": "Entwurf",
+          "text": "Möbelhaus Nordlicht\nHerrn Paul Weiß (Abteilungsleiter)\nHafenstr. 9, 24103 Kiel\n\n**Kündigung meines Arbeitsvertrags vom 01.04.2022**\n\nSehr geehrter Herr Weiß,\nhiermit kündige ich mein Arbeitsverhältnis zum 31.05.\nIch bitte Sie, mir den Erhalt der Kündigung schriftlich zu bestätigen. Stellen Sie mir bitte außerdem ein qualifiziertes Arbeitszeugnis aus.\n\nMit freundlichen Grüßen\nLea Brandt",
+          "aussagen": [
+            ["„Du musst oben deine eigene Adresse als Absender angeben.“", true],
+            ["„Das Datum ist wichtig – schreib den Tag, an dem du die Kündigung abgibst.“", true],
+            ["„Die Kündigung geht bei euch an die Personalabteilung, nicht an den Abteilungsleiter.“", true],
+            ["„Du kannst die Kündigung auch einfach per WhatsApp schicken.“", false],
+            ["„Ein kurzer Dank für die Zusammenarbeit ist höflich.“", true],
+            ["„Unterschreiben musst du nicht, dein Name reicht.“", false]
+          ]
+        },
+        { "id": "i7-frist", "typ": "mc", "kontext": "Kündigungsfrist", "frage": "Lea hat vier Wochen Kündigungsfrist zum Monatsende. Sie gibt die Kündigung am 10. Mai ab. Wann endet ihr Arbeitsverhältnis frühestens?", "opts": ["am 30. Juni", "am 31. Mai", "am 10. Juni", "am 7. Juni"], "l": 0, "x": "Vier Wochen nach dem 10. Mai ist der 7. Juni – das nächste Monatsende ist der 30. Juni." },
+        { "id": "i7-zeug", "typ": "mc", "kontext": "Wortschatz", "frage": "Ein qualifiziertes Arbeitszeugnis …", "opts": ["beschreibt auch die Leistung und das Verhalten.", "nennt nur die Dauer der Beschäftigung.", "ist eine Gehaltsabrechnung.", "ist eine Kündigung durch den Chef."], "l": 0 },
+        {
+          "id": "i7-krit", "typ": "matrix", "kontext": "Kritik",
+          "frage": "Wie reagiert die Person auf Kritik?",
+          "wahl": ["Verhalten erklären", "Kritik zurückweisen", "Kritik annehmen"],
+          "aussagen": [
+            ["Das stimmt, aber der Bus hatte eine halbe Stunde Verspätung.", 0],
+            ["Es war leider nicht möglich, alle Kisten zu räumen, weil der Stapler kaputt war.", 0],
+            ["Das haben Sie falsch verstanden, es war so: …", 1],
+            ["Das war nicht meine Schuld.", 1],
+            ["Ja, ich habe auch gemerkt, dass das nicht in Ordnung war.", 2],
+            ["Danke, dass Sie mich darauf hingewiesen haben.", 2],
+            ["Ich verstehe, dass ich mich da falsch verhalten habe.", 2]
+          ]
+        },
+        { "id": "i7-m1", "typ": "mc", "kontext": "Kritik", "frage": "„Ein Kunde hat sich beschwert, Sie seien unfreundlich gewesen.“ – Welche Reaktion ist konstruktiv?", "opts": ["Ich kann gut verstehen, dass Sie das ansprechen müssen. Ich war in Eile – das tut mir leid.", "Der Kunde lügt.", "Das interessiert mich nicht.", "Dann suchen Sie sich doch jemand anderen."], "l": 0 }
+      ]
+    },
+    {
+      "titel": "Prüfungstraining",
+      "icon": "🏁",
+      "kurz": "Sprachbausteine · gemischte Aufgaben",
+      "aufgaben": [
+        {
+          "id": "i8-sb", "typ": "luecke", "kontext": "Sprachbausteine",
+          "frage": "Sprachbausteine: Eine Mail an den Betriebsrat. Wählen Sie die richtige Lösung.",
+          "text": "Liebes Team vom Betriebsrat,\n\nvielen Dank für eure Vorschläge zur Gesundheitsförderung. Besonders gut gefällt mir die Idee {0} Gesundheitstages. Ich würde gern {1} einem Kurs zum richtigen Heben teilnehmen, weil ich im Lager arbeite.\n\nAuch das Seminar finde ich sinnvoll, {2} viele Kolleginnen und Kollegen unter Stress leiden. Außerdem schlage ich die {3} eines Ruheraums vor, in dem man in der Pause abschalten kann. Das wäre {4} toll!\n\nIch freue mich {5} eure Antwort.\n\nViele Grüße\nNiklas",
+          "gaps": [
+            { "opts": ["eines", "einen", "einem"], "l": 0 },
+            { "opts": ["an", "bei", "für"], "l": 0 },
+            { "opts": ["weil", "obwohl", "damit"], "l": 0 },
+            { "opts": ["Einrichtung", "Einrichten", "Einrichter"], "l": 0 },
+            { "opts": ["doch", "denn", "mal"], "l": 0 },
+            { "opts": ["auf", "über", "an"], "l": 0 }
+          ]
+        },
+        { "id": "i8-1", "typ": "mc", "kontext": "Nominalisierung", "frage": "verbessern → ?", "opts": ["die Verbesserung", "das Verbesser", "der Verbesser", "die Verbessernis"], "l": 0 },
+        { "id": "i8-2", "typ": "mc", "kontext": "Modalpartikeln", "frage": "„Herr Lenz, kommen Sie bitte ___ kurz in mein Büro?“", "opts": ["mal", "denn", "ja", "aber"], "l": 0 },
+        { "id": "i8-3", "typ": "mc", "kontext": "Rat geben", "frage": "Eine Kollegin hat Angst vor Bewerbungsgesprächen. Was raten Sie?", "opts": ["An deiner Stelle würde ich ein Bewerbungstraining machen.", "Bewirb dich am besten gar nicht.", "Das ist dein Problem.", "Ich bin mir nicht sicher, ob …"], "l": 0 },
+        { "id": "i8-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz.", "steine": ["Hiermit", "kündige", "ich", "mein Arbeitsverhältnis", "fristgerecht", "zum 30. Juni."] }
+      ]
+    }
+  ]
+}

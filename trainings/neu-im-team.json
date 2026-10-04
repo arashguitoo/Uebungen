@@ -1,0 +1,265 @@
+{
+  "id": "neu-im-team",
+  "titel": "Neu im Team",
+  "untertitel": "Tipps für den Start · Passiv Präteritum · sich vorstellen · Protokolle · Teamgespräche · Teamrollen",
+  "niveau": "B1/B2",
+  "reihe": "Prüfungstraining B1/B2",
+  "farbe": "#3f7f6a",
+  "mix": 15,
+  "intro": "Sieben Teile – jeder Teil kann einzeln gespielt werden. Der **Prüfungsmix** zieht zufällig Aufgaben aus allen Teilen.",
+  "kompakt": [
+    { "titel": "Passiv Präteritum", "zeilen": [
+      "**wurde/wurden** (Position 2) + **Partizip II** (Ende)",
+      "Das **wurde** hier schon immer so **gemacht**! · Die Kolleginnen **wurden** nicht darüber **informiert**.",
+      "Die Person, die etwas tut: **von + Dativ** – Sie wurde **von ihren Vorgesetzten** mit Arbeit überhäuft.",
+      "ich wurde · du wurdest · er/sie/es wurde · wir wurden · ihr wurdet · sie/Sie wurden"
+    ]},
+    { "titel": "Tipps für den Start", "zeilen": [
+      "Am ersten Tag allen vorstellen – bei viel Kundenkontakt per Rundmail.",
+      "Du oder Sie? Wenn Sie unsicher sind: nachfragen.",
+      "Vorsicht bei Klatsch und Tratsch – selbst herausfinden, wie die Zusammenarbeit ist.",
+      "Am Anfang zurückhaltend mit Verbesserungsvorschlägen – lieber nachfragen, warum etwas so gemacht wird.",
+      "Fehler gleich zugeben – Ehrlichkeit kommt besser an, als Fehler zu vertuschen."
+    ]},
+    { "titel": "Sich per E-Mail vorstellen", "zeilen": [
+      "Wie Herr … Ihnen schon mitgeteilt hat, bin ich seit … neu im Team.",
+      "**Zur Person:** Mein Name ist … · Ich stamme aus … · lebe seit … in …",
+      "**Ausbildung:** Ich habe eine Ausbildung zur/zum … gemacht und … Jahre bei … gearbeitet.",
+      "**Aufgaben:** Jetzt unterstütze ich das Team bei … · Ich bin zuständig für …",
+      "**Schluss:** Ich freue mich darauf, Sie kennenzulernen, und hoffe auf eine gute Zusammenarbeit!"
+    ]},
+    { "titel": "Ein Protokoll schreiben", "zeilen": [
+      "**Kopf:** Datum und Dauer · Nachnamen der Teilnehmenden · Sitzungsleitung · Protokollant/in · Tagesordnungspunkte",
+      "**Hauptteil:** zu jedem TOP nur das **Ergebnis** · präzise, sachlich, neutral · **im Präsens**",
+      "**Schluss:** Termin der nächsten Sitzung"
+    ]},
+    { "titel": "Teamgespräche führen", "zeilen": [
+      "**sich zu Wort melden:** Ich möchte zu diesem Punkt gleich etwas sagen. · Darf ich etwas sagen?",
+      "**nachfragen:** Habe ich das richtig verstanden? · **vorschlagen:** Meiner Meinung nach wäre es gut, wenn …",
+      "**zustimmen:** Das halte ich für eine gute Idee. · **Probleme äußern:** Ist das nicht ungünstig, weil …?",
+      "**Alternativen:** Wir könnten das auch anders lösen. · **sich einigen:** Wunderbar, dann machen wir das so."
+    ]},
+    { "titel": "Teamrollen", "zeilen": [
+      "**Macher:** probieren sofort aus, lieben Abwechslung – Flexibilität, Experimentierfreude",
+      "**Konservative:** erhalten Bewährtes, loyal, mögen kein Risiko – Sicherheit, Ausdauer, Treue",
+      "**Analytiker:** wollen erst verstehen, systematisch, perfektionistisch – Ordnung, Wissen, Gerechtigkeit",
+      "**Visionäre:** viele originelle Ideen, schauen über den Tellerrand – Neugier, Innovation, Wachstum"
+    ]}
+  ],
+  "module": [
+    {
+      "titel": "Tipps für den Start",
+      "icon": "🌱",
+      "kurz": "Ratgeber lesen · Überschriften · Wortschatz",
+      "aufgaben": [
+        {
+          "id": "n1-art", "typ": "matrix", "kontext": "Lesen",
+          "frage": "Lesen Sie die Tipps für neue Mitarbeitende. Welche Überschrift passt besser?",
+          "posts": [
+            { "name": "1", "text": "Stellen Sie sich am ersten Tag allen persönlich vor – vielleicht wussten die Kolleginnen und Kollegen gar nicht, dass jemand Neues kommt. Haben Sie viel Kundenkontakt, ist eine kurze Rundmail an die Kunden sinnvoll." },
+            { "name": "2", "text": "Vorgesetzte zu duzen, die gesiezt werden wollen, ist peinlich. Wer aber jemanden siezt, der lieber geduzt wird, wirkt schnell distanziert. Im Zweifel: einfach fragen." },
+            { "name": "3", "text": "Man hat Ihnen erzählt, dass eine Kollegin sich nie an Absprachen hält? Bleiben Sie unvoreingenommen. Vielleicht wurde sie einfach mit Arbeit überhäuft und ist überlastet." },
+            { "name": "4", "text": "Wer am ersten Tag alles ändern will, macht sich unbeliebt. Hören Sie „Das wurde hier schon immer so gemacht“, fragen Sie lieber nach, warum." },
+            { "name": "5", "text": "Ein Fehler passiert? Sagen Sie es sofort Ihrer Vorgesetzten. Ehrlichkeit kommt besser an, als etwas zu vertuschen – niemand erwartet, dass Sie sofort alles perfekt machen." }
+          ],
+          "wahl": ["So führen Sie sich gut ein.", "Wie spricht man wen an?", "Vorsicht vor Gerüchten!", "Seien Sie vorsichtig mit Kritik!", "Keine Angst vor Fehlern!"],
+          "aussagen": [["Tipp 1", 0], ["Tipp 2", 1], ["Tipp 3", 2], ["Tipp 4", 3], ["Tipp 5", 4]]
+        },
+        { "id": "n1-syn", "typ": "zu", "kontext": "Wortschatz", "frage": "Welches Wort hat eine ähnliche Bedeutung?", "paare": [
+          ["nervös", "aufgeregt"], ["die Tipps", "die Ratschläge"], ["mit Kunden zu tun haben", "Kundenkontakt haben"],
+          ["peinlich", "unangenehm"], ["Klatsch und Tratsch", "Gerüchte"], ["die Absprachen", "die Abmachungen"],
+          ["überlastet", "überfordert"], ["zurückhaltend", "vorsichtig"]
+        ]},
+        { "id": "n1-1", "typ": "mc", "kontext": "Situationen", "frage": "Sie sind neu und finden einen Arbeitsablauf umständlich. Was ist am Anfang am besten?", "opts": ["Ich frage nach, warum das so gemacht wird.", "Ich ändere den Ablauf sofort selbst.", "Ich beschwere mich beim Chef.", "Ich erzähle allen, dass das schlecht organisiert ist."], "l": 0 },
+        { "id": "n1-2", "typ": "mc", "kontext": "Situationen", "frage": "Sie haben einen Fehler bei einer Bestellung gemacht. Was raten die Tipps?", "opts": ["Es sofort der Vorgesetzten sagen.", "Den Fehler verstecken.", "Einen Kollegen beschuldigen.", "Hoffen, dass es niemand merkt."], "l": 0 }
+      ]
+    },
+    {
+      "titel": "Passiv Präteritum",
+      "icon": "⏪",
+      "kurz": "wurde + Partizip II · von + Dativ · der erste Arbeitstag",
+      "aufgaben": [
+        { "id": "n2-1", "typ": "mc", "kontext": "Passiv", "frage": "Das ___ hier schon immer so gemacht!", "opts": ["wurde", "wurden", "wird gemacht", "worden"], "l": 0 },
+        { "id": "n2-2", "typ": "mc", "kontext": "Passiv", "frage": "Die Kolleginnen ___ vielleicht gar nicht darüber informiert.", "opts": ["wurden", "wurde", "werden worden", "würden"], "l": 0 },
+        { "id": "n2-3", "typ": "mc", "kontext": "von + Dativ", "frage": "Vielleicht wurde sie ___ mit Arbeit überhäuft.", "opts": ["von ihren Vorgesetzten", "durch ihre Vorgesetzten von", "ihren Vorgesetzten", "von ihre Vorgesetzten"], "l": 0 },
+        { "id": "n2-4", "typ": "mc", "kontext": "Passiv", "frage": "Ihr ___ vom Chef die ersten Arbeitsaufträge gegeben.", "opts": ["wurden", "wurde", "wurdet", "würden"], "l": 0, "x": "Subjekt sind **die Arbeitsaufträge** (Plural) → wurden. „Ihr“ ist hier Dativ (= der Frau)." },
+        {
+          "id": "n2-lt", "typ": "luecke", "kontext": "Passiv",
+          "frage": "Der erste Arbeitstag von Frau Okafor. Ergänzen Sie das Passiv Präteritum.",
+          "text": "Frau Okafor {0} vom Chef freundlich begrüßt. Danach {1} ihr von der IT-Beauftragten das Computersystem erklärt. Die Teeküche {2} ihr von Lena gezeigt. Am Nachmittag {3} sie von einer Kundin angerufen und um eine Beratung {4}. Am Ende des Tages {5} ihr vom Hausmeister noch das Zeiterfassungssystem gezeigt.",
+          "gaps": [
+            { "opts": ["wurde", "wurden", "wird"], "l": 0 },
+            { "opts": ["wurde", "wurden", "würde"], "l": 0 },
+            { "opts": ["wurde", "wurden", "worden"], "l": 0 },
+            { "opts": ["wurde", "hat", "ist"], "l": 0 },
+            { "opts": ["gebeten", "gebetet", "bittet"], "l": 0 },
+            { "opts": ["wurde", "wurden", "war"], "l": 0 }
+          ]
+        },
+        { "id": "n2-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz im Passiv Präteritum.", "steine": ["Ihr", "wurde", "vom Chef", "der Dienstplan", "gegeben."], "alt": [["Ihr", "wurde", "der Dienstplan", "vom Chef", "gegeben."]] },
+        { "id": "n2-b2", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz im Passiv Präteritum.", "steine": ["Die neuen Kollegen", "wurden", "von allen", "herzlich", "begrüßt."] }
+      ]
+    },
+    {
+      "titel": "Sich vorstellen",
+      "icon": "👋",
+      "kurz": "Vorstellungsmail lesen · Werdegang · eigene Mail ordnen",
+      "aufgaben": [
+        {
+          "id": "n3-mail", "typ": "lesen", "kontext": "Lesen",
+          "frage": "Lesen Sie die E-Mail und beantworten Sie die Fragen.",
+          "textTitel": "Betreff: Ihre neue Ansprechpartnerin bei Catering Kraut & Rüben",
+          "text": "Liebe Kundinnen und Kunden, liebe Lieferantinnen und Lieferanten,\n\nwie Herr Brandt Ihnen schon mitgeteilt hat, bin ich seit Anfang März neu im Team. Heute möchte ich mich kurz vorstellen.\n\nMein Name ist Amara Okafor. Ich komme aus Ghana und lebe seit neun Jahren in Deutschland. Kochen war schon immer meine Leidenschaft. Hier habe ich eine Ausbildung zur Köchin gemacht und danach drei Jahre in einem Hotelrestaurant gearbeitet.\n\nJetzt unterstütze ich das Team bei der Planung der Menüs, der Bestellung bei unseren Lieferanten und der Beratung unserer Kundschaft.\n\nIch freue mich darauf, Sie kennenzulernen, und hoffe auf eine gute Zusammenarbeit!\n\nMit freundlichen Grüßen\nAmara Okafor",
+          "fragen": [
+            { "f": "An wen schreibt Frau Okafor?", "opts": ["an Kunden und Lieferanten", "an ihren Chef", "an ihre Familie", "an die Personalabteilung"], "l": 0 },
+            { "f": "Seit wann arbeitet sie in der Firma?", "opts": ["seit Anfang März", "seit neun Jahren", "seit drei Jahren", "seit heute"], "l": 0 },
+            { "f": "Was hat sie vorher gemacht?", "opts": ["in einem Hotelrestaurant gekocht", "studiert", "als Lieferantin gearbeitet", "eine Firma geleitet"], "l": 0 },
+            { "f": "Was gehört NICHT zu ihren Aufgaben?", "opts": ["die Buchhaltung", "die Planung der Menüs", "Bestellungen bei Lieferanten", "die Kundenberatung"], "l": 0 }
+          ]
+        },
+        {
+          "id": "n3-teil", "typ": "matrix", "kontext": "Schreiben",
+          "frage": "Zu welchem Punkt der Vorstellungsmail gehört der Satz?",
+          "wahl": ["Informationen zur Person", "Ausbildung", "Aufgaben in der Firma"],
+          "aussagen": [
+            ["Ich stamme aus Syrien und lebe seit fünf Jahren in Kiel.", 0],
+            ["Mein Name ist Rami Haddad.", 0],
+            ["Ich habe eine Ausbildung zum Kaufmann für Büromanagement gemacht.", 1],
+            ["Danach habe ich zwei Jahre in einer Spedition gearbeitet.", 1],
+            ["Ich bin für die Rechnungen und Mahnungen zuständig.", 2],
+            ["Ab sofort betreue ich Ihre Bestellungen.", 2]
+          ]
+        },
+        { "id": "n3-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz.", "steine": ["Wie", "Herr Brandt", "Ihnen", "schon", "mitgeteilt hat,", "bin", "ich", "neu im Team."] }
+      ]
+    },
+    {
+      "titel": "Das Protokoll",
+      "icon": "📝",
+      "kurz": "Regeln · richtig oder falsch formuliert? · Protokoll lesen",
+      "aufgaben": [
+        {
+          "id": "n4-regel", "typ": "matrix", "kontext": "Regeln",
+          "frage": "Passt die Formulierung in ein Protokoll?",
+          "wahl": ["passt", "passt nicht"],
+          "aussagen": [
+            ["vom 15.4., 10:00–10:30 Uhr", 0], ["von heute Vormittag", 1],
+            ["Herr Krüger, Frau Wächter, Herr Witt, Frau Adu", 0], ["der Chef, Lena, Martin und ich", 1],
+            ["Begrüßung von Frau Adu", 0], ["Ich wurde sehr nett begrüßt.", 1],
+            ["Die Firma ist vom 5.8. bis zum 18.8. geschlossen.", 0], ["Tausend Dank für dieses nette Gespräch!", 1]
+          ],
+          "x": "Protokolle sind präzise, sachlich und neutral: genaue Daten, Nachnamen, keine persönlichen Kommentare."
+        },
+        {
+          "id": "n4-prot", "typ": "lesen", "kontext": "Lesen",
+          "frage": "Lesen Sie das Protokoll und beantworten Sie die Fragen.",
+          "textTitel": "Protokoll des Teamgesprächs vom 15.4., 10:00–10:30 Uhr",
+          "text": "Anwesend: Herr Brandt, Frau Wächter, Herr Witt, Frau Okafor · entschuldigt: Frau Wegener · Leitung: Herr Brandt · Protokoll: Frau Okafor\n\n**TOP 1 Begrüßung:** Frau Okafor wird begrüßt und stellt sich vor.\n**TOP 2 Termine:** Die Firma ist vom 5.8. bis zum 18.8. geschlossen. Die weiteren Urlaubszeiten werden in der nächsten Sitzung besprochen.\n**TOP 3 Hochzeitsbuffet am 5. Mai:** Herr Witt stellt bis morgen die Einkaufsliste zusammen. Frau Wächter und Frau Okafor schicken übermorgen die Bestellungen raus. Frau Okafor organisiert die Servicekräfte.\n**TOP 4 Werbung:** Die Werbeagentur erstellt neue Flyer. Herr Brandt vereinbart heute einen Termin.\n**TOP 5:** Nächste Sitzung: 22.4., 10 Uhr.",
+          "fragen": [
+            { "f": "Wer hat an der Sitzung nicht teilgenommen?", "opts": ["Frau Wegener", "Herr Witt", "Frau Okafor", "Herr Brandt"], "l": 0 },
+            { "f": "Wer stellt die Einkaufsliste zusammen?", "opts": ["Herr Witt", "Frau Wächter", "Frau Okafor", "Herr Brandt"], "l": 0 },
+            { "f": "Was macht Frau Okafor außerdem?", "opts": ["Sie organisiert die Servicekräfte.", "Sie ruft die Werbeagentur an.", "Sie plant die Urlaube.", "Sie leitet die Sitzung."], "l": 0 },
+            { "f": "In welcher Zeitform ist das Protokoll geschrieben?", "opts": ["im Präsens", "im Perfekt", "im Präteritum", "im Futur"], "l": 0 }
+          ]
+        },
+        {
+          "id": "n4-ord", "typ": "ordnen", "kontext": "Aufbau",
+          "frage": "Bringen Sie die Teile eines Protokolls in die richtige Reihenfolge.",
+          "zeilen": ["Datum und Dauer der Sitzung", "Teilnehmende, Leitung und Protokollant/in", "Tagesordnungspunkte mit Ergebnissen", "Termin der nächsten Sitzung"]
+        }
+      ]
+    },
+    {
+      "titel": "Ein Teamgespräch führen",
+      "icon": "💬",
+      "kurz": "Redemittel zuordnen · Satzteile verbinden",
+      "aufgaben": [
+        { "id": "n5-zu", "typ": "zu", "kontext": "Redemittel", "frage": "Was gehört zusammen?", "paare": [
+          ["Ist das nicht ungünstig,", "weil Frau Adu die Lieferanten nicht kennt?"],
+          ["Das halte ich", "für eine gute Idee."],
+          ["Wunderbar, dann", "machen wir das so."],
+          ["Wir könnten das", "auch anders lösen."],
+          ["Ich möchte zu diesem Punkt", "gleich etwas sagen."],
+          ["Habe ich das", "richtig verstanden?"]
+        ]},
+        {
+          "id": "n5-rm", "typ": "matrix", "kontext": "Redemittel",
+          "frage": "Wozu benutzt man den Satz?",
+          "wahl": ["sich zu Wort melden", "nachfragen", "vorschlagen", "zustimmen", "ablehnen / Problem äußern", "sich einigen"],
+          "aussagen": [
+            ["Darf ich etwas sagen?", 0], ["Ich möchte zu diesem Punkt gleich etwas sagen.", 0],
+            ["Habe ich das richtig verstanden?", 1], ["Meinen Sie damit, dass …?", 1],
+            ["Meiner Meinung nach wäre es gut, wenn Frau Adu einen Teil übernimmt.", 2],
+            ["Das halte ich für eine gute Idee.", 3],
+            ["Ist das nicht ungünstig?", 4], ["Das finde ich nicht so gut.", 4],
+            ["Wunderbar, dann machen wir das so.", 5]
+          ]
+        },
+        { "id": "n5-1", "typ": "mc", "kontext": "Situationen", "frage": "Sie planen mit dem Team einen Stand auf dem Straßenfest. Ein Kollege möchte alles mit dem Fahrrad transportieren. Wie äußern Sie höflich ein Problem?", "opts": ["Ist das nicht ungünstig, weil wir so viel Geschirr haben? Wir könnten das auch mit dem Lieferwagen lösen.", "So ein Quatsch.", "Mach doch, was du willst.", "Das halte ich für eine gute Idee."], "l": 0 }
+      ]
+    },
+    {
+      "titel": "Welche Teamrolle haben Sie?",
+      "icon": "🧭",
+      "kurz": "vier Teamrollen · Eigenschaften · Situationen",
+      "aufgaben": [
+        {
+          "id": "n6-rolle", "typ": "matrix", "kontext": "Lesen",
+          "frage": "Zu welcher Teamrolle passt die Beschreibung?",
+          "wahl": ["Macher", "Konservative", "Analytiker", "Visionäre"],
+          "aussagen": [
+            ["probieren gern sofort alles aus", 0], ["lassen sich nicht gern festlegen", 0],
+            ["wollen erhalten, was schon erreicht wurde", 1], ["mögen kein Risiko", 1],
+            ["wollen erst verstehen, bevor sie handeln", 2], ["„Vertrauen ist gut, Kontrolle ist besser.“", 2],
+            ["haben viele originelle Ideen", 3], ["ignorieren gern formale Vorgaben", 3]
+          ]
+        },
+        {
+          "id": "n6-st", "typ": "matrix", "kontext": "Stärken",
+          "frage": "Welche Stärke passt zu welcher Rolle?",
+          "wahl": ["Macher", "Konservative", "Analytiker", "Visionäre"],
+          "aussagen": [["Flexibilität", 0], ["Experimentierfreude", 0], ["Treue", 1], ["Ausdauer", 1], ["Ordnung", 2], ["Gerechtigkeit", 2], ["Innovation", 3], ["Neugier", 3]]
+        },
+        {
+          "id": "n6-sit", "typ": "matrix", "kontext": "Situationen",
+          "frage": "Ihre Chefin bietet Ihnen nächstes Jahr einen Job in China an. Welche Reaktion passt zu welcher Rolle?",
+          "wahl": ["Macher", "Konservative", "Analytiker", "Visionäre"],
+          "aussagen": [
+            ["„Super! Da organisiere ich gleich eine Flussreise mit dem Paddelboot!“", 0],
+            ["„China? Muss das sein? Ich habe mich gerade erst hier eingewöhnt!“", 1],
+            ["„Ich brauche sofort Informationen über die Stadt, in der ich wohnen werde.“", 2],
+            ["„Toll! Endlich wieder ein neues Land zum Entdecken!“", 3]
+          ]
+        },
+        { "id": "n6-wort", "typ": "zu", "kontext": "Wortschatz", "frage": "Was bedeuten die Ausdrücke?", "paare": [
+          ["über den Tellerrand schauen", "auch andere Ideen und Sichtweisen kennenlernen"],
+          ["Altbewährtes über Bord werfen", "Dinge aufgeben, die gut funktioniert haben"],
+          ["etwas in die Tat umsetzen", "etwas wirklich machen"],
+          ["die Realität aus den Augen verlieren", "nicht mehr realistisch denken"]
+        ]}
+      ]
+    },
+    {
+      "titel": "Prüfungstraining",
+      "icon": "🏁",
+      "kurz": "Sprachbausteine · gemischte Aufgaben",
+      "aufgaben": [
+        {
+          "id": "n7-sb", "typ": "luecke", "kontext": "Sprachbausteine",
+          "frage": "Sprachbausteine: Eine Rundmail der Teamleitung. Wählen Sie die richtige Lösung.",
+          "text": "Liebes Team,\n\nab Montag verstärkt Herr Petrović unser Team. Er {0} von der Personalabteilung schon über alle wichtigen Abläufe informiert. In der ersten Woche arbeitet er eng mit Frau Lenz zusammen, {1} er alle Kunden kennenlernt.\n\nBitte nehmt euch Zeit, {2} ihm Fragen zu beantworten. Wie ihr wisst, ist am Anfang vieles neu – niemand erwartet, {3} sofort alles perfekt läuft.\n\nIn unserem nächsten Teamgespräch am Donnerstag stellt er sich kurz vor. Das Protokoll {4} diesmal Frau Lenz.\n\nViele Grüße\nPaula",
+          "gaps": [
+            { "opts": ["wurde", "wird gewesen", "hat"], "l": 0 },
+            { "opts": ["damit", "weil", "obwohl"], "l": 0 },
+            { "opts": ["um", "für", "damit"], "l": 0 },
+            { "opts": ["dass", "ob", "wenn"], "l": 0 },
+            { "opts": ["schreibt", "schreiben", "geschrieben"], "l": 0 }
+          ]
+        },
+        { "id": "n7-1", "typ": "mc", "kontext": "Passiv", "frage": "Die Bestellungen ___ gestern von Frau Wächter rausgeschickt.", "opts": ["wurden", "wurde", "werden worden", "würden"], "l": 0 },
+        { "id": "n7-2", "typ": "mc", "kontext": "Protokoll", "frage": "Welcher Satz passt in ein Protokoll?", "opts": ["Herr Witt stellt die Einkaufsliste zusammen.", "Martin hat versprochen, dass er vielleicht die Liste macht.", "Ich fand die Sitzung sehr lustig.", "Wir haben ganz lange über das Buffet geredet."], "l": 0 },
+        { "id": "n7-b1", "typ": "bau", "kontext": "Satzbau", "frage": "Bilden Sie den Satz.", "steine": ["Ich", "freue mich", "darauf,", "Sie", "kennenzulernen."] }
+      ]
+    }
+  ]
+}
