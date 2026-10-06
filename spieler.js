@@ -1,7 +1,7 @@
 // spieler.js – Anbindung jeder Übung an die Zentrale:
 // Sitzung (mit Code oder als Gast), Live-Beobachtung, Ergebnisse, Aufgabenanalyse, Zertifikat.
-import { db, DEMO, zufall, esc } from './db.js?v=20261004c';
-import { KATALOG, exById } from './katalog.js?v=20261004c';
+import { db, DEMO, zufall, esc } from './db.js?v=20261006a';
+import { KATALOG, exById } from './katalog.js?v=20261006a';
 
 const SKEY = 'ueb_sitzung', BKEY = 'ueb_best';
 const jetzt = () => Date.now();
@@ -70,6 +70,11 @@ class Lauf {
     this.stand = { i: 0, n, p: 0, pm, pa: 0, info };
     this._live({ st: 'spielt' }, true);
   }
+  /** Laufenden Durchgang ohne Ergebnis beenden (Zurück-Taste) */
+  abbrechen() {
+    if (this.sid && !this.fertig) this._live({ st: 'abgebrochen' }, true);
+    clearTimeout(this._pend); this._pend = null; this.sid = null;
+  }
   /** Fortschritt melden: i = erledigte Aufgaben, p = Punkte */
   fortschritt(i, p, info, pa) {
     Object.assign(this.stand, { i, p }); if (info !== undefined) this.stand.info = info; if (pa !== undefined) this.stand.pa = pa;
@@ -132,6 +137,42 @@ class Lauf {
     const a = document.createElement('a'); a.download = 'Zertifikat_' + this.ex.id + '_' + (this.s.name || 'Gast').replace(/\W+/g, '_') + '.png';
     a.href = c.toDataURL('image/png'); document.body.appendChild(a); a.click(); a.remove();
   }
+}
+
+/* ---------------- Zurück-Navigation ----------------
+   Knopf „← …“ in der Übung + Zurück-Taste des Browsers / Wischgeste am Handy.
+   modus: 'start' (Übersicht/Startbild) · 'lauf' (Aufgaben) · 'ende' (Ergebnis) */
+export function navigation(L, { zurueck, fortschritt = () => false }) {
+  const FRAGE = 'Diesen Durchgang abbrechen?\nDie bisherigen Antworten werden nicht gewertet.';
+  let modus = 'start', bestaetigt = false;
+  history.replaceState({ ueb: 'start' }, '');
+  addEventListener('popstate', () => {
+    const ov = document.querySelector('.spick');
+    if (ov) { ov.remove(); return; }
+    if (modus === 'lauf') {
+      if (!bestaetigt && fortschritt() && !confirm(FRAGE)) { history.pushState({ ueb: 'lauf' }, ''); return; }
+      L.abbrechen();
+    }
+    bestaetigt = false;
+    if (modus !== 'start') { modus = 'start'; zurueck(); }
+  });
+  return {
+    /** Beim Start eines Durchgangs */
+    lauf() { history[modus === 'start' ? 'pushState' : 'replaceState']({ ueb: 'lauf' }, ''); modus = 'lauf'; },
+    /** Wenn das Ergebnis angezeigt wird */
+    ende() { modus = 'ende'; },
+    /** Knopf „← Übersicht“ / „Zur Übersicht“ */
+    zurStart() {
+      if (modus === 'start') return;
+      if (modus === 'lauf' && fortschritt() && !confirm(FRAGE)) return;
+      bestaetigt = true; history.back();
+    },
+    /** Spickzettel/Kompakt-Fenster: schließt auch mit der Zurück-Taste */
+    fenster(d) {
+      history.pushState({ ueb: 'fenster' }, '');
+      d.onclick = e => { if (e.target === d || e.target.id === 'zu') history.back(); };
+    }
+  };
 }
 
 /* ---------------- Kopfzeile ---------------- */

@@ -12,7 +12,7 @@
 // Im Text: **fett**, ___ = Lücke, Leerzeile = neuer Absatz.
 //
 // zeige(el, aufgabe, { onErgebnis(richtig, {p, pm, teile}) }) → Promise (löst beim Klick auf „Weiter“ auf)
-import { esc } from './db.js?v=20261004c';
+import { esc } from './db.js?v=20261006a';
 
 export const mische = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 export const ziehe = (a, n) => mische(a).slice(0, n);
@@ -71,7 +71,7 @@ function bau(k, a, fertig) {
   if (vorrat.length > 2 && vorrat.every((x, i) => x.i === i)) vorrat = vorrat.reverse();
   let ziel = [], fest = false;
   k.innerHTML = `<div class="bau-ziel"></div><div class="bau-vorrat"></div>
-    <div class="zeile"><button class="btn zweit klein zur">↺ Zurücksetzen</button><button class="btn pruef" disabled>Prüfen</button></div>`;
+    <div class="zeile"><button class="btn zweit klein eins" title="Letzten Baustein zurücklegen">⌫ Letzten zurück</button><button class="btn zweit klein zur">↺ Alle zurück</button><button class="btn pruef" disabled>Prüfen</button></div>`;
   const zEl = k.querySelector('.bau-ziel'), vEl = k.querySelector('.bau-vorrat'), pr = k.querySelector('.pruef');
   const male = () => {
     zEl.innerHTML = ziel.map((s, n) => `<button class="stein" data-z="${n}">${esc(s.t)}</button>`).join('');
@@ -83,6 +83,7 @@ function bau(k, a, fertig) {
   };
   male();
   k.querySelector('.zur').onclick = () => { if (fest) return; vorrat = vorrat.concat(ziel); ziel = []; male(); };
+  k.querySelector('.eins').onclick = () => { if (fest || !ziel.length) return; vorrat.push(ziel.pop()); male(); };
   pr.onclick = () => {
     fest = true;
     const satz = norm(ziel.map(s => s.t).join(' '));
@@ -123,7 +124,7 @@ function ordnen(k, a, fertig) {
   if (vorrat.length > 2 && vorrat.every((x, i) => x.i === i)) vorrat = vorrat.reverse();
   let ziel = [], fest = false;
   k.innerHTML = `<div class="ord-ziel"></div><div class="ord-vorrat"></div>
-    <div class="zeile"><button class="btn zweit klein zur">↺ Zurücksetzen</button><button class="btn pruef" disabled>Prüfen</button></div>`;
+    <div class="zeile"><button class="btn zweit klein eins" title="Letzten Baustein zurücklegen">⌫ Letzten zurück</button><button class="btn zweit klein zur">↺ Alle zurück</button><button class="btn pruef" disabled>Prüfen</button></div>`;
   const zEl = k.querySelector('.ord-ziel'), vEl = k.querySelector('.ord-vorrat'), pr = k.querySelector('.pruef');
   const male = () => {
     zEl.innerHTML = ziel.map((s, n) => `<button class="ord" data-z="${n}"><span class="ord-n">${n + 1}</span><span>${fmt(s.t).replace(/\n/g, '<br>')}</span></button>`).join('');
@@ -135,6 +136,7 @@ function ordnen(k, a, fertig) {
   };
   male();
   k.querySelector('.zur').onclick = () => { if (fest) return; vorrat = vorrat.concat(ziel); ziel = []; male(); };
+  k.querySelector('.eins').onclick = () => { if (fest || !ziel.length) return; vorrat.push(ziel.pop()); male(); };
   pr.onclick = () => {
     fest = true;
     const ok = ziel.every((s, n) => s.i === n);

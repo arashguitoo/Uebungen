@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Training – Übungszentrale</title>
-<link rel="stylesheet" href="stil.css?v=20261004c">
+<link rel="stylesheet" href="stil.css?v=20261006a">
 <style>
   body{background:#f1f3f5}
   .held{background:var(--akzent);color:#fff;border-radius:0 0 22px 22px;padding:22px 18px 26px;margin:0 -16px 18px}
@@ -23,6 +23,8 @@
   .knopfreihe{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
   .lauf-kopf{display:flex;align-items:center;gap:12px;margin-bottom:10px}
   .lauf-kopf .ic{font-size:1.4rem}
+  .lauf-kopf #raus{white-space:nowrap;flex:none}
+  @media (max-width:520px){.lauf-kopf .ic{display:none}.lauf-kopf{gap:8px}}
   .lauf-kopf .t{flex:1;min-width:0;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .lauf-kopf .pkt{background:#fff;border:1px solid var(--linie);border-radius:99px;padding:4px 12px;font-weight:700;white-space:nowrap}
   .fbalken{height:8px;background:#dfe3e8;border-radius:8px;overflow:hidden;margin-bottom:6px}
@@ -64,9 +66,9 @@ window.__ok = false;
 </script>
 <script type="module">
 window.__ok = true;
-import { starte, sitzung } from './spieler.js?v=20261004c';
-import { zeige, ziehe, punkte, labels, fmt } from './aufgaben.js?v=20261004c';
-import { esc } from './db.js?v=20261004c';
+import { starte, sitzung, navigation } from './spieler.js?v=20261006a';
+import { zeige, ziehe, punkte, labels, fmt } from './aufgaben.js?v=20261006a';
+import { esc } from './db.js?v=20261006a';
 
 const app = document.getElementById('app');
 const setId = (new URLSearchParams(location.search).get('set') || '').replace(/[^a-zA-Z0-9_-]/g, '');
@@ -89,6 +91,9 @@ LK.module.forEach((m, mi) => m.aufgaben.forEach(a => Object.entries(labels(a)).f
 L.registriereItems(lab);
 
 const MIX = LK.mix || 15;
+let lauf = 0, beantwortet = 0;
+const nav = navigation(L, { zurueck: () => uebersicht(), fortschritt: () => beantwortet > 0 });
+app.addEventListener('click', e => { if (e.target.closest('#raus')) nav.zurStart(); });
 const s = sitzung(), BK = 'ueb_lek_' + LK.id + '_' + (s && s.code ? s.code : 'gast');
 const beste = () => { try { return JSON.parse(localStorage.getItem(BK)) || {}; } catch (e) { return {}; } };
 const merke = (k, pct) => { const b = beste(); if (!(k in b) || pct > b[k]) { b[k] = pct; localStorage.setItem(BK, JSON.stringify(b)); } };
@@ -96,6 +101,7 @@ const farbeFuer = p => p >= 85 ? 'var(--ok)' : p >= 60 ? '#5f9e3f' : p >= 40 ? '
 
 /* ---------------- Übersicht ---------------- */
 function uebersicht() {
+  lauf++;
   const b = beste();
   app.innerHTML = `<section class="held"><span class="pille">${esc(LK.niveau || '')}</span> <span class="pille">${esc(LK.reihe || 'Training')}</span>
       <h1>${esc(LK.titel)}</h1><p>${esc(LK.untertitel || '')}</p></section>
@@ -120,9 +126,11 @@ async function spiele(mi) {
   const liste = mi >= 0 ? m.aufgaben.slice() : ziehe(LK.module.flatMap(x => x.aufgaben), MIX);
   const pm = liste.reduce((s, a) => s + punkte(a), 0);
   let p = 0, pa = 0; const nach = [], ber = {};
+  const meiner = ++lauf; beantwortet = 0;
+  nav.lauf();
   L.beginne(liste.length, pm, teil);
   const rahmen = (i, banner = '') => {
-    app.innerHTML = `<div class="lauf-kopf"><span class="ic">${esc(m.icon || '📝')}</span><span class="t">${esc(teil)}</span><span class="pkt" id="pkt">${p} / ${pa} Pkt.</span>
+    app.innerHTML = `<div class="lauf-kopf"><button class="btn zweit klein" id="raus" title="Zurück zur Übersicht">← Übersicht</button><span class="ic">${esc(m.icon || '📝')}</span><span class="t">${esc(teil)}</span><span class="pkt" id="pkt">${p} / ${pa} Pkt.</span>
       <button class="btn zweit klein" id="komp" title="Grammatik & Redemittel kompakt">📘</button></div>
       <div class="fbalken"><i style="width:${Math.round(100 * i / liste.length)}%"></i></div>
       <div class="zaehl"><span>${banner ? 'Wiederholung' : `Aufgabe ${i + 1} von ${liste.length}`}</span><span>${esc(LK.titel)}</span></div>
@@ -134,18 +142,21 @@ async function spiele(mi) {
   for (let i = 0; i < liste.length; i++) {
     const a = liste[i];
     await zeige(rahmen(i), a, { onErgebnis: (ok, d) => {
-      p += d.p; pa += d.pm;
+      p += d.p; pa += d.pm; beantwortet++;
       const bk = a.kontext || 'Sonstiges'; ber[bk] = ber[bk] || [0, 0]; ber[bk][0] += d.p; ber[bk][1] += d.pm;
       d.teile.forEach(([id, x]) => L.antwort(id, x));
       if (!ok && punkte(a) === 1) nach.push(a);
       L.fortschritt(i + 1, p, teil, pa);
       document.getElementById('pkt').textContent = `${p} / ${pa} Pkt.`;
     } });
+    if (meiner !== lauf) return;
   }
   for (const a of nach) {
     await zeige(rahmen(liste.length, '<div class="nachl">🔁 <b>Noch einmal:</b> Diese Aufgabe war vorhin schwierig. Jetzt ohne Punkte – nur zum Üben.</div>'), a,
       { lobText: 'Jetzt sitzt es!', fehlerText: 'Noch nicht – schau dir die Lösung genau an.' });
+    if (meiner !== lauf) return;
   }
+  nav.ende();
   const pct = await L.ende(p, pm, { teil });
   merke(mi >= 0 ? mi : 'mix', pct);
   ergebnis(mi, teil, p, pm, pct, ber);
@@ -165,7 +176,7 @@ function ergebnis(mi, teil, p, pm, pct, ber) {
       ${naechster != null ? `<button class="btn" id="next">Weiter mit Teil ${naechster + 1} →</button>` : ''}
       <button class="btn zweit" id="nochmal">Nochmal</button><button class="btn zweit" id="ueb">Zur Übersicht</button></div>
     ${pct < 60 ? '<p class="leise klein">Ab 60 % gibt es ein Zertifikat.</p>' : ''}</div>`;
-  document.getElementById('ueb').onclick = uebersicht;
+  document.getElementById('ueb').onclick = () => nav.zurStart();
   document.getElementById('nochmal').onclick = () => spiele(mi);
   const n = document.getElementById('next'); if (n) n.onclick = () => spiele(naechster);
   const z = document.getElementById('zert'); if (z) z.onclick = () => L.zertifikat({ titel: LK.titel, zeile: teil, punkte: `${p} von ${pm} Punkten · ${pct} %`, farbe: LK.farbe });
@@ -177,7 +188,7 @@ function kompakt() {
   d.innerHTML = `<div class="karte kompakt"><div class="zeile" style="justify-content:space-between"><h2 style="margin:0">📘 Kompakt</h2><button class="btn zweit klein" id="zu">Schließen</button></div>
     ${LK.kompakt.map(k => `<h3>${esc(k.titel)}</h3><ul>${k.zeilen.map(z => `<li>${fmt(z)}</li>`).join('')}</ul>`).join('')}</div>`;
   document.body.append(d);
-  d.onclick = e => { if (e.target === d || e.target.id === 'zu') d.remove(); };
+  nav.fenster(d);
 }
 
 uebersicht();

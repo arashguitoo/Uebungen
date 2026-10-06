@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Die Satzpresse – Übungszentrale</title>
-<link rel="stylesheet" href="stil.css?v=20261004c">
+<link rel="stylesheet" href="stil.css?v=20261006a">
 <style>
   :root{--akzent:#7a3b69;--akzent-hell:#f3e8f0;--stahl:#5d6670}
   body{background:#efedf0}
@@ -15,7 +15,7 @@
   .beispiel{max-width:560px;margin:16px auto;text-align:left;background:#faf8fb;border:1px solid var(--linie);border-radius:12px;padding:12px 14px;font-size:.95rem}
   .beispiel .rein{color:#888;text-decoration:line-through;text-decoration-color:#c88}
   .beispiel .raus{font-weight:700;color:var(--akzent)}
-  .maschine{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;margin-bottom:12px}
+  .maschine{display:grid;grid-template-columns:auto auto 1fr auto;gap:14px;align-items:center;margin-bottom:12px}
   .presse{width:64px;height:58px;position:relative}
   .presse .rahmen{position:absolute;inset:0;border:5px solid var(--stahl);border-bottom:none;border-radius:8px 8px 0 0}
   .presse .stempelk{position:absolute;left:12px;right:12px;top:6px;height:16px;background:var(--akzent);border-radius:3px;transition:top .18s ease-in}
@@ -36,6 +36,7 @@
   .knopfreihe{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}
   .nachl{background:#f6eef4;border:1px solid #e2cbdb;border-radius:10px;padding:8px 12px;margin-bottom:12px;font-size:.92rem}
   .formel{background:#fff;border:1px dashed var(--akzent);border-radius:10px;padding:10px;text-align:center;font-weight:600;margin:8px 0}
+  @media (max-width:520px){#raus .lang{display:none}.kasse{min-width:0}}
 </style>
 <script data-goatcounter="https://aguitoo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
@@ -64,9 +65,9 @@ window.__ok = false;
 </script>
 <script type="module">
 window.__ok = true;
-import { starte } from './spieler.js?v=20261004c';
-import { zeige, ziehe, label } from './aufgaben.js?v=20261004c';
-import { esc } from './db.js?v=20261004c';
+import { starte, navigation } from './spieler.js?v=20261006a';
+import { zeige, ziehe, label } from './aufgaben.js?v=20261006a';
+import { esc } from './db.js?v=20261006a';
 
 /* ======================= INHALT ======================= */
 const STUFEN = [
@@ -143,6 +144,8 @@ const L = await starte('partizip-presse');
 if (!L.frei) { L.sperre(app); throw new Error('gesperrt'); }
 const labels = {}; POOL.flat().forEach(a => labels[a.id] = label(a)); L.registriereItems(labels);
 let G;
+const nav = navigation(L, { zurueck: () => startbild(), fortschritt: () => !!(G && G.erledigt > 0) });
+app.addEventListener('click', e => { if (e.target.closest('#raus')) nav.zurStart(); });
 
 function startbild() {
   app.innerHTML = `<div class="karte start" style="margin-top:18px">
@@ -157,13 +160,14 @@ function startbild() {
 }
 
 function neuesSpiel() {
+  nav.lauf();
   G = { st: 0, richtig: 0, erledigt: 0, gespart: 0, gesamt: STUFEN.length * PRO_STUFE, stufeRichtig: [] };
   G.plan = POOL.map(p => ziehe(p, PRO_STUFE));
   L.beginne(G.gesamt, G.gesamt, 'Abteilung 1: ' + STUFEN[0].name);
   stufeStart();
 }
 
-const kopfzeile = () => `<div class="maschine"><div class="presse" id="presse"><div class="rahmen"></div><div class="stempelk"></div><div class="blatt"></div></div>
+const kopfzeile = () => `<div class="maschine"><button class="btn zweit klein" id="raus" title="Zurück zum Start">←<span class="lang"> Start</span></button><div class="presse" id="presse"><div class="rahmen"></div><div class="stempelk"></div><div class="blatt"></div></div>
   <div class="zaehler"><b id="gespart">${G.gespart}</b><span>Wörter eingespart</span></div><button class="btn zweit klein" id="spick">📒</button></div>
   <div class="stufen">${STUFEN.map((s, i) => `<div class="stufe ${i < G.st ? 'fertig' : i === G.st ? 'jetzt' : ''}" title="${esc(s.name)}"></div>`).join('')}</div>`;
 
@@ -217,6 +221,7 @@ function zwischen() {
 }
 
 async function ende() {
+  nav.ende();
   const pct = await L.ende(G.richtig, G.gesamt, { gespart: G.gespart });
   const r = RAENGE.find(x => pct >= x[0]);
   const schwach = G.stufeRichtig.map((n, i) => [n, i]).sort((a, b) => a[0] - b[0])[0];
@@ -248,7 +253,7 @@ function spickzettel() {
   <p class="klein">Verben mit <b>sein</b> im Perfekt: Das Partizip II ist <b>aktiv</b>: der angekommene Zug = der Zug, der angekommen ist.<br>
   Partizip I = gleichzeitig: der abfahrende Zug (fährt gerade ab) ↔ der abgefahrene Zug (ist schon weg).</p></div>`;
   document.body.append(d);
-  d.onclick = e => { if (e.target === d || e.target.id === 'zu') d.remove(); };
+  nav.fenster(d);
 }
 
 startbild();

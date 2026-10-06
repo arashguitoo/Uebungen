@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Das Handelskontor – Übungszentrale</title>
-<link rel="stylesheet" href="stil.css?v=20261004c">
+<link rel="stylesheet" href="stil.css?v=20261006a">
 <style>
   :root{--akzent:#1f6f78;--akzent-hell:#e1f0f1;--messing:#b8841a}
   body{background:#f3efe6 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M0 39.5h40M39.5 0v40' stroke='%23e8e1d3' stroke-width='1'/%3E%3C/svg%3E")}
@@ -16,7 +16,7 @@
   .regeln div{background:#fbf8f1;border:1px solid var(--linie);border-radius:10px;padding:10px;font-size:.9rem}
   .regeln b{display:block;font-size:1.3rem}
   @media(max-width:560px){.regeln{grid-template-columns:1fr}}
-  .hud{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;margin-bottom:12px}
+  .hud{display:grid;grid-template-columns:auto 1fr auto auto;gap:10px;align-items:center;margin-bottom:12px}
   .kasse{background:#1d2b2d;color:#9ff0c4;font-family:Consolas,"Courier New",monospace;font-size:1.35rem;font-weight:700;padding:6px 14px;border-radius:10px;box-shadow:inset 0 2px 6px rgba(0,0,0,.5);min-width:150px;text-align:right}
   .kasse.plus{animation:plus .5s}.kasse.minus{animation:minus .5s}
   @keyframes plus{40%{color:#fff;transform:scale(1.06)}}@keyframes minus{40%{color:#ff8f7a;transform:translateX(-4px)}}
@@ -38,6 +38,7 @@
   .bilanz .summe{border-top:2px solid #333;border-bottom:none;font-weight:700;font-size:1.1rem;margin-top:6px;padding-top:6px}
   .rang{font-family:Georgia,serif;font-size:1.6rem;color:var(--akzent);margin:6px 0}
   .knopfreihe{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+  @media (max-width:520px){#raus .lang{display:none}.kasse{min-width:0}}
 </style>
 <script data-goatcounter="https://aguitoo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
@@ -66,9 +67,9 @@ window.__ok = false;
 </script>
 <script type="module">
 window.__ok = true;
-import { starte } from './spieler.js?v=20261004c';
-import { zeige, ziehe, mische, label } from './aufgaben.js?v=20261004c';
-import { esc } from './db.js?v=20261004c';
+import { starte, navigation } from './spieler.js?v=20261006a';
+import { zeige, ziehe, mische, label } from './aufgaben.js?v=20261006a';
+import { esc } from './db.js?v=20261006a';
 
 /* ======================= INHALT ======================= */
 const STATIONEN = [
@@ -163,6 +164,8 @@ if (!L.frei) { L.sperre(app); throw new Error('gesperrt'); }
 const labels = {}; Object.values(POOL).flat().forEach(a => labels[a.id] = label(a)); L.registriereItems(labels);
 
 let G;
+const nav = navigation(L, { zurueck: () => startbild(), fortschritt: () => !!(G && G.erledigt > 0) });
+app.addEventListener('click', e => { if (e.target.closest('#raus')) nav.zurStart(); });
 const euro = n => (n < 0 ? '−' : '') + Math.abs(n).toLocaleString('de-DE') + ' €';
 
 function startbild() {
@@ -178,6 +181,7 @@ function startbild() {
 }
 
 function neuesSpiel() {
+  nav.lauf();
   G = { st: 0, umsatz: 0, serie: 0, richtig: 0, erledigt: 0, gesamt: STATIONEN.length * PRO_STATION, stationsUmsatz: [], fehlerJeTyp: {}, typZahl: {} };
   G.plan = STATIONEN.map(s => ziehe(POOL[s.k], PRO_STATION));
   L.beginne(G.gesamt, G.gesamt, 'Station 1: ' + STATIONEN[0].name);
@@ -186,7 +190,7 @@ function neuesSpiel() {
 
 function hud() {
   const s = Math.min(5, G.serie);
-  return `<div class="hud"><div class="kasse" id="kasse">${euro(G.umsatz)}</div>
+  return `<div class="hud"><button class="btn zweit klein" id="raus" title="Zurück zum Start">←<span class="lang"> Start</span></button><div class="kasse" id="kasse">${euro(G.umsatz)}</div>
     <div class="sterne" title="Serie">${'★'.repeat(s)}<span style="color:#ccc">${'★'.repeat(5 - s)}</span></div>
     <button class="btn zweit klein" id="spick">📒</button></div>
     <div class="weg">${STATIONEN.map((s, i) => `<div class="stn ${i < G.st ? 'fertig' : i === G.st ? 'jetzt' : ''}"><div class="p">${i < G.st ? '✓' : s.icon}</div><span>${s.name}</span></div>`).join('')}</div>`;
@@ -245,6 +249,7 @@ function zwischenbilanz() {
 }
 
 async function ende() {
+  nav.ende();
   const pct = await L.ende(G.richtig, G.gesamt, { umsatz: G.umsatz });
   const r = RAENGE.find(x => pct >= x[0]);
   const schwach = Object.entries(G.fehlerJeTyp).sort((a, b) => b[1] - a[1])[0];
@@ -279,7 +284,7 @@ function spickzettel() {
   <h3 style="margin-top:14px">Wichtige Wortverbindungen</h3>
   <p class="klein">ein Angebot einholen / machen · eine Bestellung aufgeben · einen Auftrag erteilen · einen Termin einhalten · eine Rechnung begleichen · eine Frist setzen · Mängel beheben · eine Reklamation bearbeiten · Rabatt gewähren · Skonto abziehen</p></div>`;
   document.body.append(d);
-  d.onclick = e => { if (e.target === d || e.target.id === 'zu') d.remove(); };
+  nav.fenster(d);
 }
 
 startbild();
