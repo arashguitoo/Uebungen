@@ -1,0 +1,221 @@
+{
+  "aufgabe": "Entscheiden Sie zuerst, was Sie machen möchten und warum. Tragen Sie Ihrer Partnerin / Ihrem Partner Ihre Ideen vor und begründen Sie sie. Reagieren Sie auf die Ideen Ihrer Partnerin / Ihres Partners. Einigen Sie sich am Ende auf eine gemeinsame Lösung.",
+  "situationen": [
+    {
+      "id": "s01", "bereich": "Büro & Verwaltung", "icon": "☕",
+      "titel": "Ein neuer Pausenraum",
+      "situation": "Sie arbeiten in einer mittelgroßen Tischlerei. Ihre Chefin möchte den alten Lagerraum mit Zugang zum Innenhof in einen Pausenraum für die Mitarbeitenden umbauen. Sie beide sollen die Umgestaltung planen.",
+      "punkte": ["Wandfarbe und Material", "Möbel und Dekoration", "Getränkeautomat oder kleine Küche?", "Wer übernimmt welche Arbeiten?", "Budget"],
+      "ideen": ["Kollegium kurz befragen, was gewünscht ist", "Möbel aus eigener Werkstatt bauen – spart Geld", "Kaffeemaschine statt teurem Automaten", "Innenhof als Raucher- oder Sommerbereich nutzen", "Arbeiten auf zwei Wochen verteilen, damit die Produktion weiterläuft"],
+      "rollen": { "a": "Sie möchten einen gemütlichen Raum, auch wenn er etwas mehr kostet.", "b": "Sie achten besonders auf das Budget – mehr als 2 000 € gibt es nicht." }
+    },
+    {
+      "id": "s02", "bereich": "Büro & Verwaltung", "icon": "🍽️",
+      "titel": "Die Kantine schließt",
+      "situation": "Der Essenslieferdienst Ihrer Firma fällt für drei Wochen aus. Rund 40 Kolleginnen und Kollegen essen sonst täglich in der Firma. Sie sollen eine Übergangslösung finden.",
+      "punkte": ["Alternativen für das Mittagessen", "Kosten und Zuschüsse", "Pausenzeiten", "Information an alle", "Wer organisiert was?"],
+      "ideen": ["Essensgutscheine für Restaurants in der Nähe", "Anderen Lieferdienst kurzfristig beauftragen", "Teeküche mit Mikrowellen ausstatten", "Pausen etwas verlängern, damit Wege möglich sind", "Rundmail und Aushang am schwarzen Brett"],
+      "rollen": { "a": "Sie finden, die Firma sollte die Mehrkosten ganz übernehmen.", "b": "Sie meinen, die Mitarbeitenden können sich drei Wochen selbst versorgen." }
+    },
+    {
+      "id": "s03", "bereich": "Büro & Verwaltung", "icon": "🖨️",
+      "titel": "Der Drucker streikt",
+      "situation": "Der einzige große Drucker in Ihrer Abteilung ist seit gestern defekt. Morgen um 10 Uhr müssen 200 Seiten Unterlagen für eine Kundenpräsentation fertig sein. Der Techniker kann erst übermorgen kommen.",
+      "punkte": ["Sofortlösung für morgen", "Andere Abteilungen oder Copyshop?", "Digitale Alternativen", "Kosten", "Wie verhindert man das in Zukunft?"],
+      "ideen": ["Drucker einer anderen Abteilung nutzen – vorher fragen", "Copyshop in der Nähe beauftragen", "Unterlagen teilweise digital per Tablet zeigen", "Wartungsvertrag oder Ersatzgerät für die Zukunft", "Aufgaben teilen: einer telefoniert, einer bereitet Dateien vor"],
+      "rollen": { "a": "Sie möchten unbedingt gedruckte Unterlagen – der Kunde ist sehr traditionell.", "b": "Sie schlagen vor, mehr digital zu machen." }
+    },
+    {
+      "id": "s04", "bereich": "Büro & Verwaltung", "icon": "🏗️",
+      "titel": "Baulärm vor dem Fenster",
+      "situation": "Neben Ihrem Bürogebäude wird für sechs Monate eine Straße erneuert. Der Lärm ist so laut, dass Telefonate mit Kunden kaum möglich sind. Viele Kolleginnen und Kollegen beschweren sich.",
+      "punkte": ["Räume tauschen?", "Homeoffice", "Telefonzeiten", "Technische Hilfsmittel", "Gespräch mit der Geschäftsleitung"],
+      "ideen": ["Ruhige Räume auf der anderen Gebäudeseite für Telefonate", "Mehr Homeoffice-Tage während der Bauzeit", "Headsets mit Geräuschunterdrückung", "Wichtige Telefonate in ruhigere Zeiten legen", "Bauleitung nach lauten Phasen fragen"],
+      "rollen": { "a": "Sie möchten möglichst viel Homeoffice.", "b": "Ihnen ist der persönliche Kontakt im Team wichtig." }
+    },
+    {
+      "id": "s05", "bereich": "Büro & Verwaltung", "icon": "📦",
+      "titel": "Zu wenig Platz",
+      "situation": "Ihre Abteilung bekommt vier neue Mitarbeitende, aber es gibt keine zusätzlichen Büros. Die neuen Kolleginnen und Kollegen fangen in zwei Wochen an.",
+      "punkte": ["Arbeitsplätze verteilen", "Desk-Sharing oder Homeoffice", "Besprechungsraum umbauen?", "Ausstattung (Computer, Telefone)", "Wer kümmert sich worum?"],
+      "ideen": ["Desk-Sharing mit Buchungssystem", "Feste Homeoffice-Tage abwechselnd", "Abstellraum ausräumen", "Rechtzeitig IT für Laptops informieren", "Paten für die Neuen bestimmen"],
+      "rollen": { "a": "Sie möchten Ihren festen Schreibtisch behalten.", "b": "Sie finden Desk-Sharing modern und flexibel." }
+    },
+    {
+      "id": "s06", "bereich": "Einzelhandel", "icon": "🛒",
+      "titel": "Lange Schlangen an der Kasse",
+      "situation": "Sie arbeiten in einem Supermarkt. Samstags gibt es an den Kassen lange Warteschlangen, und immer mehr Kundinnen und Kunden beschweren sich. Ihre Filialleiterin bittet Sie um Vorschläge.",
+      "punkte": ["Personalplanung am Samstag", "Selbstbedienungskassen?", "Kunden informieren", "Kosten", "Kurzfristige und langfristige Lösungen"],
+      "ideen": ["Aushilfen für Samstag einstellen", "Mitarbeitende aus dem Lager an die Kasse holen", "Expresskasse für wenige Artikel", "Selbstbedienungskassen langfristig prüfen", "Kleines Wasser oder Gutschein bei langer Wartezeit"],
+      "rollen": { "a": "Sie möchten schnell neue Aushilfen einstellen.", "b": "Sie glauben, dass Technik (Selbstbedienungskassen) die bessere Lösung ist." }
+    },
+    {
+      "id": "s07", "bereich": "Einzelhandel", "icon": "🎁",
+      "titel": "Die falsche Lieferung",
+      "situation": "Sie arbeiten in einem Elektrofachgeschäft. Morgen beginnt eine große Werbeaktion für Kaffeemaschinen. Heute wurde aber das falsche Modell geliefert. Die Werbeprospekte sind schon verteilt.",
+      "punkte": ["Kontakt mit dem Lieferanten", "Was sagt man den Kunden?", "Ersatzangebot", "Werbeaktion verschieben?", "Verantwortlichkeiten"],
+      "ideen": ["Lieferanten sofort anrufen – Expresslieferung verlangen", "Vorbestellungen mit Abholschein anbieten", "Ähnliches Modell zum gleichen Preis", "Hinweisschild am Eingang", "Rabatt als Entschuldigung"],
+      "rollen": { "a": "Sie möchten die Aktion lieber verschieben.", "b": "Sie wollen die Aktion unbedingt wie geplant starten." }
+    },
+    {
+      "id": "s08", "bereich": "Einzelhandel", "icon": "💶",
+      "titel": "Geld fehlt in der Kasse",
+      "situation": "In Ihrer Bäckereifiliale fehlt in den letzten Wochen immer wieder Geld in der Kasse – jedes Mal zwischen 20 und 50 Euro. Niemand weiß, warum. Die Stimmung im Team wird schlechter.",
+      "punkte": ["Ursachen (Fehler oder Diebstahl?)", "Kassenregeln", "Gespräch im Team", "Information an die Leitung", "Vertrauen im Team"],
+      "ideen": ["Kasse beim Schichtwechsel gemeinsam zählen", "Jede Person bekommt eine eigene Kassenschublade", "Teamgespräch ohne Schuldzuweisungen", "Wechselgeld-Fehler prüfen", "Filialleitung informieren"],
+      "rollen": { "a": "Sie vermuten, dass es nur Fehler beim Wechselgeld sind.", "b": "Sie möchten strengere Kontrollen." }
+    },
+    {
+      "id": "s09", "bereich": "Gastronomie & Hotel", "icon": "🧊",
+      "titel": "Der Kühlraum fällt aus",
+      "situation": "Sie arbeiten in einem Restaurant. Am Freitagmorgen ist der Kühlraum kaputt. Am Abend kommt eine Hochzeitsgesellschaft mit 80 Gästen. Der Techniker kommt frühestens am Montag.",
+      "punkte": ["Lebensmittel retten", "Hygiene und Sicherheit", "Menü anpassen?", "Kontakt mit dem Brautpaar", "Aufgabenverteilung"],
+      "ideen": ["Kühlwagen oder Kühlschränke mieten", "Lebensmittel bei befreundetem Restaurant lagern", "Temperatur prüfen und dokumentieren", "Menü vereinfachen, frisch einkaufen", "Brautpaar ehrlich informieren, wenn sich etwas ändert"],
+      "rollen": { "a": "Sie möchten dem Brautpaar nichts sagen, um keine Unruhe zu machen.", "b": "Sie finden Ehrlichkeit wichtig." }
+    },
+    {
+      "id": "s10", "bereich": "Gastronomie & Hotel", "icon": "🍷",
+      "titel": "Personalmangel im Sommer",
+      "situation": "Sie arbeiten in einem Hotel an der Ostsee. Im Juli sind alle Zimmer ausgebucht, aber zwei Servicekräfte haben gekündigt und eine Kollegin ist schwanger und darf nicht mehr schwer tragen.",
+      "punkte": ["Neue Mitarbeitende finden", "Dienstpläne", "Aufgaben neu verteilen", "Angebot einschränken?", "Motivation des Teams"],
+      "ideen": ["Studierende als Saisonkräfte", "Frühstück als Buffet statt Bedienung", "Kollegin an die Rezeption oder in die Planung", "Prämie für Zusatzschichten", "Zeitarbeitsfirma anfragen"],
+      "rollen": { "a": "Sie möchten das Restaurant mittags schließen.", "b": "Sie wollen den vollen Service anbieten." }
+    },
+    {
+      "id": "s11", "bereich": "Gastronomie & Hotel", "icon": "⭐",
+      "titel": "Schlechte Online-Bewertungen",
+      "situation": "Ihr Hotel hat in den letzten Wochen mehrere schlechte Online-Bewertungen bekommen: unfreundliches Personal, lange Wartezeiten beim Check-in, nicht saubere Zimmer. Die Buchungen gehen zurück.",
+      "punkte": ["Ursachen herausfinden", "Antwort auf die Bewertungen", "Schulung für das Personal", "Abläufe beim Check-in", "Kontrolle der Zimmer"],
+      "ideen": ["Jede Bewertung höflich und persönlich beantworten", "Online-Check-in einführen", "Freundlichkeits-Training", "Checkliste für Zimmerreinigung", "Gäste beim Auschecken aktiv um Feedback bitten"],
+      "rollen": { "a": "Sie glauben, das Hauptproblem ist zu wenig Personal.", "b": "Sie glauben, das Problem ist die schlechte Organisation." }
+    },
+    {
+      "id": "s12", "bereich": "Pflege & Gesundheit", "icon": "🩺",
+      "titel": "Krankheitswelle im Pflegeheim",
+      "situation": "Sie arbeiten in einem Pflegeheim. Eine Grippewelle hat das Team erwischt: Fünf Kolleginnen und Kollegen sind diese Woche krank. Die Versorgung der Bewohnerinnen und Bewohner muss trotzdem gesichert sein.",
+      "punkte": ["Dienstplan umstellen", "Unterstützung von außen", "Was ist wichtig, was kann warten?", "Schutz vor Ansteckung", "Information an Angehörige"],
+      "ideen": ["Teilzeitkräfte fragen, ob sie aufstocken", "Leasingkräfte oder Springer anfragen", "Freizeitangebote vorübergehend reduzieren", "Masken und Händedesinfektion", "Angehörige bitten, Besuche zu verschieben"],
+      "rollen": { "a": "Sie haben schon viele Überstunden und können nicht mehr.", "b": "Sie sind bereit einzuspringen, brauchen aber freie Tage danach." }
+    },
+    {
+      "id": "s13", "bereich": "Pflege & Gesundheit", "icon": "🏥",
+      "titel": "Volles Wartezimmer",
+      "situation": "Sie arbeiten in einer Hausarztpraxis. Montags ist das Wartezimmer übervoll, Patientinnen und Patienten warten oft zwei Stunden. Das Telefon klingelt ununterbrochen.",
+      "punkte": ["Terminvergabe", "Telefonzeiten", "Online-Angebote", "Akute Fälle", "Aufgaben im Team"],
+      "ideen": ["Online-Terminbuchung", "Feste Telefonsprechzeiten", "Rezepte online bestellen lassen", "Akutsprechstunde zu festen Zeiten", "Eine Person nur fürs Telefon am Montag"],
+      "rollen": { "a": "Sie finden, ältere Patienten kommen mit Online-Terminen nicht klar.", "b": "Sie möchten die Praxis stärker digitalisieren." }
+    },
+    {
+      "id": "s14", "bereich": "Pflege & Gesundheit", "icon": "🌙",
+      "titel": "Niemand will Nachtdienst",
+      "situation": "Auf Ihrer Station im Krankenhaus gibt es Streit um die Nachtdienste. Einige machen fast nur Nachtschichten, andere fast nie. Die Stationsleitung möchte, dass Sie beide einen fairen Vorschlag machen.",
+      "punkte": ["Gerechte Verteilung", "Familie und Kinder", "Wünsche der Mitarbeitenden", "Ausgleich (Geld, Freizeit)", "Wie wird entschieden?"],
+      "ideen": ["Feste Anzahl Nachtdienste pro Person und Monat", "Wunschliste vor der Dienstplanung", "Tausch nur mit Absprache", "Freiwillige Nachtdienstler bekommen Zusatzfreizeit", "Regel nach drei Monaten gemeinsam prüfen"],
+      "rollen": { "a": "Sie haben kleine Kinder und können kaum nachts arbeiten.", "b": "Sie machen seit Monaten viele Nachtdienste und sind erschöpft." }
+    },
+    {
+      "id": "s15", "bereich": "Kita & Soziales", "icon": "🧸",
+      "titel": "Eltern holen zu spät ab",
+      "situation": "Sie arbeiten in einer Kita, die um 16:30 Uhr schließt. Einige Eltern holen ihre Kinder regelmäßig zu spät ab. Die Erzieherinnen müssen dann unbezahlt länger bleiben.",
+      "punkte": ["Gespräch mit den Eltern", "Regeln und Konsequenzen", "Gründe der Eltern verstehen", "Längere Öffnungszeiten?", "Unterstützung durch die Leitung"],
+      "ideen": ["Freundliches Gespräch mit betroffenen Eltern", "Regel im Elternbrief erinnern", "Notfallkontakt für die Abholung", "Bedarf für längere Betreuung abfragen", "Überstunden dokumentieren und ausgleichen"],
+      "rollen": { "a": "Sie haben Verständnis – viele Eltern arbeiten im Schichtdienst.", "b": "Sie möchten klare Konsequenzen, z. B. eine Gebühr." }
+    },
+    {
+      "id": "s16", "bereich": "Kita & Soziales", "icon": "🎉",
+      "titel": "Sommerfest ohne Geld",
+      "situation": "Ihre Kita plant in vier Wochen das Sommerfest. Das Budget ist dieses Jahr sehr klein, weil das Spielgerät im Garten repariert werden musste. Trotzdem soll das Fest schön werden.",
+      "punkte": ["Programm", "Essen und Getränke", "Hilfe von Eltern", "Sponsoren", "Aufgaben im Team"],
+      "ideen": ["Mitbring-Buffet der Eltern", "Spielstationen von Eltern betreut", "Lokale Bäckerei als Sponsor fragen", "Kuchenverkauf für den Förderverein", "Helferliste am Eingang aushängen"],
+      "rollen": { "a": "Sie möchten ein großes Fest mit Hüpfburg.", "b": "Sie möchten ein kleines, einfaches Fest ohne Stress." }
+    },
+    {
+      "id": "s17", "bereich": "Logistik & Lager", "icon": "🚚",
+      "titel": "Der Lkw kommt nicht",
+      "situation": "Sie arbeiten in der Logistik eines Versandhandels. Eine wichtige Lieferung an einen Großkunden ist morgen fällig, aber die Spedition hat den Lkw kurzfristig abgesagt.",
+      "punkte": ["Andere Spedition", "Kunden informieren", "Teillieferung?", "Zusatzkosten", "Vorbeugung für die Zukunft"],
+      "ideen": ["Mehrere Speditionen sofort anfragen", "Kunden ehrlich informieren und neuen Termin nennen", "Dringendste Ware mit Kurierdienst", "Kosten mit der alten Spedition klären", "Liste mit Ersatzspeditionen anlegen"],
+      "rollen": { "a": "Sie wollen die teure Expresslösung, damit der Kunde zufrieden ist.", "b": "Sie achten auf die Kosten und möchten lieber einen Tag später liefern." }
+    },
+    {
+      "id": "s18", "bereich": "Logistik & Lager", "icon": "📦",
+      "titel": "Beschädigte Ware",
+      "situation": "In Ihrem Lager kommen seit Wochen immer mehr beschädigte Pakete beim Kunden an. Die Reklamationen kosten viel Geld. Sie vermuten, dass es an der Verpackung oder am Verladen liegt.",
+      "punkte": ["Ursache finden", "Verpackungsmaterial", "Schulung der Mitarbeitenden", "Gespräch mit dem Paketdienst", "Kontrolle"],
+      "ideen": ["Beschädigungen eine Woche lang dokumentieren (Fotos)", "Besseres Polstermaterial testen", "Kurze Schulung zum richtigen Verpacken", "Paketdienst um Stellungnahme bitten", "Stichprobenkontrollen vor dem Versand"],
+      "rollen": { "a": "Sie glauben, der Paketdienst ist schuld.", "b": "Sie glauben, dass im eigenen Lager zu hektisch gearbeitet wird." }
+    },
+    {
+      "id": "s19", "bereich": "Logistik & Lager", "icon": "🎄",
+      "titel": "Das Weihnachtsgeschäft",
+      "situation": "Im Dezember verdoppeln sich die Bestellungen in Ihrem Lager. Letztes Jahr gab es viele Überstunden, Fehler und Krankmeldungen. Dieses Jahr soll es besser laufen.",
+      "punkte": ["Personal", "Arbeitszeiten", "Abläufe verbessern", "Gesundheit des Teams", "Planung: Wer macht was?"],
+      "ideen": ["Aushilfen schon im Oktober einarbeiten", "Zusätzliche Schicht am Abend", "Bestseller näher an den Packplätzen lagern", "Feste Pausen, Obst und Getränke", "Urlaubssperre nur für die stärksten zwei Wochen"],
+      "rollen": { "a": "Sie möchten im Dezember eine Woche Urlaub.", "b": "Sie meinen, im Dezember sollte niemand Urlaub nehmen." }
+    },
+    {
+      "id": "s20", "bereich": "Handwerk & Technik", "icon": "🔧",
+      "titel": "Der Auszubildende kommt zu spät",
+      "situation": "In Ihrem Handwerksbetrieb kommt ein Auszubildender seit einigen Wochen fast jeden Tag zu spät. Seine Arbeit ist gut, aber die Kollegen auf der Baustelle müssen auf ihn warten und sind verärgert.",
+      "punkte": ["Gespräch mit dem Azubi", "Gründe herausfinden", "Regeln und Konsequenzen", "Unterstützung", "Wer spricht mit wem?"],
+      "ideen": ["Ruhiges Gespräch unter vier Augen", "Nach Problemen fragen (Bus, Familie, Schlaf)", "Fahrgemeinschaft organisieren", "Klare Vereinbarung schriftlich festhalten", "Ausbilder bzw. Ausbilderin einbeziehen"],
+      "rollen": { "a": "Sie möchten ihm noch eine Chance geben.", "b": "Sie finden, er sollte eine Abmahnung bekommen." }
+    },
+    {
+      "id": "s21", "bereich": "Handwerk & Technik", "icon": "🔥",
+      "titel": "Heizung im Winter kaputt",
+      "situation": "Sie arbeiten in der Werkstatt eines Autohauses. Mitten im Januar ist die Heizung ausgefallen. Es ist sehr kalt, und das Ersatzteil kommt erst in einer Woche.",
+      "punkte": ["Arbeitsschutz", "Provisorische Wärme", "Arbeitszeiten", "Kundentermine", "Information an das Team"],
+      "ideen": ["Elektroheizer oder Heizstrahler mieten", "Mehr warme Pausen im Aufenthaltsraum", "Arbeitskleidung für Kälte bereitstellen", "Nicht dringende Termine verschieben", "Hersteller nach schnellerem Ersatzteil fragen"],
+      "rollen": { "a": "Sie möchten die Werkstatt für ein paar Tage schließen.", "b": "Sie sagen, die Kundenaufträge müssen weiterlaufen." }
+    },
+    {
+      "id": "s22", "bereich": "Handwerk & Technik", "icon": "💻",
+      "titel": "Neue Software – alle sind genervt",
+      "situation": "Ihre Firma hat ein neues Programm für Aufträge und Rechnungen eingeführt. Viele Kolleginnen und Kollegen kommen nicht damit klar, Rechnungen gehen verspätet raus und es gibt Fehler.",
+      "punkte": ["Schulungen", "Ansprechperson", "Anleitungen", "Übergangszeit mit altem System?", "Rückmeldung an den Hersteller"],
+      "ideen": ["Kurze Schulungen in kleinen Gruppen", "Erfahrene Kollegin als Ansprechperson (Key-User)", "Spickzettel mit den wichtigsten Schritten", "Feste Sprechstunde mit der IT", "Fehler sammeln und an den Hersteller melden"],
+      "rollen": { "a": "Sie möchten das alte Programm parallel weiter benutzen.", "b": "Sie meinen: Jetzt muss das neue Programm sofort für alle gelten." }
+    },
+    {
+      "id": "s23", "bereich": "Teamarbeit", "icon": "🌴",
+      "titel": "Alle wollen im August Urlaub",
+      "situation": "In Ihrem Team von acht Personen möchten sechs Kolleginnen und Kollegen im August Urlaub nehmen. Gleichzeitig muss ein wichtiges Projekt Ende August fertig sein.",
+      "punkte": ["Wie viele dürfen gleichzeitig fehlen?", "Familien mit Schulkindern", "Kriterien für die Verteilung", "Projektplanung", "Wer entscheidet?"],
+      "ideen": ["Höchstens drei Personen gleichzeitig im Urlaub", "Eltern schulpflichtiger Kinder bevorzugen", "Wechsel: Wer dieses Jahr verzichtet, hat nächstes Jahr Vorrang", "Projektteile vor dem Urlaub erledigen", "Urlaubsplan bis März festlegen"],
+      "rollen": { "a": "Sie haben Kinder und brauchen Urlaub in den Schulferien.", "b": "Sie haben keine Kinder, wollen aber auch im Sommer Urlaub machen." }
+    },
+    {
+      "id": "s24", "bereich": "Teamarbeit", "icon": "🗣️",
+      "titel": "Streit im Team",
+      "situation": "Zwei Kollegen in Ihrer Abteilung sprechen seit einem Streit nicht mehr miteinander. Informationen gehen verloren, Aufgaben bleiben liegen und die Stimmung im ganzen Team leidet.",
+      "punkte": ["Gespräch mit den beiden", "Vermittlung durch eine dritte Person", "Kommunikationsregeln", "Aufgaben neu verteilen?", "Teamklima verbessern"],
+      "ideen": ["Erst mit jedem einzeln sprechen", "Gemeinsames Gespräch mit neutraler Person", "Wichtige Infos immer schriftlich ans ganze Team", "Wöchentliches kurzes Teammeeting", "Gemeinsame Aktivität nach der Arbeit"],
+      "rollen": { "a": "Sie finden, die Teamleitung muss das klären.", "b": "Sie möchten, dass das Team das Problem selbst löst." }
+    },
+    {
+      "id": "s25", "bereich": "Teamarbeit", "icon": "👋",
+      "titel": "Einarbeitung der Neuen",
+      "situation": "Nächsten Monat kommen drei neue Kolleginnen und Kollegen aus dem Ausland in Ihre Firma. Die letzte Einarbeitung war chaotisch: Niemand fühlte sich zuständig. Sie sollen einen Plan für die ersten Wochen machen.",
+      "punkte": ["Der erste Tag", "Paten oder Mentoren", "Sprache und Fachbegriffe", "Informationsmaterial", "Feedback nach einigen Wochen"],
+      "ideen": ["Begrüßung mit Rundgang und Vorstellungsrunde", "Jede neue Person bekommt eine Patin / einen Paten", "Liste mit wichtigen Fachwörtern", "Willkommensmappe mit Ansprechpartnern", "Gespräch nach vier Wochen: Was fehlt noch?"],
+      "rollen": { "a": "Sie möchten viel Zeit für die Einarbeitung einplanen.", "b": "Sie haben gerade sehr viel Arbeit und wenig Zeit." }
+    },
+    {
+      "id": "s26", "bereich": "Teamarbeit", "icon": "🎤",
+      "titel": "Kurzfristige Kundenveranstaltung",
+      "situation": "Ihr Chef teilt mit, dass in zehn Tagen eine Delegation von 15 Kunden aus dem Ausland die Firma besucht. Es soll einen Empfang, eine Firmenführung und ein Abendessen geben. Er bittet Sie beide, alles zu organisieren.",
+      "punkte": ["Programm des Tages", "Essen und Ort", "Sprache und Übersetzung", "Geschenke und Material", "Aufgabenverteilung und Zeitplan"],
+      "ideen": ["Ablaufplan mit Uhrzeiten erstellen", "Restaurant sofort reservieren", "Kollegen mit Fremdsprachen einbeziehen", "Kleine regionale Gastgeschenke", "Täglich kurz abstimmen, was erledigt ist"],
+      "rollen": { "a": "Sie möchten ein besonderes Abendessen in einem guten Restaurant.", "b": "Sie schlagen ein Catering in der Firma vor – das ist persönlicher und günstiger." }
+    },
+    {
+      "id": "s27", "bereich": "Büro & Verwaltung", "icon": "🌱",
+      "titel": "Die Firma soll grüner werden",
+      "situation": "Ihre Geschäftsführung möchte, dass die Firma umweltfreundlicher wird, und bittet die Mitarbeitenden um Vorschläge. Sie beide sollen für Ihre Abteilung Ideen sammeln und eine Auswahl treffen.",
+      "punkte": ["Papier und Druck", "Energie sparen", "Weg zur Arbeit", "Müll und Kaffeebecher", "Was kostet was?"],
+      "ideen": ["Doppelseitig drucken, mehr digital", "Licht und Geräte abends ganz ausschalten", "Jobrad oder Zuschuss zum Jobticket", "Eigene Tassen statt Pappbecher", "Mit kostenlosen Maßnahmen anfangen"],
+      "rollen": { "a": "Sie möchten große Maßnahmen wie ein Jobrad-Angebot.", "b": "Sie möchten mit kleinen, kostenlosen Schritten anfangen." }
+    }
+  ]
+}

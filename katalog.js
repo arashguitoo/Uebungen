@@ -456,6 +456,19 @@ export const KATALOG = [
     reihe: "Prüfungstraining B1/B2",
     offen: true,
     quelle: { werk: "Linie 1 Beruf", lektion: 14 }
+  },
+  {
+    id: "problem-loesen",
+    titel: "Gemeinsam ein Problem lösen",
+    untertitel: "Prüfungssimulation Sprechen · 27 Situationen am Arbeitsplatz · Zeitanzeige · Selbstcheck · Redemittel-Training",
+    datei: "problem-loesen.html",
+    typ: "Simulation",
+    niveau: "B1/B2",
+    themen: ["Prüfungsvorbereitung", "Sprechen", "Beruf"],
+    farbe: "#2f6b5e",
+    dauer: "je 4 Min.",
+    reihe: "Mündliche Prüfung",
+    offen: true
   }
 ];
 

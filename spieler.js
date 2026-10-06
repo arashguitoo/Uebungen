@@ -1,7 +1,7 @@
 // spieler.js – Anbindung jeder Übung an die Zentrale:
 // Sitzung (mit Code oder als Gast), Live-Beobachtung, Ergebnisse, Aufgabenanalyse, Zertifikat.
-import { db, DEMO, zufall, esc } from './db.js?v=20261006a';
-import { KATALOG, exById } from './katalog.js?v=20261006a';
+import { db, DEMO, zufall, esc } from './db.js?v=20261006b';
+import { KATALOG, exById } from './katalog.js?v=20261006b';
 
 const SKEY = 'ueb_sitzung', BKEY = 'ueb_best';
 const jetzt = () => Date.now();
