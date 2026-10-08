@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Konsole – Übungszentrale</title>
 <meta name="robots" content="noindex">
-<link rel="stylesheet" href="stil.css?v=20261008a">
+<link rel="stylesheet" href="stil.css?v=20261008b">
 <style>
   :root{--akzent:#2f3f46;--akzent-hell:#e7edef}
   body{font-size:16px}
@@ -97,15 +97,17 @@ window.__ok = false;
 </script>
 <script type="module">
 window.__ok = true;
-import { db, DEMO, zufall, esc, mitDemo } from './db.js?v=20261008a';
-import { KATALOG, exById } from './katalog.js?v=20261008a';
+import { db, DEMO, zufall, esc, mitDemo } from './db.js?v=20261008b';
+import { KATALOG, exById } from './katalog.js?v=20261008b';
 
 if (DEMO) document.getElementById('demo').innerHTML = '<div class="demo-band">DEMO-MODUS – Anmeldung mit beliebigen Daten, alles bleibt in diesem Browser</div>';
 const $ = s => document.querySelector(s), app = $('#app');
-const D = { kurse: {}, pub: {}, live: {}, res: {}, items: {} };
+const D = { kurse: {}, pub: {}, live: {}, res: {}, items: {}, wieder: {} };
 let tab = 'live', offs = [], gewKurs = null;
 const F = { werk: 'alle', lkurs: 'alle', lex: 'alle', nurAktiv: false, ekurs: 'alle', eex: 'alle', mehr: false };
 const BASE = location.href.replace(/[?#].*$/, '').replace(/[^/]*$/, '');
+// Sicherheitsnetz: ein leerer Code oder Kurs darf nie zu „codes/“ oder „kurse/“ werden (das wäre der ganze Knoten)
+const sicher = up => { for (const k of Object.keys(up)) if (/(^|\/)(undefined|null)?(\/|$)/.test(k) || /\/$/.test(k) || /^(codes|kurse|pub\/kurse)$/.test(k)) { console.warn('Blockiert:', k); delete up[k]; } return up; };
 const meld = t => { const m = document.createElement('div'); m.className = 'meldung'; m.textContent = t; document.body.append(m); setTimeout(() => m.remove(), 2200); };
 const zeit = t => t ? new Date(t).toLocaleString('de-DE', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }) : '';
 const dauer = s => s >= 3600 ? Math.floor(s / 3600) + ' h ' + Math.floor(s % 3600 / 60) + ' min' : Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0') + ' min';
@@ -270,6 +272,48 @@ async function neuerCode(belegt) {
   for (let i = 0; i < 30; i++) { const c = zufall(5); if (belegt.has(c)) continue; if (!(await db.get('codes/' + c))) { belegt.add(c); return c; } }
   throw new Error('Kein freier Code gefunden');
 }
+/* ---------------- Wiederherstellung ---------------- */
+function rettungsDaten() {
+  const K = {};
+  const add = (kid, kurs, pid, name, code) => {
+    if (!kid || !pid || typeof kid !== 'string' || typeof pid !== 'string') return;
+    const k = K[kid] || (K[kid] = { name: '', tn: {} }); if (kurs && !k.name) k.name = kurs;
+    const p = k.tn[pid] || (k.tn[pid] = { name: '', code: '' }); if (name && name !== 'Gast') p.name = name; if (code) p.code = code;
+  };
+  for (const ex of Object.values(D.res || {})) for (const v of Object.values(ex || {})) add(v.kid, v.kurs, v.pid, v.name);
+  for (const v of Object.values(D.live || {})) add(v.kid, v.kurs, v.pid, v.name);
+  for (const [code, w] of Object.entries(D.wieder || {})) add(w.kid, w.kurs, w.pid, w.name, code);
+  // nur, was in den Kursen noch fehlt
+  const fehlt = {};
+  for (const [kid, k] of Object.entries(K)) {
+    const da = D.kurse[kid], tn = {};
+    for (const [pid, p] of Object.entries(k.tn)) { const alt = da && da.tn && da.tn[pid]; if (!alt || (!alt.code && p.code)) tn[pid] = p; }
+    if (!da || Object.keys(tn).length) fehlt[kid] = { name: (da && da.name) || k.name || 'Kurs ' + kid, neu: !da, tn };
+  }
+  return fehlt;
+}
+function rettungsKarte() {
+  const f = rettungsDaten(), ks = Object.entries(f); if (!ks.length) return '';
+  const pers = ks.reduce((a, [, k]) => a + Object.keys(k.tn).length, 0), mitCode = ks.reduce((a, [, k]) => a + Object.values(k.tn).filter(p => p.code).length, 0);
+  return `<div class="karte" style="margin-top:16px;border:2px solid #e0a800;background:#fffaf0"><h2 style="margin-top:0">🛟 Wiederherstellung</h2>
+    <p>Aus den gespeicherten Ergebnissen und den Rückmeldungen der Handys wurden <b>${ks.length} Kurs${ks.length > 1 ? 'e' : ''}</b> mit <b>${pers} Personen</b> gefunden, die in der Kursliste fehlen. <b>${mitCode}</b> davon haben ihren alten Code schon zurückgemeldet.</p>
+    <div class="tabwrap"><table class="t"><tr><th>Kurs</th><th>Personen</th><th>alter Code bekannt</th></tr>${ks.map(([kid, k]) => `<tr><td><b>${esc(k.name)}</b>${k.neu ? ' <span class="pille">fehlt</span>' : ''}</td><td>${Object.values(k.tn).map(p => esc(p.name || '?') + (p.code ? ' ✓' : '')).join(', ')}</td><td>${Object.values(k.tn).filter(p => p.code).length} / ${Object.keys(k.tn).length}</td></tr>`).join('')}</table></div>
+    <p class="leise klein">✓ = Code ist bekannt und wird genau so wieder eingetragen – die Person kann sofort weiterspielen. Personen ohne ✓ erscheinen im Kurs ohne Code: Sobald sie die Übungszentrale auf ihrem Handy öffnen, meldet sich ihr alter Code hier. Alternativ mit 🔄 einen neuen Code vergeben.</p>
+    <button class="btn" id="retten">Alles wiederherstellen</button></div>`;
+}
+async function retten() {
+  const f = rettungsDaten(), up = {};
+  for (const [kid, k] of Object.entries(f)) {
+    if (k.neu) { up['kurse/' + kid + '/name'] = k.name; up['kurse/' + kid + '/t'] = Date.now(); up['pub/kurse/' + kid + '/name'] = k.name; }
+    for (const [pid, p] of Object.entries(k.tn)) {
+      up['kurse/' + kid + '/tn/' + pid] = { name: p.name || '?', code: p.code || '', t: Date.now() };
+      if (p.code) { up['codes/' + p.code] = { kid, pid, name: p.name || '?', kurs: k.name }; up['wieder/' + p.code] = null; }
+    }
+  }
+  if (!Object.keys(up).length) return;
+  await db.update('', sicher(up)); meld('Wiederhergestellt.');
+}
+
 function kurse() {
   const kl = kursListe();
   if (gewKurs && !D.kurse[gewKurs]) gewKurs = null;
@@ -277,7 +321,7 @@ function kurse() {
   const k = gewKurs ? D.kurse[gewKurs] : null;
   const tn = k ? Object.entries(k.tn || {}).sort((a, b) => a[1].name.localeCompare(b[1].name)) : [];
   const zug = (gewKurs && D.pub.kurse && D.pub.kurse[gewKurs] && D.pub.kurse[gewKurs].ex) || {};
-  app.innerHTML = `<div class="zwei" style="margin-top:16px"><div class="kl">
+  app.innerHTML = rettungsKarte() + `<div class="zwei" style="margin-top:16px"><div class="kl">
       ${kl.map(([kid, v]) => `<button class="kursbtn ${kid === gewKurs ? 'an' : ''}" data-k="${kid}"><b>${esc(v.name)}</b><br><span class="klein leise">${Object.keys(v.tn || {}).length} Personen</span></button>`).join('')}
       <form id="nk" class="karte" style="padding:12px;display:grid;gap:8px"><b>Neuer Kurs</b><input type="text" id="nkn" placeholder="z. B. BSK B2 Plön Herbst" required><button class="btn klein">Anlegen</button></form></div>
     <div>${k ? `<div class="karte">
@@ -286,7 +330,7 @@ function kurse() {
       <p class="leise klein">Link für die Gruppe: <a href="${BASE}index.html" target="_blank">${BASE}index.html</a> – dort mit Code anmelden.</p>
       <h3 style="margin-top:18px">Teilnehmende (${tn.length})</h3>
       ${tn.length ? `<div class="tabwrap"><table class="t"><tr><th>Name</th><th>Code</th><th>Direktlink</th><th></th></tr>${tn.map(([pid, p]) => `<tr>
-        <td><b>${esc(p.name)}</b></td><td><span class="code">${esc(p.code)}</span></td>
+        <td><b>${esc(p.name)}</b></td><td>${p.code ? `<span class="code">${esc(p.code)}</span>` : '<span class="leise klein">– fehlt –</span>'}</td>
         <td><button class="icon" data-link="${esc(p.code)}" title="Link mit Code kopieren">🔗 kopieren</button></td>
         <td style="white-space:nowrap"><button class="icon" data-ren="${pid}" title="Namen ändern">✏️</button><button class="icon" data-neu="${pid}" title="Neuen Code erzeugen">🔄</button><button class="icon" data-del="${pid}" title="Entfernen">🗑</button></td></tr>`).join('')}</table></div>` : '<p class="leise">Noch niemand eingetragen.</p>'}
       <form id="ntn" style="margin-top:14px"><label class="klein leise">Namen eintragen – ein Name pro Zeile. Jede Person bekommt automatisch einen Code.</label>
@@ -294,34 +338,35 @@ function kurse() {
       <h3 style="margin-top:22px">Übungen für diesen Kurs</h3><p class="leise klein" style="margin-top:0">Angehakte Übungen erscheinen bei den Teilnehmenden unter „Deine Übungen“ – auch wenn sie nicht öffentlich sind.</p>
       <div style="display:grid;gap:6px">${KATALOG.map(e => `<label class="schalter"><input type="checkbox" data-zu="${e.id}" ${zug[e.id] ? 'checked' : ''}> <b>${esc(e.titel)}</b> ${qBadge(e)} <span class="leise klein">${esc(e.niveau)}</span></label>`).join('')}</div>
     </div>` : '<div class="karte"><h2>Noch kein Kurs</h2><p class="leise">Lege links deinen ersten Kurs an. Danach trägst du die Namen ein und druckst die Codekarten.</p></div>'}</div></div>`;
+  const rb = $('#retten'); if (rb) rb.onclick = async () => { if (confirm('Kurse und bekannte Codes jetzt wiederherstellen?')) { rb.disabled = true; await retten(); } };
   app.querySelectorAll('.kursbtn').forEach(b => b.onclick = () => { gewKurs = b.dataset.k; kurse(); });
   $('#nk').onsubmit = async e => { e.preventDefault(); const name = $('#nkn').value.trim(); if (!name) return;
     const kid = zufall(8, 'abcdefghijkmnpqrstuvwxyz23456789'); $('#nkn').value = '';
-    await db.update('', { ['kurse/' + kid]: { name, t: Date.now() }, ['pub/kurse/' + kid + '/name']: name }); gewKurs = kid; meld('Kurs angelegt.'); };
+    await db.update('', sicher({ ['kurse/' + kid]: { name, t: Date.now() }, ['pub/kurse/' + kid + '/name']: name })); gewKurs = kid; meld('Kurs angelegt.'); };
   if (!k) return;
   $('#umb').onclick = async () => { const n = prompt('Neuer Kursname:', k.name); if (!n || !n.trim()) return;
     const up = { ['kurse/' + gewKurs + '/name']: n.trim(), ['pub/kurse/' + gewKurs + '/name']: n.trim() };
-    tn.forEach(([, p]) => up['codes/' + p.code + '/kurs'] = n.trim()); await db.update('', up); };
+    tn.forEach(([, p]) => up['codes/' + p.code + '/kurs'] = n.trim()); await db.update('', sicher(up)); };
   $('#loe').onclick = async () => { if (!confirm(`Kurs „${k.name}“ mit allen Codes löschen? Die Ergebnisse bleiben erhalten.`)) return;
     const up = { ['kurse/' + gewKurs]: null, ['pub/kurse/' + gewKurs]: null }; tn.forEach(([, p]) => up['codes/' + p.code] = null);
-    await db.update('', up); gewKurs = null; meld('Kurs gelöscht.'); };
+    await db.update('', sicher(up)); gewKurs = null; meld('Kurs gelöscht.'); };
   $('#ntn').onsubmit = async e => { e.preventDefault();
     const namen = $('#ntnt').value.split(/\n|;/).map(s => s.trim()).filter(Boolean); if (!namen.length) return;
     const belegt = alleCodes(), up = {};
     for (const name of namen) { const pid = zufall(8, 'abcdefghijkmnpqrstuvwxyz23456789'), code = await neuerCode(belegt);
       up['kurse/' + gewKurs + '/tn/' + pid] = { name, code, t: Date.now() };
       up['codes/' + code] = { kid: gewKurs, pid, name, kurs: k.name }; }
-    await db.update('', up); meld(namen.length + ' eingetragen.'); };
+    await db.update('', sicher(up)); meld(namen.length + ' eingetragen.'); };
   app.querySelectorAll('[data-del]').forEach(b => b.onclick = async () => { const p = k.tn[b.dataset.del];
     if (!confirm(`${p.name} entfernen? Der Code ${p.code} funktioniert dann nicht mehr.`)) return;
-    await db.update('', { ['kurse/' + gewKurs + '/tn/' + b.dataset.del]: null, ['codes/' + p.code]: null }); });
+    await db.update('', sicher({ ['kurse/' + gewKurs + '/tn/' + b.dataset.del]: null, ['codes/' + p.code]: null })); });
   app.querySelectorAll('[data-neu]').forEach(b => b.onclick = async () => { const pid = b.dataset.neu, p = k.tn[pid];
     if (!confirm(`Neuen Code für ${p.name}? Der alte Code ${p.code} funktioniert dann nicht mehr.`)) return;
     const c = await neuerCode(alleCodes());
-    await db.update('', { ['kurse/' + gewKurs + '/tn/' + pid + '/code']: c, ['codes/' + p.code]: null, ['codes/' + c]: { kid: gewKurs, pid, name: p.name, kurs: k.name } }); });
+    await db.update('', sicher({ ['kurse/' + gewKurs + '/tn/' + pid + '/code']: c, ['codes/' + p.code]: null, ['codes/' + c]: { kid: gewKurs, pid, name: p.name, kurs: k.name } })); });
   app.querySelectorAll('[data-ren]').forEach(b => b.onclick = async () => { const pid = b.dataset.ren, p = k.tn[pid];
     const n = prompt('Name:', p.name); if (!n || !n.trim()) return;
-    await db.update('', { ['kurse/' + gewKurs + '/tn/' + pid + '/name']: n.trim(), ['codes/' + p.code + '/name']: n.trim() }); });
+    await db.update('', sicher({ ['kurse/' + gewKurs + '/tn/' + pid + '/name']: n.trim(), ['codes/' + p.code + '/name']: n.trim() })); });
   app.querySelectorAll('[data-link]').forEach(b => b.onclick = () => { navigator.clipboard.writeText(BASE + 'index.html?code=' + b.dataset.link).then(() => meld('Link kopiert.'), () => prompt('Link:', BASE + 'index.html?code=' + b.dataset.link)); });
   app.querySelectorAll('[data-zu]').forEach(c => c.onchange = () => db.set('pub/kurse/' + gewKurs + '/ex/' + c.dataset.zu, c.checked ? true : null));
   $('#druck').onclick = () => druck(k, tn);

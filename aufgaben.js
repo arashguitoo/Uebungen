@@ -12,7 +12,7 @@
 // Im Text: **fett**, ___ = Lücke, Leerzeile = neuer Absatz.
 //
 // zeige(el, aufgabe, { onErgebnis(richtig, {p, pm, teile}) }) → Promise (löst beim Klick auf „Weiter“ auf)
-import { esc } from './db.js?v=20261008a';
+import { esc } from './db.js?v=20261008b';
 
 export const mische = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 export const ziehe = (a, n) => mische(a).slice(0, n);

@@ -1,7 +1,7 @@
 // spieler.js – Anbindung jeder Übung an die Zentrale:
 // Sitzung (mit Code oder als Gast), Live-Beobachtung, Ergebnisse, Aufgabenanalyse, Zertifikat.
-import { db, DEMO, zufall, esc } from './db.js?v=20261008a';
-import { KATALOG, exById } from './katalog.js?v=20261008a';
+import { db, DEMO, zufall, esc } from './db.js?v=20261008b';
+import { KATALOG, exById } from './katalog.js?v=20261008b';
 
 const SKEY = 'ueb_sitzung', BKEY = 'ueb_best';
 const jetzt = () => Date.now();
@@ -25,6 +25,17 @@ export async function anmelden(code) {
 const bkey = (s = sitzung()) => BKEY + '_' + (s && s.code ? s.code : 'gast');
 export function besteLokal() { try { return JSON.parse(localStorage.getItem(bkey())) || {}; } catch (e) { return {}; } }
 
+/* ---------------- Wiederherstellung ----------------
+   Fehlt der gespeicherte Code in der Datenbank, meldet das Gerät Code, Name, Kurs und Kennung
+   unter „wieder/“ zurück. Die Lehrkraft kann ihn in der Konsole mit einem Klick wieder eintragen. */
+export async function meldeCodeZurueck(s = sitzung()) {
+  if (!s || !s.code || !s.kid || !s.pid) return;
+  try {
+    if ((await db.get('codes/' + s.code)) !== null) return;
+    await db.set('wieder/' + s.code, { name: String(s.name || '').slice(0, 60), kid: String(s.kid).slice(0, 20), pid: String(s.pid).slice(0, 20), kurs: String(s.kurs || '').slice(0, 60), t: Date.now() });
+  } catch (e) { }
+}
+
 /* ---------------- Freigabe ---------------- */
 export async function istFreigegeben(exId, s = sitzung(), meta = null) {
   const ex = exById(exId) || meta; if (!ex) return false;
@@ -44,6 +55,7 @@ export async function starte(exId, meta = null) {
   const urlCode = new URLSearchParams(location.search).get('code');
   if (urlCode) { try { await anmelden(urlCode); } catch (e) { } }
   let s = sitzung() || alsGast('Gast');
+  meldeCodeZurueck(s);
   kopf(ex, s);
   if (ex.farbe) document.documentElement.style.setProperty('--akzent', ex.farbe);
   const frei = await istFreigegeben(exId, s, meta || ex);
