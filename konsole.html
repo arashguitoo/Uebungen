@@ -344,18 +344,18 @@ function uebungen() {
   const alle = versuche(), kl = kursListe(), ws = werke();
   const passt = e => F.werk === 'alle' || (F.werk === 'ohne' ? !e.quelle : e.quelle && e.quelle.werk === F.werk);
   const liste = KATALOG.filter(passt).slice().sort((a, b) => {
-    const wa = a.quelle ? a.quelle.werk : '\uffff', wb = b.quelle ? b.quelle.werk : '\uffff';
+    const wa = a.quelle ? a.quelle.werk : '', wb = b.quelle ? b.quelle.werk : '';
     return wa.localeCompare(wb) || KATALOG.indexOf(a) - KATALOG.indexOf(b);
   });
-  const gruppe = e => e.quelle ? e.quelle.werk : 'Ohne Lehrwerk';
+  const gruppe = e => e.quelle ? e.quelle.werk : 'Prüfungstraining & Spiele (ohne Lehrwerk)';
   let letzte = null;
   app.innerHTML = `<p class="leise" style="margin-top:16px">Alle Übungen aus <code>katalog.js</code>. <b>Öffentlich</b> = in der Zentrale für alle sichtbar und ohne Code spielbar. Ist eine Übung nicht öffentlich, sehen sie nur die Kurse, denen du sie zuweist. Die Angaben 📚 zu Lehrwerk und Lektion siehst nur du.</p>
-    <div class="leiste"><label for="wf">Lehrwerk:</label><select id="wf"><option value="alle">Alle</option>${ws.map(w => `<option value="${esc(w)}" ${F.werk === w ? 'selected' : ''}>${esc(w)} (${KATALOG.filter(e => e.quelle && e.quelle.werk === w).length})</option>`).join('')}<option value="ohne" ${F.werk === 'ohne' ? 'selected' : ''}>Ohne Lehrwerk (${KATALOG.filter(e => !e.quelle).length})</option></select></div>
+    <div class="leiste"><label for="wf">Lehrwerk:</label><select id="wf"><option value="alle">Alle</option>${ws.map(w => `<option value="${esc(w)}" ${F.werk === w ? 'selected' : ''}>${esc(w)} (${KATALOG.filter(e => e.quelle && e.quelle.werk === w).length})</option>`).join('')}<option value="ohne" ${F.werk === 'ohne' ? 'selected' : ''}>Prüfungstraining & Spiele (${KATALOG.filter(e => !e.quelle).length})</option></select></div>
     <div style="display:grid;gap:12px">${liste.map(e => {
       const p = (D.pub.ex || {})[e.id], offen = p && typeof p.offen === 'boolean' ? p.offen : e.offen !== false;
       const vs = alle.filter(v => v.ex === e.id), d = vs.length ? Math.round(vs.reduce((a, v) => a + (v.pct || 0), 0) / vs.length) : null;
       const aktiv = Object.values(D.live || {}).filter(v => v.ex === e.id && status(v) === 'aktiv').length;
-      const kopf = gruppe(e) !== letzte ? (letzte = gruppe(e), `<h2 style="margin:14px 0 0">${e.quelle ? '📚 ' : ''}${esc(letzte)}</h2>`) : '';
+      const kopf = gruppe(e) !== letzte ? (letzte = gruppe(e), `<h2 style="margin:14px 0 0">${e.quelle ? '📚 ' : '🎯 '}${esc(letzte)}</h2>`) : '';
       return kopf + `<div class="exk"><div class="kopfz"><div class="farbe" style="background:${e.farbe}"></div><div style="flex:1"><h3 style="margin:0">${esc(e.titel)} ${qBadge(e)}</h3>
         <div class="klein leise">${esc(e.typ)} · ${esc(e.niveau)} · ${esc(e.untertitel || '')}</div></div>
         <a class="btn zweit klein" href="${mitDemo(e.datei)}" target="_blank">Öffnen</a><button class="btn zweit klein" data-cp="${e.datei}">🔗 Link</button></div>
