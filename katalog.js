@@ -469,6 +469,19 @@ export const KATALOG = [
     dauer: "je 4 Min.",
     reihe: "Mündliche Prüfung",
     offen: true
+  },
+  {
+    id: "smalltalk",
+    titel: "Smalltalk-Profi",
+    untertitel: "Smalltalk bei der Arbeit: Themen, Begriffe, Reaktionen, Du oder Sie · allein mit Zeitdruck oder live mit der Klasse",
+    datei: "smalltalk.html",
+    typ: "Spiel",
+    niveau: "B1/B2",
+    themen: ["Sprechen", "Beruf", "Kommunikation"],
+    farbe: "#b5562f",
+    dauer: "10 Min.",
+    reihe: "Mündliche Prüfung",
+    offen: true
   }
 ];
 

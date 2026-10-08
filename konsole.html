@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Konsole – Übungszentrale</title>
 <meta name="robots" content="noindex">
-<link rel="stylesheet" href="stil.css?v=20261006b">
+<link rel="stylesheet" href="stil.css?v=20261008a">
 <style>
   :root{--akzent:#2f3f46;--akzent-hell:#e7edef}
   body{font-size:16px}
@@ -70,6 +70,7 @@
     <button class="tab" data-t="erg">Ergebnisse</button>
     <button class="tab" data-t="kurse">Kurse &amp; Codes</button>
     <button class="tab" data-t="ex">Übungen</button>
+    <a href="smalltalk-live.html" style="color:#ffd166;font-weight:700;padding:10px 16px;text-decoration:none;white-space:nowrap" title="Live-Quiz für den Beamer starten">🎤 Live-Quiz</a>
   </nav>
 </div></header>
 <main class="wrap" id="app"></main>
@@ -96,8 +97,8 @@ window.__ok = false;
 </script>
 <script type="module">
 window.__ok = true;
-import { db, DEMO, zufall, esc, mitDemo } from './db.js?v=20261006b';
-import { KATALOG, exById } from './katalog.js?v=20261006b';
+import { db, DEMO, zufall, esc, mitDemo } from './db.js?v=20261008a';
+import { KATALOG, exById } from './katalog.js?v=20261008a';
 
 if (DEMO) document.getElementById('demo').innerHTML = '<div class="demo-band">DEMO-MODUS – Anmeldung mit beliebigen Daten, alles bleibt in diesem Browser</div>';
 const $ = s => document.querySelector(s), app = $('#app');

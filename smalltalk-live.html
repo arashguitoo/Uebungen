@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smalltalk live – Beamer</title>
+<link rel="stylesheet" href="stil.css?v=20261008a">
+<style>
+  :root{--akzent:#b5562f;--akzent-hell:#f8ebe5;--a0:#d9483b;--a1:#2f6fc4;--a2:#d9971c;--a3:#2e9a57;--dunkel:#2b2522}
+  body{background:#2b2522;color:#fff;min-height:100vh}
+  .wrap{max-width:1200px}
+  .top{display:flex;align-items:center;gap:12px;padding:10px 0;color:#e8d9cf}
+  .top a{color:#e8d9cf;text-decoration:none;font-weight:600}
+  .top .t{flex:1;font-weight:700}
+  .karte{color:var(--text,#222)}
+  h1.gross{font-family:Georgia,serif;font-size:clamp(2rem,4vw,3.2rem);margin:10px 0;text-align:center}
+  .einst{max-width:640px;margin:20px auto;color:#222}
+  .einst label{display:block;font-weight:700;margin:14px 0 6px}
+  .wahl{display:flex;gap:8px;flex-wrap:wrap}
+  .w{font:inherit;border:2px solid var(--linie);background:#fff;border-radius:10px;padding:8px 14px;cursor:pointer}
+  .w.an{border-color:var(--akzent);background:var(--akzent-hell);font-weight:700}
+  .lobby{display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:center;margin-top:10px}
+  @media(max-width:800px){.lobby{grid-template-columns:1fr;text-align:center}}
+  .pinbox{background:#fff;color:var(--dunkel);border-radius:20px;padding:20px 26px;text-align:center}
+  .pinbox .pin{font-family:Consolas,monospace;font-size:clamp(3rem,8vw,5.5rem);font-weight:700;letter-spacing:.12em;line-height:1}
+  .pinbox .url{font-size:.95rem;color:#555;margin-top:6px;word-break:break-all}
+  #qr{margin:12px auto 0;width:180px;height:180px;background:#fff}
+  #qr img,#qr canvas{width:180px!important;height:180px!important}
+  .namen{display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start;min-height:120px}
+  .nm{background:rgba(255,255,255,.12);border-radius:99px;padding:6px 14px;font-weight:600;cursor:pointer;animation:rein .3s ease}
+  .nm:hover{background:rgba(217,72,59,.6)}
+  .teamspalten{display:grid;gap:12px}
+  .teamspalte{border-radius:14px;padding:10px 12px}
+  .teamspalte h3{margin:0 0 6px}
+  .zahl{font-size:1.4rem;font-weight:700;margin-bottom:8px}
+  .knopfreihe{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:18px}
+  .btn.hell{background:#fff;color:var(--dunkel);border-color:#fff}
+  .frage{font-size:clamp(1.5rem,3vw,2.4rem);font-weight:700;text-align:center;margin:16px auto;max-width:1000px;line-height:1.25}
+  .kat{text-align:center;color:#e8b99f;font-weight:700;letter-spacing:.05em}
+  .mitte{display:grid;grid-template-columns:110px 1fr 110px;align-items:center;gap:16px;margin:10px 0}
+  .uhr{width:100px;height:100px;border-radius:50%;display:grid;place-items:center;font-size:2.3rem;font-weight:700;font-family:Consolas,monospace}
+  .zaehler{text-align:center;font-size:1.1rem}
+  .zaehler b{display:block;font-size:2.3rem}
+  .antw{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .ab{color:#fff;border-radius:16px;padding:18px 18px 18px 60px;font-size:clamp(1.05rem,2vw,1.45rem);font-weight:700;position:relative;min-height:90px;display:flex;align-items:center;transition:opacity .3s}
+  .ab::before{position:absolute;left:20px;font-size:1.6rem}
+  .ab.f0{background:var(--a0)}.ab.f0::before{content:"▲"}
+  .ab.f1{background:var(--a1)}.ab.f1::before{content:"◆"}
+  .ab.f2{background:var(--a2)}.ab.f2::before{content:"●"}
+  .ab.f3{background:var(--a3)}.ab.f3::before{content:"■"}
+  .ab.weg{opacity:.25}.ab.ok{box-shadow:0 0 0 5px #fff}
+  .ab .anz{position:absolute;right:16px;font-family:Consolas,monospace;font-size:1.4rem;background:rgba(0,0,0,.2);border-radius:8px;padding:2px 10px}
+  .erkl{background:#fff;color:var(--dunkel);border-radius:14px;padding:14px 18px;margin:16px auto 0;max-width:1000px;font-size:1.15rem}
+  .liste{max-width:760px;margin:10px auto;display:grid;gap:8px}
+  .zeile2{display:grid;grid-template-columns:50px 1fr auto;gap:12px;align-items:center;background:rgba(255,255,255,.1);border-radius:12px;padding:10px 16px;font-size:1.25rem;animation:rein .3s ease}
+  .zeile2 .r{font-weight:700;font-size:1.4rem;text-align:center}
+  .zeile2 .p{font-family:Consolas,monospace;font-weight:700}
+  .zeile2 .d{font-size:.9rem;color:#9ee0b5;margin-left:8px}
+  .balken{max-width:900px;margin:20px auto;display:grid;gap:14px}
+  .bk{display:grid;grid-template-columns:120px 1fr 90px;align-items:center;gap:12px;font-size:1.3rem;font-weight:700}
+  .bk .b{height:44px;border-radius:10px;transition:width .8s ease}
+  .podest{display:flex;justify-content:center;align-items:flex-end;gap:14px;margin:26px 0 10px}
+  .pod{text-align:center;width:min(200px,28vw)}
+  .pod .s{border-radius:12px 12px 0 0;background:rgba(255,255,255,.15);display:grid;place-items:center;font-size:2.2rem;font-weight:700}
+  .pod .n{font-weight:700;font-size:1.2rem;margin-bottom:6px;word-break:break-word}
+  .leise2{color:#cdb9ad}
+  .hinweis2{background:rgba(255,255,255,.08);border-radius:12px;padding:10px 14px;font-size:.92rem;color:#e8d9cf}
+  .karte input{font:inherit}
+  @keyframes rein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+<div class="wrap"><div class="top"><a href="konsole.html">← Konsole</a><span class="t">💬 Smalltalk live</span><span id="wer" class="leise2 klein"></span></div></div>
+<main class="wrap" id="app"><p class="leise2" style="text-align:center;margin-top:40px">Lädt …</p></main>
+
+<script>
+window.__ok = false;
+(function () {
+  function zeige(msg) {
+    var ziel = document.getElementById('app') || document.body;
+    ziel.innerHTML = '<div class="karte" style="max-width:580px;margin:40px auto"><h2>Die Seite konnte nicht geladen werden</h2><p>Bitte Seite neu laden (Strg + F5 / Cmd + Shift + R).</p><p style="font-size:.85rem;color:#666">' + String(msg).replace(/</g, '&lt;') + '</p></div>';
+  }
+  addEventListener('error', function (e) { if (!window.__ok) zeige(e.message); });
+  setTimeout(function () { if (!window.__ok) zeige('Die Programmdateien wurden nicht vollständig geladen.'); }, 12000);
+})();
+</script>
+<script type="module">
+window.__ok = true;
+import { db, DEMO, esc } from './db.js?v=20261008a';
+import { mische } from './aufgaben.js?v=20261008a';
+import { FRAGEN, KATEGORIEN } from './smalltalk-daten.js?v=20261008a';
+
+const app = document.getElementById('app'), $ = s => document.querySelector(s);
+const TEAMS = [['Rot', '#d9483b'], ['Blau', '#2f6fc4'], ['Grün', '#2e9a57'], ['Gelb', '#d9971c']];
+const E = { n: 10, dauer: 20, teams: 0, kat: new Set(Object.keys(KATEGORIEN)) };
+let R = null, aus = [];
+const stopp = () => { aus.forEach(f => f()); aus = []; if (R) clearInterval(R.uhr); };
+const ton = (f = 660, d = .2) => { try { const c = new (window.AudioContext || window.webkitAudioContext)(), o = c.createOscillator(), g = c.createGain(); o.frequency.value = f; o.connect(g); g.connect(c.destination); g.gain.setValueAtTime(.15, c.currentTime); g.gain.exponentialRampToValueAtTime(.001, c.currentTime + d); o.start(); o.stop(c.currentTime + d); } catch (e) { } };
+
+/* ---------------- Anmeldung (nur Lehrkraft) ---------------- */
+db.onAuth((u, admin, err) => {
+  if (admin) { $('#wer').textContent = DEMO ? 'Demo' : (u.email || ''); if (!R) einstellungen(); return; }
+  app.innerHTML = `<form class="karte" id="login" style="max-width:420px;margin:50px auto"><h2>Anmelden</h2>
+    <p class="leise klein">Die Live-Runde kann nur die Lehrkraft starten – mit demselben Konto wie in der Konsole.</p>
+    <input type="email" id="em" placeholder="E-Mail" style="width:100%;margin-bottom:10px" autocomplete="username" required>
+    <input type="password" id="pw" placeholder="Passwort" style="width:100%;margin-bottom:12px" autocomplete="current-password" required>
+    <button class="btn" style="width:100%">Anmelden</button><p id="lf" style="color:var(--fehler)"></p></form>`;
+  $('#login').onsubmit = async e => { e.preventDefault(); try { await db.login($('#em').value, $('#pw').value); } catch (x) { $('#lf').textContent = 'Anmeldung fehlgeschlagen: ' + (x.code || x.message); } };
+});
+
+/* ---------------- Einstellungen ---------------- */
+function einstellungen() {
+  stopp(); R = null;
+  const wahl = (k, werte, txt) => `<div class="wahl">${werte.map(v => `<button class="w ${E[k] === v ? 'an' : ''}" data-k="${k}" data-v="${v}">${txt(v)}</button>`).join('')}</div>`;
+  const verf = FRAGEN.filter(f => E.kat.has(f.k)).length;
+  app.innerHTML = `<h1 class="gross">💬 Smalltalk live</h1>
+    <div class="karte einst">
+      <label>Spielform</label>${wahl('teams', [0, 2, 3, 4], v => v ? `Team-Duell · ${v} Teams` : 'Klassen-Quiz (jeder für sich)')}
+      <label>Anzahl Fragen</label>${wahl('n', [8, 10, 15, 20], v => v + ' Fragen')}
+      <label>Zeit pro Frage</label>${wahl('dauer', [15, 20, 30], v => v + ' Sek.')}
+      <label>Themen</label><div class="wahl">${Object.entries(KATEGORIEN).map(([k, t]) => `<button class="w ${E.kat.has(k) ? 'an' : ''}" data-kat="${k}">${t}</button>`).join('')}</div>
+      <p class="leise klein">${verf} Fragen in den gewählten Themen${verf < E.n ? ` – es werden alle ${verf} gespielt` : ''}.</p>
+      <div class="knopfreihe"><button class="btn" id="neu" ${verf ? '' : 'disabled'} style="min-width:220px">Runde eröffnen →</button></div>
+      <p class="leise klein">Tipp: Für den Beamer die Seite auf Vollbild stellen (F11). Mit der Leertaste geht es zur nächsten Folie.</p></div>`;
+  app.querySelectorAll('[data-k]').forEach(b => b.onclick = () => { E[b.dataset.k] = +b.dataset.v; einstellungen(); });
+  app.querySelectorAll('[data-kat]').forEach(b => b.onclick = () => { const k = b.dataset.kat; E.kat.has(k) ? E.kat.delete(k) : E.kat.add(k); einstellungen(); });
+  $('#neu').onclick = eroeffnen;
+}
+
+/* ---------------- Runde eröffnen / Lobby ---------------- */
+async function eroeffnen() {
+  let pin;
+  for (let v = 0; v < 20; v++) { pin = String(1000 + Math.floor(Math.random() * 9000)); if (!(await db.get('runde/' + pin + '/st'))) break; }
+  const pool = mische(FRAGEN.map((f, i) => i).filter(i => E.kat.has(FRAGEN[i].k)));
+  R = { pin, plan: pool.slice(0, E.n), i: -1, spieler: {}, antw: {}, total: {}, richtig: {}, dauer: E.dauer, teams: E.teams };
+  R.n = R.plan.length;
+  await db.set('runde/' + pin, { st: { ph: 'lobby', i: -1, n: R.n, teams: R.teams, dauer: R.dauer, t: Date.now() } });
+  aus.push(db.listen('runde/' + pin + '/spieler', s => { R.spieler = s || {}; if (R.ph === 'lobby') lobbyNamen(); }));
+  aus.push(db.listen('runde/' + pin + '/antw', a => { R.antw = a || {}; if (R.ph === 'frage') zaehle(); }));
+  lobby();
+}
+const linkFuer = () => new URL('smalltalk.html?pin=' + R.pin + (DEMO ? '&demo' : ''), location.href).href;
+function lobby() {
+  R.ph = 'lobby';
+  app.innerHTML = `<div class="lobby"><div class="pinbox"><div class="klein">Spiel-PIN</div><div class="pin">${R.pin}</div><div id="qr"></div><div class="url">${esc(linkFuer().replace(/^https?:\/\//, ''))}</div></div>
+    <div><h1 class="gross" style="text-align:left;margin-top:0">Smalltalk-Profi – macht mit!</h1>
+      <p class="leise2">Handy: QR-Code scannen oder in der Übungszentrale <b>Smalltalk-Profi → Live-Runde beitreten</b> und den PIN eingeben.</p>
+      <div class="zahl" id="anz"></div><div id="namen"></div>
+      <div class="knopfreihe" style="justify-content:flex-start"><button class="btn hell" id="los" disabled>▶ Spiel starten</button><button class="btn zweit" id="abbr">Abbrechen</button></div>
+      <p class="hinweis2">${R.teams ? `Team-Duell mit ${R.teams} Teams: Es zählt der <b>Durchschnitt</b> der Punkte pro Team – kleine Teams sind nicht im Nachteil.` : 'Klassen-Quiz: Richtig und schnell antworten bringt die meisten Punkte (500 + Tempo-Bonus bis 500).'} · ✓ = mit Code angemeldet (Ergebnis landet in der Konsole beim Teilnehmer) · Namen anklicken = Person entfernen.</p></div></div>`;
+  try { new QRCode($('#qr'), { text: linkFuer(), width: 180, height: 180, correctLevel: QRCode.CorrectLevel.M }); } catch (e) { $('#qr').remove(); }
+  $('#los').onclick = () => frage(0);
+  $('#abbr').onclick = beenden;
+  lobbyNamen();
+}
+function lobbyNamen() {
+  const sp = Object.entries(R.spieler), el = $('#namen'); if (!el) return;
+  $('#anz').textContent = sp.length ? `${sp.length} ${sp.length === 1 ? 'Person ist' : 'Personen sind'} dabei` : 'Noch niemand dabei …';
+  $('#los').disabled = !sp.length;
+  const chip = ([pid, s]) => `<span class="nm" data-pid="${pid}" title="${s.mc ? 'mit Code' + (s.kurs ? ' · ' + esc(s.kurs) : '') : 'ohne Code'} – anklicken zum Entfernen">${esc(s.name)}${s.mc ? ' ✓' : ''}</span>`;
+  el.innerHTML = R.teams ? `<div class="teamspalten" style="grid-template-columns:repeat(${R.teams},1fr)">${TEAMS.slice(0, R.teams).map(([n, c], t) => `<div class="teamspalte" style="background:${c}33;border:2px solid ${c}"><h3>${n} (${sp.filter(([, s]) => s.team === t).length})</h3><div class="namen">${sp.filter(([, s]) => s.team === t).map(chip).join('')}</div></div>`).join('')}</div>`
+    : `<div class="namen">${sp.map(chip).join('')}</div>`;
+  el.querySelectorAll('.nm').forEach(b => b.onclick = () => { if (confirm('„' + b.textContent + '“ aus der Runde entfernen?')) db.remove('runde/' + R.pin + '/spieler/' + b.dataset.pid); });
+}
+
+/* ---------------- Frage ---------------- */
+async function frage(i) {
+  R.i = i; R.ph = 'frage';
+  const fi = R.plan[i], f = FRAGEN[fi];
+  R.opts = mische(f.opts.map((t, n) => ({ t, ok: n === f.l })));
+  R.l = R.opts.findIndex(o => o.ok);
+  await db.set('runde/' + R.pin + '/q', { i, fi, opts: R.opts.map(o => o.t), dauer: R.dauer });
+  await db.update('runde/' + R.pin + '/st', { ph: 'frage', i, t: Date.now() });
+  app.innerHTML = `<div class="kat">Frage ${i + 1} von ${R.n} · ${KATEGORIEN[f.k] || ''}</div><div class="frage">${esc(f.q)}</div>
+    <div class="mitte"><div class="uhr" id="uhr"></div><div></div><div class="zaehler"><b id="anz">0</b>Antworten</div></div>
+    <div class="antw">${R.opts.map((o, n) => `<div class="ab f${n}">${esc(o.t)}</div>`).join('')}</div>
+    <div class="knopfreihe"><button class="btn zweit" id="stopp">Auflösen ⏭</button></div>`;
+  const t0 = Date.now(); let tick = -1;
+  const male = () => {
+    const rest = Math.max(0, Math.ceil(R.dauer - (Date.now() - t0) / 1000)), u = $('#uhr'); if (!u) return;
+    u.textContent = rest; const anteil = rest / R.dauer;
+    u.style.background = `conic-gradient(${rest <= 5 ? '#d9483b' : '#fff'} ${anteil * 360}deg, rgba(255,255,255,.15) 0)`; u.style.color = rest <= 5 ? '#fff' : '#2b2522';
+    if (rest <= 3 && rest > 0 && rest !== tick) { tick = rest; ton(520, .08); }
+    if (rest === 0) aufloesen();
+  };
+  male(); R.uhr = setInterval(male, 250);
+  $('#stopp').onclick = aufloesen;
+  zaehle();
+}
+function zaehle() {
+  const a = R.antw[R.i] || {}, n = Object.keys(a).length, alle = Object.keys(R.spieler).length;
+  const el = $('#anz'); if (el) el.textContent = n + (alle ? ' / ' + alle : '');
+  if (alle && n >= alle) setTimeout(() => { if (R.ph === 'frage') aufloesen(); }, 600);
+}
+
+/* ---------------- Auflösung und Wertung ---------------- */
+async function aufloesen() {
+  if (R.ph !== 'frage') return; R.ph = 'aufl'; clearInterval(R.uhr); ton(780, .3);
+  const i = R.i, a = R.antw[i] || {}, f = FRAGEN[R.plan[i]], verteilung = [0, 0, 0, 0], delta = {};
+  for (const [pid, x] of Object.entries(a)) {
+    if (!(pid in R.spieler) || typeof x.a !== 'number') continue;
+    verteilung[x.a] = (verteilung[x.a] || 0) + 1;
+    if (x.a === R.l) { const ms = Math.min(Math.max(0, x.t || 0), R.dauer * 1000); delta[pid] = 500 + Math.round(500 * (1 - ms / (R.dauer * 1000))); R.richtig[pid] = (R.richtig[pid] || 0) + 1; }
+  }
+  for (const pid of Object.keys(R.spieler)) R.total[pid] = (R.total[pid] || 0) + (delta[pid] || 0);
+  const rangfolge = Object.keys(R.spieler).sort((x, y) => (R.total[y] || 0) - (R.total[x] || 0));
+  const stand = {}; rangfolge.forEach((pid, k) => stand[pid] = { p: R.total[pid] || 0, d: delta[pid] || 0, r: k + 1 });
+  R.delta = delta;
+  await db.update('runde/' + R.pin, { lsg: { i, l: R.l }, stand });
+  await db.update('runde/' + R.pin + '/st', { ph: 'aufl' });
+  const max = Math.max(1, ...verteilung);
+  app.innerHTML = `<div class="kat">Frage ${i + 1} von ${R.n}</div><div class="frage">${esc(f.q)}</div>
+    <div class="antw" style="margin-top:20px">${R.opts.map((o, n) => `<div class="ab f${n} ${n === R.l ? 'ok' : 'weg'}">${n === R.l ? '✔ ' : ''}${esc(o.t)}<span class="anz">${verteilung[n] || 0}</span></div>`).join('')}</div>
+    <div class="erkl">💡 ${esc(f.e)}</div>
+    <div class="knopfreihe"><button class="btn hell" id="weiter">${i + 1 < R.n ? 'Zwischenstand →' : 'Endergebnis →'}</button></div>`;
+  $('#weiter').onclick = () => i + 1 < R.n ? zwischenstand() : ende();
+}
+function teamWerte() {
+  return TEAMS.slice(0, R.teams).map(([n, c], t) => {
+    const m = Object.keys(R.spieler).filter(pid => R.spieler[pid].team === t);
+    return { n, c, t, anz: m.length, p: m.length ? Math.round(m.reduce((s, pid) => s + (R.total[pid] || 0), 0) / m.length) : 0 };
+  });
+}
+async function zwischenstand() {
+  R.ph = 'stand'; await db.update('runde/' + R.pin + '/st', { ph: 'stand' });
+  const weiter = `<div class="knopfreihe"><button class="btn hell" id="weiter">Nächste Frage →</button></div>`;
+  if (R.teams) {
+    const tw = teamWerte(), max = Math.max(1, ...tw.map(x => x.p));
+    app.innerHTML = `<h1 class="gross">Zwischenstand – Teams</h1><div class="balken">${tw.sort((a, b) => b.p - a.p).map(x => `<div class="bk"><span>${x.n}</span><div><div class="b" style="width:${Math.max(4, 100 * x.p / max)}%;background:${x.c}"></div></div><span>${x.p}</span></div>`).join('')}</div>
+      <p class="leise2" style="text-align:center">Durchschnittliche Punkte pro Person im Team</p>` + weiter;
+  } else {
+    const top = Object.keys(R.spieler).sort((x, y) => (R.total[y] || 0) - (R.total[x] || 0)).slice(0, 5);
+    app.innerHTML = `<h1 class="gross">Zwischenstand</h1><div class="liste">${top.map((pid, k) => `<div class="zeile2"><span class="r">${k + 1}</span><span>${esc(R.spieler[pid].name)}${R.delta[pid] ? `<span class="d">+${R.delta[pid]}</span>` : ''}</span><span class="p">${R.total[pid] || 0}</span></div>`).join('')}</div>` + weiter;
+  }
+  $('#weiter').onclick = () => frage(R.i + 1);
+}
+async function ende() {
+  R.ph = 'ende'; await db.update('runde/' + R.pin + '/st', { ph: 'ende' }); ton(660, .2); setTimeout(() => ton(880, .4), 220);
+  let html;
+  if (R.teams) {
+    const tw = teamWerte().sort((a, b) => b.p - a.p);
+    html = `<h1 class="gross">🏆 Team ${esc(tw[0].n)} gewinnt!</h1><div class="balken">${tw.map((x, k) => `<div class="bk"><span>${k + 1}. ${x.n}</span><div><div class="b" style="width:${Math.max(4, 100 * x.p / Math.max(1, tw[0].p))}%;background:${x.c}"></div></div><span>${x.p}</span></div>`).join('')}</div>`;
+    const bester = Object.keys(R.spieler).sort((x, y) => (R.total[y] || 0) - (R.total[x] || 0))[0];
+    if (bester) html += `<p style="text-align:center;font-size:1.2rem">⭐ Beste Einzelleistung: <b>${esc(R.spieler[bester].name)}</b> (${R.total[bester] || 0} Punkte)</p>`;
+  } else {
+    const r = Object.keys(R.spieler).sort((x, y) => (R.total[y] || 0) - (R.total[x] || 0));
+    const pod = (k, h, m) => r[k] ? `<div class="pod"><div class="n">${m} ${esc(R.spieler[r[k]].name)}</div><div class="s" style="height:${h}px">${R.total[r[k]] || 0}</div></div>` : '';
+    html = `<h1 class="gross">🏁 Endergebnis</h1><div class="podest">${pod(1, 120, '🥈')}${pod(0, 170, '🥇')}${pod(2, 90, '🥉')}</div>
+      <div class="liste">${r.slice(3, 10).map((pid, k) => `<div class="zeile2"><span class="r">${k + 4}</span><span>${esc(R.spieler[pid].name)}</span><span class="p">${R.total[pid] || 0}</span></div>`).join('')}</div>`;
+  }
+  const n = Object.keys(R.spieler).length, schnitt = n ? Math.round(100 * Object.values(R.richtig).reduce((s, x) => s + x, 0) / (n * R.n)) : 0;
+  app.innerHTML = html + `<p class="leise2" style="text-align:center">${n} Teilnehmende · im Schnitt ${schnitt} % richtig · Die Ergebnisse stehen auch in der Konsole unter „Ergebnisse“.</p>
+    <div class="knopfreihe"><button class="btn hell" id="nochmal">Neue Runde</button><button class="btn zweit" id="fertig">Runde schließen</button></div>`;
+  $('#nochmal').onclick = async () => { await aufraeumen(); einstellungen(); };
+  $('#fertig').onclick = async () => { await aufraeumen(); location.href = 'konsole.html'; };
+}
+async function aufraeumen() { const pin = R && R.pin; stopp(); if (pin) { try { await db.remove('runde/' + pin); } catch (e) { } } R = null; }
+async function beenden() { if (!confirm('Runde abbrechen? Alle Mitspielenden werden getrennt.')) return; await aufraeumen(); einstellungen(); }
+document.addEventListener('keydown', e => { if ((e.code === 'Space' || e.code === 'Enter') && !/INPUT|TEXTAREA/.test(document.activeElement.tagName)) { const b = $('#weiter') || $('#stopp') || ($('#los') && !$('#los').disabled && $('#los')); if (b) { e.preventDefault(); b.click(); } } });
+</script>
+</body>
+</html>
