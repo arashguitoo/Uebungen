@@ -137,7 +137,7 @@ db.onAuth((u, admin, err) => {
   }
   $('#tabs').classList.remove('versteckt'); $('#aus').classList.remove('versteckt');
   $('#wer').textContent = DEMO ? 'Demo' : (u.email || '');
-  for (const k of Object.keys(D)) offs.push(db.listen(k, v => { D[k] = v || {}; zeichne(k); }, e => meld('Fehler beim Laden: ' + e.message)));
+  for (const k of Object.keys(D)) offs.push(db.listen(k, v => { D[k] = v || {}; zeichne(k); }, e => { if (document.getElementById('ladefehler')) return; const b = document.createElement('div'); b.id = 'ladefehler'; b.className = 'hinweis'; b.style.cssText = 'margin:12px auto;max-width:900px;border-color:#f1c6be;background:#fbe9e6'; b.innerHTML = '<b>Die Daten konnten nicht geladen werden</b> (' + esc(k) + ': ' + esc(e.code || e.message) + '). Deine Kurse und Codes sind deshalb nicht sichtbar – das heißt nicht, dass sie gelöscht sind. Meist liegt es an den Datenbankregeln.'; app.before(b); }));
   zeichne();
 });
 $('#aus').onclick = () => db.logout();
