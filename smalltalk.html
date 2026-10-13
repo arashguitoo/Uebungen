@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Smalltalk-Profi – Übungszentrale</title>
-<link rel="stylesheet" href="stil.css?v=20261008b">
+<link rel="stylesheet" href="stil.css?v=20261013a">
 <style>
   :root{--akzent:#b5562f;--akzent-hell:#f8ebe5;--a0:#d9483b;--a1:#2f6fc4;--a2:#d9971c;--a3:#2e9a57}
   body{background:#f6f1ec}
@@ -81,10 +81,10 @@ window.__ok = false;
 </script>
 <script type="module">
 window.__ok = true;
-import { starte, navigation, sitzung, anmelden } from './spieler.js?v=20261008b';
-import { mische } from './aufgaben.js?v=20261008b';
-import { db, esc, zufall } from './db.js?v=20261008b';
-import { FRAGEN, KATEGORIEN } from './smalltalk-daten.js?v=20261008b';
+import { starte, navigation, sitzung, anmelden } from './spieler.js?v=20261013a';
+import { mische } from './aufgaben.js?v=20261013a';
+import { db, esc, zufall, DEMO } from './db.js?v=20261013a';
+import { FRAGEN, KATEGORIEN } from './smalltalk-daten.js?v=20261013a';
 
 const app = document.getElementById('app');
 const L = await starte('smalltalk');
@@ -113,8 +113,9 @@ function startbild() {
       <button class="modus" id="live"><span class="ic">📡</span><b>Live-Runde beitreten</b><span class="leise klein">Mit dem Spiel-PIN vom Beamer – gegen die ganze Klasse oder im Team</span></button>
     </div></div>`;
   document.getElementById('solo').onclick = solo;
-  document.getElementById('live').onclick = () => beitreten(pin);
-  if (pin && !beitreten.einmal) { beitreten.einmal = true; beitreten(pin); }
+  const zuLive = () => { location.href = 'live.html' + (pin ? '?pin=' + pin : '') + (DEMO ? (pin ? '&' : '?') + 'demo' : ''); };
+  document.getElementById('live').onclick = zuLive;
+  if (pin) zuLive();
 }
 
 /* ================= Einzelspiel ================= */

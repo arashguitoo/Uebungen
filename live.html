@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Live-Runde – Übungszentrale</title>
+<link rel="stylesheet" href="stil.css?v=20261013a">
+<style>
+  :root{--akzent:#3b5b8c;--akzent-hell:#e8eef7;--a0:#d9483b;--a1:#2f6fc4;--a2:#d9971c;--a3:#2e9a57}
+  body{background:#eef1f5}
+  .vb{display:grid;grid-template-columns:minmax(90px,40%) 1fr 48px;gap:8px;align-items:center;margin:6px 0;text-align:left;font-size:.95rem}
+  .vb .b{height:22px;border-radius:6px}
+  .vb.meins span:first-child{font-weight:700}
+  .ab.f2::before{content:"●"}
+  .start{text-align:center;padding:26px 18px}
+  .start h1{font-family:Georgia,serif;font-size:2.1rem;color:var(--akzent);margin:6px 0}
+  .blasen{font-size:2.4rem;letter-spacing:.2em}
+  .modi{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:16px}
+  .modus{font:inherit;text-align:left;background:#fff;border:2px solid var(--linie);border-radius:16px;padding:16px;cursor:pointer}
+  .modus:hover{border-color:var(--akzent)}
+  .modus b{display:block;font-size:1.15rem;margin:4px 0;color:var(--akzent)}
+  .modus .ic{font-size:1.8rem}
+  .pin-in{font:inherit;font-size:2rem;letter-spacing:.3em;text-align:center;width:100%;max-width:260px;padding:8px;border:2px solid var(--linie);border-radius:12px;font-family:Consolas,monospace}
+  .name-in{font:inherit;font-size:1.1rem;width:100%;max-width:320px;padding:10px;border:2px solid var(--linie);border-radius:12px;text-align:center}
+  .hud{display:grid;grid-template-columns:auto 1fr auto auto;gap:10px;align-items:center;margin-bottom:10px}
+  .punkte{background:#2b2522;color:#ffd9a8;font-family:Consolas,monospace;font-size:1.3rem;font-weight:700;padding:6px 14px;border-radius:10px;text-align:right}
+  .serie{font-weight:700;color:var(--akzent);white-space:nowrap}
+  .zeit{height:10px;background:#e9e1d9;border-radius:10px;overflow:hidden;margin:4px 0 12px}
+  .zeit i{display:block;height:100%;background:var(--akzent);width:100%}
+  .zeit.knapp i{background:var(--fehler)}
+  .fkarte{background:#fff;border:1px solid var(--linie);border-radius:18px;padding:18px;box-shadow:0 4px 18px rgba(0,0,0,.05)}
+  .kat{font-size:.85rem;font-weight:700;color:var(--akzent);letter-spacing:.03em}
+  .fq{font-size:1.25rem;font-weight:600;margin:6px 0 14px}
+  .antw{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media(max-width:560px){.antw{grid-template-columns:1fr}}
+  .ab{font:inherit;color:#fff;border:0;border-radius:14px;padding:14px 14px 14px 46px;text-align:left;cursor:pointer;position:relative;min-height:64px;font-size:1.02rem;font-weight:600;box-shadow:0 3px 0 rgba(0,0,0,.18);transition:transform .08s,opacity .2s}
+  .ab::before{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:1.2rem}
+  .ab.f0{background:var(--a0)}.ab.f0::before{content:"▲"}
+  .ab.f1{background:var(--a1)}.ab.f1::before{content:"◆"}
+  .ab.f2{background:var(--a2)}.ab.f2::before{content:"●"}
+  .ab.f3{background:var(--a3)}.ab.f3::before{content:"■"}
+  .ab:active{transform:translateY(2px);box-shadow:none}
+  .ab:disabled{cursor:default}
+  .ab.weg{opacity:.28}
+  .ab.gewaehlt{outline:4px solid #2b2522;outline-offset:2px}
+  .ab.richtig{outline:4px solid #1f7a45;outline-offset:2px;opacity:1}
+  .erkl{margin-top:14px;border-radius:12px;padding:12px 14px}
+  .erkl.ok{background:var(--ok-hell);border:1px solid #bfe2cb}.erkl.nein{background:var(--fehler-hell);border:1px solid #f1c6be}
+  .erkl b{display:block;margin-bottom:2px}
+  .plus{font-family:Consolas,monospace;font-weight:700;color:var(--ok)}
+  .grosse{font-size:3rem;margin:6px 0}
+  .rang{font-family:Georgia,serif;font-size:1.6rem;color:var(--akzent);margin:4px 0}
+  .warte{text-align:center;padding:30px 16px}
+  .puls{width:18px;height:18px;border-radius:50%;background:var(--akzent);margin:14px auto;animation:puls 1.2s infinite}
+  @keyframes puls{0%,100%{transform:scale(.7);opacity:.5}50%{transform:scale(1.2);opacity:1}}
+  .teams{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:12px 0}
+  .tb{font:inherit;font-weight:700;color:#fff;border:0;border-radius:14px;padding:16px;cursor:pointer;font-size:1.1rem}
+  .knopfreihe{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:14px}
+  .fehlertext{color:var(--fehler);font-weight:600;min-height:1.4em}
+  @media (max-width:520px){#raus .lang{display:none}.fq{font-size:1.12rem}}
+</style>
+<script data-goatcounter="https://aguitoo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<main class="wrap" id="app"><p class="leise" style="text-align:center;margin-top:40px">Lädt …</p></main>
+
+<script>
+window.__ok = false;
+(function () {
+  function zeige(msg) {
+    msg = String(msg || 'unbekannter Fehler');
+    var fb = /firebase|gstatic/i.test(msg);
+    var ziel = document.getElementById('app') || document.body;
+    ziel.innerHTML = '<div class="karte" style="max-width:580px;margin:40px auto;border-color:#f1c6be;background:#fbe9e6">' +
+      '<h2>Die Seite konnte nicht geladen werden</h2>' +
+      (fb ? '<p>Die Verbindung zu Firebase hat nicht geklappt. Bitte prüfe die Internetverbindung und schalte einen Werbeblocker für diese Seite aus.</p>'
+          : '<p>Bitte lade die Seite einmal komplett neu: Windows <b>Strg + F5</b>, Mac <b>Cmd + Shift + R</b>.</p>') +
+      '<p style="font-size:.85rem;color:#666">Technische Meldung: ' + msg.replace(/</g, '&lt;') + '</p></div>';
+  }
+  window.__fehler = zeige;
+  addEventListener('error', function (e) { if (!window.__ok) zeige(e.message); });
+  addEventListener('unhandledrejection', function (e) { var m = e.reason && e.reason.message || e.reason; if (!window.__ok || /firebase|gstatic/i.test(String(m))) zeige(m); });
+  setTimeout(function () { if (!window.__ok) zeige('Die Programmdateien wurden nicht vollständig geladen.'); }, 12000);
+})();
+</script>
+<script type="module">
+window.__ok = true;
+import { starte, navigation, sitzung, anmelden } from './spieler.js?v=20261013a';
+import { db, esc, zufall } from './db.js?v=20261013a';
+
+const app = document.getElementById('app');
+const L = await starte('live');
+const TEAMS = [['Rot', '#d9483b'], ['Blau', '#2f6fc4'], ['Grün', '#2e9a57'], ['Gelb', '#d9971c']];
+let G = null, lauf = 0, aus = [];
+const abmeldenLive = () => { aus.forEach(f => f()); aus = []; };
+const nav = navigation(L, { zurueck: () => { lauf++; abmeldenLive(); G = null; beitreten(''); }, fortschritt: () => !!(G && G.beantwortet > 0 && !G.fertig) });
+app.addEventListener('click', e => { if (e.target.closest('#raus')) nav.zurStart(); });
+const ton = (f = 660, d = .15) => { try { const c = new (window.AudioContext || window.webkitAudioContext)(), o = c.createOscillator(), g = c.createGain(); o.frequency.value = f; o.connect(g); g.connect(c.destination); g.gain.setValueAtTime(.12, c.currentTime); g.gain.exponentialRampToValueAtTime(.001, c.currentTime + d); o.start(); o.stop(c.currentTime + d); } catch (e) { } };
+
+/* ---------------- Beitreten ---------------- */
+function beitreten(pinVor = '') {
+  const s = sitzung(), mitCode = !!(s && s.code);
+  app.innerHTML = `<div class="karte start" style="margin-top:16px"><div class="grosse">📡</div><h2>Live-Runde beitreten</h2>
+    <p class="leise">Gib den PIN vom Bildschirm deiner Lehrkraft ein.</p>
+    <p><input class="pin-in" id="pin" inputmode="numeric" maxlength="4" placeholder="0000" value="${esc(pinVor)}" aria-label="Spiel-PIN"></p>
+    ${mitCode ? `<p>Du spielst als <b>👤 ${esc(s.name)}</b>${s.kurs ? ` · ${esc(s.kurs)}` : ''}</p>`
+      : `<p><input class="name-in" id="cd" maxlength="10" placeholder="Dein Code (wenn du einen hast)" autocomplete="off" style="text-transform:uppercase;letter-spacing:.1em" aria-label="Dein Code"></p>
+         <p class="leise klein" style="margin:-4px 0 6px">oder ohne Code:</p>
+         <p><input class="name-in" id="nm" maxlength="24" placeholder="Dein Name" value="${esc(s && s.name && s.name !== 'Gast' ? s.name : '')}" aria-label="Dein Name"></p>`}
+    <p class="fehlertext" id="fx"></p>
+    <div class="knopfreihe"><button class="btn" id="go" style="min-width:200px">Mitmachen →</button></div></div>`;
+  const pinEl = document.getElementById('pin'); (pinVor && !mitCode ? document.getElementById('cd') : pinEl).focus();
+  document.getElementById('go').onclick = async () => {
+    const pin = pinEl.value.replace(/\D/g, ''), fx = document.getElementById('fx');
+    if (pin.length !== 4) return fx.textContent = 'Der PIN hat 4 Ziffern.';
+    let ses = sitzung();
+    if (!mitCode) {
+      const code = (document.getElementById('cd').value || '').trim(), nm = document.getElementById('nm').value.trim().slice(0, 24);
+      if (code) { fx.textContent = 'Prüfe Code …'; try { ses = await anmelden(code); } catch (e) { return fx.textContent = e.message; } }
+      else if (!nm) return fx.textContent = 'Bitte gib deinen Code oder deinen Namen ein.';
+      else ses = { gast: true, name: nm };
+    }
+    fx.textContent = 'Verbinde …';
+    let st = null; try { st = await db.get('runde/' + pin + '/st'); } catch (e) { return fx.textContent = 'Keine Verbindung zur Datenbank.'; }
+    if (!st) return fx.textContent = 'Diese Runde gibt es nicht. Bitte prüfe den PIN.';
+    if (st.ph === 'ende') return fx.textContent = 'Diese Runde ist schon vorbei.';
+    L.s = ses; const w = document.querySelector('.kopf .wer'); if (w) w.textContent = '👤 ' + ses.name + (ses.code ? '' : ' · ohne Code');
+    if (st.teams > 0) teamWahl(pin, ses, st); else verbinde(pin, ses, null);
+  };
+}
+function teamWahl(pin, ses, st) {
+  app.innerHTML = `<div class="karte start" style="margin-top:16px"><h2>Wähle dein Team</h2><p class="leise">${esc(ses.name)}</p>
+    <div class="teams">${TEAMS.slice(0, st.teams).map(([n, c], i) => `<button class="tb" data-t="${i}" style="background:${c}">${n}</button>`).join('')}</div></div>`;
+  app.querySelectorAll('.tb').forEach(b => b.onclick = () => verbinde(pin, ses, +b.dataset.t));
+}
+async function verbinde(pin, ses, team) {
+  const name = ses.name, key = 'ueb_st_pid_' + pin;
+  let pid = ses.code && ses.pid ? ('p' + String(ses.pid).replace(/[^A-Za-z0-9_-]/g, '')).slice(0, 20) : sessionStorage.getItem(key);
+  if (!pid) { pid = zufall(10, 'abcdefghijkmnopqrstuvwxyz23456789'); sessionStorage.setItem(key, pid); }
+  const ich = { name }; if (team != null) ich.team = team; if (ses.kurs) ich.kurs = String(ses.kurs).slice(0, 40); if (ses.code) ich.mc = true;
+  try { await db.set('runde/' + pin + '/spieler/' + pid, ich); } catch (e) { app.innerHTML = '<div class="karte warte"><h2>Beitreten hat nicht geklappt</h2><p class="leise">Bitte sag deiner Lehrkraft Bescheid.</p></div>'; return; }
+  nav.lauf(); const meinLauf = ++lauf;
+  G = { pin, pid, name, team, beantwortet: 0, richtig: 0, n: 0, fertig: false, q: null, gewaehlt: {}, st: null, stand: null, gestartet: false };
+  const pfad = 'runde/' + pin;
+  aus.push(db.listen(pfad + '/st', st => { if (meinLauf === lauf && st) { G.st = st; zeichne(); } }));
+  aus.push(db.listen(pfad + '/q', q => { if (meinLauf === lauf && q) { if (!G.q || G.q.i !== q.i) G.qZeit = performance.now(); G.q = q; zeichne(); } }));
+  aus.push(db.listen(pfad + '/lsg', l => { if (meinLauf === lauf && l) { G.lsg = l; zeichne(); } }));
+  aus.push(db.listen(pfad + '/stand/' + pid, s => { if (meinLauf === lauf) { G.stand = s; zeichne(); } }));
+  aus.push(db.listen(pfad + '/spieler/' + pid, s => { if (meinLauf === lauf && s === null && G.st && !G.fertig) { abmeldenLive(); app.innerHTML = '<div class="karte warte"><h2>Du bist nicht mehr in der Runde.</h2></div>'; } }));
+}
+
+/* ---------------- Anzeige ---------------- */
+const teamName = t => t == null ? '' : `<span class="pille" style="background:${TEAMS[t][1]};color:#fff">Team ${TEAMS[t][0]}</span>`;
+const umfrage = () => !!(G.st && G.st.umfrage);
+function kopfLive() {
+  return `<div class="hud"><button class="btn zweit klein" id="raus">←<span class="lang"> Verlassen</span></button><span>${esc(G.name)} ${teamName(G.team)}</span><span></span>${umfrage() ? '<span></span>' : `<span class="punkte">${G.stand ? G.stand.p : 0}</span>`}</div>`;
+}
+let zuletzt = '';
+function zeichne() {
+  const st = G.st; if (!st) return;
+  const sig = [st.ph, st.i, G.q && G.q.i, G.lsg && G.lsg.i, G.stand && G.stand.p, G.gewaehlt[st.i]].join('|');
+  if (sig === zuletzt) return; zuletzt = sig;
+  const titel = `<p class="leise" style="text-align:center;margin:0 0 6px">${esc(st.titel || '')}</p>`;
+  if (st.ph === 'lobby') {
+    app.innerHTML = kopfLive() + `<div class="karte warte aufgabe"><div class="grosse">✅</div><h2>Du bist dabei!</h2><p><b>${esc(st.titel || '')}</b></p><p>Schau auf den Bildschirm deiner Lehrkraft – gleich geht es los.</p><div class="puls"></div></div>`;
+  } else if (st.ph === 'frage' && G.q && G.q.i === st.i) {
+    if (!G.gestartet && !umfrage()) { G.gestartet = true; L.beginne(st.n, st.n, st.titel || 'Live-Runde'); }
+    const gew = G.gewaehlt[st.i];
+    if (gew != null) { app.innerHTML = kopfLive() + `<div class="karte warte aufgabe"><div class="grosse">📨</div><h2>${umfrage() ? 'Danke!' : 'Antwort abgeschickt!'}</h2><p class="leise">${umfrage() ? 'Gleich siehst du, was die anderen geantwortet haben …' : 'Warte auf die Auflösung …'}</p><div class="puls"></div></div>`; return; }
+    app.innerHTML = kopfLive() + titel + `<div class="fkarte aufgabe"><div class="kat">Frage ${st.i + 1} von ${st.n}${G.q.kat ? ' · ' + esc(G.q.kat) : ''}</div><div class="fq">${esc(G.q.text)}</div>
+      <div class="antw">${G.q.opts.map((o, n) => `<button class="ab f${n}" data-n="${n}">${esc(o)}</button>`).join('')}</div></div>`;
+    app.querySelectorAll('.ab').forEach(b => b.onclick = async () => {
+      if (G.gewaehlt[st.i] != null) return;
+      const n = +b.dataset.n, ms = Math.round(performance.now() - G.qZeit);
+      G.gewaehlt[st.i] = n; G.beantwortet++; zuletzt = ''; zeichne();
+      try { await db.set('runde/' + G.pin + '/antw/' + st.i + '/' + G.pid, { a: n, t: ms }); } catch (e) { }
+    });
+  } else if (st.ph === 'aufl' && G.lsg && G.lsg.i === st.i && G.q) {
+    const gew = G.gewaehlt[st.i];
+    if (umfrage()) {
+      const v = G.lsg.vert || [], s = v.reduce((a, b) => a + b, 0) || 1;
+      app.innerHTML = kopfLive() + titel + `<div class="fkarte aufgabe"><div class="fq" style="font-size:1.05rem">${esc(G.q.text)}</div>
+        ${G.q.opts.map((o, n) => { const p = Math.round(100 * (v[n] || 0) / s); return `<div class="vb ${gew === n ? 'meins' : ''}"><span>${gew === n ? '👉 ' : ''}${esc(o)}</span><div><div class="b" style="width:${Math.max(3, p)}%;background:var(--a${n})"></div></div><b>${p} %</b></div>`; }).join('')}
+        <p class="leise klein" style="margin-top:10px">${gew == null ? 'Du hast diesmal nicht geantwortet.' : 'So hat der Kurs geantwortet.'}</p></div>`;
+      return;
+    }
+    const ok = gew === G.lsg.l;
+    if (!G['g' + st.i]) { G['g' + st.i] = 1; G.n++; if (ok) G.richtig++; L.antwort((st.set || 'live') + '-' + G.q.fi, ok); L.fortschritt(G.n, G.richtig, st.titel || 'Live-Runde'); ok ? ton(880) : ton(220, .25); }
+    const d = G.stand ? G.stand.d || 0 : 0;
+    app.innerHTML = kopfLive() + `<div class="karte warte aufgabe"><div class="grosse">${ok ? '🎉' : gew == null ? '⏰' : '😕'}</div>
+      <h2>${ok ? 'Richtig!' : gew == null ? 'Keine Antwort' : 'Leider falsch'}</h2>${ok ? `<p class="plus" style="font-size:1.4rem">+${d}</p>` : ''}
+      <div class="erkl ${ok ? 'ok' : 'nein'}" style="text-align:left"><b>Richtig ist: ${esc(G.q.opts[G.lsg.l])}</b>${esc(G.lsg.e || '')}</div>
+      ${G.stand && G.stand.r ? `<p>Du bist auf <b>Platz ${G.stand.r}</b>.</p>` : ''}</div>`;
+  } else if (st.ph === 'stand') {
+    app.innerHTML = kopfLive() + `<div class="karte warte aufgabe"><div class="grosse">📊</div><h2>Zwischenstand</h2>${G.stand && G.stand.r ? `<p style="font-size:1.3rem">Platz <b>${G.stand.r}</b> · ${G.stand.p} Punkte</p>` : ''}<p class="leise">Schau auf den Bildschirm!</p></div>`;
+  } else if (st.ph === 'ende') {
+    if (!G.fertig) { G.fertig = true; nav.ende(); if (G.gestartet) L.ende(G.richtig, Math.max(G.n, 1), { set: st.set || '', titel: st.titel || '', punkte: G.stand ? G.stand.p : 0, platz: G.stand ? G.stand.r : 0 }); }
+    if (umfrage()) { app.innerHTML = `<div class="karte warte aufgabe"><div class="grosse">📊</div><h2>Danke fürs Mitmachen!</h2><p>Schau auf den Bildschirm: Dort seht ihr jetzt eure Grafik.</p></div>`; return; }
+    const r = G.stand && G.stand.r;
+    app.innerHTML = `<div class="karte warte aufgabe"><div class="grosse">${r === 1 ? '🥇' : r === 2 ? '🥈' : r === 3 ? '🥉' : '🏁'}</div><h2>Spiel vorbei!</h2>
+      ${r ? `<p style="font-size:1.3rem">Platz <b>${r}</b> · ${G.stand.p} Punkte</p>` : ''}<p><b>${G.richtig} von ${G.n}</b> richtig</p>
+      <div class="knopfreihe"><a class="btn zweit" href="index.html">Zur Übungszentrale</a></div></div>`;
+  }
+}
+
+beitreten((new URLSearchParams(location.search).get('pin') || '').replace(/\D/g, ''));
+</script>
+</body>
+</html>

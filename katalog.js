@@ -8,6 +8,19 @@
 
 export const KATALOG = [
   {
+    id: "live",
+    titel: "📡 Live-Runde beitreten",
+    untertitel: "Deine Lehrkraft startet eine Umfrage oder ein Quiz – hier mit dem PIN mitmachen",
+    datei: "live.html",
+    typ: "Live",
+    niveau: "B1/B2",
+    themen: ["Live", "Unterricht"],
+    farbe: "#3b5b8c",
+    dauer: "live",
+    reihe: "Live im Unterricht",
+    offen: true
+  },
+  {
     id: 'neue-wege-im-beruf',
     titel: 'Neue Wege im Beruf',
     untertitel: 'Pendeln oder umziehen · Wortstellung · Agentur für Arbeit · Anerkennung · Anfragen schreiben',
