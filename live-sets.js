@@ -1,7 +1,7 @@
 // live-sets.js – alle Fragensätze für die Live-Runden (Beamer: live-studio.html, Handys: live.html)
 // Jede Frage: { q, opts, l?, e?, k? } – bei Umfragen ohne l (keine richtige Antwort).
-import { FRAGEN as SMALLTALK, KATEGORIEN } from './smalltalk-daten.js?v=20261013a';
-import { UMFRAGE, UMFRAGE_EXTRA, JE_DESTO, MEDIEN_QUIZ } from './live-medien.js?v=20261013a';
+import { FRAGEN as SMALLTALK, KATEGORIEN } from './smalltalk-daten.js?v=20261014a';
+import { UMFRAGE, UMFRAGE_EXTRA, JE_DESTO, MEDIEN_QUIZ } from './live-medien.js?v=20261014a';
 
 export const SETS = {
   'medien-umfrage': {

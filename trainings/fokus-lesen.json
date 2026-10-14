@@ -1,0 +1,127 @@
+{
+  "id": "fokus-lesen",
+  "titel": "Fokus Lesen",
+  "untertitel": "Prüfungstraining Lesen · Teil 1 Informationen suchen · Teil 2 Texte im Detail verstehen · Teil 3 Forum zuordnen · Teil 4 Protokoll verstehen",
+  "niveau": "B1/B2",
+  "reihe": "Prüfungstraining B1/B2",
+  "farbe": "#c0624f",
+  "mix": 6,
+  "intro": "Original-Prüfungsformat **Lesen** – jeder Teil dauert in der Prüfung **ca. 10 Minuten**. Lies zuerst die Aufgaben, markiere Schlüsselwörter und suche dann die passenden Stellen im Text. Die **Strategien** für jeden Teil findest du unter „📘 Kompakt“.",
+  "kompakt": [
+    { "titel": "Teil 1 – Informationen zum Arbeitsmarkt suchen", "zeilen": [
+      "5 Personen, 8 Artikel – **3 Artikel passen nicht**. Jeden Artikel nur einmal verwenden.",
+      "Zuerst die Situationen lesen und **Schlüsselwörter** markieren (z. B. *Hinweise für den Berufseinstieg*).",
+      "Dann nur die **Titel** lesen und passende Personen notieren. Unsicher? Fragezeichen machen.",
+      "Danach die ausgewählten Artikel genau lesen. **Achtung:** Gleiche Wörter in Aufgabe und Artikel heißen nicht automatisch, dass der Artikel passt."
+    ]},
+    { "titel": "Teil 2 – Texte im Detail verstehen", "zeilen": [
+      "Zwei Texte, je eine **Richtig/Falsch**-Aufgabe und eine **Multiple-Choice**-Aufgabe.",
+      "Die Aussage muss **genau** im Text stehen – nicht nur ungefähr. Achte auf Wörter wie *nur, keine, immer, alle*."
+    ]},
+    { "titel": "Teil 3 – Rahmenbedingungen der Arbeit verstehen", "zeilen": [
+      "4 Fragen in einem Forum, 6 Tipps. **Für eine Person gibt es keinen passenden Tipp → x.**",
+      "Markiere, was die Person **genau wissen möchte**. Überfliege dann die Tipps.",
+      "Zuerst scheinen mehrere Tipps zu passen – lies die möglichen Texte noch einmal genau."
+    ]},
+    { "titel": "Teil 4 – Aufgaben und Aufgabenverteilung nachvollziehen", "zeilen": [
+      "Ein Protokoll, 5 Multiple-Choice-Aufgaben. Zuerst die Aufgaben lesen und Schlüsselwörter markieren.",
+      "Dann entscheiden, **welcher Absatz (TOP)** zu welcher Aufgabe passt.",
+      "**Achtung:** Die erste Aufgabe bezieht sich manchmal auf den **Kopf des Protokolls** (Anwesende, Sitzungsleitung, Protokollant)."
+    ]}
+  ],
+  "module": [
+    {
+      "titel": "Lesen Teil 1 – Informationen zum Arbeitsmarkt suchen",
+      "icon": "📰",
+      "kurz": "5 Personen · 8 Artikel · Zuordnung",
+      "aufgaben": [
+        {
+          "id": "l1", "typ": "lesen", "kontext": "Lesen Teil 1",
+          "frage": "Sie lesen online in einer Wirtschaftszeitung und möchten Ihren Freunden einige Artikel schicken. Welcher Artikel a–h passt zu welcher Person 1–5? Jeden Artikel nur einmal – drei Artikel passen nicht.",
+          "textTitel": "Artikel a–h",
+          "text": "**a  So gelingt das Marketing**\nEine eigene Firma zu gründen ist schon eine Herausforderung, sie bekannt zu machen eine noch viel größere. Diese Methoden helfen Gründerinnen und Gründern, auch mit wenig Geld effektiv für sich zu werben.\n\n**b  Tipps für die erste Zeit im neuen Job**\nFinde ich mich in der neuen Firma gut zurecht? Sind die Kollegen nett? In diesem Blog findest du hilfreiche Anregungen für einen guten Start. Du erfährst z. B., was du tun kannst, wenn Kollegen genervt reagieren, weil du noch viele Fragen hast und unsicher bist.\n\n**c  Lebenslauf und Anzeigen – wichtige Bausteine Ihrer Bewerbung**\nDie ausgeschriebene Stelle klingt spannend. Doch man kann oft nicht alle Anforderungen erfüllen. Im Lebenslauf und im Anschreiben soll ein klares Bild entstehen, wer die Bewerberin / der Bewerber ist und was sie/er zum Erfolg des Unternehmens beitragen kann.\n\n**d  Gute Vorbereitung ist alles**\nIm Internet findet man viele Hinweise, welche Fragen in einem Vorstellungsgespräch gestellt werden. Doch das reicht nicht. Genauso wichtig ist, sich selbst und das Unternehmen gut zu kennen. Hier ein paar Beispiele dafür, wie ein typisches Vorstellungsgespräch abläuft und womit Sie immer punkten können.\n\n**e  Aller Anfang ist schwer**\nErfahrene Köche und Köchinnen berichten: enge Raumverhältnisse, hohe Temperaturen, stressige Zeiten. Warum der Beruf trotzdem Spaß macht und wie man auch als Auszubildende/r Ausgleich findet.\n\n**f  Können wir wirklich zusammenarbeiten?**\nEine Gruppe, die ein gemeinsames Ziel hat, ist erfolgreich. Auch wenn es im Team mal Streit gibt, sollten sich die Mitglieder immer wertschätzen und einander unterstützen. Eine gute Zusammenarbeit kann man lernen! Hier einige Regeln.\n\n**g  Ich wäre so gern meine eigene Chefin!**\nFrauen trauen sich die Gründung einer eigenen Firma oft nicht zu. Doch das ist oft völlig unbegründet. Die Beratungsstelle „Frau und Beruf“ hilft, sich über die Vor- und Nachteile der Selbstständigkeit klar zu werden.\n\n**h  Lassen Sie sich nicht ausnutzen**\nFünf Büroteams aus verschiedenen Firmen berichten über ihre Erfahrungen in der Verwaltung: Vom Aktenschleppen über das Kaffeekochen bis zum Zeitmanagement. Wie gelingt effizientes Arbeiten ohne negativen Stress? Was ist noch Hilfsbereitschaft, ab wann lässt man sich ausnutzen?",
+          "wahl": ["a", "b", "c", "d", "e", "f", "g", "h"],
+          "aussagen": [
+            ["1 · Kristina sucht Hinweise für den Berufseinstieg.", 1],
+            ["2 · Rahim weiß nicht, wie ein Bewerbungsgespräch abläuft.", 3],
+            ["3 · Andrey überlegt, wie er für sich als Kleinunternehmer Werbung machen kann.", 0],
+            ["4 · Anna fragt sich, ob sie sich selbstständig machen soll.", 6],
+            ["5 · Lea möchte lernen, besser im Team zu arbeiten.", 5]
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Lesen Teil 2 – Texte im Detail verstehen",
+      "icon": "📁",
+      "kurz": "Willkommensmappe · richtig/falsch · Multiple Choice",
+      "aufgaben": [
+        {
+          "id": "l2a", "typ": "lesen", "kontext": "Lesen Teil 2", "mischen": false,
+          "frage": "Lesen Sie Text 1 und lösen Sie die Aufgaben 1 und 2.",
+          "textTitel": "Willkommensmappe für neue Mitarbeiterinnen und Mitarbeiter – Text 1",
+          "text": "**Die Grundsätze unseres Unternehmens**\nWir sind ein innovativer Gastronomiebetrieb, für den Fairness und Qualität die oberste Priorität haben. Unsere (meist biologischen) Produkte beziehen wir zu 80 % aus der Region. Wir unterstützen nicht nur den fairen Handel mit unseren Lieferanten im In- und Ausland, sondern möchten auch unserem gut ausgebildeten und international gemischten Team mit Personen aus vielen verschiedenen Ländern einen attraktiven Arbeitsplatz bieten. In den monatlichen Teamtreffen geht es sowohl um die beruflichen Herausforderungen jedes Einzelnen als auch um persönliche Anliegen. Es ist uns sehr wichtig, dass wir ehrlich zueinander sind, uns gegenseitig respektieren, Probleme offen ansprechen und einander helfen.\n\nWir wissen, dass Mitarbeiterinnen und Mitarbeiter, die gerne bei uns arbeiten, ihr Wissen und ihre positive Haltung auch an unsere Kundinnen und Kunden weitergeben. Trotz allem kann es mit Kundschaft und Lieferanten Probleme geben. Deshalb bieten wir unseren neuen Mitarbeiterinnen und Mitarbeitern eine Kommunikationsschulung an, sodass auftretende Probleme konstruktiv und möglichst stressfrei gelöst werden können.",
+          "fragen": [
+            { "f": "Das Unternehmen beschäftigt keine Mitarbeiter/innen aus dem Ausland.", "opts": ["richtig", "falsch"], "l": 1 },
+            { "f": "Die Unternehmensleitung bietet neuen Mitarbeitenden Schulungen an, …", "opts": ["a) in denen sie lernen, schwierige Situationen zu bewältigen.", "b) weil das erfahrene Personal wenig Zeit hat zu helfen.", "c) weil viele Mitarbeiter ungelernte Kräfte sind."], "l": 0 }
+          ]
+        },
+        {
+          "id": "l2b", "typ": "lesen", "kontext": "Lesen Teil 2", "mischen": false,
+          "frage": "Lesen Sie Text 2 und lösen Sie die Aufgaben 3 und 4.",
+          "textTitel": "Willkommensmappe für neue Mitarbeiterinnen und Mitarbeiter – Text 2",
+          "text": "**Arbeitszeit/Schichtplan/Urlaub**\nMitarbeiterinnen und Mitarbeiter in Vollzeit arbeiten 38,5 Stunden pro Woche. Teilzeitbeschäftigte arbeiten zwischen 10 und 30 Stunden pro Woche. Die Arbeitsstunden verteilen sich in der Regel auf fünf Tage. In Spitzenzeiten, wenn mehr Personal gebraucht wird, müssen Teilzeitbeschäftigte bereit sein, mehr Stunden zu arbeiten. Die Überstunden werden ausgezahlt.\n\nIn unserem Gastronomiebetrieb gibt es eine Tages- und eine Abendschicht. Die Tagesschicht geht von 9 bis 15 Uhr, die Abendschicht von 17 bis 24 Uhr. Am Freitag und Samstag sind die Schichten eine Stunde länger. Der Schichtplan wird am Ende eines Monats für den darauffolgenden Monat gemacht. Auf eine faire Verteilung von Abend- und Wochenendschichten auf alle Mitarbeitenden wird geachtet. Im Krankheitsfall können sich Änderungen ergeben.\n\nGrundsätzlich versuchen wir, die Urlaubswünsche unserer Mitarbeiterinnen und Mitarbeiter zu berücksichtigen. Allerdings sind in der Hochsaison (in unserer Region zwischen Juni und September) gleichzeitige längere Urlaube mehrerer Mitarbeiterinnen und Mitarbeiter ein Problem. Uns ist bewusst, dass das nicht immer familienfreundlich ist. Deshalb versuchen wir, den Sommerurlaub fair zu verteilen, und rechnen mit Ihrer Unterstützung.",
+          "fragen": [
+            { "f": "Nur Vollzeitkräfte müssen am Wochenende arbeiten.", "opts": ["richtig", "falsch"], "l": 1 },
+            { "f": "Im Sommer können Mitarbeiterinnen und Mitarbeiter …", "opts": ["a) gar keinen Urlaub nehmen.", "b) Urlaub nehmen, wenn sie Schulkinder haben.", "c) um bestimmte Urlaubstermine bitten."], "l": 2 }
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Lesen Teil 3 – Rahmenbedingungen der Arbeit verstehen",
+      "icon": "💬",
+      "kurz": "Forum · 4 Fragen · 6 Tipps · x",
+      "aufgaben": [
+        {
+          "id": "l3", "typ": "lesen", "kontext": "Lesen Teil 3",
+          "frage": "Sie lesen in einem Forum 4 Fragen und 6 Tipps. Welche Frage passt zu welchem Tipp? Für eine Frage gibt es keinen passenden Tipp – dann wählen Sie x.",
+          "posts": [
+            { "name": "1 · Lisa", "text": "Ich hab mich total gefreut, dass ich die Ausbildungsstelle als Altenpflegerin bekommen habe. Allerdings war das nur ein Anruf von der Personalstelle und ich habe nichts Schriftliches. Jetzt hab ich Angst, dass sich das Altenheim doch anders entscheidet. Weiß jemand, wie das ist?" },
+            { "name": "2 · Luciano", "text": "Ich bin jetzt seit zwei Wochen im Ausbildungsbetrieb (eine Elektrikerfirma) und muss für die Pause immer die Brötchen holen, Löcher in die Wände bohren oder vor Feierabend alles aufräumen. Ich bin ziemlich frustriert, weil ich doch eigentlich mehr über Elektrizität und das Verlegen der Kabel lernen will. Geht es euch auch so?" },
+            { "name": "3 · Jonas", "text": "Ich habe einen Ausbildungsplatz, der mir ehrlich gesagt nicht besonders gefällt. Die Bezahlung während der Ausbildung ist eigentlich ganz o.k. Ich wohne ja noch bei meinen Eltern. Aber die Arbeit ist so langweilig: Jeden Tag müssen wir in den Parks Blumen pflanzen. Bei Wind, Regen und Kälte. Ich habe leider auch eine Pollenallergie. Soll ich die Ausbildung abbrechen?" },
+            { "name": "4 · Miriam", "text": "Hallo zusammen, ich habe mal eine schwierige Frage: Ich mache gerade eine Ausbildung in einem Friseurgeschäft. Dem geht es aber wirtschaftlich nicht so gut. In der Nähe ist ein Einkaufszentrum, wo ein großer Friseurladen ist. Jetzt habe ich Angst, dass ich meine Stelle wieder verliere, wenn mein Ausbildungsbetrieb zumachen muss. An wen kann ich mich wenden, wenn das passiert?" },
+            { "name": "Tipps für Auszubildende", "info": "", "text": "**a · Alexander, vor 20 Minuten**\nDa hast du ja richtig Glück, dass dir deine Ausbildung zum Gärtner Spaß macht. Wenn du in der Ausbildung schon über 18 bist, dann gibt es halt nicht mehr so viele Urlaubstage. Das musst du akzeptieren. Sieh's doch mal so: Du bist dann mehr an der frischen Luft. 😊\n\n**b · Emilio, vor 6 Stunden**\nEigentlich kann man einem Azubi nicht so einfach kündigen. Das geht nur, wenn die Firma auch ihre Ausbildungstätigkeit einstellt, also wenn dort gar nicht mehr gearbeitet wird. In diesem Fall kannst du deine Ausbildung in einem anderen Betrieb abschließen. Was du dann genau machen musst, erfährst du bei der Agentur für Arbeit.\n\n**c · Elli, vor 3 Stunden**\nAls ich meine Ausbildung im Friseurgeschäft um die Ecke angefangen hatte, fand ich es zuerst megalangweilig. Ich wusste nicht, was ich mit den Kund*innen reden soll. Heute gefällt es mir richtig gut. Also: Hab Geduld, man lernt die Kund*innen mit der Zeit schon kennen.\n\n**d · Johanna, vor 50 Minuten**\nAlso, schlechte Bezahlung in der Ausbildung geht gar nicht, finde ich. Wir arbeiten doch fast genau so viel wie die fertig ausgebildeten Kolleginnen und Kollegen. Ich habe mal nachgeschaut: Die Ausbildungsvergütung ist gesetzlich festgelegt, zumindest ein Rahmen dafür. Am besten sind Tarifverträge.\n\n**e · Kristina, vor 4 Stunden**\nSoviel ich weiß, gilt auch die mündliche Zusage als Vertrag. Da musst du dir keine Sorgen machen. Der Arbeitgeber kann dir nicht plötzlich wieder absagen. Frag doch mal per E-Mail nach, wann du vorbeikommen kannst, um den Ausbildungsvertrag zu unterschreiben.\n\n**f · Armin, vor 36 Minuten**\nJa, ich habe am Anfang die gleiche Erfahrung gemacht. Ich musste als Azubi immer die Arbeiten machen, auf die die Kollegen keine Lust hatten. Dann habe ich mit dem Chef gesprochen, jetzt ist es besser. Im Ausbildungsvertrag steht nämlich genau, welche Aufgaben ein Azubi übernehmen muss. Bitte ruhig mal um anspruchsvollere Aufgaben." }
+          ],
+          "wahl": ["a", "b", "c", "d", "e", "f", "x"],
+          "aussagen": [
+            ["1 · Lisa", 4],
+            ["2 · Luciano", 5],
+            ["3 · Jonas", 6],
+            ["4 · Miriam", 1]
+          ]
+        }
+      ]
+    },
+    {
+      "titel": "Lesen Teil 4 – Aufgaben und Aufgabenverteilung nachvollziehen",
+      "icon": "📋",
+      "kurz": "Protokoll · 5 Multiple-Choice-Aufgaben",
+      "aufgaben": [
+        {
+          "id": "l4", "typ": "lesen", "kontext": "Lesen Teil 4", "mischen": false,
+          "frage": "Lesen Sie das Protokoll und die Aufgaben 1–5. Welche Antwort (a, b oder c) passt am besten?",
+          "textTitel": "Protokoll",
+          "text": "02. Juni 20…, 10:00–11:30 Uhr\nKonferenzraum 1, Ort: Schwanenstraße 30, 76544 Rehlinghausen\n\nAnwesende: Lisa Ahlgrimm (LA, Geschäftsführung), Ana Cunha (AC, Leitung Personal), Alste Hoffmann (AH, Betriebsratsvorsitzende), Markus Kranz (MK, Abteilungsleiter Ausland), Sandra Moll (SM, Leitung Qualitätskontrolle), Beppo Steierer (BS, Leitung Dokumentation), Mahmoud Tabari (MT, Betreuer Bereich Naher Osten und nördliches Afrika)\nGast (zeitweise): Armin Müller (AM, Leiter Marketing und Kommunikation)\nSitzungsleitung: Ana Cunha\nProtokollant: Beppo Steierer\n\n**Tagesordnungspunkte**\n1 Begrüßung und Genehmigung des letzten Protokolls\n2 Ergebnis der Mitarbeiterbefragung „Zufriedenheit am Arbeitsplatz“\n3 Neues Formular zum Mitarbeitergespräch\n4 Bericht der Geschäftsleitung zur Umstrukturierung der Firma\n5 Stellungnahme der Gewerkschaft\n6 Sonstiges\n\n**TOP 1 Begrüßung und Genehmigung des letzten Protokolls**\nAC eröffnet die Sitzung und begrüßt die Geschäftsführerin sowie namentlich alle Teilnehmerinnen und Teilnehmer. Das Protokoll vom 05. Mai wird ohne Einwände und einstimmig genehmigt.\n\n**TOP 2 Ergebnis der Mitarbeiterbefragung „Zufriedenheit am Arbeitsplatz“**\nAM berichtet über die Ergebnisse der Mitarbeiterbefragung. In der Produktionsabteilung ist die Unzufriedenheit derzeit eher hoch. Dort gab es in letzter Zeit einige Probleme. Die Abläufe bei der Produktion der neuen Wasserfilteranlagen waren schwierig und die interne Kommunikation zur Markteinführung hat schlecht funktioniert. Es gab hier aber auch einige sehr konkrete Ideen, um die Probleme zu lösen. Die Geschäftsleitung dankt dafür und wird versuchen, einiges davon umzusetzen.\n\n**TOP 3 Neues Formular zum Mitarbeitergespräch**\nAC stellt ein neues Formular vor, mit dem in Zukunft Mitarbeitergespräche dokumentiert werden. Sehr wichtig ist der Geschäftsleitung, dass sich Mitarbeitende in der Firma weiterentwickeln können. Deshalb wird nicht nur über Arbeit und Leistung gesprochen, sondern auch über die persönlichen beruflichen Ziele. Es wird bei Bedarf festgelegt, welche Weiterbildungen sinnvoll und/oder gewünscht sind. Das neue Formular bietet viel Raum für detaillierte Notizen zu diesen Themen.\n\n**TOP 4 Bericht der Geschäftsleitung zur Umstrukturierung der Firma**\nLA berichtet über Maßnahmen der Umstrukturierung der Firma. Es geht hier in erster Linie darum, die internen Prozesse zu verbessern. Das gilt vor allem für die Vermarktung neuer Produkte. Geplant ist auch, einen Teil der Produktion nach Rumänien auszulagern.\n\n**TOP 5 Stellungnahme der Gewerkschaft**\nAH betont, dass es durch die Auslagerung nicht zu Entlassungen kommen darf. Sobald das Werk in Rumänien steht, werden dringend qualifizierte Facharbeiterinnen und Facharbeiter gebraucht, um die Qualität vor Ort zu sichern. Die Tätigkeit im rumänischen Werk muss außerdem angemessen bezahlt werden.\n\n**TOP 6 Sonstiges**\nAC berichtet, dass das diesjährige Sommerfest leider ausfallen muss. Stattdessen ist dieses Jahr ein Betriebsausflug im Herbst geplant. Der Ort steht noch nicht fest. Die Personalabteilung nimmt Vorschläge bis zum 30. Juni entgegen. Ausdrücklich erwünscht sind Orte, die auch für die eingeladenen Familien der Mitarbeitenden interessant sind.",
+          "fragen": [
+            { "f": "Ana Cunha …", "opts": ["a) ist die Geschäftsführerin.", "b) lehnt das Protokoll vom 5. Mai ab.", "c) leitet die Betriebsversammlung."], "l": 2 },
+            { "f": "Die Produktionsabteilung …", "opts": ["a) ist mit der aktuellen Situation sehr zufrieden.", "b) lobt die Arbeitsabläufe zum neuen Produkt.", "c) hat Verbesserungsvorschläge gemacht."], "l": 2 },
+            { "f": "Geplant ist, …", "opts": ["a) bestimmte Vorgehensweisen zu optimieren.", "b) das Werk in Rumänien zu schließen.", "c) die Marketingabteilung auszulagern."], "l": 0 },
+            { "f": "Die Gewerkschaft …", "opts": ["a) besteht auf einer Lohnerhöhung.", "b) fordert die Neueinstellung von Personal.", "c) will Kündigungen verhindern."], "l": 2 },
+            { "f": "Die Personalabteilung …", "opts": ["a) berichtet über Details des Sommerfestes.", "b) bittet die Mitarbeitenden um ihre Ideen.", "c) will den Betriebsausflug verschieben."], "l": 1 }
+          ]
+        }
+      ]
+    }
+  ]
+}

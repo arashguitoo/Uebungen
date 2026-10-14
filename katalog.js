@@ -471,6 +471,21 @@ export const KATALOG = [
     quelle: { werk: "Linie 1 Beruf", lektion: 14 }
   },
   {
+    id: "fokus-lesen",
+    titel: "Fokus Lesen",
+    untertitel: "Prüfungstraining Lesen · Teil 1 Informationen suchen · Teil 2 Texte im Detail verstehen · Teil 3 Forum zuordnen · Teil 4 Protokoll verstehen",
+    datei: "training.html?set=fokus-lesen",
+    typ: "Training",
+    niveau: "B1/B2",
+    themen: ["Prüfungsvorbereitung", "Lesen"],
+    farbe: "#c0624f",
+    dauer: "4 Teile",
+    teile: 4,
+    reihe: "Prüfungstraining B1/B2",
+    offen: true,
+    quelle: { werk: "Linie 1 Beruf", lektion: "Testtraining Lesen" }
+  },
+  {
     id: "problem-loesen",
     titel: "Gemeinsam ein Problem lösen",
     untertitel: "Prüfungssimulation Sprechen · 27 Situationen am Arbeitsplatz · Zeitanzeige · Selbstcheck · Redemittel-Training",

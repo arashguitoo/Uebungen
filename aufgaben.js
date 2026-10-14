@@ -12,7 +12,7 @@
 // Im Text: **fett**, ___ = Lücke, Leerzeile = neuer Absatz.
 //
 // zeige(el, aufgabe, { onErgebnis(richtig, {p, pm, teile}) }) → Promise (löst beim Klick auf „Weiter“ auf)
-import { esc } from './db.js?v=20261013a';
+import { esc } from './db.js?v=20261014a';
 
 export const mische = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 export const ziehe = (a, n) => mische(a).slice(0, n);
@@ -151,7 +151,7 @@ function matrix(k, a, fertig) {
   const wahl = a.wahl || ['richtig', 'falsch'];
   const rows = zeilenVon(a).map((r, i) => Array.isArray(r)
     ? { i, t: r[0], opts: wahl.map((w, j) => ({ w, j })), l: richtigerIndex(r[1]), eigen: false }
-    : { i, t: r.f, opts: mische(r.opts.map((w, j) => ({ w, j }))), l: r.l, eigen: true });
+    : { i, t: r.f, opts: (a.mischen === false ? (x => x) : mische)(r.opts.map((w, j) => ({ w, j }))), l: r.l, eigen: true });
   const ord = (a.mischen === false || a.typ === 'lesen') ? rows : mische(rows);
   const ant = {}, n = rows.length;
   k.innerHTML = `<div class="matrix">${ord.map((r, pos) => `<div class="mz${r.eigen ? ' eigen' : ''}" data-i="${r.i}">
