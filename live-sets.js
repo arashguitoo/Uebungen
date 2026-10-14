@@ -1,7 +1,8 @@
 // live-sets.js – alle Fragensätze für die Live-Runden (Beamer: live-studio.html, Handys: live.html)
 // Jede Frage: { q, opts, l?, e?, k? } – bei Umfragen ohne l (keine richtige Antwort).
-import { FRAGEN as SMALLTALK, KATEGORIEN } from './smalltalk-daten.js?v=20261014a';
-import { UMFRAGE, UMFRAGE_EXTRA, JE_DESTO, MEDIEN_QUIZ } from './live-medien.js?v=20261014a';
+import { FRAGEN as SMALLTALK, KATEGORIEN } from './smalltalk-daten.js?v=20261014b';
+import { liveFragen } from './verben-praep.js?v=20261014b';
+import { UMFRAGE, UMFRAGE_EXTRA, JE_DESTO, MEDIEN_QUIZ } from './live-medien.js?v=20261014b';
 
 export const SETS = {
   'medien-umfrage': {
@@ -19,6 +20,11 @@ export const SETS = {
     titel: 'Grafik, Drucker & Co.', icon: '🖨️', farbe: '#2e9a57', dauer: 25,
     kurz: 'Live-Quiz: Grafiken beschreiben, Reklamation schreiben, Wortschatz.',
     quelle: 'Linie 1 Beruf · Lektion 11', fragen: MEDIEN_QUIZ
+  },
+  'verben-praep': {
+    titel: 'Verben mit Präpositionen', icon: '🔗', farbe: '#5b4fa3', dauer: 20,
+    kurz: 'Live-Quiz: Präposition, Kasus, Lückensätze, wo(r)-/da(r)-Wörter – bei jeder Runde neue Verben.',
+    fragen: liveFragen(40)
   },
   'smalltalk': {
     titel: 'Smalltalk-Profi', icon: '💬', farbe: '#b5562f', dauer: 20,

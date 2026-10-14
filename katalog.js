@@ -486,6 +486,19 @@ export const KATALOG = [
     quelle: { werk: "Linie 1 Beruf", lektion: "Testtraining Lesen" }
   },
   {
+    id: "verben-praep",
+    titel: "Verben mit Präpositionen",
+    untertitel: "164 Verben · Präposition und Kasus · jede Runde neue Verben · Training, Sprint, Fehler wiederholen, Nachschlagen",
+    datei: "verben-praepositionen.html",
+    typ: "Spiel",
+    niveau: "B1/B2",
+    themen: ["Grammatik", "Präpositionen", "Kasus"],
+    farbe: "#5b4fa3",
+    dauer: "10 Min.",
+    reihe: "Grammatik-Spiele",
+    offen: true
+  },
+  {
     id: "problem-loesen",
     titel: "Gemeinsam ein Problem lösen",
     untertitel: "Prüfungssimulation Sprechen · 27 Situationen am Arbeitsplatz · Zeitanzeige · Selbstcheck · Redemittel-Training",

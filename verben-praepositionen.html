@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verben mit Präpositionen – Übungszentrale</title>
+<link rel="stylesheet" href="stil.css?v=20261014b">
+<style>
+  :root{--akzent:#5b4fa3;--akzent-hell:#eeebf8}
+  body{background:#f1eff7}
+  .start{padding:24px 18px}
+  .start h1{font-family:Georgia,serif;font-size:2rem;color:var(--akzent);margin:6px 0}
+  .modi{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:14px}
+  .modus{font:inherit;text-align:left;background:#fff;border:2px solid var(--linie);border-radius:16px;padding:14px 16px;cursor:pointer}
+  .modus:hover{border-color:var(--akzent)}
+  .modus b{display:block;font-size:1.1rem;margin:4px 0;color:var(--akzent)}
+  .modus .ic{font-size:1.6rem}
+  .einst{margin-top:16px}
+  .einst label{display:block;font-weight:700;margin:10px 0 6px}
+  .chips{display:flex;gap:6px;flex-wrap:wrap}
+  .chip{font:inherit;font-size:.9rem;border:1px solid var(--linie);background:#fff;border-radius:99px;padding:4px 12px;cursor:pointer}
+  .chip.an{background:var(--akzent);color:#fff;border-color:var(--akzent)}
+  .fbalken{height:8px;background:#e2dff0;border-radius:8px;overflow:hidden;margin:6px 0 10px}
+  .fbalken i{display:block;height:100%;background:var(--akzent);transition:width .3s}
+  .hud{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;margin-bottom:6px}
+  .pk{background:#2a2540;color:#d8d0ff;font-family:Consolas,monospace;font-weight:700;padding:5px 12px;border-radius:10px}
+  .uhr{font-family:Consolas,monospace;font-size:1.6rem;font-weight:700;color:var(--akzent);text-align:center}
+  .uhr.knapp{color:var(--fehler)}
+  .sopts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+  .sopt{font:inherit;font-size:1.15rem;font-weight:700;background:#fff;border:2px solid var(--linie);border-radius:14px;padding:16px 10px;cursor:pointer}
+  .sopt.ok{border-color:var(--ok);background:var(--ok-hell)}.sopt.nein{border-color:var(--fehler);background:var(--fehler-hell)}
+  .sfrage{font-size:1.25rem;font-weight:600;text-align:center;margin:16px 0 6px;min-height:3em}
+  .tabelle{width:100%;border-collapse:collapse;font-size:.95rem}
+  .tabelle td{border-bottom:1px solid var(--linie);padding:7px 6px;vertical-align:top}
+  .tabelle td:first-child{font-weight:700;white-space:nowrap}
+  .k-A{color:#b5562f}.k-D{color:#2f6fc4}.k-N{color:#2e9a57}
+  .sterne{color:#d9971c;white-space:nowrap}
+  .suche{font:inherit;width:100%;padding:10px 12px;border:2px solid var(--linie);border-radius:12px;margin:8px 0}
+  .merke{background:#fff;border:1px solid var(--linie);border-left:4px solid var(--fehler);border-radius:10px;padding:8px 12px;margin:6px 0;text-align:left;font-size:.95rem}
+  .ring{width:130px;height:130px;border-radius:50%;display:grid;place-items:center;margin:10px auto;font-size:1.6rem;font-weight:700}
+  .regel{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+  .regel div{background:#fff;border-radius:12px;padding:10px 12px;border:1px solid var(--linie);font-size:.92rem}
+  @media(max-width:520px){.regel{grid-template-columns:1fr}#raus .lang{display:none}}
+</style>
+<script data-goatcounter="https://aguitoo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<main class="wrap" id="app"><p class="leise" style="text-align:center;margin-top:40px">Lädt …</p></main>
+<script>
+window.__ok = false;
+(function () {
+  function zeige(msg) {
+    var ziel = document.getElementById('app') || document.body;
+    ziel.innerHTML = '<div class="karte" style="max-width:580px;margin:40px auto"><h2>Die Seite konnte nicht geladen werden</h2><p>Bitte Seite neu laden (Strg + F5 / Cmd + Shift + R).</p><p style="font-size:.85rem;color:#666">' + String(msg).replace(/</g, '&lt;') + '</p></div>';
+  }
+  addEventListener('error', function (e) { if (!window.__ok) zeige(e.message); });
+  setTimeout(function () { if (!window.__ok) zeige('Die Programmdateien wurden nicht vollständig geladen.'); }, 12000);
+})();
+</script>
+<script type="module">
+window.__ok = true;
+import { starte, navigation } from './spieler.js?v=20261014b';
+import { zeige, punkte, fmt } from './aufgaben.js?v=20261014b';
+import { esc } from './db.js?v=20261014b';
+import { VERBEN, KASUS, neueAufgabe, satzVoll, anzeige, mische } from './verben-praep.js?v=20261014b';
+
+const app = document.getElementById('app');
+const L = await starte('verben-praep');
+if (!L.frei) { L.sperre(app); throw new Error('gesperrt'); }
+const lab = {}; VERBEN.forEach(e => lab['v' + e.i] = anzeige(e)); L.registriereItems(lab);
+
+/* ---------------- Einstellungen & Fehlerspeicher ---------------- */
+const FK = 'ueb_vp_fehler', EK = 'ueb_vp_einst';
+const lies = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) || d; } catch (e) { return d; } };
+const schreib = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { } };
+let fehler = lies(FK, {});
+const E = Object.assign({ umfang: 2, praep: [] }, lies(EK, {}));
+const PRAEPS = [...new Set(VERBEN.map(e => e.p).filter(x => x !== 'als'))].sort((a, b) => a.localeCompare(b, 'de'));
+const pool = () => VERBEN.filter(e => e.h <= E.umfang && (!E.praep.length || E.praep.includes(e.p)));
+const merkeFehler = (i, ok) => { if (ok) { if (fehler[i]) { fehler[i]--; if (!fehler[i]) delete fehler[i]; } } else fehler[i] = (fehler[i] || 0) + 1; schreib(FK, fehler); };
+const UMFANG = { 1: 'Grundwortschatz (★★★)', 2: 'Wichtig (★★★ + ★★)', 3: 'Alle Verben' };
+const sterne = h => '★'.repeat(4 - h) + '<span style="color:#ddd">' + '★'.repeat(h - 1) + '</span>';
+
+let lauf = 0, aktiv = false;
+const nav = navigation(L, { zurueck: () => { lauf++; aktiv = false; startbild(); }, fortschritt: () => aktiv });
+app.addEventListener('click', e => { if (e.target.closest('#raus')) nav.zurStart(); });
+const kopf = t => `<div class="zeile" style="margin-bottom:8px"><button class="btn zweit klein" id="raus">←<span class="lang"> Start</span></button><b style="flex:1">${t}</b></div>`;
+
+/* ---------------- Start ---------------- */
+function startbild() {
+  lauf++;
+  const p = pool(), nf = Object.keys(fehler).filter(i => p.some(e => e.i === +i)).length;
+  app.innerHTML = `<div class="karte start" style="margin-top:14px">
+    <span class="pille">B1/B2 · Grammatik</span>
+    <h1>Verben mit Präpositionen</h1>
+    <p>warten <b>auf</b> + Akk., teilnehmen <b>an</b> + Dat. … ${VERBEN.length} Verben in der Datenbank – jede Runde mischt neue Verben und neue Aufgabentypen. Häufige Verben kommen öfter, deine Fehler kommen wieder.</p>
+    <div class="modi">
+      <button class="modus" id="m-train"><span class="ic">🎯</span><b>Training</b><span class="leise klein">15 gemischte Aufgaben: Präposition, Kasus, Lückensatz, Artikel, Fehler finden, Zuordnen, wo(r)-/da(r)-Wörter</span></button>
+      <button class="modus" id="m-sprint"><span class="ic">⚡</span><b>Sprint · 90 Sekunden</b><span class="leise klein">So viele richtige Antworten wie möglich – Fehler kosten Zeit</span></button>
+      <button class="modus" id="m-fehler" ${nf ? '' : 'disabled style="opacity:.5;cursor:default"'}><span class="ic">🔁</span><b>Meine Fehler (${nf})</b><span class="leise klein">Nur die Verben, die noch nicht sitzen</span></button>
+      <button class="modus" id="m-liste"><span class="ic">📖</span><b>Nachschlagen</b><span class="leise klein">Alle Verben mit Beispielsatz – suchen und filtern</span></button>
+    </div>
+    <div class="einst">
+      <label>Wortschatz</label><div class="chips">${[1, 2, 3].map(u => `<button class="chip ${E.umfang === u ? 'an' : ''}" data-u="${u}">${UMFANG[u]} · ${VERBEN.filter(e => e.h <= u).length}</button>`).join('')}</div>
+      <label>Nur bestimmte Präpositionen üben <span class="leise klein">(nichts gewählt = alle)</span></label>
+      <div class="chips">${PRAEPS.map(x => `<button class="chip ${E.praep.includes(x) ? 'an' : ''}" data-p="${x}">${x}</button>`).join('')}</div>
+      <p class="leise klein">${p.length} Verben in deiner Auswahl.</p>
+    </div></div>`;
+  app.querySelectorAll('[data-u]').forEach(b => b.onclick = () => { E.umfang = +b.dataset.u; schreib(EK, E); startbild(); });
+  app.querySelectorAll('[data-p]').forEach(b => b.onclick = () => { const x = b.dataset.p; E.praep = E.praep.includes(x) ? E.praep.filter(y => y !== x) : [...E.praep, x]; schreib(EK, E); startbild(); });
+  const genug = p.length >= 6;
+  document.getElementById('m-train').onclick = () => genug ? training(p, 'Training') : alert('Bitte mehr Verben auswählen (mindestens 6).');
+  document.getElementById('m-sprint').onclick = () => genug ? sprint(p) : alert('Bitte mehr Verben auswählen (mindestens 6).');
+  document.getElementById('m-fehler').onclick = () => { const fp = VERBEN.filter(e => fehler[e.i]); if (fp.length) training(fp.length >= 6 ? fp : [...fp, ...p.filter(e => !fehler[e.i]).slice(0, 6 - fp.length)], 'Meine Fehler'); };
+  document.getElementById('m-liste').onclick = liste;
+  scrollTo(0, 0);
+}
+
+/* ---------------- Training ---------------- */
+async function training(p, titel) {
+  nav.lauf(); aktiv = false;
+  const ich = ++lauf, N = 15, benutzt = new Set(), falsch = new Map();
+  const typen = p.length >= 8 ? undefined : ['praep', 'kasus', 'satzP', 'satzA', 'wo'];
+  const liste = [];
+  const gross = {};
+  for (let k = 0; k < N; k++) {
+    let a = neueAufgabe(p, { fehler, ausser: benutzt.size < p.length - 6 ? benutzt : new Set(), typen });
+    if (a && ['fehler', 'zuordnen', 'sortieren'].includes(a.art) && (gross[a.art] || 0) >= 1) a = neueAufgabe(p, { fehler, ausser: benutzt.size < p.length - 6 ? benutzt : new Set(), typen: ['praep', 'satzP', 'kasus', 'satzA', 'wo'] });
+    if (!a) break; gross[a.art] = (gross[a.art] || 0) + 1; a.verben.forEach(i => benutzt.add(i)); liste.push(a);
+  }
+  const pm = liste.reduce((s, a) => s + punkte(a), 0); let pt = 0, pa = 0;
+  L.beginne(liste.length, pm, titel);
+  for (let k = 0; k < liste.length; k++) {
+    const a = liste[k];
+    app.innerHTML = kopf(`${titel} · ${k + 1} / ${liste.length}`) + `<div class="fbalken"><i style="width:${Math.round(100 * k / liste.length)}%"></i></div><div class="karte" id="feld"></div>`;
+    scrollTo(0, 0);
+    await zeige(document.getElementById('feld'), a, { onErgebnis: (ok, d) => {
+      aktiv = true; pt += d.p; pa += d.pm;
+      if (a.typ === 'matrix') d.teile.forEach(([id, x]) => { const i = a.verben[+id.split('_').pop()]; L.antwort('v' + i, x); merkeFehler(i, x); if (!x) falsch.set(i, 1); });
+      else a.verben.forEach(i => { L.antwort('v' + i, ok); merkeFehler(i, ok); if (!ok) falsch.set(i, 1); });
+      L.fortschritt(k + 1, pt, titel, pa);
+    } });
+    if (ich !== lauf) return;
+  }
+  aktiv = false; nav.ende();
+  const pct = await L.ende(pt, pm, { modus: titel });
+  ergebnis(`${pt} von ${pm} Punkten`, pct, [...falsch.keys()], () => training(p, titel));
+}
+
+function ergebnis(zeile, pct, falsch, nochmal, extra = '') {
+  const farbe = pct >= 85 ? 'var(--ok)' : pct >= 60 ? '#5f9e3f' : pct >= 40 ? '#c48a12' : 'var(--fehler)';
+  app.innerHTML = kopf('Ergebnis') + `<div class="karte aufgabe" style="text-align:center">
+    <div class="ring" style="background:conic-gradient(${farbe} ${pct * 3.6}deg,#e6e6e6 0)"><div style="background:#fff;width:100px;height:100px;border-radius:50%;display:grid;place-items:center">${pct} %</div></div>
+    <p><b>${zeile}</b>${extra}</p>
+    ${falsch.length ? `<h3>Das solltest du dir merken</h3>${falsch.map(i => VERBEN[i]).map(e => `<div class="merke"><b>${esc(e.v)} ${esc(e.p)}</b> + <span class="k-${e.k}">${KASUS[e.k]}</span> – ${fmt(satzVoll(e.s))}</div>`).join('')}<p class="leise klein">Diese Verben kommen in den nächsten Runden häufiger – oder übe sie gezielt unter „Meine Fehler“.</p>` : '<p>Keine Fehler – stark!</p>'}
+    <div class="knopfreihe" style="justify-content:center;display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">${pct >= 60 ? '<button class="btn" id="zert">🎓 Zertifikat</button>' : ''}<button class="btn" id="nochmal">Neue Runde</button><button class="btn zweit" id="raus">Zum Start</button></div></div>`;
+  document.getElementById('nochmal').onclick = nochmal;
+  const z = document.getElementById('zert'); if (z) z.onclick = () => L.zertifikat({ titel: 'Verben mit Präpositionen', zeile: 'Präposition und Kasus sicher verwenden', punkte: `${zeile} · ${pct} %` });
+  scrollTo(0, 0);
+}
+
+/* ---------------- Sprint ---------------- */
+function sprint(p) {
+  nav.lauf(); aktiv = true;
+  const ich = ++lauf, DAUER = 90, falsch = new Map();
+  let ende = Date.now() + DAUER * 1000, richtig = 0, gesamt = 0, serie = 0;
+  L.beginne(0, 0, 'Sprint');
+  const naechste = () => {
+    if (ich !== lauf) return;
+    const a = neueAufgabe(p, { fehler, typen: ['praep', 'kasus', 'satzP', 'wo', 'satzA'] });
+    const opts = mische(a.opts.map((t, j) => ({ t, ok: j === a.l })));
+    app.innerHTML = kopf('Sprint') + `<div class="hud"><span class="pk">✔ ${richtig}</span><div class="uhr" id="uhr"></div><span class="pk">${serie >= 3 ? '🔥 ' + serie : '&nbsp;'}</span></div>
+      <div class="karte"><div class="kontext">${esc(a.kontext)}</div><div class="sfrage">${fmt(a.frage)}</div>
+      <div class="sopts">${opts.map((o, j) => `<button class="sopt" data-j="${j}">${fmt(o.t)}</button>`).join('')}</div><div id="fb" style="min-height:2.4em;margin-top:10px;text-align:center"></div></div>`;
+    tick();
+    app.querySelectorAll('.sopt').forEach(b => b.onclick = () => {
+      if (ich !== lauf) return;
+      const o = opts[+b.dataset.j]; gesamt++;
+      app.querySelectorAll('.sopt').forEach((x, j) => { x.disabled = true; if (opts[j].ok) x.classList.add('ok'); });
+      a.verben.forEach(i => { L.antwort('v' + i, o.ok); merkeFehler(i, o.ok); if (!o.ok) falsch.set(i, 1); });
+      if (o.ok) { richtig++; serie++; setTimeout(naechste, 450); }
+      else { b.classList.add('nein'); serie = 0; ende -= 3000; document.getElementById('fb').innerHTML = `<span class="leise">${fmt(a.x)}</span> <span style="color:var(--fehler);font-weight:700">−3 s</span>`; setTimeout(naechste, 2600); }
+      L.fortschritt(gesamt, richtig, 'Sprint', gesamt);
+    });
+  };
+  const tick = () => { const u = document.getElementById('uhr'); if (!u) return; const rest = Math.max(0, Math.ceil((ende - Date.now()) / 1000)); u.textContent = rest + ' s'; u.classList.toggle('knapp', rest <= 10); };
+  const uhr = setInterval(async () => {
+    if (ich !== lauf) return clearInterval(uhr);
+    tick();
+    if (Date.now() >= ende) {
+      clearInterval(uhr); lauf++; aktiv = false; nav.ende();
+      const pct = await L.ende(richtig, Math.max(gesamt, 1), { modus: 'Sprint', richtig, gesamt });
+      const best = lies('ueb_vp_rekord', 0); if (richtig > best) schreib('ueb_vp_rekord', richtig);
+      ergebnis(`${richtig} richtige Antworten in 90 Sekunden`, pct, [...falsch.keys()], () => sprint(p), `<br>${richtig > best ? '🏆 Neuer Rekord!' : `Dein Rekord: ${best}`}`);
+    }
+  }, 200);
+  naechste();
+}
+
+/* ---------------- Nachschlagen ---------------- */
+function liste() {
+  nav.lauf(); lauf++;
+  let q = '', fk = '', fp = '';
+  app.innerHTML = kopf('Nachschlagen') + `<div class="karte">
+    <div class="regel"><div><b class="k-A">+ Akkusativ</b> (wohin? / worauf?)<br>immer: <b>für, gegen, um</b><br>meist auch: <b>auf, über</b> · oft: <b>an, in</b></div>
+      <div><b class="k-D">+ Dativ</b> (wo? / womit?)<br>immer: <b>aus, bei, mit, nach, von, zu</b><br>meist auch: <b>vor, unter</b> · oft: <b>an</b></div></div>
+    <input class="suche" id="q" placeholder="Verb oder Präposition suchen …" aria-label="Suchen">
+    <div class="chips" style="margin-bottom:6px"><button class="chip an" data-k="">alle</button><button class="chip" data-k="A">+ Akk.</button><button class="chip" data-k="D">+ Dat.</button>
+      ${PRAEPS.map(x => `<button class="chip" data-fp="${x}">${x}</button>`).join('')}</div>
+    <div id="tab"></div></div>`;
+  const male = () => {
+    const l = VERBEN.filter(e => (!fk || e.k === fk) && (!fp || e.p === fp) && (!q || (e.v + ' ' + e.p).toLowerCase().includes(q)))
+      .sort((a, b) => a.v.replace(/^(sich|es|etwas|Geld) /, '').localeCompare(b.v.replace(/^(sich|es|etwas|Geld) /, ''), 'de'));
+    document.getElementById('tab').innerHTML = `<p class="leise klein">${l.length} Verben · ★★★ = sehr häufig</p><table class="tabelle">${l.map(e => `<tr><td>${esc(e.v)} <span class="k-${e.k}">${esc(e.p)} + ${KASUS[e.k]}</span>${e.x ? `<br><span class="leise klein" style="font-weight:400">${esc(e.x)}</span>` : ''}</td><td>${fmt(satzVoll(e.s))}${fehler[e.i] ? ' <span title="noch üben">🔁</span>' : ''}</td><td class="sterne">${sterne(e.h)}</td></tr>`).join('')}</table>`;
+  };
+  document.getElementById('q').oninput = ev => { q = ev.target.value.trim().toLowerCase(); male(); };
+  app.querySelectorAll('[data-k]').forEach(b => b.onclick = () => { fk = b.dataset.k; app.querySelectorAll('[data-k]').forEach(x => x.classList.toggle('an', x === b)); male(); });
+  app.querySelectorAll('[data-fp]').forEach(b => b.onclick = () => { fp = fp === b.dataset.fp ? '' : b.dataset.fp; app.querySelectorAll('[data-fp]').forEach(x => x.classList.toggle('an', x.dataset.fp === fp)); male(); });
+  male(); scrollTo(0, 0);
+}
+
+startbild();
+</script>
+</body>
+</html>
