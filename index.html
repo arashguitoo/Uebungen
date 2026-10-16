@@ -29,6 +29,8 @@
   .chip{border:1px solid var(--linie);background:#fff;border-radius:99px;padding:4px 12px;font:inherit;font-size:.9rem;cursor:pointer}
   .chip.an{background:#1f2328;color:#fff;border-color:#1f2328}
   footer{margin:40px 0 20px;text-align:center}
+  .lernstand{display:flex;gap:14px;align-items:center;margin-top:22px;padding:16px 18px;border-radius:var(--r);background:linear-gradient(135deg,#5b4fa3,#2f6fc4);color:#fff;text-decoration:none;box-shadow:var(--schatten)}
+  .lernstand .ic{font-size:2rem}.lernstand:hover{filter:brightness(1.07)}
 </style>
 <script data-goatcounter="https://aguitoo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
@@ -117,12 +119,16 @@ async function start() {
   let pubEx = {}, kursEx = {};
   try { pubEx = (await db.get('pub/ex')) || {}; } catch (e) { }
   if (s && s.kid) { try { kursEx = (await db.get('pub/kurse/' + s.kid + '/ex')) || {}; } catch (e) { } }
+  let mein = {};
+  if (s && s.code) { try { mein = (await db.get('mein/' + s.code)) || {}; } catch (e) { } }
+  const indiv = mein.ex || {};
   const offen = ex => (pubEx[ex.id] && typeof pubEx[ex.id].offen === 'boolean') ? pubEx[ex.id].offen : ex.offen !== false;
-  const meine = KATALOG.filter(ex => kursEx[ex.id]);
-  const weitere = KATALOG.filter(ex => !kursEx[ex.id] && offen(ex));
+  const meine = KATALOG.filter(ex => indiv[ex.id] === true || (indiv[ex.id] !== false && kursEx[ex.id]));
+  const weitere = KATALOG.filter(ex => !meine.includes(ex) && offen(ex));
   const themen = [...new Set(weitere.flatMap(e => e.themen || []))];
   const pass = ex => filt === 'alle' || (ex.themen || []).includes(filt) || ex.niveau === filt;
   let h = '';
+  if (mein.fb || mein.sa) h += `<a class="lernstand" href="${mitDemo('lernstand.html')}"><span class="ic">📋</span><span style="flex:1"><b>Mein Lernstand</b><br><span class="klein">${mein.fb ? 'Feedback von deinem Lehrer · ' + new Date(mein.fb.t).toLocaleDateString('de-DE') : 'Schätze dich selbst ein: Wie gut bist du auf die Prüfung vorbereitet?'}</span></span><span>→</span></a>`;
   if (s && s.kid) h += `<div class="abschnitt"><h2>Deine Übungen</h2><span class="leise klein">für ${esc(s.kurs || 'deinen Kurs')}</span></div>` +
     (meine.length ? `<div class="liste">${meine.map(ex => karte(ex, best[ex.id])).join('')}</div>` : '<p class="leise">Für deinen Kurs ist gerade nichts freigeschaltet.</p>');
   h += `<div class="abschnitt"><h2>${s && s.kid ? 'Weitere Übungen' : 'Alle Übungen'}</h2></div>`;

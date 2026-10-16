@@ -44,6 +44,7 @@ export async function istFreigegeben(exId, s = sitzung(), meta = null) {
     const p = await db.get('pub/ex/' + exId);
     if (p && typeof p.offen === 'boolean') offen = p.offen;
     if (offen) return true;
+    if (s && s.code) { const iv = await db.get('mein/' + s.code + '/ex/' + exId); if (typeof iv === 'boolean') return iv; }
     if (s && s.kid) return (await db.get('pub/kurse/' + s.kid + '/ex/' + exId)) === true;
   } catch (e) { return offen; }
   return false;

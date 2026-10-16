@@ -57,6 +57,43 @@
   .icon:hover{background:#eee}
   .quelle{display:inline-block;font-size:.75rem;font-weight:600;background:#fff3d6;color:#7a5a00;border:1px solid #f0dca8;border-radius:99px;padding:1px 8px;vertical-align:middle;text-transform:none;letter-spacing:0}
   .meldung{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#1f2328;color:#fff;padding:10px 18px;border-radius:10px;z-index:99;box-shadow:var(--schatten)}
+  /* Feedback */
+  .fbchips{display:flex;gap:6px;flex-wrap:wrap}
+  .chip{border:1px solid var(--linie);background:#fff;border-radius:99px;padding:5px 12px;font:inherit;font-size:.88rem;cursor:pointer}
+  .chip.an{background:#1f2328;color:#fff;border-color:#1f2328}
+  .fbm th{font-size:.72rem;text-transform:none;letter-spacing:0;max-width:120px;line-height:1.2}
+  .fbz{cursor:pointer;text-align:center}.fbz:hover{background:#f6f3ec}
+  .fbw{display:inline-block;min-width:34px;text-align:center;border-radius:7px;padding:3px 7px;font-weight:700;font-size:.85rem}
+  .fbw.leer{color:#bbb;background:#f6f6f6}
+  .sw{font-size:.72rem;color:#5b4fa3;font-weight:600}
+  td.alt{color:#c0392b;font-weight:700}
+  .namebtn{background:none;border:0;font:inherit;font-weight:700;cursor:pointer;padding:0;text-align:left;color:inherit;text-decoration:underline dotted}
+  .fbmenue{position:absolute;z-index:50;background:#fff;border:1px solid var(--linie);border-radius:10px;box-shadow:var(--schatten);padding:6px;display:grid;gap:4px;min-width:190px}
+  .fbmenue button{font:inherit;font-size:.9rem;font-weight:600;border:1px solid transparent;border-radius:7px;padding:6px 10px;text-align:left;cursor:pointer;background:#f4f4f4}
+  .fbmenue button.an{outline:2px solid #1f2328}
+  .fbkopf .mini{display:grid;gap:2px;min-width:110px}.fbkopf .mini .balken{width:110px}
+  .teilen{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:14px;padding:10px 12px;border-radius:10px;background:#f6f3ec}
+  .teilen.an{background:#e3f6ea}
+  .fbgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:16px;margin-top:16px;align-items:start}
+  @media(max-width:520px){.fbgrid{grid-template-columns:1fr}}
+  .fbliste h3{margin:0 0 6px}
+  .fbitem{display:grid;grid-template-columns:1fr auto;gap:4px 10px;padding:9px 0;border-bottom:1px solid var(--linie)}
+  .fbitem .fbt{grid-column:1/-1}.fbitem .fbmeta{align-self:center}
+  .fbnote{grid-column:1/-1;font-size:.85rem;padding:5px 8px}
+  .seg{display:flex;gap:4px;flex-wrap:wrap}
+  .seg button{font:inherit;font-size:.82rem;font-weight:600;border:1px solid var(--linie);background:#fff;border-radius:7px;padding:4px 8px;cursor:pointer;min-width:34px}
+  .mkg{display:grid;grid-template-columns:150px 1fr;gap:8px;padding:5px 0;align-items:start}
+  @media(max-width:620px){.mkg{grid-template-columns:1fr}}
+  .mk{font:inherit;font-size:.85rem;border:1px solid var(--linie);background:#fff;border-radius:99px;padding:3px 10px;margin:2px;cursor:pointer}
+  .mk.s{background:#d9f2e2;border-color:#2e9e5b;color:#1d7a45;font-weight:700}.mk.s::before{content:'＋ '}
+  .mk.w{background:#fbe0db;border-color:#d9483b;color:#b3402f;font-weight:700}.mk.w::before{content:'→ '}
+  span.mk{cursor:default}
+  .fbtexte{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+  @media(max-width:700px){.fbtexte{grid-template-columns:1fr}}
+  .fbtexte label{font-size:.9rem;font-weight:600;display:grid;gap:4px}.fbtexte textarea{min-height:90px;font-weight:400}
+  .fblog{max-height:320px;overflow:auto;margin-top:8px;display:grid;gap:4px;font-size:.9rem}
+  .fblog .notiz{background:#fff8e1;border-radius:6px;padding:3px 6px}
+  select.frei{background:#e3f6ea}select.gesperrt{background:#fbe0db}
 </style>
 </head>
 <body>
@@ -70,6 +107,7 @@
     <button class="tab" data-t="erg">Ergebnisse</button>
     <button class="tab" data-t="kurse">Kurse &amp; Codes</button>
     <button class="tab" data-t="ex">Übungen</button>
+    <button class="tab" data-t="fb">👤 Feedback &amp; Freigaben</button>
     <a href="live-studio.html" style="color:#ffd166;font-weight:700;padding:10px 16px;text-decoration:none;white-space:nowrap" title="Live-Umfragen und Live-Quiz für den Unterricht starten">📡 Live im Unterricht</a>
   </nav>
 </div></header>
@@ -99,15 +137,16 @@ window.__ok = false;
 window.__ok = true;
 import { db, DEMO, zufall, esc, mitDemo } from './db.js?v=20261016a';
 import { KATALOG, exById } from './katalog.js?v=20261016a';
+import { LISTEN, SKALEN, MERKMALE, MERKMAL, skalaVon, wertInfo, prozent } from './feedback-kriterien.js?v=20261016a';
 
 if (DEMO) document.getElementById('demo').innerHTML = '<div class="demo-band">DEMO-MODUS – Anmeldung mit beliebigen Daten, alles bleibt in diesem Browser</div>';
 const $ = s => document.querySelector(s), app = $('#app');
-const D = { kurse: {}, pub: {}, live: {}, res: {}, items: {}, wieder: {} };
+const D = { kurse: {}, pub: {}, live: {}, res: {}, items: {}, wieder: {}, fb: {}, mein: {}, selbst: {} };
 let tab = 'live', offs = [], gewKurs = null;
-const F = { werk: 'alle', lkurs: 'alle', lex: 'alle', nurAktiv: false, ekurs: 'alle', eex: 'alle', mehr: false };
+const F = { fbKurs: null, fbListe: 't1a', fbPid: null, werk: 'alle', lkurs: 'alle', lex: 'alle', nurAktiv: false, ekurs: 'alle', eex: 'alle', mehr: false };
 const BASE = location.href.replace(/[?#].*$/, '').replace(/[^/]*$/, '');
 // Sicherheitsnetz: ein leerer Code oder Kurs darf nie zu „codes/“ oder „kurse/“ werden (das wäre der ganze Knoten)
-const sicher = up => { for (const k of Object.keys(up)) if (/(^|\/)(undefined|null)?(\/|$)/.test(k) || /\/$/.test(k) || /^(codes|kurse|pub\/kurse)$/.test(k)) { console.warn('Blockiert:', k); delete up[k]; } return up; };
+const sicher = up => { for (const k of Object.keys(up)) if (/(^|\/)(undefined|null)?(\/|$)/.test(k) || /\/$/.test(k) || /^(codes|kurse|pub\/kurse|fb|mein|selbst)$/.test(k)) { console.warn('Blockiert:', k); delete up[k]; } return up; };
 const meld = t => { const m = document.createElement('div'); m.className = 'meldung'; m.textContent = t; document.body.append(m); setTimeout(() => m.remove(), 2200); };
 const zeit = t => t ? new Date(t).toLocaleString('de-DE', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }) : '';
 const dauer = s => s >= 3600 ? Math.floor(s / 3600) + ' h ' + Math.floor(s % 3600 / 60) + ' min' : Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0') + ' min';
@@ -154,7 +193,7 @@ function zeichne(quelle) {
   if (quelle && document.activeElement && document.activeElement.closest('#app') && /INPUT|TEXTAREA/.test(document.activeElement.tagName)) {
     clearTimeout(zTimer); zTimer = setTimeout(() => zeichne(), 1500); return;
   }
-  if (tab === 'live') live(); else if (tab === 'erg') erg(); else if (tab === 'kurse') kurse(); else uebungen();
+  if (tab === 'live') live(); else if (tab === 'erg') erg(); else if (tab === 'kurse') kurse(); else if (tab === 'fb') feedback(); else uebungen();
 }
 
 /* ---------------- LIVE ---------------- */
@@ -332,7 +371,7 @@ function kurse() {
       ${tn.length ? `<div class="tabwrap"><table class="t"><tr><th>Name</th><th>Code</th><th>Direktlink</th><th></th></tr>${tn.map(([pid, p]) => `<tr>
         <td><b>${esc(p.name)}</b></td><td>${p.code ? `<span class="code">${esc(p.code)}</span>` : '<span class="leise klein">– fehlt –</span>'}</td>
         <td><button class="icon" data-link="${esc(p.code)}" title="Link mit Code kopieren">🔗 kopieren</button></td>
-        <td style="white-space:nowrap"><button class="icon" data-ren="${pid}" title="Namen ändern">✏️</button><button class="icon" data-neu="${pid}" title="Neuen Code erzeugen">🔄</button><button class="icon" data-del="${pid}" title="Entfernen">🗑</button></td></tr>`).join('')}</table></div>` : '<p class="leise">Noch niemand eingetragen.</p>'}
+        <td style="white-space:nowrap"><button class="icon" data-fbp="${pid}" title="Feedback &amp; persönliche Freigaben">👤</button><button class="icon" data-ren="${pid}" title="Namen ändern">✏️</button><button class="icon" data-neu="${pid}" title="Neuen Code erzeugen">🔄</button><button class="icon" data-del="${pid}" title="Entfernen">🗑</button></td></tr>`).join('')}</table></div>` : '<p class="leise">Noch niemand eingetragen.</p>'}
       <form id="ntn" style="margin-top:14px"><label class="klein leise">Namen eintragen – ein Name pro Zeile. Jede Person bekommt automatisch einen Code.</label>
         <textarea id="ntnt" placeholder="Amina&#10;Bashir&#10;Carla"></textarea><button class="btn klein" style="margin-top:8px">Eintragen</button></form>
       <h3 style="margin-top:22px">Übungen für diesen Kurs</h3><p class="leise klein" style="margin-top:0">Angehakte Übungen erscheinen bei den Teilnehmenden unter „Deine Übungen“ – auch wenn sie nicht öffentlich sind.</p>
@@ -359,17 +398,24 @@ function kurse() {
     await db.update('', sicher(up)); meld(namen.length + ' eingetragen.'); };
   app.querySelectorAll('[data-del]').forEach(b => b.onclick = async () => { const p = k.tn[b.dataset.del];
     if (!confirm(`${p.name} entfernen? Der Code ${p.code} funktioniert dann nicht mehr.`)) return;
-    await db.update('', sicher({ ['kurse/' + gewKurs + '/tn/' + b.dataset.del]: null, ['codes/' + p.code]: null })); });
+    const up = { ['kurse/' + gewKurs + '/tn/' + b.dataset.del]: null, ['fb/' + gewKurs + '/' + b.dataset.del]: null };
+    if (p.code) Object.assign(up, { ['codes/' + p.code]: null, ['mein/' + p.code]: null, ['selbst/' + p.code]: null });
+    await db.update('', sicher(up)); });
   app.querySelectorAll('[data-neu]').forEach(b => b.onclick = async () => { const pid = b.dataset.neu, p = k.tn[pid];
     if (!confirm(`Neuen Code für ${p.name}? Der alte Code ${p.code} funktioniert dann nicht mehr.`)) return;
     const c = await neuerCode(alleCodes());
-    await db.update('', sicher({ ['kurse/' + gewKurs + '/tn/' + pid + '/code']: c, ['codes/' + p.code]: null, ['codes/' + c]: { kid: gewKurs, pid, name: p.name, kurs: k.name } })); });
+    const up = { ['kurse/' + gewKurs + '/tn/' + pid + '/code']: c, ['codes/' + c]: { kid: gewKurs, pid, name: p.name, kurs: k.name } };
+    if (p.code) { up['codes/' + p.code] = null; // persönliche Freigaben, Feedback und Selbsteinschätzung ziehen mit um
+      if (D.mein[p.code]) { up['mein/' + c] = D.mein[p.code]; up['mein/' + p.code] = null; }
+      if (D.selbst[p.code]) { up['selbst/' + c] = D.selbst[p.code]; up['selbst/' + p.code] = null; } }
+    await db.update('', sicher(up)); });
   app.querySelectorAll('[data-ren]').forEach(b => b.onclick = async () => { const pid = b.dataset.ren, p = k.tn[pid];
     const n = prompt('Name:', p.name); if (!n || !n.trim()) return;
     await db.update('', sicher({ ['kurse/' + gewKurs + '/tn/' + pid + '/name']: n.trim(), ['codes/' + p.code + '/name']: n.trim() })); });
   app.querySelectorAll('[data-link]').forEach(b => b.onclick = () => { navigator.clipboard.writeText(BASE + 'index.html?code=' + b.dataset.link).then(() => meld('Link kopiert.'), () => prompt('Link:', BASE + 'index.html?code=' + b.dataset.link)); });
   app.querySelectorAll('[data-zu]').forEach(c => c.onchange = () => db.set('pub/kurse/' + gewKurs + '/ex/' + c.dataset.zu, c.checked ? true : null));
   $('#druck').onclick = () => druck(k, tn);
+  app.querySelectorAll('[data-fbp]').forEach(b => b.onclick = () => { F.fbKurs = gewKurs; F.fbPid = b.dataset.fbp; document.querySelector('.tab[data-t=fb]').click(); });
 }
 function druck(k, tn) {
   const w = window.open('', '_blank'); if (!w) return meld('Bitte Pop-ups erlauben.');
@@ -381,6 +427,172 @@ function druck(k, tn) {
     <div class="g">${tn.map(([, p]) => `<div class="c"><div class="k">Übungszentrale · ${esc(k.name)}</div><h2>${esc(p.name)}</h2>
     <div>Dein Code:</div><div class="code">${esc(p.code)}</div><div class="u">${esc(BASE)}index.html</div>
     <div class="k" style="margin-top:2mm">Seite öffnen → Code eingeben → Anmelden</div></div>`).join('')}</div></body></html>`);
+  w.document.close();
+}
+
+/* ---------------- FEEDBACK & FREIGABEN ----------------
+   Privat (nur Konsole):      fb/{kid}/{pid}  { c: {liste_item: {s, t, n}}, m: {merkmal: 's'|'w'}, x: {st, sw, ziel, msg}, log: {t: text}, h: {t: 'key:s'} }
+   Für die Person (per Code):  mein/{code}     { ex: {exId: true|false}, sa: true, fb: {veröffentlichte Fassung} }
+   Selbsteinschätzung:         selbst/{code}/{liste_item} { s, t } */
+const fbOf = (kid, pid) => ((D.fb || {})[kid] || {})[pid] || {};
+const meinOf = code => (code && (D.mein || {})[code]) || {};
+const selbstOf = code => (code && (D.selbst || {})[code]) || {};
+const tage = t => t ? Math.floor((Date.now() - t) / 86400000) : null;
+const seit = t => { const d = tage(t); return d == null ? '–' : d === 0 ? 'heute' : d === 1 ? 'gestern' : 'vor ' + d + ' T.'; };
+const datum = t => t ? new Date(+t).toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: '2-digit' }) : '';
+const fbPfad = (kid, pid) => { if (!kid || !pid) throw new Error('Kurs/Person fehlt'); return 'fb/' + kid + '/' + pid; };
+async function setzeWert(kid, pid, key, v) {
+  const t = Date.now(), b = fbPfad(kid, pid);
+  await db.update('', sicher({ [b + '/c/' + key + '/s']: v || null, [b + '/c/' + key + '/t']: t, [b + '/h/' + t]: key + ':' + (v || 0) }));
+}
+function zelle(liste, v, klein) {
+  const w = wertInfo(liste, v);
+  return w ? `<span class="fbw" style="background:${w.c};color:${w.f}" title="${esc(w.l)}">${esc(klein ? w.k : w.l)}</span>` : `<span class="fbw leer">${klein ? '·' : '–'}</span>`;
+}
+function fbTnListe(kid) { const k = D.kurse[kid]; return k ? Object.entries(k.tn || {}).sort((a, b) => (a[1].name || '').localeCompare(b[1].name || '')) : []; }
+
+function feedback() {
+  const kl = kursListe();
+  if (F.fbKurs && !D.kurse[F.fbKurs]) F.fbKurs = null;
+  if (!F.fbKurs) F.fbKurs = gewKurs && D.kurse[gewKurs] ? gewKurs : (kl[0] || [])[0] || null;
+  if (!F.fbKurs) { app.innerHTML = '<div class="karte" style="margin-top:16px"><h2>Noch kein Kurs</h2><p class="leise">Lege zuerst unter „Kurse &amp; Codes“ einen Kurs mit Teilnehmenden an.</p></div>'; return; }
+  if (F.fbPid) { if (D.kurse[F.fbKurs].tn && D.kurse[F.fbKurs].tn[F.fbPid]) return fbPerson(); F.fbPid = null; }
+  const kid = F.fbKurs, tn = fbTnListe(kid), L = LISTEN.find(l => l.id === F.fbListe) || LISTEN[0];
+  const offenSa = tn.filter(([, p]) => meinOf(p.code).sa).length;
+  let h = `<div class="leiste" style="margin-top:16px"><label for="fbk">Kurs:</label><select id="fbk">${kl.map(([k, v]) => `<option value="${k}" ${k === kid ? 'selected' : ''}>${esc(v.name)}</option>`).join('')}</select>
+    <span style="flex:1"></span><button class="btn zweit klein" id="saAlle">${offenSa === tn.length && tn.length ? '🔒 Selbsteinschätzung für alle schließen' : '✋ Selbsteinschätzung für alle öffnen'}</button></div>
+    <div class="fbchips">${LISTEN.map(l => `<button class="chip ${l.id === L.id ? 'an' : ''}" data-l="${l.id}">${esc(l.titel)}</button>`).join('')}</div>
+    ${L.info ? `<p class="leise klein" style="margin:8px 0 0">${esc(L.info)}</p>` : ''}
+    <p class="leise klein" style="margin:6px 0 10px">Klick auf ein Feld = Stand eintragen. Klick auf einen Namen = ausführliches Feedback, Stärken/Schwächen, persönliche Freigaben. ${L.selbst ? '<b>S:</b> = Selbsteinschätzung der Person.' : ''}</p>`;
+  if (!tn.length) { app.innerHTML = h + '<p class="leise">In diesem Kurs ist noch niemand eingetragen.</p>'; bindeFb(); return; }
+  h += `<div class="tabwrap"><table class="t fbm"><tr><th>Name</th>${L.items.map(it => `<th title="${esc(it.t + (it.h ? ' – ' + it.h : ''))}">${esc(it.t.replace(/^(Sprechen |Mein(e)? (bisherige[rn]? )?)/, ''))}</th>`).join('')}<th>Stand</th><th>geprüft</th><th></th></tr>
+    ${tn.map(([pid, p]) => { const f = fbOf(kid, pid), c = f.c || {}, se = selbstOf(p.code), pr = prozent(L, c);
+      const zul = Math.max(0, ...L.items.map(it => (c[L.id + '_' + it.id] || {}).t || 0));
+      const pub = meinOf(p.code).fb;
+      return `<tr><td><button class="namebtn" data-p="${pid}">${esc(p.name)}</button>${pub ? ' <span title="Lernstand ist für die Person sichtbar">👁</span>' : ''}</td>
+        ${L.items.map(it => { const key = L.id + '_' + it.id, sv = (se[key] || {}).s, sw = sv ? wertInfo(L, sv) : null;
+          return `<td class="fbz" data-p="${pid}" data-key="${key}">${zelle(L, (c[key] || {}).s, true)}${c[key] && c[key].n ? ' <span title="' + esc(c[key].n) + '">📝</span>' : ''}${sw ? `<div class="sw" title="Selbsteinschätzung: ${esc(sw.l)}">S: ${esc(sw.k)}</div>` : ''}</td>`; }).join('')}
+        <td><div class="balken" style="width:70px"><i style="width:${pr}%"></i></div><span class="klein">${pr} %</span></td>
+        <td class="klein ${zul && tage(zul) > 14 ? 'alt' : 'leise'}">${zul ? seit(zul) : '–'}</td>
+        <td><button class="icon" data-p="${pid}" title="Feedback öffnen">→</button></td></tr>`; }).join('')}</table></div>
+    <p class="leise klein">„geprüft“ wird rot, wenn die letzte Eintragung in dieser Liste länger als 14 Tage her ist.</p>`;
+  app.innerHTML = h; bindeFb();
+  app.querySelectorAll('.fbz').forEach(td => td.onclick = ev => wahlMenue(ev, L, td.dataset.p, td.dataset.key));
+  $('#saAlle').onclick = async () => { const zu = offenSa === tn.length; const up = {};
+    tn.forEach(([, p]) => { if (p.code) up['mein/' + p.code + '/sa'] = zu ? null : true; }); await db.update('', sicher(up));
+    meld(zu ? 'Selbsteinschätzung geschlossen.' : 'Selbsteinschätzung geöffnet – die Teilnehmenden sehen sie unter „Mein Lernstand“.'); };
+}
+function bindeFb() {
+  const k = $('#fbk'); if (k) k.onchange = () => { F.fbKurs = k.value; F.fbPid = null; feedback(); };
+  app.querySelectorAll('[data-l]').forEach(b => b.onclick = () => { F.fbListe = b.dataset.l; feedback(); });
+  app.querySelectorAll('.namebtn,[data-p].icon').forEach(b => b.onclick = () => { F.fbPid = b.dataset.p; scrollTo(0, 0); feedback(); });
+}
+function wahlMenue(ev, L, pid, key) {
+  document.querySelectorAll('.fbmenue').forEach(m => m.remove());
+  const m = document.createElement('div'); m.className = 'fbmenue';
+  const akt = ((fbOf(F.fbKurs, pid).c || {})[key] || {}).s;
+  m.innerHTML = skalaVon(L).werte.map(w => `<button data-v="${w.v}" style="background:${w.c};color:${w.f}" class="${akt === w.v ? 'an' : ''}">${esc(w.l)}</button>`).join('') + `<button data-v="0">– leeren</button>`;
+  document.body.append(m);
+  const r = ev.currentTarget.getBoundingClientRect();
+  m.style.left = Math.min(r.left + scrollX, scrollX + innerWidth - m.offsetWidth - 8) + 'px'; m.style.top = (r.bottom + scrollY + 4) + 'px';
+  m.onclick = async e => { const b = e.target.closest('button'); if (!b) return; m.remove(); await setzeWert(F.fbKurs, pid, key, +b.dataset.v); };
+  setTimeout(() => addEventListener('click', function weg(e) { if (!m.contains(e.target)) { m.remove(); removeEventListener('click', weg); } }), 0);
+}
+
+function fbPerson() {
+  const kid = F.fbKurs, pid = F.fbPid, k = D.kurse[kid], p = k.tn[pid], code = p.code || '';
+  const f = fbOf(kid, pid), c = f.c || {}, m = f.m || {}, x = f.x || {}, se = selbstOf(code), mein = meinOf(code);
+  const tn = fbTnListe(kid), i = tn.findIndex(([q]) => q === pid), vor_ = tn[i - 1], nach = tn[i + 1];
+  const zug = ((D.pub.kurse || {})[kid] || {}).ex || {}, indiv = mein.ex || {};
+  const offenEx = e => { const q = (D.pub.ex || {})[e.id]; return q && typeof q.offen === 'boolean' ? q.offen : e.offen !== false; };
+  // Ergebnisse dieser Person
+  const erg = {};
+  for (const [ex, alle] of Object.entries(D.res || {})) for (const v of Object.values(alle || {})) if (v && v.pid === pid) {
+    const e = erg[ex] || (erg[ex] = { n: 0, best: 0, last: 0, summe: 0 }); e.n++; e.best = Math.max(e.best, v.pct || 0); e.last = Math.max(e.last, v.t || 0); e.summe += v.pct || 0; }
+  const log = [...Object.entries(f.log || {}).map(([t, s]) => ({ t: +t, txt: s, notiz: true })),
+    ...Object.entries(f.h || {}).map(([t, s]) => { const [key, v] = String(s).split(':'); const [lid, iid] = key.split('_'); const L = LISTEN.find(l => l.id === lid), it = L && L.items.find(z => z.id === iid);
+      return it ? { t: +t, txt: `${L.kurz}: ${it.t} → ${(wertInfo(L, +v) || { l: 'geleert' }).l}` } : null; }).filter(Boolean)].sort((a, b) => b.t - a.t);
+  const pub = mein.fb;
+  let h = `<div class="leiste" style="margin-top:16px"><button class="btn zweit klein" id="fbZur">← Kursübersicht</button>
+      <span style="flex:1"></span>${vor_ ? `<button class="btn zweit klein" data-p="${vor_[0]}" title="Vorherige Person">‹ ${esc(vor_[1].name)}</button>` : ''}${nach ? `<button class="btn zweit klein" data-p="${nach[0]}" title="Nächste Person">${esc(nach[1].name)} ›</button>` : ''}</div>
+    <div class="karte fbkopf"><div class="gruss"><div style="flex:1"><h2 style="margin:0">${esc(p.name)}</h2><div class="leise klein">${esc(k.name)} · ${code ? 'Code <span class="code">' + esc(code) + '</span>' : 'kein Code'}</div></div>
+      <button class="btn zweit klein" id="fbDruck">🖨 Feedbackbogen</button></div>
+      <div class="zeile" style="margin-top:12px">${LISTEN.map(L => { const pr = prozent(L, c); return `<div class="mini"><span class="klein leise">${esc(L.kurz)}</span><div class="balken"><i style="width:${pr}%"></i></div><b class="klein">${pr} %</b></div>`; }).join('')}</div>
+      <div class="teilen ${pub ? 'an' : ''}">${code ? `<div style="flex:1"><b>${pub ? '👁 Lernstand ist für ' + esc(p.name) + ' sichtbar' : 'Lernstand ist nur für dich sichtbar'}</b><div class="klein leise">${pub ? 'Veröffentlicht am ' + datum(pub.t) + '. Änderungen sieht die Person erst nach „Aktualisieren“.' : 'Mit „Veröffentlichen“ sieht die Person in der Zentrale unter „Mein Lernstand“: Stand der Prüfungsteile und Kriterien, Stärken, Arbeitsfelder, nächste Schritte und deine Nachricht. Notizen, Verlauf und „Lernverhalten“ bleiben privat.'}</div></div>
+        <label class="schalter klein"><input type="checkbox" id="saP" ${mein.sa ? 'checked' : ''}> Selbsteinschätzung erlaubt</label>
+        <button class="btn klein" id="fbPub">${pub ? '🔄 Aktualisieren' : '📤 Veröffentlichen'}</button>${pub ? '<button class="btn zweit klein" id="fbZurueckz">Zurückziehen</button>' : ''}` : '<span class="leise">Ohne Code kann nichts veröffentlicht oder individuell freigeschaltet werden. Erzeuge unter „Kurse &amp; Codes“ einen Code (🔄).</span>'}</div></div>
+    <div class="fbgrid">`;
+  for (const L of LISTEN) {
+    h += `<div class="karte fbliste"><h3>${esc(L.titel)}${L.tn ? '' : ' <span class="pille" title="Wird nie veröffentlicht">privat</span>'}</h3>${L.info ? `<p class="leise klein" style="margin-top:0">${esc(L.info)}</p>` : ''}
+      ${L.items.map(it => { const key = L.id + '_' + it.id, e = c[key] || {}, sv = (se[key] || {}).s, sw = sv ? wertInfo(L, sv) : null;
+        return `<div class="fbitem"><div class="fbt"><b>${esc(it.t)}</b>${it.h ? `<div class="klein leise">${esc(it.h)}</div>` : ''}
+            ${it.ex && exById(it.ex) ? `<div class="klein">↳ Übung: ${esc(exById(it.ex).titel)}${erg[it.ex] ? ` · beste ${erg[it.ex].best} % (${erg[it.ex].n}×)` : ' · noch nicht gespielt'}</div>` : ''}</div>
+          <div class="seg">${skalaVon(L).werte.map(w => `<button data-key="${key}" data-v="${w.v}" title="${esc(w.l)}" style="${e.s === w.v ? `background:${w.c};color:${w.f};border-color:${w.f}` : ''}">${esc(w.k === 'sicher' ? 'prüfungsreif' : w.k)}</button>`).join('')}</div>
+          <div class="klein leise fbmeta">${e.t ? 'geprüft ' + seit(e.t) : ''}${sw ? ` · <span class="sw" title="Selbsteinschätzung">selbst: ${esc(sw.l)}</span>` : ''}</div>
+          <input class="fbnote" data-note="${key}" value="${esc(e.n || '')}" placeholder="Notiz (privat) …"></div>`; }).join('')}</div>`;
+  }
+  h += `</div>
+    <div class="karte" style="margin-top:16px"><h3>Stärken und Arbeitsfelder</h3><p class="leise klein" style="margin-top:0">Klick: <span class="mk s">Stärke</span> → <span class="mk w">Arbeitsfeld</span> → aus</p>
+      ${MERKMALE.map(g => `<div class="mkg"><b class="klein">${esc(g.g)}</b><div>${g.l.map(([id, t]) => `<button class="mk ${m[id] || ''}" data-mk="${id}">${esc(t)}</button>`).join('')}</div></div>`).join('')}
+      <div class="fbtexte">
+        <label>Stärken (in eigenen Worten)<textarea data-x="st" placeholder="z. B. Spricht flüssig über die eigene Berufserfahrung, gute Beispiele …">${esc(x.st || '')}</textarea></label>
+        <label>Woran arbeiten?<textarea data-x="sw" placeholder="z. B. Verb am Satzende im Nebensatz, Redemittel für Gegenargumente …">${esc(x.sw || '')}</textarea></label>
+        <label>Nächste Schritte / Ziel bis zur Prüfung<textarea data-x="ziel" placeholder="z. B. Teil 1A: Thema 3 und 7 vertiefen, 2 Minuten frei sprechen üben …">${esc(x.ziel || '')}</textarea></label>
+        <label>Persönliche Nachricht an ${esc(p.name)}<textarea data-x="msg" placeholder="Wird beim Veröffentlichen angezeigt …">${esc(x.msg || '')}</textarea></label>
+      </div><p class="leise klein">Texte werden automatisch gespeichert, sobald du das Feld verlässt.</p></div>
+    <div class="fbgrid" style="margin-top:16px">
+      <div class="karte"><h3>Verlauf</h3><form id="fbLog" class="zeile"><input id="fbLogT" placeholder="Beobachtung mit Datum festhalten …" style="flex:1"><button class="btn klein">+ Eintrag</button></form>
+        <div class="fblog">${log.length ? log.slice(0, 40).map(e => `<div class="${e.notiz ? 'notiz' : ''}"><span class="leise klein">${datum(e.t)}</span> ${esc(e.txt)}${e.notiz ? ` <button class="icon" data-dellog="${e.t}" title="Eintrag löschen">🗑</button>` : ''}</div>`).join('') : '<p class="leise klein">Noch keine Einträge.</p>'}</div></div>
+      <div class="karte"><h3>Ergebnisse in der Übungszentrale</h3>${Object.keys(erg).length ? `<table class="t"><tr><th>Übung</th><th>Ø</th><th>beste</th><th>×</th><th>zuletzt</th></tr>${Object.entries(erg).sort((a, b) => b[1].last - a[1].last).map(([ex, e]) => `<tr><td>${esc(exName(ex))}</td><td><span class="zelle" style="background:${farbe(Math.round(e.summe / e.n))}">${Math.round(e.summe / e.n)} %</span></td><td>${e.best} %</td><td>${e.n}</td><td class="klein">${datum(e.last)}</td></tr>`).join('')}</table>` : '<p class="leise klein">Noch keine Ergebnisse mit Code.</p>'}</div>
+    </div>
+    <div class="karte" style="margin-top:16px"><h3>Individuelle Freigaben</h3>
+      <p class="leise klein" style="margin-top:0"><b>wie Kurs</b> = es gilt die Freigabe des Kurses · <b>freigeschaltet</b> = nur für ${esc(p.name)} zusätzlich in „Deine Übungen“ · <b>gesperrt</b> = erscheint bei ${esc(p.name)} nicht unter „Deine Übungen“ (öffentliche Übungen bleiben für alle spielbar).</p>
+      ${code ? `<div class="tabwrap"><table class="t"><tr><th>Übung</th><th>Kurs</th><th>öffentlich</th><th>für ${esc(p.name)}</th><th>Ergebnis</th></tr>
+        ${KATALOG.filter(e => e.id !== 'live').map(e => { const iv = indiv[e.id], eff = iv === true || (iv !== false && zug[e.id]);
+          return `<tr><td><b>${esc(e.titel)}</b> ${qBadge(e)}</td><td>${zug[e.id] ? '✓' : '–'}</td><td>${offenEx(e) ? '✓' : '–'}</td>
+          <td><select data-frei="${e.id}" class="${iv === true ? 'frei' : iv === false ? 'gesperrt' : ''}"><option value="">wie Kurs (${zug[e.id] ? 'zugewiesen' : 'nicht zugewiesen'})</option><option value="1" ${iv === true ? 'selected' : ''}>✅ freigeschaltet</option><option value="0" ${iv === false ? 'selected' : ''}>⛔ gesperrt</option></select>${eff ? ' <span class="klein" title="Erscheint unter „Deine Übungen“">⭐</span>' : ''}</td>
+          <td>${erg[e.id] ? `<span class="zelle" style="background:${farbe(erg[e.id].best)}">${erg[e.id].best} %</span>` : '<span class="leise">–</span>'}</td></tr>`; }).join('')}</table></div>` : '<p class="leise">Dafür braucht die Person einen Code.</p>'}</div>`;
+  app.innerHTML = h;
+  $('#fbZur').onclick = () => { F.fbPid = null; feedback(); };
+  app.querySelectorAll('.leiste [data-p]').forEach(b => b.onclick = () => { F.fbPid = b.dataset.p; feedback(); });
+  app.querySelectorAll('.seg button').forEach(b => b.onclick = () => { const key = b.dataset.key, v = +b.dataset.v; setzeWert(kid, pid, key, (c[key] || {}).s === v ? 0 : v); });
+  app.querySelectorAll('[data-note]').forEach(i => i.onchange = () => db.update('', sicher({ [fbPfad(kid, pid) + '/c/' + i.dataset.note + '/n']: i.value.trim().slice(0, 300) || null })));
+  app.querySelectorAll('[data-mk]').forEach(b => b.onclick = () => { const id = b.dataset.mk, n = !m[id] ? 's' : m[id] === 's' ? 'w' : null; db.set(fbPfad(kid, pid) + '/m/' + id, n); });
+  app.querySelectorAll('[data-x]').forEach(t => t.onchange = () => db.set(fbPfad(kid, pid) + '/x/' + t.dataset.x, t.value.trim().slice(0, 2000) || null));
+  $('#fbLog').onsubmit = e => { e.preventDefault(); const v = $('#fbLogT').value.trim(); if (!v) return; db.set(fbPfad(kid, pid) + '/log/' + Date.now(), v.slice(0, 500)); };
+  app.querySelectorAll('[data-dellog]').forEach(b => b.onclick = () => { if (confirm('Eintrag löschen?')) db.set(fbPfad(kid, pid) + '/log/' + b.dataset.dellog, null); });
+  app.querySelectorAll('[data-frei]').forEach(s => s.onchange = () => db.set('mein/' + code + '/ex/' + s.dataset.frei, s.value === '' ? null : s.value === '1'));
+  $('#fbDruck').onclick = () => fbDruck(kid, pid);
+  if (!code) return;
+  $('#saP').onchange = e => db.set('mein/' + code + '/sa', e.target.checked ? true : null);
+  $('#fbPub').onclick = async () => {
+    // erst offene Textfelder speichern, dann die sichtbare Fassung schreiben
+    const xx = { ...x }; app.querySelectorAll('[data-x]').forEach(t => { xx[t.dataset.x] = t.value.trim().slice(0, 2000); });
+    const cc = {}; LISTEN.filter(L => L.tn).forEach(L => L.items.forEach(it => { const e = c[L.id + '_' + it.id]; if (e && e.s) cc[L.id + '_' + it.id] = e.s; }));
+    const fbPub = { t: Date.now(), c: cc, m: { ...m }, st: xx.st || '', sw: xx.sw || '', ziel: xx.ziel || '', msg: xx.msg || '' };
+    await db.update('', sicher({ [fbPfad(kid, pid) + '/x']: Object.keys(xx).length ? xx : null, ['mein/' + code + '/fb']: fbPub }));
+    meld(pub ? 'Aktualisiert – die Person sieht jetzt den neuen Stand.' : 'Veröffentlicht – sichtbar unter „Mein Lernstand“.'); };
+  const z = $('#fbZurueckz'); if (z) z.onclick = async () => { if (confirm('Lernstand für die Person wieder ausblenden?')) { await db.set('mein/' + code + '/fb', null); meld('Zurückgezogen.'); } };
+}
+
+function fbDruck(kid, pid) {
+  const k = D.kurse[kid], p = k.tn[pid], f = fbOf(kid, pid), c = f.c || {}, m = f.m || {}, x = f.x || {};
+  app.querySelectorAll('[data-x]').forEach(t => { x[t.dataset.x] = t.value.trim(); });
+  const w = window.open('', '_blank'); if (!w) return meld('Bitte Pop-ups erlauben.');
+  const mk = typ => Object.entries(m).filter(([, v]) => v === typ).map(([id]) => MERKMAL[id]).filter(Boolean);
+  const abs = s => esc(s || '').replace(/\n/g, '<br>');
+  w.document.write(`<!doctype html><html lang="de"><head><meta charset="utf-8"><title>Feedback ${esc(p.name)}</title><style>
+    body{font-family:Calibri,Carlito,sans-serif;margin:12mm;color:#1f2328;font-size:11pt}h1{margin:0;font-size:20pt}h2{font-size:13pt;margin:7mm 0 2mm;border-bottom:1.5px solid #1f2328}
+    table{border-collapse:collapse;width:100%}td,th{border:1px solid #bbb;padding:1.6mm 2.4mm;text-align:left;vertical-align:top}th{background:#f1eee8;font-size:9pt}
+    .w{font-weight:700;white-space:nowrap}.n{color:#555;font-size:9.5pt}.g{display:grid;grid-template-columns:1fr 1fr;gap:6mm}.box{border:1px solid #bbb;border-radius:2mm;padding:3mm;min-height:18mm}
+    .k{color:#666}section{break-inside:avoid}@media print{button{display:none}}</style></head><body>
+    <button onclick="print()" style="font-size:13pt;margin-bottom:6mm">Drucken / als PDF speichern</button>
+    <div class="k">Lern Deutsch mit Arash · ${esc(k.name)} · Vorbereitung DTB B2 (BSK)</div><h1>Feedback für ${esc(p.name)}</h1><div class="k">Stand: ${new Date().toLocaleDateString('de-DE', { day: '2-digit', month: 'long', year: 'numeric' })}</div>
+    ${LISTEN.map(L => `<section><h2>${esc(L.titel)} <span class="k" style="font-size:10pt;font-weight:400">· ${prozent(L, c)} %</span></h2><table><tr><th style="width:52%">Punkt</th><th>Stand</th><th>Notiz</th></tr>
+      ${L.items.map(it => { const e = c[L.id + '_' + it.id] || {}, wi = wertInfo(L, e.s); return `<tr><td>${esc(it.t)}</td><td class="w" style="${wi ? 'background:' + wi.c + ';color:' + wi.f : ''}">${wi ? esc(wi.l) : '–'}</td><td class="n">${esc(e.n || '')}</td></tr>`; }).join('')}</table></section>`).join('')}
+    <section><h2>Stärken und Arbeitsfelder</h2><div class="g"><div class="box"><b>Stärken</b><br>${mk('s').map(esc).join(' · ')}${x.st ? '<p>' + abs(x.st) + '</p>' : ''}</div><div class="box"><b>Woran arbeiten?</b><br>${mk('w').map(esc).join(' · ')}${x.sw ? '<p>' + abs(x.sw) + '</p>' : ''}</div></div>
+    ${x.ziel ? `<div class="box" style="margin-top:4mm"><b>Nächste Schritte</b><p>${abs(x.ziel)}</p></div>` : ''}${x.msg ? `<div class="box" style="margin-top:4mm"><b>Nachricht</b><p>${abs(x.msg)}</p></div>` : ''}</section>
+    </body></html>`);
   w.document.close();
 }
 
