@@ -1,8 +1,8 @@
 // live-sets.js – alle Fragensätze für die Live-Runden (Beamer: live-studio.html, Handys: live.html)
 // Jede Frage: { q, opts, l?, e?, k? } – bei Umfragen ohne l (keine richtige Antwort).
-import { FRAGEN as SMALLTALK, KATEGORIEN } from './smalltalk-daten.js?v=20261014c';
-import { liveFragen } from './wortverbindungen.js?v=20261014c';
-import { UMFRAGE, UMFRAGE_EXTRA, JE_DESTO, MEDIEN_QUIZ } from './live-medien.js?v=20261014c';
+import { FRAGEN as SMALLTALK, KATEGORIEN } from './smalltalk-daten.js?v=20261016a';
+import { liveFragen } from './wortverbindungen.js?v=20261016a';
+import { UMFRAGE, UMFRAGE_EXTRA, JE_DESTO, MEDIEN_QUIZ } from './live-medien.js?v=20261016a';
 
 export const SETS = {
   'medien-umfrage': {
@@ -24,12 +24,12 @@ export const SETS = {
   'verben-praep': {
     titel: 'Präpositionen: Verben, Nomen, Adjektive', icon: '🔗', farbe: '#5b4fa3', dauer: 20,
     kurz: 'Live-Quiz: Präposition, Kasus, Lückensätze, Wortfamilien, wo(r)-/da(r)-Wörter – bei jeder Runde neue Einträge.',
-    fragen: liveFragen(['V', 'N', 'A'], 40)
+    fragen: liveFragen(['V', 'N', 'A'], 60)
   },
   'nvv': {
     titel: 'Nomen-Verb-Verbindungen', icon: '🧩', farbe: '#7a4fa3', dauer: 20,
     kurz: 'Live-Quiz: Welches Verb? Welche Präposition? Was bedeutet das? – bei jeder Runde neue Verbindungen.',
-    fragen: liveFragen(['NVV'], 40)
+    fragen: liveFragen(['NVV'], 60)
   },
   'smalltalk': {
     titel: 'Smalltalk-Profi', icon: '💬', farbe: '#b5562f', dauer: 20,
