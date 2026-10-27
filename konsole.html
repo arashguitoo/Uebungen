@@ -456,6 +456,19 @@ function zelle(liste, v, klein) {
   const w = wertInfo(liste, v);
   return w ? `<span class="fbw" style="background:${w.c};color:${w.f}" title="${esc(w.l)}">${esc(klein ? w.k : w.l)}</span>` : `<span class="fbw leer">${klein ? '·' : '–'}</span>`;
 }
+// Sichtbare Fassung für die Person (nur Listen mit tn:true, keine Notizen/Verlauf)
+function pubFassung(kid, pid) {
+  const f = fbOf(kid, pid), c = f.c || {}, x = f.x || {}, cc = {};
+  LISTEN.filter(L => L.tn).forEach(L => L.items.forEach(it => { const e = c[L.id + '_' + it.id]; if (e && e.s) cc[L.id + '_' + it.id] = e.s; }));
+  return { c: cc, m: { ...(f.m || {}) }, st: x.st || '', sw: x.sw || '', ziel: x.ziel || '', msg: x.msg || '' };
+}
+const pubNorm = o => JSON.stringify({ c: o.c || {}, m: o.m || {}, st: o.st || '', sw: o.sw || '', ziel: o.ziel || '', msg: o.msg || '' }, Object.keys({ c: 1, m: 1, st: 1, sw: 1, ziel: 1, msg: 1 }).concat(Object.keys(o.c || {}), Object.keys(o.m || {})).sort());
+/** Ist der Lernstand sichtbar, werden Änderungen automatisch übernommen */
+function syncPub(kid, pid, code) {
+  const alt = code && meinOf(code).fb; if (!alt) return;
+  const neu = pubFassung(kid, pid);
+  if (pubNorm(neu) !== pubNorm(alt)) db.set('mein/' + code + '/fb', { ...neu, t: Date.now() });
+}
 function fbTnListe(kid) { const k = D.kurse[kid]; return k ? Object.entries(k.tn || {}).sort((a, b) => (a[1].name || '').localeCompare(b[1].name || '')) : []; }
 
 function feedback() {
@@ -485,6 +498,7 @@ function feedback() {
         <td><button class="icon" data-p="${pid}" title="Feedback öffnen">→</button></td></tr>`; }).join('')}</table></div>
     <p class="leise klein">„geprüft“ wird rot, wenn die letzte Eintragung in dieser Liste länger als 14 Tage her ist.</p>`;
   app.innerHTML = h; bindeFb();
+  tn.forEach(([pid, p]) => syncPub(kid, pid, p.code));
   app.querySelectorAll('.fbz').forEach(td => td.onclick = ev => wahlMenue(ev, L, td.dataset.p, td.dataset.key));
   $('#saAlle').onclick = async () => { const zu = offenSa === tn.length; const up = {};
     tn.forEach(([, p]) => { if (p.code) up['mein/' + p.code + '/sa'] = zu ? null : true; }); await db.update('', sicher(up));
@@ -527,9 +541,9 @@ function fbPerson() {
       ${code ? `<a class="btn zweit klein" href="${mitDemo('lernstand.html?code=' + encodeURIComponent(code))}" target="_blank" title="Öffnet die Seite so, wie die Person sie sieht (dieser Browser wird dabei mit ihrem Code angemeldet)">👁 Ansicht der Person</a>` : ''}
       <button class="btn zweit klein" id="fbDruck">🖨 Feedbackbogen</button></div>
       <div class="zeile" style="margin-top:12px">${LISTEN.map(L => { const pr = prozent(L, c); return `<div class="mini"><span class="klein leise">${esc(L.kurz)}</span><div class="balken"><i style="width:${pr}%"></i></div><b class="klein">${pr} %</b></div>`; }).join('')}</div>
-      <div class="teilen ${pub ? 'an' : ''}">${code ? `<div style="flex:1"><b>${pub ? '👁 Lernstand ist für ' + esc(p.name) + ' sichtbar' : 'Lernstand ist nur für dich sichtbar'}</b><div class="klein leise">${pub ? 'Veröffentlicht am ' + datum(pub.t) + '. Änderungen sieht die Person erst nach „Aktualisieren“.' : 'Mit „Veröffentlichen“ sieht die Person in der Zentrale unter „Mein Lernstand“: Stand der Prüfungsteile und Kriterien, Stärken, Arbeitsfelder, nächste Schritte und deine Nachricht. Notizen, Verlauf und „Lernverhalten“ bleiben privat.'}</div></div>
+      <div class="teilen ${pub ? 'an' : ''}">${code ? `<div style="flex:1"><b>${pub ? '👁 Lernstand ist für ' + esc(p.name) + ' sichtbar' : 'Lernstand ist nur für dich sichtbar'}</b><div class="klein leise">${pub ? 'Zuletzt aktualisiert am ' + datum(pub.t) + '. Jede Änderung hier wird automatisch für die Person übernommen.' : 'Mit „Für die Person sichtbar machen“ sieht sie in der Zentrale unter „Mein Lernstand“: Stand der Prüfungsteile und Kriterien, Stärken, Arbeitsfelder, nächste Schritte und deine Nachricht. Notizen, Verlauf und „Lernverhalten“ bleiben privat.'}</div></div>
         <label class="schalter klein"><input type="checkbox" id="saP" ${mein.sa ? 'checked' : ''}> Selbsteinschätzung erlaubt</label>
-        <button class="btn klein" id="fbPub">${pub ? '🔄 Aktualisieren' : '📤 Veröffentlichen'}</button>${pub ? '<button class="btn zweit klein" id="fbZurueckz">Zurückziehen</button>' : ''}` : '<span class="leise">Ohne Code kann nichts veröffentlicht oder individuell freigeschaltet werden. Erzeuge unter „Kurse &amp; Codes“ einen Code (🔄).</span>'}</div></div>
+        ${pub ? '<button class="btn zweit klein" id="fbZurueckz">Ausblenden</button>' : '<button class="btn klein" id="fbPub">📤 Für die Person sichtbar machen</button>'}` : '<span class="leise">Ohne Code kann nichts veröffentlicht oder individuell freigeschaltet werden. Erzeuge unter „Kurse &amp; Codes“ einen Code (🔄).</span>'}</div></div>
     ${diagKarte(kid, pid, p, code)}
     <div class="fbgrid">`;
   for (const L of LISTEN) {
@@ -548,7 +562,7 @@ function fbPerson() {
         <label>Stärken (in eigenen Worten)<textarea data-x="st" placeholder="z. B. Spricht flüssig über die eigene Berufserfahrung, gute Beispiele …">${esc(x.st || '')}</textarea></label>
         <label>Woran arbeiten?<textarea data-x="sw" placeholder="z. B. Verb am Satzende im Nebensatz, Redemittel für Gegenargumente …">${esc(x.sw || '')}</textarea></label>
         <label>Nächste Schritte / Ziel bis zur Prüfung<textarea data-x="ziel" placeholder="z. B. Teil 1A: Thema 3 und 7 vertiefen, 2 Minuten frei sprechen üben …">${esc(x.ziel || '')}</textarea></label>
-        <label>Persönliche Nachricht an ${esc(p.name)}<textarea data-x="msg" placeholder="Wird beim Veröffentlichen angezeigt …">${esc(x.msg || '')}</textarea></label>
+        <label>Persönliche Nachricht an ${esc(p.name)}<textarea data-x="msg" placeholder="Erscheint oben auf der Seite „Mein Lernstand“ …">${esc(x.msg || '')}</textarea></label>
       </div><p class="leise klein">Texte werden automatisch gespeichert, sobald du das Feld verlässt.</p></div>
     <div class="fbgrid" style="margin-top:16px">
       <div class="karte"><h3>Verlauf</h3><form id="fbLog" class="zeile"><input id="fbLogT" placeholder="Beobachtung mit Datum festhalten …" style="flex:1"><button class="btn klein">+ Eintrag</button></form>
@@ -576,13 +590,14 @@ function fbPerson() {
   $('#fbDruck').onclick = () => fbDruck(kid, pid);
   if (!code) return;
   $('#saP').onchange = e => db.set('mein/' + code + '/sa', e.target.checked ? true : null);
-  $('#fbPub').onclick = async () => {
+  syncPub(kid, pid, code);
+  const pb = $('#fbPub'); if (pb) pb.onclick = async () => {
     // erst offene Textfelder speichern, dann die sichtbare Fassung schreiben
     const xx = { ...x }; app.querySelectorAll('[data-x]').forEach(t => { xx[t.dataset.x] = t.value.trim().slice(0, 2000); });
     const cc = {}; LISTEN.filter(L => L.tn).forEach(L => L.items.forEach(it => { const e = c[L.id + '_' + it.id]; if (e && e.s) cc[L.id + '_' + it.id] = e.s; }));
     const fbPub = { t: Date.now(), c: cc, m: { ...m }, st: xx.st || '', sw: xx.sw || '', ziel: xx.ziel || '', msg: xx.msg || '' };
     await db.update('', sicher({ [fbPfad(kid, pid) + '/x']: Object.keys(xx).length ? xx : null, ['mein/' + code + '/fb']: fbPub }));
-    meld(pub ? 'Aktualisiert – die Person sieht jetzt den neuen Stand.' : 'Veröffentlicht – sichtbar unter „Mein Lernstand“.'); };
+    meld('Sichtbar – die Person sieht ihr Feedback jetzt unter „Mein Lernstand“. Weitere Änderungen werden automatisch übernommen.'); };
   const z = $('#fbZurueckz'); if (z) z.onclick = async () => { if (confirm('Lernstand für die Person wieder ausblenden?')) { await db.set('mein/' + code + '/fb', null); meld('Zurückgezogen.'); } };
 }
 
