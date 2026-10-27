@@ -125,7 +125,7 @@ function zeige() {
   const cs = Object.fromEntries(Object.entries(c).map(([k, v]) => [k, { s: v }]));
   if (!fb && !mein.sa) {
     heldZeigen('Hier findest du bald dein persönliches Feedback und deinen Vorbereitungsstand für die Prüfung DTB B2.');
-    app.innerHTML = `<div class="karte leer-k"><div class="ic">🌱</div><h2>Noch kein Feedback</h2><p class="leise" style="max-width:460px;margin:0 auto 16px">Sobald deine Lehrkraft dein Feedback freigibt oder die Selbsteinschätzung öffnet, erscheint es hier. Bis dahin: einfach weiter üben!</p><a class="btn zweit" href="${mitDemo('index.html')}">Zu den Übungen</a></div>`;
+    app.innerHTML = `<div class="karte leer-k"><div class="ic">🌱</div><h2>Noch kein Feedback</h2><p class="leise" style="max-width:460px;margin:0 auto 16px">Sobald deine Lehrkraft dein Feedback freigibt oder die Selbsteinschätzung öffnet, erscheint es hier. Bis dahin: einfach weiter üben!</p><a class="btn zweit" href="${mitDemo('index.html')}">Zu den Übungen</a><p class="klein leise" style="margin-top:18px">Angemeldet mit Code ${esc(s.code)}</p></div>`;
     return;
   }
   const sichtbar = LISTEN.filter(L => L.tn && L.items.some(it => c[L.id + '_' + it.id]));
@@ -161,7 +161,7 @@ function zeige() {
     const skalen = [...new Set(teile.map(L => L.skala))];
     if (skalen.includes('abcd')) h += `<p class="legende" style="margin-top:12px">Stufen wie in der Prüfung: ${skalaVon(teile.find(L => L.skala === 'abcd')).werte.map(w => `<span class="pill" style="background:${w.c};color:${w.f}">${esc(w.l)}</span>`).join('')}</p>`;
   }
-  h += `<p class="fuss">Fragen zu deinem Feedback? Sprich deine Lehrkraft im Kurs an. · Lern Deutsch mit Arash</p>`;
+  h += `<p class="fuss">Fragen zu deinem Feedback? Sprich deine Lehrkraft im Kurs an. · Lern Deutsch mit Arash · Code ${esc(s.code)}</p>`;
   app.innerHTML = h;
   app.querySelectorAll('.stufen button').forEach(b => b.onclick = async () => {
     const key = b.dataset.key, v = +b.dataset.v, alt = (selbst[key] || {}).s;
