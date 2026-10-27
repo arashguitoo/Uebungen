@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sprachstandsdiagnose B1/B2 – Übungszentrale</title>
+<link rel="stylesheet" href="stil.css?v=20261016a">
+<style>
+  :root{--akzent:#3f5f9a;--akzent-hell:#eaf0f8;--tinte:#26324a}
+  body{background:#f6f3ee}
+  .kopf{position:static}
+  .wrap{max-width:1080px}
+  .start{max-width:760px;margin:22px auto}
+  .start h1{color:var(--tinte);margin-bottom:6px}
+  .teiltab{width:100%;border-collapse:collapse;margin:14px 0}
+  .teiltab td{padding:10px 8px;border-top:1px solid #ece6dc}
+  .teiltab td:last-child{text-align:right;color:var(--leise);white-space:nowrap}
+  .regeln{list-style:none;padding:0;margin:14px 0;display:grid;gap:8px}
+  .regeln li{display:grid;grid-template-columns:28px 1fr;gap:6px}
+  .leiste{position:sticky;top:0;z-index:15;background:#fff;border-bottom:1px solid #e6e0d6;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+  .leiste .wrap{display:flex;align-items:center;gap:10px;padding-top:8px;padding-bottom:8px;flex-wrap:wrap}
+  .uhr{font-variant-numeric:tabular-nums;font-weight:700;font-size:1.25rem;padding:4px 12px;border-radius:10px;background:var(--akzent-hell);color:var(--tinte);min-width:96px;text-align:center}
+  .uhr.knapp{background:#fdf0cf;color:#8a6410}.uhr.sehr{background:#fbe0db;color:#b3402f}
+  .tabs{display:flex;gap:6px;flex:1;overflow-x:auto}
+  .tabs button{font:inherit;font-size:.92rem;font-weight:600;border:1.5px solid #e1dbd0;background:#fff;border-radius:10px;padding:6px 12px;cursor:pointer;white-space:nowrap;color:#444}
+  .tabs button.an{background:var(--tinte);border-color:var(--tinte);color:#fff}
+  .tabs button small{font-weight:500;opacity:.75;margin-left:4px}
+  .teilkopf{margin:22px 0 6px}
+  .teilkopf h2{margin:0;color:var(--tinte)}
+  .block{margin-top:18px}
+  .block h3{margin:0 0 4px;color:var(--tinte)}
+  .anw{color:var(--leise);margin:0 0 12px;font-size:.95rem}
+  .mit-text{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:18px;align-items:start}
+  @media(max-width:820px){.mit-text{grid-template-columns:1fr}}
+  .lesetext{background:#fffdf8;border:1px solid #ece4d4;border-radius:14px;padding:16px 18px;font-size:1rem;line-height:1.6;position:sticky;top:70px;max-height:calc(100vh - 90px);overflow:auto}
+  @media(max-width:820px){.lesetext{position:static;max-height:none}}
+  .lesetext p{margin:0 0 10px;white-space:pre-line}
+  .optliste{background:#fffdf8;border:1px solid #ece4d4;border-radius:14px;padding:12px 16px;margin-bottom:14px;display:grid;gap:6px;font-size:.95rem}
+  .optliste b{display:inline-block;width:22px;color:var(--akzent)}
+  .aufg{background:#fff;border:1px solid #e6e0d6;border-radius:14px;padding:14px 16px;margin-bottom:10px}
+  .aufg.ok{border-color:#b9d3c4}
+  .aufg .fz{display:grid;grid-template-columns:30px 1fr;gap:8px;align-items:start;margin-bottom:10px}
+  .aufg .nr{width:28px;height:28px;border-radius:8px;background:var(--akzent-hell);color:var(--akzent);display:grid;place-items:center;font-weight:700;font-size:.85rem}
+  .aufg.ok .nr{background:#2f7d57;color:#fff}
+  .aufg .q{font-weight:600;white-space:pre-line}
+  .aufg .q.lang{font-weight:400;font-size:.97rem;line-height:1.55}
+  .opts{display:grid;gap:6px}
+  .opts button{font:inherit;text-align:left;border:1.5px solid #e1dbd0;background:#fff;border-radius:10px;padding:9px 12px;cursor:pointer;min-height:44px;display:flex;gap:10px;align-items:center}
+  .opts button:hover{border-color:var(--akzent)}
+  .opts button .kr{width:18px;height:18px;border-radius:50%;border:2px solid #b8b1a5;flex:none}
+  .opts button.an{border-color:var(--akzent);background:var(--akzent-hell)}
+  .opts button.an .kr{border-color:var(--akzent);background:radial-gradient(var(--akzent) 45%,transparent 50%)}
+  .buchst{display:flex;gap:6px;flex-wrap:wrap}
+  .buchst button{font:inherit;font-weight:700;width:44px;height:44px;border:1.5px solid #e1dbd0;background:#fff;border-radius:10px;cursor:pointer}
+  .buchst button.an{background:var(--tinte);border-color:var(--tinte);color:#fff}
+  .weiter{display:flex;justify-content:space-between;gap:10px;margin:22px 0 40px;flex-wrap:wrap}
+  .modal{position:fixed;inset:0;background:rgba(26,32,48,.55);z-index:50;display:grid;place-items:center;padding:16px}
+  .modal .karte{max-width:520px;width:100%}
+  .fertig{max-width:680px;margin:30px auto;text-align:center}
+  .fertig .ic{font-size:3rem}
+  .ergteil{display:grid;grid-template-columns:120px 1fr 60px;gap:10px;align-items:center;text-align:left;padding:8px 0;border-top:1px solid #ece6dc}
+  .balk{height:10px;background:#eee;border-radius:9px;overflow:hidden}.balk i{display:block;height:100%;background:var(--akzent)}
+  .gesp{font-size:.8rem;color:var(--leise)}
+</style>
+</head>
+<body>
+<div id="app" class="wrap"><p class="leise">Lädt …</p></div>
+<script type="module">
+import { db, esc, mitDemo } from './db.js?v=20261016a';
+import { starte } from './spieler.js?v=20261016a';
+import { TEST, AUFGABEN, ANZAHL, istRichtig, analyse } from './diagnose-daten.js?v=20261016a';
+
+const $ = s => document.querySelector(s);
+let app = $('#app');
+const L = await starte(TEST.id);
+if (!L.frei) { L.sperre(app); throw new Error('gesperrt'); }
+const KEY = 'ueb_diag_' + TEST.id + '_' + (L.s.code || 'gast');
+const lade = () => { try { return JSON.parse(localStorage.getItem(KEY)) || null; } catch (e) { return null; } };
+const sichere = () => { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) { } const g = $('#gesp'); if (g) g.textContent = 'gespeichert ' + new Date().toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' }); };
+let st = lade();
+let tick = null;
+const fmt = s => { const t = s.replace(/\*\*(.+?)\*\*/g, '\u0001$1\u0002'); return esc(t).replace(/\u0001/g, '<b>').replace(/\u0002/g, '</b>'); };
+const beantwortet = teil => AUFGABEN.filter(a => (!teil || a.teil === teil) && st.a[a.id] != null).length;
+const anzahl = teil => AUFGABEN.filter(a => a.teil === teil).length;
+
+// Neuer Versuch freigegeben?
+if (st && st.ab && L.s.code) { try { const neu = await db.get('mein/' + L.s.code + '/diagNeu'); if (neu && neu > st.tAb) { localStorage.removeItem(KEY); st = null; } } catch (e) { } }
+
+if (st && st.ab) fertigBild(false);
+else if (st && st.t0) weiterTest();
+else startBild();
+
+function startBild() {
+  app.innerHTML = `<div class="karte start">
+    <div class="pille" style="margin-bottom:8px">Niveau B1/B2 · ${TEST.dauer} Minuten</div>
+    <h1>${esc(TEST.titel)}</h1>
+    <p>Mit diesem Test sehen wir, was du schon sicher kannst und wo du noch Unterstützung brauchst. Danach bekommst du ein persönliches Feedback.</p>
+    <table class="teiltab">${TEST.teile.map(T => `<tr><td>${T.icon}</td><td><b>${esc(T.titel)}</b><div class="klein leise">${esc(T.info)}</div></td><td>${anzahl(T.id)} Aufgaben<br>ca. ${T.zeit} Min.</td></tr>`).join('')}</table>
+    <ul class="regeln">
+      <li><span>⏱</span><span>Du hast insgesamt <b>${TEST.dauer} Minuten</b>. Die Uhr läuft weiter, auch wenn du die Seite schließt. Bei 0:00 wird der Test automatisch abgegeben.</span></li>
+      <li><span>🧭</span><span>Du kannst zwischen den Teilen hin- und herwechseln. Die Zeitangaben sind Empfehlungen.</span></li>
+      <li><span>💾</span><span>Jede Antwort wird sofort gespeichert. Arbeite bitte ohne Wörterbuch und ohne Hilfe – nur so ist das Ergebnis aussagekräftig.</span></li>
+      <li><span>❓</span><span>Wenn du etwas nicht weißt: lieber raten als leer lassen.</span></li>
+    </ul>
+    ${L.s.code ? '' : '<p class="hinweis">Du bist <b>ohne Code</b> angemeldet. Deine Lehrkraft kann dein Ergebnis dann nicht sehen. Melde dich am besten zuerst in der Übungszentrale mit deinem Code an.</p>'}
+    <div class="zeile" style="margin-top:14px"><button class="btn" id="los">Test starten</button><a class="btn zweit" href="${mitDemo('index.html')}">Zurück</a></div></div>`;
+  $('#los').onclick = () => {
+    if (!confirm(`Der Test dauert ${TEST.dauer} Minuten. Bist du bereit? Die Uhr startet jetzt.`)) return;
+    st = { t0: Date.now(), a: {}, ord: {}, zeit: {}, teil: TEST.teile[0].id, ab: false };
+    L.beginne(ANZAHL, ANZAHL, 'Diagnose · ' + TEST.teile[0].titel); st.sid = L.sid; sichere();
+    weiterTest();
+  };
+}
+
+function rest() { return Math.max(0, Math.round((st.t0 + TEST.dauer * 60000 - Date.now()) / 1000)); }
+function weiterTest() {
+  if (!L.sid) { if (st.sid) { Object.assign(L, { sid: st.sid, t0: st.t0, items: {}, fertig: false, stand: { i: beantwortet(), n: ANZAHL, p: 0, pm: ANZAHL, pa: beantwortet(), info: 'Diagnose' } }); melde(); } else { L.beginne(ANZAHL, ANZAHL, 'Diagnose'); st.sid = L.sid; L.t0 = st.t0; } }
+  if (rest() <= 0) return abgeben(true);
+  testBild();
+  clearInterval(tick);
+  tick = setInterval(() => {
+    st.zeit[st.teil] = (st.zeit[st.teil] || 0) + 1;
+    const r = rest(), u = $('#uhr');
+    if (u) { u.textContent = Math.floor(r / 60) + ':' + String(r % 60).padStart(2, '0'); u.className = 'uhr' + (r < 300 ? ' sehr' : r < 600 ? ' knapp' : ''); }
+    if (r % 15 === 0) sichere();
+    if (r === 600) alert('Noch 10 Minuten.');
+    if (r <= 0) { clearInterval(tick); abgeben(true); }
+  }, 1000);
+}
+
+function reihenfolge(a) {
+  if (!st.ord[a.id]) { const i = a.o.map((_, k) => k); for (let k = i.length - 1; k > 0; k--) { const j = Math.floor(Math.random() * (k + 1)); [i[k], i[j]] = [i[j], i[k]]; } st.ord[a.id] = i; }
+  return st.ord[a.id].map(k => a.o[k]);
+}
+
+function testBild() {
+  const T = TEST.teile.find(t => t.id === st.teil) || TEST.teile[0];
+  const ti = TEST.teile.indexOf(T);
+  let nr = 0;
+  const r = rest();
+  let h = `<div class="leiste"><div class="wrap"><div class="uhr ${r < 300 ? 'sehr' : r < 600 ? 'knapp' : ''}" id="uhr" title="verbleibende Zeit">${Math.floor(r / 60)}:${String(r % 60).padStart(2, '0')}</div>
+    <div class="tabs">${TEST.teile.map(t => `<button data-teil="${t.id}" class="${t.id === T.id ? 'an' : ''}">${t.icon} ${esc(t.titel)}<small>${beantwortet(t.id)}/${anzahl(t.id)}</small></button>`).join('')}</div>
+    <button class="btn klein" id="abg">Abgeben</button></div></div>
+    <div class="teilkopf"><h2>${T.icon} Teil ${ti + 1}: ${esc(T.titel)}</h2><div class="leise klein">${esc(T.info)} · empfohlen ca. ${T.zeit} Minuten · <span id="gesp" class="gesp"></span></div></div>`;
+  for (const B of T.bloecke) {
+    const kurzOpt = B.optionen && B.optionen.every(o => o[1].length <= 60);
+    const aufg = B.aufgaben.map(a => { nr++;
+      const wahl = st.a[a.id], lang = a.q.length > 160;
+      const ant = a.o ? `<div class="opts">${reihenfolge(a).map(o => `<button data-id="${a.id}" data-w="${esc(o)}" class="${wahl === o ? 'an' : ''}"><span class="kr"></span><span>${esc(o)}</span></button>`).join('')}</div>`
+        : kurzOpt ? `<div class="opts">${B.optionen.map(([k, tx]) => `<button data-id="${a.id}" data-w="${k}" class="${wahl === k ? 'an' : ''}"><span class="kr"></span><span><b style="color:var(--akzent)">${k}</b>&nbsp; ${esc(tx)}</span></button>`).join('')}</div>`
+        : `<div class="buchst">${B.optionen.map(([k]) => `<button data-id="${a.id}" data-w="${k}" class="${wahl === k ? 'an' : ''}" title="${esc(B.optionen.find(o => o[0] === k)[1])}">${k}</button>`).join('')}</div>`;
+      return `<div class="aufg ${wahl != null ? 'ok' : ''}" id="a-${a.id}"><div class="fz"><div class="nr">${nr}</div><div class="q ${lang ? 'lang' : ''}">${fmt(a.q)}</div></div>${ant}</div>`; }).join('');
+    const opts = B.optionen && !kurzOpt ? `<div class="optliste">${B.optionen.map(([k, t]) => `<div><b>${k}</b>${esc(t)}</div>`).join('')}</div>` : '';
+    h += `<div class="block"><h3>${esc(B.titel)}</h3><p class="anw">${esc(B.anweisung)}</p>`;
+    if (B.text) h += `<div class="mit-text"><div class="lesetext">${B.text.map(p => `<p>${fmt(p)}</p>`).join('')}</div><div>${opts}${aufg}</div></div>`;
+    else h += opts + aufg;
+    h += '</div>';
+  }
+  const nx = TEST.teile[ti + 1], vo = TEST.teile[ti - 1];
+  h += `<div class="weiter">${vo ? `<button class="btn zweit" data-teil="${vo.id}">← ${esc(vo.titel)}</button>` : '<span></span>'}${nx ? `<button class="btn" data-teil="${nx.id}">Weiter: ${esc(nx.titel)} →</button>` : '<button class="btn" id="abg2">Test abgeben</button>'}</div>`;
+  app.innerHTML = h;
+  app.querySelectorAll('[data-teil]').forEach(b => b.onclick = () => { st.teil = b.dataset.teil; sichere(); testBild(); scrollTo(0, 0); melde(); });
+  app.querySelectorAll('[data-id]').forEach(b => b.onclick = () => {
+    const id = b.dataset.id, w = b.dataset.w;
+    st.a[id] = st.a[id] === w ? null : w; if (st.a[id] == null) delete st.a[id];
+    const box = $('#a-' + CSS.escape(id)); box.querySelectorAll('[data-id]').forEach(x => x.classList.toggle('an', x.dataset.w === st.a[id])); box.classList.toggle('ok', st.a[id] != null);
+    const tb = app.querySelector(`.tabs [data-teil="${st.teil}"] small`); if (tb) tb.textContent = beantwortet(st.teil) + '/' + anzahl(st.teil);
+    sichere(); melde();
+  });
+  $('#abg').onclick = abgabeFrage; const a2 = $('#abg2'); if (a2) a2.onclick = abgabeFrage;
+}
+function melde() {
+  const p = AUFGABEN.filter(a => istRichtig(a, st.a[a.id])).length;
+  L.fortschritt(beantwortet(), p, 'Diagnose · ' + (TEST.teile.find(t => t.id === st.teil) || {}).titel);
+}
+function abgabeFrage() {
+  const offen = TEST.teile.map(T => [T, anzahl(T.id) - beantwortet(T.id)]).filter(([, n]) => n > 0);
+  const d = document.createElement('div'); d.className = 'modal';
+  d.innerHTML = `<div class="karte"><h2>Test abgeben?</h2>${offen.length ? `<p>Du hast noch <b>${offen.reduce((s, [, n]) => s + n, 0)} Aufgaben</b> nicht beantwortet:</p><ul>${offen.map(([T, n]) => `<li>${T.icon} ${esc(T.titel)}: ${n} offen</li>`).join('')}</ul><p class="leise klein">Tipp: lieber raten als leer lassen.</p>` : '<p>Du hast alle Aufgaben beantwortet. 👍</p>'}
+    <p class="leise klein">Nach der Abgabe kannst du nichts mehr ändern. Restzeit: ${Math.floor(rest() / 60)} Minuten.</p>
+    <div class="zeile"><button class="btn" id="ja">Jetzt abgeben</button><button class="btn zweit" id="nein">Weiterarbeiten</button></div></div>`;
+  document.body.append(d);
+  d.querySelector('#nein').onclick = () => d.remove();
+  d.querySelector('#ja').onclick = () => { d.remove(); abgeben(false); };
+}
+
+async function abgeben(auto) {
+  clearInterval(tick);
+  if (st.ab) return fertigBild(auto);
+  app.innerHTML = '<div class="karte fertig"><p>Wird gespeichert …</p></div>';
+  const it = {}, leer = [], texte = {};
+  let p = 0;
+  for (const a of AUFGABEN) { const ok = istRichtig(a, st.a[a.id]); it[a.id] = ok ? 1 : 0; if (ok) p++; if (st.a[a.id] == null) leer.push(a.id); L.antwort(a.id, ok); texte[a.id] = `[${a.teil}] ` + (a.q.length > 120 ? a.q.slice(0, 117) + '…' : a.q); }
+  await L.registriereItems(texte);
+  const zeit = {}; for (const [k, v] of Object.entries(st.zeit)) zeit[k] = Math.round(v);
+  await L.ende(p, ANZAHL, { leer, zeit, auto: !!auto, min: Math.round((Date.now() - st.t0) / 60000) });
+  st.ab = true; st.tAb = Date.now(); st.it = it; st.leer = leer; sichere();
+  fertigBild(auto);
+}
+
+async function fertigBild(auto) {
+  let zeigen = false;
+  try { const p = await db.get('pub/ex/' + TEST.id); zeigen = !!(p && p.zeigen); } catch (e) { }
+  const an = st.it ? analyse(st.it, { leer: st.leer }) : null;
+  app.innerHTML = `<div class="karte fertig"><div class="ic">${auto ? '⏰' : '✅'}</div><h1>${auto ? 'Die Zeit ist um' : 'Geschafft!'}</h1>
+    <p>Dein Test wurde ${st.tAb ? 'am ' + new Date(st.tAb).toLocaleString('de-DE', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }) + ' ' : ''}abgegeben. Vielen Dank, ${esc(L.s.name)}!</p>
+    ${zeigen && an ? `<div style="margin:18px 0">${TEST.teile.map(T => { const o = an.teile[T.id]; return `<div class="ergteil"><span>${T.icon} ${esc(T.titel)}</span><div class="balk"><i style="width:${o.pct}%"></i></div><b>${o.pct} %</b></div>`; }).join('')}</div>` : ''}
+    <p class="leise">Deine Lehrkraft wertet den Test aus und bespricht das Ergebnis mit dir. Dein persönliches Feedback findest du danach unter „Mein Lernstand“.</p>
+    <div class="zeile" style="justify-content:center;margin-top:12px"><a class="btn" href="${mitDemo('index.html')}">Zur Übungszentrale</a>${L.s.code ? `<a class="btn zweit" href="${mitDemo('lernstand.html')}">Mein Lernstand</a>` : ''}</div></div>`;
+}
+</script>
+</body>
+</html>

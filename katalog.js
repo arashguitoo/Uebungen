@@ -471,6 +471,19 @@ export const KATALOG = [
     quelle: { werk: "Linie 1 Beruf", lektion: 14 }
   },
   {
+    id: "diagnose-b2",
+    titel: "Sprachstandsdiagnose B1/B2",
+    untertitel: "90-Minuten-Test: Lesen, Grammatik, Sprachwissen, Wortschatz · 108 Aufgaben · Auswertung für individuelle Förderung",
+    datei: "diagnose.html",
+    typ: "Test",
+    niveau: "B1/B2",
+    themen: ["Prüfungsvorbereitung", "Lesen", "Grammatik", "Wortschatz"],
+    farbe: "#3f5f9a",
+    dauer: "90 Min.",
+    reihe: "Diagnose & Tests",
+    offen: false
+  },
+  {
     id: "fokus-lesen",
     titel: "Fokus Lesen",
     untertitel: "Prüfungstraining Lesen · Teil 1 Informationen suchen · Teil 2 Texte im Detail verstehen · Teil 3 Forum zuordnen · Teil 4 Protokoll verstehen",

@@ -94,6 +94,12 @@
   .fblog{max-height:320px;overflow:auto;margin-top:8px;display:grid;gap:4px;font-size:.9rem}
   .fblog .notiz{background:#fff8e1;border-radius:6px;padding:3px 6px}
   select.frei{background:#e3f6ea}select.gesperrt{background:#fbe0db}
+  .pill{display:inline-block;border-radius:99px;padding:1px 9px;font-weight:700;font-size:.78rem;white-space:nowrap}
+  .dteile{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:12px}
+  .dteile>div{background:#f8f6f2;border-radius:10px;padding:10px 12px;display:grid;gap:3px}
+  .dges b{font-size:1.6rem}
+  .dempf{border-left:4px solid #d9483b;background:#fdf6f4;border-radius:8px;padding:7px 10px;margin-bottom:6px;display:grid;gap:2px}
+  .diag h4{font-size:.95rem}
 </style>
 </head>
 <body>
@@ -138,6 +144,7 @@ window.__ok = true;
 import { db, DEMO, zufall, esc, mitDemo } from './db.js?v=20261016a';
 import { KATALOG, exById } from './katalog.js?v=20261016a';
 import { LISTEN, SKALEN, MERKMALE, MERKMAL, skalaVon, wertInfo, prozent } from './feedback-kriterien.js?v=20261016a';
+import { TEST as DTEST, BEREICHE as DBER, analyse as dAnalyse, AUFGABEN as DAUFG } from './diagnose-daten.js?v=20261016a';
 
 if (DEMO) document.getElementById('demo').innerHTML = '<div class="demo-band">DEMO-MODUS – Anmeldung mit beliebigen Daten, alles bleibt in diesem Browser</div>';
 const $ = s => document.querySelector(s), app = $('#app');
@@ -457,12 +464,13 @@ function feedback() {
   if (!F.fbKurs) F.fbKurs = gewKurs && D.kurse[gewKurs] ? gewKurs : (kl[0] || [])[0] || null;
   if (!F.fbKurs) { app.innerHTML = '<div class="karte" style="margin-top:16px"><h2>Noch kein Kurs</h2><p class="leise">Lege zuerst unter „Kurse &amp; Codes“ einen Kurs mit Teilnehmenden an.</p></div>'; return; }
   if (F.fbPid) { if (D.kurse[F.fbKurs].tn && D.kurse[F.fbKurs].tn[F.fbPid]) return fbPerson(); F.fbPid = null; }
-  const kid = F.fbKurs, tn = fbTnListe(kid), L = LISTEN.find(l => l.id === F.fbListe) || LISTEN[0];
+  const kid = F.fbKurs, tn = fbTnListe(kid), L = LISTEN.find(l => l.id === F.fbListe) || LISTEN[0], istDiag = F.fbListe === 'diag';
   const offenSa = tn.filter(([, p]) => meinOf(p.code).sa).length;
   let h = `<div class="leiste" style="margin-top:16px"><label for="fbk">Kurs:</label><select id="fbk">${kl.map(([k, v]) => `<option value="${k}" ${k === kid ? 'selected' : ''}>${esc(v.name)}</option>`).join('')}</select>
     <span style="flex:1"></span><button class="btn zweit klein" id="saAlle">${offenSa === tn.length && tn.length ? '🔒 Selbsteinschätzung für alle schließen' : '✋ Selbsteinschätzung für alle öffnen'}</button></div>
-    <div class="fbchips">${LISTEN.map(l => `<button class="chip ${l.id === L.id ? 'an' : ''}" data-l="${l.id}">${esc(l.titel)}</button>`).join('')}</div>
-    ${L.info ? `<p class="leise klein" style="margin:8px 0 0">${esc(L.info)}</p>` : ''}
+    <div class="fbchips">${LISTEN.map(l => `<button class="chip ${l.id === L.id && !istDiag ? 'an' : ''}" data-l="${l.id}">${esc(l.titel)}</button>`).join('')}<button class="chip ${istDiag ? 'an' : ''}" data-l="diag">🧪 Diagnosetest</button></div>`;
+  if (istDiag) { app.innerHTML = h + diagKurs(kid, tn); bindeFb(); bindeDiagKurs(kid, tn); return; }
+  h += `${L.info ? `<p class="leise klein" style="margin:8px 0 0">${esc(L.info)}</p>` : ''}
     <p class="leise klein" style="margin:6px 0 10px">Klick auf ein Feld = Stand eintragen. Klick auf einen Namen = ausführliches Feedback, Stärken/Schwächen, persönliche Freigaben. ${L.selbst ? '<b>S:</b> = Selbsteinschätzung der Person.' : ''}</p>`;
   if (!tn.length) { app.innerHTML = h + '<p class="leise">In diesem Kurs ist noch niemand eingetragen.</p>'; bindeFb(); return; }
   h += `<div class="tabwrap"><table class="t fbm"><tr><th>Name</th>${L.items.map(it => `<th title="${esc(it.t + (it.h ? ' – ' + it.h : ''))}">${esc(it.t.replace(/^(Sprechen |Mein(e)? (bisherige[rn]? )?)/, ''))}</th>`).join('')}<th>Stand</th><th>geprüft</th><th></th></tr>
@@ -522,6 +530,7 @@ function fbPerson() {
       <div class="teilen ${pub ? 'an' : ''}">${code ? `<div style="flex:1"><b>${pub ? '👁 Lernstand ist für ' + esc(p.name) + ' sichtbar' : 'Lernstand ist nur für dich sichtbar'}</b><div class="klein leise">${pub ? 'Veröffentlicht am ' + datum(pub.t) + '. Änderungen sieht die Person erst nach „Aktualisieren“.' : 'Mit „Veröffentlichen“ sieht die Person in der Zentrale unter „Mein Lernstand“: Stand der Prüfungsteile und Kriterien, Stärken, Arbeitsfelder, nächste Schritte und deine Nachricht. Notizen, Verlauf und „Lernverhalten“ bleiben privat.'}</div></div>
         <label class="schalter klein"><input type="checkbox" id="saP" ${mein.sa ? 'checked' : ''}> Selbsteinschätzung erlaubt</label>
         <button class="btn klein" id="fbPub">${pub ? '🔄 Aktualisieren' : '📤 Veröffentlichen'}</button>${pub ? '<button class="btn zweit klein" id="fbZurueckz">Zurückziehen</button>' : ''}` : '<span class="leise">Ohne Code kann nichts veröffentlicht oder individuell freigeschaltet werden. Erzeuge unter „Kurse &amp; Codes“ einen Code (🔄).</span>'}</div></div>
+    ${diagKarte(kid, pid, p, code)}
     <div class="fbgrid">`;
   for (const L of LISTEN) {
     h += `<div class="karte fbliste"><h3>${esc(L.titel)}${L.tn ? '' : ' <span class="pille" title="Wird nie veröffentlicht">privat</span>'}</h3>${L.info ? `<p class="leise klein" style="margin-top:0">${esc(L.info)}</p>` : ''}
@@ -555,6 +564,7 @@ function fbPerson() {
           <td>${erg[e.id] ? `<span class="zelle" style="background:${farbe(erg[e.id].best)}">${erg[e.id].best} %</span>` : '<span class="leise">–</span>'}</td></tr>`; }).join('')}</table></div>` : '<p class="leise">Dafür braucht die Person einen Code.</p>'}</div>`;
   app.innerHTML = h;
   $('#fbZur').onclick = () => { F.fbPid = null; feedback(); };
+  bindeDiagPerson(kid, pid, p, code);
   app.querySelectorAll('.leiste [data-p]').forEach(b => b.onclick = () => { F.fbPid = b.dataset.p; feedback(); });
   app.querySelectorAll('.seg button').forEach(b => b.onclick = () => { const key = b.dataset.key, v = +b.dataset.v; setzeWert(kid, pid, key, (c[key] || {}).s === v ? 0 : v); });
   app.querySelectorAll('[data-note]').forEach(i => i.onchange = () => db.update('', sicher({ [fbPfad(kid, pid) + '/c/' + i.dataset.note + '/n']: i.value.trim().slice(0, 300) || null })));
@@ -593,6 +603,119 @@ function fbDruck(kid, pid) {
       ${L.items.map(it => { const e = c[L.id + '_' + it.id] || {}, wi = wertInfo(L, e.s); return `<tr><td>${esc(it.t)}</td><td class="w" style="${wi ? 'background:' + wi.c + ';color:' + wi.f : ''}">${wi ? esc(wi.l) : '–'}</td><td class="n">${esc(e.n || '')}</td></tr>`; }).join('')}</table></section>`).join('')}
     <section><h2>Stärken und Arbeitsfelder</h2><div class="g"><div class="box"><b>Stärken</b><br>${mk('s').map(esc).join(' · ')}${x.st ? '<p>' + abs(x.st) + '</p>' : ''}</div><div class="box"><b>Woran arbeiten?</b><br>${mk('w').map(esc).join(' · ')}${x.sw ? '<p>' + abs(x.sw) + '</p>' : ''}</div></div>
     ${x.ziel ? `<div class="box" style="margin-top:4mm"><b>Nächste Schritte</b><p>${abs(x.ziel)}</p></div>` : ''}${x.msg ? `<div class="box" style="margin-top:4mm"><b>Nachricht</b><p>${abs(x.msg)}</p></div>` : ''}</section>
+    </body></html>`);
+  w.document.close();
+}
+
+/* ---------------- DIAGNOSETEST (Auswertung) ---------------- */
+const DTEILE = DTEST.teile;
+function diagErgebnisse(pid) {
+  return Object.values((D.res || {})[DTEST.id] || {}).filter(v => v && v.pid === pid).sort((a, b) => b.t - a.t);
+}
+function diagVon(pid) {
+  const v = diagErgebnisse(pid)[0]; if (!v) return null;
+  let x = {}; try { x = JSON.parse(v.x || '{}'); } catch (e) { }
+  return { v, x, an: dAnalyse(v.it || {}, x) };
+}
+const nivPill = n => `<span class="pill" style="background:${n.c};color:${n.f}" title="${esc(n.t)}">${esc(n.k)}</span>`;
+const pctZelle = (pct, titel = '') => `<span class="zelle" style="background:${farbe(pct)}" title="${esc(titel)}">${pct} %</span>`;
+const bereichName = b => (DBER[b] || { t: b }).t;
+const minuten = s => s ? Math.round(s / 60) + ' Min.' : '–';
+
+function diagKurs(kid, tn) {
+  const zug = !!(((D.pub.kurse || {})[kid] || {}).ex || {})[DTEST.id];
+  const zeigen = !!((D.pub.ex || {})[DTEST.id] || {}).zeigen;
+  const daten = tn.map(([pid, p]) => [pid, p, diagVon(pid)]);
+  const mit = daten.filter(d => d[2]);
+  let h = `<div class="karte" style="margin-top:12px"><div class="zeile"><div style="flex:1"><h3 style="margin:0">🧪 ${esc(DTEST.titel)}</h3>
+      <div class="klein leise">${DAUFG.length} Aufgaben · ${DTEST.dauer} Minuten · ${DTEILE.map(T => T.icon + ' ' + T.titel).join(' · ')} · <a href="${mitDemo('diagnose.html')}" target="_blank">Test ansehen</a></div></div>
+      <label class="schalter klein"><input type="checkbox" id="dZug" ${zug ? 'checked' : ''}> für diesen Kurs freigeschaltet</label>
+      <label class="schalter klein"><input type="checkbox" id="dZeig" ${zeigen ? 'checked' : ''}> TN sehen nach Abgabe ihre Prozente pro Teil</label></div>
+      <p class="leise klein" style="margin:8px 0 0">Der Test ist nicht öffentlich. Schalte ihn für den Kurs frei oder einzeln bei einer Person (Feedback → Individuelle Freigaben). Jede Person kann ihn einmal schreiben; einen neuen Versuch erlaubst du in der Ansicht der Person.</p></div>`;
+  if (!mit.length) return h + `<p class="leise" style="margin-top:14px">Noch hat niemand aus diesem Kurs den Test abgegeben.</p>`;
+  h += `<h3 style="margin:20px 0 8px">Ergebnisse (${mit.length} von ${tn.length})</h3><div class="tabwrap"><table class="t"><tr><th>Name</th><th>Gesamt</th><th>Einstufung</th>${DTEILE.map(T => `<th>${T.icon} ${esc(T.titel)}</th>`).join('')}<th>Förderbedarf</th><th>Datum</th></tr>
+    ${daten.map(([pid, p, d]) => d ? `<tr><td><button class="namebtn" data-p="${pid}">${esc(p.name)}</button></td><td>${pctZelle(d.an.ges.pct)}</td><td>${nivPill(d.an.ges.niveau)}</td>
+      ${DTEILE.map(T => { const o = d.an.teile[T.id]; return `<td>${pctZelle(o.pct, 'B1: ' + o.b1p + ' % · B2: ' + o.b2p + ' %' + (o.leer ? ' · ' + o.leer + ' leer' : ''))} ${nivPill(o.niveau)}</td>`; }).join('')}
+      <td class="klein">${d.an.foerder.slice(0, 3).map(bereichName).map(esc).join(', ') || '–'}</td><td class="klein">${datum(d.v.t)}</td></tr>`
+      : `<tr><td><button class="namebtn" data-p="${pid}">${esc(p.name)}</button></td><td colspan="${DTEILE.length + 4}" class="leise klein">noch nicht abgegeben</td></tr>`).join('')}</table></div>`;
+  // Kursprofil: Durchschnitt je Bereich
+  const sum = {};
+  for (const [, , d] of mit) for (const [b, o] of Object.entries(d.an.bereiche)) { if (o.offen) continue; const s = sum[b] || (sum[b] = { p: 0, n: 0 }); s.p += o.pct; s.n++; }
+  const prof = Object.entries(sum).map(([b, s]) => [b, Math.round(s.p / s.n)]);
+  const schwach = prof.slice().sort((a, b) => a[1] - b[1]).slice(0, 6);
+  h += `<div class="fbgrid"><div class="karte"><h3>Kursschwerpunkte</h3><p class="leise klein" style="margin-top:0">Die schwächsten Bereiche im Kursdurchschnitt – Kandidaten für den gemeinsamen Unterricht.</p>
+      ${schwach.map(([b, pc]) => `<div class="q"><div class="pz">${pc} %</div><div><div class="lb"><b>${esc(bereichName(b))}</b> <span class="leise klein">· ${esc((DTEILE.find(T => T.id === DBER[b].teil) || {}).titel || '')}</span></div><div class="klein leise">${esc(DBER[b].tipp)}</div><div class="bb"><i style="width:${pc}%;background:${pc < 50 ? '#d9483b' : pc < 70 ? '#e0a020' : '#2e9e5b'}"></i></div></div></div>`).join('')}</div>
+    <div class="karte"><h3>Kursprofil nach Bereichen</h3>${DTEILE.map(T => `<div style="margin-top:10px"><b class="klein">${T.icon} ${esc(T.titel)}</b>${prof.filter(([b]) => DBER[b].teil === T.id).map(([b, pc]) => `<div class="q" style="padding:3px 0;border:0"><div class="pz klein">${pc} %</div><div><div class="lb klein">${esc(bereichName(b))}</div><div class="bb"><i style="width:${pc}%;background:${pc < 50 ? '#d9483b' : pc < 70 ? '#e0a020' : '#2e9e5b'}"></i></div></div></div>`).join('')}</div>`).join('')}</div></div>`;
+  return h;
+}
+function bindeDiagKurs(kid) {
+  const z = $('#dZug'); if (z) z.onchange = () => db.set('pub/kurse/' + kid + '/ex/' + DTEST.id, z.checked ? true : null);
+  const g = $('#dZeig'); if (g) g.onchange = () => db.set('pub/ex/' + DTEST.id + '/zeigen', g.checked);
+}
+
+function diagKarte(kid, pid, p, code) {
+  const d = diagVon(pid), alle = diagErgebnisse(pid);
+  if (!d) return `<div class="karte" style="margin-top:16px"><div class="zeile"><div style="flex:1"><h3 style="margin:0">🧪 ${esc(DTEST.titel)}</h3><div class="leise klein">Noch nicht abgegeben.</div></div>
+      ${code ? `<button class="btn zweit klein" id="dFrei">${meinOf(code).ex && meinOf(code).ex[DTEST.id] ? '✓ für ' + esc(p.name) + ' freigeschaltet' : 'Test für ' + esc(p.name) + ' freischalten'}</button>` : ''}</div></div>`;
+  const an = d.an, x = d.x;
+  const grp = T => Object.entries(an.bereiche).filter(([b]) => DBER[b].teil === T.id).sort((a, b) => a[1].pct - b[1].pct);
+  const empf = an.foerder.slice(0, 6);
+  return `<div class="karte diag" style="margin-top:16px">
+    <div class="zeile"><div style="flex:1"><h3 style="margin:0">🧪 ${esc(DTEST.titel)}</h3><div class="leise klein">abgegeben am ${zeit(d.v.t)} · ${x.min || Math.round((d.v.dur || 0) / 60)} von ${DTEST.dauer} Min.${x.auto ? ' · automatisch bei Zeitende' : ''}${alle.length > 1 ? ' · ' + alle.length + ' Versuche (neuester)' : ''}</div></div>
+      <button class="btn klein" id="dUeber" title="Stärken/Arbeitsfelder setzen, Eintrag im Verlauf, empfohlene Übungen freischalten">➕ Ins Feedback übernehmen</button>
+      <button class="btn zweit klein" id="dDruck">🖨 Diagnosebericht</button>${code ? '<button class="btn zweit klein" id="dNeu">🔄 Neuen Versuch erlauben</button>' : ''}</div>
+    <div class="dteile">
+      <div class="dges"><div class="klein leise">Gesamt</div><b>${an.ges.pct} %</b><div>${nivPill(an.ges.niveau)}</div><div class="klein leise">${esc(an.ges.niveau.t)}</div></div>
+      ${DTEILE.map(T => { const o = an.teile[T.id]; return `<div class="dteil"><div class="klein"><b>${T.icon} ${esc(T.titel)}</b></div><div class="zeile" style="gap:6px"><b>${o.pct} %</b>${nivPill(o.niveau)}</div>
+        <div class="klein leise">B1-Aufgaben ${o.b1p} % · B2-Aufgaben ${o.b2p} %</div><div class="klein leise">Zeit ${minuten((x.zeit || {})[T.id])} (empf. ${T.zeit})${o.leer ? ` · <span style="color:#b3402f">${o.leer} leer</span>` : ''}</div></div>`; }).join('')}
+    </div>
+    <div class="fbgrid" style="margin-top:12px">
+      <div><h4 style="margin:0 0 6px">Förderbedarf <span class="leise klein">(unter 60 %)</span></h4>${empf.length ? empf.map(b => { const o = an.bereiche[b], B = DBER[b];
+        return `<div class="dempf"><div class="zeile"><b style="flex:1">${esc(B.t)}</b>${pctZelle(o.pct, o.p + ' von ' + o.pm + ' richtig')}</div><div class="klein">${esc(B.tipp)}</div>${B.ex.length ? `<div class="klein leise">↳ Übung: ${B.ex.map(e => esc(exName(e))).join(', ')}</div>` : ''}</div>`; }).join('') : '<p class="leise klein">Kein Bereich unter 60 %.</p>'}
+        ${an.offen.length ? `<p class="hinweis klein" style="margin:10px 0 0"><b>Nicht bearbeitet:</b> ${an.offen.map(b => esc(bereichName(b))).join(', ')} – keine Aussage möglich (Zeit? Abbruch?). Diese Bereiche zählen nicht als Förderbedarf.</p>` : ''}
+        ${an.staerken.length ? `<h4 style="margin:14px 0 6px">Stärken <span class="leise klein">(ab 80 %)</span></h4><div>${an.staerken.map(b => `<span class="mk s">${esc(bereichName(b))}</span>`).join('')}</div>` : ''}</div>
+      <div><h4 style="margin:0 0 6px">Alle Bereiche</h4>${DTEILE.map(T => `<div style="margin-bottom:8px"><b class="klein">${T.icon} ${esc(T.titel)}</b>${grp(T).map(([b, o]) => `<div class="q" style="padding:3px 0;border:0;grid-template-columns:62px 1fr"><div class="pz klein">${o.p}/${o.pm}</div><div><div class="lb klein">${esc(DBER[b].t)}</div><div class="bb"><i style="width:${o.pct}%;background:${o.pct < 60 ? '#d9483b' : o.pct < 80 ? '#e0a020' : '#2e9e5b'}"></i></div></div></div>`).join('')}</div>`).join('')}</div>
+    </div>
+    <details style="margin-top:10px"><summary class="klein"><b>Einzelne Aufgaben ansehen</b> (falsch / leer)</summary><div class="klein" style="display:grid;gap:3px;margin-top:8px">${DAUFG.filter(a => !(d.v.it || {})[a.id]).map(a => `<div><span class="code" style="font-size:.75rem">${a.id}</span> ${(x.leer || []).includes(a.id) ? '<span class="pill">leer</span>' : '<span style="color:#b3402f">✗</span>'} ${esc(DBER[a.b].t)} · ${a.n} – <span class="leise">${esc(a.q.length > 90 ? a.q.slice(0, 88) + '…' : a.q)}</span> <span class="leise">→ richtig: ${esc(a.o ? a.o[0] : a.l)}</span></div>`).join('') || 'Alles richtig.'}</div></details>
+  </div>`;
+}
+function bindeDiagPerson(kid, pid, p, code) {
+  const fr = $('#dFrei'); if (fr) fr.onclick = () => db.set('mein/' + code + '/ex/' + DTEST.id, meinOf(code).ex && meinOf(code).ex[DTEST.id] ? null : true);
+  const d = diagVon(pid); if (!d) return;
+  $('#dDruck').onclick = () => diagDruck(kid, pid);
+  const nv = $('#dNeu'); if (nv) nv.onclick = async () => { if (!confirm(`${p.name} darf den Test noch einmal schreiben? Das bisherige Ergebnis bleibt gespeichert.`)) return;
+    await db.set('mein/' + code + '/diagNeu', Date.now()); meld('Neuer Versuch freigegeben – beim nächsten Öffnen startet der Test neu.'); };
+  $('#dUeber').onclick = async () => {
+    const an = d.an, f = fbOf(kid, pid), m = { ...(f.m || {}) }, up = {}, b = fbPfad(kid, pid);
+    const st = [...new Set(an.staerken.map(x => DBER[x].mk).filter(Boolean))], sw = [...new Set(an.foerder.map(x => DBER[x].mk).filter(Boolean))];
+    const ex = [...new Set(an.foerder.flatMap(x => DBER[x].ex))].filter(e => e !== DTEST.id);
+    const frage = `Übernehmen ins Feedback von ${p.name}:\n\n• Stärken: ${st.map(k => MERKMAL[k]).join(', ') || '–'}\n• Arbeitsfelder: ${sw.map(k => MERKMAL[k]).join(', ') || '–'}\n• Eintrag im Verlauf mit dem Ergebnis${code && ex.length ? '\n• Übungen individuell freischalten: ' + ex.map(exName).join(', ') : ''}\n\nBereits gesetzte Merkmale bleiben, Arbeitsfelder haben Vorrang.`;
+    if (!confirm(frage)) return;
+    st.forEach(k => { if (m[k] !== 'w') up[b + '/m/' + k] = 's'; }); sw.forEach(k => up[b + '/m/' + k] = 'w');
+    up[b + '/log/' + Date.now()] = `Diagnosetest ${datum(d.v.t)}: gesamt ${an.ges.pct} % (${an.ges.niveau.t}) · ` + DTEILE.map(T => T.titel + ' ' + an.teile[T.id].pct + ' %').join(' · ') + (an.foerder.length ? ' · Förderbedarf: ' + an.foerder.slice(0, 5).map(bereichName).join(', ') : '');
+    if (code) ex.forEach(e => { if (!(meinOf(code).ex || {})[e]) up['mein/' + code + '/ex/' + e] = true; });
+    await db.update('', sicher(up)); meld('Ins Feedback übernommen.');
+  };
+}
+function diagDruck(kid, pid) {
+  const k = D.kurse[kid], p = k.tn[pid], d = diagVon(pid); if (!d) return;
+  const an = d.an, w = window.open('', '_blank'); if (!w) return meld('Bitte Pop-ups erlauben.');
+  const balken = pct => `<div style="height:7px;background:#eee;border-radius:5px;overflow:hidden"><div style="height:100%;width:${pct}%;background:${pct < 60 ? '#d9483b' : pct < 80 ? '#e0a020' : '#2e9e5b'}"></div></div>`;
+  w.document.write(`<!doctype html><html lang="de"><head><meta charset="utf-8"><title>Diagnosebericht ${esc(p.name)}</title><style>
+    body{font-family:Calibri,Carlito,sans-serif;margin:12mm;color:#1f2328;font-size:10.5pt}h1{margin:0;font-size:19pt}h2{font-size:12.5pt;margin:6mm 0 2mm;border-bottom:1.5px solid #1f2328}
+    table{border-collapse:collapse;width:100%}td,th{border:1px solid #ccc;padding:1.5mm 2.4mm;text-align:left;vertical-align:middle}th{background:#f1eee8;font-size:9pt}
+    .k{color:#666}.g{display:grid;grid-template-columns:1fr 1fr;gap:6mm}.p{display:inline-block;border-radius:9px;padding:0 6px;font-weight:700}section{break-inside:avoid}@media print{button{display:none}}</style></head><body>
+    <button onclick="print()" style="font-size:13pt;margin-bottom:6mm">Drucken / als PDF speichern</button>
+    <div class="k">Lern Deutsch mit Arash · ${esc(k.name)}</div><h1>Diagnosebericht: ${esc(p.name)}</h1>
+    <div class="k">${esc(DTEST.titel)} · abgegeben am ${zeit(d.v.t)} · Bearbeitungszeit ${d.x.min || '–'} von ${DTEST.dauer} Min.</div>
+    <h2>Überblick</h2><table><tr><th>Teil</th><th>richtig</th><th>%</th><th>B1-Aufgaben</th><th>B2-Aufgaben</th><th>Einstufung</th></tr>
+    ${DTEILE.map(T => { const o = an.teile[T.id]; return `<tr><td>${esc(T.titel)}</td><td>${o.p} / ${o.pm}</td><td><b>${o.pct} %</b></td><td>${o.b1p} %</td><td>${o.b2p} %</td><td><span class="p" style="background:${o.niveau.c};color:${o.niveau.f}">${esc(o.niveau.t)}</span></td></tr>`; }).join('')}
+    <tr><td><b>Gesamt</b></td><td>${an.ges.p} / ${an.ges.pm}</td><td><b>${an.ges.pct} %</b></td><td>${an.ges.b1p} %</td><td>${an.ges.b2p} %</td><td><span class="p" style="background:${an.ges.niveau.c};color:${an.ges.niveau.f}">${esc(an.ges.niveau.t)}</span></td></tr></table>
+    <section><h2>Kompetenzprofil</h2><div class="g">${DTEILE.map(T => `<div><b>${esc(T.titel)}</b><table>${Object.entries(an.bereiche).filter(([b]) => DBER[b].teil === T.id).map(([b, o]) => `<tr><td style="width:55%">${esc(DBER[b].t)}</td><td style="width:15%">${o.p}/${o.pm}</td><td>${balken(o.pct)}</td></tr>`).join('')}</table></div>`).join('')}</div></section>
+    <section><h2>Förderempfehlungen</h2>${an.foerder.length ? `<table><tr><th>Bereich</th><th>Ergebnis</th><th>Was hilft</th></tr>${an.foerder.map(b => `<tr><td><b>${esc(DBER[b].t)}</b></td><td>${an.bereiche[b].pct} %</td><td>${esc(DBER[b].tipp)}${DBER[b].ex.length ? '<br><span class="k">Übung: ' + DBER[b].ex.map(e => esc(exName(e))).join(', ') + '</span>' : ''}</td></tr>`).join('')}</table>` : '<p>Kein Bereich unter 60 %.</p>'}
+    ${an.offen.length ? `<p><b>Nicht bearbeitet</b> (keine Aussage möglich): ${an.offen.map(b => esc(DBER[b].t)).join(' · ')}</p>` : ''}
+    ${an.staerken.length ? `<p><b>Stärken:</b> ${an.staerken.map(b => esc(DBER[b].t)).join(' · ')}</p>` : ''}</section>
+    <p class="k" style="margin-top:6mm">Einstufung: Anteil richtig gelöster B1- und B2-Aufgaben (B2 sicher: beide ≥ 70 %; auf dem Weg zu B2: B2 ≥ 50 %, B1 ≥ 60 %; B1 sicher: B1 ≥ 70 %). Der Test ersetzt keine offizielle Prüfung; Hören, Sprechen und Schreiben sind nicht enthalten.</p>
     </body></html>`);
   w.document.close();
 }
