@@ -28,6 +28,25 @@
   .filter{display:flex;gap:8px;flex-wrap:wrap}
   .chip{border:1px solid var(--linie);background:#fff;border-radius:99px;padding:4px 12px;font:inherit;font-size:.9rem;cursor:pointer}
   .chip.an{background:#1f2328;color:#fff;border-color:#1f2328}
+  .kacheln{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin-top:10px}
+  .kacheln.oben{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:22px}
+  .kachel{position:relative;display:flex;align-items:center;gap:14px;padding:18px;border-radius:var(--r);background:#fff;border:1px solid var(--linie);box-shadow:var(--schatten);text-decoration:none;color:inherit;border-top:5px solid var(--f,#888);transition:transform .15s}
+  .kachel:hover{transform:translateY(-2px)}
+  .kachel .ic{font-size:2rem;flex:none}
+  .kachel .tx{flex:1;display:flex;flex-direction:column;gap:2px;min-width:0}
+  .kachel .tx b{font-size:1.1rem}
+  .kachel .tx span{font-size:.88rem;color:var(--leise)}
+  .kachel .tx .u{font-size:.82rem}
+  .kachel .pf{color:var(--leise);font-size:1.2rem}
+  .kachel.gross{border-top:0;color:#fff}
+  .kachel.gross .tx span,.kachel.gross .pf{color:rgba(255,255,255,.85)}
+  .kachel.fb{background:linear-gradient(135deg,#26324a,#3f5f9a)}
+  .kachel.live{background:linear-gradient(135deg,#1f6f78,#2e9a8f)}
+  .kachel .neu{position:absolute;top:10px;right:12px;background:#ffd166;color:#1f2328;font-weight:700;font-size:.75rem;padding:2px 8px;border-radius:99px}
+  .rkopf{margin:24px 0 6px}
+  .rkopf h2{margin:6px 0 2px}
+  .rkopf p{margin:0}
+  .zur{font-weight:600;text-decoration:none}
   footer{margin:40px 0 20px;text-align:center}
   .lernstand{display:flex;gap:14px;align-items:center;margin-top:22px;padding:16px 18px;border-radius:var(--r);background:linear-gradient(135deg,#5b4fa3,#2f6fc4);color:#fff;text-decoration:none;box-shadow:var(--schatten)}
   .lernstand .ic{font-size:2rem}.lernstand:hover{filter:brightness(1.07)}
@@ -113,6 +132,16 @@ function karte(ex, best) {
     ${best != null ? `<span class="best klein">✓ ${best} %</span>` : ''}</div></div></a>`;
 }
 
+const RUBRIKEN = [
+  { k: 'meine', ic: '⭐', t: 'Meine Übungen', u: 'Von deiner Lehrkraft für dich freigeschaltet', f: '#b8841a' },
+  { k: 'muendlich', ic: '🗣️', t: 'Mündliche Prüfung', u: 'Problem lösen, Smalltalk, Sprechen üben', f: '#2f6b5e', reihen: ['Mündliche Prüfung'] },
+  { k: 'training', ic: '🎯', t: 'Prüfungstraining', u: 'Lesen, Hören, Schreiben und Wortschatz rund um den Beruf', f: '#2f6fc4', reihen: ['Prüfungstraining B1/B2'] },
+  { k: 'grammatik', ic: '🧩', t: 'Grammatik & Wortschatz', u: 'Präpositionen, Wortverbindungen und Spiele', f: '#5b4fa3', reihen: ['Grammatik-Spiele', 'Spiele'] },
+  { k: 'tests', ic: '🧪', t: 'Tests', u: 'Sprachstand prüfen', f: '#3f5f9a', reihen: ['Diagnose & Tests'] },
+  { k: 'weitere', ic: '📦', t: 'Weitere Übungen', u: '', f: '#666' }
+];
+const rubrikVon = ex => (RUBRIKEN.find(r => r.reihen && r.reihen.includes(ex.reihe)) || RUBRIKEN[RUBRIKEN.length - 1]).k;
+
 async function start() {
   zeigeAnmeldung();
   const s = sitzung(), best = besteLokal();
@@ -123,22 +152,33 @@ async function start() {
   if (s && s.code) { try { mein = (await db.get('mein/' + s.code)) || {}; } catch (e) { console.warn('Lernstand nicht lesbar', e); } }
   const indiv = mein.ex || {};
   const offen = ex => (pubEx[ex.id] && typeof pubEx[ex.id].offen === 'boolean') ? pubEx[ex.id].offen : ex.offen !== false;
-  const meine = KATALOG.filter(ex => indiv[ex.id] === true || (indiv[ex.id] !== false && kursEx[ex.id]));
-  const weitere = KATALOG.filter(ex => !meine.includes(ex) && offen(ex));
-  const themen = [...new Set(weitere.flatMap(e => e.themen || []))];
-  const pass = ex => filt === 'alle' || (ex.themen || []).includes(filt) || ex.niveau === filt;
+  const ohneLive = KATALOG.filter(ex => ex.id !== 'live');
+  const meine = ohneLive.filter(ex => indiv[ex.id] === true || (indiv[ex.id] !== false && kursEx[ex.id]));
+  const sichtbar = ohneLive.filter(ex => meine.includes(ex) || offen(ex));
+  const inRubrik = k => k === 'meine' ? meine : sichtbar.filter(ex => rubrikVon(ex) === k);
+  const rub = (location.hash.match(/^#r=(\w+)/) || [])[1];
+  const R = RUBRIKEN.find(r => r.k === rub);
+  const live = KATALOG.find(e => e.id === 'live');
   let h = '';
-  if (s && s.code) h += `<a class="lernstand" href="${mitDemo('lernstand.html')}"><span class="ic">📋</span><span style="flex:1"><b>Mein Lernstand</b><br><span class="klein">${mein.fb ? 'Neues Feedback von deinem Lehrer · ' + new Date(mein.fb.t).toLocaleDateString('de-DE') : mein.sa ? 'Schätze dich selbst ein: Wie gut bist du auf die Prüfung vorbereitet?' : 'Hier findest du dein persönliches Feedback und deinen Vorbereitungsstand.'}</span></span><span>→</span></a>`;
-  if (s && s.kid) h += `<div class="abschnitt"><h2>Deine Übungen</h2><span class="leise klein">für ${esc(s.kurs || 'deinen Kurs')}</span></div>` +
-    (meine.length ? `<div class="liste">${meine.map(ex => karte(ex, best[ex.id])).join('')}</div>` : '<p class="leise">Für deinen Kurs ist gerade nichts freigeschaltet.</p>');
-  h += `<div class="abschnitt"><h2>${s && s.kid ? 'Weitere Übungen' : 'Alle Übungen'}</h2></div>`;
-  if (themen.length > 1) h += `<div class="filter">${['alle', ...themen].map(t => `<button class="chip ${t === filt ? 'an' : ''}" data-t="${esc(t)}">${t === 'alle' ? 'Alle' : esc(t)}</button>`).join('')}</div>`;
-  const sicht = weitere.filter(pass);
-  const gruppen = [...new Set(sicht.map(ex => ex.reihe || ex.typ || 'Übungen'))];
-  h += sicht.length ? gruppen.map(g => `${gruppen.length > 1 ? `<h3 style="margin:18px 0 0" class="leise">${esc(g)}</h3>` : ''}<div class="liste">${sicht.filter(ex => (ex.reihe || ex.typ || 'Übungen') === g).map(ex => karte(ex, best[ex.id])).join('')}</div>`).join('') : '<p class="leise">Keine weiteren Übungen.</p>';
+  if (R) {
+    const l = inRubrik(R.k);
+    h += `<div class="rkopf"><a href="#" class="zur">← Startseite</a><h2>${R.ic} ${esc(R.t)}</h2>${R.u ? `<p class="leise">${esc(R.u)}</p>` : ''}</div>` +
+      (l.length ? `<div class="liste">${l.map(ex => karte(ex, best[ex.id])).join('')}</div>` : '<p class="leise">Hier ist gerade nichts freigeschaltet.</p>');
+  } else {
+    const fbNeu = mein.fb && mein.fb.t > (+localStorage.getItem('ueb_fb_gesehen_' + (s && s.code)) || 0);
+    const kacheln = [];
+    if (s && s.code) kacheln.push(`<a class="kachel gross fb" href="${mitDemo('lernstand.html')}"><span class="ic">📋</span><span class="tx"><b>Lehrer-Feedback & Lernstand</b><span>${mein.fb ? 'Feedback vom ' + new Date(mein.fb.t).toLocaleDateString('de-DE') : mein.sa ? 'Schätze dich selbst ein' : 'Dein Vorbereitungsstand für die Prüfung'}</span></span>${fbNeu ? '<span class="neu">Neu</span>' : ''}<span class="pf">→</span></a>`);
+    if (live) kacheln.push(`<a class="kachel gross live" href="${mitDemo(live.datei)}"><span class="ic">📡</span><span class="tx"><b>Live-Runde beitreten</b><span>Mit dem PIN vom Bildschirm deiner Lehrkraft</span></span><span class="pf">→</span></a>`);
+    h += kacheln.length ? `<div class="kacheln oben">${kacheln.join('')}</div>` : '';
+    h += `<div class="abschnitt"><h2>Übungen</h2></div><div class="kacheln">` + RUBRIKEN.filter(r => (r.k !== 'meine' || (s && s.kid)) && (r.k === 'meine' || inRubrik(r.k).length)).map(r => {
+      const l = inRubrik(r.k), fertig = l.filter(ex => best[ex.id] != null).length;
+      return `<a class="kachel" href="#r=${r.k}" style="--f:${r.f}"><span class="ic">${r.ic}</span><span class="tx"><b>${esc(r.t)}</b><span>${l.length} ${l.length === 1 ? 'Übung' : 'Übungen'}${fertig ? ' · ' + fertig + ' gemacht' : ''}</span>${r.u ? `<span class="u">${esc(r.u)}</span>` : ''}</span><span class="pf">→</span></a>`;
+    }).join('') + '</div>';
+  }
   $('#inhalt').innerHTML = h;
-  document.querySelectorAll('.chip').forEach(c => c.onclick = () => { filt = c.dataset.t; start(); });
+  const z = document.querySelector('.zur'); if (z) z.onclick = e => { e.preventDefault(); history.pushState(null, '', location.pathname + location.search); start(); scrollTo(0, 0); };
 }
+addEventListener('hashchange', () => { start(); scrollTo(0, 0); });
 start();
 </script>
 </body>
