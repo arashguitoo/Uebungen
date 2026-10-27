@@ -120,7 +120,7 @@ async function start() {
   try { pubEx = (await db.get('pub/ex')) || {}; } catch (e) { }
   if (s && s.kid) { try { kursEx = (await db.get('pub/kurse/' + s.kid + '/ex')) || {}; } catch (e) { } }
   let mein = {};
-  if (s && s.code) { try { mein = (await db.get('mein/' + s.code)) || {}; } catch (e) { } }
+  if (s && s.code) { try { mein = (await db.get('mein/' + s.code)) || {}; } catch (e) { console.warn('Lernstand nicht lesbar', e); } }
   const indiv = mein.ex || {};
   const offen = ex => (pubEx[ex.id] && typeof pubEx[ex.id].offen === 'boolean') ? pubEx[ex.id].offen : ex.offen !== false;
   const meine = KATALOG.filter(ex => indiv[ex.id] === true || (indiv[ex.id] !== false && kursEx[ex.id]));
@@ -128,7 +128,7 @@ async function start() {
   const themen = [...new Set(weitere.flatMap(e => e.themen || []))];
   const pass = ex => filt === 'alle' || (ex.themen || []).includes(filt) || ex.niveau === filt;
   let h = '';
-  if (mein.fb || mein.sa) h += `<a class="lernstand" href="${mitDemo('lernstand.html')}"><span class="ic">📋</span><span style="flex:1"><b>Mein Lernstand</b><br><span class="klein">${mein.fb ? 'Feedback von deinem Lehrer · ' + new Date(mein.fb.t).toLocaleDateString('de-DE') : 'Schätze dich selbst ein: Wie gut bist du auf die Prüfung vorbereitet?'}</span></span><span>→</span></a>`;
+  if (s && s.code) h += `<a class="lernstand" href="${mitDemo('lernstand.html')}"><span class="ic">📋</span><span style="flex:1"><b>Mein Lernstand</b><br><span class="klein">${mein.fb ? 'Neues Feedback von deinem Lehrer · ' + new Date(mein.fb.t).toLocaleDateString('de-DE') : mein.sa ? 'Schätze dich selbst ein: Wie gut bist du auf die Prüfung vorbereitet?' : 'Hier findest du dein persönliches Feedback und deinen Vorbereitungsstand.'}</span></span><span>→</span></a>`;
   if (s && s.kid) h += `<div class="abschnitt"><h2>Deine Übungen</h2><span class="leise klein">für ${esc(s.kurs || 'deinen Kurs')}</span></div>` +
     (meine.length ? `<div class="liste">${meine.map(ex => karte(ex, best[ex.id])).join('')}</div>` : '<p class="leise">Für deinen Kurs ist gerade nichts freigeschaltet.</p>');
   h += `<div class="abschnitt"><h2>${s && s.kid ? 'Weitere Übungen' : 'Alle Übungen'}</h2></div>`;

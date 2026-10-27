@@ -39,21 +39,24 @@
 <script type="module">
 import { db, DEMO, esc, mitDemo } from './db.js?v=20261016a';
 import { exById } from './katalog.js?v=20261016a';
-import { sitzung } from './spieler.js?v=20261016a';
+import { sitzung, anmelden } from './spieler.js?v=20261016a';
 import { LISTEN, MERKMAL, wertInfo, skalaVon, prozent } from './feedback-kriterien.js?v=20261016a';
 
 if (DEMO) document.getElementById('demo').innerHTML = '<div class="demo-band">DEMO-MODUS – Daten bleiben nur in diesem Browser</div>';
 document.getElementById('zur').href = mitDemo('index.html');
 const $ = s => document.querySelector(s), app = $('#app');
+const urlCode = new URLSearchParams(location.search).get('code');
+if (urlCode) { try { await anmelden(urlCode); } catch (e) { } history.replaceState(null, '', location.pathname + (DEMO ? '?demo' : '')); }
 const s = sitzung();
+const fehler = e => { app.innerHTML = `<div class="karte" style="margin-top:24px;border-color:#f1c6be;background:#fbe9e6"><h2>Dein Lernstand kann gerade nicht geladen werden</h2><p>Bitte versuche es später noch einmal.</p><p class="klein leise">Technische Meldung: ${esc(e && (e.code || e.message) || e)} – für die Lehrkraft: Sind die Datenbankregeln für „mein“ und „selbst“ eingetragen?</p></div>`; };
 let mein = {}, selbst = {};
 
 if (!s || !s.code) {
   app.innerHTML = `<div class="karte" style="margin-top:24px;text-align:center"><h2>Bitte mit deinem Code anmelden</h2><p class="leise">Deinen Lernstand siehst du nur, wenn du mit deinem persönlichen Code angemeldet bist.</p><a class="btn" href="${mitDemo('index.html')}">Zur Anmeldung</a></div>`;
 } else {
   $('#wer').textContent = '👤 ' + s.name;
-  db.listen('mein/' + s.code, v => { mein = v || {}; zeige(); });
-  db.listen('selbst/' + s.code, v => { selbst = v || {}; zeige(); });
+  db.listen('mein/' + s.code, v => { mein = v || {}; zeige(); }, fehler);
+  db.listen('selbst/' + s.code, v => { selbst = v || {}; zeige(); }, () => { });
 }
 
 const wertHtml = (L, v) => { const w = wertInfo(L, v); return w ? `<span class="wert" style="background:${w.c};color:${w.f}">${esc(w.l)}</span>` : '<span class="wert leer">noch offen</span>'; };
@@ -61,7 +64,7 @@ const wertHtml = (L, v) => { const w = wertInfo(L, v); return w ? `<span class="
 function zeige() {
   const fb = mein.fb, c = (fb && fb.c) || {}, m = (fb && fb.m) || {};
   let h = '';
-  if (!fb && !mein.sa) { app.innerHTML = `<div class="karte" style="margin-top:24px"><h2>Noch kein Feedback</h2><p class="leise">Sobald dein Lehrer deinen Lernstand freigibt, siehst du ihn hier.</p></div>`; return; }
+  if (!fb && !mein.sa) { app.innerHTML = `<div class="karte" style="margin-top:24px"><h2>Noch kein Feedback</h2><p class="leise">Sobald dein Lehrer dein Feedback veröffentlicht oder die Selbsteinschätzung öffnet, siehst du es hier.</p></div>`; return; }
   if (fb) {
     h += `<div class="nachricht"><b>Hallo ${esc(s.name)}!</b> <span class="klein" style="opacity:.85">· Feedback vom ${new Date(fb.t).toLocaleDateString('de-DE', { day: '2-digit', month: 'long', year: 'numeric' })}</span>${fb.msg ? `<p>${esc(fb.msg)}</p>` : '<p>Hier siehst du, wie weit du mit der Vorbereitung auf die Prüfung DTB B2 bist.</p>'}</div>`;
     const st = Object.keys(m).filter(k => m[k] === 's'), sw = Object.keys(m).filter(k => m[k] === 'w');
