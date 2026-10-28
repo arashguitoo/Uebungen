@@ -1,0 +1,1373 @@
+{
+ "id": "lektion-grammatik-b2",
+ "titel": "Grammatik-Werkstatt B2",
+ "untertitel": "Zusatzlektion · Kasus, Adjektivendungen, Passiv, Nominalstil, Konnektoren, feste Verbindungen",
+ "niveau": "B1/B2",
+ "farbe": "#2f6b8a",
+ "mix": 15,
+ "intro": "Diese Lektion trainiert die Bereiche, die im Diagnosetest oft Schwierigkeiten gemacht haben: **Artikel & Kasus, Adjektivendungen, Passiv, Nominalstil, die Bedeutung von Konnektoren** und **feste Verbindungen**. Lies zuerst die kurze Erklärung, dann übe in den Teilen. Relativsätze haben eine eigene Lektion.",
+ "kapitel": [
+  {
+   "titel": "Artikel & Kasus",
+   "ic": "🧱",
+   "bloecke": [
+    {
+     "t": "text",
+     "md": "Der Kasus kommt **nie von allein**: Er hängt vom **Verb**, von der **Präposition** oder von der **Rolle im Satz** ab. Deshalb lohnt es sich, Verben und Präpositionen immer mit ihrem Kasus zu lernen."
+    },
+    {
+     "t": "tabelle",
+     "kopf": [
+      "",
+      "maskulin",
+      "neutral",
+      "feminin",
+      "Plural"
+     ],
+     "zeilen": [
+      [
+       "**Nominativ**",
+       "der / ein",
+       "das / ein",
+       "die / eine",
+       "die / –"
+      ],
+      [
+       "**Akkusativ**",
+       "==den== / ==einen==",
+       "das / ein",
+       "die / eine",
+       "die / –"
+      ],
+      [
+       "**Dativ**",
+       "dem / einem",
+       "dem / einem",
+       "==der== / ==einer==",
+       "==den== … ==-n=="
+      ],
+      [
+       "**Genitiv**",
+       "des / eines … -(e)s",
+       "des / eines … -(e)s",
+       "der / einer",
+       "der / –"
+      ]
+     ]
+    },
+    {
+     "t": "liste",
+     "items": [
+      "**Akkusativ** nur bei maskulin anders: der → **den**, ein → **einen**.",
+      "**Dativ Plural**: Artikel **den** und das Nomen bekommt **-n**: mit den Kollege**n**, den Kinder**n**.",
+      "**Verben mit Dativ**: helfen, danken, gehören, gefallen, antworten, gratulieren, vertrauen.",
+      "**Präpositionen mit Genitiv**: wegen, trotz, während, statt, innerhalb."
+     ]
+    },
+    {
+     "t": "regel",
+     "md": "**n-Deklination:** Einige maskuline Nomen bekommen in allen Fällen außer dem Nominativ ein **-(e)n**: der Kollege → den/dem/des Kolleg**en**, der Kunde → den Kund**en**, der Mensch → den Mensch**en**, der Herr → Herr**n**."
+    }
+   ]
+  },
+  {
+   "titel": "Adjektivendungen",
+   "ic": "🎨",
+   "bloecke": [
+    {
+     "t": "text",
+     "md": "Die Endung des Adjektivs hängt davon ab, **was davor steht**. Die Faustregel: **Irgendwo muss das Signal stehen** (der, das, die, den, dem …) – am Artikel oder am Adjektiv."
+    },
+    {
+     "t": "regel",
+     "md": "**1. Nach der/die/das (bestimmter Artikel):** fast immer **-en**. Nur Nominativ Singular und Akkusativ feminin/neutral haben **-e**: der neu**e** Kollege, die neu**e** Kollegin, das neu**e** Büro – aber: den neu**en** Kollegen, mit dem neu**en** Kollegen, die neu**en** Kollegen."
+    },
+    {
+     "t": "regel",
+     "md": "**2. Nach ein/kein/mein (unbestimmter Artikel / Possessiv):** Wo der Artikel kein Signal zeigt, zeigt es das Adjektiv: ein neu**er** Kollege (der), ein neu**es** Büro (das). Sonst wie bei 1.: eine neu**e** Kollegin, einen neu**en** Kollegen, mit einem neu**en** Kollegen."
+    },
+    {
+     "t": "regel",
+     "md": "**3. Ohne Artikel:** Das Adjektiv übernimmt die Endung des Artikels: frisch**er** Kaffee (der), frisch**es** Brot (das), mit frisch**em** Brot (dem), frisch**e** Brötchen (die). Ausnahme Genitiv mask./neutr.: trotz schlecht**en** Wetters."
+    },
+    {
+     "t": "tabelle",
+     "kopf": [
+      "",
+      "nach der/das/die",
+      "nach ein/kein/mein",
+      "ohne Artikel"
+     ],
+     "zeilen": [
+      [
+       "Nom. mask.",
+       "der gut**e** Plan",
+       "ein gut**er** Plan",
+       "gut**er** Plan"
+      ],
+      [
+       "Akk. mask.",
+       "den gut**en** Plan",
+       "einen gut**en** Plan",
+       "gut**en** Plan"
+      ],
+      [
+       "Dat. neutr.",
+       "dem gut**en** Team",
+       "einem gut**en** Team",
+       "gut**em** Team"
+      ],
+      [
+       "Nom. neutr.",
+       "das gut**e** Team",
+       "ein gut**es** Team",
+       "gut**es** Team"
+      ],
+      [
+       "Plural Nom.",
+       "die gut**en** Ideen",
+       "keine gut**en** Ideen",
+       "gut**e** Ideen"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Passiv",
+   "ic": "⚙️",
+   "bloecke": [
+    {
+     "t": "text",
+     "md": "Im Passiv ist wichtig, **was passiert** – nicht, wer es macht. Typisch für Berufstexte, Anleitungen und Berichte."
+    },
+    {
+     "t": "tabelle",
+     "kopf": [
+      "Zeit",
+      "Form",
+      "Beispiel"
+     ],
+     "zeilen": [
+      [
+       "Präsens",
+       "**werden** + Partizip II",
+       "Die Ware **wird** geliefert."
+      ],
+      [
+       "Präteritum",
+       "**wurde** + Partizip II",
+       "Die Ware **wurde** geliefert."
+      ],
+      [
+       "Perfekt",
+       "**sein** + Partizip II + **worden**",
+       "Die Ware **ist** geliefert **worden**."
+      ],
+      [
+       "mit Modalverb",
+       "Modalverb + Partizip II + **werden**",
+       "Die Ware **muss** geliefert **werden**."
+      ]
+     ]
+    },
+    {
+     "t": "regel",
+     "md": "Im Perfekt heißt es **worden** – nicht „geworden“! ✗ „ist repariert geworden“ → ✓ „ist repariert **worden**“. Wer etwas tut, steht mit **von + Dativ**: „vom Techniker“."
+    },
+    {
+     "t": "text",
+     "md": "Aus **Aktiv** wird **Passiv**: Das Akkusativobjekt wird zum Subjekt. „Der Techniker repariert **die Heizung**.“ → „**Die Heizung** wird (vom Techniker) repariert.“ Mit „man“: „Man hat die Fenster geputzt.“ → „Die Fenster **sind** geputzt **worden**.“"
+    }
+   ]
+  },
+  {
+   "titel": "Nominalstil",
+   "ic": "📄",
+   "bloecke": [
+    {
+     "t": "text",
+     "md": "In formellen Texten (Briefe, Berichte, Prüfung) werden Nebensätze oft zu einer **Präposition + Nomen**. Das macht Texte kürzer und klingt nach B2."
+    },
+    {
+     "t": "tabelle",
+     "kopf": [
+      "Nebensatz",
+      "Präposition + Nomen",
+      "Kasus"
+     ],
+     "zeilen": [
+      [
+       "**weil** es regnete",
+       "**wegen** des Regens",
+       "Genitiv"
+      ],
+      [
+       "**obwohl** er krank war",
+       "**trotz** seiner Krankheit",
+       "Genitiv"
+      ],
+      [
+       "**während** wir die Besprechung hatten",
+       "**während** der Besprechung",
+       "Genitiv"
+      ],
+      [
+       "**nachdem** wir den Vertrag unterzeichnet hatten",
+       "**nach** der Unterzeichnung des Vertrags",
+       "Dativ"
+      ],
+      [
+       "**wenn/falls** es Probleme gibt",
+       "**bei** Problemen",
+       "Dativ"
+      ],
+      [
+       "**um** Kosten **zu** sparen",
+       "**zum** Sparen von Kosten",
+       "Dativ"
+      ],
+      [
+       "**bevor** die Arbeit beginnt",
+       "**vor** Beginn der Arbeit",
+       "Dativ"
+      ]
+     ]
+    },
+    {
+     "t": "regel",
+     "md": "Nomen aus Verben: oft mit **-ung** (entscheiden → die Entscheid**ung**, liefern → die Liefer**ung**) oder als Infinitiv mit großem Anfangsbuchstaben (sparen → **das** Sparen). Nomen auf **-ung, -heit, -keit** sind immer **feminin**."
+    }
+   ]
+  },
+  {
+   "titel": "Konnektoren nach Funktion",
+   "ic": "🔗",
+   "bloecke": [
+    {
+     "t": "tabelle",
+     "kopf": [
+      "Funktion",
+      "Nebensatz (Verb am Ende)",
+      "Hauptsatz (Verb auf Position 2)"
+     ],
+     "zeilen": [
+      [
+       "Grund (**kausal**)",
+       "weil, da",
+       "deshalb, deswegen, daher"
+      ],
+      [
+       "Gegengrund (**konzessiv**)",
+       "obwohl",
+       "trotzdem, dennoch"
+      ],
+      [
+       "Ziel (**final**)",
+       "damit, um … zu",
+       "dafür"
+      ],
+      [
+       "Folge (**konsekutiv**)",
+       "sodass, so … dass",
+       "deshalb, also"
+      ],
+      [
+       "Bedingung (**konditional**)",
+       "wenn, falls",
+       "sonst"
+      ],
+      [
+       "Gegensatz (**adversativ**)",
+       "während",
+       "aber, jedoch, dagegen"
+      ],
+      [
+       "Zeit (**temporal**)",
+       "als, wenn, nachdem, bevor, seitdem, sobald",
+       "danach, dann, vorher"
+      ]
+     ]
+    },
+    {
+     "t": "regel",
+     "md": "**Konzessiv** heißt: Etwas passiert, **obwohl** es einen Grund dagegen gibt („Es regnet. **Trotzdem** fahre ich Rad.“). **Adversativ** heißt: Zwei Dinge stehen **gegeneinander** („Ich mag Kaffee, **aber** sie mag Tee.“)."
+    },
+    {
+     "t": "text",
+     "md": "Achte auf die Wortstellung: **deshalb, trotzdem, außerdem** stehen auf Position 1 – danach kommt **sofort das Verb**: „Deshalb **habe** ich angerufen.“"
+    }
+   ]
+  },
+  {
+   "titel": "Feste Verbindungen & Wörter im Kontext",
+   "ic": "🗝️",
+   "bloecke": [
+    {
+     "t": "text",
+     "md": "Viele Nomen haben ein **festes Verb**. Lerne sie immer zusammen – als eine Einheit."
+    },
+    {
+     "t": "tabelle",
+     "kopf": [
+      "Verbindung",
+      "Bedeutung"
+     ],
+     "zeilen": [
+      [
+       "eine Entscheidung **treffen**",
+       "entscheiden"
+      ],
+      [
+       "einen Antrag **stellen**",
+       "beantragen"
+      ],
+      [
+       "eine Frage **stellen**",
+       "fragen"
+      ],
+      [
+       "Rücksicht **nehmen** auf",
+       "rücksichtsvoll sein"
+      ],
+      [
+       "etwas zur Verfügung **stellen**",
+       "bereitstellen"
+      ],
+      [
+       "in Kraft **treten**",
+       "gültig werden (Gesetz)"
+      ],
+      [
+       "Bescheid **geben/sagen**",
+       "informieren"
+      ],
+      [
+       "Verantwortung **übernehmen**",
+       "verantwortlich sein"
+      ],
+      [
+       "einen Termin **vereinbaren**",
+       "einen Termin ausmachen"
+      ],
+      [
+       "etwas zur Sprache **bringen**",
+       "ein Thema ansprechen"
+      ],
+      [
+       "etwas in Frage **stellen**",
+       "bezweifeln"
+      ],
+      [
+       "Kritik **üben**",
+       "kritisieren"
+      ]
+     ]
+    },
+    {
+     "t": "regel",
+     "md": "**Wörter im Kontext:** Lies den ganzen Satz, bevor du wählst. Achte auf die Wörter davor und danach: Passt das Wort zur Grammatik (Artikel, Kasus) **und** zur Bedeutung?"
+    }
+   ]
+  }
+ ],
+ "module": [
+  {
+   "titel": "Artikel & Kasus",
+   "icon": "🧱",
+   "kurz": "Akkusativ, Dativ, Genitiv – und die n-Deklination.",
+   "aufgaben": [
+    {
+     "id": "A01",
+     "typ": "mc",
+     "frage": "Ich gebe ___ Kollegin die Unterlagen.",
+     "opts": [
+      "der",
+      "die",
+      "den",
+      "dem"
+     ],
+     "l": 0,
+     "x": "geben: jemandem (Dativ) etwas (Akkusativ) – Kollegin feminin → der."
+    },
+    {
+     "id": "A02",
+     "typ": "mc",
+     "frage": "Wir haben gestern ___ neuen Kunden gewonnen.",
+     "opts": [
+      "einen",
+      "ein",
+      "einem",
+      "einer"
+     ],
+     "l": 0
+    },
+    {
+     "id": "A03",
+     "typ": "mc",
+     "frage": "Der Chef dankt ___ Mitarbeitern für ihre Arbeit.",
+     "opts": [
+      "den",
+      "die",
+      "der",
+      "dem"
+     ],
+     "l": 0,
+     "x": "danken + Dativ Plural → den Mitarbeitern (mit -n)."
+    },
+    {
+     "id": "A04",
+     "typ": "mc",
+     "frage": "Wegen ___ Streiks fällt der Zug aus.",
+     "opts": [
+      "des",
+      "dem",
+      "den",
+      "der"
+     ],
+     "l": 0,
+     "x": "wegen + Genitiv."
+    },
+    {
+     "id": "A05",
+     "typ": "mc",
+     "frage": "Ich habe ___ Kollegen gestern im Supermarkt getroffen.",
+     "opts": [
+      "den",
+      "dem",
+      "der",
+      "des"
+     ],
+     "l": 0
+    },
+    {
+     "id": "A06",
+     "typ": "mc",
+     "frage": "Kennst du schon den neuen ___?",
+     "opts": [
+      "Kollegen",
+      "Kollege",
+      "Kollegens",
+      "Kolleges"
+     ],
+     "l": 0,
+     "x": "n-Deklination: den Kollegen."
+    },
+    {
+     "id": "A07",
+     "typ": "mc",
+     "frage": "Ich spreche morgen mit ___ Chef.",
+     "opts": [
+      "meinem",
+      "meinen",
+      "mein",
+      "meiner"
+     ],
+     "l": 0,
+     "x": "mit + Dativ."
+    },
+    {
+     "id": "A08",
+     "typ": "mc",
+     "frage": "Während ___ Besprechung war mein Handy aus.",
+     "opts": [
+      "der",
+      "die",
+      "dem",
+      "den"
+     ],
+     "l": 0,
+     "x": "während + Genitiv, feminin → der."
+    },
+    {
+     "id": "A09",
+     "typ": "mc",
+     "frage": "Das Paket ist für ___ Nachbarin.",
+     "opts": [
+      "meine",
+      "meiner",
+      "meinem",
+      "meinen"
+     ],
+     "l": 0,
+     "x": "für + Akkusativ."
+    },
+    {
+     "id": "A10",
+     "typ": "mc",
+     "frage": "Trotz ___ Regens fand das Firmenfest im Garten statt.",
+     "opts": [
+      "des",
+      "dem",
+      "den",
+      "der"
+     ],
+     "l": 0
+    },
+    {
+     "id": "A11",
+     "typ": "mc",
+     "frage": "Ich helfe ___ Kunden, der ein Problem mit der Rechnung hat.",
+     "opts": [
+      "dem",
+      "den",
+      "der",
+      "des"
+     ],
+     "l": 0,
+     "x": "helfen + Dativ, Singular → dem Kunden."
+    }
+   ]
+  },
+  {
+   "titel": "Adjektivendungen",
+   "icon": "🎨",
+   "kurz": "Nach der/ein/ohne Artikel – wo steht das Signal?",
+   "aufgaben": [
+    {
+     "id": "J01",
+     "typ": "mc",
+     "frage": "Das ist ein ___ Vorschlag.",
+     "opts": [
+      "guter",
+      "gut",
+      "guten",
+      "gutes"
+     ],
+     "l": 0,
+     "x": "ein + maskulin Nominativ: Das Adjektiv zeigt das Signal -er."
+    },
+    {
+     "id": "J02",
+     "typ": "mc",
+     "frage": "Wir suchen eine ___ Mitarbeiterin.",
+     "opts": [
+      "erfahrene",
+      "erfahrenen",
+      "erfahrener",
+      "erfahrenes"
+     ],
+     "l": 0
+    },
+    {
+     "id": "J03",
+     "typ": "mc",
+     "frage": "Mit ___ Grüßen",
+     "opts": [
+      "freundlichen",
+      "freundliche",
+      "freundlicher",
+      "freundliches"
+     ],
+     "l": 0,
+     "x": "Dativ Plural ohne Artikel → -en."
+    },
+    {
+     "id": "J04",
+     "typ": "mc",
+     "frage": "Der ___ Kollege kommt aus Syrien.",
+     "opts": [
+      "neue",
+      "neuen",
+      "neuer",
+      "neues"
+     ],
+     "l": 0
+    },
+    {
+     "id": "J05",
+     "typ": "mc",
+     "frage": "Ich arbeite in einem ___ Team.",
+     "opts": [
+      "kleinen",
+      "kleine",
+      "kleiner",
+      "kleines"
+     ],
+     "l": 0
+    },
+    {
+     "id": "J06",
+     "typ": "mc",
+     "frage": "Wir haben ___ Kaffee bestellt.",
+     "opts": [
+      "frischen",
+      "frischer",
+      "frische",
+      "frisches"
+     ],
+     "l": 0,
+     "x": "Akkusativ maskulin ohne Artikel → -en (wie „den“)."
+    },
+    {
+     "id": "J07",
+     "typ": "mc",
+     "frage": "Das neue Büro hat ___ Fenster.",
+     "opts": [
+      "große",
+      "großen",
+      "großer",
+      "großes"
+     ],
+     "l": 0,
+     "x": "Plural ohne Artikel, Akkusativ → -e (wie „die“)."
+    },
+    {
+     "id": "J08",
+     "typ": "mc",
+     "frage": "Ich danke den ___ Kollegen.",
+     "opts": [
+      "netten",
+      "nette",
+      "netter",
+      "nettes"
+     ],
+     "l": 0
+    },
+    {
+     "id": "J09",
+     "typ": "mc",
+     "frage": "Sie hat ein ___ Kind.",
+     "opts": [
+      "kleines",
+      "kleine",
+      "kleinen",
+      "kleiner"
+     ],
+     "l": 0
+    },
+    {
+     "id": "J10",
+     "typ": "mc",
+     "frage": "Das ist die Meinung der ___ Mitarbeiter.",
+     "opts": [
+      "jungen",
+      "junge",
+      "junger",
+      "junges"
+     ],
+     "l": 0
+    },
+    {
+     "id": "J11",
+     "typ": "mc",
+     "frage": "Bei ___ Wetter fahre ich mit dem Rad zur Arbeit.",
+     "opts": [
+      "gutem",
+      "guten",
+      "gutes",
+      "guter"
+     ],
+     "l": 0,
+     "x": "Dativ neutral ohne Artikel → -em (wie „dem“)."
+    },
+    {
+     "id": "J12",
+     "typ": "mc",
+     "frage": "Er trinkt morgens gern ___ Tee.",
+     "opts": [
+      "schwarzen",
+      "schwarzer",
+      "schwarzes",
+      "schwarze"
+     ],
+     "l": 0
+    }
+   ]
+  },
+  {
+   "titel": "Passiv",
+   "icon": "⚙️",
+   "kurz": "wird, wurde, ist … worden, muss … werden.",
+   "aufgaben": [
+    {
+     "id": "P01",
+     "typ": "mc",
+     "frage": "Die Briefe ___ jeden Tag um 10 Uhr abgeholt.",
+     "opts": [
+      "werden",
+      "wird",
+      "sind",
+      "haben"
+     ],
+     "l": 0
+    },
+    {
+     "id": "P02",
+     "typ": "mc",
+     "frage": "Das Büro ___ letzte Woche renoviert.",
+     "opts": [
+      "wurde",
+      "wurden",
+      "wird",
+      "hat"
+     ],
+     "l": 0
+    },
+    {
+     "id": "P03",
+     "typ": "mc",
+     "frage": "Der Vertrag ist schon unterschrieben ___.",
+     "opts": [
+      "worden",
+      "geworden",
+      "werden",
+      "wurde"
+     ],
+     "l": 0,
+     "x": "Passiv Perfekt: ist … worden."
+    },
+    {
+     "id": "P04",
+     "typ": "mc",
+     "frage": "Die Rechnung muss bis Freitag bezahlt ___.",
+     "opts": [
+      "werden",
+      "worden",
+      "wird",
+      "wurde"
+     ],
+     "l": 0
+    },
+    {
+     "id": "P05",
+     "typ": "mc",
+     "frage": "„Der Techniker repariert die Heizung.“ – Wie heißt der Satz im Passiv?",
+     "opts": [
+      "Die Heizung wird vom Techniker repariert.",
+      "Die Heizung wird von den Techniker repariert.",
+      "Die Heizung repariert vom Techniker.",
+      "Die Heizung ist vom Techniker repariert geworden."
+     ],
+     "l": 0
+    },
+    {
+     "id": "P06",
+     "typ": "mc",
+     "frage": "„Man hat die Fenster geputzt.“ – Passiv Perfekt:",
+     "opts": [
+      "Die Fenster sind geputzt worden.",
+      "Die Fenster haben geputzt worden.",
+      "Die Fenster sind geputzt geworden.",
+      "Die Fenster wurden geputzt worden."
+     ],
+     "l": 0
+    },
+    {
+     "id": "P07",
+     "typ": "mc",
+     "frage": "Welcher Satz steht im Passiv Präteritum?",
+     "opts": [
+      "Die Ware wurde gestern geliefert.",
+      "Die Ware ist gestern geliefert worden.",
+      "Die Ware wird morgen geliefert.",
+      "Die Ware muss heute geliefert werden."
+     ],
+     "l": 0
+    },
+    {
+     "id": "P08",
+     "typ": "mc",
+     "frage": "Die Bewerbungen ___ bis Ende Mai geprüft werden.",
+     "opts": [
+      "sollen",
+      "soll",
+      "sollt",
+      "gesollt"
+     ],
+     "l": 0
+    },
+    {
+     "id": "P09",
+     "typ": "mc",
+     "frage": "In der Lagerhalle ___ nicht geraucht.",
+     "opts": [
+      "wird",
+      "werden",
+      "ist",
+      "hat"
+     ],
+     "l": 0,
+     "x": "Unpersönliches Passiv: „es wird nicht geraucht“ – ohne „es“, wenn etwas anderes auf Position 1 steht."
+    },
+    {
+     "id": "P10",
+     "typ": "mc",
+     "frage": "Das Problem ___ gestern von der IT-Abteilung gelöst worden.",
+     "opts": [
+      "ist",
+      "hat",
+      "wird",
+      "wurde"
+     ],
+     "l": 0
+    }
+   ]
+  },
+  {
+   "titel": "Nominalstil",
+   "icon": "📄",
+   "kurz": "weil → wegen, obwohl → trotz, nachdem → nach.",
+   "aufgaben": [
+    {
+     "id": "N01",
+     "typ": "mc",
+     "frage": "„Weil es stark regnete, fiel das Fest aus.“ → „___ des starken Regens fiel das Fest aus.“",
+     "opts": [
+      "Wegen",
+      "Trotz",
+      "Während",
+      "Nach"
+     ],
+     "l": 0
+    },
+    {
+     "id": "N02",
+     "typ": "mc",
+     "frage": "„Obwohl er krank war, kam er zur Arbeit.“ → „___ seiner Krankheit kam er zur Arbeit.“",
+     "opts": [
+      "Trotz",
+      "Wegen",
+      "Bei",
+      "Nach"
+     ],
+     "l": 0
+    },
+    {
+     "id": "N03",
+     "typ": "mc",
+     "frage": "„Nachdem wir den Vertrag unterzeichnet hatten, …“ – Welche Nominalform ist richtig?",
+     "opts": [
+      "Nach der Unterzeichnung des Vertrags …",
+      "Nach die Unterzeichnung des Vertrags …",
+      "Nach dem Unterzeichnung des Vertrags …",
+      "Nachdem Unterzeichnung des Vertrags …"
+     ],
+     "l": 0
+    },
+    {
+     "id": "N04",
+     "typ": "mc",
+     "frage": "„Wenn es Probleme gibt, rufen Sie bitte an.“ → „___ Problemen rufen Sie bitte an.“",
+     "opts": [
+      "Bei",
+      "Wegen",
+      "Seit",
+      "Trotz"
+     ],
+     "l": 0
+    },
+    {
+     "id": "N05",
+     "typ": "mc",
+     "frage": "„Während wir die Besprechung hatten, klingelte das Telefon.“ → „___ der Besprechung klingelte das Telefon.“",
+     "opts": [
+      "Während",
+      "Wegen",
+      "Trotz",
+      "Seit"
+     ],
+     "l": 0
+    },
+    {
+     "id": "N06",
+     "typ": "mc",
+     "frage": "entscheiden → die ___",
+     "opts": [
+      "Entscheidung",
+      "Entscheidheit",
+      "Entscheidnis",
+      "Entschiedung"
+     ],
+     "l": 0
+    },
+    {
+     "id": "N07",
+     "typ": "mc",
+     "frage": "„Um Kosten zu sparen, …“ → „___ Sparen von Kosten …“",
+     "opts": [
+      "Zum",
+      "Zur",
+      "Zu",
+      "Zus"
+     ],
+     "l": 0
+    },
+    {
+     "id": "N08",
+     "typ": "mc",
+     "frage": "„Er kündigte, weil er unzufrieden war.“ → „Er kündigte wegen ___ Unzufriedenheit.“",
+     "opts": [
+      "seiner",
+      "seine",
+      "seinen",
+      "seines"
+     ],
+     "l": 0,
+     "x": "wegen + Genitiv; Unzufriedenheit ist feminin (-heit) → seiner."
+    }
+   ]
+  },
+  {
+   "titel": "Konnektoren nach Funktion",
+   "icon": "🔗",
+   "kurz": "kausal, konzessiv, final, konsekutiv …",
+   "aufgaben": [
+    {
+     "id": "C01",
+     "typ": "zu",
+     "frage": "Welche Funktion hat der Konnektor?",
+     "paare": [
+      [
+       "weil",
+       "Grund (kausal)"
+      ],
+      [
+       "obwohl",
+       "Gegengrund (konzessiv)"
+      ],
+      [
+       "damit",
+       "Ziel (final)"
+      ],
+      [
+       "sodass",
+       "Folge (konsekutiv)"
+      ],
+      [
+       "nachdem",
+       "Zeit (temporal)"
+      ]
+     ]
+    },
+    {
+     "id": "C02",
+     "typ": "zu",
+     "frage": "Welche Funktion hat der Konnektor?",
+     "paare": [
+      [
+       "deshalb",
+       "Folge"
+      ],
+      [
+       "trotzdem",
+       "Gegengrund"
+      ],
+      [
+       "jedoch",
+       "Gegensatz"
+      ],
+      [
+       "falls",
+       "Bedingung"
+      ],
+      [
+       "außerdem",
+       "Ergänzung"
+      ]
+     ]
+    },
+    {
+     "id": "C03",
+     "typ": "mc",
+     "frage": "Welcher Konnektor drückt eine Bedingung aus?",
+     "opts": [
+      "falls",
+      "obwohl",
+      "damit",
+      "sodass"
+     ],
+     "l": 0
+    },
+    {
+     "id": "C04",
+     "typ": "mc",
+     "frage": "Er hat sehr viel gelernt, ___ er die Prüfung gut bestanden hat.",
+     "opts": [
+      "sodass",
+      "obwohl",
+      "damit",
+      "falls"
+     ],
+     "l": 0
+    },
+    {
+     "id": "C05",
+     "typ": "mc",
+     "frage": "Es regnet stark. ___ fährt er mit dem Fahrrad zur Arbeit.",
+     "opts": [
+      "Trotzdem",
+      "Deshalb",
+      "Damit",
+      "Weil"
+     ],
+     "l": 0
+    },
+    {
+     "id": "C06",
+     "typ": "mc",
+     "frage": "Ich spare Geld, ___ mir ein Auto zu kaufen.",
+     "opts": [
+      "um",
+      "damit",
+      "weil",
+      "sodass"
+     ],
+     "l": 0,
+     "x": "„zu“ + Infinitiv → um … zu."
+    },
+    {
+     "id": "C07",
+     "typ": "mc",
+     "frage": "In welchem Satz steht das Verb richtig?",
+     "opts": [
+      "Deshalb habe ich den Termin abgesagt.",
+      "Deshalb ich habe den Termin abgesagt.",
+      "Deshalb ich den Termin abgesagt habe.",
+      "Deshalb habe den Termin ich abgesagt."
+     ],
+     "l": 0
+    },
+    {
+     "id": "C08",
+     "typ": "mc",
+     "frage": "Was drückt „sodass“ aus?",
+     "opts": [
+      "eine Folge",
+      "einen Grund",
+      "ein Ziel",
+      "einen Gegensatz"
+     ],
+     "l": 0
+    },
+    {
+     "id": "C09",
+     "typ": "mc",
+     "frage": "___ du noch Fragen hast, ruf mich einfach an.",
+     "opts": [
+      "Falls",
+      "Obwohl",
+      "Damit",
+      "Sodass"
+     ],
+     "l": 0
+    },
+    {
+     "id": "C10",
+     "typ": "mc",
+     "frage": "Die Lieferung kam zu spät. ___ war der Kunde verärgert.",
+     "opts": [
+      "Deshalb",
+      "Trotzdem",
+      "Obwohl",
+      "Weil"
+     ],
+     "l": 0
+    }
+   ]
+  },
+  {
+   "titel": "Feste Verbindungen & Kontext",
+   "icon": "🗝️",
+   "kurz": "eine Entscheidung treffen, zur Verfügung stellen …",
+   "aufgaben": [
+    {
+     "id": "V01",
+     "typ": "mc",
+     "frage": "eine Entscheidung ___",
+     "opts": [
+      "treffen",
+      "machen",
+      "stellen",
+      "nehmen"
+     ],
+     "l": 0
+    },
+    {
+     "id": "V02",
+     "typ": "mc",
+     "frage": "einen Antrag ___",
+     "opts": [
+      "stellen",
+      "führen",
+      "treffen",
+      "nehmen"
+     ],
+     "l": 0
+    },
+    {
+     "id": "V03",
+     "typ": "mc",
+     "frage": "auf andere Rücksicht ___",
+     "opts": [
+      "nehmen",
+      "geben",
+      "machen",
+      "halten"
+     ],
+     "l": 0
+    },
+    {
+     "id": "V04",
+     "typ": "mc",
+     "frage": "Die Firma stellt allen Mitarbeitern einen Laptop zur ___.",
+     "opts": [
+      "Verfügung",
+      "Hilfe",
+      "Ordnung",
+      "Seite"
+     ],
+     "l": 0
+    },
+    {
+     "id": "V05",
+     "typ": "mc",
+     "frage": "Das neue Gesetz tritt am 1. Januar in ___.",
+     "opts": [
+      "Kraft",
+      "Macht",
+      "Gang",
+      "Frage"
+     ],
+     "l": 0
+    },
+    {
+     "id": "V06",
+     "typ": "mc",
+     "frage": "Bitte geben Sie mir bis Freitag ___, ob Sie kommen.",
+     "opts": [
+      "Bescheid",
+      "Kenntnis",
+      "Wissen",
+      "Kunde"
+     ],
+     "l": 0
+    },
+    {
+     "id": "V07",
+     "typ": "mc",
+     "frage": "Wir müssen noch einen Termin für das Gespräch ___.",
+     "opts": [
+      "vereinbaren",
+      "stellen",
+      "geben",
+      "legen"
+     ],
+     "l": 0
+    },
+    {
+     "id": "V08",
+     "typ": "mc",
+     "frage": "Frau Lenz hat die Verantwortung für das Projekt ___.",
+     "opts": [
+      "übernommen",
+      "genommen",
+      "gestellt",
+      "getroffen"
+     ],
+     "l": 0
+    },
+    {
+     "id": "V09",
+     "typ": "mc",
+     "frage": "Viele Kollegen sind krank. Wir haben gerade einen personellen ___.",
+     "opts": [
+      "Engpass",
+      "Überschuss",
+      "Vorteil",
+      "Rabatt"
+     ],
+     "l": 0
+    },
+    {
+     "id": "V10",
+     "typ": "mc",
+     "frage": "Die Firma hat ihren Umsatz im letzten Jahr deutlich ___.",
+     "opts": [
+      "gesteigert",
+      "gesteigt",
+      "gestiegen",
+      "gesteckt"
+     ],
+     "l": 0,
+     "x": "steigern (etwas) = transitiv: hat … gesteigert. „steigen“ geht nur mit „ist gestiegen“."
+    },
+    {
+     "id": "V11",
+     "typ": "mc",
+     "frage": "Bitte ___ Sie das Formular vollständig aus.",
+     "opts": [
+      "füllen",
+      "machen",
+      "stellen",
+      "legen"
+     ],
+     "l": 0
+    },
+    {
+     "id": "V12",
+     "typ": "mc",
+     "frage": "Im Meeting habe ich das Thema Urlaubsplanung zur ___ gebracht.",
+     "opts": [
+      "Sprache",
+      "Rede",
+      "Hand",
+      "Seite"
+     ],
+     "l": 0
+    }
+   ]
+  },
+  {
+   "titel": "Alles im Text",
+   "icon": "📨",
+   "kurz": "E-Mail, Forum, Bericht – alles gemischt.",
+   "aufgaben": [
+    {
+     "id": "X01",
+     "typ": "luecke",
+     "frage": "E-Mail: Ergänzen Sie.",
+     "text": "Sehr geehrte Damen und Herren,\nwegen {0} Krankheit kann ich leider nicht an {1} Besprechung teilnehmen. Meine Unterlagen habe ich {2} Kollegin Frau Novak gegeben. Die Präsentation ist gestern fertiggestellt {3}. Ich bitte um Ihr Verständnis und freue mich auf Ihre {4} Antwort.",
+     "gaps": [
+      {
+       "opts": [
+        "einer",
+        "eine",
+        "einem"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "der",
+        "die",
+        "den"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "meiner",
+        "meine",
+        "meinem"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "worden",
+        "geworden",
+        "werden"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "baldige",
+        "baldigen",
+        "baldiger"
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "X02",
+     "typ": "luecke",
+     "frage": "Forumsbeitrag: Ergänzen Sie.",
+     "text": "{0} der hohen Kosten zögern viele Betriebe. Ich finde trotzdem, dass ein {1} Arbeitsplatz wichtig ist. In unserer Firma {2} letztes Jahr neue Stühle gekauft, {3} jetzt viele Kollegen weniger Rückenschmerzen haben. Die Geschäftsführung hat die {4} getroffen, auch in Zukunft zu investieren.",
+     "gaps": [
+      {
+       "opts": [
+        "Wegen",
+        "Trotz",
+        "Während"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "gesunder",
+        "gesunde",
+        "gesunden"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "wurden",
+        "wurde",
+        "haben"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "sodass",
+        "damit",
+        "obwohl"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "Entscheidung",
+        "Meinung",
+        "Rücksicht"
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "X03",
+     "typ": "luecke",
+     "frage": "Bericht: Ergänzen Sie.",
+     "text": "Nach {0} Umbau des Lagers {1} alle Regale neu sortiert. {2} der Arbeiten blieb das Lager drei Tage geschlossen. Die {3} Kunden wurden vorher informiert, {4} es keine Beschwerden gab.",
+     "gaps": [
+      {
+       "opts": [
+        "dem",
+        "den",
+        "des"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "wurden",
+        "wurde",
+        "haben"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "Während",
+        "Wegen",
+        "Nach"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "wichtigen",
+        "wichtige",
+        "wichtiger"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "sodass",
+        "obwohl",
+        "damit"
+       ],
+       "l": 0
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

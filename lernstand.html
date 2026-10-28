@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mein Lernstand – Übungszentrale</title>
-<link rel="stylesheet" href="stil.css?v=20261016a">
+<link rel="stylesheet" href="stil.css?v=20261028a">
 <style>
   :root{--tinte:#26324a;--tinte2:#3a4a6b;--akzent:#3f5f9a;--akzent-hell:#eaf0f8;--warm:#f6f3ee;--gruen:#2f7d57;--gruen-hell:#e4f3ea;--rot:#b4553f;--rot-hell:#fbece7;--gelb:#9a6b12;--gelb-hell:#fbf1d9}
   body{background:var(--warm)}
@@ -83,10 +83,10 @@
 <section class="held"><div class="wrap" id="held"><div class="txt"><h1>Mein Lernstand</h1><p>Lädt …</p></div></div></section>
 <main class="wrap" id="app"></main>
 <script type="module">
-import { db, DEMO, esc, mitDemo } from './db.js?v=20261016a';
-import { exById } from './katalog.js?v=20261016a';
-import { sitzung, anmelden } from './spieler.js?v=20261016a';
-import { LISTEN, MERKMAL, wertInfo, skalaVon, prozent } from './feedback-kriterien.js?v=20261016a';
+import { db, DEMO, esc, mitDemo } from './db.js?v=20261028a';
+import { exById } from './katalog.js?v=20261028a';
+import { sitzung, anmelden } from './spieler.js?v=20261028a';
+import { LISTEN, MERKMAL, wertInfo, skalaVon, prozent } from './feedback-kriterien.js?v=20261028a';
 
 if (DEMO) document.getElementById('demo').innerHTML = '<div class="demo-band">DEMO-MODUS – Daten bleiben nur in diesem Browser</div>';
 document.getElementById('zur').href = mitDemo('index.html');
@@ -123,7 +123,7 @@ if (!s || !s.code) {
 function zeige() {
   const fb = mein.fb, c = (fb && fb.c) || {}, m = (fb && fb.m) || {};
   const cs = Object.fromEntries(Object.entries(c).map(([k, v]) => [k, { s: v }]));
-  if (!fb && !mein.sa) {
+  if (!fb && !mein.sa && !Object.keys(mein.texte || {}).length) {
     heldZeigen('Hier findest du bald dein persönliches Feedback und deinen Vorbereitungsstand für die Prüfung DTB B2.');
     app.innerHTML = `<div class="karte leer-k"><div class="ic">🌱</div><h2>Noch kein Feedback</h2><p class="leise" style="max-width:460px;margin:0 auto 16px">Sobald deine Lehrkraft dein Feedback freigibt oder die Selbsteinschätzung öffnet, erscheint es hier. Bis dahin: einfach weiter üben!</p><a class="btn zweit" href="${mitDemo('index.html')}">Zu den Übungen</a><p class="klein leise" style="margin-top:18px">Angemeldet mit Code ${esc(s.code)}</p></div>`;
     return;
@@ -131,7 +131,7 @@ function zeige() {
   if (fb) { try { localStorage.setItem('ueb_fb_gesehen_' + s.code, fb.t); } catch (e) { } }
   const sichtbar = LISTEN.filter(L => L.tn && L.items.some(it => c[L.id + '_' + it.id]));
   const gesamt = sichtbar.length ? Math.round(sichtbar.reduce((a, L) => a + prozent(L, cs), 0) / sichtbar.length) : null;
-  heldZeigen(fb ? `Dein Weg zur Prüfung DTB B2 · Feedback vom ${datumLang(fb.t)}` : 'Dein Weg zur Prüfung DTB B2 – schätze dich selbst ein.', gesamt);
+  heldZeigen(fb ? `Dein Weg zur Prüfung DTB B2 · Feedback vom ${datumLang(fb.t)}` : (mein.sa ? 'Dein Weg zur Prüfung DTB B2 – schätze dich selbst ein.' : 'Dein Weg zur Prüfung DTB B2'), gesamt);
   let h = '';
   if (fb) {
     h += `<div class="karte brief"><div class="ava">✉️</div><div><div class="von">Nachricht deiner Lehrkraft</div>
@@ -143,6 +143,8 @@ function zeige() {
     if (fb.ziel) { const zeilen = fb.ziel.split(/\n+/).map(z => z.replace(/^[-–•*]\s*/, '').trim()).filter(Boolean);
       h += `<div class="karte feld" style="margin-top:14px"><h3>🗓 Deine nächsten Schritte</h3><ul class="schritte">${zeilen.map(z => `<li><span>${esc(z)}</span></li>`).join('')}</ul></div>`; }
   }
+  const tx = Object.values(mein.texte || {});
+  if (tx.length) h += `<a class="karte brief" href="${mitDemo('schreibwerkstatt.html#texte')}" style="margin-top:14px;text-decoration:none;color:inherit"><div class="ava">✍️</div><div><div class="von">Schreibwerkstatt</div><p style="margin-top:2px"><b>${tx.length} ${tx.length === 1 ? 'korrigierter Text' : 'korrigierte Texte'}</b> – zuletzt am ${datumLang(Math.max(...tx.map(x => x.tFrei || 0)))}. Ansehen →</p></div></a>`;
   if (mein.sa) for (const L of LISTEN.filter(l => l.selbst)) {
     const n = L.items.filter(it => (selbst[L.id + '_' + it.id] || {}).s === 3).length;
     h += `<div class="abschn"><h2>${esc(L.titel)}</h2><span class="leise klein">${n} von ${L.items.length} Themen prüfungsreif (deine Einschätzung)</span></div>

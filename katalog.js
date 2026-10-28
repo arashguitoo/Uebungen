@@ -471,6 +471,45 @@ export const KATALOG = [
     quelle: { werk: "Linie 1 Beruf", lektion: 14 }
   },
   {
+    id: "lektion-relativsaetze",
+    titel: "Relativsätze",
+    untertitel: "Zusatzlektion · alle Fälle · die Rolle des gemeinsamen Wortes · Rollen-Detektiv und 80 Übungen",
+    datei: "lektion.html?l=relativsaetze",
+    typ: "Lektion",
+    niveau: "B1/B2",
+    themen: ["Grammatik"],
+    farbe: "#5b4fa3",
+    dauer: "60–90 Min.",
+    reihe: "Zusatzlektionen",
+    offen: true
+  },
+  {
+    id: "lektion-grammatik-b2",
+    titel: "Grammatik-Werkstatt B2",
+    untertitel: "Zusatzlektion · Kasus, Adjektivendungen, Passiv, Nominalstil, Konnektoren, feste Verbindungen · 66 Übungen",
+    datei: "lektion.html?l=grammatik-b2",
+    typ: "Lektion",
+    niveau: "B1/B2",
+    themen: ["Grammatik", "Wortschatz"],
+    farbe: "#2f6b8a",
+    dauer: "60–90 Min.",
+    reihe: "Zusatzlektionen",
+    offen: true
+  },
+  {
+    id: "schreibwerkstatt",
+    titel: "Schreibwerkstatt",
+    untertitel: "E-Mails, Forumsbeiträge, Notizen schreiben und abgeben · Korrektur von der Lehrkraft · Schreibtraining",
+    datei: "schreibwerkstatt.html",
+    typ: "Schreiben",
+    niveau: "B1/B2",
+    themen: ["Prüfungsvorbereitung", "Schreiben", "Beruf"],
+    farbe: "#8a4f2f",
+    dauer: "frei",
+    reihe: "Schreiben",
+    offen: true
+  },
+  {
     id: "diagnose-b2",
     titel: "Sprachstandsdiagnose B1/B2",
     untertitel: "90-Minuten-Test: Lesen, Grammatik, Sprachwissen, Wortschatz · 108 Aufgaben · Auswertung für individuelle Förderung",

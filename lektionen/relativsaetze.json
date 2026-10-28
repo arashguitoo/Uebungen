@@ -1,0 +1,1587 @@
+{
+ "id": "lektion-relativsaetze",
+ "titel": "Relativsätze",
+ "untertitel": "Zusatzlektion · Alle Fälle · Die Rolle des gemeinsamen Wortes entscheidet",
+ "niveau": "B1/B2",
+ "farbe": "#5b4fa3",
+ "mix": 15,
+ "intro": "In dieser Lektion lernst du, wie man zwei Sätze mit einem **Relativsatz** verbindet – in allen Fällen. Das Wichtigste: Der Kasus des Relativpronomens hängt von der **Rolle des gemeinsamen Wortes im Relativsatz** ab.",
+ "kapitel": [
+  {
+   "titel": "Wozu Relativsätze?",
+   "ic": "💡",
+   "bloecke": [
+    {
+     "t": "text",
+     "md": "Mit einem Relativsatz verbindest du zwei Sätze, die **ein gemeinsames Wort** haben. Statt das Wort zu wiederholen, beschreibst du es mit einem Nebensatz genauer."
+    },
+    {
+     "t": "beispiel",
+     "s1": "Das ist ==der Kollege==.",
+     "s2": "==Der Kollege== hilft mir oft.",
+     "erg": "Das ist der Kollege, ==der== mir oft ==hilft==.",
+     "rolle": "Subjekt → Nominativ"
+    },
+    {
+     "t": "regel",
+     "md": "Der Relativsatz ist ein **Nebensatz**: Er beginnt mit dem Relativpronomen (der, die, das …), steht mit **Komma** und das konjugierte **Verb steht am Ende**."
+    },
+    {
+     "t": "text",
+     "md": "Relativsätze brauchst du überall: in E-Mails („die Unterlagen, **die** Sie mir geschickt haben“), im Forumsbeitrag und in der mündlichen Prüfung. Sie machen deine Sätze genauer und dein Deutsch klingt nach B2."
+    }
+   ]
+  },
+  {
+   "titel": "Die wichtigste Regel: die Rolle",
+   "ic": "🎯",
+   "bloecke": [
+    {
+     "t": "regel",
+     "md": "Das Relativpronomen bekommt **zwei Informationen aus zwei Richtungen**:\n\n1. **Genus und Zahl** (maskulin, feminin, neutral, Plural) kommen vom **Bezugswort** im Hauptsatz.\n2. **Der Kasus** (Nominativ, Akkusativ, Dativ, Genitiv) kommt von der **Rolle**, die das gemeinsame Wort **im Relativsatz** hat."
+    },
+    {
+     "t": "text",
+     "md": "Der häufigste Fehler: Man nimmt den Kasus aus dem Hauptsatz. Aber der Hauptsatz ist egal! Entscheidend ist nur, **was das Wort im zweiten Satz macht**."
+    },
+    {
+     "t": "text",
+     "md": "Schau dir an, wie sich das Pronomen ändert – obwohl das Bezugswort immer gleich ist (**der Kollege**, maskulin):"
+    },
+    {
+     "t": "tabelle",
+     "kopf": [
+      "Zweiter Satz",
+      "Rolle von „Kollege“",
+      "Relativsatz"
+     ],
+     "zeilen": [
+      [
+       "==Der Kollege== hilft mir oft.",
+       "Subjekt – Wer? → **Nominativ**",
+       "Das ist der Kollege, **der** mir oft hilft."
+      ],
+      [
+       "Ich treffe ==den Kollegen== jeden Morgen.",
+       "Objekt – Wen? → **Akkusativ**",
+       "Das ist der Kollege, **den** ich jeden Morgen treffe."
+      ],
+      [
+       "Ich habe ==dem Kollegen== das Paket gegeben.",
+       "Objekt – Wem? → **Dativ**",
+       "Das ist der Kollege, **dem** ich das Paket gegeben habe."
+      ],
+      [
+       "Das Auto ==des Kollegen== steht vor der Tür.",
+       "Besitz – Wessen? → **Genitiv**",
+       "Das ist der Kollege, **dessen** Auto vor der Tür steht."
+      ],
+      [
+       "Ich arbeite gern ==mit dem Kollegen== zusammen.",
+       "nach Präposition (mit + Dativ)",
+       "Das ist der Kollege, **mit dem** ich gern zusammenarbeite."
+      ]
+     ]
+    },
+    {
+     "t": "regel",
+     "md": "Merke: **Gleiches Bezugswort – fünf verschiedene Pronomen.** Die Rolle im Relativsatz entscheidet!"
+    }
+   ]
+  },
+  {
+   "titel": "In 3 Schritten zum richtigen Pronomen",
+   "ic": "🪜",
+   "bloecke": [
+    {
+     "t": "liste",
+     "items": [
+      "**Schritt 1 – Das gemeinsame Wort finden.** Markiere es in beiden Sätzen. Welches Genus hat es? (der/die/das oder Plural)",
+      "**Schritt 2 – Die Rolle im zweiten Satz bestimmen.** Frag: **Wer/Was?** → Nominativ · **Wen/Was?** → Akkusativ · **Wem?** → Dativ · **Wessen?** → Genitiv · Steht eine **Präposition** davor? → Präposition + ihr Kasus.",
+      "**Schritt 3 – Den Satz bauen.** Relativpronomen (mit Präposition davor) an den Anfang des Nebensatzes, Komma davor, konjugiertes Verb ans Ende."
+     ]
+    },
+    {
+     "t": "beispiel",
+     "s1": "Die Kunden sind zufrieden.",
+     "s2": "Wir haben ==den Kunden== einen Rabatt gegeben.",
+     "erg": "Die Kunden, ==denen== wir einen Rabatt ==gegeben haben==, sind zufrieden.",
+     "rolle": "Wem haben wir einen Rabatt gegeben? → Dativ Plural → denen"
+    },
+    {
+     "t": "text",
+     "md": "Achtung bei Verben mit **Dativ**: helfen, danken, gehören, gefallen, vertrauen, gratulieren, antworten, zuhören. Bei ihnen ist das Objekt immer Dativ – also auch das Relativpronomen: „der Mann, **dem** ich helfe“."
+    },
+    {
+     "t": "check",
+     "aufgabe": {
+      "id": "K3-check",
+      "typ": "rolle",
+      "s1": "Die Firma sucht Fahrer.",
+      "s2": "Die Fahrer haben einen Führerschein Klasse C.",
+      "rolle": "nom",
+      "opts": [
+       "die",
+       "denen",
+       "deren",
+       "der"
+      ],
+      "l": 0,
+      "ergebnis": "Die Firma sucht Fahrer, die einen Führerschein Klasse C haben."
+     }
+    }
+   ]
+  },
+  {
+   "titel": "Alle Relativpronomen auf einen Blick",
+   "ic": "📋",
+   "bloecke": [
+    {
+     "t": "tabelle",
+     "kopf": [
+      "",
+      "maskulin",
+      "neutral",
+      "feminin",
+      "Plural"
+     ],
+     "zeilen": [
+      [
+       "**Nominativ**",
+       "der",
+       "das",
+       "die",
+       "die"
+      ],
+      [
+       "**Akkusativ**",
+       "den",
+       "das",
+       "die",
+       "die"
+      ],
+      [
+       "**Dativ**",
+       "dem",
+       "dem",
+       "der",
+       "==denen=="
+      ],
+      [
+       "**Genitiv**",
+       "==dessen==",
+       "==dessen==",
+       "==deren==",
+       "==deren=="
+      ]
+     ]
+    },
+    {
+     "t": "regel",
+     "md": "Fast alles ist wie beim bestimmten Artikel. **Anders sind nur:** Dativ Plural **denen** (nicht „den“) und der Genitiv **dessen / deren**."
+    },
+    {
+     "t": "text",
+     "md": "Tipp: Wenn du unsicher bist, setze das gemeinsame Wort mit Artikel in den zweiten Satz ein: „Ich helfe **der Kollegin**.“ → Artikel **der** → Relativpronomen **der**. Nur im Dativ Plural und im Genitiv musst du aufpassen."
+    }
+   ]
+  },
+  {
+   "titel": "Relativsätze mit Präposition",
+   "ic": "🔗",
+   "bloecke": [
+    {
+     "t": "text",
+     "md": "Steht im zweiten Satz eine **Präposition** vor dem gemeinsamen Wort, wandert sie mit an den Anfang des Relativsatzes – **vor** das Relativpronomen. Die Präposition bestimmt den Kasus."
+    },
+    {
+     "t": "beispiel",
+     "s1": "Das ist die Kollegin.",
+     "s2": "Ich arbeite ==mit der Kollegin== zusammen.",
+     "erg": "Das ist die Kollegin, ==mit der== ich ==zusammenarbeite==.",
+     "rolle": "mit + Dativ, feminin → mit der"
+    },
+    {
+     "t": "beispiel",
+     "s1": "Der Termin ist am Freitag.",
+     "s2": "Ich warte ==auf den Termin==.",
+     "erg": "Der Termin, ==auf den== ich ==warte==, ist am Freitag.",
+     "rolle": "warten auf + Akkusativ, maskulin → auf den"
+    },
+    {
+     "t": "tabelle",
+     "kopf": [
+      "Verb mit Präposition",
+      "Beispiel im Relativsatz"
+     ],
+     "zeilen": [
+      [
+       "arbeiten **mit** + D",
+       "die Maschine, **mit der** ich arbeite"
+      ],
+      [
+       "warten **auf** + A",
+       "der Bus, **auf den** ich warte"
+      ],
+      [
+       "sich interessieren **für** + A",
+       "die Stelle, **für die** ich mich interessiere"
+      ],
+      [
+       "sprechen **über** + A",
+       "das Problem, **über das** wir gesprochen haben"
+      ],
+      [
+       "sich bewerben **bei** + D",
+       "die Firma, **bei der** ich mich beworben habe"
+      ],
+      [
+       "teilnehmen **an** + D",
+       "der Kurs, **an dem** ich teilnehme"
+      ]
+     ]
+    },
+    {
+     "t": "regel",
+     "md": "Nie die Präposition ans Ende stellen! ✗ „das Projekt, das ich dir **von** erzählt habe“ → ✓ „das Projekt, **von dem** ich dir erzählt habe“."
+    }
+   ]
+  },
+  {
+   "titel": "Besitz: dessen und deren",
+   "ic": "🔑",
+   "bloecke": [
+    {
+     "t": "text",
+     "md": "Gehört dem gemeinsamen Wort etwas (Frage **Wessen?**), nimmst du **dessen** (maskulin/neutral) oder **deren** (feminin/Plural)."
+    },
+    {
+     "t": "beispiel",
+     "s1": "Die Kollegin arbeitet heute zu Hause.",
+     "s2": "==Der Sohn der Kollegin== ist krank.",
+     "erg": "Die Kollegin, ==deren== Sohn krank ==ist==, arbeitet heute zu Hause.",
+     "rolle": "Wessen Sohn? Der Sohn der Kollegin → Genitiv feminin → deren"
+    },
+    {
+     "t": "regel",
+     "md": "**dessen/deren richtet sich nach dem Bezugswort** – nicht nach dem Nomen danach: „die Kollegin, **deren** Sohn …“ (Kollegin = feminin), „der Kollege, **dessen** Tochter …“ (Kollege = maskulin).\n\nDas Nomen nach dessen/deren steht **ohne Artikel**: ✗ „deren der Sohn“."
+    }
+   ]
+  },
+  {
+   "titel": "was und wo",
+   "ic": "📍",
+   "bloecke": [
+    {
+     "t": "text",
+     "md": "**was** steht nach **alles, etwas, nichts, vieles, das Beste** … und wenn sich der Relativsatz auf den **ganzen Satz** bezieht:"
+    },
+    {
+     "t": "liste",
+     "items": [
+      "Das ist **alles, was** ich weiß.",
+      "Es gibt **nichts, was** ich lieber mache.",
+      "Er hat die Prüfung bestanden, **was** mich sehr freut. (was = die ganze Information)"
+     ]
+    },
+    {
+     "t": "text",
+     "md": "**wo** kannst du bei **Orten** verwenden – statt Präposition + Pronomen:"
+    },
+    {
+     "t": "liste",
+     "items": [
+      "Kiel ist die Stadt, **wo** ich wohne. = …, **in der** ich wohne.",
+      "Das Büro, **wo** ich arbeite, ist hell. = …, **in dem** ich arbeite."
+     ]
+    },
+    {
+     "t": "regel",
+     "md": "Nach einem normalen Nomen steht **nicht** „was“: ✗ „das Auto, was ich gekauft habe“ → ✓ „das Auto, **das** ich gekauft habe“. Und **das** (Pronomen) ≠ **dass** (Konjunktion)!"
+    }
+   ]
+  },
+  {
+   "titel": "Typische Fehler",
+   "ic": "⚠️",
+   "bloecke": [
+    {
+     "t": "tabelle",
+     "kopf": [
+      "✗ falsch",
+      "✓ richtig",
+      "Warum?"
+     ],
+     "zeilen": [
+      [
+       "der Mann, **den** ich geholfen habe",
+       "der Mann, **dem** ich geholfen habe",
+       "helfen + Dativ"
+      ],
+      [
+       "die Kollegen, **mit den** ich arbeite",
+       "die Kollegen, **mit denen** ich arbeite",
+       "Dativ Plural = denen"
+      ],
+      [
+       "die Frau, **dessen** Sohn …",
+       "die Frau, **deren** Sohn …",
+       "Bezugswort feminin"
+      ],
+      [
+       "der Bericht, den du **hast geschrieben**",
+       "der Bericht, den du **geschrieben hast**",
+       "Verb am Ende"
+      ],
+      [
+       "das Formular, **dass** Sie ausfüllen",
+       "das Formular, **das** Sie ausfüllen",
+       "Pronomen „das“ mit einem s"
+      ],
+      [
+       "Der Kurs den ich besuche ist gut.",
+       "Der Kurs**,** den ich besuche**,** ist gut.",
+       "Komma vor und nach dem Relativsatz"
+      ]
+     ]
+    },
+    {
+     "t": "regel",
+     "md": "Deine Checkliste: **1.** Gemeinsames Wort → Genus/Zahl. **2.** Rolle im Relativsatz → Kasus. **3.** Präposition davor? **4.** Komma + Verb ans Ende."
+    }
+   ]
+  }
+ ],
+ "module": [
+  {
+   "titel": "Rollen-Detektiv",
+   "icon": "🕵️",
+   "kurz": "Erst die Rolle des gemeinsamen Wortes bestimmen, dann das Pronomen wählen.",
+   "aufgaben": [
+    {
+     "id": "R01",
+     "typ": "rolle",
+     "s1": "Das ist ==der Kollege==.",
+     "s2": "==Der Kollege== hilft mir oft.",
+     "rolle": "nom",
+     "opts": [
+      "der",
+      "den",
+      "dem",
+      "dessen"
+     ],
+     "l": 0,
+     "ergebnis": "Das ist der Kollege, der mir oft hilft."
+    },
+    {
+     "id": "R02",
+     "typ": "rolle",
+     "s1": "Das ist ==der Kollege==.",
+     "s2": "Ich treffe ==den Kollegen== jeden Morgen.",
+     "rolle": "akk",
+     "opts": [
+      "den",
+      "der",
+      "dem",
+      "dessen"
+     ],
+     "l": 0,
+     "ergebnis": "Das ist der Kollege, den ich jeden Morgen treffe."
+    },
+    {
+     "id": "R03",
+     "typ": "rolle",
+     "s1": "Das ist ==der Kollege==.",
+     "s2": "Ich habe ==dem Kollegen== das Paket gegeben.",
+     "rolle": "dat",
+     "opts": [
+      "dem",
+      "den",
+      "der",
+      "denen"
+     ],
+     "l": 0,
+     "ergebnis": "Das ist der Kollege, dem ich das Paket gegeben habe."
+    },
+    {
+     "id": "R04",
+     "typ": "rolle",
+     "s1": "Das ist ==der Kollege==.",
+     "s2": "Das Auto ==des Kollegen== steht vor der Tür.",
+     "rolle": "gen",
+     "opts": [
+      "dessen",
+      "deren",
+      "dem",
+      "den"
+     ],
+     "l": 0,
+     "ergebnis": "Das ist der Kollege, dessen Auto vor der Tür steht."
+    },
+    {
+     "id": "R05",
+     "typ": "rolle",
+     "s1": "Das ist ==der Kollege==.",
+     "s2": "Ich arbeite gern mit ==dem Kollegen== zusammen.",
+     "rolle": "praep",
+     "opts": [
+      "mit dem",
+      "mit den",
+      "mit der",
+      "dem"
+     ],
+     "l": 0,
+     "ergebnis": "Das ist der Kollege, mit dem ich gern zusammenarbeite."
+    },
+    {
+     "id": "R06",
+     "typ": "rolle",
+     "s1": "Die Firma sucht ==Mitarbeiterinnen==.",
+     "s2": "==Die Mitarbeiterinnen== sprechen Englisch.",
+     "rolle": "nom",
+     "opts": [
+      "die",
+      "denen",
+      "deren",
+      "der"
+     ],
+     "l": 0,
+     "ergebnis": "Die Firma sucht Mitarbeiterinnen, die Englisch sprechen."
+    },
+    {
+     "id": "R07",
+     "typ": "rolle",
+     "s1": "==Die Kundin== ruft an.",
+     "s2": "Ich habe ==der Kundin== gestern ein Angebot geschickt.",
+     "rolle": "dat",
+     "opts": [
+      "der",
+      "die",
+      "dem",
+      "deren"
+     ],
+     "l": 0,
+     "ergebnis": "Die Kundin, der ich gestern ein Angebot geschickt habe, ruft an."
+    },
+    {
+     "id": "R08",
+     "typ": "rolle",
+     "s1": "==Die Kunden== sind zufrieden.",
+     "s2": "Wir haben ==den Kunden== einen Rabatt gegeben.",
+     "rolle": "dat",
+     "opts": [
+      "denen",
+      "den",
+      "die",
+      "deren"
+     ],
+     "l": 0,
+     "ergebnis": "Die Kunden, denen wir einen Rabatt gegeben haben, sind zufrieden.",
+     "x": "„den Kunden“ ist hier Dativ Plural (Wem?). Das Relativpronomen im Dativ Plural heißt immer „denen“."
+    },
+    {
+     "id": "R09",
+     "typ": "rolle",
+     "s1": "==Die Firma== expandiert.",
+     "s2": "Der Chef ==der Firma== kommt aus Kiel.",
+     "rolle": "gen",
+     "opts": [
+      "deren",
+      "dessen",
+      "der",
+      "die"
+     ],
+     "l": 0,
+     "ergebnis": "Die Firma, deren Chef aus Kiel kommt, expandiert."
+    },
+    {
+     "id": "R10",
+     "typ": "rolle",
+     "s1": "==Das Projekt== ist fertig.",
+     "s2": "Wir haben lange an ==dem Projekt== gearbeitet.",
+     "rolle": "praep",
+     "opts": [
+      "an dem",
+      "an das",
+      "dem",
+      "an den"
+     ],
+     "l": 0,
+     "ergebnis": "Das Projekt, an dem wir lange gearbeitet haben, ist fertig."
+    },
+    {
+     "id": "R11",
+     "typ": "rolle",
+     "s1": "==Der Vertrag== liegt auf dem Tisch.",
+     "s2": "Sie müssen ==den Vertrag== noch unterschreiben.",
+     "rolle": "akk",
+     "opts": [
+      "den",
+      "der",
+      "dem",
+      "das"
+     ],
+     "l": 0,
+     "ergebnis": "Der Vertrag, den Sie noch unterschreiben müssen, liegt auf dem Tisch."
+    },
+    {
+     "id": "R12",
+     "typ": "rolle",
+     "s1": "==Die Kollegen== sind nett.",
+     "s2": "Ich warte auf ==die Kollegen==.",
+     "rolle": "praep",
+     "opts": [
+      "auf die",
+      "auf denen",
+      "auf den",
+      "die"
+     ],
+     "l": 0,
+     "ergebnis": "Die Kollegen, auf die ich warte, sind nett.",
+     "x": "warten auf + Akkusativ → Akkusativ Plural „die“ → „auf die“."
+    },
+    {
+     "id": "R13",
+     "typ": "rolle",
+     "s1": "==Der Mann== war dankbar.",
+     "s2": "Ich habe ==dem Mann== geholfen.",
+     "rolle": "dat",
+     "opts": [
+      "dem",
+      "den",
+      "der",
+      "dessen"
+     ],
+     "l": 0,
+     "ergebnis": "Der Mann, dem ich geholfen habe, war dankbar.",
+     "x": "helfen + Dativ: Wem habe ich geholfen? → dem Mann → dem."
+    },
+    {
+     "id": "R14",
+     "typ": "rolle",
+     "s1": "==Das Formular== liegt am Empfang.",
+     "s2": "Sie müssen ==das Formular== ausfüllen.",
+     "rolle": "akk",
+     "opts": [
+      "das",
+      "dem",
+      "dass",
+      "der"
+     ],
+     "l": 0,
+     "ergebnis": "Das Formular, das Sie ausfüllen müssen, liegt am Empfang."
+    }
+   ]
+  },
+  {
+   "titel": "Nominativ & Akkusativ",
+   "icon": "1️⃣",
+   "kurz": "der, den, die, das – Subjekt oder Objekt?",
+   "aufgaben": [
+    {
+     "id": "N01",
+     "typ": "mc",
+     "frage": "Der Techniker, ___ heute kommt, repariert die Heizung.",
+     "opts": [
+      "der",
+      "den",
+      "dem",
+      "die"
+     ],
+     "l": 0
+    },
+    {
+     "id": "N02",
+     "typ": "mc",
+     "frage": "Der Techniker, ___ wir angerufen haben, kommt um 10 Uhr.",
+     "opts": [
+      "den",
+      "der",
+      "dem",
+      "die"
+     ],
+     "l": 0,
+     "x": "anrufen + Akkusativ: Wen haben wir angerufen? → den Techniker."
+    },
+    {
+     "id": "N03",
+     "typ": "mc",
+     "frage": "Die Lieferung, ___ gestern angekommen ist, war unvollständig.",
+     "opts": [
+      "die",
+      "der",
+      "den",
+      "das"
+     ],
+     "l": 0
+    },
+    {
+     "id": "N04",
+     "typ": "mc",
+     "frage": "Die Lieferung, ___ wir erwartet haben, ist noch nicht da.",
+     "opts": [
+      "die",
+      "der",
+      "den",
+      "dem"
+     ],
+     "l": 0,
+     "x": "Feminin: Nominativ und Akkusativ sind beide „die“."
+    },
+    {
+     "id": "N05",
+     "typ": "mc",
+     "frage": "Das Formular, ___ Sie ausfüllen müssen, liegt am Empfang.",
+     "opts": [
+      "das",
+      "dass",
+      "dem",
+      "den"
+     ],
+     "l": 0
+    },
+    {
+     "id": "N06",
+     "typ": "mc",
+     "frage": "Das Paket, ___ auf dem Tisch liegt, ist für Frau Kaya.",
+     "opts": [
+      "das",
+      "dass",
+      "der",
+      "dem"
+     ],
+     "l": 0
+    },
+    {
+     "id": "N07",
+     "typ": "mc",
+     "frage": "Die Bewerber, ___ wir eingeladen haben, kommen morgen.",
+     "opts": [
+      "die",
+      "denen",
+      "den",
+      "der"
+     ],
+     "l": 0
+    },
+    {
+     "id": "N08",
+     "typ": "mc",
+     "frage": "Kennst du den Mann, ___ dort am Fenster steht?",
+     "opts": [
+      "der",
+      "den",
+      "dem",
+      "das"
+     ],
+     "l": 0,
+     "x": "Im Hauptsatz steht „den Mann“ (Akkusativ) – egal! Im Relativsatz ist der Mann Subjekt (Wer steht dort?) → der."
+    },
+    {
+     "id": "N09",
+     "typ": "mc",
+     "frage": "Ich suche einen Job, ___ mir Spaß macht.",
+     "opts": [
+      "der",
+      "den",
+      "dem",
+      "das"
+     ],
+     "l": 0,
+     "x": "„einen Job“ ist im Hauptsatz Akkusativ – aber im Relativsatz Subjekt (Was macht mir Spaß?) → der."
+    },
+    {
+     "id": "N10",
+     "typ": "mc",
+     "frage": "Das ist ein Problem, ___ wir schnell lösen müssen.",
+     "opts": [
+      "das",
+      "dass",
+      "dem",
+      "den"
+     ],
+     "l": 0
+    },
+    {
+     "id": "N11",
+     "typ": "mc",
+     "frage": "Wo ist der Schlüssel, ___ ich dir gegeben habe?",
+     "opts": [
+      "den",
+      "der",
+      "dem",
+      "das"
+     ],
+     "l": 0
+    },
+    {
+     "id": "N12",
+     "typ": "mc",
+     "frage": "Die Kollegin, ___ neu im Team ist, heißt Sara.",
+     "opts": [
+      "die",
+      "der",
+      "den",
+      "deren"
+     ],
+     "l": 0
+    }
+   ]
+  },
+  {
+   "titel": "Dativ",
+   "icon": "2️⃣",
+   "kurz": "dem, der, denen – und die Verben mit Dativ.",
+   "aufgaben": [
+    {
+     "id": "D01",
+     "typ": "mc",
+     "frage": "Der Kunde, ___ ich die Rechnung geschickt habe, hat schon bezahlt.",
+     "opts": [
+      "dem",
+      "den",
+      "der",
+      "dessen"
+     ],
+     "l": 0,
+     "x": "Wem habe ich die Rechnung geschickt? → dem Kunden → dem."
+    },
+    {
+     "id": "D02",
+     "typ": "mc",
+     "frage": "Die Kollegin, ___ ich geholfen habe, hat sich bedankt.",
+     "opts": [
+      "der",
+      "die",
+      "dem",
+      "deren"
+     ],
+     "l": 0,
+     "x": "helfen + Dativ, feminin → der."
+    },
+    {
+     "id": "D03",
+     "typ": "mc",
+     "frage": "Das Kind, ___ das Spielzeug gehört, weint.",
+     "opts": [
+      "dem",
+      "das",
+      "den",
+      "dessen"
+     ],
+     "l": 0,
+     "x": "gehören + Dativ: Wem gehört das Spielzeug? → dem Kind."
+    },
+    {
+     "id": "D04",
+     "typ": "mc",
+     "frage": "Die Kunden, ___ wir einen Rabatt angeboten haben, waren zufrieden.",
+     "opts": [
+      "denen",
+      "den",
+      "die",
+      "deren"
+     ],
+     "l": 0,
+     "x": "Dativ Plural → denen (nicht „den“)."
+    },
+    {
+     "id": "D05",
+     "typ": "mc",
+     "frage": "Das sind die Kollegen, ___ ich am meisten vertraue.",
+     "opts": [
+      "denen",
+      "den",
+      "die",
+      "deren"
+     ],
+     "l": 0,
+     "x": "vertrauen + Dativ, Plural → denen."
+    },
+    {
+     "id": "D06",
+     "typ": "mc",
+     "frage": "Der Chef, ___ ich gestern gratuliert habe, hatte Geburtstag.",
+     "opts": [
+      "dem",
+      "den",
+      "der",
+      "dessen"
+     ],
+     "l": 0,
+     "x": "gratulieren + Dativ."
+    },
+    {
+     "id": "D07",
+     "typ": "mc",
+     "frage": "Die Nachbarin, ___ ich meinen Schlüssel gegeben habe, ist sehr nett.",
+     "opts": [
+      "der",
+      "die",
+      "dem",
+      "deren"
+     ],
+     "l": 0
+    },
+    {
+     "id": "D08",
+     "typ": "mc",
+     "frage": "Die Teilnehmenden, ___ der Kurs gefallen hat, wollen weitermachen.",
+     "opts": [
+      "denen",
+      "die",
+      "den",
+      "deren"
+     ],
+     "l": 0,
+     "x": "gefallen + Dativ: Wem hat der Kurs gefallen? → den Teilnehmenden → denen."
+    },
+    {
+     "id": "D09",
+     "typ": "mc",
+     "frage": "Wie heißt die Firma, ___ dieses Gebäude gehört?",
+     "opts": [
+      "der",
+      "die",
+      "dem",
+      "deren"
+     ],
+     "l": 0
+    },
+    {
+     "id": "D10",
+     "typ": "mc",
+     "frage": "Mein Kollege, ___ ich das Problem erklärt habe, hat sofort eine Lösung gefunden.",
+     "opts": [
+      "dem",
+      "den",
+      "der",
+      "dessen"
+     ],
+     "l": 0
+    }
+   ]
+  },
+  {
+   "titel": "Genitiv: dessen & deren",
+   "icon": "🔑",
+   "kurz": "Besitz ausdrücken – nach dem Bezugswort richten.",
+   "aufgaben": [
+    {
+     "id": "G01",
+     "typ": "mc",
+     "frage": "Der Kollege, ___ Auto kaputt ist, kommt heute mit dem Bus.",
+     "opts": [
+      "dessen",
+      "deren",
+      "dem",
+      "den"
+     ],
+     "l": 0
+    },
+    {
+     "id": "G02",
+     "typ": "mc",
+     "frage": "Die Kollegin, ___ Sohn krank ist, arbeitet heute im Homeoffice.",
+     "opts": [
+      "deren",
+      "dessen",
+      "der",
+      "die"
+     ],
+     "l": 0,
+     "x": "Bezugswort „die Kollegin“ ist feminin → deren (auch wenn „Sohn“ maskulin ist)."
+    },
+    {
+     "id": "G03",
+     "typ": "mc",
+     "frage": "Das Unternehmen, ___ Produkte wir verkaufen, sitzt in München.",
+     "opts": [
+      "dessen",
+      "deren",
+      "dem",
+      "das"
+     ],
+     "l": 0,
+     "x": "„das Unternehmen“ ist neutral → dessen."
+    },
+    {
+     "id": "G04",
+     "typ": "mc",
+     "frage": "Die Kunden, ___ Bestellungen noch offen sind, bekommen eine E-Mail.",
+     "opts": [
+      "deren",
+      "dessen",
+      "denen",
+      "die"
+     ],
+     "l": 0
+    },
+    {
+     "id": "G05",
+     "typ": "mc",
+     "frage": "Herr Weber, ___ Büro im dritten Stock ist, ist heute nicht da.",
+     "opts": [
+      "dessen",
+      "deren",
+      "dem",
+      "der"
+     ],
+     "l": 0
+    },
+    {
+     "id": "G06",
+     "typ": "mc",
+     "frage": "Die Firma, ___ Chef ich gut kenne, sucht Fahrer.",
+     "opts": [
+      "deren",
+      "dessen",
+      "der",
+      "die"
+     ],
+     "l": 0,
+     "x": "Wessen Chef? Der Chef der Firma → feminin → deren."
+    },
+    {
+     "id": "G07",
+     "typ": "mc",
+     "frage": "Ein Mitarbeiter, ___ Vertrag endet, sollte sich früh arbeitssuchend melden.",
+     "opts": [
+      "dessen",
+      "deren",
+      "dem",
+      "der"
+     ],
+     "l": 0
+    },
+    {
+     "id": "G08",
+     "typ": "mc",
+     "frage": "Die Bewerberin, ___ Unterlagen vollständig sind, wird eingeladen.",
+     "opts": [
+      "deren",
+      "dessen",
+      "der",
+      "die"
+     ],
+     "l": 0
+    },
+    {
+     "id": "G09",
+     "typ": "mc",
+     "frage": "Welcher Satz ist richtig?",
+     "opts": [
+      "Die Frau, deren Tochter bei uns arbeitet, ist Ärztin.",
+      "Die Frau, dessen Tochter bei uns arbeitet, ist Ärztin.",
+      "Die Frau, deren die Tochter bei uns arbeitet, ist Ärztin.",
+      "Die Frau, die ihre Tochter bei uns arbeitet, ist Ärztin."
+     ],
+     "l": 0,
+     "x": "deren (Bezugswort feminin) + Nomen ohne Artikel."
+    }
+   ]
+  },
+  {
+   "titel": "Mit Präposition",
+   "icon": "🔗",
+   "kurz": "mit dem, auf den, bei der … – die Präposition steht vorn.",
+   "aufgaben": [
+    {
+     "id": "P01",
+     "typ": "mc",
+     "frage": "Das ist die Kollegin, ___ ich oft zusammenarbeite.",
+     "opts": [
+      "mit der",
+      "mit die",
+      "mit dem",
+      "mit deren"
+     ],
+     "l": 0
+    },
+    {
+     "id": "P02",
+     "typ": "mc",
+     "frage": "Der Kurs, ___ ich mich angemeldet habe, beginnt im Mai.",
+     "opts": [
+      "für den",
+      "für dem",
+      "für der",
+      "für das"
+     ],
+     "l": 0,
+     "x": "sich anmelden für + Akkusativ, maskulin → für den."
+    },
+    {
+     "id": "P03",
+     "typ": "mc",
+     "frage": "Die Firma, ___ ich mich beworben habe, hat mich eingeladen.",
+     "opts": [
+      "bei der",
+      "bei die",
+      "bei denen",
+      "bei dem"
+     ],
+     "l": 0,
+     "x": "sich bewerben bei + Dativ, feminin → bei der."
+    },
+    {
+     "id": "P04",
+     "typ": "mc",
+     "frage": "Das Problem, ___ wir gesprochen haben, ist gelöst.",
+     "opts": [
+      "über das",
+      "über dem",
+      "über den",
+      "über dass"
+     ],
+     "l": 0
+    },
+    {
+     "id": "P05",
+     "typ": "mc",
+     "frage": "Die Kollegen, ___ ich jeden Tag zur Arbeit fahre, wohnen in Plön.",
+     "opts": [
+      "mit denen",
+      "mit den",
+      "mit die",
+      "mit dem"
+     ],
+     "l": 0,
+     "x": "mit + Dativ Plural → mit denen."
+    },
+    {
+     "id": "P06",
+     "typ": "mc",
+     "frage": "Der Termin, ___ ich schon lange warte, ist am Freitag.",
+     "opts": [
+      "auf den",
+      "auf dem",
+      "auf der",
+      "für den"
+     ],
+     "l": 0,
+     "x": "warten auf + Akkusativ."
+    },
+    {
+     "id": "P07",
+     "typ": "mc",
+     "frage": "Das Büro, ___ ich arbeite, ist sehr hell.",
+     "opts": [
+      "in dem",
+      "in das",
+      "in der",
+      "in den"
+     ],
+     "l": 0,
+     "x": "Wo? → in + Dativ, neutral → in dem (oder: wo)."
+    },
+    {
+     "id": "P08",
+     "typ": "mc",
+     "frage": "Die Stelle, ___ ich mich interessiere, ist in Kiel.",
+     "opts": [
+      "für die",
+      "für der",
+      "an der",
+      "für den"
+     ],
+     "l": 0
+    },
+    {
+     "id": "P09",
+     "typ": "mc",
+     "frage": "Der Kunde, ___ ich mich geärgert habe, hat sich entschuldigt.",
+     "opts": [
+      "über den",
+      "über dem",
+      "über der",
+      "über das"
+     ],
+     "l": 0
+    },
+    {
+     "id": "P10",
+     "typ": "mc",
+     "frage": "Die Maschine, ___ wir seit Montag arbeiten, ist ganz neu.",
+     "opts": [
+      "mit der",
+      "mit die",
+      "mit dem",
+      "mit denen"
+     ],
+     "l": 0
+    }
+   ]
+  },
+  {
+   "titel": "Sätze verbinden",
+   "icon": "🧩",
+   "kurz": "Aus zwei Sätzen wird einer – mit Verb am Ende.",
+   "aufgaben": [
+    {
+     "id": "V01",
+     "typ": "mc",
+     "frage": "Verbinden Sie: „Ich habe eine neue Kollegin. Sie kommt aus Polen.“",
+     "opts": [
+      "Ich habe eine neue Kollegin, die aus Polen kommt.",
+      "Ich habe eine neue Kollegin, die kommt aus Polen.",
+      "Ich habe eine neue Kollegin, der aus Polen kommt.",
+      "Ich habe eine neue Kollegin, die aus Polen kommen."
+     ],
+     "l": 0
+    },
+    {
+     "id": "V02",
+     "typ": "mc",
+     "frage": "Verbinden Sie: „Der Drucker ist kaputt. Wir haben ihn letzte Woche gekauft.“",
+     "opts": [
+      "Der Drucker, den wir letzte Woche gekauft haben, ist kaputt.",
+      "Der Drucker, der wir letzte Woche gekauft haben, ist kaputt.",
+      "Der Drucker, den wir haben letzte Woche gekauft, ist kaputt.",
+      "Der Drucker, den wir letzte Woche gekauft haben ist kaputt."
+     ],
+     "l": 0
+    },
+    {
+     "id": "V03",
+     "typ": "mc",
+     "frage": "Verbinden Sie: „Die Kunden beschweren sich. Wir haben ihnen falsche Ware geschickt.“",
+     "opts": [
+      "Die Kunden, denen wir falsche Ware geschickt haben, beschweren sich.",
+      "Die Kunden, den wir falsche Ware geschickt haben, beschweren sich.",
+      "Die Kunden, die wir falsche Ware geschickt haben, beschweren sich.",
+      "Die Kunden, denen wir haben falsche Ware geschickt, beschweren sich."
+     ],
+     "l": 0
+    },
+    {
+     "id": "V04",
+     "typ": "mc",
+     "frage": "Verbinden Sie: „Frau Lenz leitet das Team. Ihr Büro ist im Erdgeschoss.“",
+     "opts": [
+      "Frau Lenz, deren Büro im Erdgeschoss ist, leitet das Team.",
+      "Frau Lenz, dessen Büro im Erdgeschoss ist, leitet das Team.",
+      "Frau Lenz, die ihr Büro im Erdgeschoss ist, leitet das Team.",
+      "Frau Lenz, deren das Büro im Erdgeschoss ist, leitet das Team."
+     ],
+     "l": 0
+    },
+    {
+     "id": "V05",
+     "typ": "mc",
+     "frage": "Verbinden Sie: „Das ist das Projekt. Ich habe dir von dem Projekt erzählt.“",
+     "opts": [
+      "Das ist das Projekt, von dem ich dir erzählt habe.",
+      "Das ist das Projekt, das ich dir von erzählt habe.",
+      "Das ist das Projekt, von das ich dir erzählt habe.",
+      "Das ist das Projekt, von dem ich habe dir erzählt."
+     ],
+     "l": 0
+    },
+    {
+     "id": "V06",
+     "typ": "mc",
+     "frage": "Verbinden Sie: „Wir suchen einen Fahrer. Er muss einen Führerschein Klasse C haben.“",
+     "opts": [
+      "Wir suchen einen Fahrer, der einen Führerschein Klasse C haben muss.",
+      "Wir suchen einen Fahrer, den einen Führerschein Klasse C haben muss.",
+      "Wir suchen einen Fahrer, der muss einen Führerschein Klasse C haben.",
+      "Wir suchen einen Fahrer, der einen Führerschein Klasse C haben müssen."
+     ],
+     "l": 0
+    },
+    {
+     "id": "V07",
+     "typ": "mc",
+     "frage": "Verbinden Sie: „Der Kurs war sehr gut. Ich habe an dem Kurs teilgenommen.“",
+     "opts": [
+      "Der Kurs, an dem ich teilgenommen habe, war sehr gut.",
+      "Der Kurs, an den ich teilgenommen habe, war sehr gut.",
+      "Der Kurs, dem ich teilgenommen habe, war sehr gut.",
+      "Der Kurs, an dem ich habe teilgenommen, war sehr gut."
+     ],
+     "l": 0
+    },
+    {
+     "id": "V08",
+     "typ": "bau",
+     "frage": "Bauen Sie den Satz: „Das ist die Firma. Ich arbeite seit drei Jahren bei der Firma.“",
+     "steine": [
+      "Das ist",
+      "die Firma,",
+      "bei der",
+      "ich",
+      "seit drei Jahren",
+      "arbeite."
+     ]
+    },
+    {
+     "id": "V09",
+     "typ": "bau",
+     "frage": "Bauen Sie den Satz: „Der Kollege kommt aus Syrien. Seine Frau ist Ärztin.“",
+     "steine": [
+      "Der Kollege,",
+      "dessen",
+      "Frau",
+      "Ärztin",
+      "ist,",
+      "kommt",
+      "aus Syrien."
+     ]
+    },
+    {
+     "id": "V10",
+     "typ": "bau",
+     "frage": "Bauen Sie den Satz: „Ich danke den Kollegen. Sie haben mir geholfen.“",
+     "steine": [
+      "Ich danke",
+      "den Kollegen,",
+      "die",
+      "mir",
+      "geholfen",
+      "haben."
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Fehler finden",
+   "icon": "🔍",
+   "kurz": "Welcher Satz ist korrekt? Die typischen Fallen.",
+   "aufgaben": [
+    {
+     "id": "F01",
+     "typ": "mc",
+     "frage": "Welcher Satz ist korrekt?",
+     "opts": [
+      "Der Mann, dem ich geholfen habe, war sehr dankbar.",
+      "Der Mann, den ich geholfen habe, war sehr dankbar.",
+      "Der Mann, der ich geholfen habe, war sehr dankbar.",
+      "Der Mann, dem ich habe geholfen, war sehr dankbar."
+     ],
+     "l": 0,
+     "x": "helfen + Dativ → dem."
+    },
+    {
+     "id": "F02",
+     "typ": "mc",
+     "frage": "Welcher Satz ist korrekt?",
+     "opts": [
+      "Die Kollegen, mit denen ich arbeite, sind nett.",
+      "Die Kollegen, mit den ich arbeite, sind nett.",
+      "Die Kollegen, mit die ich arbeite, sind nett.",
+      "Die Kollegen, denen ich arbeite mit, sind nett."
+     ],
+     "l": 0
+    },
+    {
+     "id": "F03",
+     "typ": "mc",
+     "frage": "Welcher Satz ist korrekt?",
+     "opts": [
+      "Das Auto, das ich gekauft habe, ist rot.",
+      "Das Auto, was ich gekauft habe, ist rot.",
+      "Das Auto, dass ich gekauft habe, ist rot.",
+      "Das Auto, das ich habe gekauft, ist rot."
+     ],
+     "l": 0,
+     "x": "Nach einem Nomen: das (nicht „was“, nicht „dass“)."
+    },
+    {
+     "id": "F04",
+     "typ": "mc",
+     "frage": "Welcher Satz ist korrekt?",
+     "opts": [
+      "Der Bericht, den du geschrieben hast, ist sehr gut.",
+      "Der Bericht, den du hast geschrieben, ist sehr gut.",
+      "Der Bericht, der du geschrieben hast, ist sehr gut.",
+      "Der Bericht den du geschrieben hast ist sehr gut."
+     ],
+     "l": 0
+    },
+    {
+     "id": "F05",
+     "typ": "mc",
+     "frage": "Welcher Satz ist korrekt?",
+     "opts": [
+      "Die Stadt, in der ich wohne, ist klein.",
+      "Die Stadt, in die ich wohne, ist klein.",
+      "Die Stadt, in dem ich wohne, ist klein.",
+      "Die Stadt, der ich wohne in, ist klein."
+     ],
+     "l": 0
+    },
+    {
+     "id": "F06",
+     "typ": "mc",
+     "frage": "Welcher Satz ist korrekt?",
+     "opts": [
+      "Die Teilnehmer, denen der Test schwer fiel, üben weiter.",
+      "Die Teilnehmer, den der Test schwer fiel, üben weiter.",
+      "Die Teilnehmer, die der Test schwer fiel, üben weiter.",
+      "Die Teilnehmer, deren der Test schwer fiel, üben weiter."
+     ],
+     "l": 0,
+     "x": "schwerfallen + Dativ: Wem fiel der Test schwer? → Dativ Plural → denen."
+    },
+    {
+     "id": "F07",
+     "typ": "mc",
+     "frage": "Welcher Satz ist korrekt?",
+     "opts": [
+      "Herr Kaya, dessen Tochter Ärztin ist, wohnt in Kiel.",
+      "Herr Kaya, deren Tochter Ärztin ist, wohnt in Kiel.",
+      "Herr Kaya, dessen die Tochter Ärztin ist, wohnt in Kiel.",
+      "Herr Kaya, der seine Tochter Ärztin ist, wohnt in Kiel."
+     ],
+     "l": 0
+    },
+    {
+     "id": "F08",
+     "typ": "mc",
+     "frage": "Welcher Satz ist korrekt?",
+     "opts": [
+      "Die Kollegin, die ich gestern angerufen habe, ist krank.",
+      "Die Kollegin, der ich gestern angerufen habe, ist krank.",
+      "Die Kollegin, die ich habe gestern angerufen, ist krank.",
+      "Die Kollegin, dass ich gestern angerufen habe, ist krank."
+     ],
+     "l": 0,
+     "x": "anrufen + Akkusativ: Wen habe ich angerufen? → die Kollegin."
+    }
+   ]
+  },
+  {
+   "titel": "was & wo",
+   "icon": "📍",
+   "kurz": "alles, was … · die Stadt, wo …",
+   "aufgaben": [
+    {
+     "id": "W01",
+     "typ": "mc",
+     "frage": "Das ist alles, ___ ich über die Firma weiß.",
+     "opts": [
+      "was",
+      "das",
+      "die",
+      "wo"
+     ],
+     "l": 0
+    },
+    {
+     "id": "W02",
+     "typ": "mc",
+     "frage": "Es gibt nichts, ___ ich lieber mache.",
+     "opts": [
+      "was",
+      "das",
+      "den",
+      "wo"
+     ],
+     "l": 0
+    },
+    {
+     "id": "W03",
+     "typ": "mc",
+     "frage": "Das Beste, ___ du vor der Prüfung tun kannst, ist üben.",
+     "opts": [
+      "was",
+      "das",
+      "dass",
+      "wo"
+     ],
+     "l": 0
+    },
+    {
+     "id": "W04",
+     "typ": "mc",
+     "frage": "Er hat den Test bestanden, ___ mich sehr freut.",
+     "opts": [
+      "was",
+      "das",
+      "der",
+      "den"
+     ],
+     "l": 0,
+     "x": "Der Relativsatz bezieht sich auf die ganze Information (dass er bestanden hat) → was."
+    },
+    {
+     "id": "W05",
+     "typ": "mc",
+     "frage": "Kiel ist die Stadt, ___ ich seit fünf Jahren lebe.",
+     "opts": [
+      "wo",
+      "was",
+      "die",
+      "wem"
+     ],
+     "l": 0,
+     "x": "Bei Orten: wo (= in der)."
+    },
+    {
+     "id": "W06",
+     "typ": "mc",
+     "frage": "Im Lager, ___ ich arbeite, ist es im Winter kalt.",
+     "opts": [
+      "wo",
+      "was",
+      "das",
+      "den"
+     ],
+     "l": 0
+    }
+   ]
+  },
+  {
+   "titel": "Im Text: E-Mail, Forum, Anzeige",
+   "icon": "📨",
+   "kurz": "Relativsätze in prüfungsnahen Texten.",
+   "aufgaben": [
+    {
+     "id": "T01",
+     "typ": "luecke",
+     "frage": "E-Mail: Setzen Sie die Relativpronomen ein.",
+     "text": "Sehr geehrte Frau Kaya,\nvielen Dank für die Unterlagen, {0} Sie mir geschickt haben. Der Vertrag, {1} Unterschrift noch fehlt, liegt jetzt bei Herrn Brandt, {2} für die Personalabteilung zuständig ist. Die Kollegin, {3} Sie am Telefon gesprochen haben, ist leider krank. Alle Fragen, {4} noch offen sind, klären wir am Montag.",
+     "gaps": [
+      {
+       "opts": [
+        "die",
+        "denen",
+        "der"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "dessen",
+        "deren",
+        "den"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "der",
+        "den",
+        "dem"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "mit der",
+        "mit die",
+        "mit dem"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "die",
+        "denen",
+        "was"
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "T02",
+     "typ": "luecke",
+     "frage": "Forumsbeitrag: Setzen Sie die passenden Wörter ein.",
+     "text": "Ich arbeite in einer Firma, {0} viele Mitarbeiter aus dem Ausland kommen. Die Kollegen, {1} ich jeden Tag zusammenarbeite, kommen aus fünf Ländern. Mein Chef, {2} Eltern aus der Türkei stammen, spricht drei Sprachen. Das ist etwas, {3} ich sehr schätze. Neue Kollegen, {4} die Sprache noch schwerfällt, bekommen bei uns einen Paten.",
+     "gaps": [
+      {
+       "opts": [
+        "in der",
+        "in die",
+        "deren"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "mit denen",
+        "mit den",
+        "denen"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "dessen",
+        "deren",
+        "der"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "was",
+        "das",
+        "die"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "denen",
+        "die",
+        "deren"
+       ],
+       "l": 0
+      }
+     ]
+    },
+    {
+     "id": "T03",
+     "typ": "luecke",
+     "frage": "Stellenanzeige: Setzen Sie die Relativpronomen ein.",
+     "text": "Wir suchen eine Fachkraft, {0} Erfahrung in der Logistik hat. Wir bieten ein Team, {1} Sie vom ersten Tag an unterstützt, und Arbeitszeiten, {2} Sie selbst mitplanen können. Bewerberinnen und Bewerber, {3} Unterlagen vollständig sind, laden wir zu einem Gespräch ein, {4} etwa eine Stunde dauert.",
+     "gaps": [
+      {
+       "opts": [
+        "die",
+        "der",
+        "deren"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "das",
+        "dass",
+        "dem"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "die",
+        "denen",
+        "deren"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "deren",
+        "dessen",
+        "denen"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "das",
+        "der",
+        "dem"
+       ],
+       "l": 0
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

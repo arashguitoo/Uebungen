@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Schreibwerkstatt – Übungszentrale</title>
+<link rel="stylesheet" href="stil.css?v=20261028a">
+<style>
+  :root{--akzent:#8a4f2f;--akzent-hell:#f6ece6;--tinte:#3b2a22}
+  body{background:#f6f3ee}
+  .wrap{max-width:1080px}
+  .held{background:linear-gradient(160deg,#4a3328,#8a4f2f);color:#fff;padding:22px 0 54px}
+  .held h1{margin:0 0 4px;font-size:1.8rem}.held p{margin:0;opacity:.85}
+  main.wrap{margin-top:-38px;padding-bottom:40px}
+  .reiter{display:flex;gap:6px;flex-wrap:wrap;background:#fff;border:1px solid #e6e0d6;border-radius:14px;padding:6px;box-shadow:var(--schatten)}
+  .reiter a{flex:1;min-width:120px;text-align:center;text-decoration:none;color:#555;font-weight:600;padding:10px 12px;border-radius:10px}
+  .reiter a.an{background:var(--tinte);color:#fff}
+  .reiter .z{display:inline-block;background:#ffd166;color:#1f2328;border-radius:99px;font-size:.75rem;padding:0 7px;margin-left:5px}
+  .gruppe{margin:24px 0 8px;color:var(--tinte)}
+  .liste{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+  .auf{display:flex;flex-direction:column;gap:6px;text-decoration:none;color:inherit;background:#fff;border:1px solid #e6e0d6;border-radius:14px;padding:14px 16px;box-shadow:var(--schatten);transition:transform .15s}
+  .auf:hover{transform:translateY(-2px)}
+  .auf h3{margin:0;font-size:1.05rem}
+  .auf .meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto}
+  .pill{display:inline-block;border-radius:99px;padding:2px 9px;font-size:.78rem;font-weight:700;background:#f0ebe4;color:#6a5a4c}
+  .pill.ok{background:#e4f3ea;color:#2f7d57}.pill.warte{background:#fdf0cf;color:#8a6410}.pill.neu{background:#ffd166;color:#1f2328}
+  .editor{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:16px;align-items:start;margin-top:16px}
+  @media(max-width:860px){.editor{grid-template-columns:1fr}}
+  .links{position:sticky;top:12px;display:grid;gap:12px}
+  @media(max-width:860px){.links{position:static}}
+  .material{background:#fffdf8;border:1px solid #ece4d4;border-radius:12px;padding:12px 14px;white-space:pre-line;font-size:.95rem;line-height:1.55}
+  .check label{display:flex;gap:8px;align-items:flex-start;padding:4px 0;cursor:pointer}
+  .check input{width:18px;height:18px;margin-top:3px;flex:none}
+  details.rm{background:#fff;border:1px solid #e6e0d6;border-radius:12px;padding:10px 14px}
+  details.rm summary{cursor:pointer;font-weight:700;color:var(--tinte)}
+  details.rm dl{margin:8px 0 0;display:grid;grid-template-columns:110px 1fr;gap:6px 10px;font-size:.9rem}
+  details.rm dt{font-weight:700;color:var(--akzent)}details.rm dd{margin:0}
+  textarea.text{min-height:420px;font-size:1.05rem;line-height:1.6;resize:vertical}
+  .zaehler{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:8px 0}
+  .wz{font-weight:700;padding:3px 10px;border-radius:99px;background:#f0ebe4}
+  .wz.ok{background:#e4f3ea;color:#2f7d57}.wz.kurz{background:#fdf0cf;color:#8a6410}.wz.lang{background:#fbe0db;color:#b3402f}
+  .uhr{font-variant-numeric:tabular-nums;font-weight:700;padding:3px 10px;border-radius:99px;background:var(--akzent-hell);color:var(--tinte)}
+  .gesp{font-size:.82rem;color:var(--leise)}
+  .korrtext{background:#fffdf8;border:1px solid #ece4d4;border-radius:12px;padding:16px 18px;white-space:pre-wrap;line-height:1.9;font-size:1.03rem}
+  .fe{border-bottom:2px solid var(--kc);background:color-mix(in srgb,var(--kc) 10%,transparent);border-radius:3px;padding:0 1px;cursor:help}
+  .fe del{color:#9a3a2a;text-decoration-thickness:1.5px}
+  .fe ins{text-decoration:none;color:#1d7a45;font-weight:700;margin-left:2px}
+  .fe sup{font-size:.68rem;font-weight:700;color:var(--kc);margin-left:1px}
+  .klist{display:grid;gap:6px}
+  .kitem{display:grid;grid-template-columns:26px 1fr;gap:8px;padding:8px 10px;border-radius:10px;background:#fff;border:1px solid #ece6dc;border-left:4px solid var(--kc)}
+  .kitem .n{font-weight:700;color:var(--kc)}
+  .bew{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px}
+  .bew .pill{white-space:nowrap}
+  .bew>div{background:#f8f6f2;border-radius:10px;padding:8px 12px;display:flex;justify-content:space-between;gap:8px;align-items:center}
+  .kommentar{border-left:5px solid var(--akzent);white-space:pre-line}
+  .mod{display:flex;gap:12px;align-items:center;text-align:left;font:inherit;cursor:pointer;background:#fff;border:1px solid #e6e0d6;border-radius:14px;padding:14px 16px;box-shadow:var(--schatten)}
+  .mod .ic{font-size:1.8rem}
+  .lauf-kopf{display:flex;gap:10px;align-items:center;margin:16px 0 8px}
+  .fbalken{height:8px;background:#e9e2d8;border-radius:8px;overflow:hidden;margin-bottom:12px}.fbalken i{display:block;height:100%;background:var(--akzent)}
+  .leer{text-align:center;padding:30px}
+  .hilfe-nav{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0}
+  .hilfe-nav a{background:#fff;border:1px solid #e6e0d6;border-radius:99px;padding:6px 12px;text-decoration:none;color:var(--tinte);font-weight:600;font-size:.92rem}
+  .hilfe{margin-top:14px}.hilfe h3{margin:16px 0 6px;color:var(--akzent)}
+  .schema{line-height:1.8;padding-left:22px}
+  .rmdl{display:grid;grid-template-columns:130px 1fr;gap:8px 12px;margin:0}
+  @media(max-width:600px){.rmdl{grid-template-columns:1fr}}
+  .rmdl dt{font-weight:700;color:var(--tinte)}.rmdl dd{margin:0;display:flex;flex-wrap:wrap;gap:6px}
+  .rmc{background:var(--akzent-hell);border-radius:8px;padding:3px 9px;font-size:.92rem}
+  .muster{background:#fffdf8;border:1px solid #ece4d4;border-radius:12px;padding:6px 18px;line-height:1.7}
+  .htab{border-collapse:collapse;width:100%;font-size:.95rem}.htab th,.htab td{border:1px solid #e6e0d6;padding:7px 10px;text-align:left}.htab th{background:#f1eee8}
+  .tabwrap{overflow-x:auto}
+  .cl{line-height:1.9;padding-left:22px}
+</style>
+</head>
+<body>
+<section class="held"><div class="wrap"><h1>✍️ Schreibwerkstatt</h1><p id="unter">Schreiben, abgeben, Korrektur bekommen – und mit kurzen Übungen trainieren.</p></div></section>
+<main class="wrap" id="app"><p class="leise">Lädt …</p></main>
+<script type="module">
+import { db, esc, mitDemo, zufall } from './db.js?v=20261028a';
+import { starte } from './spieler.js?v=20261028a';
+import { zeige, punkte } from './aufgaben.js?v=20261028a';
+import { AUFGABEN, ARTEN, REDEMITTEL, TRAINING, wortzahl, KAT, KRITERIEN, STUFE } from './schreib-daten.js?v=20261028a';
+
+const $ = s => document.querySelector(s), app = $('#app');
+const L = await starte('schreibwerkstatt');
+if (!L.frei) { L.sperre(app); throw new Error('gesperrt'); }
+document.body.prepend(document.querySelector('header.kopf'));
+const s = L.s, KEY = 'ueb_sw_' + (s.code || 'gast');
+const lade = () => { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } };
+let lok = Object.assign({ ent: {}, ab: {}, gesehen: {}, mod: {} }, lade());
+const sichere = () => { try { localStorage.setItem(KEY, JSON.stringify(lok)); } catch (e) { } };
+let eigene = {}, aus = {}, top = {}, frei = {}, laufNr = 0, uhrT = null;
+try { const p = (await db.get('pub/schreiben')) || {}; eigene = p.eigene || {}; aus = p.aus || {}; top = p.top || {}; } catch (e) { }
+const alle = () => [...AUFGABEN, ...Object.entries(eigene).map(([id, a]) => ({ ...a, id, eigen: true, punkte: (a.punkte || []).map(t => ({ t, kw: '$^' })) }))].filter(a => !aus[a.id]);
+const aufVon = id => alle().find(a => a.id === id) || AUFGABEN.find(a => a.id === id) || (eigene[id] && { ...eigene[id], id, punkte: [] });
+if (s.code) db.listen('mein/' + s.code + '/texte', v => { frei = v || {}; if (/^#?(texte)?$/.test(location.hash) || location.hash === '#texte') route(); }, () => { });
+const datum = t => new Date(t).toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' });
+const neueKorr = () => Object.entries(frei).filter(([sid, v]) => !lok.gesehen[sid]).length;
+
+addEventListener('hashchange', route);
+route();
+
+function reiter(akt) {
+  const n = neueKorr();
+  return `<nav class="reiter"><a href="#schreiben" class="${akt === 'schreiben' ? 'an' : ''}">📝 Schreiben</a><a href="#texte" class="${akt === 'texte' ? 'an' : ''}">📂 Meine Texte${n ? `<span class="z">${n} neu</span>` : ''}</a><a href="#hilfen" class="${akt === 'hilfen' ? 'an' : ''}">🧰 Hilfen</a><a href="#training" class="${akt === 'training' ? 'an' : ''}">🏋️ Training</a></nav>`;
+}
+function route() {
+  clearInterval(uhrT); laufNr++;
+  const h = location.hash.slice(1);
+  if (h.startsWith('auf=')) return editor(decodeURIComponent(h.slice(4)));
+  if (h.startsWith('text=')) return korrektur(decodeURIComponent(h.slice(5)));
+  if (h.startsWith('mod=')) return modul(h.slice(4));
+  if (h === 'texte') return texte();
+  if (h === 'training') return training();
+  if (h === 'hilfen') return hilfen();
+  return uebersicht();
+}
+
+/* ---------------- Aufgaben ---------------- */
+function uebersicht() {
+  const gr = {};
+  alle().forEach(a => (gr[a.art] = gr[a.art] || []).push(a));
+  let h = reiter('schreiben');
+  if (!s.code) h += '<p class="hinweis" style="margin-top:14px">Du bist ohne Code angemeldet. Du kannst schreiben und üben, aber <b>abgeben</b> kannst du nur mit deinem Code (Anmeldung in der Übungszentrale).</p>';
+  const heute = alle().filter(a => top[a.id]);
+  if (heute.length) h += `<h2 class="gruppe">⭐ Aufgaben von deiner Lehrkraft</h2><div class="liste">${heute.map(aufKarte).join('')}</div>`;
+  for (const [art, l] of Object.entries(gr)) {
+    const A = ARTEN[art] || { t: 'Weitere Aufgaben', ic: '📄' };
+    h += `<h2 class="gruppe">${A.ic} ${esc(A.t)}</h2><div class="liste">${l.map(aufKarte).join('')}</div>`;
+  }
+  h += `<p class="leise klein" style="margin-top:18px">💡 Redemittel, Aufbau-Schemas und einen Musterbeitrag findest du unter „🧰 Hilfen“.</p>`;
+  app.innerHTML = h;
+}
+function aufKarte(a) {
+      const ab = Object.values(lok.ab).filter(x => x.auf === a.id).length, ent = lok.ent[a.id] && lok.ent[a.id].text;
+      return `<a class="auf" href="#auf=${encodeURIComponent(a.id)}"><h3>${esc(a.titel)}</h3><div class="leise klein">${esc((a.situation || '').slice(0, 120))}${(a.situation || '').length > 120 ? ' …' : ''}</div>
+        <div class="meta"><span class="pill">${esc(a.niveau || 'B1/B2')}</span><span class="pill">${a.worte ? a.worte[0] + '–' + a.worte[1] + ' Wörter' : ''}</span>${a.zeit ? `<span class="pill">ca. ${a.zeit} Min.</span>` : ''}${a.eigen ? '<span class="pill" style="background:#e9e4f7;color:#5b4fa3">von deiner Lehrkraft</span>' : ''}${ent ? '<span class="pill warte">Entwurf</span>' : ''}${ab ? `<span class="pill ok">✓ ${ab}× abgegeben</span>` : ''}</div></a>`; }
+
+
+function editor(id) {
+  const a = aufVon(id); if (!a) { location.hash = '#schreiben'; return; }
+  const art = ARTEN[a.art] || ARTEN.forum, e = lok.ent[id] || { text: '', ck: {} };
+  const [min, max] = a.worte || [0, 9999];
+  app.innerHTML = reiter('schreiben') + `<div class="editor"><div class="links">
+      <div class="karte"><a href="#schreiben" class="klein">← Alle Aufgaben</a><h2 style="margin:6px 0">${esc(a.titel)}</h2><div class="zeile" style="gap:6px;margin-bottom:8px"><span class="pill">${art.ic} ${esc(art.t)}</span><span class="pill">${esc(a.niveau || '')}</span><span class="pill">${min}–${max} Wörter</span></div>
+        <p style="margin:0">${esc(a.situation || '')}</p>${a.material ? `<div class="material" style="margin-top:10px">${esc(a.material)}</div>` : ''}</div>
+      ${a.punkte && a.punkte.length ? `<div class="karte check"><b>Inhaltspunkte – hast du an alles gedacht?</b>${a.punkte.map((p, i) => `<label><input type="checkbox" data-ck="${i}" ${e.ck && e.ck[i] ? 'checked' : ''}> ${esc(p.t)}</label>`).join('')}</div>` : ''}
+      ${REDEMITTEL[a.art] ? `<details class="rm"><summary>💡 Redemittel</summary><dl>${REDEMITTEL[a.art].map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('')}</dl></details>` : ''}
+    </div>
+    <div class="karte"><div class="zaehler"><span class="wz" id="wz">0 Wörter</span><span class="leise klein">Ziel: ${min}–${max}</span><span style="flex:1"></span>
+        ${a.zeit ? `<button class="btn zweit klein" id="uhrBtn">⏱ Prüfungsmodus (${a.zeit} Min.)</button><span class="uhr" id="uhr" hidden></span>` : ''}</div>
+      <textarea class="text" id="text" placeholder="${a.art.startsWith('email') ? 'Betreff: …\n\nSehr geehrte …' : 'Schreibe hier deinen Text …'}" spellcheck="false" autocomplete="off">${esc(e.text || '')}</textarea>
+      <div class="zeile" style="margin-top:10px"><span class="gesp" id="gesp">${e.t ? 'Entwurf gespeichert' : 'Dein Entwurf wird automatisch gespeichert.'}</span><span style="flex:1"></span>
+        <button class="btn" id="abgeben" ${s.code ? '' : 'disabled title="Nur mit Code möglich"'}>📤 Abgeben</button></div>
+      <p class="leise klein" style="margin:8px 0 0">Nach der Abgabe korrigiert deine Lehrkraft den Text. Die Korrektur siehst du unter „📂 Meine Texte“.</p></div></div>`;
+  const ta = $('#text'), wz = $('#wz');
+  const zaehle = () => { const n = wortzahl(ta.value); wz.textContent = n + (n === 1 ? ' Wort' : ' Wörter'); wz.className = 'wz ' + (n < min ? 'kurz' : n > max * 1.15 ? 'lang' : 'ok'); };
+  let tm = null;
+  const speichere = () => { lok.ent[id] = { ...(lok.ent[id] || {}), text: ta.value, t: Date.now(), vor: e.vor }; sichere(); $('#gesp').textContent = 'Entwurf gespeichert ' + new Date().toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' }); };
+  ta.oninput = () => { zaehle(); clearTimeout(tm); tm = setTimeout(speichere, 800); };
+  zaehle();
+  app.querySelectorAll('[data-ck]').forEach(c => c.onchange = () => { lok.ent[id] = { ...(lok.ent[id] || { text: ta.value }), ck: { ...((lok.ent[id] || {}).ck || {}), [c.dataset.ck]: c.checked } }; sichere(); });
+  const ub = $('#uhrBtn'); if (ub) ub.onclick = () => {
+    const u = $('#uhr'); u.hidden = false; ub.remove(); const ende = Date.now() + a.zeit * 60000;
+    const tick = () => { const r = Math.max(0, Math.round((ende - Date.now()) / 1000)); u.textContent = '⏱ ' + Math.floor(r / 60) + ':' + String(r % 60).padStart(2, '0'); if (!r) { clearInterval(uhrT); u.textContent = '⏱ Zeit ist um'; u.style.background = '#fbe0db'; } };
+    tick(); uhrT = setInterval(tick, 1000);
+    const d = document.querySelector('details.rm'); if (d) d.open = false;
+  };
+  $('#abgeben').onclick = async () => {
+    const text = ta.value.trim(), n = wortzahl(text);
+    if (n < 10) return alert('Dein Text ist noch zu kurz.');
+    if (!confirm(`Text abgeben? (${n} Wörter)` + (n < min ? `\nHinweis: Das Ziel sind mindestens ${min} Wörter.` : '') + '\nNach der Abgabe kannst du ihn nicht mehr ändern.')) return;
+    const sid = zufall(14, 'abcdefghijkmnopqrstuvwxyz23456789');
+    const d = { code: s.code, kid: s.kid || '', pid: s.pid || '', name: String(s.name || '').slice(0, 60), kurs: String(s.kurs || '').slice(0, 60), auf: id, titel: String(a.titel).slice(0, 120), text: text.slice(0, 8000), worte: n, t: Date.now() };
+    if (e.vor) d.vor = e.vor;
+    $('#abgeben').disabled = true;
+    try { await db.set('abgaben/' + sid, d); }
+    catch (err) { $('#abgeben').disabled = false; return alert('Die Abgabe hat nicht geklappt (' + (err.code || err.message) + '). Dein Entwurf ist gespeichert – bitte später noch einmal versuchen.'); }
+    lok.ab[sid] = { auf: id, titel: a.titel, t: d.t, worte: n }; delete lok.ent[id]; sichere();
+    app.innerHTML = reiter('schreiben') + `<div class="karte leer" style="margin-top:16px"><div style="font-size:2.6rem">📬</div><h2>Abgegeben!</h2><p>Dein Text „${esc(a.titel)}“ (${n} Wörter) ist bei deiner Lehrkraft angekommen.</p><p class="leise">Sobald die Korrektur fertig ist, findest du sie unter „📂 Meine Texte“.</p>
+      <div class="zeile" style="justify-content:center"><a class="btn" href="#texte">Meine Texte</a><a class="btn zweit" href="#schreiben">Weitere Aufgabe</a></div></div>`;
+  };
+}
+
+/* ---------------- Meine Texte ---------------- */
+function texte() {
+  const ids = new Set([...Object.keys(lok.ab), ...Object.keys(frei)]);
+  const l = [...ids].map(sid => ({ sid, ...(lok.ab[sid] || {}), ...(frei[sid] ? { titel: frei[sid].titel, t: frei[sid].t, f: frei[sid] } : {}) })).sort((a, b) => b.t - a.t);
+  app.innerHTML = reiter('texte') + (!s.code ? '<p class="hinweis" style="margin-top:14px">Melde dich mit deinem Code an, um Texte abzugeben und Korrekturen zu sehen.</p>' :
+    l.length ? `<div class="liste" style="margin-top:16px">${l.map(x => `<a class="auf" href="${x.f ? '#text=' + x.sid : '#texte'}" ${x.f ? '' : 'style="cursor:default"'}><h3>${esc(x.titel || 'Text')}</h3><div class="leise klein">abgegeben am ${datum(x.t)}${x.worte ? ' · ' + x.worte + ' Wörter' : ''}</div>
+      <div class="meta">${x.f ? `<span class="pill ok">✅ Korrektur da · ${datum(x.f.tFrei)}</span>${lok.gesehen[x.sid] ? '' : '<span class="pill neu">Neu</span>'}` : '<span class="pill warte">⏳ wartet auf Korrektur</span>'}</div></a>`).join('')}</div>`
+      : '<div class="karte leer" style="margin-top:16px"><div style="font-size:2.4rem">📂</div><h2>Noch keine Texte</h2><p class="leise">Wähle unter „📝 Schreiben“ eine Aufgabe und gib deinen ersten Text ab.</p></div>');
+}
+
+function korrektur(sid) {
+  const f = frei[sid]; if (!f) { location.hash = '#texte'; return; }
+  lok.gesehen[sid] = Date.now(); sichere();
+  const text = f.text || '', korr = (f.korr || []).slice().sort((a, b) => a.o - b.o);
+  let h = '', pos = 0, n = 0;
+  const nummer = new Map();
+  for (const k of korr) {
+    if (k.o < pos || k.o + k.l > text.length) continue;
+    n++; nummer.set(k, n);
+    const K = KAT[k.k] || KAT.W;
+    h += esc(text.slice(pos, k.o)) + `<span class="fe" style="--kc:${K.c}" title="${esc(K.t + (k.h ? ': ' + k.h : ''))}">${k.l ? `<del>${esc(text.substr(k.o, k.l))}</del>` : ''}${k.e != null && k.e !== '' ? `<ins>${esc(k.e)}</ins>` : ''}<sup>${n}</sup></span>`;
+    pos = k.o + k.l;
+  }
+  h += esc(text.slice(pos));
+  const proKat = {}; korr.forEach(k => proKat[k.k] = (proKat[k.k] || 0) + 1);
+  const bew = f.bew || {};
+  app.innerHTML = reiter('texte') + `<div class="karte" style="margin-top:16px"><a href="#texte" class="klein">← Meine Texte</a>
+      <h2 style="margin:6px 0 2px">${esc(f.titel || '')}</h2><div class="leise klein">abgegeben am ${datum(f.t)} · korrigiert am ${datum(f.tFrei)} · ${wortzahl(text)} Wörter</div></div>
+    ${f.kom ? `<div class="karte kommentar" style="margin-top:12px"><b>✉️ Rückmeldung deiner Lehrkraft</b><div style="margin-top:6px">${esc(f.kom)}</div></div>` : ''}
+    ${Object.keys(bew).length ? `<div class="karte" style="margin-top:12px"><b>Bewertung</b> <span class="leise klein">(Stufen wie in der Prüfung DTB)</span><div class="bew" style="margin-top:8px">${KRITERIEN.filter(([k]) => bew[k]).map(([k, t]) => { const S = STUFE[bew[k]]; return `<div><span>${esc(t)}</span><span class="pill" style="background:${S.c};color:${S.f}">${esc(S.t)}</span></div>`; }).join('')}</div></div>` : ''}
+    <div class="editor" style="grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr)"><div><div class="korrtext">${h}</div>
+      <p class="leise klein">Durchgestrichen = dein Text · grün = Verbesserung · Zahl = Erklärung rechts. Fahre mit der Maus über eine Stelle für die Erklärung.</p>
+      <div class="zeile"><button class="btn" id="neuF">✍️ Überarbeitete Fassung schreiben</button></div></div>
+      <div class="links"><div class="karte"><b>Korrekturen (${korr.length})</b><div class="zeile" style="gap:6px;margin:8px 0">${Object.entries(proKat).map(([k, c]) => `<span class="pill" style="background:${(KAT[k] || KAT.W).c}22;color:${(KAT[k] || KAT.W).c}">${esc((KAT[k] || KAT.W).t)}: ${c}</span>`).join('')}</div>
+        <div class="klist">${korr.filter(k => nummer.has(k)).map(k => { const K = KAT[k.k] || KAT.W; return `<div class="kitem" style="--kc:${K.c}"><span class="n">${nummer.get(k)}</span><div><div><b>${k.l ? '<s>' + esc(text.substr(k.o, k.l)) + '</s>' : ''}${k.e ? ' → ' + esc(k.e) : ''}</b></div><div class="klein">${esc(k.h || K.t)}</div></div></div>`; }).join('') || '<p class="leise klein">Keine Fehler markiert. 👏</p>'}</div></div>
+      ${f.punkte && f.punkte.length ? `<div class="karte"><b>Inhaltspunkte</b>${f.punkte.map(p => `<div class="klein" style="padding:3px 0">${p.ok ? '✅' : '⚠️'} ${esc(p.t)}</div>`).join('')}</div>` : ''}</div></div>`;
+  $('#neuF').onclick = () => {
+    const auf = f.auf; if (!aufVon(auf)) return alert('Diese Aufgabe gibt es nicht mehr.');
+    lok.ent[auf] = { text, t: Date.now(), vor: sid, ck: {} }; sichere(); location.hash = '#auf=' + encodeURIComponent(auf);
+  };
+}
+
+/* ---------------- Hilfen ---------------- */
+const MUSTER = `Das Thema Sport am Arbeitsplatz wird zurzeit viel diskutiert. **Meiner Meinung nach** ist es eine gute Idee, wenn Firmen ihren Mitarbeitenden Sportangebote machen.
+
+**Dafür spricht vor allem, dass** Bewegung gesund ist. Wer regelmäßig Sport treibt, ist seltener krank und kann sich besser konzentrieren. **Außerdem** lernt man Kolleginnen und Kollegen aus anderen Abteilungen kennen, was das Teamklima verbessert.
+
+**Andererseits muss man bedenken, dass** solche Angebote Geld kosten. Gerade kleine Betriebe können sich **zum Beispiel** keinen eigenen Fitnessraum leisten. **Allerdings** gibt es auch günstige Lösungen wie eine gemeinsame Laufgruppe nach Feierabend.
+
+**In meiner Firma** haben wir seit einem Jahr einmal pro Woche Rückengymnastik. **Seitdem** haben viele Kollegen weniger Rückenschmerzen.
+
+**Alles in allem** überwiegen für mich die Vorteile. **Deshalb** würde ich mir wünschen, dass mehr Firmen Sport am Arbeitsplatz anbieten.`;
+const fett = x => esc(x).replace(/\*\*(.+?)\*\*/g, '<b style="color:var(--akzent)">$1</b>').replace(/\n\n/g, '</p><p>');
+function hilfen() {
+  const rm = art => `<dl class="rmdl">${(REDEMITTEL[art] || []).map(([k, v]) => `<dt>${esc(k)}</dt><dd>${v.split(' · ').map(x => `<span class="rmc">${esc(x)}</span>`).join('')}</dd>`).join('')}</dl>`;
+  app.innerHTML = reiter('hilfen') + `<div class="hilfe-nav">${[['forum', '💬 Forumsbeitrag'], ['email', '✉️ Formelle E-Mail'], ['konn', '🔗 Konnektoren'], ['check', '✅ Checkliste'], ['fehler', '⚠️ Typische Fehler']].map(([k, x]) => `<a href="#" data-sp="${k}">${x}</a>`).join('')}</div>
+    <div class="karte hilfe" id="h-forum"><h2>💬 Forumsbeitrag schreiben</h2>
+      <ol class="schema"><li><b>Einstieg:</b> Thema nennen – 1 Satz.</li><li><b>Meinung:</b> Was denkst du? Klar und früh sagen.</li><li><b>Argumente dafür</b> mit Begründung (weil, denn, da).</li><li><b>Gegenargument</b> nennen und darauf reagieren (allerdings, andererseits).</li><li><b>Beispiel / eigene Erfahrung</b> (zum Beispiel, in meiner Firma …).</li><li><b>Fazit:</b> Meinung kurz wiederholen (alles in allem, deshalb …).</li></ol>
+      <p class="leise klein">Keine Anrede wie in einem Brief nötig. Absätze machen den Text übersichtlich. Umfang in der Prüfung: ca. 150 Wörter.</p>
+      <h3>Redemittel</h3>${rm('forum')}
+      <h3>Musterbeitrag <span class="leise klein">(Thema: Sport am Arbeitsplatz – ca. 150 Wörter)</span></h3><div class="muster"><p>${fett(MUSTER)}</p></div>
+      <p class="leise klein">Die farbigen Wörter sind Redemittel und Konnektoren – genau das bringt Punkte bei „Kommunikative Gestaltung“.</p></div>
+    <div class="karte hilfe" id="h-email"><h2>✉️ Formelle E-Mail</h2>
+      <ol class="schema"><li><b>Betreff:</b> kurz und konkret (mit Nummer/Datum).</li><li><b>Anrede:</b> Sehr geehrte Frau … / Sehr geehrter Herr … / Sehr geehrte Damen und Herren,</li><li><b>Einleitung:</b> Bezug und Grund des Schreibens (klein weiterschreiben!).</li><li><b>Hauptteil:</b> alle Inhaltspunkte, je ein kurzer Absatz.</li><li><b>Schluss:</b> Bitte um Antwort / Dank.</li><li><b>Gruß:</b> Mit freundlichen Grüßen + Name</li></ol>
+      <h3>Redemittel</h3>${rm('email-formell')}
+      <h3>Halbformell (Kolleg/innen, Teamleitung)</h3>${rm('email-halbformell')}</div>
+    <div class="karte hilfe" id="h-konn"><h2>🔗 Konnektoren-Spickzettel</h2>
+      <div class="tabwrap"><table class="htab"><tr><th>Funktion</th><th>Verb am Ende (Nebensatz)</th><th>Verb auf Position 2</th></tr>
+      <tr><td>Grund</td><td>weil, da</td><td>deshalb, deswegen, daher</td></tr><tr><td>Gegengrund</td><td>obwohl</td><td>trotzdem, dennoch</td></tr>
+      <tr><td>Ziel</td><td>damit, um … zu</td><td>–</td></tr><tr><td>Folge</td><td>sodass</td><td>deshalb, also</td></tr>
+      <tr><td>Gegensatz</td><td>während</td><td>aber*, jedoch, allerdings, andererseits</td></tr><tr><td>Ergänzung</td><td>–</td><td>außerdem, zudem, auch</td></tr>
+      <tr><td>Bedingung</td><td>wenn, falls</td><td>sonst</td></tr><tr><td>Beispiel</td><td>–</td><td>zum Beispiel, beispielsweise</td></tr></table></div>
+      <p class="leise klein">* „aber, und, oder, denn, sondern“ stehen auf Position 0 – danach normale Wortstellung: „…, denn ich <b>habe</b> …“</p></div>
+    <div class="karte hilfe" id="h-check"><h2>✅ Checkliste vor dem Abgeben</h2>
+      <ul class="cl">${['Habe ich <b>alle Inhaltspunkte</b> bearbeitet?', 'Stimmt die <b>Wortzahl</b> ungefähr?', 'Passt der <b>Ton</b>: Sie (formell) oder du – und bleibe ich dabei?', 'E-Mail: <b>Anrede</b> und <b>Grußformel</b> vorhanden?', 'Habe ich <b>Absätze</b> gemacht?', 'Habe ich <b>verschiedene Konnektoren</b> benutzt (mindestens 5)?', 'Steht das <b>Verb im Nebensatz am Ende</b>?', 'Nomen <b>groß</b>, „Sie/Ihr“ (höflich) <b>groß</b>?', 'Einmal <b>laut lesen</b>: Ist alles verständlich?'].map(x => `<li>${x}</li>`).join('')}</ul></div>
+    <div class="karte hilfe" id="h-fehler"><h2>⚠️ Typische Fehler</h2>
+      <div class="tabwrap"><table class="htab"><tr><th>✗ falsch</th><th>✓ richtig</th></tr>
+      <tr><td>Ich freue mich <s>für</s> Ihre Antwort.</td><td>Ich freue mich <b>auf</b> Ihre Antwort.</td></tr>
+      <tr><td>Deshalb <s>ich habe</s> angerufen.</td><td>Deshalb <b>habe ich</b> angerufen.</td></tr>
+      <tr><td>…, weil ich <s>habe</s> keine Zeit.</td><td>…, weil ich keine Zeit <b>habe</b>.</td></tr>
+      <tr><td>Ich interessiere mich <s>an</s> der Stelle.</td><td>Ich interessiere mich <b>für</b> die Stelle.</td></tr>
+      <tr><td>Sehr geehrte Frau Kaya, <s>V</s>ielen Dank …</td><td>Sehr geehrte Frau Kaya, <b>v</b>ielen Dank …</td></tr>
+      <tr><td>Ich warte <s>für</s> die Lieferung.</td><td>Ich warte <b>auf</b> die Lieferung.</td></tr>
+      <tr><td>Ich möchte <s>wissen wann</s> der Kurs beginnt.</td><td>Ich möchte wissen<b>,</b> wann der Kurs <b>beginnt</b>.</td></tr></table></div></div>`;
+  app.querySelectorAll('[data-sp]').forEach(a => a.onclick = e => { e.preventDefault(); $('#h-' + a.dataset.sp).scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+}
+
+/* ---------------- Training ---------------- */
+function training() {
+  app.innerHTML = reiter('training') + `<p class="leise" style="margin:14px 0 6px">Kurze Übungen rund ums Schreiben – sofort mit Lösung.</p><div class="liste">${TRAINING.map(m => `<button class="mod" data-m="${m.id}"><span class="ic">${m.ic}</span><span style="flex:1"><b>${esc(m.titel)}</b><br><span class="leise klein">${esc(m.info)}</span><br><span class="klein">${m.aufgaben.length} Aufgaben${lok.mod[m.id] != null ? ` · <b style="color:#2f7d57">✓ ${lok.mod[m.id]} %</b>` : ''}</span></span></button>`).join('')}</div>`;
+  app.querySelectorAll('[data-m]').forEach(b => b.onclick = () => location.hash = '#mod=' + b.dataset.m);
+}
+async function modul(mid) {
+  const m = TRAINING.find(x => x.id === mid); if (!m) { location.hash = '#training'; return; }
+  const meiner = laufNr, pm = m.aufgaben.reduce((x, a) => x + punkte(a), 0);
+  let p = 0, pa = 0;
+  L.beginne(m.aufgaben.length, pm, 'Schreibtraining: ' + m.titel);
+  for (let i = 0; i < m.aufgaben.length; i++) {
+    app.innerHTML = reiter('training') + `<div class="lauf-kopf"><a class="btn zweit klein" href="#training">← Übersicht</a><b style="flex:1">${m.ic} ${esc(m.titel)}</b><span>${p} / ${pa} Pkt.</span></div><div class="fbalken"><i style="width:${Math.round(100 * i / m.aufgaben.length)}%"></i></div><div class="karte" id="feld"></div>`;
+    await zeige($('#feld'), m.aufgaben[i], { onErgebnis: (ok, d) => { p += d.p; pa += d.pm; d.teile.forEach(([id, x]) => L.antwort(id, x)); L.fortschritt(i + 1, p, m.titel, pa); } });
+    if (meiner !== laufNr) { L.abbrechen(); return; }
+  }
+  const pct = await L.ende(p, pm, { modul: m.id });
+  lok.mod[m.id] = Math.max(lok.mod[m.id] || 0, pct); sichere();
+  app.innerHTML = reiter('training') + `<div class="karte leer" style="margin-top:16px"><div style="font-size:2.4rem">${pct >= 80 ? '🏆' : pct >= 50 ? '👍' : '💪'}</div><h2>${p} von ${pm} Punkten (${pct} %)</h2><p class="leise">${esc(m.titel)}</p>
+    <div class="zeile" style="justify-content:center"><a class="btn" href="#training">Zur Übersicht</a><button class="btn zweit" id="nochmal">Noch einmal</button><a class="btn zweit" href="#schreiben">Jetzt einen Text schreiben</a></div></div>`;
+  $('#nochmal').onclick = () => { laufNr++; modul(mid); };
+}
+</script>
+</body>
+</html>

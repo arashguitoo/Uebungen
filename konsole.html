@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Konsole – Übungszentrale</title>
 <meta name="robots" content="noindex">
-<link rel="stylesheet" href="stil.css?v=20261016a">
+<link rel="stylesheet" href="stil.css?v=20261028a">
 <style>
   :root{--akzent:#2f3f46;--akzent-hell:#e7edef}
   body{font-size:16px}
@@ -100,6 +100,21 @@
   .dges b{font-size:1.6rem}
   .dempf{border-left:4px solid #d9483b;background:#fdf6f4;border-radius:8px;padding:7px 10px;margin-bottom:6px;display:grid;gap:2px}
   .diag h4{font-size:.95rem}
+  .tabzahl{display:inline-block;background:#ffd166;color:#1f2328;border-radius:99px;font-size:.75rem;padding:0 7px;margin-left:4px}
+  .korrgrid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:14px;margin-top:12px;align-items:start}
+  @media(max-width:900px){.korrgrid{grid-template-columns:1fr}}
+  .kseite{display:grid;gap:12px}
+  .ktext{white-space:pre-wrap;line-height:1.9;font-size:1.02rem;background:#fffdf8;border:1px solid #ece4d4;border-radius:10px;padding:14px 16px}
+  .km{border-bottom:2px solid var(--kc);background:color-mix(in srgb,var(--kc) 12%,transparent);border-radius:3px;cursor:pointer}
+  .km::after{content:attr(data-n);font-size:.65rem;font-weight:700;color:var(--kc);vertical-align:super;margin-left:1px}
+  .km.null::before{content:'‸';color:var(--kc);font-weight:700}
+  .klist{display:grid;gap:6px;margin-top:8px;max-height:520px;overflow:auto}
+  .kitem{border:1px solid #ece6dc;border-left:4px solid var(--kc);border-radius:8px;padding:6px 8px;background:#fff}
+  .kitem.aus{opacity:.5}
+  .kitem .n{font-weight:700;color:var(--kc);font-size:.85rem}
+  .kitem.blink{box-shadow:0 0 0 3px #ffd166}
+  .kpop{position:absolute;z-index:60;background:#fff;border:1px solid var(--linie);border-radius:10px;box-shadow:var(--schatten);padding:10px;display:grid;gap:6px;width:320px}
+  .kpop input{min-height:36px;padding:5px 8px}
 </style>
 </head>
 <body>
@@ -114,6 +129,7 @@
     <button class="tab" data-t="kurse">Kurse &amp; Codes</button>
     <button class="tab" data-t="ex">Übungen</button>
     <button class="tab" data-t="fb">👤 Feedback &amp; Freigaben</button>
+    <button class="tab" data-t="tx">✍️ Texte <span id="txZahl" class="tabzahl"></span></button>
     <a href="live-studio.html" style="color:#ffd166;font-weight:700;padding:10px 16px;text-decoration:none;white-space:nowrap" title="Live-Umfragen und Live-Quiz für den Unterricht starten">📡 Live im Unterricht</a>
   </nav>
 </div></header>
@@ -141,14 +157,16 @@ window.__ok = false;
 </script>
 <script type="module">
 window.__ok = true;
-import { db, DEMO, zufall, esc, mitDemo } from './db.js?v=20261016a';
-import { KATALOG, exById } from './katalog.js?v=20261016a';
-import { LISTEN, SKALEN, MERKMALE, MERKMAL, skalaVon, wertInfo, prozent } from './feedback-kriterien.js?v=20261016a';
-import { TEST as DTEST, BEREICHE as DBER, analyse as dAnalyse, AUFGABEN as DAUFG } from './diagnose-daten.js?v=20261016a';
+import { db, DEMO, zufall, esc, mitDemo } from './db.js?v=20261028a';
+import { KATALOG, exById } from './katalog.js?v=20261028a';
+import { rubriken, rubrikVon } from './rubriken.js?v=20261028a';
+import { AUFGABEN as SW_AUF, ARTEN as SW_ARTEN, analysiere as SW_analysiere, ltKategorie as SW_ltKat, vorschlag as SW_vorschlag, KAT as SW_KAT, KRITERIEN as SW_KRIT, STUFE as SW_STUFE, wortzahl as SW_wortzahl } from './schreib-daten.js?v=20261028a';
+import { LISTEN, SKALEN, MERKMALE, MERKMAL, skalaVon, wertInfo, prozent } from './feedback-kriterien.js?v=20261028a';
+import { TEST as DTEST, BEREICHE as DBER, analyse as dAnalyse, AUFGABEN as DAUFG } from './diagnose-daten.js?v=20261028a';
 
 if (DEMO) document.getElementById('demo').innerHTML = '<div class="demo-band">DEMO-MODUS – Anmeldung mit beliebigen Daten, alles bleibt in diesem Browser</div>';
 const $ = s => document.querySelector(s), app = $('#app');
-const D = { kurse: {}, pub: {}, live: {}, res: {}, items: {}, wieder: {}, fb: {}, mein: {}, selbst: {} };
+const D = { kurse: {}, pub: {}, live: {}, res: {}, items: {}, wieder: {}, fb: {}, mein: {}, selbst: {}, abgaben: {} };
 let tab = 'live', offs = [], gewKurs = null;
 const F = { fbKurs: null, fbListe: 't1a', fbPid: null, werk: 'alle', lkurs: 'alle', lex: 'alle', nurAktiv: false, ekurs: 'alle', eex: 'alle', mehr: false };
 const BASE = location.href.replace(/[?#].*$/, '').replace(/[^/]*$/, '');
@@ -200,7 +218,8 @@ function zeichne(quelle) {
   if (quelle && document.activeElement && document.activeElement.closest('#app') && /INPUT|TEXTAREA/.test(document.activeElement.tagName)) {
     clearTimeout(zTimer); zTimer = setTimeout(() => zeichne(), 1500); return;
   }
-  if (tab === 'live') live(); else if (tab === 'erg') erg(); else if (tab === 'kurse') kurse(); else if (tab === 'fb') feedback(); else uebungen();
+  if (tab === 'live') live(); else if (tab === 'erg') erg(); else if (tab === 'kurse') kurse(); else if (tab === 'fb') feedback(); else if (tab === 'tx') texteTab(); else uebungen();
+  const tz = document.getElementById('txZahl'); if (tz) { const n = offeneAbgaben(); tz.textContent = n || ''; tz.style.display = n ? '' : 'none'; }
 }
 
 /* ---------------- LIVE ---------------- */
@@ -735,6 +754,200 @@ function diagDruck(kid, pid) {
   w.document.close();
 }
 
+/* ---------------- Rubriken der Startseite ---------------- */
+function rubrikKarte(RL, anz) {
+  return `<div class="karte" style="margin-top:16px"><details ${F.rubOffen ? 'open' : ''} id="rubDet"><summary><b>🏠 Rubriken der Startseite</b> <span class="leise klein">– Grundkategorien, die die Teilnehmenden in der Zentrale sehen. Jede Übung ordnest du unten einer Rubrik zu.</span></summary>
+    <div class="tabwrap" style="margin-top:10px"><table class="t"><tr><th>Symbol</th><th>Name</th><th>Untertitel</th><th>Reihenfolge</th><th>sichtbar</th><th>Übungen</th><th></th></tr>
+    ${RL.map(r => `<tr><td><input type="text" data-rf="${r.k}" data-f="ic" value="${esc(r.ic)}" style="width:54px;text-align:center" ${r.k === 'meine' ? '' : ''}></td>
+      <td><input type="text" data-rf="${r.k}" data-f="t" value="${esc(r.t)}" style="width:100%;min-width:150px"></td>
+      <td><input type="text" data-rf="${r.k}" data-f="u" value="${esc(r.u || '')}" style="width:100%;min-width:180px"></td>
+      <td><input data-rf="${r.k}" data-f="pos" type="number" value="${r.pos ?? 50}" style="width:76px" ${r.k === 'weitere' ? 'disabled' : ''}></td>
+      <td><input type="checkbox" data-raus="${r.k}" ${r.aus ? '' : 'checked'}></td>
+      <td>${r.k === 'meine' ? '<span class="leise klein">pro Kurs</span>' : anz(r.k)}</td>
+      <td>${r.eigen ? `<button class="icon" data-rdel="${r.k}" title="Rubrik löschen">🗑</button>` : ''}</td></tr>`).join('')}</table></div>
+    <form id="rubNeu" class="zeile" style="margin-top:10px"><input type="text" id="rubNeuIc" value="📁" style="width:54px;text-align:center"><input type="text" id="rubNeuT" placeholder="Neue Rubrik, z. B. „Hausaufgaben“" style="flex:1;min-width:200px" required><button class="btn klein">+ Rubrik anlegen</button></form>
+    <p class="leise klein">„Meine Übungen“ zeigt automatisch alles, was du einem Kurs oder einer Person zuweist. Rubriken ohne sichtbare Übungen erscheinen bei den Teilnehmenden nicht. Enthält eine Rubrik genau eine Übung, öffnet die Kachel diese direkt.</p></details></div>`;
+}
+function bindeRubriken() {
+  const d = $('#rubDet'); if (d) d.ontoggle = () => { F.rubOffen = d.open; };
+  app.querySelectorAll('[data-rf]').forEach(i => i.onchange = () => { const f = i.dataset.f; let v = i.value.trim(); if (f === 'pos') v = +v || 0; if (f !== 'u' && v === '') return; db.set('pub/rubriken/' + i.dataset.rf + '/' + f, v); });
+  app.querySelectorAll('[data-raus]').forEach(c => c.onchange = () => db.set('pub/rubriken/' + c.dataset.raus + '/aus', c.checked ? null : true));
+  app.querySelectorAll('[data-rdel]').forEach(b => b.onclick = () => { if (confirm('Rubrik löschen? Zugeordnete Übungen landen wieder in ihrer Standard-Rubrik.')) db.set('pub/rubriken/' + b.dataset.rdel, null); });
+  const f = $('#rubNeu'); if (f) f.onsubmit = e => { e.preventDefault(); const t = $('#rubNeuT').value.trim(); if (!t) return;
+    const k = 'r' + zufall(6, 'abcdefghijkmnpqrstuvwxyz23456789'); F.rubOffen = true;
+    db.set('pub/rubriken/' + k, { t, ic: $('#rubNeuIc').value.trim() || '📁', u: '', pos: 75 }); meld('Rubrik angelegt – jetzt Übungen zuordnen.'); };
+}
+
+/* ---------------- SCHREIBWERKSTATT: Abgaben korrigieren ----------------
+   abgaben/{sid}            { code, kid, pid, name, kurs, auf, titel, text, worte, t, vor?, st?: 'frei', tFrei?, k?: Entwurf der Korrektur }
+   abgaben/{sid}/k          { korr: [{o, l, e, h, k, q:'lt'|'lk', an}], punkte: [bool], bew: {wa, wk, wf, ws}, kom, lt: Zeit, ltFehler }
+   mein/{code}/texte/{sid}  freigegebene Fassung für die Person */
+const ltLaeuft = new Set();
+const SWAUF = id => SW_AUF.find(a => a.id === id) || (((D.pub.schreiben || {}).eigene || {})[id] && { ...D.pub.schreiben.eigene[id], id, punkte: (D.pub.schreiben.eigene[id].punkte || []).map(t => ({ t, kw: '$^' })) }) || { id, titel: id, art: 'forum', worte: [0, 9999], punkte: [] };
+const offeneAbgaben = () => Object.values(D.abgaben || {}).filter(a => a && !a.st).length;
+function texteTab() {
+  if (F.sid && D.abgaben[F.sid]) return korrEditor(F.sid);
+  F.sid = null;
+  const kl = kursListe();
+  F.tkurs = F.tkurs || 'alle'; F.tst = F.tst || 'offen';
+  const l = Object.entries(D.abgaben || {}).map(([sid, a]) => ({ sid, ...a })).filter(a => (F.tkurs === 'alle' || a.kid === F.tkurs) && (F.tst === 'alle' || (F.tst === 'offen' ? !a.st : a.st === 'frei'))).sort((a, b) => F.tst === 'offen' ? a.t - b.t : b.t - a.t);
+  const eig = (D.pub.schreiben || {}).eigene || {}, aus = (D.pub.schreiben || {}).aus || {}, top = (D.pub.schreiben || {}).top || {};
+  app.innerHTML = `<div class="leiste" style="margin-top:16px"><label>Kurs:</label><select id="tk"><option value="alle">Alle Kurse</option>${kl.map(([k, v]) => `<option value="${k}" ${F.tkurs === k ? 'selected' : ''}>${esc(v.name)}</option>`).join('')}</select>
+      <div class="fbchips">${[['offen', `⏳ zu korrigieren (${offeneAbgaben()})`], ['frei', '✅ freigegeben'], ['alle', 'alle']].map(([k, t]) => `<button class="chip ${F.tst === k ? 'an' : ''}" data-tst="${k}">${t}</button>`).join('')}</div>
+      <span style="flex:1"></span><a class="btn zweit klein" href="${mitDemo('schreibwerkstatt.html')}" target="_blank">Schreibwerkstatt ansehen</a></div>
+    ${l.length ? `<div class="tabwrap"><table class="t"><tr><th>Abgabe</th><th>Name</th><th>Kurs</th><th>Aufgabe</th><th>Wörter</th><th>Status</th></tr>${l.map(a => `<tr style="cursor:pointer" data-sid="${a.sid}"><td class="klein">${zeit(a.t)}</td><td><b>${esc(a.name)}</b>${a.vor ? ' <span class="pill" style="background:#e9e4f7;color:#5b4fa3">überarbeitet</span>' : ''}</td><td class="klein">${esc(a.kurs || kursName(a.kid))}</td><td>${esc(a.titel || a.auf)}</td><td>${a.worte || ''}</td>
+      <td>${a.st === 'frei' ? `<span class="pill" style="background:#e4f3ea;color:#2f7d57">✅ ${datum(a.tFrei)}</span>` : a.k ? '<span class="pill" style="background:#fdf0cf;color:#8a6410">in Arbeit</span>' : '<span class="pill">neu</span>'}</td></tr>`).join('')}</table></div>`
+      : `<p class="leise">${F.tst === 'offen' ? 'Keine offenen Abgaben. 🎉' : 'Keine Abgaben.'}</p>`}
+    <div class="fbgrid" style="margin-top:20px">
+      <div class="karte"><h3>Eigene Schreibaufgabe anlegen</h3><form id="eigAuf" style="display:grid;gap:8px">
+        <input type="text" id="eaT" placeholder="Titel, z. B. „E-Mail an den Vermieter“" required>
+        <div class="zeile"><select id="eaA">${Object.entries(SW_ARTEN).map(([k, v]) => `<option value="${k}">${v.ic} ${esc(v.t)}</option>`).join('')}</select><select id="eaN"><option>B1</option><option selected>B1/B2</option><option>B2</option></select>
+          <label class="klein">Wörter <input id="eaMin" type="number" value="100" style="width:72px"> – <input id="eaMax" type="number" value="150" style="width:72px"></label><label class="klein">Min. <input id="eaZ" type="number" value="20" style="width:64px"></label></div>
+        <textarea id="eaS" placeholder="Situation / Aufgabenstellung" style="min-height:80px" required></textarea>
+        <textarea id="eaM" placeholder="Material (optional): z. B. die E-Mail, auf die man antworten soll" style="min-height:70px"></textarea>
+        <textarea id="eaP" placeholder="Inhaltspunkte – einer pro Zeile" style="min-height:70px"></textarea>
+        <button class="btn klein">Aufgabe speichern</button></form>
+        ${Object.keys(eig).length ? `<h4 style="margin:14px 0 6px">Deine Aufgaben</h4>${Object.entries(eig).map(([id, a]) => `<div class="zeile klein" style="padding:3px 0"><span style="flex:1">${esc(a.titel)} <span class="leise">· ${esc((SW_ARTEN[a.art] || {}).t || '')}</span></span><button class="icon" data-eadel="${id}" title="Löschen">🗑</button></div>`).join('')}` : ''}</div>
+      <div class="karte"><h3>Aufgaben in der Schreibwerkstatt</h3><p class="leise klein" style="margin-top:0">Abgehakte Aufgaben sehen die Teilnehmenden. Mit ⭐ hebst du die Aufgaben von heute hervor.</p>
+        ${[...SW_AUF, ...Object.entries(eig).map(([id, x]) => ({ ...x, id }))].map(a => `<div class="zeile" style="gap:6px;padding:2px 0"><button class="icon" data-swtop="${a.id}" title="Als „Aufgabe von deiner Lehrkraft“ oben anzeigen">${top[a.id] ? '⭐' : '☆'}</button><label class="schalter klein" style="flex:1"><input type="checkbox" data-swaus="${a.id}" ${aus[a.id] ? '' : 'checked'}> ${esc(a.titel)} <span class="leise">· ${esc(a.niveau || '')}</span></label></div>`).join('')}
+        <p class="leise klein">⭐ = erscheint bei den Teilnehmenden ganz oben als „Aufgabe von deiner Lehrkraft“.</p></div>
+    </div>`;
+  $('#tk').onchange = e => { F.tkurs = e.target.value; texteTab(); };
+  app.querySelectorAll('[data-tst]').forEach(b => b.onclick = () => { F.tst = b.dataset.tst; texteTab(); });
+  app.querySelectorAll('[data-sid]').forEach(r => r.onclick = () => { F.sid = r.dataset.sid; scrollTo(0, 0); texteTab(); });
+  app.querySelectorAll('[data-swtop]').forEach(b => b.onclick = () => db.set('pub/schreiben/top/' + b.dataset.swtop, top[b.dataset.swtop] ? null : true));
+  app.querySelectorAll('[data-swaus]').forEach(c => c.onchange = () => db.set('pub/schreiben/aus/' + c.dataset.swaus, c.checked ? null : true));
+  app.querySelectorAll('[data-eadel]').forEach(b => b.onclick = () => { if (confirm('Aufgabe löschen?')) db.set('pub/schreiben/eigene/' + b.dataset.eadel, null); });
+  $('#eigAuf').onsubmit = e => { e.preventDefault();
+    const id = 'e' + zufall(7, 'abcdefghijkmnpqrstuvwxyz23456789');
+    db.set('pub/schreiben/eigene/' + id, { titel: $('#eaT').value.trim(), art: $('#eaA').value, niveau: $('#eaN').value, worte: [+$('#eaMin').value || 0, +$('#eaMax').value || 999], zeit: +$('#eaZ').value || 0,
+      situation: $('#eaS').value.trim(), material: $('#eaM').value.trim() || null, punkte: $('#eaP').value.split('\n').map(x => x.trim()).filter(Boolean), t: Date.now() });
+    meld('Aufgabe gespeichert – sie erscheint jetzt in der Schreibwerkstatt.'); };
+}
+
+async function ltPruefen(sid, neu = false) {
+  const a = D.abgaben[sid]; if (!a || ltLaeuft.has(sid)) return;
+  if (a.k && a.k.lt && !neu) return;
+  ltLaeuft.add(sid);
+  const eigene = ((a.k && a.k.korr) || []).filter(k => k.q !== 'lt');
+  try {
+    const r = await fetch('https://api.languagetool.org/v2/check', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams({ text: a.text, language: 'de-DE' }) });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const j = await r.json();
+    const lt = (j.matches || []).map(m => { const k = SW_ltKat(m); return { o: m.offset, l: m.length, e: (m.replacements && m.replacements[0] && m.replacements[0].value) || '', h: m.message || '', k, q: 'lt', an: k !== 'S' }; });
+    const auf = SWAUF(a.auf), an = SW_analysiere(a.text, auf);
+    await db.update('', sicher({ ['abgaben/' + sid + '/k/korr']: [...eigene, ...lt], ['abgaben/' + sid + '/k/lt']: Date.now(), ['abgaben/' + sid + '/k/ltFehler']: null,
+      ...(a.k && a.k.punkte ? {} : { ['abgaben/' + sid + '/k/punkte']: an.punkte.map(p => p.ok) }) }));
+  } catch (e) {
+    await db.update('', sicher({ ['abgaben/' + sid + '/k/ltFehler']: String(e.message || e).slice(0, 120), ['abgaben/' + sid + '/k/lt']: Date.now() }));
+  } finally { ltLaeuft.delete(sid); }
+}
+
+function korrEditor(sid) {
+  const a = D.abgaben[sid], auf = SWAUF(a.auf), k = a.k || {}, text = a.text || '';
+  if (!k.lt) ltPruefen(sid);
+  const korr = (k.korr || []).map((x, i) => ({ ...x, i }));
+  const an = SW_analysiere(text, auf);
+  const pk = (k.punkte || an.punkte.map(p => p.ok));
+  const fehler = korr.filter(x => x.an && x.k !== 'S' && x.k !== 'I').length;
+  const vs = SW_vorschlag(an, fehler, auf), bew = k.bew || {};
+  const offen = Object.entries(D.abgaben).filter(([, x]) => !x.st).sort((x, y) => x[1].t - y[1].t).map(([s]) => s);
+  const nx = offen[(offen.indexOf(sid) + 1) % Math.max(offen.length, 1)];
+  const vorher = a.vor && D.abgaben[a.vor];
+  // Text mit Markierungen (nur Original-Text, damit Markieren per Maus die richtigen Positionen liefert)
+  let h = '', pos = 0;
+  for (const x of korr.filter(x => x.an).sort((p, q) => p.o - q.o)) {
+    if (x.o < pos || x.o + x.l > text.length) continue;
+    const K = SW_KAT[x.k] || SW_KAT.W;
+    h += esc(text.slice(pos, x.o)) + `<span class="km${x.l ? '' : ' null'}" data-ki="${x.i}" data-n="${x.i + 1}" style="--kc:${K.c}" title="${esc(K.t + ': ' + (x.e ? '→ ' + x.e + ' · ' : '') + x.h)}">${esc(text.substr(x.o, x.l))}</span>`;
+    pos = x.o + x.l;
+  }
+  h += esc(text.slice(pos));
+  const sel = (v, name) => `<select data-bew="${name}"><option value="">–</option>${Object.entries(SW_STUFE).map(([s, S]) => `<option value="${s}" ${v === s ? 'selected' : ''}>${esc(S.t)}</option>`).join('')}</select>`;
+  app.innerHTML = `<div class="leiste" style="margin-top:16px"><button class="btn zweit klein" id="tZur">← Alle Abgaben</button><span style="flex:1"></span>${nx && nx !== sid ? `<button class="btn zweit klein" id="tNx">Nächste offene Abgabe ›</button>` : ''}</div>
+    <div class="karte"><div class="zeile"><div style="flex:1"><h2 style="margin:0">${esc(a.name)} · ${esc(auf.titel || a.titel)}</h2><div class="leise klein">${esc(a.kurs || '')} · abgegeben ${zeit(a.t)} · ${wortzahlTxt(text)} Wörter (Ziel ${auf.worte ? auf.worte.join('–') : '–'})${a.vor ? ' · <b>überarbeitete Fassung</b>' : ''}</div></div>
+      ${a.st === 'frei' ? `<span class="pill" style="background:#e4f3ea;color:#2f7d57">✅ freigegeben ${zeit(a.tFrei)}</span>` : ''}</div>
+      ${auf.situation ? `<details style="margin-top:8px"><summary class="klein"><b>Aufgabenstellung</b></summary><p class="klein">${esc(auf.situation)}</p>${auf.material ? `<div class="klein" style="white-space:pre-line;background:#faf7f1;padding:8px;border-radius:8px">${esc(auf.material)}</div>` : ''}</details>` : ''}
+      ${vorher ? `<details style="margin-top:6px"><summary class="klein"><b>Erste Fassung ansehen</b></summary><div class="klein" style="white-space:pre-wrap;background:#faf7f1;padding:8px;border-radius:8px">${esc(vorher.text)}</div></details>` : ''}</div>
+    <div class="korrgrid">
+      <div><div class="karte"><div class="zeile" style="margin-bottom:6px"><b style="flex:1">Text</b><span class="leise klein">Stelle mit der Maus markieren → eigene Korrektur hinzufügen</span></div>
+          <div id="kt" class="ktext">${h}</div></div>
+        <div class="karte" style="margin-top:12px"><b>Kommentar für ${esc(a.name)}</b>
+          <div class="zeile" style="gap:4px;margin:6px 0">${['Gut gemacht! ', 'Du hast alle Inhaltspunkte bearbeitet. ', 'Achte auf die Verbposition im Nebensatz. ', 'Nutze mehr Konnektoren (außerdem, deshalb, trotzdem). ', 'Denk an Anrede und Grußformel. ', 'Dein Text ist zu kurz – schreib zu jedem Punkt 2–3 Sätze. '].map(b => `<button class="chip" data-bs="${esc(b)}">${esc(b.trim())}</button>`).join('')}</div>
+          <textarea id="kom" style="min-height:110px" placeholder="Persönliche Rückmeldung …">${esc(k.kom || '')}</textarea></div></div>
+      <div class="kseite">
+        <div class="karte"><div class="zeile"><b style="flex:1">Automatische Prüfung</b><button class="btn zweit klein" id="ltNeu" title="LanguageTool erneut ausführen (eigene Korrekturen bleiben)">🔄 LanguageTool</button></div>
+          <div class="klein ${k.ltFehler ? '' : 'leise'}" style="margin:4px 0 8px">${ltLaeuft.has(sid) || !k.lt ? '⏳ LanguageTool prüft den Text …' : k.ltFehler ? `⚠️ LanguageTool nicht erreichbar (${esc(k.ltFehler)}). Du kannst trotzdem korrigieren.` : `LanguageTool: ${korr.filter(x => x.q === 'lt').length} Hinweise · geprüft ${zeit(k.lt)}`}</div>
+          ${an.hinweise.map(x => `<div class="klein">${x.ok ? '✅' : '⚠️'} ${esc(x.t)}</div>`).join('')}
+          ${auf.punkte && auf.punkte.length ? `<div style="margin-top:8px"><b class="klein">Inhaltspunkte</b> <span class="leise klein">(automatisch erkannt – bitte prüfen)</span>${auf.punkte.map((p, i) => `<label class="schalter klein" style="padding:2px 0"><input type="checkbox" data-pk="${i}" ${pk[i] ? 'checked' : ''}> ${esc(p.t)}</label>`).join('')}</div>` : ''}</div>
+        <div class="karte"><b>Korrekturen (${korr.filter(x => x.an).length} von ${korr.length} übernommen)</b>
+          <div class="klist">${korr.sort((p, q) => p.o - q.o).map(x => { const K = SW_KAT[x.k] || SW_KAT.W; return `<div class="kitem ${x.an ? '' : 'aus'}" style="--kc:${K.c}" id="ki-${x.i}">
+            <div class="zeile" style="gap:6px"><input type="checkbox" data-kan="${x.i}" ${x.an ? 'checked' : ''} title="übernehmen"><span class="n">${x.i + 1}</span><b class="klein">„${esc(text.substr(x.o, x.l) || '‸')}“</b><span style="flex:1"></span>
+              <select data-kk="${x.i}" class="klein">${Object.entries(SW_KAT).map(([c, C]) => `<option value="${c}" ${x.k === c ? 'selected' : ''}>${esc(C.t)}</option>`).join('')}</select><button class="icon" data-kdel="${x.i}" title="Löschen">🗑</button></div>
+            <div class="zeile" style="gap:6px;margin-top:4px"><span class="klein">→</span><input type="text" data-ke="${x.i}" value="${esc(x.e || '')}" placeholder="Verbesserung" style="flex:1;min-height:34px;padding:4px 8px"></div>
+            <input type="text" data-kh="${x.i}" value="${esc(x.h || '')}" placeholder="Erklärung" style="width:100%;min-height:34px;padding:4px 8px;margin-top:4px;font-size:.88rem">
+            ${x.q === 'lt' ? '<span class="leise" style="font-size:.72rem">LanguageTool</span>' : ''}</div>`; }).join('') || '<p class="leise klein">Noch keine Korrekturen.</p>'}</div></div>
+        <div class="karte"><b>Bewertung</b> <span class="leise klein">Vorschlag aus der Analyse in Klammern · Fehlerdichte ${vs.dichte} / 100 Wörter</span>
+          ${SW_KRIT.map(([c, t]) => `<div class="zeile" style="justify-content:space-between;padding:4px 0"><span class="klein">${esc(t)} <span class="leise">(${vs[c]})</span></span>${sel(bew[c], c)}</div>`).join('')}
+          <button class="btn zweit klein" id="vsUeb" style="margin-top:6px">Vorschlag übernehmen</button></div>
+        <div class="karte frei"><label class="schalter klein"><input type="checkbox" id="inFb" ${a.pid ? 'checked' : 'disabled'}> Bewertung auch ins Feedback („Kriterien Schreiben“) übernehmen</label>
+          <div class="zeile" style="margin-top:8px"><button class="btn" id="freigeben">${a.st === 'frei' ? '🔄 Erneut freigeben' : '✅ Korrektur freigeben'}</button>${a.st === 'frei' ? '<button class="btn zweit klein" id="zurueck">Zurückziehen</button>' : ''}</div>
+          <p class="leise klein" style="margin:6px 0 0">${a.code ? `${esc(a.name)} sieht danach den markierten Text, deine Erklärungen, die Bewertung und den Kommentar unter „Schreibwerkstatt → Meine Texte“.` : 'Ohne Code kann nichts freigegeben werden.'}</p></div>
+      </div></div>`;
+  const K = 'abgaben/' + sid + '/k/';
+  const setK = (i, f, v) => { const l = (k.korr || []).slice(); l[i] = { ...l[i], [f]: v }; db.set(K + 'korr', l); };
+  $('#tZur').onclick = () => { F.sid = null; texteTab(); };
+  const n = $('#tNx'); if (n) n.onclick = () => { F.sid = nx; scrollTo(0, 0); texteTab(); };
+  $('#ltNeu').onclick = () => ltPruefen(sid, true);
+  app.querySelectorAll('[data-kan]').forEach(c => c.onchange = () => setK(+c.dataset.kan, 'an', c.checked));
+  app.querySelectorAll('[data-kk]').forEach(c => c.onchange = () => setK(+c.dataset.kk, 'k', c.value));
+  app.querySelectorAll('[data-ke]').forEach(c => c.onchange = () => setK(+c.dataset.ke, 'e', c.value));
+  app.querySelectorAll('[data-kh]').forEach(c => c.onchange = () => setK(+c.dataset.kh, 'h', c.value));
+  app.querySelectorAll('[data-kdel]').forEach(b => b.onclick = () => { const l = (k.korr || []).slice(); l.splice(+b.dataset.kdel, 1); db.set(K + 'korr', l); });
+  app.querySelectorAll('[data-pk]').forEach(c => c.onchange = () => { const l = (auf.punkte || []).map((_, i) => !!pk[i]); l[+c.dataset.pk] = c.checked; db.set(K + 'punkte', l); });
+  app.querySelectorAll('[data-bew]').forEach(s => s.onchange = () => db.set(K + 'bew/' + s.dataset.bew, s.value || null));
+  $('#vsUeb').onclick = () => db.set(K + 'bew', { wa: vs.wa, wk: vs.wk, wf: vs.wf, ws: vs.ws });
+  $('#kom').onchange = e => db.set(K + 'kom', e.target.value);
+  app.querySelectorAll('[data-bs]').forEach(b => b.onclick = () => { const t = $('#kom'); t.value = (t.value + (t.value && !/\s$/.test(t.value) ? ' ' : '') + b.dataset.bs); db.set(K + 'kom', t.value); });
+  app.querySelectorAll('.km').forEach(m => m.onclick = () => { const el = $('#ki-' + m.dataset.ki); if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'center' }); el.classList.add('blink'); setTimeout(() => el.classList.remove('blink'), 1200); } });
+  // eigene Korrektur: Text markieren
+  const kt = $('#kt');
+  kt.onmouseup = () => setTimeout(() => {
+    document.querySelectorAll('.kpop').forEach(x => x.remove());
+    const s = getSelection(); if (!s.rangeCount || s.isCollapsed) return;
+    const r = s.getRangeAt(0); if (!kt.contains(r.startContainer) || !kt.contains(r.endContainer)) return;
+    const vor = document.createRange(); vor.setStart(kt, 0); vor.setEnd(r.startContainer, r.startOffset);
+    const o = vor.toString().length, l = r.toString().length; if (!l || text.substr(o, l) !== r.toString()) return;
+    const box = r.getBoundingClientRect(), p = document.createElement('div'); p.className = 'kpop';
+    p.innerHTML = `<div class="klein"><b>„${esc(r.toString().slice(0, 40))}“</b></div><input type="text" id="kpE" value="${esc(r.toString())}" placeholder="Verbesserung (leer = streichen)">
+      <input type="text" id="kpH" placeholder="Erklärung (optional)"><div class="zeile" style="gap:6px"><select id="kpK">${Object.entries(SW_KAT).map(([c, C]) => `<option value="${c}">${esc(C.t)}</option>`).join('')}</select><button class="btn klein" id="kpOk">+ Korrektur</button><button class="icon" id="kpX">✕</button></div>`;
+    document.body.append(p);
+    p.style.left = Math.max(8, Math.min(box.left + scrollX, scrollX + innerWidth - 330)) + 'px'; p.style.top = (box.bottom + scrollY + 6) + 'px';
+    $('#kpE').focus(); $('#kpE').select();
+    $('#kpX').onclick = () => p.remove();
+    $('#kpOk').onclick = () => { const l2 = (k.korr || []).slice(); l2.push({ o, l, e: $('#kpE').value, h: $('#kpH').value, k: $('#kpK').value, q: 'lk', an: true }); p.remove(); getSelection().removeAllRanges(); db.set(K + 'korr', l2); };
+    p.onkeydown = e => { if (e.key === 'Enter') $('#kpOk').click(); if (e.key === 'Escape') p.remove(); };
+  }, 0);
+  $('#freigeben').onclick = async () => {
+    if (!a.code) return meld('Ohne Code kann nichts freigegeben werden.');
+    const kom = $('#kom').value, t = Date.now();
+    const fassung = { auf: a.auf, titel: auf.titel || a.titel, t: a.t, tFrei: t, text, kom,
+      korr: (k.korr || []).filter(x => x.an).map(x => ({ o: x.o, l: x.l, e: x.e || '', h: x.h || '', k: x.k })),
+      bew: Object.fromEntries(Object.entries(k.bew || {}).filter(([, v]) => v)), punkte: (auf.punkte || []).map((p, i) => ({ t: p.t, ok: !!pk[i] })) };
+    const up = { ['mein/' + a.code + '/texte/' + sid]: fassung, ['abgaben/' + sid + '/st']: 'frei', ['abgaben/' + sid + '/tFrei']: t, [K + 'kom']: kom };
+    if ($('#inFb').checked && a.kid && a.pid && D.kurse[a.kid] && D.kurse[a.kid].tn && D.kurse[a.kid].tn[a.pid]) {
+      const b = fbPfad(a.kid, a.pid);
+      Object.entries(fassung.bew).forEach(([c, s], j) => { up[b + '/c/kschreiben_' + c + '/s'] = SW_STUFE[s].v; up[b + '/c/kschreiben_' + c + '/t'] = t; up[b + '/h/' + (t + j)] = 'kschreiben_' + c + ':' + SW_STUFE[s].v; });
+      up[b + '/log/' + (t + 9)] = `Schreibwerkstatt: „${auf.titel || a.titel}“ korrigiert · ${fassung.korr.length} Korrekturen` + (Object.keys(fassung.bew).length ? ' · ' + SW_KRIT.filter(([c]) => fassung.bew[c]).map(([c, n]) => n.split(':')[0] + ' ' + fassung.bew[c]).join(', ') : '');
+    }
+    await db.update('', sicher(up)); meld('Freigegeben – ' + a.name + ' sieht die Korrektur jetzt.');
+    const nx2 = Object.entries(D.abgaben).filter(([s, x]) => !x.st && s !== sid).sort((x, y) => x[1].t - y[1].t)[0];
+    if (nx2 && confirm('Weiter zur nächsten offenen Abgabe?')) { F.sid = nx2[0]; scrollTo(0, 0); texteTab(); }
+  };
+  const zb = $('#zurueck'); if (zb) zb.onclick = async () => { if (!confirm('Korrektur für die Person wieder ausblenden?')) return; await db.update('', sicher({ ['mein/' + a.code + '/texte/' + sid]: null, ['abgaben/' + sid + '/st']: null })); };
+}
+const wortzahlTxt = t => SW_wortzahl(t);
+
 /* ---------------- ÜBUNGEN ---------------- */
 function uebungen() {
   const alle = versuche(), kl = kursListe(), ws = werke();
@@ -745,7 +958,9 @@ function uebungen() {
   });
   const gruppe = e => e.quelle ? e.quelle.werk : 'Prüfungstraining & Spiele (ohne Lehrwerk)';
   let letzte = null;
-  app.innerHTML = `<p class="leise" style="margin-top:16px">Alle Übungen aus <code>katalog.js</code>. <b>Öffentlich</b> = in der Zentrale für alle sichtbar und ohne Code spielbar. Ist eine Übung nicht öffentlich, sehen sie nur die Kurse, denen du sie zuweist. Die Angaben 📚 zu Lehrwerk und Lektion siehst nur du.</p>
+  const RL = rubriken((D.pub || {}).rubriken || {}), RW = RL.filter(r => r.k !== 'meine');
+  const anz = k => KATALOG.filter(e => e.id !== 'live' && rubrikVon(e, D.pub.ex || {}, RL) === k).length;
+  app.innerHTML = rubrikKarte(RL, anz) + `<p class="leise" style="margin-top:16px">Alle Übungen aus <code>katalog.js</code>. <b>Öffentlich</b> = in der Zentrale für alle sichtbar und ohne Code spielbar. Ist eine Übung nicht öffentlich, sehen sie nur die Kurse, denen du sie zuweist. Die Angaben 📚 zu Lehrwerk und Lektion siehst nur du.</p>
     <div class="leiste"><label for="wf">Lehrwerk:</label><select id="wf"><option value="alle">Alle</option>${ws.map(w => `<option value="${esc(w)}" ${F.werk === w ? 'selected' : ''}>${esc(w)} (${KATALOG.filter(e => e.quelle && e.quelle.werk === w).length})</option>`).join('')}<option value="ohne" ${F.werk === 'ohne' ? 'selected' : ''}>Prüfungstraining & Spiele (${KATALOG.filter(e => !e.quelle).length})</option></select></div>
     <div style="display:grid;gap:12px">${liste.map(e => {
       const p = (D.pub.ex || {})[e.id], offen = p && typeof p.offen === 'boolean' ? p.offen : e.offen !== false;
@@ -757,10 +972,13 @@ function uebungen() {
         <a class="btn zweit klein" href="${mitDemo(e.datei)}" target="_blank">Öffnen</a><button class="btn zweit klein" data-cp="${e.datei}">🔗 Link</button></div>
         <div class="zeile klein"><span><b>${vs.length}</b> Durchgänge</span><span>Ø <b>${d == null ? '–' : d + ' %'}</b></span>${aktiv ? `<span style="color:#1e7a45"><span class="puls"></span>${aktiv} spielen gerade</span>` : ''}
         <span style="flex:1"></span><button class="btn zweit klein" data-st="${e.id}">Statistik →</button></div>
-        <div class="zeile"><label class="schalter"><input type="checkbox" data-of="${e.id}" ${offen ? 'checked' : ''}> <b>Öffentlich</b> (ohne Code spielbar)</label></div>
+        <div class="zeile"><label class="schalter"><input type="checkbox" data-of="${e.id}" ${offen ? 'checked' : ''}> <b>Öffentlich</b> (ohne Code spielbar)</label>
+          ${e.id !== 'live' ? `<span style="flex:1"></span><label class="klein leise" for="rub-${e.id}">Rubrik auf der Startseite:</label><select id="rub-${e.id}" data-rub="${e.id}">${RW.map(r => `<option value="${r.k}" ${rubrikVon(e, D.pub.ex || {}, RL) === r.k ? 'selected' : ''}>${r.ic} ${esc(r.t)}${r.aus ? ' (ausgeblendet)' : ''}</option>`).join('')}</select>` : ''}</div>
         ${kl.length ? `<div class="zeile klein"><span class="leise">Kurse:</span>${kl.map(([kid, k]) => `<label class="schalter"><input type="checkbox" data-k="${kid}" data-e="${e.id}" ${D.pub.kurse && D.pub.kurse[kid] && D.pub.kurse[kid].ex && D.pub.kurse[kid].ex[e.id] ? 'checked' : ''}> ${esc(k.name)}</label>`).join('')}</div>` : ''}</div>`; }).join('')}</div>`;
   $('#wf').onchange = ev => { F.werk = ev.target.value; uebungen(); };
   app.querySelectorAll('[data-of]').forEach(c => c.onchange = () => db.set('pub/ex/' + c.dataset.of + '/offen', c.checked));
+  app.querySelectorAll('[data-rub]').forEach(s => s.onchange = () => db.set('pub/ex/' + s.dataset.rub + '/rubrik', s.value));
+  bindeRubriken();
   app.querySelectorAll('[data-k]').forEach(c => c.onchange = () => db.set('pub/kurse/' + c.dataset.k + '/ex/' + c.dataset.e, c.checked ? true : null));
   app.querySelectorAll('[data-cp]').forEach(b => b.onclick = () => navigator.clipboard.writeText(BASE + b.dataset.cp).then(() => meld('Link kopiert.'), () => prompt('Link:', BASE + b.dataset.cp)));
   app.querySelectorAll('[data-st]').forEach(b => b.onclick = () => { F.eex = b.dataset.st; F.ekurs = 'alle'; document.querySelector('.tab[data-t=erg]').click(); });

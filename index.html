@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Übungszentrale – Lern Deutsch mit Arash</title>
-<link rel="stylesheet" href="stil.css?v=20261016a">
+<link rel="stylesheet" href="stil.css?v=20261028a">
 <style>
   .held{background:linear-gradient(135deg,#1f2328,#2f3f46);color:#fff;padding:34px 0 60px}
   .held h1{font-size:2rem;margin-bottom:4px}
@@ -88,9 +88,10 @@ window.__ok = false;
 </script>
 <script type="module">
 window.__ok = true;
-import { db, DEMO, esc, mitDemo } from './db.js?v=20261016a';
-import { KATALOG } from './katalog.js?v=20261016a';
-import { sitzung, anmelden, alsGast, abmelden, besteLokal, meldeCodeZurueck } from './spieler.js?v=20261016a';
+import { db, DEMO, esc, mitDemo } from './db.js?v=20261028a';
+import { KATALOG } from './katalog.js?v=20261028a';
+import { rubriken, rubrikVon } from './rubriken.js?v=20261028a';
+import { sitzung, anmelden, alsGast, abmelden, besteLokal, meldeCodeZurueck } from './spieler.js?v=20261028a';
 
 if (DEMO) document.getElementById('demo').innerHTML = '<div class="demo-band">DEMO-MODUS – Daten bleiben nur in diesem Browser</div>';
 const $ = s => document.querySelector(s);
@@ -132,21 +133,13 @@ function karte(ex, best) {
     ${best != null ? `<span class="best klein">✓ ${best} %</span>` : ''}</div></div></a>`;
 }
 
-const RUBRIKEN = [
-  { k: 'meine', ic: '⭐', t: 'Meine Übungen', u: 'Von deiner Lehrkraft für dich freigeschaltet', f: '#b8841a' },
-  { k: 'muendlich', ic: '🗣️', t: 'Mündliche Prüfung', u: 'Problem lösen, Smalltalk, Sprechen üben', f: '#2f6b5e', reihen: ['Mündliche Prüfung'] },
-  { k: 'training', ic: '🎯', t: 'Prüfungstraining', u: 'Lesen, Hören, Schreiben und Wortschatz rund um den Beruf', f: '#2f6fc4', reihen: ['Prüfungstraining B1/B2'] },
-  { k: 'grammatik', ic: '🧩', t: 'Grammatik & Wortschatz', u: 'Präpositionen, Wortverbindungen und Spiele', f: '#5b4fa3', reihen: ['Grammatik-Spiele', 'Spiele'] },
-  { k: 'tests', ic: '🧪', t: 'Tests', u: 'Sprachstand prüfen', f: '#3f5f9a', reihen: ['Diagnose & Tests'] },
-  { k: 'weitere', ic: '📦', t: 'Weitere Übungen', u: '', f: '#666' }
-];
-const rubrikVon = ex => (RUBRIKEN.find(r => r.reihen && r.reihen.includes(ex.reihe)) || RUBRIKEN[RUBRIKEN.length - 1]).k;
-
 async function start() {
   zeigeAnmeldung();
   const s = sitzung(), best = besteLokal();
   let pubEx = {}, kursEx = {};
   try { pubEx = (await db.get('pub/ex')) || {}; } catch (e) { }
+  let rOver = {}; try { rOver = (await db.get('pub/rubriken')) || {}; } catch (e) { }
+  const RUBRIKEN = rubriken(rOver);
   if (s && s.kid) { try { kursEx = (await db.get('pub/kurse/' + s.kid + '/ex')) || {}; } catch (e) { } }
   let mein = {};
   if (s && s.code) { try { mein = (await db.get('mein/' + s.code)) || {}; } catch (e) { console.warn('Lernstand nicht lesbar', e); } }
@@ -155,7 +148,7 @@ async function start() {
   const ohneLive = KATALOG.filter(ex => ex.id !== 'live');
   const meine = ohneLive.filter(ex => indiv[ex.id] === true || (indiv[ex.id] !== false && kursEx[ex.id]));
   const sichtbar = ohneLive.filter(ex => meine.includes(ex) || offen(ex));
-  const inRubrik = k => k === 'meine' ? meine : sichtbar.filter(ex => rubrikVon(ex) === k);
+  const inRubrik = k => k === 'meine' ? meine : sichtbar.filter(ex => rubrikVon(ex, pubEx, RUBRIKEN) === k);
   const rub = (location.hash.match(/^#r=(\w+)/) || [])[1];
   const R = RUBRIKEN.find(r => r.k === rub);
   const live = KATALOG.find(e => e.id === 'live');
@@ -170,9 +163,10 @@ async function start() {
     if (s && s.code) kacheln.push(`<a class="kachel gross fb" href="${mitDemo('lernstand.html')}"><span class="ic">📋</span><span class="tx"><b>Lehrer-Feedback & Lernstand</b><span>${mein.fb ? 'Feedback vom ' + new Date(mein.fb.t).toLocaleDateString('de-DE') : mein.sa ? 'Schätze dich selbst ein' : 'Dein Vorbereitungsstand für die Prüfung'}</span></span>${fbNeu ? '<span class="neu">Neu</span>' : ''}<span class="pf">→</span></a>`);
     if (live) kacheln.push(`<a class="kachel gross live" href="${mitDemo(live.datei)}"><span class="ic">📡</span><span class="tx"><b>Live-Runde beitreten</b><span>Mit dem PIN vom Bildschirm deiner Lehrkraft</span></span><span class="pf">→</span></a>`);
     h += kacheln.length ? `<div class="kacheln oben">${kacheln.join('')}</div>` : '';
-    h += `<div class="abschnitt"><h2>Übungen</h2></div><div class="kacheln">` + RUBRIKEN.filter(r => (r.k !== 'meine' || (s && s.kid)) && (r.k === 'meine' || inRubrik(r.k).length)).map(r => {
+    h += `<div class="abschnitt"><h2>Übungen</h2></div><div class="kacheln">` + RUBRIKEN.filter(r => !r.aus && (r.k !== 'meine' || (s && s.kid)) && (r.k === 'meine' || inRubrik(r.k).length)).map(r => {
       const l = inRubrik(r.k), fertig = l.filter(ex => best[ex.id] != null).length;
-      return `<a class="kachel" href="#r=${r.k}" style="--f:${r.f}"><span class="ic">${r.ic}</span><span class="tx"><b>${esc(r.t)}</b><span>${l.length} ${l.length === 1 ? 'Übung' : 'Übungen'}${fertig ? ' · ' + fertig + ' gemacht' : ''}</span>${r.u ? `<span class="u">${esc(r.u)}</span>` : ''}</span><span class="pf">→</span></a>`;
+      const ziel = l.length === 1 && r.k !== 'meine' ? mitDemo(l[0].datei) : '#r=' + r.k;
+      return `<a class="kachel" href="${ziel}" style="--f:${r.f}"><span class="ic">${r.ic}</span><span class="tx"><b>${esc(r.t)}</b><span>${l.length} ${l.length === 1 ? 'Übung' : 'Übungen'}${fertig ? ' · ' + fertig + ' gemacht' : ''}</span>${r.u ? `<span class="u">${esc(r.u)}</span>` : ''}</span><span class="pf">→</span></a>`;
     }).join('') + '</div>';
   }
   $('#inhalt').innerHTML = h;

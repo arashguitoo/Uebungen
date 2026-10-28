@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zusatzlektion – Übungszentrale</title>
+<link rel="stylesheet" href="stil.css?v=20261028a">
+<style>
+  :root{--akzent:#5b4fa3;--akzent-hell:#ecebf7}
+  body{background:#f6f3ee}
+  .held{background:linear-gradient(160deg,#2b2550,var(--akzent));color:#fff;padding:24px 0 56px}
+  .held h1{margin:4px 0;font-size:1.9rem}.held p{margin:0;opacity:.85}
+  .held .pille{background:rgba(255,255,255,.18);color:#fff}
+  main.wrap{margin-top:-40px;padding-bottom:40px}
+  .abschn{margin:26px 0 8px;display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .abschn h2{margin:0}
+  .gitter{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+  .kachel{display:flex;gap:12px;align-items:flex-start;text-align:left;font:inherit;color:inherit;background:#fff;border:1px solid #e6e0d6;border-radius:14px;padding:14px 16px;box-shadow:var(--schatten);cursor:pointer;text-decoration:none;transition:transform .15s}
+  .kachel:hover{transform:translateY(-2px)}
+  .kachel .ic{font-size:1.6rem;line-height:1}
+  .kachel b{display:block}
+  .kachel .ok{color:#2f7d57;font-weight:700}
+  .kachel.gelesen{border-left:5px solid #2f7d57}
+  .kap{max-width:820px;margin:16px auto}
+  .kap h2{color:#2b2550}
+  .kap .text{font-size:1.05rem;line-height:1.65;margin:10px 0}
+  .regel{background:var(--akzent-hell);border-left:5px solid var(--akzent);border-radius:10px;padding:12px 16px;margin:14px 0;line-height:1.6}
+  mark{background:#ffe08a;border-radius:3px;padding:0 2px}
+  .bsp{background:#fffdf8;border:1px solid #ece4d4;border-radius:12px;padding:12px 16px;margin:14px 0;display:grid;gap:6px}
+  .bsp .z{display:grid;grid-template-columns:92px 1fr;gap:8px}
+  .bsp .lab{font-size:.78rem;font-weight:700;color:var(--leise);text-transform:uppercase;letter-spacing:.03em;padding-top:3px}
+  .bsp .erg{font-weight:600;color:#2b2550}
+  .bsp .rolle{font-size:.9rem;color:var(--akzent);font-weight:600}
+  .kap table{border-collapse:collapse;width:100%;background:#fff;border-radius:10px;overflow:hidden;margin:12px 0;font-size:.95rem}
+  .kap th,.kap td{border:1px solid #e6e0d6;padding:8px 10px;text-align:left;vertical-align:top}
+  .kap th{background:#f1eee8;font-size:.85rem}
+  .tabwrap{overflow-x:auto}
+  .kap ol,.kap ul{line-height:1.7;padding-left:22px}
+  .kapnav{display:flex;justify-content:space-between;gap:10px;margin-top:20px;flex-wrap:wrap}
+  .lauf-kopf{display:flex;gap:10px;align-items:center;margin:16px 0 8px}
+  .fbalken{height:8px;background:#e6e1f2;border-radius:8px;overflow:hidden;margin-bottom:12px}.fbalken i{display:block;height:100%;background:var(--akzent)}
+  .r-saetze{background:#fffdf8;border:1px solid #ece4d4;border-radius:12px;padding:10px 14px;line-height:1.8;font-size:1.05rem}
+  .r-schritt{margin-top:14px}
+  .r-schritt .t{font-weight:700;margin-bottom:6px}
+  .r-opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px}
+  .r-erg{margin-top:10px;font-weight:600;color:#2b2550}
+  .nachl{background:#fff8e1;border-radius:10px;padding:8px 12px;margin-bottom:10px}
+  .ende{text-align:center;padding:26px}
+</style>
+</head>
+<body>
+<section class="held"><div class="wrap" id="held"></div></section>
+<main class="wrap" id="app"><p class="leise">Lädt …</p></main>
+<script type="module">
+import { esc, mitDemo } from './db.js?v=20261028a';
+import { starte, sitzung } from './spieler.js?v=20261028a';
+import { zeige, punkte, labels, mische, ziehe } from './aufgaben.js?v=20261028a';
+
+const $ = s => document.querySelector(s), app = $('#app');
+const lid = (new URLSearchParams(location.search).get('l') || '').replace(/[^a-z0-9-]/g, '');
+let LK;
+try { const r = await fetch('lektionen/' + lid + '.json', { cache: 'no-cache' }); if (!r.ok) throw new Error('HTTP ' + r.status); LK = await r.json(); }
+catch (e) { app.innerHTML = `<div class="karte" style="text-align:center"><h2>Lektion nicht gefunden</h2><a class="btn" href="${mitDemo('index.html')}">Zur Übungszentrale</a></div>`; throw e; }
+document.title = LK.titel + ' – Zusatzlektion';
+if (LK.farbe) document.documentElement.style.setProperty('--akzent', LK.farbe);
+const L = await starte(LK.id, { id: LK.id, titel: LK.titel, farbe: LK.farbe, offen: true });
+document.body.prepend(document.querySelector('header.kopf'));
+if (!L.frei) { L.sperre(app); throw new Error('gesperrt'); }
+const s = sitzung(), BK = 'ueb_lekt_' + LK.id + '_' + (s && s.code ? s.code : 'gast');
+let st = {}; try { st = JSON.parse(localStorage.getItem(BK)) || {}; } catch (e) { }
+st = Object.assign({ gelesen: {}, beste: {} }, st);
+const sichere = () => { try { localStorage.setItem(BK, JSON.stringify(st)); } catch (e) { } };
+
+const ROLLEN = { nom: 'Subjekt – Wer? Was? (Nominativ)', akk: 'Objekt – Wen? Was? (Akkusativ)', dat: 'Objekt – Wem? (Dativ)', gen: 'Besitz – Wessen? (Genitiv)', praep: 'nach einer Präposition' };
+const lab = {};
+LK.module.forEach((m, mi) => m.aufgaben.forEach(a => { if (a.typ === 'rolle') lab[a.id] = 'M' + (mi + 1) + ' · ' + a.s2.replace(/==/g, ''); else Object.entries(labels(a)).forEach(([k, v]) => lab[k] = 'M' + (mi + 1) + ' · ' + v); }));
+L.registriereItems(lab);
+const pk = a => a.typ === 'rolle' ? 2 : punkte(a);
+
+/* Mini-Markdown: **fett**, ==markiert==, Zeilenumbrüche */
+const md = t => esc(t).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/==(.+?)==/g, '<mark>$1</mark>').replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>');
+
+let laufNr = 0;
+held();
+addEventListener('hashchange', route);
+route();
+
+function held(extra = '') {
+  $('#held').innerHTML = `<span class="pille">Zusatzlektion</span> <span class="pille">${esc(LK.niveau || '')}</span><h1>${esc(LK.titel)}</h1><p>${esc(LK.untertitel || '')}</p>${extra}`;
+}
+function route() {
+  laufNr++;
+  const h = location.hash.slice(1);
+  if (h.startsWith('k=')) return kapitel(+h.slice(2));
+  if (h.startsWith('m=')) return modul(+h.slice(2));
+  if (h === 'test') return modul(-1);
+  start();
+}
+function start() {
+  const gel = LK.kapitel.filter((_, i) => st.gelesen[i]).length;
+  app.innerHTML = `<div class="karte"><p class="text" style="margin:0">${md(LK.intro || '')}</p></div>
+    <div class="abschn"><h2>📖 Erklärung</h2><span class="leise klein">${gel} von ${LK.kapitel.length} gelesen</span></div>
+    <div class="gitter">${LK.kapitel.map((k, i) => `<a class="kachel ${st.gelesen[i] ? 'gelesen' : ''}" href="#k=${i}"><span class="ic">${esc(k.ic || '📄')}</span><span><span class="leise klein">Schritt ${i + 1}</span><b>${esc(k.titel)}</b>${st.gelesen[i] ? '<span class="ok klein">✓ gelesen</span>' : ''}</span></a>`).join('')}</div>
+    <div class="abschn"><h2>✏️ Übungen</h2><span class="leise klein">${LK.module.reduce((x, m) => x + m.aufgaben.length, 0)} Aufgaben</span></div>
+    <div class="gitter">${LK.module.map((m, i) => `<a class="kachel" href="#m=${i}"><span class="ic">${esc(m.icon || '📝')}</span><span><b>${esc(m.titel)}</b><span class="leise klein">${esc(m.kurz || '')}</span><br><span class="klein">${m.aufgaben.length} Aufgaben${st.beste[i] != null ? ` · <span class="ok">✓ ${st.beste[i]} %</span>` : ''}</span></span></a>`).join('')}</div>
+    <div class="abschn"><h2>🏁 Abschlusstest</h2></div>
+    <a class="kachel" href="#test" style="max-width:420px"><span class="ic">🎲</span><span><b>Gemischter Test · ${LK.mix || 15} Aufgaben</b><span class="leise klein">Zufällige Aufgaben aus allen Teilen.</span>${st.beste.test != null ? `<br><span class="ok klein">✓ bestes Ergebnis ${st.beste.test} %</span>` : ''}</span></a>`;
+  scrollTo(0, 0);
+}
+
+function block(b) {
+  if (b.t === 'text') return `<p class="text">${md(b.md)}</p>`;
+  if (b.t === 'regel') return `<div class="regel">${md(b.md)}</div>`;
+  if (b.t === 'liste') return `<ul class="text">${b.items.map(x => `<li>${md(x)}</li>`).join('')}</ul>`;
+  if (b.t === 'tabelle') return `<div class="tabwrap"><table><tr>${b.kopf.map(k => `<th>${md(k)}</th>`).join('')}</tr>${b.zeilen.map(z => `<tr>${z.map(c => `<td>${md(c)}</td>`).join('')}</tr>`).join('')}</table></div>`;
+  if (b.t === 'beispiel') return `<div class="bsp"><div class="z"><span class="lab">Satz 1</span><span>${md(b.s1)}</span></div><div class="z"><span class="lab">Satz 2</span><span>${md(b.s2)}</span></div>
+    <div class="z"><span class="lab">Rolle</span><span class="rolle">${md(b.rolle)}</span></div><div class="z"><span class="lab">Relativsatz</span><span class="erg">${md(b.erg)}</span></div></div>`;
+  if (b.t === 'check') return `<div class="karte" style="margin:16px 0"><div class="leise klein" style="margin-bottom:6px">✋ Probier es selbst:</div><div class="chk"></div></div>`;
+  return '';
+}
+function kapitel(i) {
+  const k = LK.kapitel[i]; if (!k) return start();
+  st.gelesen[i] = true; sichere();
+  app.innerHTML = `<div class="karte kap"><a href="#" class="klein">← Übersicht</a><div class="leise klein" style="margin-top:8px">Schritt ${i + 1} von ${LK.kapitel.length}</div><h2>${esc(k.ic || '')} ${esc(k.titel)}</h2>${k.bloecke.map(block).join('')}
+    <div class="kapnav">${i > 0 ? `<a class="btn zweit" href="#k=${i - 1}">← ${esc(LK.kapitel[i - 1].titel)}</a>` : '<span></span>'}${i + 1 < LK.kapitel.length ? `<a class="btn" href="#k=${i + 1}">Weiter: ${esc(LK.kapitel[i + 1].titel)} →</a>` : `<a class="btn" href="#m=0">Zu den Übungen →</a>`}</div></div>`;
+  const chk = k.bloecke.filter(b => b.t === 'check');
+  app.querySelectorAll('.chk').forEach((el, j) => aufgabe(el, chk[j].aufgabe, {}));
+  scrollTo(0, 0);
+}
+
+/* Rollen-Detektiv: erst Rolle, dann Pronomen */
+function rolle(el, a, o) {
+  return new Promise(res => {
+    el.innerHTML = `<div class="aufgabe"><div class="frage">Verbinde die Sätze. Welche Rolle hat das gemeinsame Wort im <b>zweiten</b> Satz?</div>
+      <div class="r-saetze"><div>1️⃣ ${md(a.s1)}</div><div>2️⃣ ${md(a.s2)}</div></div>
+      <div class="r-schritt" id="s1"><div class="t">Schritt 1: Welche Rolle hat das markierte Wort in Satz 2?</div><div class="optionen">${mische(Object.keys(ROLLEN)).map(k => `<button class="opt" data-r="${k}">${esc(ROLLEN[k])}</button>`).join('')}</div></div>
+      <div class="r-schritt" id="s2" hidden><div class="t">Schritt 2: Welches Relativpronomen passt?</div><div class="r-opts">${mische(a.opts.map((t, i) => ({ t, ok: i === a.l }))).map(x => `<button class="opt" data-ok="${x.ok ? 1 : 0}">${esc(x.t)}</button>`).join('')}</div></div>
+      <div class="fb"></div></div>`;
+    let p = 0;
+    el.querySelectorAll('[data-r]').forEach(b => b.onclick = () => {
+      const ok = b.dataset.r === a.rolle; if (ok) p++;
+      el.querySelectorAll('[data-r]').forEach(x => { x.disabled = true; if (x.dataset.r === a.rolle) x.classList.add('richtig'); });
+      if (!ok) b.classList.add('falsch');
+      el.querySelector('#s2').hidden = false; el.querySelector('#s2').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+    el.querySelectorAll('[data-ok]').forEach(b => b.onclick = () => {
+      const ok = b.dataset.ok === '1'; if (ok) p++;
+      el.querySelectorAll('[data-ok]').forEach(x => { x.disabled = true; if (x.dataset.ok === '1') x.classList.add('richtig'); });
+      if (!ok) b.classList.add('falsch');
+      const alles = p === 2;
+      el.querySelector('.fb').innerHTML = `<div class="feedback ${alles ? 'ok' : 'nein'}"><b>${alles ? 'Perfekt – Rolle und Pronomen stimmen!' : p ? 'Fast!' : 'Noch nicht.'}</b><div class="r-erg">✓ ${esc(a.ergebnis)}</div><div>Rolle: ${esc(ROLLEN[a.rolle])}.${a.x ? ' ' + esc(a.x) : ''}</div></div><button class="btn weiter">Weiter →</button>`;
+      o.onErgebnis && o.onErgebnis(alles, { p, pm: 2, teile: [[a.id, alles]] });
+      const w = el.querySelector('.weiter'); w.onclick = () => res({ richtig: alles, p, pm: 2 }); w.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  });
+}
+const aufgabe = (el, a, o) => a.typ === 'rolle' ? rolle(el, a, o) : zeige(el, a, o);
+
+async function modul(mi) {
+  const meiner = laufNr;
+  const m = mi >= 0 ? LK.module[mi] : { titel: 'Abschlusstest', icon: '🎲', aufgaben: ziehe(LK.module.flatMap(x => x.aufgaben), LK.mix || 15) };
+  if (!m) return start();
+  const liste = m.aufgaben, pm = liste.reduce((x, a) => x + pk(a), 0), nach = [];
+  let p = 0, pa = 0;
+  L.beginne(liste.length, pm, m.titel);
+  const rahmen = (i, banner = '') => {
+    app.innerHTML = `<div class="lauf-kopf"><a class="btn zweit klein" href="#">← Übersicht</a><b style="flex:1">${esc(m.icon || '')} ${esc(m.titel)}</b><span>${p} / ${pa} Pkt.</span></div>
+      <div class="fbalken"><i style="width:${Math.round(100 * i / liste.length)}%"></i></div><div class="leise klein" style="margin-bottom:8px">${banner ? 'Wiederholung' : `Aufgabe ${i + 1} von ${liste.length}`}</div>${banner}<div class="karte" id="feld"></div>`;
+    scrollTo(0, 0); return $('#feld');
+  };
+  for (let i = 0; i < liste.length; i++) {
+    const a = liste[i];
+    await aufgabe(rahmen(i), a, { onErgebnis: (ok, d) => { p += d.p; pa += d.pm; d.teile.forEach(([id, x]) => L.antwort(id, x)); if (!ok) nach.push(a); L.fortschritt(i + 1, p, m.titel, pa); } });
+    if (meiner !== laufNr) { L.abbrechen(); return; }
+  }
+  for (const a of nach.slice(0, 6)) {
+    await aufgabe(rahmen(liste.length, '<div class="nachl">🔁 <b>Noch einmal:</b> Diese Aufgabe war schwierig – jetzt ohne Punkte.</div>'), a, { lobText: 'Jetzt sitzt es!' });
+    if (meiner !== laufNr) return;
+  }
+  const pct = await L.ende(p, pm, { modul: m.titel });
+  const key = mi >= 0 ? mi : 'test'; if (!(key in st.beste) || pct > st.beste[key]) { st.beste[key] = pct; sichere(); }
+  const nx = mi >= 0 && mi + 1 < LK.module.length ? mi + 1 : null;
+  app.innerHTML = `<div class="karte ende" style="margin-top:16px"><div style="font-size:2.6rem">${pct >= 85 ? '🏆' : pct >= 60 ? '👍' : '💪'}</div><h2>${p} von ${pm} Punkten · ${pct} %</h2><p class="leise">${esc(m.titel)}</p>
+    <p>${pct >= 85 ? 'Ausgezeichnet!' : pct >= 60 ? 'Gut gemacht!' : 'Lies die Erklärung noch einmal und versuch es dann erneut.'}</p>
+    <div class="zeile" style="justify-content:center">${nx != null ? `<a class="btn" href="#m=${nx}">Weiter: ${esc(LK.module[nx].titel)} →</a>` : ''}<button class="btn zweit" id="nochmal">Noch einmal</button><a class="btn zweit" href="#">Zur Übersicht</a></div></div>`;
+  $('#nochmal').onclick = () => { laufNr++; modul(mi); };
+}
+</script>
+</body>
+</html>
