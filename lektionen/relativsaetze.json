@@ -24,7 +24,7 @@
     },
     {
      "t": "regel",
-     "md": "Der Relativsatz ist ein **Nebensatz**: Er beginnt mit dem Relativpronomen (der, die, das …), steht mit **Komma** und das konjugierte **Verb steht am Ende**."
+     "md": "Der Relativsatz ist ein **Nebensatz**: Er beginnt mit dem Relativpronomen (der, die, das … – eventuell mit einer Präposition davor), steht mit **Komma** und das konjugierte **Verb steht am Ende**."
     },
     {
      "t": "text",
@@ -274,7 +274,7 @@
    "bloecke": [
     {
      "t": "text",
-     "md": "**was** steht nach **alles, etwas, nichts, vieles, das Beste** … und wenn sich der Relativsatz auf den **ganzen Satz** bezieht:"
+     "md": "**was** steht nach **alles, nichts, vieles, das Beste** … (nach *etwas* und *nichts* ist auch *das* möglich) und wenn sich der Relativsatz auf den **ganzen Satz** bezieht:"
     },
     {
      "t": "liste",
@@ -1316,10 +1316,10 @@
      "typ": "mc",
      "frage": "Welcher Satz ist korrekt?",
      "opts": [
-      "Die Teilnehmer, denen der Test schwer fiel, üben weiter.",
-      "Die Teilnehmer, den der Test schwer fiel, üben weiter.",
-      "Die Teilnehmer, die der Test schwer fiel, üben weiter.",
-      "Die Teilnehmer, deren der Test schwer fiel, üben weiter."
+      "Die Teilnehmer, denen der Test schwerfiel, üben weiter.",
+      "Die Teilnehmer, den der Test schwerfiel, üben weiter.",
+      "Die Teilnehmer, die der Test schwerfiel, üben weiter.",
+      "Die Teilnehmer, deren der Test schwerfiel, üben weiter."
      ],
      "l": 0,
      "x": "schwerfallen + Dativ: Wem fiel der Test schwer? → Dativ Plural → denen."
@@ -1371,10 +1371,10 @@
     {
      "id": "W02",
      "typ": "mc",
-     "frage": "Es gibt nichts, ___ ich lieber mache.",
+     "frage": "Es gibt vieles, ___ ich gern mache.",
      "opts": [
       "was",
-      "das",
+      "dass",
       "den",
       "wo"
      ],
@@ -1386,7 +1386,7 @@
      "frage": "Das Beste, ___ du vor der Prüfung tun kannst, ist üben.",
      "opts": [
       "was",
-      "das",
+      "wen",
       "dass",
       "wo"
      ],
@@ -1489,13 +1489,13 @@
      "id": "T02",
      "typ": "luecke",
      "frage": "Forumsbeitrag: Setzen Sie die passenden Wörter ein.",
-     "text": "Ich arbeite in einer Firma, {0} viele Mitarbeiter aus dem Ausland kommen. Die Kollegen, {1} ich jeden Tag zusammenarbeite, kommen aus fünf Ländern. Mein Chef, {2} Eltern aus der Türkei stammen, spricht drei Sprachen. Das ist etwas, {3} ich sehr schätze. Neue Kollegen, {4} die Sprache noch schwerfällt, bekommen bei uns einen Paten.",
+     "text": "Ich arbeite in einer Firma, {0} viele Mitarbeiter aus dem Ausland kommen. Die Kollegen, {1} ich jeden Tag zusammenarbeite, kommen aus fünf Ländern. Mein Chef, {2} Eltern aus der Türkei stammen, spricht drei Sprachen, {3} ich sehr schätze. Neue Kollegen, {4} die Sprache noch schwerfällt, bekommen bei uns einen Paten.",
      "gaps": [
       {
        "opts": [
         "in der",
         "in die",
-        "deren"
+        "die"
        ],
        "l": 0
       },
