@@ -75,6 +75,26 @@
   .uhr ul{text-align:left;max-width:520px;margin:18px auto;font-size:1.1rem;line-height:1.6}
   .uhr .btn{background:#fff;color:var(--tinte);border-color:#fff}.uhr .btn.zweit{background:transparent;color:#fff}
   .gespeichert{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:var(--tinte);color:#fff;padding:9px 16px;border-radius:10px;font-size:.92rem;z-index:70}
+  .minis{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px}
+  .mini{display:grid;gap:2px;min-width:120px;text-decoration:none;color:inherit}
+  .balk{height:8px;background:#ece7df;border-radius:8px;overflow:hidden;width:120px}.balk i{display:block;height:100%;background:var(--akzent)}
+  .fbgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:16px;margin-top:16px;align-items:start}
+  @media(max-width:520px){.fbgrid{grid-template-columns:1fr}}
+  .fbliste h3{margin:0 0 6px}
+  .fbitem{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid #efe9df}
+  .fbitem .lk{display:grid;gap:3px;justify-items:end;flex:none}
+  .selbst{margin-top:8px;display:grid;gap:4px}
+  .selbst .stufen button{min-height:38px;padding:5px 6px;font-size:.84rem}
+  .dteile{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:12px}
+  .dteile>div{background:#f8f6f2;border-radius:10px;padding:10px 12px;display:grid;gap:4px;justify-items:start}
+  .dteile .gz{font-size:1.5rem}
+  .dempf{border-left:4px solid #d9483b;background:#fdf6f4;border-radius:8px;padding:7px 10px;margin-bottom:6px;display:grid;gap:2px}
+  .bz{display:grid;grid-template-columns:1fr auto;gap:2px 8px;padding:3px 0}.bz .balk{grid-column:1/-1;width:100%}
+  .mkg{display:grid;grid-template-columns:150px 1fr;gap:8px;padding:5px 0}
+  @media(max-width:600px){.mkg{grid-template-columns:1fr}}
+  .etab{border-collapse:collapse;width:100%;font-size:.92rem}.etab th,.etab td{border-bottom:1px solid #efe9df;padding:6px 8px;text-align:left}.etab th{font-size:.8rem;color:var(--leise)}
+  .zl{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-top:1px solid #efe9df;text-decoration:none;color:inherit}
+  h4{margin:12px 0 6px}
 </style>
 </head>
 <body>
@@ -86,7 +106,10 @@
 import { db, DEMO, esc, mitDemo } from './db.js?v=20261028a';
 import { exById } from './katalog.js?v=20261028a';
 import { sitzung, anmelden } from './spieler.js?v=20261028a';
-import { LISTEN, MERKMAL, wertInfo, skalaVon, prozent } from './feedback-kriterien.js?v=20261028a';
+import { LISTEN, MERKMAL, MERKMALE, wertInfo, skalaVon, prozent } from './feedback-kriterien.js?v=20261028a';
+import { TEST as DTEST, BEREICHE as DBER } from './diagnose-daten.js?v=20261028a';
+const DTEILE = DTEST.teile;
+const pfarbe = p => p >= 85 ? '#d9f2e2' : p >= 65 ? '#eef6d5' : p >= 45 ? '#fdf0cf' : '#fbe0db';
 
 if (DEMO) document.getElementById('demo').innerHTML = '<div class="demo-band">DEMO-MODUS – Daten bleiben nur in diesem Browser</div>';
 document.getElementById('zur').href = mitDemo('index.html');
@@ -129,41 +152,54 @@ function zeige() {
     return;
   }
   if (fb) { try { localStorage.setItem('ueb_fb_gesehen_' + s.code, fb.t); } catch (e) { } }
-  const sichtbar = LISTEN.filter(L => L.tn && L.items.some(it => c[L.id + '_' + it.id]));
-  const gesamt = sichtbar.length ? Math.round(sichtbar.reduce((a, L) => a + prozent(L, cs), 0) / sichtbar.length) : null;
-  heldZeigen(fb ? `Dein Weg zur Prüfung DTB B2 · Feedback vom ${datumLang(fb.t)}` : (mein.sa ? 'Dein Weg zur Prüfung DTB B2 – schätze dich selbst ein.' : 'Dein Weg zur Prüfung DTB B2'), gesamt);
+  const listen = LISTEN.filter(L => L.tn && (fb || (mein.sa && L.selbst)));
+  const mitWert = listen.filter(L => L.items.some(it => c[L.id + '_' + it.id]));
+  const gesamt = mitWert.length ? Math.round(mitWert.reduce((a, L) => a + prozent(L, cs), 0) / mitWert.length) : null;
+  heldZeigen(fb ? `Dein Weg zur Prüfung DTB B2 · aktualisiert am ${datumLang(fb.t)}` : 'Dein Weg zur Prüfung DTB B2 – schätze dich selbst ein.', gesamt);
   let h = '';
+  // Kopf wie in der Ansicht der Lehrkraft: Überblick über alle Bereiche
+  h += `<div class="karte"><div class="zeile"><div style="flex:1"><h2 style="margin:0">${esc(s.name)}</h2><div class="leise klein">${esc(s.kurs || '')} · Code ${esc(s.code)}</div></div>
+      <span class="leise klein">Nur deine Lehrkraft kann hier etwas ändern – du kannst dich selbst einschätzen.</span></div>
+    <div class="minis">${listen.map(L => { const pr = prozent(L, cs); return `<a class="mini" href="#l-${L.id}"><span class="klein leise">${esc(L.kurz)}</span><div class="balk"><i style="width:${pr}%"></i></div><b class="klein">${pr} %</b></a>`; }).join('')}
+      ${fb && fb.diag ? `<a class="mini" href="#diag"><span class="klein leise">Diagnosetest</span><div class="balk"><i style="width:${fb.diag.ges.pct}%"></i></div><b class="klein">${fb.diag.ges.pct} %</b></a>` : ''}</div></div>`;
+  if (fb && fb.msg) h += `<div class="karte brief" style="margin-top:14px"><div class="ava">✉️</div><div><div class="von">Nachricht deiner Lehrkraft</div><p>${esc(fb.msg)}</p></div></div>`;
+  // Diagnosetest
+  const dg = fb && fb.diag;
+  if (dg) {
+    const bfarbe = p => p < 60 ? '#d9483b' : p < 80 ? '#e0a020' : '#2e9e5b';
+    h += `<div class="karte" id="diag" style="margin-top:14px"><h3 style="margin:0 0 4px">🧪 Sprachstandsdiagnose</h3><div class="leise klein">geschrieben am ${datumLang(dg.t)}</div>
+      <div class="dteile"><div><span class="klein leise">Gesamt</span><b class="gz">${dg.ges.pct} %</b><span class="pill" style="background:${dg.ges.c};color:${dg.ges.f}">${esc(dg.ges.nt)}</span></div>
+      ${DTEILE.filter(T => dg.teile[T.id]).map(T => { const o = dg.teile[T.id]; return `<div><span class="klein"><b>${T.icon} ${esc(T.titel)}</b></span><b>${o.pct} %</b><span class="pill" style="background:${o.c};color:${o.f}">${esc(o.nt)}</span></div>`; }).join('')}</div>
+      <div class="zwei" style="margin-top:12px"><div>${(dg.foerder || []).length ? `<h4>🎯 Hier lohnt sich Üben</h4>${dg.foerder.map(b => { const B = DBER[b] || { t: b, tipp: '', ex: [] }, o = dg.bereiche[b] || {}; return `<div class="dempf"><div class="zeile"><b style="flex:1">${esc(B.t)}</b><span class="klein">${o.p}/${o.pm}</span></div><div class="klein">${esc(B.tipp)}</div>${(B.ex || []).map(e => exById(e) ? `<a class="klein" href="${mitDemo(exById(e).datei)}">↳ ${esc(exById(e).titel)} üben</a>` : '').join(' ')}</div>`; }).join('')}` : '<p class="leise">Kein Bereich unter 60 % – sehr gut!</p>'}
+        ${(dg.staerken || []).length ? `<h4>💪 Das kannst du schon gut</h4><div>${dg.staerken.map(b => `<span class="marke s">${esc((DBER[b] || { t: b }).t)}</span>`).join('')}</div>` : ''}</div>
+        <div><h4>Alle Bereiche</h4>${DTEILE.map(T => { const l = Object.entries(dg.bereiche || {}).filter(([b]) => (DBER[b] || {}).teil === T.id); return l.length ? `<div style="margin-bottom:8px"><b class="klein">${T.icon} ${esc(T.titel)}</b>${l.map(([b, o]) => `<div class="bz"><span class="klein">${esc(DBER[b].t)}</span><span class="klein leise">${o.p}/${o.pm}</span><div class="balk"><i style="width:${o.pct}%;background:${bfarbe(o.pct)}"></i></div></div>`).join('')}</div>` : ''; }).join('')}</div></div></div>`;
+  }
+  // Checklisten wie in der Konsole
+  h += `<div class="fbgrid">`;
+  for (const L of listen) {
+    const darfSelbst = mein.sa && L.selbst;
+    h += `<div class="karte fbliste" id="l-${L.id}"><h3>${esc(L.titel)}</h3>${L.info ? `<p class="leise klein" style="margin-top:0">${esc(L.info)}</p>` : ''}
+      ${L.items.map(it => { const key = L.id + '_' + it.id, ex = it.ex && exById(it.ex), sv = (selbst[key] || {}).s;
+        return `<div class="fbitem"><div style="flex:1;min-width:0"><b>${esc(it.t)}</b>${it.h ? `<div class="klein leise">${esc(it.h)}</div>` : ''}${ex ? `<a class="klein" href="${mitDemo(ex.datei)}">↳ ${esc(ex.titel)} üben</a>` : ''}
+          ${darfSelbst ? `<div class="selbst"><span class="klein leise">Meine Einschätzung:</span><div class="stufen">${skalaVon(L).werte.map(w => `<button data-key="${key}" data-v="${w.v}" aria-pressed="${sv === w.v}" style="${sv === w.v ? `background:${w.c};color:${w.f};border-color:${w.f}` : ''}"><i>${STUFE_IC[w.v] || ''}</i>${esc(w.l)}</button>`).join('')}</div>${L.id === 't1a' ? `<button class="lnk" data-uhr="${key}">⏱ 2 Minuten üben</button>` : ''}</div>` : ''}</div>
+          <div class="lk"><span class="klein leise">Lehrkraft</span>${fb ? pill(L, c[key]) : '<span class="pill leer">–</span>'}</div></div>`; }).join('')}</div>`;
+  }
+  h += `</div>`;
+  // Stärken und Arbeitsfelder
   if (fb) {
-    h += `<div class="karte brief"><div class="ava">✉️</div><div><div class="von">Nachricht deiner Lehrkraft</div>
-      <p>${fb.msg ? esc(fb.msg) : 'Hier siehst du, was du schon gut kannst und woran du als Nächstes arbeitest. Schau regelmäßig vorbei – dein Lernstand wird laufend aktualisiert.'}</p></div></div>`;
     const st = Object.keys(m).filter(k => m[k] === 's'), sw = Object.keys(m).filter(k => m[k] === 'w');
-    if (st.length || sw.length || fb.st || fb.sw) h += `<div class="abschn"><h2>Stärken und Ziele</h2></div><p class="unter">Was dir schon gut gelingt – und worauf du dich jetzt konzentrierst.</p>
-      <div class="zwei"><div class="karte feld"><h3>💪 Das kannst du schon gut</h3>${st.map(k => `<span class="marke s">${esc(MERKMAL[k] || k)}</span>`).join('')}${fb.st ? `<p>${esc(fb.st)}</p>` : ''}${!st.length && !fb.st ? '<p class="leise">Folgt beim nächsten Feedback.</p>' : ''}</div>
-        <div class="karte feld"><h3>🎯 Daran arbeitest du</h3>${sw.map(k => `<span class="marke w">${esc(MERKMAL[k] || k)}</span>`).join('')}${fb.sw ? `<p>${esc(fb.sw)}</p>` : ''}${!sw.length && !fb.sw ? '<p class="leise">Folgt beim nächsten Feedback.</p>' : ''}</div></div>`;
-    if (fb.ziel) { const zeilen = fb.ziel.split(/\n+/).map(z => z.replace(/^[-–•*]\s*/, '').trim()).filter(Boolean);
-      h += `<div class="karte feld" style="margin-top:14px"><h3>🗓 Deine nächsten Schritte</h3><ul class="schritte">${zeilen.map(z => `<li><span>${esc(z)}</span></li>`).join('')}</ul></div>`; }
+    const zeilen = (fb.ziel || '').split(/\n+/).map(z => z.replace(/^[-–•*]\s*/, '').trim()).filter(Boolean);
+    h += `<div class="karte" style="margin-top:16px"><h3>Stärken und Arbeitsfelder</h3>
+      ${MERKMALE.map(g => { const l = g.l.filter(([id]) => m[id]); return l.length ? `<div class="mkg"><b class="klein">${esc(g.g)}</b><div>${l.map(([id, x]) => `<span class="marke ${m[id]}">${m[id] === 's' ? '＋ ' : '→ '}${esc(x)}</span>`).join('')}</div></div>` : ''; }).join('') || '<p class="leise klein">Folgt beim nächsten Feedback.</p>'}
+      ${fb.st || fb.sw ? `<div class="zwei" style="margin-top:10px">${fb.st ? `<div class="feld"><h4>💪 Das kannst du gut</h4><p>${esc(fb.st)}</p></div>` : ''}${fb.sw ? `<div class="feld"><h4>🎯 Daran arbeitest du</h4><p>${esc(fb.sw)}</p></div>` : ''}</div>` : ''}
+      ${zeilen.length ? `<h4>🗓 Deine nächsten Schritte</h4><ul class="schritte">${zeilen.map(z => `<li><span>${esc(z)}</span></li>`).join('')}</ul>` : ''}</div>`;
   }
-  const tx = Object.values(mein.texte || {});
-  if (tx.length) h += `<a class="karte brief" href="${mitDemo('schreibwerkstatt.html#texte')}" style="margin-top:14px;text-decoration:none;color:inherit"><div class="ava">✍️</div><div><div class="von">Schreibwerkstatt</div><p style="margin-top:2px"><b>${tx.length} ${tx.length === 1 ? 'korrigierter Text' : 'korrigierte Texte'}</b> – zuletzt am ${datumLang(Math.max(...tx.map(x => x.tFrei || 0)))}. Ansehen →</p></div></a>`;
-  if (mein.sa) for (const L of LISTEN.filter(l => l.selbst)) {
-    const n = L.items.filter(it => (selbst[L.id + '_' + it.id] || {}).s === 3).length;
-    h += `<div class="abschn"><h2>${esc(L.titel)}</h2><span class="leise klein">${n} von ${L.items.length} Themen prüfungsreif (deine Einschätzung)</span></div>
-      <p class="unter">${esc(L.info || '')} Schätze dich ehrlich ein – deine Lehrkraft sieht deine Einschätzung und kann dich gezielt unterstützen.</p><div class="themen">`;
-    h += L.items.map((it, i) => { const key = L.id + '_' + it.id, sv = (selbst[key] || {}).s, lv = c[key];
-      return `<div class="karte thema ${sv === 3 ? 'fertig' : ''}"><div class="kopfz"><div class="nr">${sv === 3 ? '✓' : i + 1}</div><div><h3>${esc(it.t)}</h3>${fb ? `<div class="lehrer">Lehrkraft: ${pill(L, lv)}</div>` : ''}</div></div>
-        ${it.h ? `<details><summary>Worüber kann ich sprechen?</summary><ul>${it.h.split(' · ').map(x => `<li>${esc(x)}</li>`).join('')}</ul></details>` : ''}
-        <div><div class="frage">Wie sicher fühlst du dich?</div><div class="stufen">${skalaVon(L).werte.map(w => `<button data-key="${key}" data-v="${w.v}" aria-pressed="${sv === w.v}" style="${sv === w.v ? `background:${w.c};color:${w.f};border-color:${w.f}` : ''}"><i>${STUFE_IC[w.v] || ''}</i>${esc(w.l)}</button>`).join('')}</div></div>
-        <div class="unten"><button class="lnk" data-uhr="${key}">⏱ 2 Minuten frei sprechen üben</button></div></div>`; }).join('') + '</div>';
-  }
-  const teile = sichtbar.filter(L => !(mein.sa && L.selbst));
-  if (fb && teile.length) {
-    h += `<div class="abschn"><h2>Prüfungsteile und Kriterien</h2></div><p class="unter">So schätzt deine Lehrkraft deinen Stand ein. Mit „üben →“ kommst du direkt zur passenden Übung.</p><div class="teile">`;
-    h += teile.map(L => `<div class="karte teil"><div class="kopfz"><h3>${esc(L.titel)}</h3>${ring(prozent(L, cs), 'var(--akzent)', '#e8e3da', '', 64)}</div>
-      ${L.info ? `<p class="klein leise" style="margin:0 0 6px">${esc(L.info)}</p>` : ''}<div class="zeilen">${L.items.map(it => { const ex = it.ex && exById(it.ex);
-        return `<div class="zl"><span>${esc(it.t)}${ex ? `<a href="${mitDemo(ex.datei)}">üben →</a>` : ''}</span>${pill(L, c[L.id + '_' + it.id])}</div>`; }).join('')}</div></div>`).join('') + '</div>';
-    const skalen = [...new Set(teile.map(L => L.skala))];
-    if (skalen.includes('abcd')) h += `<p class="legende" style="margin-top:12px">Stufen wie in der Prüfung: ${skalaVon(teile.find(L => L.skala === 'abcd')).werte.map(w => `<span class="pill" style="background:${w.c};color:${w.f}">${esc(w.l)}</span>`).join('')}</p>`;
-  }
+  // Ergebnisse und Texte
+  const erg = Object.entries((fb && fb.erg) || {}).sort((a, b) => b[1].l - a[1].l);
+  const tx = Object.entries(mein.texte || {}).sort((a, b) => (b[1].tFrei || 0) - (a[1].tFrei || 0));
+  if (erg.length || tx.length) h += `<div class="fbgrid" style="margin-top:16px">
+    ${erg.length ? `<div class="karte"><h3>📊 Meine Ergebnisse</h3><div class="tabwrap"><table class="etab"><tr><th>Übung</th><th>Ø</th><th>beste</th><th>×</th><th>zuletzt</th></tr>${erg.map(([id, e]) => { const ex = exById(id); return `<tr><td>${ex ? `<a href="${mitDemo(ex.datei)}">${esc(ex.titel)}</a>` : esc(id)}</td><td><span class="pill" style="background:${pfarbe(e.a)}">${e.a} %</span></td><td>${e.b} %</td><td>${e.n}</td><td class="klein">${new Date(e.l).toLocaleDateString('de-DE')}</td></tr>`; }).join('')}</table></div></div>` : ''}
+    ${tx.length ? `<div class="karte"><h3>✍️ Meine Texte</h3>${tx.map(([sid, x]) => `<a class="zl" href="${mitDemo('schreibwerkstatt.html#text=' + sid)}"><span>${esc(x.titel || 'Text')}</span><span class="pill" style="background:#e4f3ea;color:#2f7d57">korrigiert ${new Date(x.tFrei).toLocaleDateString('de-DE')}</span></a>`).join('')}</div>` : ''}</div>`;
   h += `<p class="fuss">Fragen zu deinem Feedback? Sprich deine Lehrkraft im Kurs an. · Lern Deutsch mit Arash · Code ${esc(s.code)}</p>`;
   app.innerHTML = h;
   app.querySelectorAll('.stufen button').forEach(b => b.onclick = async () => {

@@ -213,11 +213,14 @@ document.querySelectorAll('.tab').forEach(b => b.onclick = () => {
 setInterval(() => { if (angemeldet && tab === 'live' && !document.querySelector('#app input:focus,#app select:focus')) zeichne('tick'); }, 5000);
 
 let zTimer = null;
+let syncT = null;
+function syncAlle() { clearTimeout(syncT); syncT = setTimeout(() => { for (const [kid, k] of Object.entries(D.kurse || {})) for (const [pid, p] of Object.entries(k.tn || {})) if (p.code && meinOf(p.code).fb) syncPub(kid, pid, p.code); }, 2500); }
 function zeichne(quelle) {
   // Formulare nicht beim Tippen überschreiben
   if (quelle && document.activeElement && document.activeElement.closest('#app') && /INPUT|TEXTAREA/.test(document.activeElement.tagName)) {
     clearTimeout(zTimer); zTimer = setTimeout(() => zeichne(), 1500); return;
   }
+  if (quelle === 'res' || quelle === 'fb') syncAlle();
   if (tab === 'live') live(); else if (tab === 'erg') erg(); else if (tab === 'kurse') kurse(); else if (tab === 'fb') feedback(); else if (tab === 'tx') texteTab(); else uebungen();
   const tz = document.getElementById('txZahl'); if (tz) { const n = offeneAbgaben(); tz.textContent = n || ''; tz.style.display = n ? '' : 'none'; }
 }
@@ -479,9 +482,20 @@ function zelle(liste, v, klein) {
 function pubFassung(kid, pid) {
   const f = fbOf(kid, pid), c = f.c || {}, x = f.x || {}, cc = {};
   LISTEN.filter(L => L.tn).forEach(L => L.items.forEach(it => { const e = c[L.id + '_' + it.id]; if (e && e.s) cc[L.id + '_' + it.id] = e.s; }));
-  return { c: cc, m: { ...(f.m || {}) }, st: x.st || '', sw: x.sw || '', ziel: x.ziel || '', msg: x.msg || '' };
+  const fa = { c: cc, m: { ...(f.m || {}) }, st: x.st || '', sw: x.sw || '', ziel: x.ziel || '', msg: x.msg || '' };
+  // Ergebnisse der Übungen (die Person kann res/ nicht selbst lesen)
+  const erg = {};
+  for (const [ex, alle] of Object.entries(D.res || {})) for (const v of Object.values(alle || {})) if (v && v.pid === pid && ex !== DTEST.id) {
+    const e = erg[ex] || (erg[ex] = { n: 0, s: 0, b: 0, l: 0 }); e.n++; e.s += v.pct || 0; e.b = Math.max(e.b, v.pct || 0); e.l = Math.max(e.l, v.t || 0); }
+  if (Object.keys(erg).length) fa.erg = Object.fromEntries(Object.entries(erg).map(([k, e]) => [k, { n: e.n, a: Math.round(e.s / e.n), b: e.b, l: e.l }]));
+  const d = typeof diagVon === 'function' ? diagVon(pid) : null;
+  if (d) { const an = d.an, nv = o => ({ pct: o.pct, nt: o.niveau.t, c: o.niveau.c, f: o.niveau.f });
+    fa.diag = { t: d.v.t, ges: nv(an.ges), teile: Object.fromEntries(Object.entries(an.teile).map(([k, o]) => [k, nv(o)])),
+      bereiche: Object.fromEntries(Object.entries(an.bereiche).filter(([, o]) => !o.offen).map(([k, o]) => [k, { p: o.p, pm: o.pm, pct: o.pct }])), foerder: an.foerder.slice(0, 8), staerken: an.staerken }; }
+  return fa;
 }
-const pubNorm = o => JSON.stringify({ c: o.c || {}, m: o.m || {}, st: o.st || '', sw: o.sw || '', ziel: o.ziel || '', msg: o.msg || '' }, Object.keys({ c: 1, m: 1, st: 1, sw: 1, ziel: 1, msg: 1 }).concat(Object.keys(o.c || {}), Object.keys(o.m || {})).sort());
+const stabil = v => Array.isArray(v) ? '[' + v.map(stabil).join(',') + ']' : v && typeof v === 'object' ? '{' + Object.keys(v).filter(k => v[k] !== '' && v[k] != null && !(typeof v[k] === 'object' && !Array.isArray(v[k]) && !Object.keys(v[k]).length)).sort().map(k => JSON.stringify(k) + ':' + stabil(v[k])).join(',') + '}' : JSON.stringify(v);
+const pubNorm = o => { const { t, ...r } = o || {}; return stabil(r); };
 /** Ist der Lernstand sichtbar, werden Änderungen automatisch übernommen */
 function syncPub(kid, pid, code) {
   const alt = code && meinOf(code).fb; if (!alt) return;
