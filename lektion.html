@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Zusatzlektion – Übungszentrale</title>
-<link rel="stylesheet" href="stil.css?v=20261028a">
+<link rel="stylesheet" href="stil.css?v=20261029a">
 <style>
   :root{--akzent:#5b4fa3;--akzent-hell:#ecebf7}
   body{background:#f6f3ee}
@@ -52,9 +52,9 @@
 <section class="held"><div class="wrap" id="held"></div></section>
 <main class="wrap" id="app"><p class="leise">Lädt …</p></main>
 <script type="module">
-import { esc, mitDemo } from './db.js?v=20261028a';
-import { starte, sitzung } from './spieler.js?v=20261028a';
-import { zeige, punkte, labels, mische, ziehe } from './aufgaben.js?v=20261028a';
+import { esc, mitDemo } from './db.js?v=20261029a';
+import { starte, sitzung } from './spieler.js?v=20261029a';
+import { zeige, punkte, labels, mische, ziehe } from './aufgaben.js?v=20261029a';
 
 const $ = s => document.querySelector(s), app = $('#app');
 const lid = (new URLSearchParams(location.search).get('l') || '').replace(/[^a-z0-9-]/g, '');

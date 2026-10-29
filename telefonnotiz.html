@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Telefonnotiz – Hören und Schreiben</title>
+<link rel="stylesheet" href="stil.css?v=20261029a">
+<style>
+  :root{--akzent:#c0504d;--akzent-hell:#f7e3df;--tinte:#3a2626}
+  body{background:#f6f3ee}
+  .held{background:linear-gradient(160deg,#5a2f2c,#c0504d);color:#fff;padding:22px 0 54px}
+  .held h1{margin:0 0 4px;font-size:1.8rem}.held p{margin:0;opacity:.88}
+  main.wrap{margin-top:-38px;padding-bottom:40px;max-width:860px}
+  .auftrag{font-style:italic;background:#fff;border-radius:12px;padding:12px 16px;border:1px solid #e6e0d6}
+  .bogen{background:#f2d4cc;border:2px solid #c0504d;border-radius:6px;padding:18px 20px;margin-top:14px}
+  .bogen h2{margin:0 0 2px;font-size:1rem;color:#3a2626}.bogen h3{margin:0 0 12px;font-size:1.5rem;color:#3a2626}
+  .zeile-b{display:grid;grid-template-columns:30px 150px 1fr;gap:10px;align-items:start;border-top:1.5px solid #3a2626;padding:14px 0}
+  @media(max-width:600px){.zeile-b{grid-template-columns:26px 1fr}.zeile-b .feld{grid-column:1/-1}}
+  .nr{font-weight:700}.lab{font-weight:700}.lab small{display:block;font-weight:400;font-size:.8rem}
+  .radio{display:grid;gap:6px}
+  .radio label{display:flex;gap:10px;align-items:center;cursor:pointer;font-size:1.05rem}
+  .radio input{width:20px;height:20px}
+  .bogen input[type=text]{width:100%;background:#fff;border:1.5px solid #c0504d;border-radius:3px;font-size:1.05rem}
+  .zz{display:grid;grid-template-columns:90px 1fr;gap:8px;align-items:center;margin-bottom:8px}
+  .linien{background:#fff;border:1.5px solid #c0504d;border-radius:3px}
+  .linien div{display:flex;align-items:center;border-bottom:1px solid #ddd}
+  .linien div:last-child{border-bottom:0}
+  .linien span{width:26px;text-align:center;font-weight:700}
+  .linien input[type=text]{border:0 !important;border-radius:0;min-height:42px}
+  .knopf{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:16px}
+  .gesp{font-size:.82rem;color:var(--leise)}
+  .kopie{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#3a2626;color:#fff;padding:12px 18px;border-radius:12px;z-index:80;max-width:92vw;text-align:center}
+  .liste-ab{display:grid;gap:8px}
+  .liste-ab a,.liste-ab div{display:flex;justify-content:space-between;gap:10px;background:#fff;border:1px solid #e6e0d6;border-radius:10px;padding:10px 14px;text-decoration:none;color:inherit}
+  .pill{display:inline-block;border-radius:99px;padding:2px 9px;font-size:.78rem;font-weight:700}
+</style>
+</head>
+<body>
+<section class="held"><div class="wrap" style="max-width:860px"><h1>📞 Telefonnotiz</h1><p>Hören und Schreiben · Kundenanfragen entgegennehmen und dokumentieren</p></div></section>
+<main class="wrap" id="app"><p class="leise">Lädt …</p></main>
+<script type="module">
+import { db, esc, mitDemo, zufall } from './db.js?v=20261029a';
+import { starte } from './spieler.js?v=20261029a';
+const $ = s => document.querySelector(s), app = $('#app');
+const L = await starte('hoeren-telefonnotiz');
+if (!L.frei) { L.sperre(app); throw new Error('gesperrt'); }
+document.body.prepend(document.querySelector('header.kopf'));
+const s = L.s, AUF = 'telefonnotiz-hb', KEY = 'ueb_tn_' + (s.code || 'gast');
+let lok = {}; try { lok = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { }
+lok = Object.assign({ ent: {}, ab: {} }, lok);
+const sichere = () => { try { localStorage.setItem(KEY, JSON.stringify(lok)); } catch (e) { } };
+let frei = {};
+if (s.code) db.listen('mein/' + s.code + '/texte', v => { frei = v || {}; if (!document.querySelector('.bogen')) zeigeStart(); else liste(); }, () => { });
+
+const GRUENDE = [['a', 'Angebot'], ['b', 'Bestellung/Buchung'], ['c', 'Beschwerde']];
+zeigeStart();
+
+function zeigeStart() {
+  const e = lok.ent;
+  app.innerHTML = `<div class="karte"><p class="auftrag">Sie hören eine telefonische Mitteilung. Informieren Sie Ihre Kollegin. Notieren Sie die Informationen auf dem Antwortbogen. Sie hören die Mitteilung <b>einmal</b>.</p>
+    <p class="leise klein" style="margin:8px 0 0">Deine Lehrkraft spielt die Mitteilung im Kurs ab. Fülle den Antwortbogen aus und gib ihn ab. ${s.code ? '' : '<b>Abgeben kannst du nur mit deinem Code.</b>'}</p></div>
+  <div class="bogen"><h2>Hören und Schreiben</h2><h3>Telefonnotiz</h3>
+    <div class="zeile-b"><span class="nr">1</span><span class="lab">Grund für den Anruf</span><div class="feld radio">${GRUENDE.map(([k, t]) => `<label><input type="radio" name="grund" value="${k}" ${e.grund === k ? 'checked' : ''}> <small style="color:#666">${k}</small> ${t}</label>`).join('')}</div></div>
+    <div class="zeile-b"><span class="nr">2</span><span class="lab">Namen</span><div class="feld"><div class="zz"><span>Frau/Herr</span><input type="text" data-f="name" value="${esc(e.name || '')}" autocomplete="off"></div><div class="zz"><span>Firma</span><input type="text" data-f="firma" value="${esc(e.firma || '')}" autocomplete="off"></div></div></div>
+    <div class="zeile-b"><span class="nr">3</span><span class="lab">Kontakt<small>Telefon</small></span><div class="feld"><input type="text" data-f="tel" value="${esc(e.tel || '')}" autocomplete="off" inputmode="tel"></div></div>
+    <div class="zeile-b" style="grid-template-columns:30px 1fr"><span class="nr">4</span><div><div class="lab" style="margin-bottom:8px">Weitere Informationen</div><div class="linien">${[0, 1, 2, 3, 4, 5].map(i => `<div><span>•</span><input type="text" data-f="info${i}" value="${esc(e['info' + i] || '')}" autocomplete="off"></div>`).join('')}</div></div></div>
+    <div class="zeile-b" style="grid-template-columns:30px 1fr"><span class="nr">5</span><div><div class="lab" style="margin-bottom:8px">Zu erledigen</div><div class="linien">${[0, 1].map(i => `<div><span>•</span><input type="text" data-f="todo${i}" value="${esc(e['todo' + i] || '')}" autocomplete="off"></div>`).join('')}</div></div></div>
+  </div>
+  <div class="knopf"><button class="btn" id="ab" ${s.code ? '' : 'disabled'}>📤 Antwortbogen abgeben</button><button class="btn zweit" id="leer">Leeren</button><span class="gesp" id="gesp">Deine Eingaben werden automatisch gespeichert.</span></div>
+  <div id="meine" style="margin-top:22px"></div>`;
+  app.querySelectorAll('[name=grund]').forEach(r => r.onchange = () => { lok.ent.grund = r.value; sichere(); });
+  app.querySelectorAll('[data-f]').forEach(i => {
+    let vorher = i.value;
+    ['paste', 'drop'].forEach(n => i.addEventListener(n, ev => { ev.preventDefault(); kopie(); }));
+    i.oninput = () => { if (i.value.length - vorher.length > 25) { i.value = vorher; kopie(); return; } vorher = i.value; lok.ent[i.dataset.f] = i.value; sichere(); $('#gesp').textContent = 'gespeichert ' + new Date().toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' }); };
+  });
+  $('#leer').onclick = () => { if (confirm('Alle Eingaben löschen?')) { lok.ent = {}; sichere(); zeigeStart(); } };
+  $('#ab').onclick = abgeben;
+  liste();
+}
+function kopie() { document.querySelectorAll('.kopie').forEach(x => x.remove()); const d = document.createElement('div'); d.className = 'kopie'; d.innerHTML = '✋ <b>Einfügen ist hier nicht möglich.</b>'; document.body.append(d); setTimeout(() => d.remove(), 2500); }
+
+async function abgeben() {
+  const e = lok.ent, g = GRUENDE.find(x => x[0] === e.grund);
+  const infos = [0, 1, 2, 3, 4, 5].map(i => (e['info' + i] || '').trim()).filter(Boolean), todo = [0, 1].map(i => (e['todo' + i] || '').trim()).filter(Boolean);
+  if (!g && !e.name && !infos.length) return alert('Der Antwortbogen ist noch leer.');
+  if (!confirm('Antwortbogen jetzt abgeben? Danach kannst du nichts mehr ändern.')) return;
+  const text = `Grund für den Anruf: ${g ? g[0] + ') ' + g[1] : '–'}\nName: ${(e.name || '–').trim()}\nFirma: ${(e.firma || '–').trim()}\nTelefon: ${(e.tel || '–').trim()}\n\nWeitere Informationen:\n${infos.map(x => '• ' + x).join('\n') || '–'}\n\nZu erledigen:\n${todo.map(x => '• ' + x).join('\n') || '–'}`;
+  const sid = zufall(14, 'abcdefghijkmnopqrstuvwxyz23456789');
+  const titel = 'Telefonnotiz (Hören und Schreiben) · ' + new Date().toLocaleDateString('de-DE');
+  const d = { code: s.code, kid: s.kid || '', pid: s.pid || '', name: String(s.name || '').slice(0, 60), kurs: String(s.kurs || '').slice(0, 60), auf: AUF, titel, text: text.slice(0, 8000), worte: text.split(/\s+/).length, t: Date.now(), art: 'hoeren',
+    form: { grund: e.grund || '', name: e.name || '', firma: e.firma || '', tel: e.tel || '', infos, todo } };
+  $('#ab').disabled = true;
+  try { await db.set('abgaben/' + sid, d); } catch (err) { $('#ab').disabled = false; return alert('Die Abgabe hat nicht geklappt (' + (err.code || err.message) + '). Deine Eingaben sind gespeichert.'); }
+  lok.ab[sid] = { titel, t: d.t }; lok.ent = {}; sichere();
+  app.innerHTML = `<div class="karte" style="text-align:center;padding:30px"><div style="font-size:2.6rem">📬</div><h2>Abgegeben!</h2><p>Deine Telefonnotiz ist bei deiner Lehrkraft angekommen. Die Korrektur siehst du hier und in der Schreibwerkstatt unter „Meine Texte“.</p>
+    <div class="zeile" style="justify-content:center"><button class="btn" id="neu">Neuer Antwortbogen</button><a class="btn zweit" href="${mitDemo('index.html')}">Zur Übungszentrale</a></div></div><div id="meine" style="margin-top:22px"></div>`;
+  $('#neu').onclick = zeigeStart; liste();
+}
+function liste() {
+  const el = $('#meine'); if (!el) return;
+  const ids = new Set([...Object.keys(lok.ab), ...Object.keys(frei).filter(k => frei[k].auf === AUF)]);
+  const l = [...ids].map(sid => ({ sid, ...(lok.ab[sid] || {}), f: frei[sid] })).sort((a, b) => (b.t || 0) - (a.t || 0));
+  el.innerHTML = l.length ? `<h3>Meine Antwortbögen</h3><div class="liste-ab">${l.map(x => x.f ? `<a href="${mitDemo('schreibwerkstatt.html#text=' + x.sid)}"><span>${esc(x.f.titel || x.titel)}</span><span class="pill" style="background:#e4f3ea;color:#2f7d57">✅ Korrektur ansehen</span></a>` : `<div><span>${esc(x.titel)}</span><span class="pill" style="background:#fdf0cf;color:#8a6410">⏳ wartet auf Korrektur</span></div>`).join('')}</div>` : '';
+}
+</script>
+</body>
+</html>

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Schreibwerkstatt – Übungszentrale</title>
-<link rel="stylesheet" href="stil.css?v=20261028a">
+<link rel="stylesheet" href="stil.css?v=20261029a">
 <style>
   :root{--akzent:#8a4f2f;--akzent-hell:#f6ece6;--tinte:#3b2a22}
   body{background:#f6f3ee}
@@ -77,10 +77,10 @@
 <section class="held"><div class="wrap"><h1>✍️ Schreibwerkstatt</h1><p id="unter">Schreiben, abgeben, Korrektur bekommen – und mit kurzen Übungen trainieren.</p></div></section>
 <main class="wrap" id="app"><p class="leise">Lädt …</p></main>
 <script type="module">
-import { db, esc, mitDemo, zufall } from './db.js?v=20261028a';
-import { starte } from './spieler.js?v=20261028a';
-import { zeige, punkte } from './aufgaben.js?v=20261028a';
-import { AUFGABEN, ARTEN, REDEMITTEL, TRAINING, wortzahl, KAT, KRITERIEN, STUFE } from './schreib-daten.js?v=20261028a';
+import { db, esc, mitDemo, zufall } from './db.js?v=20261029a';
+import { starte } from './spieler.js?v=20261029a';
+import { zeige, punkte } from './aufgaben.js?v=20261029a';
+import { AUFGABEN, ARTEN, REDEMITTEL, TRAINING, wortzahl, KAT, KRITERIEN, STUFE } from './schreib-daten.js?v=20261029a';
 
 const $ = s => document.querySelector(s), app = $('#app');
 const L = await starte('schreibwerkstatt');
@@ -230,11 +230,11 @@ function korrektur(sid) {
     ${Object.keys(bew).length ? `<div class="karte" style="margin-top:12px"><b>Bewertung</b> <span class="leise klein">(Stufen wie in der Prüfung DTB)</span><div class="bew" style="margin-top:8px">${KRITERIEN.filter(([k]) => bew[k]).map(([k, t]) => { const S = STUFE[bew[k]]; return `<div><span>${esc(t)}</span><span class="pill" style="background:${S.c};color:${S.f}">${esc(S.t)}</span></div>`; }).join('')}</div></div>` : ''}
     <div class="editor" style="grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr)"><div><div class="korrtext">${h}</div>
       <p class="leise klein">Durchgestrichen = dein Text · grün = Verbesserung · Zahl = Erklärung rechts. Fahre mit der Maus über eine Stelle für die Erklärung.</p>
-      <div class="zeile"><button class="btn" id="neuF">✍️ Überarbeitete Fassung schreiben</button></div></div>
+      ${f.auf === 'telefonnotiz-hb' ? '' : '<div class="zeile"><button class="btn" id="neuF">✍️ Überarbeitete Fassung schreiben</button></div>'}</div>
       <div class="links"><div class="karte"><b>Korrekturen (${korr.length})</b><div class="zeile" style="gap:6px;margin:8px 0">${Object.entries(proKat).map(([k, c]) => `<span class="pill" style="background:${(KAT[k] || KAT.W).c}22;color:${(KAT[k] || KAT.W).c}">${esc((KAT[k] || KAT.W).t)}: ${c}</span>`).join('')}</div>
         <div class="klist">${korr.filter(k => nummer.has(k)).map(k => { const K = KAT[k.k] || KAT.W; return `<div class="kitem" style="--kc:${K.c}"><span class="n">${nummer.get(k)}</span><div><div><b>${k.l ? '<s>' + esc(text.substr(k.o, k.l)) + '</s>' : ''}${k.e ? ' → ' + esc(k.e) : ''}</b></div><div class="klein">${esc(k.h || K.t)}</div></div></div>`; }).join('') || '<p class="leise klein">Keine Fehler markiert. 👏</p>'}</div></div>
       ${f.punkte && f.punkte.length ? `<div class="karte"><b>Inhaltspunkte</b>${f.punkte.map(p => `<div class="klein" style="padding:3px 0">${p.ok ? '✅' : '⚠️'} ${esc(p.t)}</div>`).join('')}</div>` : ''}</div></div>`;
-  $('#neuF').onclick = () => {
+  if ($('#neuF')) $('#neuF').onclick = () => {
     const auf = f.auf; if (!aufVon(auf)) return alert('Diese Aufgabe gibt es nicht mehr.');
     lok.ent[auf] = { text, t: Date.now(), vor: sid, ck: {} }; sichere(); location.hash = '#auf=' + encodeURIComponent(auf);
   };

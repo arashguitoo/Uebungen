@@ -5,6 +5,7 @@ export const STANDARD = [
   { k: 'meine', ic: '⭐', t: 'Meine Übungen', u: 'Von deiner Lehrkraft für dich freigeschaltet', f: '#b8841a', fest: true },
   { k: 'zusatz', ic: '📚', t: 'Zusatzlektionen', u: 'Grammatik gezielt wiederholen – mit Erklärung und vielen Übungen', f: '#5b4fa3', reihen: ['Zusatzlektionen'] },
   { k: 'muendlich', ic: '🗣️', t: 'Mündliche Prüfung', u: 'Problem lösen, Smalltalk, Sprechen üben', f: '#2f6b5e', reihen: ['Mündliche Prüfung'] },
+  { k: 'hoeren', ic: '🎧', t: 'Hörübungen', u: 'Hören und Schreiben: Telefonnotiz & Co.', f: '#c0504d', reihen: ['Hören'] },
   { k: 'schreiben', ic: '✍️', t: 'Schreiben', u: 'Texte schreiben, abgeben, Korrektur bekommen', f: '#8a4f2f', reihen: ['Schreiben'] },
   { k: 'training', ic: '🎯', t: 'Prüfungstraining', u: 'Lesen, Hören, Schreiben und Wortschatz rund um den Beruf', f: '#2f6fc4', reihen: ['Prüfungstraining B1/B2'] },
   { k: 'grammatik', ic: '🧩', t: 'Grammatik & Wortschatz', u: 'Präpositionen, Wortverbindungen und Spiele', f: '#5b4fa3', reihen: ['Grammatik-Spiele', 'Spiele'] },

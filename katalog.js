@@ -497,6 +497,19 @@ export const KATALOG = [
     offen: true
   },
   {
+    id: "hoeren-telefonnotiz",
+    titel: "Telefonnotiz (Hören und Schreiben)",
+    untertitel: "Antwortbogen wie in der Prüfung: telefonische Mitteilung hören, notieren und abgeben",
+    datei: "telefonnotiz.html",
+    typ: "Hören",
+    niveau: "B1/B2",
+    themen: ["Prüfungsvorbereitung", "Hören", "Schreiben"],
+    farbe: "#c0504d",
+    dauer: "ca. 10 Min.",
+    reihe: "Hören",
+    offen: true
+  },
+  {
     id: "schreibwerkstatt",
     titel: "Schreibwerkstatt",
     untertitel: "E-Mails, Forumsbeiträge, Notizen schreiben und abgeben · Korrektur von der Lehrkraft · Schreibtraining",

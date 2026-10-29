@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Konsole – Übungszentrale</title>
 <meta name="robots" content="noindex">
-<link rel="stylesheet" href="stil.css?v=20261028a">
+<link rel="stylesheet" href="stil.css?v=20261029a">
 <style>
   :root{--akzent:#2f3f46;--akzent-hell:#e7edef}
   body{font-size:16px}
@@ -157,12 +157,12 @@ window.__ok = false;
 </script>
 <script type="module">
 window.__ok = true;
-import { db, DEMO, zufall, esc, mitDemo } from './db.js?v=20261028a';
-import { KATALOG, exById } from './katalog.js?v=20261028a';
-import { rubriken, rubrikVon } from './rubriken.js?v=20261028a';
-import { AUFGABEN as SW_AUF, ARTEN as SW_ARTEN, analysiere as SW_analysiere, ltKategorie as SW_ltKat, vorschlag as SW_vorschlag, KAT as SW_KAT, KRITERIEN as SW_KRIT, STUFE as SW_STUFE, wortzahl as SW_wortzahl } from './schreib-daten.js?v=20261028a';
-import { LISTEN, SKALEN, MERKMALE, MERKMAL, skalaVon, wertInfo, prozent } from './feedback-kriterien.js?v=20261028a';
-import { TEST as DTEST, BEREICHE as DBER, analyse as dAnalyse, AUFGABEN as DAUFG } from './diagnose-daten.js?v=20261028a';
+import { db, DEMO, zufall, esc, mitDemo } from './db.js?v=20261029a';
+import { KATALOG, exById } from './katalog.js?v=20261029a';
+import { rubriken, rubrikVon } from './rubriken.js?v=20261029a';
+import { AUFGABEN as SW_AUF, ARTEN as SW_ARTEN, analysiere as SW_analysiere, ltKategorie as SW_ltKat, vorschlag as SW_vorschlag, KAT as SW_KAT, KRITERIEN as SW_KRIT, STUFE as SW_STUFE, wortzahl as SW_wortzahl } from './schreib-daten.js?v=20261029a';
+import { LISTEN, SKALEN, MERKMALE, MERKMAL, skalaVon, wertInfo, prozent } from './feedback-kriterien.js?v=20261029a';
+import { TEST as DTEST, BEREICHE as DBER, analyse as dAnalyse, AUFGABEN as DAUFG } from './diagnose-daten.js?v=20261029a';
 
 if (DEMO) document.getElementById('demo').innerHTML = '<div class="demo-band">DEMO-MODUS – Anmeldung mit beliebigen Daten, alles bleibt in diesem Browser</div>';
 const $ = s => document.querySelector(s), app = $('#app');
@@ -797,7 +797,7 @@ function bindeRubriken() {
    abgaben/{sid}/k          { korr: [{o, l, e, h, k, q:'lt'|'lk', an}], punkte: [bool], bew: {wa, wk, wf, ws}, kom, lt: Zeit, ltFehler }
    mein/{code}/texte/{sid}  freigegebene Fassung für die Person */
 const ltLaeuft = new Set();
-const SWAUF = id => SW_AUF.find(a => a.id === id) || (((D.pub.schreiben || {}).eigene || {})[id] && { ...D.pub.schreiben.eigene[id], id, punkte: (D.pub.schreiben.eigene[id].punkte || []).map(t => ({ t, kw: '$^' })) }) || { id, titel: id, art: 'forum', worte: [0, 9999], punkte: [] };
+const SWAUF = id => (id === 'telefonnotiz-hb' ? { id, titel: 'Telefonnotiz (Hören und Schreiben)', art: 'notiz', niveau: 'B2', worte: [0, 9999], punkte: [], situation: 'Antwortbogen Hören und Schreiben: telefonische Mitteilung einmal hören und notieren (Grund, Name/Firma, Telefon, weitere Informationen, zu erledigen).' } : null) || SW_AUF.find(a => a.id === id) || (((D.pub.schreiben || {}).eigene || {})[id] && { ...D.pub.schreiben.eigene[id], id, punkte: (D.pub.schreiben.eigene[id].punkte || []).map(t => ({ t, kw: '$^' })) }) || { id, titel: id, art: 'forum', worte: [0, 9999], punkte: [] };
 const offeneAbgaben = () => Object.values(D.abgaben || {}).filter(a => a && !a.st).length;
 function texteTab() {
   if (F.sid && D.abgaben[F.sid]) return korrEditor(F.sid);
