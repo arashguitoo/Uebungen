@@ -70,6 +70,7 @@
   .htab{border-collapse:collapse;width:100%;font-size:.95rem}.htab th,.htab td{border:1px solid #e6e0d6;padding:7px 10px;text-align:left}.htab th{background:#f1eee8}
   .tabwrap{overflow-x:auto}
   .cl{line-height:1.9;padding-left:22px}
+  .kopie{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#3b2a22;color:#fff;padding:12px 18px;border-radius:12px;z-index:80;box-shadow:var(--schatten);max-width:92vw;text-align:center}
 </style>
 </head>
 <body>
@@ -131,6 +132,11 @@ function uebersicht() {
   h += `<p class="leise klein" style="margin-top:18px">💡 Redemittel, Aufbau-Schemas und einen Musterbeitrag findest du unter „🧰 Hilfen“.</p>`;
   app.innerHTML = h;
 }
+function hinweisKopie() {
+  document.querySelectorAll('.kopie').forEach(x => x.remove());
+  const d = document.createElement('div'); d.className = 'kopie'; d.innerHTML = '✋ <b>Einfügen ist hier nicht möglich.</b> Bitte schreibe deinen Text selbst – so lernst du am meisten.';
+  document.body.append(d); setTimeout(() => d.remove(), 3500);
+}
 function aufKarte(a) {
       const ab = Object.values(lok.ab).filter(x => x.auf === a.id).length, ent = lok.ent[a.id] && lok.ent[a.id].text;
       return `<a class="auf" href="#auf=${encodeURIComponent(a.id)}"><h3>${esc(a.titel)}</h3><div class="leise klein">${esc((a.situation || '').slice(0, 120))}${(a.situation || '').length > 120 ? ' …' : ''}</div>
@@ -152,12 +158,21 @@ function editor(id) {
       <textarea class="text" id="text" placeholder="${a.art.startsWith('email') ? 'Betreff: …\n\nSehr geehrte …' : 'Schreibe hier deinen Text …'}" spellcheck="false" autocomplete="off">${esc(e.text || '')}</textarea>
       <div class="zeile" style="margin-top:10px"><span class="gesp" id="gesp">${e.t ? 'Entwurf gespeichert' : 'Dein Entwurf wird automatisch gespeichert.'}</span><span style="flex:1"></span>
         <button class="btn" id="abgeben" ${s.code ? '' : 'disabled title="Nur mit Code möglich"'}>📤 Abgeben</button></div>
-      <p class="leise klein" style="margin:8px 0 0">Nach der Abgabe korrigiert deine Lehrkraft den Text. Die Korrektur siehst du unter „📂 Meine Texte“.</p></div></div>`;
+      <p class="leise klein" style="margin:8px 0 0">✋ Kopieren und Einfügen ist in der Schreibwerkstatt gesperrt. Nach der Abgabe korrigiert deine Lehrkraft den Text. Die Korrektur siehst du unter „📂 Meine Texte“.</p></div></div>`;
   const ta = $('#text'), wz = $('#wz');
   const zaehle = () => { const n = wortzahl(ta.value); wz.textContent = n + (n === 1 ? ' Wort' : ' Wörter'); wz.className = 'wz ' + (n < min ? 'kurz' : n > max * 1.15 ? 'lang' : 'ok'); };
   let tm = null;
   const speichere = () => { lok.ent[id] = { ...(lok.ent[id] || {}), text: ta.value, t: Date.now(), vor: e.vor }; sichere(); $('#gesp').textContent = 'Entwurf gespeichert ' + new Date().toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' }); };
-  ta.oninput = () => { zaehle(); clearTimeout(tm); tm = setTimeout(speichere, 800); };
+  // Kopierschutz: Einfügen und Hineinziehen sind gesperrt; große Sprünge ohne Tippen werden zurückgenommen
+  let vorher = ta.value, letzte = 0;
+  const sperre = () => { lok.ent[id] = { ...(lok.ent[id] || { text: ta.value }), sperr: ((lok.ent[id] || {}).sperr || 0) + 1 }; sichere(); hinweisKopie(); };
+  ta.addEventListener('beforeinput', ev => { if (/insertFromPaste|insertFromDrop|insertFromYank|insertFromPasteAsQuotation/.test(ev.inputType)) { ev.preventDefault(); sperre(); } });
+  ['paste', 'drop'].forEach(n => ta.addEventListener(n, ev => { ev.preventDefault(); sperre(); }));
+  ta.addEventListener('dragover', ev => ev.preventDefault());
+  ta.oninput = ev => {
+    if (ta.value.length - vorher.length > 40) { ta.value = vorher; sperre(); return; }
+    const jetzt = Date.now(); if (letzte) { const d0 = Math.min(jetzt - letzte, 5000); lok.ent[id] = { ...(lok.ent[id] || {}), ms: ((lok.ent[id] || {}).ms || 0) + d0 }; } letzte = jetzt;
+    vorher = ta.value; zaehle(); clearTimeout(tm); tm = setTimeout(speichere, 800); };
   zaehle();
   app.querySelectorAll('[data-ck]').forEach(c => c.onchange = () => { lok.ent[id] = { ...(lok.ent[id] || { text: ta.value }), ck: { ...((lok.ent[id] || {}).ck || {}), [c.dataset.ck]: c.checked } }; sichere(); });
   const ub = $('#uhrBtn'); if (ub) ub.onclick = () => {
@@ -173,6 +188,7 @@ function editor(id) {
     const sid = zufall(14, 'abcdefghijkmnopqrstuvwxyz23456789');
     const d = { code: s.code, kid: s.kid || '', pid: s.pid || '', name: String(s.name || '').slice(0, 60), kurs: String(s.kurs || '').slice(0, 60), auf: id, titel: String(a.titel).slice(0, 120), text: text.slice(0, 8000), worte: n, t: Date.now() };
     if (e.vor) d.vor = e.vor;
+    const en = lok.ent[id] || {}; d.sperr = en.sperr || 0; d.tipp = Math.round((en.ms || 0) / 60000);
     $('#abgeben').disabled = true;
     try { await db.set('abgaben/' + sid, d); }
     catch (err) { $('#abgeben').disabled = false; return alert('Die Abgabe hat nicht geklappt (' + (err.code || err.message) + '). Dein Entwurf ist gespeichert – bitte später noch einmal versuchen.'); }
