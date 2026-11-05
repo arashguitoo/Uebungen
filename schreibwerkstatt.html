@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Schreibwerkstatt – Übungszentrale</title>
-<link rel="stylesheet" href="stil.css?v=20261029a">
+<link rel="stylesheet" href="stil.css?v=20261105a">
 <style>
   :root{--akzent:#8a4f2f;--akzent-hell:#f6ece6;--tinte:#3b2a22}
   body{background:#f6f3ee}
@@ -71,16 +71,18 @@
   .tabwrap{overflow-x:auto}
   .cl{line-height:1.9;padding-left:22px}
   .kopie{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#3b2a22;color:#fff;padding:12px 18px;border-radius:12px;z-index:80;box-shadow:var(--schatten);max-width:92vw;text-align:center}
+  .fe.mk{background:color-mix(in srgb,var(--kc) 22%,transparent)}
+  .fe.ko{background:#fff3c4;border-bottom-style:dotted}
 </style>
 </head>
 <body>
 <section class="held"><div class="wrap"><h1>✍️ Schreibwerkstatt</h1><p id="unter">Schreiben, abgeben, Korrektur bekommen – und mit kurzen Übungen trainieren.</p></div></section>
 <main class="wrap" id="app"><p class="leise">Lädt …</p></main>
 <script type="module">
-import { db, esc, mitDemo, zufall } from './db.js?v=20261029a';
-import { starte } from './spieler.js?v=20261029a';
-import { zeige, punkte } from './aufgaben.js?v=20261029a';
-import { AUFGABEN, ARTEN, REDEMITTEL, TRAINING, wortzahl, KAT, KRITERIEN, STUFE } from './schreib-daten.js?v=20261029a';
+import { db, esc, mitDemo, zufall } from './db.js?v=20261105a';
+import { starte } from './spieler.js?v=20261105a';
+import { zeige, punkte } from './aufgaben.js?v=20261105a';
+import { AUFGABEN, ARTEN, REDEMITTEL, TRAINING, wortzahl, KAT, KRITERIEN, STUFE, korrTyp } from './schreib-daten.js?v=20261105a';
 
 const $ = s => document.querySelector(s), app = $('#app');
 const L = await starte('schreibwerkstatt');
@@ -217,22 +219,28 @@ function korrektur(sid) {
   for (const k of korr) {
     if (k.o < pos || k.o + k.l > text.length) continue;
     n++; nummer.set(k, n);
-    const K = KAT[k.k] || KAT.W;
-    h += esc(text.slice(pos, k.o)) + `<span class="fe" style="--kc:${K.c}" title="${esc(K.t + (k.h ? ': ' + k.h : ''))}">${k.l ? `<del>${esc(text.substr(k.o, k.l))}</del>` : ''}${k.e != null && k.e !== '' ? `<ins>${esc(k.e)}</ins>` : ''}<sup>${n}</sup></span>`;
+    const K = KAT[k.k] || KAT.W, ty = korrTyp(k, text), orig = esc(text.substr(k.o, k.l));
+    const tip = esc((ty === 'c' ? 'Kommentar' : K.t) + (k.h ? ': ' + k.h : ''));
+    h += esc(text.slice(pos, k.o)) + (ty === 's' ? `<span class="fe" style="--kc:#c0392b" title="${tip}"><del>${orig}</del>${k.e ? `<ins>${esc(k.e)}</ins>` : ''}<sup>${n}</sup></span>`
+      : ty === 'e' ? `<span class="fe" style="--kc:#c0392b" title="${tip}"><ins>${esc(k.e || '')}</ins><sup>${n}</sup></span>`
+      : ty === 'm' ? `<span class="fe mk" style="--kc:${K.c}" title="${tip}">${orig}<sup>${n}</sup></span>`
+      : `<span class="fe ko" style="--kc:#c99a06" title="${tip}">${orig}<sup>💬${n}</sup></span>`);
     pos = k.o + k.l;
   }
   h += esc(text.slice(pos));
-  const proKat = {}; korr.forEach(k => proKat[k.k] = (proKat[k.k] || 0) + 1);
+  const proKat = {}; korr.filter(k => korrTyp(k, text) !== 'c').forEach(k => proKat[k.k] = (proKat[k.k] || 0) + 1);
   const bew = f.bew || {};
   app.innerHTML = reiter('texte') + `<div class="karte" style="margin-top:16px"><a href="#texte" class="klein">← Meine Texte</a>
       <h2 style="margin:6px 0 2px">${esc(f.titel || '')}</h2><div class="leise klein">abgegeben am ${datum(f.t)} · korrigiert am ${datum(f.tFrei)} · ${wortzahl(text)} Wörter</div></div>
     ${f.kom ? `<div class="karte kommentar" style="margin-top:12px"><b>✉️ Rückmeldung deiner Lehrkraft</b><div style="margin-top:6px">${esc(f.kom)}</div></div>` : ''}
     ${Object.keys(bew).length ? `<div class="karte" style="margin-top:12px"><b>Bewertung</b> <span class="leise klein">(Stufen wie in der Prüfung DTB)</span><div class="bew" style="margin-top:8px">${KRITERIEN.filter(([k]) => bew[k]).map(([k, t]) => { const S = STUFE[bew[k]]; return `<div><span>${esc(t)}</span><span class="pill" style="background:${S.c};color:${S.f}">${esc(S.t)}</span></div>`; }).join('')}</div></div>` : ''}
     <div class="editor" style="grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr)"><div><div class="korrtext">${h}</div>
-      <p class="leise klein">Durchgestrichen = dein Text · grün = Verbesserung · Zahl = Erklärung rechts. Fahre mit der Maus über eine Stelle für die Erklärung.</p>
+      <p class="leise klein"><del>durchgestrichen</del> = streichen · <span style="color:#1d7a45;font-weight:700">grün</span> = richtig · farbig markiert = hier ist ein Fehler, finde ihn selbst · 💬 = Kommentar. Die Zahlen führen zur Erklärung rechts.</p>
       ${f.auf === 'telefonnotiz-hb' ? '' : '<div class="zeile"><button class="btn" id="neuF">✍️ Überarbeitete Fassung schreiben</button></div>'}</div>
       <div class="links"><div class="karte"><b>Korrekturen (${korr.length})</b><div class="zeile" style="gap:6px;margin:8px 0">${Object.entries(proKat).map(([k, c]) => `<span class="pill" style="background:${(KAT[k] || KAT.W).c}22;color:${(KAT[k] || KAT.W).c}">${esc((KAT[k] || KAT.W).t)}: ${c}</span>`).join('')}</div>
-        <div class="klist">${korr.filter(k => nummer.has(k)).map(k => { const K = KAT[k.k] || KAT.W; return `<div class="kitem" style="--kc:${K.c}"><span class="n">${nummer.get(k)}</span><div><div><b>${k.l ? '<s>' + esc(text.substr(k.o, k.l)) + '</s>' : ''}${k.e ? ' → ' + esc(k.e) : ''}</b></div><div class="klein">${esc(k.h || K.t)}</div></div></div>`; }).join('') || '<p class="leise klein">Keine Fehler markiert. 👏</p>'}</div></div>
+        <div class="klist">${korr.filter(k => nummer.has(k)).map(k => { const K = KAT[k.k] || KAT.W, ty = korrTyp(k, text), orig = esc(text.substr(k.o, k.l));
+          const kopf = ty === 's' ? `<s>${orig}</s>${k.e ? ' → ' + esc(k.e) : ' <span class="leise">(streichen)</span>'}` : ty === 'e' ? `‸ ${esc(k.e || '')} <span class="leise">(fehlt)</span>` : ty === 'm' ? `„${orig}“` : `💬 „${orig}“`;
+          return `<div class="kitem" style="--kc:${ty === 'c' ? '#c99a06' : ty === 'm' ? K.c : '#c0392b'}"><span class="n">${nummer.get(k)}</span><div><div><b>${kopf}</b></div><div class="klein">${ty === 'c' ? esc(k.h || '') : esc(K.t) + (k.h ? ' – ' + esc(k.h) : '')}</div></div></div>`; }).join('') || '<p class="leise klein">Keine Fehler markiert. 👏</p>'}</div></div>
       ${f.punkte && f.punkte.length ? `<div class="karte"><b>Inhaltspunkte</b>${f.punkte.map(p => `<div class="klein" style="padding:3px 0">${p.ok ? '✅' : '⚠️'} ${esc(p.t)}</div>`).join('')}</div>` : ''}</div></div>`;
   if ($('#neuF')) $('#neuF').onclick = () => {
     const auf = f.auf; if (!aufVon(auf)) return alert('Diese Aufgabe gibt es nicht mehr.');

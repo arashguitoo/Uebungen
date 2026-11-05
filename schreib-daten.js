@@ -314,3 +314,11 @@ export function vorschlag(an, fehler, auf) {
   return { wa, wk, wf, ws, dichte: Math.round(dichte * 10) / 10 };
 }
 export const STUFE = { A: { t: 'A · B2 gut erreicht', c: '#cdeedb', f: '#14663a', v: 4 }, B: { t: 'B · B2 erreicht', c: '#e3f3d2', f: '#4a7a16', v: 3 }, C: { t: 'C · B1-Niveau', c: '#fdf0cf', f: '#8a6410', v: 2 }, D: { t: 'D · unter B1', c: '#fbe0db', f: '#b3402f', v: 1 } };
+
+/* Art einer Korrektur: s = streichen/ersetzen, m = markieren, c = Kommentar, e = einfügen (ältere Einträge werden erraten) */
+export function korrTyp(x, text = '') {
+  if (x.t) return x.t;
+  if (!x.l) return 'e';
+  if (x.e != null && x.e !== text.substr(x.o, x.l)) return 's';
+  return x.h ? 'c' : 'm';
+}

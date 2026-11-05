@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Konsole – Übungszentrale</title>
 <meta name="robots" content="noindex">
-<link rel="stylesheet" href="stil.css?v=20261029a">
+<link rel="stylesheet" href="stil.css?v=20261105a">
 <style>
   :root{--akzent:#2f3f46;--akzent-hell:#e7edef}
   body{font-size:16px}
@@ -115,6 +115,25 @@
   .kitem.blink{box-shadow:0 0 0 3px #ffd166}
   .kpop{position:absolute;z-index:60;background:#fff;border:1px solid var(--linie);border-radius:10px;box-shadow:var(--schatten);padding:10px;display:grid;gap:6px;width:320px}
   .kpop input{min-height:36px;padding:5px 8px}
+  .anleit{background:#f6f3ec;border-radius:10px;padding:8px 12px;font-size:.88rem;margin-bottom:10px}
+  .ktext{cursor:text;user-select:text}
+  .k-s{text-decoration:line-through;text-decoration-color:#c0392b;text-decoration-thickness:2px;color:#9a3a2a;cursor:pointer}
+  .k-s::after,.k-e::after{content:attr(data-e);color:#1d7a45;font-weight:700;text-decoration:none;display:inline-block;margin-left:3px}
+  .k-e::before{content:'‸';color:#c0392b;font-weight:700}
+  .k-m{background:color-mix(in srgb,var(--kc) 22%,transparent);border-bottom:2px solid var(--kc);border-radius:3px;cursor:pointer}
+  .k-c{background:#fff3c4;border-bottom:2px dotted #c99a06;cursor:pointer}
+  .k-c::after{content:'💬' attr(data-n);font-size:.7rem;vertical-align:super;margin-left:1px}
+  .legende{margin-top:8px;color:var(--leise);display:flex;gap:10px;flex-wrap:wrap}
+  .kpop{width:340px}
+  .kwerk{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+  .kwerk button,.katw button{font:inherit;font-size:.88rem;font-weight:600;border:1.5px solid var(--linie);background:#fff;border-radius:8px;padding:7px 8px;cursor:pointer}
+  .kwerk button.an{background:#1f2328;color:#fff;border-color:#1f2328}
+  .katw{display:flex;flex-wrap:wrap;gap:4px}
+  .katw button{border-color:var(--kc);color:var(--kc);padding:4px 8px;font-size:.8rem}
+  .katw button.an{background:var(--kc);color:#fff}
+  .kfeld{display:grid;gap:6px}
+  .kin{width:100%;min-height:34px;padding:4px 8px;margin-top:4px;font-size:.88rem}
+  .durch{text-decoration:line-through;color:#9a3a2a}
 </style>
 </head>
 <body>
@@ -157,12 +176,12 @@ window.__ok = false;
 </script>
 <script type="module">
 window.__ok = true;
-import { db, DEMO, zufall, esc, mitDemo } from './db.js?v=20261029a';
-import { KATALOG, exById } from './katalog.js?v=20261029a';
-import { rubriken, rubrikVon } from './rubriken.js?v=20261029a';
-import { AUFGABEN as SW_AUF, ARTEN as SW_ARTEN, analysiere as SW_analysiere, ltKategorie as SW_ltKat, vorschlag as SW_vorschlag, KAT as SW_KAT, KRITERIEN as SW_KRIT, STUFE as SW_STUFE, wortzahl as SW_wortzahl } from './schreib-daten.js?v=20261029a';
-import { LISTEN, SKALEN, MERKMALE, MERKMAL, skalaVon, wertInfo, prozent } from './feedback-kriterien.js?v=20261029a';
-import { TEST as DTEST, BEREICHE as DBER, analyse as dAnalyse, AUFGABEN as DAUFG } from './diagnose-daten.js?v=20261029a';
+import { db, DEMO, zufall, esc, mitDemo } from './db.js?v=20261105a';
+import { KATALOG, exById } from './katalog.js?v=20261105a';
+import { rubriken, rubrikVon } from './rubriken.js?v=20261105a';
+import { AUFGABEN as SW_AUF, ARTEN as SW_ARTEN, analysiere as SW_analysiere, ltKategorie as SW_ltKat, vorschlag as SW_vorschlag, KAT as SW_KAT, KRITERIEN as SW_KRIT, STUFE as SW_STUFE, wortzahl as SW_wortzahl, korrTyp as SW_korrTyp } from './schreib-daten.js?v=20261105a';
+import { LISTEN, SKALEN, MERKMALE, MERKMAL, skalaVon, wertInfo, prozent } from './feedback-kriterien.js?v=20261105a';
+import { TEST as DTEST, BEREICHE as DBER, analyse as dAnalyse, AUFGABEN as DAUFG } from './diagnose-daten.js?v=20261105a';
 
 if (DEMO) document.getElementById('demo').innerHTML = '<div class="demo-band">DEMO-MODUS – Anmeldung mit beliebigen Daten, alles bleibt in diesem Browser</div>';
 const $ = s => document.querySelector(s), app = $('#app');
@@ -859,21 +878,24 @@ async function ltPruefen(sid, neu = false) {
 
 function korrEditor(sid) {
   const a = D.abgaben[sid], auf = SWAUF(a.auf), k = a.k || {}, text = a.text || '';
-  if (!k.lt) ltPruefen(sid);
-  const korr = (k.korr || []).map((x, i) => ({ ...x, i }));
+  // nur eigene Korrekturen (ältere automatische Vorschläge werden nicht mehr verwendet)
+  const alle = (k.korr || []).map((x, i) => ({ ...x, i, typ: SW_korrTyp(x, text) }));
+  const korr = alle.filter(x => x.q !== 'lt');
   const an = SW_analysiere(text, auf);
   const pk = (k.punkte || an.punkte.map(p => p.ok));
-  const fehler = korr.filter(x => x.an && x.k !== 'S' && x.k !== 'I').length;
+  const fehler = korr.filter(x => x.typ !== 'c' && x.k !== 'S' && x.k !== 'I').length;
   const vs = SW_vorschlag(an, fehler, auf), bew = k.bew || {};
   const offen = Object.entries(D.abgaben).filter(([, x]) => !x.st).sort((x, y) => x[1].t - y[1].t).map(([s]) => s);
   const nx = offen[(offen.indexOf(sid) + 1) % Math.max(offen.length, 1)];
   const vorher = a.vor && D.abgaben[a.vor];
-  // Text mit Markierungen (nur Original-Text, damit Markieren per Maus die richtigen Positionen liefert)
-  let h = '', pos = 0;
-  for (const x of korr.filter(x => x.an).sort((p, q) => p.o - q.o)) {
+  const IC = { s: '✂️', m: '🖍', c: '💬', e: '➕' }, NAME = { s: 'gestrichen/ersetzt', m: 'markiert', c: 'Kommentar', e: 'eingefügt' };
+  // Text mit Korrekturen – im Textfeld steht nur der Originaltext, alles andere kommt über CSS dazu
+  let h = '', pos = 0; const nr = new Map(); let n = 0;
+  for (const x of korr.slice().sort((p, q) => p.o - q.o || p.l - q.l)) {
     if (x.o < pos || x.o + x.l > text.length) continue;
+    n++; nr.set(x.i, n);
     const K = SW_KAT[x.k] || SW_KAT.W;
-    h += esc(text.slice(pos, x.o)) + `<span class="km${x.l ? '' : ' null'}" data-ki="${x.i}" data-n="${x.i + 1}" style="--kc:${K.c}" title="${esc(K.t + ': ' + (x.e ? '→ ' + x.e + ' · ' : '') + x.h)}">${esc(text.substr(x.o, x.l))}</span>`;
+    h += esc(text.slice(pos, x.o)) + `<span class="k-${x.typ}" data-ki="${x.i}" data-n="${n}" data-e="${esc(x.typ === 's' || x.typ === 'e' ? (x.e || '') : '')}" style="--kc:${x.typ === 'm' ? K.c : x.typ === 'c' ? '#c99a06' : '#c0392b'}" title="${esc((x.typ === 'm' ? K.t : NAME[x.typ]) + (x.h ? ': ' + x.h : ''))}">${esc(text.substr(x.o, x.l))}</span>`;
     pos = x.o + x.l;
   }
   h += esc(text.slice(pos));
@@ -884,69 +906,88 @@ function korrEditor(sid) {
       ${auf.situation ? `<details style="margin-top:8px"><summary class="klein"><b>Aufgabenstellung</b></summary><p class="klein">${esc(auf.situation)}</p>${auf.material ? `<div class="klein" style="white-space:pre-line;background:#faf7f1;padding:8px;border-radius:8px">${esc(auf.material)}</div>` : ''}</details>` : ''}
       ${vorher ? `<details style="margin-top:6px"><summary class="klein"><b>Erste Fassung ansehen</b></summary><div class="klein" style="white-space:pre-wrap;background:#faf7f1;padding:8px;border-radius:8px">${esc(vorher.text)}</div></details>` : ''}</div>
     <div class="korrgrid">
-      <div><div class="karte"><div class="zeile" style="margin-bottom:6px"><b style="flex:1">Text</b><span class="leise klein">Stelle mit der Maus markieren → eigene Korrektur hinzufügen</span></div>
-          <div id="kt" class="ktext">${h}</div></div>
-        <div class="karte" style="margin-top:12px"><b>Kommentar für ${esc(a.name)}</b>
+      <div><div class="karte"><div class="anleit"><b>So korrigierst du:</b> Wort oder Stelle mit der Maus <b>markieren</b> → ✂️ streichen · ✏️ ersetzen · 🖍 markieren · 💬 kommentieren. In eine Lücke <b>klicken</b> → ➕ einfügen (z. B. ein fehlendes Komma).</div>
+          <div id="kt" class="ktext">${h}</div>
+          <div class="legende klein"><span class="k-s" data-e="neu">alt</span> gestrichen/ersetzt · <span class="k-m" style="--kc:#7a4fa3">markiert</span> · <span class="k-c" data-n="1">Kommentar</span> · <span class="k-e" data-e="eingefügt"></span></div></div>
+        <div class="karte" style="margin-top:12px"><b>Rückmeldung für ${esc(a.name)}</b>
           <div class="zeile" style="gap:4px;margin:6px 0">${['Gut gemacht! ', 'Du hast alle Inhaltspunkte bearbeitet. ', 'Achte auf die Verbposition im Nebensatz. ', 'Nutze mehr Konnektoren (außerdem, deshalb, trotzdem). ', 'Denk an Anrede und Grußformel. ', 'Dein Text ist zu kurz – schreib zu jedem Punkt 2–3 Sätze. '].map(b => `<button class="chip" data-bs="${esc(b)}">${esc(b.trim())}</button>`).join('')}</div>
           <textarea id="kom" style="min-height:110px" placeholder="Persönliche Rückmeldung …">${esc(k.kom || '')}</textarea></div></div>
       <div class="kseite">
-        <div class="karte"><div class="zeile"><b style="flex:1">Automatische Prüfung</b><button class="btn zweit klein" id="ltNeu" title="LanguageTool erneut ausführen (eigene Korrekturen bleiben)">🔄 LanguageTool</button></div>
-          <div class="klein ${k.ltFehler ? '' : 'leise'}" style="margin:4px 0 8px">${ltLaeuft.has(sid) || !k.lt ? '⏳ LanguageTool prüft den Text …' : k.ltFehler ? `⚠️ LanguageTool nicht erreichbar (${esc(k.ltFehler)}). Du kannst trotzdem korrigieren.` : `LanguageTool: ${korr.filter(x => x.q === 'lt').length} Hinweise · geprüft ${zeit(k.lt)}`}</div>
-          ${an.hinweise.map(x => `<div class="klein">${x.ok ? '✅' : '⚠️'} ${esc(x.t)}</div>`).join('')}
-          ${auf.punkte && auf.punkte.length ? `<div style="margin-top:8px"><b class="klein">Inhaltspunkte</b> <span class="leise klein">(automatisch erkannt – bitte prüfen)</span>${auf.punkte.map((p, i) => `<label class="schalter klein" style="padding:2px 0"><input type="checkbox" data-pk="${i}" ${pk[i] ? 'checked' : ''}> ${esc(p.t)}</label>`).join('')}</div>` : ''}</div>
-        <div class="karte"><b>Korrekturen (${korr.filter(x => x.an).length} von ${korr.length} übernommen)</b>
-          <div class="klist">${korr.sort((p, q) => p.o - q.o).map(x => { const K = SW_KAT[x.k] || SW_KAT.W; return `<div class="kitem ${x.an ? '' : 'aus'}" style="--kc:${K.c}" id="ki-${x.i}">
-            <div class="zeile" style="gap:6px"><input type="checkbox" data-kan="${x.i}" ${x.an ? 'checked' : ''} title="übernehmen"><span class="n">${x.i + 1}</span><b class="klein">„${esc(text.substr(x.o, x.l) || '‸')}“</b><span style="flex:1"></span>
-              <select data-kk="${x.i}" class="klein">${Object.entries(SW_KAT).map(([c, C]) => `<option value="${c}" ${x.k === c ? 'selected' : ''}>${esc(C.t)}</option>`).join('')}</select><button class="icon" data-kdel="${x.i}" title="Löschen">🗑</button></div>
-            <div class="zeile" style="gap:6px;margin-top:4px"><span class="klein">→</span><input type="text" data-ke="${x.i}" value="${esc(x.e || '')}" placeholder="Verbesserung" style="flex:1;min-height:34px;padding:4px 8px"></div>
-            <input type="text" data-kh="${x.i}" value="${esc(x.h || '')}" placeholder="Erklärung" style="width:100%;min-height:34px;padding:4px 8px;margin-top:4px;font-size:.88rem">
-            ${x.q === 'lt' ? '<span class="leise" style="font-size:.72rem">LanguageTool</span>' : ''}</div>`; }).join('') || '<p class="leise klein">Noch keine Korrekturen.</p>'}</div></div>
-        <div class="karte"><b>Bewertung</b> <span class="leise klein">Vorschlag aus der Analyse in Klammern · Fehlerdichte ${vs.dichte} / 100 Wörter</span>
+        <div class="karte"><b>Korrekturen (${korr.length})</b>
+          <div class="klist">${korr.slice().sort((p, q) => p.o - q.o).map(x => { const K = SW_KAT[x.k] || SW_KAT.W; return `<div class="kitem" style="--kc:${x.typ === 'm' ? K.c : x.typ === 'c' ? '#c99a06' : '#c0392b'}" id="ki-${x.i}">
+            <div class="zeile" style="gap:6px"><span class="n">${nr.get(x.i) || '·'}</span><span title="${NAME[x.typ]}">${IC[x.typ]}</span><b class="klein" style="flex:1">${x.typ === 'e' ? '<span class="leise">einfügen</span>' : `<span class="${x.typ === 's' ? 'durch' : ''}">„${esc(text.substr(x.o, x.l))}“</span>`}${(x.typ === 's' || x.typ === 'e') && x.e ? ` → <span style="color:#1d7a45">${esc(x.e)}</span>` : x.typ === 's' ? ' <span class="leise">(streichen)</span>' : ''}</b>
+              ${x.typ !== 'c' ? `<select data-kk="${x.i}" class="klein">${Object.entries(SW_KAT).map(([c, C]) => `<option value="${c}" ${x.k === c ? 'selected' : ''}>${esc(C.t)}</option>`).join('')}</select>` : ''}<button class="icon" data-kdel="${x.i}" title="Löschen">🗑</button></div>
+            ${x.typ === 's' || x.typ === 'e' ? `<input type="text" data-ke="${x.i}" value="${esc(x.e || '')}" placeholder="${x.typ === 'e' ? 'Was fehlt?' : 'Ersetzen durch … (leer = streichen)'}" class="kin">` : ''}
+            <input type="text" data-kh="${x.i}" value="${esc(x.h || '')}" placeholder="${x.typ === 'c' ? 'Kommentar' : 'Erklärung / Kommentar (optional)'}" class="kin"></div>`; }).join('') || '<p class="leise klein">Noch keine Korrekturen. Markiere eine Stelle im Text.</p>'}</div></div>
+        <div class="karte"><b>Kurzcheck</b>${an.hinweise.map(x => `<div class="klein">${x.ok ? '✅' : '⚠️'} ${esc(x.t)}</div>`).join('')}
+          ${auf.punkte && auf.punkte.length ? `<div style="margin-top:8px"><b class="klein">Inhaltspunkte bearbeitet?</b>${auf.punkte.map((p, i) => `<label class="schalter klein" style="padding:2px 0"><input type="checkbox" data-pk="${i}" ${pk[i] ? 'checked' : ''}> ${esc(p.t)}</label>`).join('')}</div>` : ''}</div>
+        <div class="karte"><b>Bewertung</b> <span class="leise klein">Vorschlag in Klammern · ${fehler} Fehler, ${vs.dichte} pro 100 Wörter</span>
           ${SW_KRIT.map(([c, t]) => `<div class="zeile" style="justify-content:space-between;padding:4px 0"><span class="klein">${esc(t)} <span class="leise">(${vs[c]})</span></span>${sel(bew[c], c)}</div>`).join('')}
           <button class="btn zweit klein" id="vsUeb" style="margin-top:6px">Vorschlag übernehmen</button></div>
         <div class="karte frei"><label class="schalter klein"><input type="checkbox" id="inFb" ${a.pid ? 'checked' : 'disabled'}> Bewertung auch ins Feedback („Kriterien Schreiben“) übernehmen</label>
           <div class="zeile" style="margin-top:8px"><button class="btn" id="freigeben">${a.st === 'frei' ? '🔄 Erneut freigeben' : '✅ Korrektur freigeben'}</button>${a.st === 'frei' ? '<button class="btn zweit klein" id="zurueck">Zurückziehen</button>' : ''}</div>
-          <p class="leise klein" style="margin:6px 0 0">${a.code ? `${esc(a.name)} sieht danach den markierten Text, deine Erklärungen, die Bewertung und den Kommentar unter „Schreibwerkstatt → Meine Texte“.` : 'Ohne Code kann nichts freigegeben werden.'}</p></div>
+          <p class="leise klein" style="margin:6px 0 0">${a.code ? `${esc(a.name)} sieht danach den korrigierten Text, deine Kommentare, die Bewertung und die Rückmeldung unter „Schreibwerkstatt → Meine Texte“.` : 'Ohne Code kann nichts freigegeben werden.'}</p></div>
       </div></div>`;
   const K = 'abgaben/' + sid + '/k/';
-  const setK = (i, f, v) => { const l = (k.korr || []).slice(); l[i] = { ...l[i], [f]: v }; db.set(K + 'korr', l); };
+  const liste = () => (k.korr || []).filter(x => x.q !== 'lt');
+  const setK = (i, f, v) => { const l = (k.korr || []).slice(); l[i] = { ...l[i], [f]: v }; db.set(K + 'korr', l.filter(x => x.q !== 'lt')); };
+  const neu = x => { db.set(K + 'korr', [...liste(), { ...x, q: 'lk', an: true }]); };
   $('#tZur').onclick = () => { F.sid = null; texteTab(); };
-  const n = $('#tNx'); if (n) n.onclick = () => { F.sid = nx; scrollTo(0, 0); texteTab(); };
-  $('#ltNeu').onclick = () => ltPruefen(sid, true);
-  app.querySelectorAll('[data-kan]').forEach(c => c.onchange = () => setK(+c.dataset.kan, 'an', c.checked));
+  const nb = $('#tNx'); if (nb) nb.onclick = () => { F.sid = nx; scrollTo(0, 0); texteTab(); };
   app.querySelectorAll('[data-kk]').forEach(c => c.onchange = () => setK(+c.dataset.kk, 'k', c.value));
   app.querySelectorAll('[data-ke]').forEach(c => c.onchange = () => setK(+c.dataset.ke, 'e', c.value));
   app.querySelectorAll('[data-kh]').forEach(c => c.onchange = () => setK(+c.dataset.kh, 'h', c.value));
-  app.querySelectorAll('[data-kdel]').forEach(b => b.onclick = () => { const l = (k.korr || []).slice(); l.splice(+b.dataset.kdel, 1); db.set(K + 'korr', l); });
+  app.querySelectorAll('[data-kdel]').forEach(b => b.onclick = () => { const l = (k.korr || []).slice(); l.splice(+b.dataset.kdel, 1); db.set(K + 'korr', l.filter(x => x.q !== 'lt')); });
   app.querySelectorAll('[data-pk]').forEach(c => c.onchange = () => { const l = (auf.punkte || []).map((_, i) => !!pk[i]); l[+c.dataset.pk] = c.checked; db.set(K + 'punkte', l); });
   app.querySelectorAll('[data-bew]').forEach(s => s.onchange = () => db.set(K + 'bew/' + s.dataset.bew, s.value || null));
   $('#vsUeb').onclick = () => db.set(K + 'bew', { wa: vs.wa, wk: vs.wk, wf: vs.wf, ws: vs.ws });
   $('#kom').onchange = e => db.set(K + 'kom', e.target.value);
   app.querySelectorAll('[data-bs]').forEach(b => b.onclick = () => { const t = $('#kom'); t.value = (t.value + (t.value && !/\s$/.test(t.value) ? ' ' : '') + b.dataset.bs); db.set(K + 'kom', t.value); });
-  app.querySelectorAll('.km').forEach(m => m.onclick = () => { const el = $('#ki-' + m.dataset.ki); if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'center' }); el.classList.add('blink'); setTimeout(() => el.classList.remove('blink'), 1200); } });
-  // eigene Korrektur: Text markieren
+  app.querySelectorAll('#kt [data-ki]').forEach(m => m.onclick = ev => { if (!getSelection().isCollapsed) return; ev.stopPropagation(); const el = $('#ki-' + m.dataset.ki); if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'center' }); el.classList.add('blink'); setTimeout(() => el.classList.remove('blink'), 1200); } });
+  // Werkzeugleiste beim Markieren / Klicken im Text
   const kt = $('#kt');
-  kt.onmouseup = () => setTimeout(() => {
-    document.querySelectorAll('.kpop').forEach(x => x.remove());
-    const s = getSelection(); if (!s.rangeCount || s.isCollapsed) return;
+  const zu = () => document.querySelectorAll('.kpop').forEach(x => x.remove());
+  kt.onmouseup = ev => setTimeout(() => {
+    zu();
+    if (ev.target.closest && ev.target.closest('[data-ki]') && getSelection().isCollapsed) return;
+    const s = getSelection(); if (!s.rangeCount) return;
     const r = s.getRangeAt(0); if (!kt.contains(r.startContainer) || !kt.contains(r.endContainer)) return;
     const vor = document.createRange(); vor.setStart(kt, 0); vor.setEnd(r.startContainer, r.startOffset);
-    const o = vor.toString().length, l = r.toString().length; if (!l || text.substr(o, l) !== r.toString()) return;
+    const o = vor.toString().length, l = r.toString().length; if (l && text.substr(o, l) !== r.toString()) return;
     const box = r.getBoundingClientRect(), p = document.createElement('div'); p.className = 'kpop';
-    p.innerHTML = `<div class="klein"><b>„${esc(r.toString().slice(0, 40))}“</b></div><input type="text" id="kpE" value="${esc(r.toString())}" placeholder="Verbesserung (leer = streichen)">
-      <input type="text" id="kpH" placeholder="Erklärung (optional)"><div class="zeile" style="gap:6px"><select id="kpK">${Object.entries(SW_KAT).map(([c, C]) => `<option value="${c}">${esc(C.t)}</option>`).join('')}</select><button class="btn klein" id="kpOk">+ Korrektur</button><button class="icon" id="kpX">✕</button></div>`;
+    const ziel = l ? `„${esc(r.toString().slice(0, 40))}${l > 40 ? '…' : ''}“` : 'An dieser Stelle';
+    p.innerHTML = l ? `<div class="klein"><b>${ziel}</b></div>
+      <div class="kwerk"><button data-w="s">✂️ Streichen</button><button data-w="r">✏️ Ersetzen</button><button data-w="m">🖍 Markieren</button><button data-w="c">💬 Kommentar</button></div><div class="kfeld"></div>`
+      : `<div class="klein"><b>${ziel}</b></div><div class="kwerk"><button data-w="e">➕ Einfügen</button><button data-w="ec">💬 Kommentar</button></div><div class="kfeld"></div>`;
     document.body.append(p);
-    p.style.left = Math.max(8, Math.min(box.left + scrollX, scrollX + innerWidth - 330)) + 'px'; p.style.top = (box.bottom + scrollY + 6) + 'px';
-    $('#kpE').focus(); $('#kpE').select();
-    $('#kpX').onclick = () => p.remove();
-    $('#kpOk').onclick = () => { const l2 = (k.korr || []).slice(); l2.push({ o, l, e: $('#kpE').value, h: $('#kpH').value, k: $('#kpK').value, q: 'lk', an: true }); p.remove(); getSelection().removeAllRanges(); db.set(K + 'korr', l2); };
-    p.onkeydown = e => { if (e.key === 'Enter') $('#kpOk').click(); if (e.key === 'Escape') p.remove(); };
+    p.style.left = Math.max(8, Math.min(box.left + scrollX, scrollX + innerWidth - 340)) + 'px'; p.style.top = (box.bottom + scrollY + 8) + 'px';
+    const feld = p.querySelector('.kfeld');
+    const kat = `<div class="katw">${Object.entries(SW_KAT).map(([c, C]) => `<button data-k="${c}" style="--kc:${C.c}">${esc(C.t)}</button>`).join('')}</div>`;
+    const fertig = x => { zu(); getSelection().removeAllRanges(); neu({ o, l, ...x }); };
+    p.querySelectorAll('[data-w]').forEach(b => b.onclick = () => {
+      const w = b.dataset.w;
+      p.querySelectorAll('[data-w]').forEach(x => x.classList.toggle('an', x === b));
+      if (w === 's') { feld.innerHTML = `<div class="klein leise">Art des Fehlers (optional):</div>${kat}<button class="btn klein" id="kpOk">✂️ Streichen</button>`; let kk = 'G';
+        feld.querySelectorAll('[data-k]').forEach(x => x.onclick = () => { kk = x.dataset.k; feld.querySelectorAll('[data-k]').forEach(y => y.classList.toggle('an', y === x)); });
+        $('#kpOk').onclick = () => fertig({ t: 's', e: '', k: kk, h: '' }); }
+      if (w === 'r' || w === 'e') { feld.innerHTML = `<input type="text" id="kpE" placeholder="${w === 'e' ? 'Was fehlt hier? z. B. ,' : 'Richtig ist …'}" value="${w === 'r' ? esc(r.toString()) : ''}">${kat}<button class="btn klein" id="kpOk">Übernehmen</button>`; let kk = w === 'e' ? 'Z' : 'G';
+        feld.querySelectorAll('[data-k]').forEach(x => { x.classList.toggle('an', x.dataset.k === kk); x.onclick = () => { kk = x.dataset.k; feld.querySelectorAll('[data-k]').forEach(y => y.classList.toggle('an', y === x)); }; });
+        const ie = $('#kpE'); ie.focus(); if (w === 'r') ie.select();
+        $('#kpOk').onclick = () => { const v = ie.value; if (w === 'e' && !v.trim()) return ie.focus(); fertig({ t: w === 'e' ? 'e' : 's', e: v, k: kk, h: '' }); };
+        ie.onkeydown = e2 => { if (e2.key === 'Enter') $('#kpOk').click(); }; }
+      if (w === 'm') { feld.innerHTML = `<div class="klein leise">Welche Art Fehler?</div>${kat}`;
+        feld.querySelectorAll('[data-k]').forEach(x => x.onclick = () => fertig({ t: 'm', k: x.dataset.k, h: '' })); }
+      if (w === 'c' || w === 'ec') { feld.innerHTML = `<textarea id="kpH" placeholder="Dein Kommentar …" style="min-height:70px"></textarea><button class="btn klein" id="kpOk">💬 Kommentar setzen</button>`;
+        $('#kpH').focus(); $('#kpOk').onclick = () => { const v = $('#kpH').value.trim(); if (!v) return; fertig({ t: 'c', h: v, k: 'I' }); }; }
+    });
+    p.onkeydown = e2 => { if (e2.key === 'Escape') zu(); };
   }, 0);
+  document.addEventListener('mousedown', e => { if (!e.target.closest('.kpop') && !e.target.closest('#kt')) zu(); }, { once: true });
   $('#freigeben').onclick = async () => {
     if (!a.code) return meld('Ohne Code kann nichts freigegeben werden.');
     const kom = $('#kom').value, t = Date.now();
     const fassung = { auf: a.auf, titel: auf.titel || a.titel, t: a.t, tFrei: t, text, kom,
-      korr: (k.korr || []).filter(x => x.an).map(x => ({ o: x.o, l: x.l, e: x.e || '', h: x.h || '', k: x.k })),
+      korr: (k.korr || []).filter(x => x.an && x.q !== 'lt').map(x => ({ o: x.o, l: x.l, e: x.e || '', h: x.h || '', k: x.k || 'W', t: SW_korrTyp(x, text) })),
       bew: Object.fromEntries(Object.entries(k.bew || {}).filter(([, v]) => v)), punkte: (auf.punkte || []).map((p, i) => ({ t: p.t, ok: !!pk[i] })) };
     const up = { ['mein/' + a.code + '/texte/' + sid]: fassung, ['abgaben/' + sid + '/st']: 'frei', ['abgaben/' + sid + '/tFrei']: t, [K + 'kom']: kom };
     if ($('#inFb').checked && a.kid && a.pid && D.kurse[a.kid] && D.kurse[a.kid].tn && D.kurse[a.kid].tn[a.pid]) {
