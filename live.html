@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Live-Runde – Übungszentrale</title>
-<link rel="stylesheet" href="stil.css?v=20261110a">
+<link rel="stylesheet" href="stil.css?v=20261110b">
 <style>
   :root{--akzent:#3b5b8c;--akzent-hell:#e8eef7;--a0:#d9483b;--a1:#2f6fc4;--a2:#d9971c;--a3:#2e9a57}
   body{background:#eef1f5}
@@ -85,8 +85,8 @@ window.__ok = false;
 </script>
 <script type="module">
 window.__ok = true;
-import { starte, navigation, sitzung, anmelden } from './spieler.js?v=20261110a';
-import { db, esc, zufall } from './db.js?v=20261110a';
+import { starte, navigation, sitzung, anmelden } from './spieler.js?v=20261110b';
+import { db, esc, zufall } from './db.js?v=20261110b';
 
 const app = document.getElementById('app');
 const L = await starte('live');
@@ -122,7 +122,7 @@ function beitreten(pinVor = '') {
     }
     fx.textContent = 'Verbinde …';
     let st = null; try { st = await db.get('runde/' + pin + '/st'); } catch (e) { return fx.textContent = 'Keine Verbindung zur Datenbank.'; }
-    if (!st) return fx.textContent = 'Diese Runde gibt es nicht. Bitte prüfe den PIN.';
+    if (!st) { fx.textContent = 'Suche die Live-Stunde …'; location.href = 'unterricht.html?pin=' + pin; return; } // keine Live-Runde → vielleicht eine Live-Stunde (Lehrtafel)
     if (st.ph === 'ende') return fx.textContent = 'Diese Runde ist schon vorbei.';
     L.s = ses; const w = document.querySelector('.kopf .wer'); if (w) w.textContent = '👤 ' + ses.name + (ses.code ? '' : ' · ohne Code');
     if (st.teams > 0) teamWahl(pin, ses, st); else verbinde(pin, ses, null);

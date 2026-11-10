@@ -485,6 +485,20 @@ export const KATALOG = [
     offen: true
   },
   {
+    id: "stunde-konj1",
+    titel: "Live-Stunde nachholen: Man lernt nie aus",
+    untertitel: "Die 60-Minuten-Stunde zum Konjunktiv I allein üben: Lehrtafel, Übungen, vier Zeitungsmeldungen, Quiz",
+    datei: "unterricht.html?solo=konj1",
+    typ: "Lektion",
+    niveau: "B1/B2",
+    themen: ["Grammatik", "Lesen", "Beruf"],
+    farbe: "#c2410c",
+    dauer: "30–45 Min.",
+    reihe: "Zusatzlektionen",
+    quelle: { werk: "Linie 1 Beruf", lektion: 14 },
+    offen: true
+  },
+  {
     id: "lektion-relativsaetze",
     titel: "Relativsätze",
     untertitel: "Zusatzlektion · alle Fälle · die Rolle des gemeinsamen Wortes · Rollen-Detektiv und 80 Übungen",
