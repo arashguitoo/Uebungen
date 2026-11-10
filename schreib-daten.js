@@ -12,6 +12,26 @@ export const ARTEN = {
 
 export const AUFGABEN = [
   {
+    id: 'kommentar-man-lernt-nie-aus', titel: 'Kommentar: Man lernt nie aus', art: 'forum', niveau: 'B1/B2', worte: [100, 160], zeit: 20,
+    situation: 'Schreiben Sie einen Kommentar zu einem der vier Texte „Man lernt nie aus.“ (Luka Horvat, Sachin Prachad, Nesrin Abay oder Alice Kapp). Schreiben Sie, ob Sie eine Person kennen, die Ähnliches erlebt hat, wie Sie die Einstellung dieser Person beurteilen und wie Sie sich in einer ähnlichen Situation verhalten würden.',
+    punkte: [
+      { t: 'Person nennen, über die Sie schreiben', kw: 'luka|sachin|nesrin|alice|horvat|prachad|abay|kapp' },
+      { t: 'jemanden kennen, der Ähnliches erlebt hat', kw: 'kenne|bekannt|freund|freundin|bruder|schwester|mutter|vater|kolleg|nachbar' },
+      { t: 'Einstellung der Person beurteilen', kw: 'finde|bewundere|meiner meinung|beeindruck|toll|mutig|zielstrebig|stark|respekt' },
+      { t: 'eigenes Verhalten in ähnlicher Situation', kw: 'würde|an seiner stelle|an ihrer stelle|ich hätte|wenn ich' }
+    ]
+  },
+  {
+    id: 'email-weiterbildung-wda', titel: 'E-Mail an das Weiterbildungsinstitut (WDA)', art: 'email-formell', niveau: 'B1/B2', worte: [90, 150], zeit: 20,
+    situation: 'Sie möchten am Einsteigerkurs „Mechatroniker in der Elektromobilität“ (Regensburg, 3. bis 17. März) teilnehmen, haben aber noch Fragen. Wählen Sie eine Situation und schreiben Sie eine E-Mail an Frau Barbosa.\n\nSituation 1: Interesse an der Weiterbildung – weite Anreise – Übernachtung am Kursort? Kosten?\nSituation 2: Interesse an der Weiterbildung – Anmeldeschluss? Teilnehmerzahl? Rücktrittsmöglichkeit?\nSituation 3: keine Zeit im März – Teilnahme nach August – Termine in der zweiten Jahreshälfte?',
+    punkte: [
+      { t: 'Bezug und Interesse am Kurs', kw: 'interess|kurs|weiterbildung|elektromobilität|angebot' },
+      { t: 'erste Frage / erstes Anliegen', kw: '\\?' },
+      { t: 'weitere Fragen', kw: 'außerdem|auch|noch|zudem|ferner|weiterhin' },
+      { t: 'Bitte um Antwort', kw: 'antwort|rückmeld|freue mich|bescheid|dankbar' }
+    ]
+  },
+  {
     id: 'kunden-email-lieferung', titel: 'Kunden-E-Mail: unvollständige Lieferung', art: 'email-formell', niveau: 'B2', worte: [100, 150], zeit: 20,
     situation: 'Sie arbeiten im Kundenservice der Büroprofi GmbH. Ihre Teamleiterin, Frau Brandt, bittet Sie, die E-Mail des Kunden zu beantworten. Bearbeiten Sie alle Punkte aus ihrer Notiz.',
     material: 'E-Mail von Herrn Lorenz (Kunde):\n„Sehr geehrte Damen und Herren, wir haben bei Ihnen 20 Bürostühle bestellt. Geliefert wurden nur 15 – und drei davon sind beschädigt. Am Montag beginnen fünf neue Mitarbeitende bei uns, die Stühle brauchen wir also dringend. Wenn das Problem nicht schnell gelöst wird, stornieren wir unsere Bestellung. Mit freundlichen Grüßen, Thomas Lorenz“\n\nNotiz von Frau Brandt:\n„Bitte entschuldigen, Grund kurz erklären (Lieferengpass beim Hersteller), fehlende und beschädigte Stühle bis Freitag kostenlos per Express, 10 % Rabatt auf die nächste Bestellung anbieten.“',

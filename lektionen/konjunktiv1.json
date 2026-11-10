@@ -1,0 +1,1407 @@
+{
+ "id": "lektion-konjunktiv1",
+ "titel": "Man lernt nie aus · Konjunktiv I",
+ "untertitel": "Zusatzlektion · Textverständnis · Lehrtafel Konjunktiv I · indirekte Rede · Weiterbildung",
+ "niveau": "B1/B2",
+ "farbe": "#b5562f",
+ "mix": 15,
+ "intro": "Diese Lektion gehört zu den Zeitungsmeldungen **„Man lernt nie aus.“** Zuerst prüfst du dein **Textverständnis**, dann lernst du mit der **Lehrtafel**, wie der **Konjunktiv I** in der **indirekten Rede** funktioniert – und übst ihn Schritt für Schritt. Zum Schluss geht es um **Hilfen für die Weiterbildung**.",
+ "kapitel": [
+  {
+   "titel": "Zuerst: die Texte lesen",
+   "ic": "📰",
+   "bloecke": [
+    {
+     "t": "text",
+     "md": "Lies im Kursbuch die vier Zeitungsmeldungen **„Man lernt nie aus.“** (Lektion 14, Aufgabe 2a): **Luka Horvat**, **Sachin Prachad**, **Nesrin Abay** und **Alice Kapp**."
+    },
+    {
+     "t": "regel",
+     "md": "Lesetipp: Notiere zu jeder Person drei Stichpunkte: **Wer ist das? · Was hat die Person erlebt? · Was will sie lernen oder erreichen?**"
+    },
+    {
+     "t": "text",
+     "md": "In den Meldungen findest du viele Sätze wie: „Er **wisse**, wie es **sei** …, stellt Luka fest.“ – Das ist der **Konjunktiv I**. Er zeigt: Hier gibt jemand wieder, was **eine andere Person gesagt** hat. Wie das funktioniert, lernst du in den nächsten Schritten."
+    }
+   ]
+  },
+  {
+   "titel": "Konjunktiv I – wozu?",
+   "ic": "🗞️",
+   "bloecke": [
+    {
+     "t": "text",
+     "md": "Mit dem Konjunktiv I gibt man **die Aussage einer anderen Person wieder** – das nennt man **indirekte Rede**. Man findet ihn vor allem in **Zeitungen, Nachrichten, Berichten und Protokollen**."
+    },
+    {
+     "t": "beispiel",
+     "s1": "Der Enkel sagt: „Der alte Herr ==sitzt== meistens am Schreibtisch.“",
+     "s2": "(direkte Rede – die eigenen Worte)",
+     "rolle": "Die Zeitung gibt die Aussage wieder.",
+     "erg": "Der alte Herr ==sitze== meistens am Schreibtisch, sagt der Enkel."
+    },
+    {
+     "t": "regel",
+     "md": "Mit dem Konjunktiv I sagt die schreibende Person: **„Das hat jemand anderes gesagt – nicht ich.“** Sie bleibt neutral und übernimmt keine Verantwortung für die Aussage."
+    },
+    {
+     "t": "text",
+     "md": "Typische Verben davor oder danach: **sagen, berichten, erzählen, erklären, betonen, meinen, feststellen, hinzufügen** – oder Ausdrücke wie **„es heißt“**, **„laut …“**."
+    }
+   ]
+  },
+  {
+   "titel": "Lehrtafel: So bildest du den Konjunktiv I",
+   "ic": "📋",
+   "bloecke": [
+    {
+     "t": "regel",
+     "md": "**Infinitivstamm + -e** → er/sie/es/man: komm**e**, hab**e**, müss**e**, könn**e**, woll**e**, geb**e**, wiss**e**, fahr**e**, les**e**\n\nKein Vokalwechsel! er **fährt** → er **fahre** · er **liest** → er **lese** · er **weiß** → er **wisse**"
+    },
+    {
+     "t": "tabelle",
+     "kopf": [
+      "Infinitiv",
+      "Indikativ (er/sie/es)",
+      "Konjunktiv I (er/sie/es)"
+     ],
+     "zeilen": [
+      [
+       "sein",
+       "ist",
+       "==sei=="
+      ],
+      [
+       "haben",
+       "hat",
+       "==habe=="
+      ],
+      [
+       "werden",
+       "wird",
+       "==werde=="
+      ],
+      [
+       "können",
+       "kann",
+       "==könne=="
+      ],
+      [
+       "müssen",
+       "muss",
+       "==müsse=="
+      ],
+      [
+       "wollen",
+       "will",
+       "==wolle=="
+      ],
+      [
+       "dürfen",
+       "darf",
+       "==dürfe=="
+      ],
+      [
+       "wissen",
+       "weiß",
+       "==wisse=="
+      ],
+      [
+       "geben",
+       "gibt",
+       "==gebe=="
+      ],
+      [
+       "kommen",
+       "kommt",
+       "==komme=="
+      ]
+     ]
+    },
+    {
+     "t": "tabelle",
+     "kopf": [
+      "Person",
+      "sein",
+      "haben"
+     ],
+     "zeilen": [
+      [
+       "ich",
+       "sei",
+       "(hätte)"
+      ],
+      [
+       "du",
+       "sei(e)st",
+       "(hättest)"
+      ],
+      [
+       "er/sie/es/man",
+       "==sei==",
+       "==habe=="
+      ],
+      [
+       "wir",
+       "seien",
+       "(hätten)"
+      ],
+      [
+       "ihr",
+       "sei(e)t",
+       "(hättet)"
+      ],
+      [
+       "sie/Sie",
+       "==seien==",
+       "(hätten)"
+      ]
+     ]
+    },
+    {
+     "t": "regel",
+     "md": "Im Alltag brauchst du fast nur die **3. Person Singular** (er/sie/es/man) – und **sein** in allen Formen (sie **seien**)."
+    }
+   ]
+  },
+  {
+   "titel": "Die Ersatzform: Konjunktiv II",
+   "ic": "🔁",
+   "bloecke": [
+    {
+     "t": "text",
+     "md": "Manchmal sieht der Konjunktiv I **genauso aus wie der Indikativ** – vor allem im **Plural**: sie haben → sie hab**en**, sie kommen → sie komm**en**. Dann erkennt niemand die indirekte Rede."
+    },
+    {
+     "t": "regel",
+     "md": "Ist der Konjunktiv I gleich wie der Indikativ, nimmt man den **Konjunktiv II**:\n\nsie haben → sie **hätten** · sie können → sie **könnten** · sie müssen → sie **müssten**\n\nBei den meisten anderen Verben: **würde + Infinitiv** → sie **würden** kommen, sie **würden** zutrauen."
+    },
+    {
+     "t": "beispiel",
+     "s1": "Die Schüler sagen: „Wir ==haben== viel gelernt.“",
+     "s2": "Konjunktiv I „sie haben“ = Indikativ → nicht erkennbar",
+     "rolle": "Ersatz: Konjunktiv II",
+     "erg": "Die Schüler sagen, sie ==hätten== viel gelernt."
+    }
+   ]
+  },
+  {
+   "titel": "Direkte Rede → indirekte Rede",
+   "ic": "🔄",
+   "bloecke": [
+    {
+     "t": "liste",
+     "items": [
+      "**1. Pronomen anpassen:** ich → er/sie · mein → sein/ihr · wir → sie · mir → ihm/ihr",
+      "**2. Verb in den Konjunktiv I** (oder Ersatzform)",
+      "**3. Zeit beachten** (siehe Tabelle)"
+     ]
+    },
+    {
+     "t": "tabelle",
+     "kopf": [
+      "Direkte Rede",
+      "Indirekte Rede"
+     ],
+     "zeilen": [
+      [
+       "Gegenwart: „Ich **suche** eine Weiterbildung.“",
+       "Er sagt, er **suche** eine Weiterbildung."
+      ],
+      [
+       "Vergangenheit: „Ich **habe** viel **gelernt**.“ / „Ich **lernte** viel.“",
+       "Er sagt, er **habe** viel **gelernt**."
+      ],
+      [
+       "Vergangenheit mit sein: „Alles **ist** gut **gegangen**.“",
+       "Sie erzählt, alles **sei** gut **gegangen**."
+      ],
+      [
+       "Zukunft: „Ich **werde** studieren.“",
+       "Sie sagt, sie **werde** studieren."
+      ],
+      [
+       "Ja/Nein-Frage: „**Gibt** es eine Prüfung?“",
+       "Er fragt, **ob** es eine Prüfung **gebe**."
+      ],
+      [
+       "W-Frage: „**Wann** beginnt der Kurs?“",
+       "Er fragt, **wann** der Kurs **beginne**."
+      ],
+      [
+       "Bitte/Aufforderung: „**Melden** Sie sich an!“",
+       "Sie schreibt, er **solle** sich anmelden."
+      ]
+     ]
+    },
+    {
+     "t": "regel",
+     "md": "Für die **Vergangenheit** gibt es im Konjunktiv I nur **eine** Form: **habe/sei + Partizip II** – egal, ob in der direkten Rede Präteritum oder Perfekt steht."
+    }
+   ]
+  },
+  {
+   "titel": "Typische Fehler",
+   "ic": "⚠️",
+   "bloecke": [
+    {
+     "t": "tabelle",
+     "kopf": [
+      "✗ falsch",
+      "✓ richtig",
+      "Warum?"
+     ],
+     "zeilen": [
+      [
+       "Er sagt, er **fährt**/**fähre** nach Berlin.",
+       "Er sagt, er **fahre** nach Berlin.",
+       "Stamm vom Infinitiv, kein Vokalwechsel"
+      ],
+      [
+       "Sie sagt, **ich** sei müde.",
+       "Sie sagt, **sie** sei müde.",
+       "Pronomen anpassen"
+      ],
+      [
+       "Er sagt, er **seie** krank.",
+       "Er sagt, er **sei** krank.",
+       "sein: sei (ohne -e)"
+      ],
+      [
+       "Die Kollegen sagen, sie **haben** keine Zeit.",
+       "Die Kollegen sagen, sie **hätten** keine Zeit.",
+       "Plural = Indikativ → Konjunktiv II"
+      ],
+      [
+       "Er fragt, **ob gibt es** eine Prüfung.",
+       "Er fragt, ob es eine Prüfung **gebe**.",
+       "Nebensatz: Verb am Ende"
+      ],
+      [
+       "Er sagt, er **habe** nach Kiel **gefahren**.",
+       "Er sagt, er **sei** nach Kiel **gefahren**.",
+       "Bewegung → sein"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Weiterbildung finanzieren",
+   "ic": "💶",
+   "bloecke": [
+    {
+     "t": "text",
+     "md": "Im Kursbuch (Aufgabe 3 und 4) geht es um **Hilfen für die berufliche Entwicklung**: Programme, die eine Weiterbildung (mit)bezahlen."
+    },
+    {
+     "t": "tabelle",
+     "kopf": [
+      "Programm",
+      "Für wen?"
+     ],
+     "zeilen": [
+      [
+       "**Bildungsprämie**",
+       "Erwerbstätige ab 25 Jahren mit wenig Einkommen (bis 20 000 € zu versteuerndes Jahreseinkommen, mind. 15 Std./Woche); der Staat zahlt 50 % (bis 1 000 € Gebühren)"
+      ],
+      [
+       "**DAAD**",
+       "ausländische Akademiker/innen, die in Deutschland studieren, promovieren oder forschen wollen – Stipendien"
+      ],
+      [
+       "**Anerkennungszuschuss**",
+       "Fachkräfte mit ausländischem Berufsabschluss, die ihn anerkennen lassen wollen"
+      ],
+      [
+       "**Bundesagentur für Arbeit**",
+       "Weiterbildung z. B. bei (drohender) Arbeitslosigkeit; Berufsausbildung oder 3 Jahre Berufserfahrung; Beratung vorher"
+      ]
+     ]
+    },
+    {
+     "t": "text",
+     "md": "Danach kannst du in der **Schreibwerkstatt** eine E-Mail an das Weiterbildungsinstitut schreiben oder einen Kommentar zu einer der vier Personen – die Aufgaben findest du dort unter „⭐ Aufgaben von deiner Lehrkraft“ oder „E-Mail (formell)“ / „Forumsbeitrag“."
+    }
+   ]
+  }
+ ],
+ "module": [
+  {
+   "titel": "Textverständnis: Man lernt nie aus",
+   "icon": "📰",
+   "kurz": "Vier Personen, vier Lebenswege – was steht im Text?",
+   "aufgaben": [
+    {
+     "id": "T01",
+     "typ": "zu",
+     "frage": "Welche Überschrift passt zu welcher Person?",
+     "paare": [
+      [
+       "Luka Horvat",
+       "Helfen aus eigener Erfahrung"
+      ],
+      [
+       "Sachin Prachad",
+       "Mit 95 noch an der Uni"
+      ],
+      [
+       "Nesrin Abay",
+       "Eine Frau im Männerberuf"
+      ],
+      [
+       "Alice Kapp",
+       "Lehrerin mit Herz und Ausdauer"
+      ]
+     ]
+    },
+    {
+     "id": "T02",
+     "typ": "matrix",
+     "frage": "Luka Horvat – richtig oder falsch?",
+     "wahl": [
+      "richtig",
+      "falsch"
+     ],
+     "aussagen": [
+      [
+       "Luka kam nach Deutschland, weil er hier Arbeit bekommen hatte.",
+       true
+      ],
+      [
+       "Luka arbeitet als Erzieher in einem Kinderheim.",
+       false
+      ],
+      [
+       "Seine eigene Migrationserfahrung hilft ihm bei den geflüchteten Kindern.",
+       true
+      ],
+      [
+       "Luka möchte keine Weiterbildung machen, weil er zu viel zu tun hat.",
+       false
+      ]
+     ]
+    },
+    {
+     "id": "T03",
+     "typ": "matrix",
+     "frage": "Sachin Prachad – richtig oder falsch?",
+     "wahl": [
+      "richtig",
+      "falsch"
+     ],
+     "aussagen": [
+      [
+       "Er ist der älteste Student an seiner Universität.",
+       true
+      ],
+      [
+       "Er war bis zu seinem 92. Geburtstag berufstätig.",
+       true
+      ],
+      [
+       "Er hört und sieht noch sehr gut.",
+       false
+      ],
+      [
+       "Laut seinem Enkel sitzt er meistens am Schreibtisch und liest.",
+       true
+      ]
+     ]
+    },
+    {
+     "id": "T04",
+     "typ": "matrix",
+     "frage": "Nesrin Abay – richtig oder falsch?",
+     "wahl": [
+      "richtig",
+      "falsch"
+     ],
+     "aussagen": [
+      [
+       "Ihr Schulweg in Syrien war kurz und sicher.",
+       false
+      ],
+      [
+       "In Deutschland lebte schon ein Onkel von ihr.",
+       true
+      ],
+      [
+       "Zurzeit macht sie eine Ausbildung als Industriemechanikerin.",
+       true
+      ],
+      [
+       "Alle Kollegen trauen ihr die Arbeit ohne Probleme zu.",
+       false
+      ]
+     ]
+    },
+    {
+     "id": "T05",
+     "typ": "matrix",
+     "frage": "Alice Kapp – richtig oder falsch?",
+     "wahl": [
+      "richtig",
+      "falsch"
+     ],
+     "aussagen": [
+      [
+       "Sie sitzt seit einem Unfall im Rollstuhl.",
+       true
+      ],
+      [
+       "Sie sagt, es sei ganz leicht gewesen, mit der neuen Situation umzugehen.",
+       false
+      ],
+      [
+       "Sie findet, Schüler fordern viel, geben aber auch viel zurück.",
+       true
+      ],
+      [
+       "Sie kümmert sich besonders um Ausbildungsplätze für ihre Schüler.",
+       true
+      ]
+     ]
+    },
+    {
+     "id": "T06",
+     "typ": "mc",
+     "frage": "Was haben alle vier Personen gemeinsam?",
+     "opts": [
+      "Sie lernen ihr Leben lang weiter.",
+      "Sie arbeiten alle im gleichen Beruf.",
+      "Sie sind alle nach Deutschland gekommen.",
+      "Sie studieren alle an einer Universität."
+     ],
+     "l": 0
+    },
+    {
+     "id": "T07",
+     "typ": "mc",
+     "frage": "„Man lernt nie aus.“ bedeutet:",
+     "opts": [
+      "Man kann sein ganzes Leben lang Neues lernen.",
+      "Man muss nach der Schule nichts mehr lernen.",
+      "Man lernt nie genug für eine Prüfung.",
+      "Man kann ältere Menschen nichts mehr lehren."
+     ],
+     "l": 0
+    },
+    {
+     "id": "T08",
+     "typ": "mc",
+     "frage": "Wer hat diese Erfahrung gemacht? „Viele Alltagsdinge musste ich neu lernen.“",
+     "opts": [
+      "Alice Kapp",
+      "Nesrin Abay",
+      "Luka Horvat",
+      "Sachin Prachad"
+     ],
+     "l": 0
+    }
+   ]
+  },
+  {
+   "titel": "Adjektive: Wer ist wie?",
+   "icon": "🧑‍🤝‍🧑",
+   "kurz": "zielstrebig, hilfsbereit, engagiert … – und warum?",
+   "aufgaben": [
+    {
+     "id": "J01",
+     "typ": "mc",
+     "frage": "Nesrin will Maschinenbau studieren, obwohl es mit manchen Kollegen Probleme gibt. Sie ist …",
+     "opts": [
+      "zielstrebig",
+      "vorsichtig",
+      "bequem",
+      "unsicher"
+     ],
+     "l": 0
+    },
+    {
+     "id": "J02",
+     "typ": "mc",
+     "frage": "Luka repariert in seiner Freizeit mit Kindern im Kinderheim Fahrräder. Er ist …",
+     "opts": [
+      "hilfsbereit",
+      "egoistisch",
+      "ungeduldig",
+      "faul"
+     ],
+     "l": 0
+    },
+    {
+     "id": "J03",
+     "typ": "mc",
+     "frage": "Sachin fühlt sich geistig fit und schreibt eine Doktorarbeit. Er ist …",
+     "opts": [
+      "intellektuell",
+      "mobil",
+      "temperamentvoll",
+      "leichtsinnig"
+     ],
+     "l": 0,
+     "x": "„mobil“ passt nicht: Er bewegt sich nur langsam."
+    },
+    {
+     "id": "J04",
+     "typ": "mc",
+     "frage": "Alice hat nach ihrem Unfall vieles neu gelernt und nicht aufgegeben. Sie ist …",
+     "opts": [
+      "kämpferisch",
+      "nachlässig",
+      "ängstlich",
+      "gleichgültig"
+     ],
+     "l": 0
+    },
+    {
+     "id": "J05",
+     "typ": "mc",
+     "frage": "Alice knüpft Kontakte zur Wirtschaft, damit ihre Schüler Ausbildungsplätze finden. Sie ist …",
+     "opts": [
+      "engagiert",
+      "schüchtern",
+      "launisch",
+      "träge"
+     ],
+     "l": 0
+    },
+    {
+     "id": "J06",
+     "typ": "zu",
+     "frage": "Was bedeuten die Adjektive?",
+     "paare": [
+      [
+       "belastbar",
+       "kann viel Stress aushalten"
+      ],
+      [
+       "zielstrebig",
+       "verfolgt ein Ziel konsequent"
+      ],
+      [
+       "selbstständig",
+       "arbeitet ohne fremde Hilfe"
+      ],
+      [
+       "kollegial",
+       "verhält sich gut zu Kollegen"
+      ],
+      [
+       "verantwortungsbewusst",
+       "handelt mit Verantwortung"
+      ]
+     ]
+    },
+    {
+     "id": "J07",
+     "typ": "zu",
+     "frage": "Welches Gegenteil passt?",
+     "paare": [
+      [
+       "mutig",
+       "ängstlich"
+      ],
+      [
+       "optimistisch",
+       "pessimistisch"
+      ],
+      [
+       "geduldig",
+       "ungeduldig"
+      ],
+      [
+       "selbstbewusst",
+       "unsicher"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Konjunktiv I: Formen",
+   "icon": "🔤",
+   "kurz": "sei, habe, könne, wisse, fahre …",
+   "aufgaben": [
+    {
+     "id": "F01",
+     "typ": "mc",
+     "frage": "er – haben: Welche Form ist Konjunktiv I?",
+     "opts": [
+      "er habe",
+      "er hat",
+      "er hätte",
+      "er habt"
+     ],
+     "l": 0
+    },
+    {
+     "id": "F02",
+     "typ": "mc",
+     "frage": "sie – können:",
+     "opts": [
+      "sie könne",
+      "sie kann",
+      "sie könnte",
+      "sie konnte"
+     ],
+     "l": 0
+    },
+    {
+     "id": "F03",
+     "typ": "mc",
+     "frage": "er – wissen:",
+     "opts": [
+      "er wisse",
+      "er weiß",
+      "er wüsste",
+      "er wusste"
+     ],
+     "l": 0
+    },
+    {
+     "id": "F04",
+     "typ": "mc",
+     "frage": "es – sein:",
+     "opts": [
+      "es sei",
+      "es ist",
+      "es wäre",
+      "es seie"
+     ],
+     "l": 0
+    },
+    {
+     "id": "F05",
+     "typ": "mc",
+     "frage": "man – müssen:",
+     "opts": [
+      "man müsse",
+      "man muss",
+      "man müsste",
+      "man musste"
+     ],
+     "l": 0
+    },
+    {
+     "id": "F06",
+     "typ": "mc",
+     "frage": "sie – geben:",
+     "opts": [
+      "sie gebe",
+      "sie gibt",
+      "sie gäbe",
+      "sie gab"
+     ],
+     "l": 0
+    },
+    {
+     "id": "F07",
+     "typ": "mc",
+     "frage": "er – fahren:",
+     "opts": [
+      "er fahre",
+      "er fährt",
+      "er führe",
+      "er fähre"
+     ],
+     "l": 0,
+     "x": "Kein Vokalwechsel: fahr- + e."
+    },
+    {
+     "id": "F08",
+     "typ": "mc",
+     "frage": "sie (Plural) – sein:",
+     "opts": [
+      "sie seien",
+      "sie sind",
+      "sie sei",
+      "sie seie"
+     ],
+     "l": 0
+    },
+    {
+     "id": "F09",
+     "typ": "zu",
+     "frage": "Infinitiv → Konjunktiv I (er/sie/es)",
+     "paare": [
+      [
+       "kommen",
+       "komme"
+      ],
+      [
+       "werden",
+       "werde"
+      ],
+      [
+       "dürfen",
+       "dürfe"
+      ],
+      [
+       "lesen",
+       "lese"
+      ],
+      [
+       "wollen",
+       "wolle"
+      ]
+     ]
+    },
+    {
+     "id": "F10",
+     "typ": "mc",
+     "frage": "In welchem Satz steht ein Konjunktiv I?",
+     "opts": [
+      "Der Minister sagte, die Schule sei sehr gut.",
+      "Wenn ich Zeit hätte, käme ich mit.",
+      "Die Schule ist sehr gut.",
+      "Ich würde dir gern helfen."
+     ],
+     "l": 0
+    }
+   ]
+  },
+  {
+   "titel": "Direkte → indirekte Rede",
+   "icon": "🔄",
+   "kurz": "Was sagen Luka, Nesrin, Alice und Sachin?",
+   "aufgaben": [
+    {
+     "id": "I01",
+     "typ": "mc",
+     "frage": "Luka: „Ich suche eine Weiterbildung.“ – So steht es in der Zeitung:",
+     "opts": [
+      "Luka sagt, er suche eine Weiterbildung.",
+      "Luka sagt, ich suche eine Weiterbildung.",
+      "Luka sagt, er suchte eine Weiterbildung.",
+      "Luka sagt, er sucht eine Weiterbildung."
+     ],
+     "l": 0,
+     "x": "„er sucht“ hört man im Alltag – in der Zeitung steht der Konjunktiv I."
+    },
+    {
+     "id": "I02",
+     "typ": "mc",
+     "frage": "Nesrin: „Ich will Maschinenbau studieren.“",
+     "opts": [
+      "Nesrin sagt, sie wolle Maschinenbau studieren.",
+      "Nesrin sagt, sie will Maschinenbau studieren.",
+      "Nesrin sagt, ich wolle Maschinenbau studieren.",
+      "Nesrin sagt, sie wollte Maschinenbau studieren."
+     ],
+     "l": 0
+    },
+    {
+     "id": "I03",
+     "typ": "mc",
+     "frage": "Alice: „Ich liebe diesen Job.“",
+     "opts": [
+      "Alice betont, sie liebe diesen Job.",
+      "Alice betont, sie liebt diesen Job.",
+      "Alice betont, ich liebe diesen Job.",
+      "Alice betont, sie liebte diesen Job."
+     ],
+     "l": 0
+    },
+    {
+     "id": "I04",
+     "typ": "mc",
+     "frage": "Der Enkel: „Mein Großvater liest jeden Tag.“",
+     "opts": [
+      "Der Enkel berichtet, sein Großvater lese jeden Tag.",
+      "Der Enkel berichtet, mein Großvater lese jeden Tag.",
+      "Der Enkel berichtet, sein Großvater liest jeden Tag.",
+      "Der Enkel berichtet, sein Großvater läse jeden Tag."
+     ],
+     "l": 0
+    },
+    {
+     "id": "I05",
+     "typ": "mc",
+     "frage": "Alice: „Man braucht gute Nerven.“",
+     "opts": [
+      "Alice meint, man brauche gute Nerven.",
+      "Alice meint, man braucht gute Nerven.",
+      "Alice meint, man bräuchte gute Nerven.",
+      "Alice meint, man brauchen gute Nerven."
+     ],
+     "l": 0
+    },
+    {
+     "id": "I06",
+     "typ": "mc",
+     "frage": "Luka: „Ich habe Erfahrungen mit Migration.“",
+     "opts": [
+      "Luka stellt fest, er habe Erfahrungen mit Migration.",
+      "Luka stellt fest, er hat Erfahrungen mit Migration.",
+      "Luka stellt fest, er hätte Erfahrungen mit Migration.",
+      "Luka stellt fest, ich habe Erfahrungen mit Migration."
+     ],
+     "l": 0
+    },
+    {
+     "id": "I07",
+     "typ": "mc",
+     "frage": "Sachin: „Ich bin geistig fit.“",
+     "opts": [
+      "Sachin sagt, er sei geistig fit.",
+      "Sachin sagt, er ist geistig fit.",
+      "Sachin sagt, er seie geistig fit.",
+      "Sachin sagt, ich sei geistig fit."
+     ],
+     "l": 0
+    },
+    {
+     "id": "I08",
+     "typ": "mc",
+     "frage": "Nesrin: „Mein Chef hat mir geholfen.“",
+     "opts": [
+      "Nesrin erzählt, ihr Chef habe ihr geholfen.",
+      "Nesrin erzählt, sein Chef habe ihm geholfen.",
+      "Nesrin erzählt, mein Chef habe mir geholfen.",
+      "Nesrin erzählt, ihr Chef hat ihr geholfen."
+     ],
+     "l": 0,
+     "x": "Pronomen anpassen: mein → ihr, mir → ihr."
+    },
+    {
+     "id": "I09",
+     "typ": "mc",
+     "frage": "„Die Lehrerin ist nie genervt“, sagt eine Schülerin. – Wie steht es in der Zeitung?",
+     "opts": [
+      "Eine Schülerin sagt, die Lehrerin sei nie genervt.",
+      "Eine Schülerin sagt, die Lehrerin seie nie genervt.",
+      "Eine Schülerin sagt, die Lehrerin wäre nie genervt gewesen.",
+      "Eine Schülerin sagt, ich sei nie genervt."
+     ],
+     "l": 0
+    }
+   ]
+  },
+  {
+   "titel": "Ersatzform Konjunktiv II",
+   "icon": "🔁",
+   "kurz": "sie hätten, sie könnten, sie würden …",
+   "aufgaben": [
+    {
+     "id": "E01",
+     "typ": "mc",
+     "frage": "Die Schüler sagen: „Wir haben viel gelernt.“",
+     "opts": [
+      "Die Schüler sagen, sie hätten viel gelernt.",
+      "Die Schüler sagen, sie haben viel gelernt.",
+      "Die Schüler sagen, sie habe viel gelernt.",
+      "Die Schüler sagen, wir hätten viel gelernt."
+     ],
+     "l": 0
+    },
+    {
+     "id": "E02",
+     "typ": "mc",
+     "frage": "Die Kollegen meinen: „Wir können das nicht allein schaffen.“",
+     "opts": [
+      "Die Kollegen meinen, sie könnten das nicht allein schaffen.",
+      "Die Kollegen meinen, sie können das nicht allein schaffen.",
+      "Die Kollegen meinen, sie könne das nicht allein schaffen.",
+      "Die Kollegen meinen, wir könnten das nicht allein schaffen."
+     ],
+     "l": 0
+    },
+    {
+     "id": "E03",
+     "typ": "mc",
+     "frage": "Nesrin: „Viele Kollegen trauen Frauen nichts zu.“",
+     "opts": [
+      "Nesrin sagt, viele Kollegen würden Frauen nichts zutrauen.",
+      "Nesrin sagt, viele Kollegen traue Frauen nichts zu.",
+      "Nesrin sagt, viele Kollegen trauen Frauen nichts zu.",
+      "Nesrin sagt, viele Kollegen hätten Frauen nichts zutrauen."
+     ],
+     "l": 0
+    },
+    {
+     "id": "E04",
+     "typ": "mc",
+     "frage": "Die Lehrer berichten: „Die Kinder kommen gern in die Schule.“",
+     "opts": [
+      "Die Lehrer berichten, die Kinder würden gern in die Schule kommen.",
+      "Die Lehrer berichten, die Kinder komme gern in die Schule.",
+      "Die Lehrer berichten, die Kinder kommen gern in die Schule.",
+      "Die Lehrer berichten, die Kinder kommten gern in die Schule."
+     ],
+     "l": 0
+    },
+    {
+     "id": "E05",
+     "typ": "mc",
+     "frage": "Warum braucht man manchmal den Konjunktiv II in der indirekten Rede?",
+     "opts": [
+      "Weil der Konjunktiv I im Plural oft genauso aussieht wie der Indikativ.",
+      "Weil der Konjunktiv I nur in der Vergangenheit möglich ist.",
+      "Weil der Konjunktiv II immer höflicher ist.",
+      "Weil man in der Zeitung keinen Konjunktiv I benutzt."
+     ],
+     "l": 0
+    },
+    {
+     "id": "E06",
+     "typ": "mc",
+     "frage": "Die Teilnehmer erklären: „Wir müssen viel üben.“",
+     "opts": [
+      "Die Teilnehmer erklären, sie müssten viel üben.",
+      "Die Teilnehmer erklären, sie müssen viel üben.",
+      "Die Teilnehmer erklären, sie müsse viel üben.",
+      "Die Teilnehmer erklären, sie mussten viel üben."
+     ],
+     "l": 0
+    }
+   ]
+  },
+  {
+   "titel": "Vergangenheit & Zukunft",
+   "icon": "⏳",
+   "kurz": "sei gegangen, habe gewonnen, werde studieren",
+   "aufgaben": [
+    {
+     "id": "V01",
+     "typ": "mc",
+     "frage": "Nesrin: „Glücklicherweise ist alles gut gegangen.“",
+     "opts": [
+      "Nesrin erzählt, glücklicherweise sei alles gut gegangen.",
+      "Nesrin erzählt, glücklicherweise habe alles gut gegangen.",
+      "Nesrin erzählt, glücklicherweise ist alles gut gegangen.",
+      "Nesrin erzählt, glücklicherweise sei alles gut gehen."
+     ],
+     "l": 0
+    },
+    {
+     "id": "V02",
+     "typ": "mc",
+     "frage": "Sachin: „Ich war bis 92 berufstätig.“",
+     "opts": [
+      "Er sagt, er sei bis 92 berufstätig gewesen.",
+      "Er sagt, er war bis 92 berufstätig.",
+      "Er sagt, er habe bis 92 berufstätig gewesen.",
+      "Er sagt, er sei bis 92 berufstätig."
+     ],
+     "l": 0
+    },
+    {
+     "id": "V03",
+     "typ": "mc",
+     "frage": "Alice: „Ich habe den Preis gewonnen.“",
+     "opts": [
+      "Alice sagt, sie habe den Preis gewonnen.",
+      "Alice sagt, sie hat den Preis gewonnen.",
+      "Alice sagt, sie sei den Preis gewonnen.",
+      "Alice sagt, sie habe den Preis gewinnt."
+     ],
+     "l": 0
+    },
+    {
+     "id": "V04",
+     "typ": "mc",
+     "frage": "Nesrin: „Ich werde Maschinenbau studieren.“",
+     "opts": [
+      "Nesrin sagt, sie werde Maschinenbau studieren.",
+      "Nesrin sagt, sie wird Maschinenbau studieren.",
+      "Nesrin sagt, sie werdet Maschinenbau studieren.",
+      "Nesrin sagt, sie wurde Maschinenbau studieren."
+     ],
+     "l": 0
+    },
+    {
+     "id": "V05",
+     "typ": "mc",
+     "frage": "Nesrin: „Wir sind nach Deutschland geflohen.“",
+     "opts": [
+      "Nesrin erzählt, sie seien nach Deutschland geflohen.",
+      "Nesrin erzählt, sie sind nach Deutschland geflohen.",
+      "Nesrin erzählt, sie hätten nach Deutschland geflohen.",
+      "Nesrin erzählt, sie sei nach Deutschland geflohen."
+     ],
+     "l": 0
+    },
+    {
+     "id": "V06",
+     "typ": "mc",
+     "frage": "Luka: „Ich fuhr letztes Jahr nach Kroatien.“",
+     "opts": [
+      "Luka erzählt, er sei letztes Jahr nach Kroatien gefahren.",
+      "Luka erzählt, er fuhr letztes Jahr nach Kroatien.",
+      "Luka erzählt, er habe letztes Jahr nach Kroatien gefahren.",
+      "Luka erzählt, er fahre letztes Jahr nach Kroatien."
+     ],
+     "l": 0,
+     "x": "Präteritum in der direkten Rede → in der indirekten Rede sei/habe + Partizip II."
+    }
+   ]
+  },
+  {
+   "titel": "Fragen & Bitten indirekt",
+   "icon": "❓",
+   "kurz": "ob …, wann …, er solle …",
+   "aufgaben": [
+    {
+     "id": "Q01",
+     "typ": "mc",
+     "frage": "Luka fragt: „Gibt es eine Abschlussprüfung?“",
+     "opts": [
+      "Luka fragt, ob es eine Abschlussprüfung gebe.",
+      "Luka fragt, ob gibt es eine Abschlussprüfung.",
+      "Luka fragt, dass es eine Abschlussprüfung gebe.",
+      "Luka fragt, gibt es eine Abschlussprüfung."
+     ],
+     "l": 0
+    },
+    {
+     "id": "Q02",
+     "typ": "mc",
+     "frage": "Luka fragt: „Wie viel kostet der Kurs?“",
+     "opts": [
+      "Luka fragt, wie viel der Kurs koste.",
+      "Luka fragt, wie viel kostet der Kurs.",
+      "Luka fragt, ob der Kurs wie viel koste.",
+      "Luka fragt, wie viel koste der Kurs."
+     ],
+     "l": 0
+    },
+    {
+     "id": "Q03",
+     "typ": "mc",
+     "frage": "Luka fragt: „Wann beginnt der Kurs?“",
+     "opts": [
+      "Luka fragt, wann der Kurs beginne.",
+      "Luka fragt, wann beginne der Kurs.",
+      "Luka fragt, ob wann der Kurs beginne.",
+      "Luka fragt, wann der Kurs beginnt sei."
+     ],
+     "l": 0
+    },
+    {
+     "id": "Q04",
+     "typ": "mc",
+     "frage": "Frau Barbosa schreibt: „Melden Sie sich bis zum 31.1. an!“",
+     "opts": [
+      "Frau Barbosa schreibt, er solle sich bis zum 31.1. anmelden.",
+      "Frau Barbosa schreibt, er melde sich bis zum 31.1. an.",
+      "Frau Barbosa schreibt, melden Sie sich bis zum 31.1. an.",
+      "Frau Barbosa schreibt, er solle sich anmelden bis zum 31.1. werden."
+     ],
+     "l": 0,
+     "x": "Aufforderung in der indirekten Rede: sollen im Konjunktiv I → er solle …"
+    },
+    {
+     "id": "Q05",
+     "typ": "mc",
+     "frage": "Die Kursleiterin fragt: „Haben Sie Computerkenntnisse?“",
+     "opts": [
+      "Die Kursleiterin fragt, ob er Computerkenntnisse habe.",
+      "Die Kursleiterin fragt, ob haben Sie Computerkenntnisse.",
+      "Die Kursleiterin fragt, er habe Computerkenntnisse.",
+      "Die Kursleiterin fragt, ob er Computerkenntnisse hat habe."
+     ],
+     "l": 0
+    }
+   ]
+  },
+  {
+   "titel": "Die Zeitungsmeldung",
+   "icon": "🗞️",
+   "kurz": "Konjunktiv I im Text – und zurück in die direkte Rede.",
+   "aufgaben": [
+    {
+     "id": "Z01",
+     "typ": "luecke",
+     "frage": "Zeitungsmeldung: Setzen Sie die richtigen Formen ein.",
+     "text": "Bäckermeisterin aus Kiel ausgezeichnet\n\nDie Jury begründete ihre Entscheidung so: Frau Demir {0} seit 20 Jahren Lehrlinge aus aller Welt aus und {1} immer Zeit für ihre Fragen. Ein Auszubildender erzählte, sie {2} ihm sehr geholfen. Frau Demir selbst sagte, sie {3} jeden Tag etwas von ihren Lehrlingen. Die Bürgermeisterin meinte, solche Betriebe {4} die Stadt dringend.",
+     "gaps": [
+      {
+       "opts": [
+        "bilde",
+        "bildet",
+        "bildete"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "habe",
+        "hat",
+        "haben"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "habe",
+        "hat",
+        "sei"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "lerne",
+        "lernt",
+        "lernen"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "brauche",
+        "braucht",
+        "brauchen"
+       ],
+       "l": 0
+      }
+     ],
+     "x": "Achtung beim letzten Satz: Das Subjekt ist „die Stadt“ (Singular) → die Stadt brauche solche Betriebe."
+    },
+    {
+     "id": "Z02",
+     "typ": "mc",
+     "frage": "„Er könne ohne Mathe nicht mehr leben“, sagte ein Schüler. – Was hat der Schüler wirklich gesagt?",
+     "opts": [
+      "„Ich kann ohne Mathe nicht mehr leben.“",
+      "„Er kann ohne Mathe nicht mehr leben.“",
+      "„Ich könne ohne Mathe nicht mehr leben.“",
+      "„Du kannst ohne Mathe nicht mehr leben.“"
+     ],
+     "l": 0
+    },
+    {
+     "id": "Z03",
+     "typ": "mc",
+     "frage": "„Sie gebe nicht immer die besten Noten“, stellten die Schüler fest. – Direkte Rede:",
+     "opts": [
+      "„Sie gibt nicht immer die besten Noten.“",
+      "„Sie gebe nicht immer die besten Noten.“",
+      "„Ich gebe nicht immer die besten Noten.“",
+      "„Sie gab nicht immer die besten Noten.“"
+     ],
+     "l": 0
+    },
+    {
+     "id": "Z04",
+     "typ": "mc",
+     "frage": "„Ohne engagierte Lehrer müsse man die Schulen schließen“, meinte der Minister. – Direkte Rede:",
+     "opts": [
+      "„Ohne engagierte Lehrer muss man die Schulen schließen.“",
+      "„Ohne engagierte Lehrer müsse man die Schulen schließen.“",
+      "„Ohne engagierte Lehrer musste man die Schulen schließen.“",
+      "„Ohne engagierte Lehrer müssen wir die Schule schließen müssen.“"
+     ],
+     "l": 0
+    },
+    {
+     "id": "Z05",
+     "typ": "luecke",
+     "frage": "Indirekte Rede: Ergänzen Sie.",
+     "text": "Luka erzählt, er {0} Mechatroniker und {1} in einer Autowerkstatt. Er {2} sich gern weiterbilden, aber er {3} noch nicht, wie er den Kurs bezahlen {4}.",
+     "gaps": [
+      {
+       "opts": [
+        "sei",
+        "ist",
+        "wäre"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "arbeite",
+        "arbeitet",
+        "arbeiten"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "wolle",
+        "will",
+        "wollen"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "wisse",
+        "weiß",
+        "wüsste"
+       ],
+       "l": 0
+      },
+      {
+       "opts": [
+        "könne",
+        "kann",
+        "konnte"
+       ],
+       "l": 0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "titel": "Weiterbildung finanzieren",
+   "icon": "💶",
+   "kurz": "Bildungsprämie, DAAD, Anerkennung, Arbeitsagentur – und die E-Mail vom WDA.",
+   "aufgaben": [
+    {
+     "id": "W01",
+     "typ": "zu",
+     "frage": "Welches Programm passt?",
+     "paare": [
+      [
+       "Bildungsprämie",
+       "für Erwerbstätige mit wenig Einkommen"
+      ],
+      [
+       "DAAD",
+       "Stipendien für ausländische Akademiker"
+      ],
+      [
+       "Anerkennungszuschuss",
+       "Hilfe bei der Anerkennung ausländischer Abschlüsse"
+      ],
+      [
+       "Bundesagentur für Arbeit",
+       "Weiterbildung z. B. bei drohender Arbeitslosigkeit"
+      ]
+     ]
+    },
+    {
+     "id": "W02",
+     "typ": "mc",
+     "frage": "Haki hat in Kenia einen Bachelor gemacht und will in Deutschland einen Master machen. Welche Förderung passt?",
+     "opts": [
+      "DAAD",
+      "Anerkennungszuschuss",
+      "Bildungsprämie",
+      "keine Förderung"
+     ],
+     "l": 0
+    },
+    {
+     "id": "W03",
+     "typ": "mc",
+     "frage": "Silke ist ausgebildete Hauswirtschafterin, zurzeit arbeitslos und will zur Altenpflegerin umschulen.",
+     "opts": [
+      "Bundesagentur für Arbeit",
+      "DAAD",
+      "Anerkennungszuschuss",
+      "keine Förderung"
+     ],
+     "l": 0
+    },
+    {
+     "id": "W04",
+     "typ": "mc",
+     "frage": "Umer hat im Irak einen Abschluss als Physiotherapeut und will in Deutschland in diesem Beruf arbeiten.",
+     "opts": [
+      "Anerkennungszuschuss",
+      "DAAD",
+      "Bildungsprämie",
+      "keine Förderung"
+     ],
+     "l": 0
+    },
+    {
+     "id": "W05",
+     "typ": "mc",
+     "frage": "Fiona verdient 23 000 € im Jahr und will einen Kurs in Ergotherapie machen. Bekommt sie die Bildungsprämie?",
+     "opts": [
+      "Nein – ihr Einkommen ist höher als 20 000 €.",
+      "Ja – sie ist älter als 25 Jahre.",
+      "Ja – der Staat zahlt immer 50 %.",
+      "Nein – Ergotherapie ist kein Beruf."
+     ],
+     "l": 0
+    },
+    {
+     "id": "W06",
+     "typ": "mc",
+     "frage": "„erwerbstätig“ bedeutet:",
+     "opts": [
+      "Man arbeitet und verdient Geld.",
+      "Man kauft viele Dinge.",
+      "Man sucht eine Arbeit.",
+      "Man ist in Rente."
+     ],
+     "l": 0
+    },
+    {
+     "id": "W07",
+     "typ": "mc",
+     "frage": "„einen Abschluss anerkennen“ bedeutet:",
+     "opts": [
+      "offiziell als gleichwertig akzeptieren",
+      "einen neuen Abschluss machen",
+      "den Abschluss verlieren",
+      "den Abschluss übersetzen lassen"
+     ],
+     "l": 0
+    },
+    {
+     "id": "W08",
+     "typ": "mc",
+     "frage": "„ein Stipendium“ ist …",
+     "opts": [
+      "Geld zur Unterstützung für Studium oder Forschung.",
+      "ein Kredit, den man zurückzahlen muss.",
+      "eine Prüfung an der Universität.",
+      "ein Zeugnis über die Teilnahme."
+     ],
+     "l": 0
+    },
+    {
+     "id": "W09",
+     "typ": "matrix",
+     "frage": "Die E-Mail von Frau Barbosa (WDA): Steht das in der E-Mail?",
+     "wahl": [
+      "richtig",
+      "falsch"
+     ],
+     "aussagen": [
+      [
+       "Im Flyer stehen Kosten und Termine.",
+       true
+      ],
+      [
+       "Bis zum 31.1. gibt es einen günstigeren Preis.",
+       true
+      ],
+      [
+       "Die E-Mail nennt die genaue Teilnehmerzahl.",
+       false
+      ],
+      [
+       "Man kann eine Bildungsprämie beantragen.",
+       true
+      ],
+      [
+       "Man kann das Institut nur per Post erreichen.",
+       false
+      ]
+     ]
+    },
+    {
+     "id": "W10",
+     "typ": "mc",
+     "frage": "Frau Barbosa schreibt: „Warten Sie nicht länger!“ – Indirekt:",
+     "opts": [
+      "Frau Barbosa schreibt, er solle nicht länger warten.",
+      "Frau Barbosa schreibt, er warte nicht länger.",
+      "Frau Barbosa schreibt, warten Sie nicht länger.",
+      "Frau Barbosa schreibt, er sollen nicht länger warten."
+     ],
+     "l": 0
+    }
+   ]
+  }
+ ]
+}

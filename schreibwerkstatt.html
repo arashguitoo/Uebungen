@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Schreibwerkstatt – Übungszentrale</title>
-<link rel="stylesheet" href="stil.css?v=20261105a">
+<link rel="stylesheet" href="stil.css?v=20261110a">
 <style>
   :root{--akzent:#8a4f2f;--akzent-hell:#f6ece6;--tinte:#3b2a22}
   body{background:#f6f3ee}
@@ -79,10 +79,10 @@
 <section class="held"><div class="wrap"><h1>✍️ Schreibwerkstatt</h1><p id="unter">Schreiben, abgeben, Korrektur bekommen – und mit kurzen Übungen trainieren.</p></div></section>
 <main class="wrap" id="app"><p class="leise">Lädt …</p></main>
 <script type="module">
-import { db, esc, mitDemo, zufall } from './db.js?v=20261105a';
-import { starte } from './spieler.js?v=20261105a';
-import { zeige, punkte } from './aufgaben.js?v=20261105a';
-import { AUFGABEN, ARTEN, REDEMITTEL, TRAINING, wortzahl, KAT, KRITERIEN, STUFE, korrTyp } from './schreib-daten.js?v=20261105a';
+import { db, esc, mitDemo, zufall } from './db.js?v=20261110a';
+import { starte } from './spieler.js?v=20261110a';
+import { zeige, punkte } from './aufgaben.js?v=20261110a';
+import { AUFGABEN, ARTEN, REDEMITTEL, TRAINING, wortzahl, KAT, KRITERIEN, STUFE, korrTyp } from './schreib-daten.js?v=20261110a';
 
 const $ = s => document.querySelector(s), app = $('#app');
 const L = await starte('schreibwerkstatt');
@@ -151,7 +151,7 @@ function editor(id) {
   const [min, max] = a.worte || [0, 9999];
   app.innerHTML = reiter('schreiben') + `<div class="editor"><div class="links">
       <div class="karte"><a href="#schreiben" class="klein">← Alle Aufgaben</a><h2 style="margin:6px 0">${esc(a.titel)}</h2><div class="zeile" style="gap:6px;margin-bottom:8px"><span class="pill">${art.ic} ${esc(art.t)}</span><span class="pill">${esc(a.niveau || '')}</span><span class="pill">${min}–${max} Wörter</span></div>
-        <p style="margin:0">${esc(a.situation || '')}</p>${a.material ? `<div class="material" style="margin-top:10px">${esc(a.material)}</div>` : ''}</div>
+        <p style="margin:0;white-space:pre-line">${esc(a.situation || '')}</p>${a.material ? `<div class="material" style="margin-top:10px">${esc(a.material)}</div>` : ''}</div>
       ${a.punkte && a.punkte.length ? `<div class="karte check"><b>Inhaltspunkte – hast du an alles gedacht?</b>${a.punkte.map((p, i) => `<label><input type="checkbox" data-ck="${i}" ${e.ck && e.ck[i] ? 'checked' : ''}> ${esc(p.t)}</label>`).join('')}</div>` : ''}
       ${REDEMITTEL[a.art] ? `<details class="rm"><summary>💡 Redemittel</summary><dl>${REDEMITTEL[a.art].map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('')}</dl></details>` : ''}
     </div>

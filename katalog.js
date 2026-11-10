@@ -471,6 +471,20 @@ export const KATALOG = [
     quelle: { werk: "Linie 1 Beruf", lektion: 14 }
   },
   {
+    id: "lektion-konjunktiv1",
+    titel: "Man lernt nie aus · Konjunktiv I",
+    untertitel: "Zusatzlektion · Textverständnis · Lehrtafel Konjunktiv I · indirekte Rede · Weiterbildung finanzieren · 66 Übungen",
+    datei: "lektion.html?l=konjunktiv1",
+    typ: "Lektion",
+    niveau: "B1/B2",
+    themen: ["Grammatik", "Lesen", "Beruf"],
+    farbe: "#b5562f",
+    dauer: "60–90 Min.",
+    reihe: "Zusatzlektionen",
+    quelle: { werk: "Linie 1 Beruf", lektion: 14 },
+    offen: true
+  },
+  {
     id: "lektion-relativsaetze",
     titel: "Relativsätze",
     untertitel: "Zusatzlektion · alle Fälle · die Rolle des gemeinsamen Wortes · Rollen-Detektiv und 80 Übungen",
