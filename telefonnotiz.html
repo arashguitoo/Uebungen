@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Telefonnotiz – Hören und Schreiben</title>
-<link rel="stylesheet" href="stil.css?v=20261110b">
+<link rel="stylesheet" href="stil.css?v=20261111a">
 <style>
   :root{--akzent:#c0504d;--akzent-hell:#f7e3df;--tinte:#3a2626}
   body{background:#f6f3ee}
@@ -39,8 +39,8 @@
 <section class="held"><div class="wrap" style="max-width:860px"><h1>📞 Telefonnotiz</h1><p>Hören und Schreiben · Kundenanfragen entgegennehmen und dokumentieren</p></div></section>
 <main class="wrap" id="app"><p class="leise">Lädt …</p></main>
 <script type="module">
-import { db, esc, mitDemo, zufall } from './db.js?v=20261110b';
-import { starte } from './spieler.js?v=20261110b';
+import { db, esc, mitDemo, zufall } from './db.js?v=20261111a';
+import { starte } from './spieler.js?v=20261111a';
 const $ = s => document.querySelector(s), app = $('#app');
 const L = await starte('hoeren-telefonnotiz');
 if (!L.frei) { L.sperre(app); throw new Error('gesperrt'); }

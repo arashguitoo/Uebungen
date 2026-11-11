@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Konsole – Übungszentrale</title>
 <meta name="robots" content="noindex">
-<link rel="stylesheet" href="stil.css?v=20261110b">
+<link rel="stylesheet" href="stil.css?v=20261111a">
 <style>
   :root{--akzent:#2f3f46;--akzent-hell:#e7edef}
   body{font-size:16px}
@@ -150,7 +150,7 @@
     <button class="tab" data-t="fb">👤 Feedback &amp; Freigaben</button>
     <button class="tab" data-t="tx">✍️ Texte <span id="txZahl" class="tabzahl"></span></button>
     <a href="live-studio.html" style="color:#ffd166;font-weight:700;padding:10px 16px;text-decoration:none;white-space:nowrap" title="Live-Umfragen und Live-Quiz für den Unterricht starten">📡 Live im Unterricht</a>
-    <a href="unterricht.html?leitung=1&amp;plan=konj1" target="_blank" style="color:#ffd166;font-weight:700;padding:10px 16px;text-decoration:none;white-space:nowrap" title="Live-Stunde mit Lehrtafel, Freigaben und Timer (Beamer) – 60 Min. „Man lernt nie aus · Konjunktiv I“">🎓 Live-Stunde</a>
+    <a href="unterricht.html?leitung=1" target="_blank" style="color:#ffd166;font-weight:700;padding:10px 16px;text-decoration:none;white-space:nowrap" title="Live-Stunde mit Lehrtafel, Freigaben und Timer – Pläne: Grammatik B2 (online, 5 Sitzungen), Man lernt nie aus · Konjunktiv I">🎓 Live-Stunde</a>
   </nav>
 </div></header>
 <main class="wrap" id="app"></main>
@@ -177,12 +177,12 @@ window.__ok = false;
 </script>
 <script type="module">
 window.__ok = true;
-import { db, DEMO, zufall, esc, mitDemo } from './db.js?v=20261110b';
-import { KATALOG, exById } from './katalog.js?v=20261110b';
-import { rubriken, rubrikVon } from './rubriken.js?v=20261110b';
-import { AUFGABEN as SW_AUF, ARTEN as SW_ARTEN, analysiere as SW_analysiere, ltKategorie as SW_ltKat, vorschlag as SW_vorschlag, KAT as SW_KAT, KRITERIEN as SW_KRIT, STUFE as SW_STUFE, wortzahl as SW_wortzahl, korrTyp as SW_korrTyp } from './schreib-daten.js?v=20261110b';
-import { LISTEN, SKALEN, MERKMALE, MERKMAL, skalaVon, wertInfo, prozent } from './feedback-kriterien.js?v=20261110b';
-import { TEST as DTEST, BEREICHE as DBER, analyse as dAnalyse, AUFGABEN as DAUFG } from './diagnose-daten.js?v=20261110b';
+import { db, DEMO, zufall, esc, mitDemo } from './db.js?v=20261111a';
+import { KATALOG, exById } from './katalog.js?v=20261111a';
+import { rubriken, rubrikVon } from './rubriken.js?v=20261111a';
+import { AUFGABEN as SW_AUF, ARTEN as SW_ARTEN, analysiere as SW_analysiere, ltKategorie as SW_ltKat, vorschlag as SW_vorschlag, KAT as SW_KAT, KRITERIEN as SW_KRIT, STUFE as SW_STUFE, wortzahl as SW_wortzahl, korrTyp as SW_korrTyp } from './schreib-daten.js?v=20261111a';
+import { LISTEN, SKALEN, MERKMALE, MERKMAL, skalaVon, wertInfo, prozent } from './feedback-kriterien.js?v=20261111a';
+import { TEST as DTEST, BEREICHE as DBER, analyse as dAnalyse, AUFGABEN as DAUFG } from './diagnose-daten.js?v=20261111a';
 
 if (DEMO) document.getElementById('demo').innerHTML = '<div class="demo-band">DEMO-MODUS – Anmeldung mit beliebigen Daten, alles bleibt in diesem Browser</div>';
 const $ = s => document.querySelector(s), app = $('#app');

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Antwortbogen</title>
+<link rel="stylesheet" href="stil.css?v=20261111a">
+<style>
+  :root{--akzent:#2f7fa3;--akzent-hell:#e3f0f6;--tinte:#1f3440}
+  body{background:#f4f6f7}
+  .held{background:linear-gradient(160deg,#1f4a5e,#2f7fa3);color:#fff;padding:22px 0 54px}
+  .held h1{margin:0 0 4px;font-size:1.7rem}.held p{margin:0;opacity:.88}
+  main.wrap{margin-top:-38px;padding-bottom:40px;max-width:760px}
+  .teil{background:#dcebf2;border-radius:10px;padding:14px 16px;margin-top:14px}
+  .teil h2{margin:0 0 8px;font-size:1.1rem;color:var(--tinte)}
+  .zeile{display:grid;grid-template-columns:34px 1fr;gap:8px;align-items:center;background:#fff;border-radius:8px;padding:8px 10px;margin-top:6px}
+  .zeile:nth-child(odd){background:#f5fafc}
+  .zeile .nr{font-weight:800;font-size:1.15rem;text-align:center}
+  .kreise{display:flex;flex-wrap:wrap;gap:6px}
+  .kreise button{min-width:44px;height:44px;padding:0 10px;border-radius:22px;border:2px solid #7fb3c9;background:#fff;font-weight:700;font-size:1rem;color:var(--tinte);cursor:pointer}
+  .kreise button.an{background:#2f7fa3;border-color:#2f7fa3;color:#fff}
+  .kreise button:disabled{cursor:default}
+  .zeile.ok{outline:3px solid #2e9a57}.zeile.falsch{outline:3px solid #d9483b}
+  .zeile .mk{font-weight:800;margin-left:auto}
+  .ergebnis{text-align:center}
+  .ergebnis .gross{font-size:2.6rem;font-weight:800;color:var(--akzent)}
+  .tabelle{width:100%;border-collapse:collapse;margin-top:10px}
+  .tabelle td{padding:6px 8px;border-bottom:1px solid #e3e8ea}
+  .uhr{position:sticky;top:0;z-index:5;background:#1f4a5e;color:#fff;border-radius:10px;padding:8px 14px;display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+</style>
+</head>
+<body>
+<section class="held"><div class="wrap" style="max-width:760px"><h1 id="titel">📝 Antwortbogen</h1><p id="unter"></p></div></section>
+<main class="wrap" id="app"><p class="leise">Lädt …</p></main>
+<script type="module">
+import { esc, mitDemo } from './db.js?v=20261111a';
+import { starte } from './spieler.js?v=20261111a';
+import { BOEGEN } from './antwortboegen.js?v=20261111a';
+const $ = s => document.querySelector(s), app = $('#app');
+const B = BOEGEN[new URLSearchParams(location.search).get('b')] || Object.values(BOEGEN)[0];
+document.title = B.titel; $('#titel').textContent = '📝 ' + B.titel; $('#unter').textContent = B.unter || '';
+const L = await starte(B.exId, { id: B.exId, titel: B.titel, offen: false });
+if (!L.frei) { L.sperre(app); throw new Error('gesperrt'); }
+const kopf = document.querySelector('header.kopf'); if (kopf) document.body.prepend(kopf);
+const s = L.s, KEY = 'ueb_ab_' + B.exId + '_' + (s.code || s.name || 'gast');
+let st = {}; try { st = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { }
+st = Object.assign({ a: {} }, st);
+const sichere = () => { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) { } };
+const ITEMS = B.teile.flatMap(T => T.items.map(it => ({ ...it, teil: T.titel })));
+const loes = it => atob(it.l);   // Lösung (leicht verschlüsselt)
+const ok = it => st.a[it.nr] === loes(it);
+
+if (st.fertig) ergebnis(); else start();
+
+function start() {
+  app.innerHTML = `<div class="karte"><h2 style="margin-top:0">So geht es</h2>
+    <ul><li>Lies die Texte in deinem <b>Buch</b> (${esc(B.quelle || '')}).</li><li>Markiere hier deine Lösungen – genau wie auf dem Prüfungs-Antwortbogen.</li>
+    <li>Du hast <b>${B.minuten} Minuten</b>. Du kannst Antworten bis zur Abgabe ändern.</li><li>Am Ende auf <b>Abgeben</b> tippen. Du bekommst sofort dein Ergebnis.</li></ul>
+    <div class="zeile" style="grid-template-columns:1fr;background:#fff7e0">Du bist angemeldet als <b>${esc(s.name || 'Gast')}</b>${s.code ? '' : ' – ohne Code. Bitte mit deinem Code anmelden, damit deine Lehrkraft das Ergebnis sieht.'}</div>
+    <div style="margin-top:14px"><button class="btn" id="los">${st.t0 ? 'Weitermachen' : 'Starten'}</button> <a class="btn zweit" href="${mitDemo('index.html')}">Zurück</a></div></div>`;
+  $('#los').onclick = () => {
+    if (!st.t0) { st.t0 = Date.now(); sichere(); }
+    L.beginne(ITEMS.length, ITEMS.length, B.titel);
+    L.registriereItems(Object.fromEntries(ITEMS.map(it => [String(it.nr), `${it.teil} · Aufgabe ${it.nr}`])));
+    bogen();
+  };
+}
+function rest() { return Math.max(0, Math.round((st.t0 + B.minuten * 60000 - Date.now()) / 1000)); }
+let uhrT = null;
+function bogen() {
+  const n = Object.keys(st.a).length;
+  app.innerHTML = `<div class="uhr"><b>⏱ <span id="uhr"></span></b><span>${n} von ${ITEMS.length} markiert</span></div>` +
+    B.teile.map(T => `<div class="teil"><h2>${esc(T.titel)}</h2>${T.items.map(it => `<div class="zeile"><span class="nr">${it.nr}</span><div class="kreise">${it.opts.map(o => `<button data-nr="${it.nr}" data-o="${esc(o)}" class="${st.a[it.nr] === o ? 'an' : ''}">${esc(o)}</button>`).join('')}</div></div>`).join('')}</div>`).join('') +
+    `<div class="karte" style="margin-top:14px;text-align:center"><button class="btn" id="ab">✅ Abgeben</button><p class="leise klein" style="margin:8px 0 0">Nach der Abgabe kannst du nichts mehr ändern.</p></div>`;
+  app.querySelectorAll('[data-nr]').forEach(b => b.onclick = () => { st.a[b.dataset.nr] = b.dataset.o; sichere(); L.fortschritt(Object.keys(st.a).length, 0, B.titel); const y = scrollY; bogen(); scrollTo(0, y); });
+  $('#ab').onclick = () => { const offen = ITEMS.length - Object.keys(st.a).length; if (!confirm(offen ? `Noch ${offen} Aufgabe(n) ohne Antwort. Trotzdem abgeben?` : 'Jetzt abgeben?')) return; abgeben(false); };
+  const male = () => { const r = rest(); const u = $('#uhr'); if (u) u.textContent = r ? `${Math.floor(r / 60)}:${String(r % 60).padStart(2, '0')}` : 'Zeit ist um!'; if (!r && !st.fertig) { clearInterval(uhrT); alert('Die Zeit ist um. Der Bogen wird jetzt abgegeben.'); abgeben(true); } };
+  clearInterval(uhrT); uhrT = setInterval(male, 1000); male();
+}
+async function abgeben(auto) {
+  clearInterval(uhrT); if (st.fertig) return;
+  const teile = {}; let p = 0;
+  ITEMS.forEach(it => { const r = ok(it); if (r) p++; L.antwort(String(it.nr), r); teile[it.teil] = teile[it.teil] || [0, 0]; teile[it.teil][1]++; if (r) teile[it.teil][0]++; });
+  st.fertig = true; st.p = p; sichere();
+  await L.ende(p, ITEMS.length, { antworten: st.a, teile, auto, min: Math.round((Date.now() - st.t0) / 60000) });
+  ergebnis();
+}
+function ergebnis() {
+  const teile = B.teile.map(T => [T.titel, T.items.filter(ok).length, T.items.length]);
+  const p = ITEMS.filter(ok).length;
+  app.innerHTML = `<div class="karte ergebnis"><div style="font-size:2.4rem">🏁</div><h2 style="margin:4px 0">Abgegeben!</h2><div class="gross">${p} / ${ITEMS.length}</div><p class="leise">${Math.round(p / ITEMS.length * 100)} % richtig</p>
+    <table class="tabelle">${teile.map(([t, r, n]) => `<tr><td style="text-align:left">${esc(t)}</td><td style="text-align:right"><b>${r} / ${n}</b></td></tr>`).join('')}</table>
+    <p class="leise klein">Deine Lehrkraft sieht dein Ergebnis. Die Lösungen besprechen wir zusammen.</p><a class="btn zweit" href="${mitDemo('index.html')}">Zur Übungszentrale</a></div>` +
+    B.teile.map(T => `<div class="teil"><h2>${esc(T.titel)}</h2>${T.items.map(it => `<div class="zeile ${ok(it) ? 'ok' : 'falsch'}"><span class="nr">${it.nr}</span><div class="kreise">${it.opts.map(o => `<button disabled class="${st.a[it.nr] === o ? 'an' : ''}">${esc(o)}</button>`).join('')}<span class="mk">${ok(it) ? '✅' : st.a[it.nr] ? '❌' : '– leer'}</span></div></div>`).join('')}</div>`).join('');
+}
+</script>
+</body>
+</html>

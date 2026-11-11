@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Schreibwerkstatt – Übungszentrale</title>
-<link rel="stylesheet" href="stil.css?v=20261110b">
+<link rel="stylesheet" href="stil.css?v=20261111a">
 <style>
   :root{--akzent:#8a4f2f;--akzent-hell:#f6ece6;--tinte:#3b2a22}
   body{background:#f6f3ee}
@@ -79,10 +79,10 @@
 <section class="held"><div class="wrap"><h1>✍️ Schreibwerkstatt</h1><p id="unter">Schreiben, abgeben, Korrektur bekommen – und mit kurzen Übungen trainieren.</p></div></section>
 <main class="wrap" id="app"><p class="leise">Lädt …</p></main>
 <script type="module">
-import { db, esc, mitDemo, zufall } from './db.js?v=20261110b';
-import { starte } from './spieler.js?v=20261110b';
-import { zeige, punkte } from './aufgaben.js?v=20261110b';
-import { AUFGABEN, ARTEN, REDEMITTEL, TRAINING, wortzahl, KAT, KRITERIEN, STUFE, korrTyp } from './schreib-daten.js?v=20261110b';
+import { db, esc, mitDemo, zufall } from './db.js?v=20261111a';
+import { starte } from './spieler.js?v=20261111a';
+import { zeige, punkte } from './aufgaben.js?v=20261111a';
+import { AUFGABEN, ARTEN, REDEMITTEL, TRAINING, wortzahl, KAT, KRITERIEN, STUFE, korrTyp } from './schreib-daten.js?v=20261111a';
 
 const $ = s => document.querySelector(s), app = $('#app');
 const L = await starte('schreibwerkstatt');

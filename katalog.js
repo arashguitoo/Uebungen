@@ -551,6 +551,33 @@ export const KATALOG = [
     offen: true
   },
   {
+    id: "ab-l16-lesen",
+    titel: "Probetest Lesen · Antwortbogen (L16)",
+    untertitel: "Antwortbogen Lesen Teil 1–4 (18 Aufgaben, 45 Min.) · Texte im Buch S. 120–127 · sofort ausgewertet",
+    datei: "antwortbogen.html?b=l16-lesen",
+    typ: "Test",
+    niveau: "B2",
+    themen: ["Prüfungsvorbereitung", "Lesen"],
+    farbe: "#2f7fa3",
+    dauer: "45 Min.",
+    reihe: "Diagnose & Tests",
+    quelle: { werk: "Linie 1 Beruf", lektion: 16 },
+    offen: false
+  },
+  {
+    id: "stunde-b2gram",
+    titel: "Grammatik B2 – große Wiederholung (allein)",
+    untertitel: "Die Online-Live-Stunden zum Nachholen: Lehrtafel + Übungen zu Satzbau, Passiv, Konjunktiv, Relativsätzen, Nominalstil …",
+    datei: "unterricht.html?solo=b2gram",
+    typ: "Lektion",
+    niveau: "B2",
+    themen: ["Grammatik"],
+    farbe: "#2f6b8a",
+    dauer: "frei",
+    reihe: "Zusatzlektionen",
+    offen: true
+  },
+  {
     id: "diagnose-b2",
     titel: "Sprachstandsdiagnose B1/B2",
     untertitel: "90-Minuten-Test: Lesen, Grammatik, Sprachwissen, Wortschatz · 108 Aufgaben · Auswertung für individuelle Förderung",
