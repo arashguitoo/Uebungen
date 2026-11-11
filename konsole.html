@@ -48,6 +48,14 @@
   .kursbtn{text-align:left;font:inherit;background:#fff;border:1px solid var(--linie);border-radius:10px;padding:10px 12px;cursor:pointer}
   .kursbtn.an{border-color:var(--akzent);box-shadow:inset 4px 0 0 var(--akzent)}
   .code{font-family:Consolas,monospace;font-weight:700;letter-spacing:.12em;background:#f3f1ec;padding:2px 8px;border-radius:6px}
+  .abm td,.abm th{text-align:center;padding:4px 5px;min-width:30px}.abm td:first-child,.abm th:first-child{text-align:left}
+  .abm td.ok{background:#d9f2e2;color:#1d7a45;font-weight:700}.abm td.nok{background:#fbe0db;color:#b3402f;font-weight:700}.abm td.leer{color:#aaa}
+  .abm sup{font-size:.65em;color:#a06a00}
+  .ft{background:#eee;color:#333;font-weight:600}.ftL{background:#fde7c8}.ftZ{background:#dfe8fb}.ftM{background:#efe0fa}.ftU{background:#d8f1ee}.ftD{background:#f3ecd7}.ftX{background:#fbdcdc}.ftG{background:#e8e8e8}
+  .abauf{padding:9px 0;border-bottom:1px solid var(--linie)}.abauf:last-child{border-bottom:0}
+  .vert{display:flex;gap:4px;flex-wrap:wrap;margin-top:5px}.vert span{border:1px solid var(--linie);border-radius:7px;padding:1px 7px;font-size:.8rem;color:#999}
+  .vert span b{margin-left:4px}.vert span.rich{background:#d9f2e2;border-color:#2e9e5b;color:#1d7a45}.vert span.ab{background:#fbe0db;border-color:#d9483b;color:#b3402f}.vert span.leer{color:#777}
+  .abein summary{cursor:pointer}.abein{margin-top:8px}
   .exleiste{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;margin-top:16px;background:#fff;border:1px solid var(--linie);border-radius:12px;padding:10px 12px}
   .exleiste input[type=search]{flex:1;min-width:200px;padding:8px 10px;border:1px solid var(--linie);border-radius:8px;font:inherit}
   .exleiste label{font-size:.85rem;color:var(--leise);display:flex;gap:6px;align-items:center}
@@ -206,6 +214,8 @@ import { KATALOG, exById } from './katalog.js?v=20261111a';
 import { rubriken, rubrikVon } from './rubriken.js?v=20261111a';
 import { AUFGABEN as SW_AUF, ARTEN as SW_ARTEN, analysiere as SW_analysiere, ltKategorie as SW_ltKat, vorschlag as SW_vorschlag, KAT as SW_KAT, KRITERIEN as SW_KRIT, STUFE as SW_STUFE, wortzahl as SW_wortzahl, korrTyp as SW_korrTyp } from './schreib-daten.js?v=20261111a';
 import { LISTEN, SKALEN, MERKMALE, MERKMAL, skalaVon, wertInfo, prozent } from './feedback-kriterien.js?v=20261111a';
+import { BOEGEN } from './antwortboegen.js?v=20261111a';
+import { FEHLERTYPEN as AB_FT, AB_META, abAnalyse } from './antwortboegen-analyse.js?v=20261111a';
 import { TEST as DTEST, BEREICHE as DBER, analyse as dAnalyse, AUFGABEN as DAUFG } from './diagnose-daten.js?v=20261111a';
 
 if (DEMO) document.getElementById('demo').innerHTML = '<div class="demo-band">DEMO-MODUS – Anmeldung mit beliebigen Daten, alles bleibt in diesem Browser</div>';
@@ -347,8 +357,11 @@ function erg() {
       : '<p class="leise">Noch keine Teilnehmenden oder zugewiesenen Übungen.</p>';
   }
 
+  // Antwortbogen: ausführliche Auswertung
+  const ABg = Object.values(BOEGEN).find(b => b.exId === F.eex);
+  if (ABg) h += abAuswertung(l, ABg);
   // Aufgabenanalyse
-  if (F.eex !== 'alle') {
+  else if (F.eex !== 'alle') {
     const stat = {}, txt = D.items[F.eex] || {};
     l.forEach(v => Object.entries(v.it || {}).forEach(([k, x]) => { stat[k] = stat[k] || [0, 0]; stat[k][0] += x ? 1 : 0; stat[k][1]++; }));
     const rows = Object.entries(stat).map(([k, [r, n]]) => ({ k, q: Math.round(100 * r / n), n })).sort((a, b) => a.q - b.q);
@@ -365,6 +378,7 @@ function erg() {
     <td><button class="icon" title="Durchgang löschen" data-del="${v.ex}/${v.sid}">🗑</button></td></tr>`).join('')}</table></div>
     ${l.length > zeig.length ? `<button class="btn zweit klein" id="mehr" style="margin-top:10px">Alle ${l.length} anzeigen</button>` : ''}` : '<p class="leise">Noch keine Ergebnisse.</p>');
   app.innerHTML = h;
+  app.querySelectorAll('[data-abp]').forEach(b => b.onclick = () => { const d = document.getElementById('abp-' + b.dataset.abp); if (d) { d.open = true; d.scrollIntoView({ behavior: 'smooth', block: 'start' }); } });
   $('#ek').onchange = e => { F.ekurs = e.target.value; erg(); };
   $('#ee').onchange = e => { F.eex = e.target.value; erg(); };
   if ($('#mehr')) $('#mehr').onclick = () => { F.mehr = true; erg(); };
@@ -622,6 +636,7 @@ function fbPerson() {
         <label class="schalter klein"><input type="checkbox" id="saP" ${mein.sa ? 'checked' : ''}> Selbsteinschätzung erlaubt</label>
         ${pub ? '<button class="btn zweit klein" id="fbZurueckz">Ausblenden</button>' : '<button class="btn klein" id="fbPub">📤 Für die Person sichtbar machen</button>'}` : '<span class="leise">Ohne Code kann nichts veröffentlicht oder individuell freigeschaltet werden. Erzeuge unter „Kurse &amp; Codes“ einen Code (🔄).</span>'}</div></div>
     ${diagKarte(kid, pid, p, code)}
+    ${abKarten(pid)}
     <div class="fbgrid">`;
   for (const L of LISTEN) {
     h += `<div class="karte fbliste"><h3>${esc(L.titel)}${L.tn ? '' : ' <span class="pille" title="Wird nie veröffentlicht">privat</span>'}</h3>${L.info ? `<p class="leise klein" style="margin-top:0">${esc(L.info)}</p>` : ''}
@@ -656,6 +671,7 @@ function fbPerson() {
   app.innerHTML = h;
   $('#fbZur').onclick = () => { F.fbPid = null; feedback(); };
   bindeDiagPerson(kid, pid, p, code);
+  bindeAbKarten(kid, pid, p);
   app.querySelectorAll('.leiste [data-p]').forEach(b => b.onclick = () => { F.fbPid = b.dataset.p; feedback(); });
   app.querySelectorAll('.seg button').forEach(b => b.onclick = () => { const key = b.dataset.key, v = +b.dataset.v; setzeWert(kid, pid, key, (c[key] || {}).s === v ? 0 : v); });
   app.querySelectorAll('[data-note]').forEach(i => i.onchange = () => db.update('', sicher({ [fbPfad(kid, pid) + '/c/' + i.dataset.note + '/n']: i.value.trim().slice(0, 300) || null })));
@@ -697,6 +713,72 @@ function fbDruck(kid, pid) {
     ${x.ziel ? `<div class="box" style="margin-top:4mm"><b>Nächste Schritte</b><p>${abs(x.ziel)}</p></div>` : ''}${x.msg ? `<div class="box" style="margin-top:4mm"><b>Nachricht</b><p>${abs(x.msg)}</p></div>` : ''}</section>
     </body></html>`);
   w.document.close();
+}
+
+
+/* ---------------- ANTWORTBÖGEN (ausführliche Auswertung) ---------------- */
+const ftPill = (k, n) => `<span class="pill ft ft${k}" title="${esc(AB_FT[k].l)}">${esc(AB_FT[k].t)}${n > 1 ? ' ×' + n : ''}</span>`;
+function abNeueste(l) { const m = {}; l.forEach(v => { const k = v.pid || ('g:' + v.name); if (!m[k] || v.t > m[k].t) m[k] = v; }); return Object.values(m).sort((a, b) => (a.name || '').localeCompare(b.name || '')); }
+function abAuswertung(l, B) {
+  const M = AB_META[B.exId] || { bereiche: {}, items: {} };
+  const vs = abNeueste(l).map(v => ({ v, a: abAnalyse(v, B) }));
+  const items = B.teile.flatMap(T => T.items.map(it => ({ ...it, teil: T.titel, sol: atob(it.l) })));
+  const kurzT = t => t.replace('Lesen ', '');
+  let h = `<h2 style="margin-top:24px">📊 Auswertung · ${esc(B.titel)}</h2>
+    <p class="leise klein">Neuester Durchgang je Person (${vs.length}). Fehlertypen zeigen, <b>warum</b> eine Antwort falsch war – aus der gewählten falschen Option abgeleitet.
+    <details style="display:inline"><summary class="klein" style="display:inline;cursor:pointer"><b>🔑 Lösungsschlüssel</b></summary> ${B.teile.map(T => `<b>${esc(kurzT(T.titel))}:</b> ${T.items.map(it => it.nr + ' ' + atob(it.l)).join(' · ')}`).join(' | ')}</details></p>`;
+  if (!vs.length) return h + '<p class="leise">Noch keine Abgaben.</p>';
+  // 1) Personen
+  h += `<div class="tabwrap"><table class="t abt"><tr><th>Name</th><th>Gesamt</th>${B.teile.map(T => `<th>${esc(kurzT(T.titel))}</th>`).join('')}<th>Typische Fehler</th><th>leer</th><th title="Antwort mehrmals geändert = unsicher">✎</th><th>Zeit</th><th></th></tr>
+    ${vs.map(({ v, a }, i) => `<tr><td><b>${esc(v.name)}</b><div class="klein leise">${zeit(v.t)}</div></td><td><span class="zelle" style="background:${farbe(a.pct)}">${a.p}/${a.n}</span></td>
+      ${B.teile.map(T => { const o = a.teile[T.titel] || { r: 0, n: 0, pct: 0 }; return `<td><span class="zelle" style="background:${farbe(o.pct)}">${o.r}/${o.n}</span></td>`; }).join('')}
+      <td>${Object.entries(a.fehler).sort((x, y) => y[1] - x[1]).map(([k, n]) => ftPill(k, n)).join(' ') || '<span class="leise klein">–</span>'}</td>
+      <td>${a.leer.length ? `<span style="color:#b3402f">${a.leer.length}</span>` : '–'}</td><td>${a.geaendert || '–'}</td><td class="klein">${a.x.min != null ? a.x.min + ' Min.' : dauer(v.dur || 0)}${a.x.auto ? ' ⏰' : ''}</td>
+      <td><button class="btn zweit klein" data-abp="${i}">Details ↓</button></td></tr>`).join('')}</table></div>`;
+  // 2) Antwort-Matrix
+  const quote = it => { const n = vs.filter(({ a }) => (a.x.antworten || {})[it.nr] === it.sol).length; return Math.round(100 * n / vs.length); };
+  h += `<h3 style="margin-top:22px">Antwort-Matrix</h3><p class="leise klein" style="margin-top:0">Was jede Person angekreuzt hat. Grün = richtig, rot = falsch, ✎ = mehrmals geändert. Oben: Lösung und Lösungsquote.</p>
+    <div class="tabwrap"><table class="t abm"><tr><th></th>${items.map(it => `<th title="${esc(it.teil)}">${it.nr}<div class="klein">${esc(it.sol === 'richtig' ? 'r' : it.sol === 'falsch' ? 'f' : it.sol)}</div><div class="klein" style="color:${quote(it) < 50 ? '#b3402f' : '#555'}">${quote(it)}%</div></th>`).join('')}</tr>
+    ${vs.map(({ v, a }) => `<tr><td><b>${esc(v.name)}</b></td>${items.map(it => { const x = (a.x.antworten || {})[it.nr], ok = x === it.sol, w = ((a.x.wechsel || {})[it.nr] || 0) > 1;
+      return `<td class="${x == null ? 'leer' : ok ? 'ok' : 'nok'}">${x == null ? '·' : esc(x === 'richtig' ? 'r' : x === 'falsch' ? 'f' : x)}${w ? '<sup>✎</sup>' : ''}</td>`; }).join('')}</tr>`).join('')}</table></div>`;
+  // 3) Fehlerprofil Kurs + Bereiche
+  const fsum = {}, bsum = {};
+  vs.forEach(({ a }) => { Object.entries(a.fehler).forEach(([k, n]) => fsum[k] = (fsum[k] || 0) + n); Object.entries(a.bereiche).forEach(([b, o]) => { const x = bsum[b] || (bsum[b] = { r: 0, n: 0 }); x.r += o.r; x.n += o.n; }); });
+  const fl = Object.entries(fsum).sort((a, b) => b[1] - a[1]), fges = fl.reduce((s, [, n]) => s + n, 0);
+  h += `<div class="fbgrid"><div class="karte"><h3>Warum falsch? – Fehlertypen im Kurs</h3><p class="leise klein" style="margin-top:0">${fges} falsche Antworten insgesamt.</p>
+      ${fl.map(([k, n]) => `<div class="q"><div class="pz">${Math.round(100 * n / fges)} %</div><div><div class="lb">${ftPill(k, 1)} <span class="leise klein">${n}× · ${esc(AB_FT[k].l)}</span></div><div class="klein">💡 ${esc(AB_FT[k].tipp)}</div></div></div>`).join('') || '<p class="leise">Keine Fehler. 🎉</p>'}</div>
+    <div class="karte"><h3>Kompetenzbereiche</h3>${Object.entries(bsum).map(([b, o]) => { const pc = Math.round(100 * o.r / o.n), Bm = M.bereiche[b] || { t: b, tipp: '' };
+      return `<div class="q"><div class="pz">${pc} %</div><div><div class="lb"><b>${esc(Bm.t)}</b></div>${pc < 70 ? `<div class="klein leise">${esc(Bm.tipp)}</div>` : ''}<div class="bb"><i style="width:${pc}%;background:${pc < 50 ? '#d9483b' : pc < 70 ? '#e0a020' : '#2e9e5b'}"></i></div></div></div>`; }).join('')}</div></div>`;
+  // 4) Aufgaben im Detail
+  const zeilen = items.map(it => { const vert = {}; let leer = 0; vs.forEach(({ a }) => { const x = (a.x.antworten || {})[it.nr]; if (x == null) leer++; else vert[x] = (vert[x] || 0) + 1; }); return { it, q: quote(it), vert, leer }; }).sort((a, b) => a.q - b.q);
+  h += `<h3 style="margin-top:22px">Aufgaben im Detail <span class="leise klein">– schwierigste zuerst</span></h3><div class="karte">${zeilen.map(({ it, q, vert, leer }) => {
+    const d = (M.items[it.nr] || {}).d || {}, falsch = Object.entries(vert).filter(([o]) => o !== it.sol).sort((a, b) => b[1] - a[1]);
+    return `<div class="abauf"><div class="zeile" style="gap:8px"><b style="min-width:84px">Aufgabe ${it.nr}</b><span class="klein leise" style="flex:1">${esc(it.teil)} · ${esc((M.bereiche[(M.items[it.nr] || {}).b] || {}).t || '')}</span><span class="zelle" style="background:${farbe(q)}">${q} %</span></div>
+      <div class="vert">${it.opts.map(o => { const n = vert[o] || 0; return `<span class="${o === it.sol ? 'rich' : n ? 'ab' : ''}" title="${n} Personen">${esc(o === 'richtig' ? 'r' : o === 'falsch' ? 'f' : o)}<b>${n || ''}</b></span>`; }).join('')}${leer ? `<span class="leer">leer<b>${leer}</b></span>` : ''}</div>
+      ${falsch.map(([o, n]) => { const e = d[o]; return `<div class="klein" style="margin-top:3px">${e ? ftPill(e[0], 1) : ''} <b>${n}× ${esc(o)}</b>${e ? ' – ' + esc(e[1]) : ''}</div>`; }).join('')}</div>`; }).join('')}</div>`;
+  // 5) Einzelauswertung
+  h += `<h3 style="margin-top:22px">Einzelauswertung</h3>` + vs.map(({ v, a }, i) => `<details class="karte abein" id="abp-${i}"><summary><b>${esc(v.name)}</b> · ${a.p}/${a.n} (${a.pct} %) · ${Object.entries(a.fehler).sort((x, y) => y[1] - x[1]).map(([k, n]) => ftPill(k, n)).join(' ')}</summary>
+      ${abPersonHtml(a, M)}</details>`).join('');
+  return h;
+}
+function abPersonHtml(a, M) {
+  const top = Object.entries(a.fehler).sort((x, y) => y[1] - x[1]).slice(0, 2);
+  return `<div class="klein" style="margin:8px 0">${Object.entries(a.bereiche).map(([b, o]) => `<span class="zelle" style="background:${farbe(o.pct)};margin:2px">${esc((M.bereiche[b] || { t: b }).t.replace(/^Teil \d · /, ''))} ${o.r}/${o.n}</span>`).join(' ')}</div>
+    ${top.length ? `<div class="dempf" style="border-left-color:#e0a020;background:#fff8e8"><b>Schwerpunkt: ${top.map(([k]) => esc(AB_FT[k].t)).join(' + ')}</b><div class="klein">💡 ${top.map(([k]) => esc(AB_FT[k].tipp)).join(' ')}</div></div>` : ''}
+    <div class="klein" style="display:grid;gap:4px;margin-top:6px">${a.falsch.map(f => `<div><b>${f.nr}</b> <span class="leise">(${esc(f.teil.replace('Lesen ', ''))})</span> gewählt <b style="color:#b3402f">${esc(f.a)}</b> → richtig <b style="color:#1d7a45">${esc(f.l)}</b> ${ftPill(f.typ, 1)} ${f.txt ? '<span class="leise">' + esc(f.txt) + '</span>' : ''}</div>`).join('')}
+    ${a.leer.length ? `<div><b>leer:</b> ${a.leer.join(', ')}</div>` : ''}${!a.falsch.length && !a.leer.length ? '<div>Alles richtig. 🎉</div>' : ''}</div>`;
+}
+function abKarten(pid) {
+  return Object.values(BOEGEN).map(B => { const l = versuche().filter(v => v.ex === B.exId && v.pid === pid).sort((a, b) => b.t - a.t); if (!l.length) return '';
+    const v = l[0], a = abAnalyse(v, B), M = AB_META[B.exId] || { bereiche: {} };
+    return `<div class="karte" style="margin-top:16px"><div class="zeile"><div style="flex:1"><h3 style="margin:0">📝 ${esc(B.titel)}</h3><div class="leise klein">abgegeben am ${zeit(v.t)}${a.x.min != null ? ' · ' + a.x.min + ' Min.' : ''}${l.length > 1 ? ' · ' + l.length + ' Versuche (neuester)' : ''} · ${B.teile.map(T => { const o = a.teile[T.titel]; return esc(T.titel.replace('Lesen ', '')) + ' ' + o.r + '/' + o.n; }).join(' · ')}</div></div>
+      <span class="zelle" style="background:${farbe(a.pct)};font-size:1.1rem">${a.p}/${a.n}</span><button class="btn zweit klein" data-abfb="${B.exId}">➕ In den Verlauf</button></div>${abPersonHtml(a, M)}</div>`; }).join('');
+}
+function bindeAbKarten(kid, pid, p) {
+  app.querySelectorAll('[data-abfb]').forEach(b => b.onclick = async () => {
+    const B = Object.values(BOEGEN).find(x => x.exId === b.dataset.abfb), v = versuche().filter(x => x.ex === B.exId && x.pid === pid).sort((x, y) => y.t - x.t)[0], a = abAnalyse(v, B);
+    const txt = `${B.titel} ${datum(v.t)}: ${a.p}/${a.n} (${a.pct} %) · ` + B.teile.map(T => T.titel.replace('Lesen ', '') + ' ' + a.teile[T.titel].r + '/' + a.teile[T.titel].n).join(' · ') + (Object.keys(a.fehler).length ? ' · Fehlertypen: ' + Object.entries(a.fehler).sort((x, y) => y[1] - x[1]).map(([k, n]) => AB_FT[k].t + ' ' + n + '×').join(', ') : '');
+    await db.set(fbPfad(kid, pid) + '/log/' + Date.now(), txt); meld('Im Verlauf eingetragen.'); });
 }
 
 /* ---------------- DIAGNOSETEST (Auswertung) ---------------- */

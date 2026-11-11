@@ -72,7 +72,7 @@ function bogen() {
   app.innerHTML = `<div class="uhr"><b>⏱ <span id="uhr"></span></b><span>${n} von ${ITEMS.length} markiert</span></div>` +
     B.teile.map(T => `<div class="teil"><h2>${esc(T.titel)}</h2>${T.items.map(it => `<div class="zeile"><span class="nr">${it.nr}</span><div class="kreise">${it.opts.map(o => `<button data-nr="${it.nr}" data-o="${esc(o)}" class="${st.a[it.nr] === o ? 'an' : ''}">${esc(o)}</button>`).join('')}</div></div>`).join('')}</div>`).join('') +
     `<div class="karte" style="margin-top:14px;text-align:center"><button class="btn" id="ab">✅ Abgeben</button><p class="leise klein" style="margin:8px 0 0">Nach der Abgabe kannst du nichts mehr ändern.</p></div>`;
-  app.querySelectorAll('[data-nr]').forEach(b => b.onclick = () => { st.a[b.dataset.nr] = b.dataset.o; sichere(); L.fortschritt(Object.keys(st.a).length, 0, B.titel); const y = scrollY; bogen(); scrollTo(0, y); });
+  app.querySelectorAll('[data-nr]').forEach(b => b.onclick = () => { if (st.a[b.dataset.nr] !== b.dataset.o) { st.w = st.w || {}; st.w[b.dataset.nr] = (st.w[b.dataset.nr] || 0) + 1; st.r = st.r || []; if (!st.r.includes(b.dataset.nr)) st.r.push(b.dataset.nr); } st.a[b.dataset.nr] = b.dataset.o; sichere(); L.fortschritt(Object.keys(st.a).length, 0, B.titel); const y = scrollY; bogen(); scrollTo(0, y); });
   $('#ab').onclick = () => { const offen = ITEMS.length - Object.keys(st.a).length; if (!confirm(offen ? `Noch ${offen} Aufgabe(n) ohne Antwort. Trotzdem abgeben?` : 'Jetzt abgeben?')) return; abgeben(false); };
   const male = () => { const r = rest(); const u = $('#uhr'); if (u) u.textContent = r ? `${Math.floor(r / 60)}:${String(r % 60).padStart(2, '0')}` : 'Zeit ist um!'; if (!r && !st.fertig) { clearInterval(uhrT); alert('Die Zeit ist um. Der Bogen wird jetzt abgegeben.'); abgeben(true); } };
   clearInterval(uhrT); uhrT = setInterval(male, 1000); male();
@@ -82,7 +82,7 @@ async function abgeben(auto) {
   const teile = {}; let p = 0;
   ITEMS.forEach(it => { const r = ok(it); if (r) p++; L.antwort(String(it.nr), r); teile[it.teil] = teile[it.teil] || [0, 0]; teile[it.teil][1]++; if (r) teile[it.teil][0]++; });
   st.fertig = true; st.p = p; sichere();
-  await L.ende(p, ITEMS.length, { antworten: st.a, teile, auto, min: Math.round((Date.now() - st.t0) / 60000) });
+  await L.ende(p, ITEMS.length, { antworten: st.a, wechsel: st.w || {}, reihe: (st.r || []).join(','), teile, auto, min: Math.round((Date.now() - st.t0) / 60000) });
   ergebnis();
 }
 function ergebnis() {
