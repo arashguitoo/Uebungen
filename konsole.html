@@ -48,6 +48,7 @@
   .kursbtn{text-align:left;font:inherit;background:#fff;border:1px solid var(--linie);border-radius:10px;padding:10px 12px;cursor:pointer}
   .kursbtn.an{border-color:var(--akzent);box-shadow:inset 4px 0 0 var(--akzent)}
   .code{font-family:Consolas,monospace;font-weight:700;letter-spacing:.12em;background:#f3f1ec;padding:2px 8px;border-radius:6px}
+  .abhinweis{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 4px}
   .abm td,.abm th{text-align:center;padding:4px 5px;min-width:30px}.abm td:first-child,.abm th:first-child{text-align:left}
   .abm td.ok{background:#d9f2e2;color:#1d7a45;font-weight:700}.abm td.nok{background:#fbe0db;color:#b3402f;font-weight:700}.abm td.leer{color:#aaa}
   .abm sup{font-size:.65em;color:#a06a00}
@@ -357,6 +358,9 @@ function erg() {
       : '<p class="leise">Noch keine Teilnehmenden oder zugewiesenen Übungen.</p>';
   }
 
+  // Hinweis auf ausführliche Auswertungen (Antwortbögen)
+  if (!Object.values(BOEGEN).some(b => b.exId === F.eex)) h += `<div class="abhinweis">${Object.values(BOEGEN).map(b => { const n = alle.filter(v => v.ex === b.exId && passtKurs(v.kid, F.ekurs)).length;
+    return `<button class="btn klein" data-abopen="${b.exId}">📊 Ausführliche Auswertung: ${esc(b.titel)} <span style="opacity:.75">(${n} Abgabe${n === 1 ? '' : 'n'})</span></button>`; }).join('')}</div>`;
   // Antwortbogen: ausführliche Auswertung
   const ABg = Object.values(BOEGEN).find(b => b.exId === F.eex);
   if (ABg) h += abAuswertung(l, ABg);
@@ -378,6 +382,7 @@ function erg() {
     <td><button class="icon" title="Durchgang löschen" data-del="${v.ex}/${v.sid}">🗑</button></td></tr>`).join('')}</table></div>
     ${l.length > zeig.length ? `<button class="btn zweit klein" id="mehr" style="margin-top:10px">Alle ${l.length} anzeigen</button>` : ''}` : '<p class="leise">Noch keine Ergebnisse.</p>');
   app.innerHTML = h;
+  app.querySelectorAll('[data-abopen]').forEach(b => b.onclick = () => { F.eex = b.dataset.abopen; erg(); });
   app.querySelectorAll('[data-abp]').forEach(b => b.onclick = () => { const d = document.getElementById('abp-' + b.dataset.abp); if (d) { d.open = true; d.scrollIntoView({ behavior: 'smooth', block: 'start' }); } });
   $('#ek').onchange = e => { F.ekurs = e.target.value; erg(); };
   $('#ee').onchange = e => { F.eex = e.target.value; erg(); };
@@ -1157,7 +1162,7 @@ function exListe(kl, RL, RW) {
     return `<div class="exz ${sicht}">
       <span class="punkt" style="background:${e.farbe}"></span>
       <div class="exname" title="${esc(e.untertitel || '')}"><b>${esc(e.titel)}</b><span class="klein leise"> · ${esc(e.typ)} · ${esc(e.niveau)}${e.quelle && e.quelle.lektion ? ' · ' + (typeof e.quelle.lektion === 'number' ? 'L' : '') + esc(e.quelle.lektion) : ''}</span></div>
-      <button class="exstat klein" data-st="${e.id}" title="Ergebnisse ansehen">${aktiv ? `<span class="puls"></span>${aktiv} jetzt · ` : ''}${vs.length ? `${vs.length}× · Ø ${d} %` : '<span class="leise">noch nie</span>'}</button>
+      <button class="exstat klein" data-st="${e.id}" title="Ergebnisse ansehen">${Object.values(BOEGEN).some(b => b.exId === e.id) ? '📊 ' : ''}${aktiv ? `<span class="puls"></span>${aktiv} jetzt · ` : ''}${vs.length ? `${vs.length}× · Ø ${d} %` : '<span class="leise">noch nie</span>'}</button>
       <div class="exsicht"><button class="pille ${of ? 'an' : ''}" data-of="${e.id}" title="Öffentlich: für alle ohne Code">🌐 Alle</button>${kl.map(([kid, k]) => `<button class="pille ${ku.includes(kid) ? 'an' : ''} ${of ? 'blass' : ''}" data-k="${kid}" data-e="${e.id}" title="Für den Kurs ${esc(k.name)} freischalten">${esc(k.name)}</button>`).join('')}${!of && !ku.length ? '<span class="klein leise" title="Niemand sieht diese Übung">🔒</span>' : ''}</div>
       ${e.id !== 'live' ? `<select class="exrub" data-rub="${e.id}" title="Rubrik auf der Startseite">${RW.map(r => `<option value="${r.k}" ${rubrikVon(e, pubEx, RL) === r.k ? 'selected' : ''}>${r.ic} ${esc(r.t)}</option>`).join('')}</select>` : '<span></span>'}
       <div class="exakt"><a class="ikon" href="${mitDemo(e.datei)}" target="_blank" title="Öffnen">↗</a><button class="ikon" data-cp="${e.datei}" title="Link kopieren">🔗</button></div>
