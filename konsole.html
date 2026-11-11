@@ -48,6 +48,30 @@
   .kursbtn{text-align:left;font:inherit;background:#fff;border:1px solid var(--linie);border-radius:10px;padding:10px 12px;cursor:pointer}
   .kursbtn.an{border-color:var(--akzent);box-shadow:inset 4px 0 0 var(--akzent)}
   .code{font-family:Consolas,monospace;font-weight:700;letter-spacing:.12em;background:#f3f1ec;padding:2px 8px;border-radius:6px}
+  .exleiste{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;margin-top:16px;background:#fff;border:1px solid var(--linie);border-radius:12px;padding:10px 12px}
+  .exleiste input[type=search]{flex:1;min-width:200px;padding:8px 10px;border:1px solid var(--linie);border-radius:8px;font:inherit}
+  .exleiste label{font-size:.85rem;color:var(--leise);display:flex;gap:6px;align-items:center}
+  .exfilter{display:flex;gap:6px;flex-wrap:wrap}
+  .exgruppe{background:#fff;border:1px solid var(--linie);border-radius:12px;margin-bottom:10px;overflow:hidden}
+  .exgruppe summary{cursor:pointer;display:flex;justify-content:space-between;gap:10px;align-items:center;padding:10px 14px;font-weight:700;border-left:6px solid var(--f,#888);background:#fbfaf7;list-style:none}
+  .exgruppe summary::-webkit-details-marker{display:none}
+  .exgruppe summary::before{content:'▸';margin-right:6px;transition:transform .15s}.exgruppe[open] summary::before{transform:rotate(90deg)}
+  .exgruppe summary span:first-child{flex:1}
+  .exz{display:grid;grid-template-columns:12px minmax(180px,1fr) 120px auto 190px 64px;gap:10px;align-items:center;padding:7px 14px;border-top:1px solid #f0ece4}
+  .exz:hover{background:#faf8f3}
+  .exz.aus .exname b{color:#8a8a8a}
+  .exz .punkt{width:12px;height:12px;border-radius:50%}
+  .exname{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .exstat{border:0;background:none;text-align:left;cursor:pointer;color:inherit;padding:2px 0;font:inherit;font-size:.82rem}
+  .exstat:hover{text-decoration:underline}
+  .exsicht{display:flex;gap:4px;flex-wrap:wrap;align-items:center}
+  .pille{border:1px solid var(--linie);background:#fff;border-radius:99px;padding:3px 9px;font-size:.78rem;cursor:pointer;color:#555}
+  .pille.an{background:#1e7a45;border-color:#1e7a45;color:#fff}
+  .pille.blass:not(.an){opacity:.45}
+  .exrub{font-size:.8rem;padding:3px 4px;border-radius:6px;max-width:190px;height:30px}
+  .exakt{display:flex;gap:4px;justify-content:flex-end}
+  .ikon{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:7px;border:1px solid var(--linie);background:#fff;text-decoration:none;color:inherit;cursor:pointer;font-size:.9rem}
+  @media(max-width:900px){.exz{grid-template-columns:12px 1fr auto;row-gap:6px}.exz .exsicht,.exz .exrub{grid-column:2/-1}.exz .exstat{grid-column:2}.exz .exakt{grid-column:3;grid-row:1}}
   .exk{background:#fff;border:1px solid var(--linie);border-radius:12px;padding:14px;display:grid;gap:8px}
   .exk .kopfz{display:flex;gap:10px;align-items:center}
   .exk .farbe{width:14px;height:42px;border-radius:5px}
@@ -1004,40 +1028,67 @@ function korrEditor(sid) {
 }
 const wortzahlTxt = t => SW_wortzahl(t);
 
-/* ---------------- ÜBUNGEN ---------------- */
+/* ---------------- ÜBUNGEN (kompakte Übersicht) ---------------- */
 function uebungen() {
-  const alle = versuche(), kl = kursListe(), ws = werke();
-  const passt = e => F.werk === 'alle' || (F.werk === 'ohne' ? !e.quelle : e.quelle && e.quelle.werk === F.werk);
-  const liste = KATALOG.filter(passt).slice().sort((a, b) => {
-    const wa = a.quelle ? a.quelle.werk : '', wb = b.quelle ? b.quelle.werk : '';
-    return wa.localeCompare(wb) || KATALOG.indexOf(a) - KATALOG.indexOf(b);
-  });
-  const gruppe = e => e.quelle ? e.quelle.werk : 'Prüfungstraining & Spiele (ohne Lehrwerk)';
-  let letzte = null;
+  F.exGr = F.exGr || 'rubrik'; F.exSicht = F.exSicht || 'alle'; F.exSuche = F.exSuche || '';
+  const kl = kursListe(), ws = werke();
   const RL = rubriken((D.pub || {}).rubriken || {}), RW = RL.filter(r => r.k !== 'meine');
   const anz = k => KATALOG.filter(e => e.id !== 'live' && rubrikVon(e, D.pub.ex || {}, RL) === k).length;
-  app.innerHTML = rubrikKarte(RL, anz) + `<p class="leise" style="margin-top:16px">Alle Übungen aus <code>katalog.js</code>. <b>Öffentlich</b> = in der Zentrale für alle sichtbar und ohne Code spielbar. Ist eine Übung nicht öffentlich, sehen sie nur die Kurse, denen du sie zuweist. Die Angaben 📚 zu Lehrwerk und Lektion siehst nur du.</p>
-    <div class="leiste"><label for="wf">Lehrwerk:</label><select id="wf"><option value="alle">Alle</option>${ws.map(w => `<option value="${esc(w)}" ${F.werk === w ? 'selected' : ''}>${esc(w)} (${KATALOG.filter(e => e.quelle && e.quelle.werk === w).length})</option>`).join('')}<option value="ohne" ${F.werk === 'ohne' ? 'selected' : ''}>Prüfungstraining & Spiele (${KATALOG.filter(e => !e.quelle).length})</option></select></div>
-    <div style="display:grid;gap:12px">${liste.map(e => {
-      const p = (D.pub.ex || {})[e.id], offen = p && typeof p.offen === 'boolean' ? p.offen : e.offen !== false;
-      const vs = alle.filter(v => v.ex === e.id), d = vs.length ? Math.round(vs.reduce((a, v) => a + (v.pct || 0), 0) / vs.length) : null;
-      const aktiv = Object.values(D.live || {}).filter(v => v.ex === e.id && status(v) === 'aktiv').length;
-      const kopf = gruppe(e) !== letzte ? (letzte = gruppe(e), `<h2 style="margin:14px 0 0">${e.quelle ? '📚 ' : '🎯 '}${esc(letzte)}</h2>`) : '';
-      return kopf + `<div class="exk"><div class="kopfz"><div class="farbe" style="background:${e.farbe}"></div><div style="flex:1"><h3 style="margin:0">${esc(e.titel)} ${qBadge(e)}</h3>
-        <div class="klein leise">${esc(e.typ)} · ${esc(e.niveau)} · ${esc(e.untertitel || '')}</div></div>
-        <a class="btn zweit klein" href="${mitDemo(e.datei)}" target="_blank">Öffnen</a><button class="btn zweit klein" data-cp="${e.datei}">🔗 Link</button></div>
-        <div class="zeile klein"><span><b>${vs.length}</b> Durchgänge</span><span>Ø <b>${d == null ? '–' : d + ' %'}</b></span>${aktiv ? `<span style="color:#1e7a45"><span class="puls"></span>${aktiv} spielen gerade</span>` : ''}
-        <span style="flex:1"></span><button class="btn zweit klein" data-st="${e.id}">Statistik →</button></div>
-        <div class="zeile"><label class="schalter"><input type="checkbox" data-of="${e.id}" ${offen ? 'checked' : ''}> <b>Öffentlich</b> (ohne Code spielbar)</label>
-          ${e.id !== 'live' ? `<span style="flex:1"></span><label class="klein leise" for="rub-${e.id}">Rubrik auf der Startseite:</label><select id="rub-${e.id}" data-rub="${e.id}">${RW.map(r => `<option value="${r.k}" ${rubrikVon(e, D.pub.ex || {}, RL) === r.k ? 'selected' : ''}>${r.ic} ${esc(r.t)}${r.aus ? ' (ausgeblendet)' : ''}</option>`).join('')}</select>` : ''}</div>
-        ${kl.length ? `<div class="zeile klein"><span class="leise">Kurse:</span>${kl.map(([kid, k]) => `<label class="schalter"><input type="checkbox" data-k="${kid}" data-e="${e.id}" ${D.pub.kurse && D.pub.kurse[kid] && D.pub.kurse[kid].ex && D.pub.kurse[kid].ex[e.id] ? 'checked' : ''}> ${esc(k.name)}</label>`).join('')}</div>` : ''}</div>`; }).join('')}</div>`;
-  $('#wf').onchange = ev => { F.werk = ev.target.value; uebungen(); };
-  app.querySelectorAll('[data-of]').forEach(c => c.onchange = () => db.set('pub/ex/' + c.dataset.of + '/offen', c.checked));
-  app.querySelectorAll('[data-rub]').forEach(s => s.onchange = () => db.set('pub/ex/' + s.dataset.rub + '/rubrik', s.value));
+  app.innerHTML = rubrikKarte(RL, anz) + `
+    <div class="exleiste">
+      <input id="exSuche" type="search" placeholder="🔍 Übung suchen …" value="${esc(F.exSuche)}">
+      <label>Ordnen nach <select id="exGr"><option value="rubrik" ${F.exGr === 'rubrik' ? 'selected' : ''}>Rubrik (wie die TN es sehen)</option><option value="werk" ${F.exGr === 'werk' ? 'selected' : ''}>Lehrwerk</option></select></label>
+      <label>Lehrwerk <select id="wf"><option value="alle">alle</option>${ws.map(w => `<option value="${esc(w)}" ${F.werk === w ? 'selected' : ''}>${esc(w)}</option>`).join('')}<option value="ohne" ${F.werk === 'ohne' ? 'selected' : ''}>ohne Lehrwerk</option></select></label>
+      <div class="exfilter">${[['alle', 'Alle'], ['oeff', '🌐 Öffentlich'], ['kurs', '👥 Nur Kurse'], ['aus', '🔒 Verborgen']].map(([k, t]) => `<button class="chip ${F.exSicht === k ? 'an' : ''}" data-sicht="${k}">${t}</button>`).join('')}</div>
+    </div>
+    <p class="klein leise" style="margin:4px 2px 10px">🌐 = öffentlich, für alle ohne Code · Kurs-Knöpfe = nur für diesen Kurs freigeschaltet · 🔒 = für niemanden sichtbar. Ein Klick schaltet um.</p>
+    <div id="exListe"></div>`;
+  exListe(kl, RL, RW);
+  $('#exSuche').oninput = ev => { F.exSuche = ev.target.value; exListe(kl, RL, RW); };
+  $('#exGr').onchange = ev => { F.exGr = ev.target.value; exListe(kl, RL, RW); };
+  $('#wf').onchange = ev => { F.werk = ev.target.value; exListe(kl, RL, RW); };
+  app.querySelectorAll('[data-sicht]').forEach(b => b.onclick = () => { F.exSicht = b.dataset.sicht; app.querySelectorAll('[data-sicht]').forEach(x => x.classList.toggle('an', x === b)); exListe(kl, RL, RW); });
   bindeRubriken();
-  app.querySelectorAll('[data-k]').forEach(c => c.onchange = () => db.set('pub/kurse/' + c.dataset.k + '/ex/' + c.dataset.e, c.checked ? true : null));
-  app.querySelectorAll('[data-cp]').forEach(b => b.onclick = () => navigator.clipboard.writeText(BASE + b.dataset.cp).then(() => meld('Link kopiert.'), () => prompt('Link:', BASE + b.dataset.cp)));
-  app.querySelectorAll('[data-st]').forEach(b => b.onclick = () => { F.eex = b.dataset.st; F.ekurs = 'alle'; document.querySelector('.tab[data-t=erg]').click(); });
+}
+function exListe(kl, RL, RW) {
+  const alle = versuche(), pubEx = D.pub.ex || {};
+  const offenV = e => { const p = pubEx[e.id]; return p && typeof p.offen === 'boolean' ? p.offen : e.offen !== false; };
+  const kurseV = e => kl.filter(([kid]) => D.pub.kurse && D.pub.kurse[kid] && D.pub.kurse[kid].ex && D.pub.kurse[kid].ex[e.id]).map(([kid]) => kid);
+  const q = F.exSuche.trim().toLowerCase();
+  const passt = e => (F.werk === 'alle' || (F.werk === 'ohne' ? !e.quelle : e.quelle && e.quelle.werk === F.werk))
+    && (!q || [e.titel, e.untertitel, e.typ, e.reihe, e.quelle && e.quelle.werk].join(' ').toLowerCase().includes(q))
+    && (F.exSicht === 'alle' || (F.exSicht === 'oeff' ? offenV(e) : F.exSicht === 'kurs' ? !offenV(e) && kurseV(e).length : !offenV(e) && !kurseV(e).length));
+  const liste = KATALOG.filter(passt);
+  const gruppen = [];
+  if (F.exGr === 'rubrik') {
+    const live = liste.filter(e => e.id === 'live'); if (live.length) gruppen.push({ t: '📡 Live', f: '#3b5b8c', l: live });
+    RW.forEach(r => { const l = liste.filter(e => e.id !== 'live' && rubrikVon(e, pubEx, RL) === r.k); if (l.length) gruppen.push({ t: `${r.ic} ${r.t}${r.aus ? ' (auf der Startseite ausgeblendet)' : ''}`, f: r.f, l }); });
+  } else {
+    const ws = [...new Set(liste.map(e => e.quelle ? e.quelle.werk : ''))].sort((a, b) => (a === '') - (b === '') || a.localeCompare(b));
+    ws.forEach(w => gruppen.push({ t: w ? '📚 ' + w : '🎯 Ohne Lehrwerk', f: '#666', l: liste.filter(e => (e.quelle ? e.quelle.werk : '') === w).sort((a, b) => ((a.quelle || {}).lektion || 0) - ((b.quelle || {}).lektion || 0)) }));
+  }
+  const offenG = F.exZu || (F.exZu = {});
+  const zeile = e => {
+    const vs = alle.filter(v => v.ex === e.id), d = vs.length ? Math.round(vs.reduce((a, v) => a + (v.pct || 0), 0) / vs.length) : null;
+    const aktiv = Object.values(D.live || {}).filter(v => v.ex === e.id && status(v) === 'aktiv').length;
+    const of = offenV(e), ku = kurseV(e), sicht = of ? 'oeff' : ku.length ? 'kurs' : 'aus';
+    return `<div class="exz ${sicht}">
+      <span class="punkt" style="background:${e.farbe}"></span>
+      <div class="exname" title="${esc(e.untertitel || '')}"><b>${esc(e.titel)}</b><span class="klein leise"> · ${esc(e.typ)} · ${esc(e.niveau)}${e.quelle && e.quelle.lektion ? ' · ' + (typeof e.quelle.lektion === 'number' ? 'L' : '') + esc(e.quelle.lektion) : ''}</span></div>
+      <button class="exstat klein" data-st="${e.id}" title="Ergebnisse ansehen">${aktiv ? `<span class="puls"></span>${aktiv} jetzt · ` : ''}${vs.length ? `${vs.length}× · Ø ${d} %` : '<span class="leise">noch nie</span>'}</button>
+      <div class="exsicht"><button class="pille ${of ? 'an' : ''}" data-of="${e.id}" title="Öffentlich: für alle ohne Code">🌐 Alle</button>${kl.map(([kid, k]) => `<button class="pille ${ku.includes(kid) ? 'an' : ''} ${of ? 'blass' : ''}" data-k="${kid}" data-e="${e.id}" title="Für den Kurs ${esc(k.name)} freischalten">${esc(k.name)}</button>`).join('')}${!of && !ku.length ? '<span class="klein leise" title="Niemand sieht diese Übung">🔒</span>' : ''}</div>
+      ${e.id !== 'live' ? `<select class="exrub" data-rub="${e.id}" title="Rubrik auf der Startseite">${RW.map(r => `<option value="${r.k}" ${rubrikVon(e, pubEx, RL) === r.k ? 'selected' : ''}>${r.ic} ${esc(r.t)}</option>`).join('')}</select>` : '<span></span>'}
+      <div class="exakt"><a class="ikon" href="${mitDemo(e.datei)}" target="_blank" title="Öffnen">↗</a><button class="ikon" data-cp="${e.datei}" title="Link kopieren">🔗</button></div>
+    </div>`; };
+  $('#exListe').innerHTML = gruppen.length ? gruppen.map((g, gi) => `<details class="exgruppe" data-g="${esc(g.t)}" ${offenG[g.t] === false ? '' : 'open'}><summary style="--f:${g.f}"><span>${esc(g.t)}</span><span class="klein leise">${g.l.length} Übung${g.l.length === 1 ? '' : 'en'} · ${g.l.filter(offenV).length} öffentlich</span></summary>${g.l.map(zeile).join('')}</details>`).join('')
+    : '<p class="leise">Keine Übung passt zu diesem Filter.</p>';
+  const L = $('#exListe');
+  L.querySelectorAll('details.exgruppe').forEach(d => d.ontoggle = () => { offenG[d.dataset.g] = d.open; });
+  L.querySelectorAll('[data-of]').forEach(c => c.onclick = () => db.set('pub/ex/' + c.dataset.of + '/offen', !c.classList.contains('an')));
+  L.querySelectorAll('[data-rub]').forEach(sl => sl.onchange = () => db.set('pub/ex/' + sl.dataset.rub + '/rubrik', sl.value));
+  L.querySelectorAll('[data-k]').forEach(c => c.onclick = () => db.set('pub/kurse/' + c.dataset.k + '/ex/' + c.dataset.e, c.classList.contains('an') ? null : true));
+  L.querySelectorAll('[data-cp]').forEach(b => b.onclick = () => navigator.clipboard.writeText(BASE + b.dataset.cp).then(() => meld('Link kopiert.'), () => prompt('Link:', BASE + b.dataset.cp)));
+  L.querySelectorAll('[data-st]').forEach(b => b.onclick = () => { F.eex = b.dataset.st; F.ekurs = 'alle'; document.querySelector('.tab[data-t=erg]').click(); });
 }
 </script>
 </body>
