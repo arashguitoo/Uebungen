@@ -121,8 +121,8 @@ window.UNTERRICHT_PLAENE.konj1 = {
           { w: ["Alice", "betont,", "sie", "liebe", "diesen", "Job"], a: ["alice betont sie liebe diesen job"], p: "." },
           { w: ["Nesrin", "erzählt,", "ihr", "Chef", "habe", "ihr", "geholfen"], a: ["nesrin erzählt ihr chef habe ihr geholfen"], p: "." },
           { w: ["Luka", "fragt,", "ob", "es", "eine", "Prüfung", "gebe"], a: ["luka fragt ob es eine prüfung gebe"], p: "." },
-          { w: ["Sie", "fragt,", "wann", "der", "Kurs", "beginne"], a: ["sie fragt wann der kurs beginne"], p: "." },
-          { w: ["Die", "Chefin", "sagt,", "er", "solle", "sich", "anmelden"], a: ["die chefin sagt er solle sich anmelden"], p: "." }
+          { w: ["sie", "fragt,", "wann", "der", "Kurs", "beginne"], a: ["sie fragt wann der kurs beginne"], p: "." },
+          { w: ["die", "Chefin", "sagt,", "er", "solle", "sich", "anmelden"], a: ["die chefin sagt er solle sich anmelden"], p: "." }
         ] },
       { id: "u2", typ: "wahl", titel: "Was hat die Person wirklich gesagt?", minuten: 3,
         anleitung: "Zurück zur direkten Rede: Welcher Satz war das Original?",

@@ -206,9 +206,9 @@ body.beamer .layout{grid-template-columns:1fr} body.beamer .seite{display:none}
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script src="unterricht/b2gram.js?v=20261112a"></script>
-<script src="unterricht/konj1.js?v=20261112a"></script>
-<script src="nachzuegler.js?v=20261112a"></script>
+<script src="unterricht/b2gram.js?v=20261112b"></script>
+<script src="unterricht/konj1.js?v=20261112b"></script>
+<script src="nachzuegler.js?v=20261112b"></script>
 <script>
 /* =========================================================
    LIVE-UNTERRICHT – Lehrtafel + Aufgaben freigeben (wie der Persisch-Live-Unterricht)
@@ -294,8 +294,8 @@ function uebungHtml(A, ctx){
   if(A.typ==="sortieren"){ h+=`<div class="card"><div class="sortkarte">${esc(it.t)}</div><div class="korb2">${A.koerbe.map(k=>`<button data-wahl="${esc(k.k)}">${esc(k.t)}</button>`).join("")}</div></div>`; }
   if(A.typ==="bauen"){ const L2=ctx.lokal; const key=A.id+"|"+i+"|"+(a.n||0); if(L2.bauKey!==key){ L2.bauKey=key; L2.gelegt=[]; }
     const pool=mischS(it.w.map((w,j)=>({w,j})), misch);
-    h+=`<div class="card"><p class="small muted" style="margin:0">Tippe die Wörter in der richtigen Reihenfolge:</p><div class="linie">${L2.gelegt.map((j,k)=>`<button class="kachel" data-raus="${k}">${esc(it.w[j])}</button>`).join("")}<b style="font-size:22px">${L2.gelegt.length===it.w.length?esc(it.p||""):""}</b></div>
-      <div class="pool">${pool.map(x=>`<button class="kachel ${L2.gelegt.includes(x.j)?"weg":""}" data-rein="${x.j}">${esc(x.w)}</button>`).join("")}</div>
+    h+=`<div class="card"><p class="small muted" style="margin:0">Tippe die Wörter in der richtigen Reihenfolge:</p><div class="linie">${L2.gelegt.map((j,k)=>`<button class="kachel" data-raus="${k}">${esc(String(it.w[j]).replace(/,$/,""))}</button>`).join("")}<b style="font-size:22px">${L2.gelegt.length===it.w.length?esc(it.p||""):""}</b></div>
+      <div class="pool">${pool.map(x=>`<button class="kachel ${L2.gelegt.includes(x.j)?"weg":""}" data-rein="${x.j}">${esc(String(x.w).replace(/,$/,""))}</button>`).join("")}</div>
       <div class="row"><button class="btn ok" id="pruef" ${L2.gelegt.length===it.w.length?"":"disabled"}>Prüfen</button><button class="btn ghost" id="leeren">↺ Neu</button></div></div>`; }
   return h;
 }
@@ -329,6 +329,15 @@ function dialogHtml(SZ, meine, modus, wahl, setzbar){
     return `<div class="z ${mein?"mein":""}"><span class="wer">${esc(wer)}${mein?" – du":""}</span>${inhalt}</div>`; }).join("")}</div>`;
 }
 function lueckenStand(SZ, meine, wahl, alle){ let n=0, ok=0; SZ.zeilen.forEach(([r,text],zi)=>{ if(!alle && !meine.includes(r)) return; teile(text).forEach((t,gi)=>{ if(Array.isArray(t)){ n++; if((wahl||{})[zi+"_"+gi]===t[0]) ok++; } }); }); return {n, ok}; }
+/* Quiz: richtige Antwort gleichmäßig auf alle Positionen verteilt, nie 3× hintereinander gleich, kein Wechselmuster */
+const _qpos={};
+function quizPos(A){ if(_qpos[A.id]) return _qpos[A.id]; const n=A.items.length; let best=null;
+  for(let v=0; v<400; v++){ const p=mischS(Array.from({length:n},(_,i)=>i%4), A.id+"|pos|"+v); let ok=true;
+    for(let i=2;i<n;i++){ if(p[i]===p[i-1]&&p[i]===p[i-2]) ok=false; if(i>=3&&p[i]===p[i-2]&&p[i-1]===p[i-3]) ok=false; }
+    if(ok){ best=p; break; } if(!best) best=p; }
+  return _qpos[A.id]=best; }
+function quizOpts(A, i){ const it=A.items[i]; const k=it.o.length; const ziel=quizPos(A)[i]%k;
+  const f=mischS(it.o.map((o,j)=>({o,j})).slice(1), A.id+"|qf|"+i); f.splice(ziel,0,{o:it.o[0],j:0}); return f; }
 function szeneVon(A, id){ return (A.szenen||[]).find(s=>s.id===id)||A.szenen[0]; }
 /* Gruppenpuzzle: eigene Fetzen-Nummer(n) + Fragen zur ganzen Geschichte */
 function puzzleAufgabe(A, K){ const G=A.geschichten[K.g]; const n=G.fetzen.length; const nrs=Array.from({length:n},(_,i)=>String(i+1));
@@ -422,7 +431,7 @@ function handy(){
   function quiz(A){ const Q=S.quiz||{}; binder=()=>{};
     if(Q.aid!==A.id||Q.i===undefined||Q.i<0) return warte("die Lehrkraft","⚡ Gleich kommt die erste Frage.");
     if(Q.i>=A.items.length) return `<div class="card fertig"><div class="e">🏁</div><h2>Quiz fertig!</h2></div>`+warte("die Lehrkraft");
-    const it=A.items[Q.i]; const opts=mischS(it.o.map((o,j)=>({o,j})), A.id+"|q|"+Q.i); const mein=(((S.qz||{})[A.id]||{})[Q.i]||{})[me.pid];
+    const it=A.items[Q.i]; const opts=quizOpts(A, Q.i); const mein=(((S.qz||{})[A.id]||{})[Q.i]||{})[me.pid];
     let h=`<div class="small muted" style="font-weight:800">Frage ${Q.i+1} von ${A.items.length}</div><div class="card"><div class="frage">${esc(it.f)}</div><div class="qopts">${opts.map((x,k)=>`<button class="${QFARBE[k]} ${mein&&mein.o===x.j?"gewaehlt":""}" data-q="${x.j}" ${mein||Q.zeigen?"disabled":""}>${QZ[k]} ${esc(x.o)}</button>`).join("")}</div>`;
     if(Q.zeigen){ h+= mein? (mein.o===0?`<div class="tipp" style="border-color:var(--ok);background:var(--ok-2)">✅ Richtig!</div>`:`<div class="tipp">Richtig ist: <b>${esc(it.o[0])}</b></div>`) : `<div class="tipp">Richtig ist: <b>${esc(it.o[0])}</b></div>`; h+=`</div>`+warte("die nächste Frage"); binder=()=>{}; return h; }
     else if(mein){ binder=()=>{}; return h+`</div>`+warte("die Lehrkraft","✓ Deine Antwort ist gespeichert.<br>Gleich kommt die Lösung."); }
@@ -724,7 +733,7 @@ function leitung(){
       if(Q.i>=A.items.length){ const r={}; A.items.forEach((_,k)=>Object.entries(((S.qz||{})[A.id]||{})[k]||{}).forEach(([p,x])=>{ if(x.o===0) r[p]=(r[p]||0)+1; }));
         return `<h2>⚡ Quiz fertig!</h2>${T.length?`<div class="row">${T.map(([k,t])=>{ const m=online().filter(([,x])=>x.team===k); const s=m.reduce((a,[p])=>a+(r[p]||0),0); return `<span class="chip" style="background:${t.f};color:#fff;font-size:22px">${t.e} ${esc(t.n)}: ${m.length?Math.round(s/(m.length*A.items.length)*100):0}% richtig</span>`; }).join("")}</div>`:""}
           <div class="balkenliste">${online().map(([p,x])=>`<div class="bz"><span>${esc(x.name)}</span><div class="bal"><i style="width:${(r[p]||0)/A.items.length*100}%"></i></div><span>${r[p]||0}/${A.items.length}</span></div>`).join("")}</div><button class="btn ghost" data-quiz="0" style="margin-top:14px">↺ noch einmal</button>`; }
-      const it=A.items[Q.i]; const opts=mischS(it.o.map((o,j)=>({o,j})), A.id+"|q|"+Q.i); const an=((S.qz||{})[A.id]||{})[Q.i]||{}; const cnt=j=>Object.values(an).filter(x=>x.o===j).length;
+      const it=A.items[Q.i]; const opts=quizOpts(A, Q.i); const an=((S.qz||{})[A.id]||{})[Q.i]||{}; const cnt=j=>Object.values(an).filter(x=>x.o===j).length;
       return `<div class="small muted" style="font-weight:800">⚡ Frage ${Q.i+1} von ${A.items.length}</div><div class="grossfrage" style="text-align:left">${esc(it.f)}</div>
         <div class="qboard">${opts.map((x,k)=>`<div class="${QFARBE[k]} ${Q.zeigen?(x.j===0?"richtig":"daneben"):""}"><span>${QZ[k]} ${esc(x.o)}</span>${Q.zeigen?`<span>${cnt(x.j)}</span>`:""}</div>`).join("")}</div>
         <p class="tafelinhalt">${Object.keys(an).length} von ${online().length} haben geantwortet.</p>

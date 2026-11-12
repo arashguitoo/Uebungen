@@ -52,24 +52,24 @@ const PLAN = {
         anleitung: "Tippe die Wörter in der richtigen Reihenfolge.",
         hinweis: "Hauptsatz: Verb auf Position 2. Nebensatz: Verb am Ende. Nach dem Nebensatz kommt sofort das Verb.",
         items: [
-          { w: ["Ich", "bin", "müde,", "deshalb", "gehe", "ich", "früh", "ins", "Bett"], a: ["ich bin müde deshalb gehe ich früh ins bett"], p: "." },
-          { w: ["Weil", "der", "Zug", "Verspätung", "hatte,", "kam", "ich", "zu", "spät"], a: ["weil der zug verspätung hatte kam ich zu spät"], p: "." },
-          { w: ["Sie", "hat", "gestern", "ihrem", "Chef", "den", "Bericht", "geschickt"], a: ["sie hat gestern ihrem chef den bericht geschickt", "sie hat ihrem chef gestern den bericht geschickt"], p: "." },
-          { w: ["Ich", "weiß", "nicht,", "ob", "er", "morgen", "kommen", "kann"], a: ["ich weiß nicht ob er morgen kommen kann"], p: "." },
-          { w: ["Obwohl", "es", "regnet,", "gehen", "wir", "spazieren"], a: ["obwohl es regnet gehen wir spazieren"], p: "." },
-          { w: ["Ich", "gebe", "ihn", "ihm", "morgen"], a: ["ich gebe ihn ihm morgen", "morgen gebe ich ihn ihm"], p: "." },
-          { w: ["Kannst", "du", "mir", "sagen,", "wann", "der", "Kurs", "anfängt"], a: ["kannst du mir sagen wann der kurs anfängt"], p: "?" }
+          { w: ["ich", "bin", "müde,", "deshalb", "gehe", "ich", "früh", "ins", "Bett"], a: ["ich bin müde deshalb gehe ich früh ins bett"], p: "." },
+          { w: ["weil", "der", "Zug", "Verspätung", "hatte,", "kam", "ich", "zu", "spät"], a: ["weil der zug verspätung hatte kam ich zu spät", "ich kam zu spät weil der zug verspätung hatte"], p: "." },
+          { w: ["sie", "hat", "gestern", "ihrem", "Chef", "den", "Bericht", "geschickt"], a: ["sie hat gestern ihrem chef den bericht geschickt", "sie hat ihrem chef gestern den bericht geschickt", "gestern hat sie ihrem chef den bericht geschickt", "ihrem chef hat sie gestern den bericht geschickt", "den bericht hat sie gestern ihrem chef geschickt"], p: "." },
+          { w: ["ich", "weiß", "nicht,", "ob", "er", "morgen", "kommen", "kann"], a: ["ich weiß nicht ob er morgen kommen kann", "ob er morgen kommen kann weiß ich nicht"], p: "." },
+          { w: ["obwohl", "es", "regnet,", "gehen", "wir", "spazieren"], a: ["obwohl es regnet gehen wir spazieren", "wir gehen spazieren obwohl es regnet"], p: "." },
+          { w: ["ich", "gebe", "ihn", "ihm", "morgen"], a: ["ich gebe ihn ihm morgen", "morgen gebe ich ihn ihm"], p: "." },
+          { w: ["kannst", "du", "mir", "sagen,", "wann", "der", "Kurs", "anfängt"], a: ["kannst du mir sagen wann der kurs anfängt"], p: "?" }
         ] },
       { id: "sb3", typ: "wahl", titel: "Welcher Satz ist richtig?", minuten: 4,
         anleitung: "Wähle den grammatisch richtigen Satz.",
         items: [
-          { f: "Welcher Satz ist richtig?", o: ["Ich bin krank, trotzdem gehe ich zur Arbeit.", "Ich bin krank, trotzdem ich gehe zur Arbeit.", "Ich bin krank, trotzdem zur Arbeit ich gehe."], tipp: "trotzdem = Position 1 → Verb direkt danach." },
-          { f: "Welcher Satz ist richtig?", o: ["Er kommt nicht, denn er hat keine Zeit.", "Er kommt nicht, denn hat er keine Zeit.", "Er kommt nicht, denn er keine Zeit hat."], tipp: "denn = Position 0 → Subjekt, dann Verb." },
-          { f: "Welcher Satz ist richtig?", o: ["Als ich nach Deutschland kam, konnte ich kein Deutsch.", "Als ich nach Deutschland kam, ich konnte kein Deutsch.", "Als ich kam nach Deutschland, konnte ich kein Deutsch."] },
-          { f: "Welcher Satz ist richtig?", o: ["Ich habe es meiner Kollegin gestern erklärt.", "Ich habe meiner Kollegin es gestern erklärt.", "Ich habe gestern erklärt es meiner Kollegin."], tipp: "Pronomen (es) vor Nomen." },
-          { f: "Welcher Satz ist richtig?", o: ["Ich fahre morgen mit dem Bus zur Arbeit.", "Ich fahre zur Arbeit mit dem Bus morgen.", "Ich fahre mit dem Bus morgen zur Arbeit."], tipp: "Te – Ka – Mo – Lo: wann – warum – wie – wo/wohin." },
-          { f: "Welcher Satz ist richtig?", o: ["Ich glaube, dass er heute nicht mehr anruft.", "Ich glaube, dass er ruft heute nicht mehr an.", "Ich glaube, dass er heute nicht mehr an ruft."], tipp: "Im Nebensatz steht das trennbare Verb zusammen am Ende: anruft." },
-          { f: "Welcher Satz ist richtig?", o: ["Wir müssen den Termin leider verschieben.", "Wir müssen leider verschieben den Termin.", "Wir leider müssen den Termin verschieben."] }
+          { f: "Welcher Satz ist richtig? (trotzdem)", o: ["Ich bin krank, trotzdem gehe ich zur Arbeit.", "Ich bin krank, trotzdem ich gehe zur Arbeit.", "Ich bin krank, trotzdem zur Arbeit ich gehe."], tipp: "trotzdem = Position 1 → Verb direkt danach." },
+          { f: "Welcher Satz ist richtig? (denn)", o: ["Er kommt nicht, denn er hat keine Zeit.", "Er kommt nicht, denn hat er keine Zeit.", "Er kommt nicht, denn er keine Zeit hat."], tipp: "denn = Position 0 → Subjekt, dann Verb." },
+          { f: "Welcher Satz ist richtig? (Als …)", o: ["Als ich nach Deutschland kam, konnte ich kein Deutsch.", "Als ich nach Deutschland kam, ich konnte kein Deutsch.", "Als ich kam nach Deutschland, konnte ich kein Deutsch."] },
+          { f: "Welcher Satz ist richtig? (Pronomen)", o: ["Ich habe es meiner Kollegin gestern erklärt.", "Ich habe meiner Kollegin es gestern erklärt.", "Ich habe gestern erklärt es meiner Kollegin."], tipp: "Pronomen (es) vor Nomen." },
+          { f: "Welcher Satz ist richtig? (Te-Ka-Mo-Lo)", o: ["Ich fahre morgen mit dem Bus zur Arbeit.", "Ich fahre zur Arbeit mit dem Bus morgen.", "Ich fahre mit dem Bus morgen zur Arbeit."], tipp: "Te – Ka – Mo – Lo: wann – warum – wie – wo/wohin." },
+          { f: "Welcher Satz ist richtig? (dass + trennbares Verb)", o: ["Ich glaube, dass er heute nicht mehr anruft.", "Ich glaube, dass er ruft heute nicht mehr an.", "Ich glaube, dass er heute nicht mehr an ruft."], tipp: "Im Nebensatz steht das trennbare Verb zusammen am Ende: anruft." },
+          { f: "Welcher Satz ist richtig? (Modalverb)", o: ["Wir müssen den Termin leider verschieben.", "Wir müssen leider verschieben den Termin.", "Wir leider müssen den Termin verschieben."] }
         ] },
       { id: "sb4", typ: "sprechen", titel: "Blitzrunde: Ihr Weg zum Deutschkurs", minuten: 4,
         anleitung: "Ich ziehe einen Namen. Antworten Sie mit zwei Sätzen und benutzen Sie einen Konnektor (deshalb, trotzdem, weil, obwohl …).",
@@ -370,10 +370,10 @@ const PLAN = {
         anleitung: "Bau den Satz.",
         hinweis: "Fragen ohne Fragewort: Verb auf Position 1. Konjunktiv-Form auf Position 1 oder 2.",
         items: [
-          { w: ["Könnten", "Sie", "mir", "bitte", "die", "Unterlagen", "schicken"], a: ["könnten sie mir bitte die unterlagen schicken"], p: "?" },
-          { w: ["An", "deiner", "Stelle", "würde", "ich", "den", "Job", "annehmen"], a: ["an deiner stelle würde ich den job annehmen"], p: "." },
-          { w: ["Hätten", "Sie", "morgen", "kurz", "Zeit", "für", "mich"], a: ["hätten sie morgen kurz zeit für mich"], p: "?" },
-          { w: ["Wenn", "ich", "Zeit", "hätte,", "würde", "ich", "dir", "helfen"], a: ["wenn ich zeit hätte würde ich dir helfen"], p: "." }
+          { w: ["könnten", "Sie", "mir", "bitte", "die", "Unterlagen", "schicken"], a: ["könnten sie mir bitte die unterlagen schicken"], p: "?" },
+          { w: ["an", "deiner", "Stelle", "würde", "ich", "den", "Job", "annehmen"], a: ["an deiner stelle würde ich den job annehmen", "ich würde an deiner stelle den job annehmen", "den job würde ich an deiner stelle annehmen"], p: "." },
+          { w: ["hätten", "Sie", "morgen", "kurz", "Zeit", "für", "mich"], a: ["hätten sie morgen kurz zeit für mich", "hätten sie morgen für mich kurz zeit"], p: "?" },
+          { w: ["wenn", "ich", "Zeit", "hätte,", "würde", "ich", "dir", "helfen"], a: ["wenn ich zeit hätte würde ich dir helfen", "ich würde dir helfen wenn ich zeit hätte"], p: "." }
         ] }
     ] },
   { id: "konj1", sitzung: 3, icon: "📰", titel: "Konjunktiv I: Indirekte Rede", minuten: 15,
@@ -450,10 +450,10 @@ const PLAN = {
         anleitung: "Bau den Satz. Achtung: zu steht direkt vor dem Infinitiv – bei trennbaren Verben in der Mitte.",
         hinweis: "Der Infinitiv mit zu steht am Ende. Bei trennbaren Verben: an-zu-rufen.",
         items: [
-          { w: ["Ich", "habe", "keine", "Lust,", "heute", "zu", "kochen"], a: ["ich habe keine lust heute zu kochen"], p: "." },
-          { w: ["Er", "lernt", "Deutsch,", "um", "in", "Deutschland", "zu", "studieren"], a: ["er lernt deutsch um in deutschland zu studieren"], p: "." },
-          { w: ["Vergiss", "nicht,", "die", "Tür", "abzuschließen"], a: ["vergiss nicht die tür abzuschließen"], p: "!" },
-          { w: ["Sie", "ging", "nach", "Hause,", "ohne", "etwas", "zu", "sagen"], a: ["sie ging nach hause ohne etwas zu sagen"], p: "." }
+          { w: ["ich", "habe", "keine", "Lust,", "heute", "zu", "kochen"], a: ["ich habe keine lust heute zu kochen", "heute habe ich keine lust zu kochen"], p: "." },
+          { w: ["er", "lernt", "Deutsch,", "um", "in", "Deutschland", "zu", "studieren"], a: ["er lernt deutsch um in deutschland zu studieren", "um in deutschland zu studieren lernt er deutsch"], p: "." },
+          { w: ["vergiss", "nicht,", "die", "Tür", "abzuschließen"], a: ["vergiss nicht die tür abzuschließen"], p: "!" },
+          { w: ["sie", "ging", "nach", "Hause,", "ohne", "etwas", "zu", "sagen"], a: ["sie ging nach hause ohne etwas zu sagen", "ohne etwas zu sagen ging sie nach hause"], p: "." }
         ] },
       { id: "q_s3", typ: "quiz", titel: "Quiz Sitzung 3: Konjunktiv & Infinitiv", minuten: 0,
         items: [
