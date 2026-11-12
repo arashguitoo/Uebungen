@@ -21,7 +21,7 @@ export const AB_META = {
       protokoll: { t: 'Teil 4 · Protokoll verstehen', tipp: 'Kopf und TOPs nutzen; Zuständigkeiten und Zeitangaben genau lesen.' }
     },
     items: {
-      1: { b: 'zuordnung', d: { h: ['L', 'h: „Gebäudereinigung“ steht da – aber es geht um Firmengründung, nicht um Verdienst.'], a: ['G', 'a: Arbeit und Geld allgemein – keine Gebäudereinigung.'] } },
+      1: { b: 'zuordnung', d: { g: ['L', 'g: „Gebäudereiniger“ und „mehr Geld“ – aber es geht um Tariflöhne für Beschäftigte, nicht um eigene Verdienstmöglichkeiten.'], a: ['G', 'a: Arbeit und Geld allgemein – keine Gebäudereinigung.'] } },
       2: { b: 'zuordnung', d: { b: ['L', 'b: „Bewerbung“ – aber es geht um das Anschreiben, nicht um das Gespräch.'] } },
       3: { b: 'zuordnung', d: {} },
       4: { b: 'zuordnung', d: {} },

@@ -23,7 +23,7 @@ export const BOEGEN = {
        "g",
        "h"
       ],
-      "l": "Zw=="
+      "l": "aA=="
      },
      {
       "nr": 2,

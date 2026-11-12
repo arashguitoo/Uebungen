@@ -1,6 +1,6 @@
 // wortverbindungen.js – gemeinsame Datenbank + Aufgabengenerator + Wiederholungssystem (Begegnung & Wiederholung)
-import { VERBEN } from './verben-praep.js?v=20261111a';
-import { VERBEN_PLUS, NOMEN, ADJEKTIVE, NVV, FAMILIEN } from './wv-daten.js?v=20261111a';
+import { VERBEN } from './verben-praep.js?v=20261112a';
+import { VERBEN_PLUS, NOMEN, ADJEKTIVE, NVV, FAMILIEN } from './wv-daten.js?v=20261112a';
 
 export const THEMEN = {
   V: { name: 'Verben + Präposition', kurz: 'Verben', icon: '🔗' },

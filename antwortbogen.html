@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Antwortbogen</title>
-<link rel="stylesheet" href="stil.css?v=20261111a">
+<link rel="stylesheet" href="stil.css?v=20261112a">
 <style>
   :root{--akzent:#2f7fa3;--akzent-hell:#e3f0f6;--tinte:#1f3440}
   body{background:#f4f6f7}
@@ -33,9 +33,9 @@
 <section class="held"><div class="wrap" style="max-width:760px"><h1 id="titel">📝 Antwortbogen</h1><p id="unter"></p></div></section>
 <main class="wrap" id="app"><p class="leise">Lädt …</p></main>
 <script type="module">
-import { esc, mitDemo } from './db.js?v=20261111a';
-import { starte } from './spieler.js?v=20261111a';
-import { BOEGEN } from './antwortboegen.js?v=20261111a';
+import { esc, mitDemo } from './db.js?v=20261112a';
+import { starte } from './spieler.js?v=20261112a';
+import { BOEGEN } from './antwortboegen.js?v=20261112a';
 const $ = s => document.querySelector(s), app = $('#app');
 const B = BOEGEN[new URLSearchParams(location.search).get('b')] || Object.values(BOEGEN)[0];
 document.title = B.titel; $('#titel').textContent = '📝 ' + B.titel; $('#unter').textContent = B.unter || '';

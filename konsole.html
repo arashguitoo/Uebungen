@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Konsole – Übungszentrale</title>
 <meta name="robots" content="noindex">
-<link rel="stylesheet" href="stil.css?v=20261111a">
+<link rel="stylesheet" href="stil.css?v=20261112a">
 <style>
   :root{--akzent:#2f3f46;--akzent-hell:#e7edef}
   body{font-size:16px}
@@ -210,14 +210,14 @@ window.__ok = false;
 </script>
 <script type="module">
 window.__ok = true;
-import { db, DEMO, zufall, esc, mitDemo } from './db.js?v=20261111a';
-import { KATALOG, exById } from './katalog.js?v=20261111a';
-import { rubriken, rubrikVon } from './rubriken.js?v=20261111a';
-import { AUFGABEN as SW_AUF, ARTEN as SW_ARTEN, analysiere as SW_analysiere, ltKategorie as SW_ltKat, vorschlag as SW_vorschlag, KAT as SW_KAT, KRITERIEN as SW_KRIT, STUFE as SW_STUFE, wortzahl as SW_wortzahl, korrTyp as SW_korrTyp } from './schreib-daten.js?v=20261111a';
-import { LISTEN, SKALEN, MERKMALE, MERKMAL, skalaVon, wertInfo, prozent } from './feedback-kriterien.js?v=20261111a';
-import { BOEGEN } from './antwortboegen.js?v=20261111a';
-import { FEHLERTYPEN as AB_FT, AB_META, abAnalyse } from './antwortboegen-analyse.js?v=20261111a';
-import { TEST as DTEST, BEREICHE as DBER, analyse as dAnalyse, AUFGABEN as DAUFG } from './diagnose-daten.js?v=20261111a';
+import { db, DEMO, zufall, esc, mitDemo } from './db.js?v=20261112a';
+import { KATALOG, exById } from './katalog.js?v=20261112a';
+import { rubriken, rubrikVon } from './rubriken.js?v=20261112a';
+import { AUFGABEN as SW_AUF, ARTEN as SW_ARTEN, analysiere as SW_analysiere, ltKategorie as SW_ltKat, vorschlag as SW_vorschlag, KAT as SW_KAT, KRITERIEN as SW_KRIT, STUFE as SW_STUFE, wortzahl as SW_wortzahl, korrTyp as SW_korrTyp } from './schreib-daten.js?v=20261112a';
+import { LISTEN, SKALEN, MERKMALE, MERKMAL, skalaVon, wertInfo, prozent } from './feedback-kriterien.js?v=20261112a';
+import { BOEGEN } from './antwortboegen.js?v=20261112a';
+import { FEHLERTYPEN as AB_FT, AB_META, abAnalyse } from './antwortboegen-analyse.js?v=20261112a';
+import { TEST as DTEST, BEREICHE as DBER, analyse as dAnalyse, AUFGABEN as DAUFG } from './diagnose-daten.js?v=20261112a';
 
 if (DEMO) document.getElementById('demo').innerHTML = '<div class="demo-band">DEMO-MODUS – Anmeldung mit beliebigen Daten, alles bleibt in diesem Browser</div>';
 const $ = s => document.querySelector(s), app = $('#app');
@@ -323,9 +323,21 @@ function live() {
 }
 
 /* ---------------- ERGEBNISSE ---------------- */
+let abFixT = null;
+function abNeuBerechnen(ex, sid, r) {
+  const B = Object.values(BOEGEN).find(b => b.exId === ex); if (!B || !r || !r.x) return r;
+  let x = {}; try { x = JSON.parse(r.x); } catch (e) { return r; } if (!x.antworten) return r;
+  const it = {}; let p = 0; B.teile.forEach(T => T.items.forEach(i => { const ok = x.antworten[i.nr] === atob(i.l); it[i.nr] = ok ? 1 : 0; if (ok) p++; }));
+  const pm = Object.keys(it).length, pct = Math.round(100 * p / pm);
+  if (r.p !== p || r.pct !== pct || JSON.stringify(r.it || {}) !== JSON.stringify(it)) {
+    abFixT = abFixT || {}; abFixT['res/' + ex + '/' + sid + '/p'] = p; abFixT['res/' + ex + '/' + sid + '/pct'] = pct; abFixT['res/' + ex + '/' + sid + '/it'] = it;
+    clearTimeout(abNeuBerechnen.t); abNeuBerechnen.t = setTimeout(() => { const up = abFixT; abFixT = null; if (up) db.update('', up).then(() => meld('Ergebnisse mit dem korrigierten Lösungsschlüssel neu berechnet.'), () => { }); }, 800);
+  }
+  return { ...r, p, pm, pct, it };
+}
 function versuche() {
   const out = [];
-  for (const [ex, m] of Object.entries(D.res || {})) for (const [sid, r] of Object.entries(m || {})) out.push({ ex, sid, ...r });
+  for (const [ex, m] of Object.entries(D.res || {})) for (const [sid, r] of Object.entries(m || {})) out.push({ ex, sid, ...abNeuBerechnen(ex, sid, r) });
   return out.sort((a, b) => b.t - a.t);
 }
 const teilVon = v => { try { return v.x ? (JSON.parse(v.x).teil || '') : ''; } catch (e) { return ''; } };
