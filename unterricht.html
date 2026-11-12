@@ -567,7 +567,7 @@ function leitung(){
   const TEAMVORLAGE=[{n:"Rot",e:"🔴",f:"#E2483D"},{n:"Blau",e:"🔵",f:"#2F6FDB"},{n:"Grün",e:"🟢",f:"#14A37F"},{n:"Gelb",e:"🟡",f:"#D69E00"}];
   async function start(){
     if(!PIN){ try{ PIN=localStorage.getItem("unt_leitung_pin")||""; }catch(e){} }
-    if(PIN){ const i=(await I("info").once("value")).val(); if(!i||(i.phase==="ende"&&!P.get("pin")&&!i.fest)) PIN=""; }
+    if(PIN){ const i=(await I("info").once("value")).val(); if(!i||(i.phase==="ende"&&!P.get("pin")&&!i.fest)||(!P.get("pin")&&P.get("plan")&&i.plan!==P.get("plan"))) PIN=""; }
     if(!PIN){ for(let i=0;i<15;i++){ const c=String(1000+rnd(9000)); const ex=(await db.ref(`${ROOT}/${c}/info`).once("value")).val(); if(!ex){ PIN=c; break; } }
       await I().set({info:{phase:"lobby", erstellt:TS(), pin:PIN, plan:PLAN.id, block:0, folie:0, ansicht:"tafel"}}); }
     try{ localStorage.setItem("unt_leitung_pin",PIN); }catch(e){}
