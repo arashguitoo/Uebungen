@@ -11,9 +11,9 @@ window.UNTERRICHT_PLAENE = window.UNTERRICHT_PLAENE || {};
 const K = (titel, a, ah, b, bh) => ({ titel, a: { t: a, hilfe: ah }, b: { t: b, hilfe: bh } });
 
 const PLAN = {
-  id: "b2gram", titel: "Grammatik B2 – große Wiederholung", minuten: 300, online: true, sitzungen: 5,
-  sitzTitel: ["Satzbau & Konnektoren", "Zeiten, Passiv, Modalverben", "Konjunktiv & Infinitiv", "Relativsätze, Kasus, Adjektive", "Präpositionen & Nominalstil"],
-  text: "5 Sitzungen online: Satzbau · Konnektoren · Nebensätze · Zeiten · Passiv · Modalverben · Konjunktiv II · Konjunktiv I · Infinitiv · Relativsätze · Kasus & Präpositionen · Adjektive & Partizipien · Verben mit Präpositionen · Nominalstil · Abschlussquiz",
+  id: "b2gram", titel: "Grammatik B2 – große Wiederholung", minuten: 320, online: true, sitzungen: 5,
+  sitzTitel: ["Satzbau & Konnektoren", "Zeiten, Akk./Dativ, Passiv, Modalverben", "Konjunktiv & Infinitiv", "Relativsätze, Kasus, Adjektive", "Präpositionen & Nominalstil"],
+  text: "5 Sitzungen online: Satzbau · Konnektoren · Nebensätze · Zeiten · Akkusativ & Dativ · Passiv · Modalverben · Konjunktiv II · Konjunktiv I · Infinitiv · Relativsätze · Kasus & Präpositionen · Adjektive & Partizipien · Verben mit Präpositionen · Nominalstil · Abschlussquiz",
   bloecke: [
   /* =================== SITZUNG 1 · Satzbau & Konnektoren =================== */
   { id: "satzbau", sitzung: 1, icon: "📏", titel: "Satzbau: Wo steht das Verb?", minuten: 20,
@@ -216,6 +216,82 @@ const PLAN = {
           { f: "Ich ___ den Film schon zweimal gesehen.", o: ["habe", "bin", "werde", "wurde"] },
           { f: "Das Paket ___ wohl morgen ankommen.", o: ["wird", "würde", "ist", "hat"] }
         ] }
+    ] },
+  { id: "akkdat", sitzung: 2, icon: "🎯", titel: "Akkusativ und Dativ: Verben, Bewegung, Präpositionen", minuten: 20,
+    tafel: [
+      { titel: "1 · Akkusativ und Dativ beim Verb", html: `<table><tr><th></th><th>Frage</th><th>Rolle</th><th>Beispiel</th></tr>
+        <tr><td><b>Nominativ</b></td><td>Wer?</td><td>Subjekt – handelt</td><td><b>Der Lehrer</b> gibt …</td></tr>
+        <tr><td><b>Akkusativ</b></td><td>Wen? Was?</td><td><b>unmittelbares Objekt</b> (1. Objekt): direkt von der Handlung betroffen</td><td>… <b class="rot">den Test</b> …</td></tr>
+        <tr><td><b>Dativ</b></td><td>Wem?</td><td><b>mittelbares Objekt</b> (2. Objekt): bekommt etwas, hat einen Vorteil/Nachteil – meist eine Person</td><td>… <b class="rot">dem Schüler</b>.</td></tr></table>
+        <div class="bsp">Der Lehrer gibt <b>dem Schüler</b> (Wem? → Dativ) <b>den Test</b> (Was? → Akkusativ).</div>
+        <ul><li><b>Nur ein Objekt</b> → meistens <b>Akkusativ</b>: Ich sehe <b>den Mann</b>. Ich frage <b>den Lehrer</b>.</li>
+        <li><b>Zwei Objekte</b> → Person im <b>Dativ</b>, Sache im <b>Akkusativ</b>: geben, schenken, schicken, zeigen, erklären, bringen, leihen, empfehlen</li></ul>` },
+      { titel: "Ausnahmen: Verben nur mit Dativ", html: `<p>Diese Verben haben nur <b>ein</b> Objekt – und das steht im <b class="rot">Dativ</b>:</p>
+        <div class="chips"><span>helfen</span><span>danken</span><span>gratulieren</span><span>antworten</span><span>gefallen</span><span>gehören</span><span>glauben (jdm)</span><span>vertrauen</span><span>folgen</span><span>zuhören</span><span>passen</span><span>schmecken</span><span>fehlen</span><span>begegnen</span><span>widersprechen</span></div>
+        <div class="bsp">Ich helfe <b>dem</b> Kollegen. · Wir danken <b>Ihnen</b>. · Das Kleid gefällt <b>mir</b>. · Ich gratuliere <b>dir</b>.</div>
+        <div class="hinweis">Achtung: <b>fragen</b> und <b>anrufen</b> → Akkusativ! Ich frage <b>dich</b>. Ich rufe <b>den Arzt</b> an.</div>` },
+      { titel: "2 · Bewegung oder Zustand? (Wohin? – Wo?)", html: `<div class="zwei-sp"><div class="box-blau"><b>Wohin?</b> → Bewegung / Veränderung → <b class="rot">Akkusativ</b><div class="bsp">Ich lege das Handy auf <b>den</b> Tisch.<br>Er stellt die Flasche in <b>den</b> Kühlschrank.<br>Wir gehen in <b>die</b> Stadt.</div></div>
+        <div class="box-gruen"><b>Wo?</b> → Ort / Zustand → <b class="rot">Dativ</b><div class="bsp">Das Handy liegt auf <b>dem</b> Tisch.<br>Die Flasche steht im (= in <b>dem</b>) Kühlschrank.<br>Wir sind in <b>der</b> Stadt.</div></div></div>
+        <table><tr><th>Bewegung (Akk.) – regelmäßig</th><th>Zustand (Dat.) – unregelmäßig</th></tr>
+        <tr><td>legen · stellen · setzen · hängen · stecken</td><td>liegen · stehen · sitzen · hängen · stecken</td></tr></table>
+        <div class="hinweis">Bewegung <b>innerhalb</b> eines Ortes = kein Ortswechsel → Dativ: Wir laufen <b>im</b> Park. ↔ Wir laufen <b>in den</b> Park.<br>Nur bei: an · auf · hinter · in · neben · über · unter · vor · zwischen</div>` },
+      { titel: "3 · Präpositionen mit festem Kasus", html: `<table><tr><th>immer Akkusativ</th><th>immer Dativ</th><th>Wechsel (Wo/Wohin)</th></tr>
+        <tr><td>durch · für · gegen · ohne · um · bis</td><td>aus · bei · mit · nach · seit · von · zu · gegenüber · ab · außer</td><td>an · auf · hinter · in · neben · über · unter · vor · zwischen</td></tr></table>
+        <div class="bsp">Das ist <b>für den</b> Chef. · Ich fahre <b>mit dem</b> Bus <b>zur</b> (= zu der) Arbeit. · Seit <b>einem</b> Jahr wohne ich hier.</div>
+        <div class="hinweis">Bei <b>Verben mit Präposition</b> entscheidet das Verb: warten <b>auf + Akk.</b> (auf den Bus) · teilnehmen <b>an + Dat.</b> (am Kurs) · denken <b>an + Akk.</b> · Angst haben <b>vor + Dat.</b></div>` }
+    ],
+    aufgaben: [
+      { id: "ak1", typ: "sortieren", titel: "Welche Objekte hat das Verb?", minuten: 4,
+        anleitung: "Nur Akkusativ, nur Dativ oder beides (Person im Dativ + Sache im Akkusativ)?",
+        hinweis: "Verben mit nur einem Objekt haben meistens Akkusativ – Ausnahmen mit Dativ: helfen, danken, gratulieren, gefallen, gehören, antworten …",
+        koerbe: [{ k: "a", t: "nur Akkusativ" }, { k: "d", t: "nur Dativ" }, { k: "da", t: "Dativ + Akkusativ" }],
+        items: [
+          { t: "besuchen", k: "a" }, { t: "helfen", k: "d" }, { t: "schenken", k: "da" }, { t: "fragen", k: "a" },
+          { t: "danken", k: "d" }, { t: "erklären", k: "da" }, { t: "gratulieren", k: "d" }, { t: "anrufen", k: "a" },
+          { t: "gehören", k: "d" }, { t: "zeigen", k: "da" }, { t: "brauchen", k: "a" }, { t: "vertrauen", k: "d" }
+        ] },
+      { id: "ak2", typ: "wahl", titel: "Akkusativ oder Dativ beim Verb?", minuten: 5,
+        anleitung: "Wähle die richtige Form.",
+        items: [
+          { f: "Kannst du ___ Kollegin helfen?", o: ["der", "die", "den", "dem"], tipp: "helfen + Dativ → der Kollegin." },
+          { f: "Ich habe ___ Chef gestern angerufen.", o: ["den", "dem", "der", "des"], tipp: "anrufen + Akkusativ." },
+          { f: "Wir danken ___ für Ihre Hilfe.", o: ["Ihnen", "Sie", "Ihr", "Ihre"] },
+          { f: "Sie schickt ___ Kunden ___ Rechnung.", o: ["dem … die", "den … der", "dem … der", "den … die"], tipp: "Person (Wem?) = Dativ, Sache (Was?) = Akkusativ." },
+          { f: "Die neue Wohnung gefällt ___ sehr.", o: ["mir", "mich", "ich", "mein"] },
+          { f: "Darf ich ___ etwas fragen?", o: ["Sie", "Ihnen", "Ihr", "Ihre"], tipp: "fragen + Akkusativ." },
+          { f: "Das Auto gehört ___ Nachbarn.", o: ["meinem", "meinen", "mein", "meiner"] },
+          { f: "Ich erkläre ___ Praktikanten ___ Aufgabe.", o: ["dem … die", "den … der", "dem … der", "der … den"] },
+          { f: "Hast du ___ Mutter schon gratuliert?", o: ["deiner", "deine", "deinen", "deinem"] },
+          { f: "Er braucht ___ neuen Laptop.", o: ["einen", "einem", "ein", "einer"] }
+        ] },
+      { id: "ak3", typ: "sortieren", titel: "Wohin? oder Wo?", minuten: 4,
+        anleitung: "Bewegung/Veränderung (Wohin? → Akkusativ) oder Ort/Zustand (Wo? → Dativ)?",
+        hinweis: "legen, stellen, setzen, hängen (+ Ziel) = Wohin → Akkusativ. liegen, stehen, sitzen, hängen (Ort) = Wo → Dativ.",
+        koerbe: [{ k: "akk", t: "Wohin? → Akkusativ" }, { k: "dat", t: "Wo? → Dativ" }],
+        items: [
+          { t: "Ich lege die Akte auf ___ Schreibtisch.", k: "akk" }, { t: "Die Akte liegt auf ___ Schreibtisch.", k: "dat" },
+          { t: "Sie hängt das Bild an ___ Wand.", k: "akk" }, { t: "Das Bild hängt an ___ Wand.", k: "dat" },
+          { t: "Wir gehen heute in ___ Kino.", k: "akk" }, { t: "Wir joggen jeden Morgen in ___ Park.", k: "dat" },
+          { t: "Setz dich bitte neben ___ Kollegin.", k: "akk" }, { t: "Er sitzt neben ___ Kollegin.", k: "dat" },
+          { t: "Der Brief steckt in ___ Umschlag.", k: "dat" }, { t: "Ich stelle die Blumen auf ___ Fensterbank.", k: "akk" }
+        ] },
+      { id: "ak4", typ: "wahl", titel: "Präpositionen: der richtige Fall", minuten: 5,
+        anleitung: "Wähle die richtige Form.",
+        items: [
+          { f: "Das Geschenk ist für ___ Chefin.", o: ["die", "der", "den", "dem"], tipp: "für + Akkusativ." },
+          { f: "Ich fahre mit ___ Fahrrad zur Arbeit.", o: ["dem", "das", "den", "der"], tipp: "mit + Dativ." },
+          { f: "Seit ___ Monat arbeite ich hier.", o: ["einem", "einen", "ein", "einer"] },
+          { f: "Wir gehen durch ___ Park.", o: ["den", "dem", "der", "des"] },
+          { f: "Nach ___ Arbeit gehe ich einkaufen.", o: ["der", "die", "den", "dem"] },
+          { f: "Ohne ___ Hilfe schaffe ich das nicht.", o: ["deine", "deiner", "deinem", "deinen"] },
+          { f: "Ich warte schon lange auf ___ Antwort.", o: ["eine", "einer", "einem", "einen"], tipp: "warten auf + Akkusativ." },
+          { f: "Sie nimmt an ___ Kurs teil.", o: ["dem", "den", "der", "das"], tipp: "teilnehmen an + Dativ." },
+          { f: "Gegenüber ___ Bahnhof ist eine Apotheke.", o: ["dem", "den", "der", "des"] },
+          { f: "Er hat Angst vor ___ Prüfung.", o: ["der", "die", "den", "dem"], tipp: "Angst haben vor + Dativ." }
+        ] },
+      { id: "ak5", typ: "sprechen", titel: "Blitzrunde: Wem? Wen? Wohin? Wo?", minuten: 4,
+        anleitung: "Ich ziehe einen Namen. Mikro an und mit ganzem Satz antworten – achten Sie auf Akkusativ und Dativ!",
+        saetze: ["Wem haben Sie zuletzt geholfen – und wobei?", "Was haben Sie wem zuletzt geschenkt?", "Wen rufen Sie am häufigsten an?", "Wohin legen Sie Ihr Handy in der Nacht – und wo liegt es jetzt?", "Wem vertrauen Sie bei der Arbeit besonders?", "Wofür und mit wem lernen Sie Deutsch?"] }
     ] },
   { id: "passiv", sitzung: 2, icon: "⚙️", titel: "Passiv und Passiv-Ersatz", minuten: 25,
     tafel: [
