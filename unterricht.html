@@ -206,9 +206,9 @@ body.beamer .layout{grid-template-columns:1fr} body.beamer .seite{display:none}
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script src="unterricht/b2gram.js?v=20261118a"></script>
-<script src="unterricht/konj1.js?v=20261112b"></script>
-<script src="nachzuegler.js?v=20261112b"></script>
+<script src="unterricht/b2gram.js?v=20261125a"></script>
+<script src="unterricht/konj1.js?v=20261125a"></script>
+<script src="nachzuegler.js?v=20261125a"></script>
 <script>
 /* =========================================================
    LIVE-UNTERRICHT – Lehrtafel + Aufgaben freigeben (wie der Persisch-Live-Unterricht)
@@ -386,8 +386,15 @@ function handy(){
       const slug=n.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"_"); rein("n_"+slug, n); };
   }
   function speichernMe(){ try{ localStorage.setItem(MEKEY(), JSON.stringify(me)); }catch(e){} los(); }
-  function los(){
-    if(!SPIEGEL){ const r=I(`spieler/${me.pid}`); r.update({name:me.name, ts:TS(), online:true}); try{ r.child("online").onDisconnect().set(false); }catch(e){} }
+  let wachSperre=null;
+  async function wachHalten(){ try{ if("wakeLock" in navigator && document.visibilityState==="visible" && !wachSperre){ wachSperre=await navigator.wakeLock.request("screen"); wachSperre.addEventListener("release",()=>{ wachSperre=null; }); } }catch(e){} }
+  const wiederDa=()=>{ if(!me || SPIEGEL || DEMO) return; try{ const r=I(`spieler/${me.pid}`); r.update({name:me.name, online:true}); r.child("online").onDisconnect().set(false); }catch(e){} };
+  document.addEventListener("visibilitychange", ()=>{ if(document.visibilityState==="visible"){ wachHalten(); wiederDa(); } });
+  document.addEventListener("click", wachHalten, {once:true});
+  let verbunden=null;
+  function los(){ wachHalten();
+    if(!SPIEGEL){ const r=I(`spieler/${me.pid}`); r.update({name:me.name, ts:TS(), online:true}); try{ r.child("online").onDisconnect().set(false); }catch(e){}
+      try{ if(!verbunden){ verbunden=true; db.ref(".info/connected").on("value", c=>{ if(c.val()===true) wiederDa(); }); } }catch(e){} }
     I().on("value", s=>{ S=s.val()||{}; TIMER=S.timer||null; if(S.info&&S.info.plan&&PLAENE[S.info.plan]) PLAN=PLAENE[S.info.plan];
       if(!SPIEGEL && me){ if((S.spieler||{})[me.pid]) gesehen=true; else if(gesehen && S.info){ /* von der Lehrkraft abgemeldet */ I().off(); try{ localStorage.removeItem(MEKEY()); }catch(e){} me=null; gesehen=false; abgemeldet=true; sig=""; return namenWahl(); } }
       male(); });
@@ -415,6 +422,7 @@ function handy(){
     if(inf.phase==="lobby"){ app.innerHTML=h+`<div class="card" style="text-align:center"><div style="font-size:60px">👋</div><h2>Hallo ${esc(me.name)}!</h2></div>${warte("die Lehrkraft","Gleich geht es los.")}<p class="small muted mitte">Falscher Name? Sag es der Lehrkraft.</p></div>`; return; }
     if(inf.phase==="ende"){ app.innerHTML=h+`<div class="card fertig"><div class="e">🏁</div><h2>Danke für heute!</h2><p>Du kannst alles noch einmal allein üben.</p><a class="btn" href="unterricht.html?solo=${esc(inf.plan||PLAN.id)}">Jetzt allein üben</a></div></div>`; return; }
     const au=inf.auf||{}; const A=au.id?aufgabe(au.id):null;
+    if(au.id && !A && !SPIEGEL){ let n=0; try{ n=Number(sessionStorage.getItem("unt_neu_"+au.id))||0; sessionStorage.setItem("unt_neu_"+au.id, n+1); }catch(e){} if(n<2){ app.innerHTML=h+warte("die neue Version","Die Seite wird kurz neu geladen …")+`</div>`; setTimeout(()=>location.reload(), 600); return; } }
     if(!A){ const B=PLAN.bloecke[inf.block||0]; const F=B&&B.tafel[inf.folie||0];
       if(inf.tafelHandy && F){ app.innerHTML=h+`<div class="card"><h2>${esc(F.titel)}</h2><div class="tafelinhalt">${F.html}</div></div></div>`; return; }
       app.innerHTML=h+warte("die Lehrkraft","👀 Schau zur Tafel.")+`</div>`; return; }
@@ -575,11 +583,11 @@ function leitung(){
   document.body.classList.add("board"); let S={}, einsicht=false, beamer=false, zuletztPiep=null, letzteZuege=[];
   const TEAMVORLAGE=[{n:"Rot",e:"🔴",f:"#E2483D"},{n:"Blau",e:"🔵",f:"#2F6FDB"},{n:"Grün",e:"🟢",f:"#14A37F"},{n:"Gelb",e:"🟡",f:"#D69E00"}];
   async function start(){
-    if(!PIN){ try{ PIN=localStorage.getItem("unt_leitung_pin")||""; }catch(e){} }
-    if(PIN){ const i=(await I("info").once("value")).val(); if(!i||(i.phase==="ende"&&!P.get("pin")&&!i.fest)||(!P.get("pin")&&P.get("plan")&&i.plan!==P.get("plan"))) PIN=""; }
+    if(!PIN){ try{ PIN=localStorage.getItem("ueb_unt_leitung_pin")||localStorage.getItem("unt_leitung_pin")||""; }catch(e){} }
+    if(PIN){ const i=(await I("info").once("value")).val(); if(!i||!PLAENE[i.plan]||(i.phase==="ende"&&!P.get("pin")&&!i.fest)||(!P.get("pin")&&P.get("plan")&&i.plan!==P.get("plan"))) PIN=""; }
     if(!PIN){ for(let i=0;i<15;i++){ const c=String(1000+rnd(9000)); const ex=(await db.ref(`${ROOT}/${c}/info`).once("value")).val(); if(!ex){ PIN=c; break; } }
       await I().set({info:{phase:"lobby", erstellt:TS(), pin:PIN, plan:PLAN.id, block:0, folie:0, ansicht:"tafel"}}); }
-    try{ localStorage.setItem("unt_leitung_pin",PIN); }catch(e){}
+    try{ localStorage.setItem("ueb_unt_leitung_pin",PIN); }catch(e){}
     history.replaceState(null,"","?leitung=1&pin="+PIN);
     I().on("value", s=>{ S=s.val()||{}; TIMER=S.timer||null; if(S.info&&PLAENE[S.info.plan]) PLAN=PLAENE[S.info.plan]; pflege(); male(); einsichtMalen(); nachzuegler(); statMalen(); });
     setInterval(()=>{ const r=tRest(S.timer); if(S.timer&&!S.timer.pause&&r===0&&zuletztPiep!==S.timer.ende){ zuletztPiep=S.timer.ende; piep(); } const z=$("#planzeit"); if(z) z.innerHTML=planzeit(); },1000);
@@ -680,7 +688,7 @@ function leitung(){
   function male(){
     const ae=document.activeElement; if(ae && ((ae.tagName==="INPUT"&&ae.type==="text")||ae.tagName==="SELECT")) return;
     const i=inf(); const ph=i.phase; const da=online().length;
-    let h=`<div class="bkopf"><h1>🎓 ${esc(PLAN.titel)}</h1><span class="chip gold">PIN ${PIN}</span><span class="chip">👥 ${da} da</span>
+    let h=`<div class="bkopf"><h1>🎓 ${esc(PLAN.titel)}</h1><span class="chip gold">PIN ${PIN}</span><span class="chip">👥 ${da} da</span>${ph==="lauf"&&aktA()?`<span class="chip" style="background:#14A37F;color:#fff;cursor:pointer;white-space:nowrap" data-zeig="1" title="Diese Aufgabe läuft auf den Handys – klicken zum Anzeigen">▶ läuft: ${esc(aktA().titel.length>26?aktA().titel.slice(0,25)+"…":aktA().titel)}</span><button class="btn sm hell" data-stopp="1" title="Aufgabe auf allen Handys beenden">⏹</button>`:""}
       <span class="row" style="flex-wrap:nowrap">${timerHtml(S.timer)}<span class="tsteuer">${[1,2,3,5,10].map(m=>`<button data-t="${m}">${m}′</button>`).join("")}<button data-t="+1">+1</button><button data-t="-1">−1</button>${S.timer?`<button data-t="p">${S.timer.pause?"▶":"⏸"}</button><button data-t="x">✕</button>`:""}</span>
       ${ph==="lauf"?`<button class="btn sm hell" id="statK" title="Wer macht mit? Wer ist gut?">📊 Wer macht mit?</button><button class="btn sm hell" id="einsicht" title="Handys der Lernenden sehen">👁 Einsicht</button><button class="btn sm hell" id="beamerK" title="Taste B: Seitenleiste aus/an">⛶</button><button class="btn sm hell" id="beenden" title="Unterricht beenden">🏁</button>`:""}<button class="btn sm hell" id="neu" title="Neuer Unterricht">＋</button></span></div>`;
     if(ph==="lobby") h+=`<div style="padding:14px">${lobby()}</div>`;
@@ -812,7 +820,7 @@ function leitung(){
   function binden(){
     $$("[data-t]").forEach(b=>b.onclick=()=>timerKnopf(b.dataset.t));
     const on=(sel,f)=>{ const e=$(sel); if(e) e.onclick=f; };
-    on("#neu", ()=>{ if(!confirm(inf().fest?"Neuen Unterricht mit neuer PIN starten?\n\nDer Kurs mit PIN "+PIN+" bleibt gespeichert (Lobby → Meine Kurse).":"Neuen Unterricht mit neuer PIN starten?")) return; try{ localStorage.removeItem("unt_leitung_pin"); }catch(e){} location.href="unterricht.html?leitung=1&plan="+PLAN.id; });
+    on("#neu", ()=>{ if(!confirm(inf().fest?"Neuen Unterricht mit neuer PIN starten?\n\nDer Kurs mit PIN "+PIN+" bleibt gespeichert (Lobby → Meine Kurse).":"Neuen Unterricht mit neuer PIN starten?")) return; try{ localStorage.removeItem("ueb_unt_leitung_pin"); }catch(e){} location.href="unterricht.html?leitung=1&plan="+PLAN.id; });
     on("#beenden", ()=>I("info").update({phase:"ende", auf:null}));
     on("#weiter", ()=>I("info").update({phase:"lauf", start:jetzt(), bstart:jetzt()}));
     on("#festK", ()=>{ const n=($("#kname")||{}).value||""; I("info").update({fest:true, kursname:n.trim()||PLAN.titel}).then(kursMerken); });
@@ -828,7 +836,7 @@ function leitung(){
     $$("[data-plan]").forEach(b=>b.onclick=()=>{ if(PLAENE[b.dataset.plan]) I("info").update({plan:b.dataset.plan, block:0, folie:0}); });
     on("#leeren", ()=>{ const up={}; spieler().forEach(([p])=>up[`spieler/${p}/team`]=null); I().update(up); });
     on("#statK", ()=>{ statOffen=!statOffen; statMalen(); });
-    $$("[data-block]").forEach(b=>b.onclick=()=>{ const n=Number(b.dataset.block); if(n===(inf().block||0)) return; I("info").update({block:n, folie:0, ansicht:"tafel", auf:null, bstart:jetzt()}); timerSetze(PLAN.bloecke[n].minuten); });
+    $$("[data-block]").forEach(b=>b.onclick=()=>{ const n=Number(b.dataset.block); if(n===(inf().block||0)) return; const lauf=aktA(); I("info").update({block:n, folie:0, ansicht:"tafel", bstart:jetzt()}); if(!lauf) timerSetze(PLAN.bloecke[n].minuten); });
     $$("[data-folie]").forEach(b=>b.onclick=()=>I("info").update({folie:Number(b.dataset.folie), ansicht:"tafel"}));
     $$("[data-fd]").forEach(b=>b.onclick=()=>folie(Number(b.dataset.fd)));
     $$("[data-frei]").forEach(b=>b.onclick=e=>{ e.stopPropagation(); freigeben(b.dataset.frei); });
