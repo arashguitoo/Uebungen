@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="de" translate="no" class="notranslate">
+<head>
+<meta charset="UTF-8">
+<meta name="google" content="notranslate">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1E2A44">
+<meta name="robots" content="noindex, nofollow">
+<title>Team-Spiel · Übungszentrale</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{ --bg:#F4F1EA; --card:#fff; --ink:#1E2A44; --muted:#6B7280; --line:#E5E0D5; --soft:#FAF8F3; --nacht:#1E2A44; --pri:#2F6FDB; --pri-2:#E3EDFF; --ok:#14A37F; --ok-2:#E2F6EF; --bad:#E2483D; --bad-2:#FDE8E6; --gold:#F5B82E;
+  --head:"Outfit",system-ui,sans-serif; --body:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; --schatten:0 1px 0 var(--line),0 8px 24px rgba(30,42,68,.06); }
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.45;-webkit-user-select:none;user-select:none}
+button{font:inherit;color:inherit}
+h1,h2,h3{font-family:var(--head);line-height:1.15;margin:0 0 8px} .muted{color:var(--muted)} .small{font-size:14px} .mitte{text-align:center}
+.wrap{max-width:640px;margin:0 auto;padding:12px 12px 40px} .breit{max-width:1200px;margin:0 auto;padding:16px}
+.card{background:var(--card);border-radius:18px;padding:16px;box-shadow:var(--schatten);margin-bottom:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:10px 18px;border-radius:12px;border:0;background:var(--pri);color:#fff;font-weight:700;cursor:pointer}
+.btn.ghost{background:var(--pri-2);color:var(--pri)} .btn.rot{background:var(--bad)} .btn.wide{width:100%}
+.kopf{position:sticky;top:0;z-index:10;background:var(--nacht);color:#fff}
+.kopf .in{max-width:640px;margin:0 auto;padding:8px 12px;display:flex;gap:10px;align-items:center;min-height:54px}
+.kopf b{font-family:var(--head);font-size:18px} .kopf .r{margin-left:auto;font-family:var(--head);font-weight:900;font-size:22px}
+.chip{display:inline-block;border-radius:999px;padding:2px 10px;font-weight:800;font-size:14px;color:#fff}
+.stand{display:flex;gap:6px;padding:6px 12px;max-width:640px;margin:0 auto}
+.stand div{flex:1;border-radius:10px;padding:4px 8px;color:#fff;font-weight:800;font-size:14px;display:flex;justify-content:space-between;align-items:center}
+.stand div.vorn{outline:3px solid var(--gold)}
+.fort{height:8px;background:var(--line);border-radius:4px;overflow:hidden;margin:4px 0 10px} .fort i{display:block;height:100%;background:var(--ok)}
+.runde{font-weight:800;color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.04em}
+.frage{font-family:var(--head);font-weight:800;font-size:22px;margin:6px 0 14px}
+.opts{display:grid;gap:10px}
+.opt{border:3px solid var(--line);background:#fff;border-radius:14px;min-height:56px;padding:10px 14px;text-align:left;cursor:pointer;font-weight:700;font-size:18px}
+.opt.ok{border-color:var(--ok);background:var(--ok-2)} .opt.falsch{border-color:var(--bad);background:var(--bad-2)} .opt:disabled{cursor:default}
+.linie{min-height:60px;border:3px dashed var(--line);border-radius:14px;padding:6px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:6px 0}
+.pool{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.kachel{min-height:46px;padding:6px 12px;border-radius:10px;border:0;background:var(--pri);color:#fff;font-weight:700;font-size:18px;cursor:pointer} .kachel.weg{visibility:hidden}
+.melde{border-radius:14px;padding:10px 14px;margin-top:12px;font-weight:800;font-size:18px} .melde.ok{background:var(--ok-2);color:var(--ok)} .melde.falsch{background:var(--bad-2);color:var(--bad)}
+.chat{background:#E9E4D8;border-radius:14px;padding:10px;margin:4px 0 12px;display:grid;gap:6px}
+.bubble{max-width:85%;border-radius:14px;padding:8px 12px;font-size:16.5px;line-height:1.35;box-shadow:0 1px 0 rgba(0,0,0,.08)}
+.bubble.du{background:#fff;justify-self:start;border-top-left-radius:4px}.bubble.ich{background:#D9FDD3;justify-self:end;border-top-right-radius:4px}
+.bubble .wer{display:block;font-size:12px;font-weight:800;color:#2F6FDB;margin-bottom:2px}.bubble.ich .wer{color:#14A37F}
+.bubble .gap{display:inline-block;min-width:60px;border-bottom:2px dashed #999}.bubble.frage{font-style:italic;color:#777}
+.hilfe{border:0;background:#FFF7E0;color:#8a5a00;border-radius:10px;padding:6px 12px;font-weight:800;cursor:pointer;margin-bottom:10px}
+.hilfetext{background:#FFF7E0;border-radius:12px;padding:10px 12px;margin:-4px 0 12px;font-size:16px}
+input[type=text]{min-height:46px;border:2px solid var(--line);border-radius:12px;padding:6px 12px;font:inherit;width:100%}
+.namen{display:flex;flex-wrap:wrap;gap:8px} .namen button{border:2px solid var(--line);background:#fff;border-radius:999px;padding:9px 16px;font-weight:700;cursor:pointer} .namen button:disabled{opacity:.35;text-decoration:line-through}
+.balken{display:grid;gap:10px} .balken .z{display:grid;grid-template-columns:200px 1fr 150px;gap:12px;align-items:center;font-weight:800;font-size:clamp(18px,2vw,30px)}
+.balken .bal{height:26px;background:var(--line);border-radius:13px;overflow:hidden} .balken .bal i{display:block;height:100%}
+table.t{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;font-size:15px}
+table.t th,table.t td{padding:7px 9px;border-bottom:1px solid var(--line);text-align:left} table.t th{background:var(--soft);font-size:12.5px;text-transform:uppercase}
+</style>
+</head>
+<body>
+<div id="app"><div class="wrap"><div class="card">Einen Moment …</div></div></div>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+<script src="teamspiel/b2.js?v=20261126c"></script>
+<script>
+/* =========================================================
+   TEAM-SPIEL ZUM ALLEIN-SPIELEN
+   Jede Person spielt am eigenen Handy im eigenen Tempo. Jede richtige Antwort (beim ersten Versuch) zählt für das Team.
+   Falsche Aufgaben kommen später noch einmal (ohne Punkte). Kein Beamer nötig.
+   Lernende: teamspiel.html     Überblick für die Lehrkraft: teamspiel.html?leitung=1
+   Daten: ligaspiel/ploen-jik/{TAG}/ sp/{pid} {name, team} · ant/{pid}/{aufgabe} = 1 (richtig) | 0 (falsch)
+   ========================================================= */
+const KURS="ploen-jik";
+const cfg={apiKey:"AIzaSyBDChXlm34Kr7Gg0Dw458GiiwoLnWJAnxM",authDomain:"lern-deutsch-arash.firebaseapp.com",databaseURL:"https://lern-deutsch-arash-default-rtdb.europe-west1.firebasedatabase.app",projectId:"lern-deutsch-arash"};
+let db=null; try{ if(!firebase.apps||!firebase.apps.length) firebase.initializeApp(cfg); db=firebase.database(); }catch(e){}
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const P=new URLSearchParams(location.search); const app=$("#app");
+const SETID=P.get("set")||"b2"; const SET=(window.TEAMSPIEL_SETS||{})[SETID]||Object.values(window.TEAMSPIEL_SETS||{})[0];
+/* Spiel-Schlüssel: Übungszentrale-Bereich, ein Spiel pro Tag und Set; „Neues Spiel“ zählt die Nummer hoch */
+const d=new Date(); const TAGBASIS="ueb_"+(P.get("runde")||`${d.getFullYear()}${String(d.getMonth()+1).padStart(2,"0")}${String(d.getDate()).padStart(2,"0")}`)+"_"+SETID;
+let TAG=TAGBASIS;
+const R=p=>db.ref(`ligaspiel/${KURS}/${TAG}${p?"/"+p:""}`);
+const ALLETEAMS=[{k:"t0",n:"Ostsee",e:"🌊",f:"#2F6FDB"},{k:"t1",n:"Wald",e:"🌲",f:"#14A37F"},{k:"t2",n:"Sonne",e:"☀️",f:"#E59E0B"},{k:"t3",n:"Feuer",e:"🔥",f:"#E2483D"}];
+let TEAMS=ALLETEAMS.slice(0, Math.max(2, Math.min(4, Number(P.get("teams"))||2)));
+async function spielLaden(){ try{ const nr=(await db.ref(`ligaspiel/${KURS}/${TAGBASIS}_nr`).once("value")).val(); if(nr) TAG=TAGBASIS+"_"+nr;
+    const m=(await R("meta").once("value")).val()||{}; const wunsch=Number(P.get("teams"));
+    if(m.teams && !(P.get("leitung") && wunsch)) TEAMS=ALLETEAMS.slice(0, m.teams); else { TEAMS=ALLETEAMS.slice(0, Math.max(2, Math.min(4, wunsch||2))); await R("meta").update({teams:TEAMS.length, set:SETID}); } }catch(e){} }
+function hash(s){ let h=2166136261; for(const c of String(s)){ h^=c.charCodeAt(0); h=Math.imul(h,16777619); } return h>>>0; }
+function mischS(a,key){ let x=hash(key)||1; const r=()=>{ x^=x<<13; x^=x>>>17; x^=x<<5; return (x>>>0)/4294967296; }; a=a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(r()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+const norm=s=>String(s||"").toLowerCase().replace(/[.,!?;:"„“]/g,"").replace(/\s+/g," ").trim();
+
+/* ---------- Aufgaben: Team-Quiz (5 Runden) + Sätze bauen ---------- */
+const QZ={items:SET.items, runden:SET.runden};
+const SAETZE=SET.saetze;
+const RUNDEN=QZ.runden||{}; const SR=Number(Object.keys(RUNDEN).find(k=>/Sätze/.test(RUNDEN[k])))||7;
+const ALLE=[...QZ.items.map((it,i)=>({id:"q"+i, r:it.r, typ:it.chat?"c":"q", it})), ...SAETZE.map((it,i)=>({id:"s"+i, r:SR, typ:"s", it}))];
+const AUF=Object.fromEntries(ALLE.map(x=>[x.id,x]));
+const PUNKTE=x=>x.typ==="s"?2:1;
+const MAX=ALLE.reduce((a,x)=>a+PUNKTE(x),0);
+
+/* ---------- Stand berechnen ---------- */
+let SP={}, ANT={};
+function punkteVon(pid){ const a=ANT[pid]||{}; return Object.entries(a).reduce((s,[k,v])=>s+(v===1&&AUF[k]?PUNKTE(AUF[k]):0),0); }
+function teamStand(){ return TEAMS.map(t=>{ const m=Object.entries(SP).filter(([,x])=>x&&x.team===t.k); const pkt=m.reduce((s,[p])=>s+punkteVon(p),0);
+  return {...t, m:m.length, pkt, schnitt:m.length?Math.round(pkt/m.length*10)/10:0}; }); }
+
+/* =========================================================
+   LERNENDE
+   ========================================================= */
+function lernende(){
+  let me=null, ich={}, queue=[], akt=null, lokal={gelegt:[], feedback:null}, gestartet=false;
+  const MEKEY=`ts_me_${TAG}`;
+  try{ me=JSON.parse(localStorage.getItem(MEKEY)||"null"); }catch(e){}
+  let nrStart; db.ref(`ligaspiel/${KURS}/${TAGBASIS}_nr`).on("value",v=>{ const n=v.val()||0; if(nrStart===undefined) nrStart=n; else if(n!==nrStart) location.reload(); });
+  R("sp").on("value",s=>{ SP=s.val()||{}; if(me){ if(!gestartet) starte(); else male(); } });
+  R("ant").on("value",s=>{ ANT=s.val()||{}; if(me){ if(!gestartet) starte(); else kopfNeu(); } });
+  if(me) los(); else namenWahl();
+
+  async function namenWahl(hinweis){
+    let sz=null; try{ sz=JSON.parse(localStorage.getItem("ueb_sitzung")||"null"); }catch(e){}
+    const vn=sz&&sz.name?String(sz.name).trim().split(/\s+/)[0].slice(0,20):"";
+    app.innerHTML=`<div class="wrap"><div class="card" style="margin-top:4vh"><h2>🎮 ${esc(SET.titel||"Team-Spiel")}</h2><p class="muted">Du spielst allein im eigenen Tempo – deine Punkte zählen für dein Team. Das Team bekommst du automatisch.</p>${hinweis?`<p style="color:var(--bad);font-weight:700">${esc(hinweis)}</p>`:""}
+      ${vn&&sz.code?`<button class="btn wide" id="ich" style="margin:6px 0 14px">Ich bin ${esc(vn)} ▶</button>`:""}
+      <p class="small muted" style="margin:6px 0 4px">Mit deinem Code aus der Übungszentrale:</p>
+      <form id="cf" style="display:flex;gap:8px"><input id="cc" type="text" placeholder="Code" maxlength="12" autocomplete="off" style="text-transform:uppercase"><button class="btn">OK</button></form>
+      <p class="small muted" style="margin:14px 0 4px">Ohne Code: nur dein Vorname (z. B. <i>Ali K</i>):</p>
+      <form id="nf" style="display:flex;gap:8px"><input id="nn" type="text" placeholder="Vorname" maxlength="20"><button class="btn ghost">OK</button></form></div></div>`;
+    const rein=async(pid,name)=>{ const sp2=(await R("sp").once("value")).val()||{};
+      if(!sp2[pid]){ const z={}; TEAMS.forEach(t=>z[t.k]=0); Object.values(sp2).forEach(x=>{ if(x&&z[x.team]!==undefined) z[x.team]++; });
+        const min=Math.min(...Object.values(z)); const frei=TEAMS.filter(t=>z[t.k]===min); const team=frei[Math.floor(Math.random()*frei.length)].k;
+        await R(`sp/${pid}`).set({name, team, ts:firebase.database.ServerValue.TIMESTAMP}); }
+      me={pid, name}; try{ localStorage.setItem(MEKEY, JSON.stringify(me)); }catch(e){} los(); };
+    const mitCode=async code=>{ code=String(code||"").toUpperCase().replace(/[^A-Z0-9]/g,""); if(code.length<4) return namenWahl("Der Code ist zu kurz.");
+      let c=null; try{ c=(await db.ref(`uebungen/codes/${code}`).once("value")).val(); }catch(e){} if(!c) return namenWahl("Diesen Code gibt es nicht.");
+      rein("c"+code, String(c.name||"?").trim().split(/\s+/)[0].slice(0,20)); };
+    const ib=$("#ich"); if(ib) ib.onclick=()=>mitCode(sz.code);
+    $("#cf").onsubmit=e=>{ e.preventDefault(); mitCode($("#cc").value); };
+    $("#nf").onsubmit=e=>{ e.preventDefault(); const n=$("#nn").value.trim().replace(/\s+/g," ").slice(0,20); if(n.length<2) return;
+      rein("n_"+n.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"_"), n); };
+  }
+
+  function los(){ app.innerHTML=`<div class="wrap"><div class="card">Einen Moment …</div></div>`; setTimeout(()=>{ if(!gestartet) starte(); }, 400);
+    setTimeout(()=>{ if(!gestartet && me && !SP[me.pid]){ try{ localStorage.removeItem(MEKEY); }catch(e){} me=null; namenWahl(); } }, 4000); }
+
+  function starte(){ if(gestartet||!me) return; if(!SP[me.pid]){ return; } gestartet=true;
+    const a=ANT[me.pid]||{};
+    /* Reihenfolge: Runde für Runde, innerhalb der Runde gemischt. Schon beantwortete Aufgaben werden übersprungen. */
+    const rs=[...new Set(ALLE.map(x=>x.r))].sort((x,y)=>x-y);
+    queue=rs.flatMap(r=>mischS(ALLE.filter(x=>x.r===r).map(x=>x.id), me.pid+"|"+r)).filter(id=>a[id]===undefined);
+    try{ const gemerkt=JSON.parse(localStorage.getItem(MEKEY+"_wdh")||"[]"); gemerkt.forEach(id=>{ if(!queue.includes(id)&&AUF[id]) queue.push(id); }); }catch(e){}
+    weiter(); }
+  function merkeWdh(){ try{ localStorage.setItem(MEKEY+"_wdh", JSON.stringify(queue.filter(id=>((ANT[me.pid]||{})[id])!==undefined))); }catch(e){} }
+  function weiter(){ akt=queue.shift()||null; lokal={gelegt:[], feedback:null}; merkeWdh(); male(); window.scrollTo(0,0); }
+
+  function kopf(){ const t=TEAMS.find(t=>t.k===(SP[me.pid]||{}).team)||TEAMS[0]; const st=teamStand(); const best=Math.max(...st.map(z=>z.schnitt));
+    const meine=punkteVon(me.pid);
+    return `<div class="kopf"><div class="in"><b>${esc(me.name)}</b><span class="chip" style="background:${t.f}">${t.e} ${esc(t.n)}</span><span class="r" id="meinePkt">⭐ ${meine}</span></div>
+      <div class="stand" id="stand">${st.map(z=>`<div class="${z.schnitt===best&&best>0?"vorn":""}" style="background:${z.f}"><span>${z.e} ${esc(z.n)}</span><span>Ø ${z.schnitt}</span></div>`).join("")}</div></div>`; }
+  function kopfNeu(){ const k=$("#stand"); if(!k) return male(); const st=teamStand(); const best=Math.max(...st.map(z=>z.schnitt));
+    k.innerHTML=st.map(z=>`<div class="${z.schnitt===best&&best>0?"vorn":""}" style="background:${z.f}"><span>${z.e} ${esc(z.n)}</span><span>Ø ${z.schnitt}</span></div>`).join("");
+    const m=$("#meinePkt"); if(m) m.textContent="⭐ "+punkteVon(me.pid); }
+
+  function male(){ if(!me) return; if(gestartet && !SP[me.pid]){ try{ localStorage.removeItem(MEKEY); }catch(e){} me=null; gestartet=false; return namenWahl("Bitte wähle deinen Namen."); }
+    if(!gestartet) return;
+    const a=ANT[me.pid]||{}; const fertigAnz=Object.keys(a).filter(k=>AUF[k]).length;
+    if(!akt){ const st=teamStand().sort((x,y)=>y.schnitt-x.schnitt);
+      app.innerHTML=kopf()+`<div class="wrap"><div class="card mitte"><div style="font-size:64px">🏁</div><h2>Super, du bist fertig!</h2><p style="font-size:20px">Du hast <b>${punkteVon(me.pid)} von ${MAX}</b> Punkten für dein Team geholt.</p></div>
+        <div class="card"><h3>Teamstand (Punkte pro Person)</h3>${st.map((z,i)=>`<div style="display:flex;justify-content:space-between;font-size:20px;font-weight:800;margin:6px 0"><span>${i===0?"👑 ":""}${z.e} ${esc(z.n)}</span><span>Ø ${z.schnitt} <span class="small muted">(${z.pkt} Punkte, ${z.m} Personen)</span></span></div>`).join("")}</div>
+        <p class="mitte muted">Der Teamstand läuft live weiter, bis alle fertig sind.</p></div>`; return; }
+    const X=AUF[akt]; const neu=a[akt]===undefined; const RT=RUNDEN[X.r]||"";
+    let h=kopf()+`<div class="wrap"><div class="runde">Runde ${X.r}: ${esc(RT)}${neu?"":" · Wiederholung (ohne Punkte)"}</div><div class="fort"><i style="width:${fertigAnz/ALLE.length*100}%"></i></div><div class="card">`;
+    const fb=lokal.feedback;
+    if(X.typ==="q"||X.typ==="c"){ const it=X.it; const ord=mischS(it.o.map((_,j)=>j), akt+"|"+me.pid+"|"+(neu?0:1));
+      if(X.typ==="c") h+=`<div class="chat">${it.chat.map(([wer,t])=>`<div class="bubble ${wer==="ich"?"ich":"du"} ${t==="…?"?"frage":""}"><span class="wer">${wer==="ich"?"Du":esc(wer)}</span>${t==="…?"?"✍️ Was schreibst du?":esc(t).replace("___",'<span class="gap"></span>')}</div>`).join("")}</div>`;
+      if(it.tipp) h+=lokal.hilfe?`<div class="hilfetext">💡 ${esc(it.tipp)}</div>`:`<button class="hilfe" id="hilfe">💡 Hilfe</button>`;
+      h+=`<div class="frage">${esc(it.f)}</div><div class="opts">${ord.map(j=>`<button class="opt ${fb?(j===0?"ok":fb.w===j?"falsch":""):""}" data-o="${j}" ${fb?"disabled":""}>${esc(it.o[j])}</button>`).join("")}</div>`;
+      if(fb) h+=`<div class="melde ${fb.ok?"ok":"falsch"}">${fb.ok?(neu?"✅ Richtig! +1 für dein Team":"✅ Richtig!"):"❌ Richtig ist: "+esc(it.o[0])}</div>${fb&&!fb.ok&&it.tipp&&!lokal.hilfe?`<div class="hilfetext">💡 ${esc(it.tipp)}</div>`:""}`; }
+    else { const it=X.it; const pool=mischS(it.w.map((_,j)=>j), akt+"|"+me.pid); const G=lokal.gelegt;
+      h+=`<div class="frage">🧩 Bau den Satz!</div><div class="linie">${G.map((j,k)=>`<button class="kachel" data-raus="${k}" ${fb?"disabled":""}>${esc(it.w[j])}</button>`).join("")}${G.length===it.w.length?`<b style="font-size:22px">${esc(it.p)}</b>`:""}</div>
+        <div class="pool">${pool.map(j=>`<button class="kachel ${G.includes(j)?"weg":""}" data-rein="${j}" ${fb?"disabled":""}>${esc(it.w[j])}</button>`).join("")}</div>
+        ${fb?"":`<div style="display:flex;gap:8px"><button class="btn ghost" id="leeren" style="flex:1">↺ neu</button><button class="btn" id="pruef" style="flex:2" ${G.length===it.w.length?"":"disabled"}>✓ Prüfen</button></div>`}`;
+      if(fb) h+=`<div class="melde ${fb.ok?"ok":"falsch"}">${fb.ok?(neu?"✅ Richtig! +2 für dein Team":"✅ Richtig!"):"❌ Richtig ist: "+esc((s=>s.charAt(0).toUpperCase()+s.slice(1))(it.w.join(" "))+it.p)}</div>`; }
+    if(fb) h+=`<button class="btn wide" id="weiterBtn" style="margin-top:12px;min-height:54px;font-size:19px">Weiter ▶</button>`;
+    h+=`</div><p class="small muted mitte">${fertigAnz} von ${ALLE.length} geschafft${queue.length?"":" · letzte Aufgabe"}</p></div>`;
+    app.innerHTML=h; binde(); }
+
+  function antworte(ok, w){ const a=ANT[me.pid]||{}; const neu=a[akt]===undefined;
+    lokal.feedback={ok, w};
+    if(neu) R(`ant/${me.pid}/${akt}`).set(ok?1:0);
+    if(!ok){ queue.splice(Math.min(4, queue.length), 0, akt); }
+    male(); }
+  function binde(){
+    $$("[data-o]").forEach(b=>b.onclick=()=>{ const j=Number(b.dataset.o); antworte(j===0, j); });
+    $$("[data-rein]").forEach(b=>b.onclick=()=>{ lokal.gelegt.push(Number(b.dataset.rein)); male(); });
+    $$("[data-raus]").forEach(b=>b.onclick=()=>{ lokal.gelegt.splice(Number(b.dataset.raus),1); male(); });
+    const l=$("#leeren"); if(l) l.onclick=()=>{ lokal.gelegt=[]; male(); };
+    const p=$("#pruef"); if(p) p.onclick=()=>{ const X=AUF[akt]; const s=lokal.gelegt.map(j=>X.it.w[j]).join(" "); antworte(X.it.a.map(norm).includes(norm(s))); };
+    const w=$("#weiterBtn"); if(w) w.onclick=weiter;
+    const hb=$("#hilfe"); if(hb) hb.onclick=()=>{ lokal.hilfe=true; male(); }; }
+}
+
+/* =========================================================
+   LEHRKRAFT: Überblick (ohne Anmeldung, nur ansehen)
+   ========================================================= */
+function leitung(){
+  document.body.style.userSelect="auto";
+  R("sp").on("value",s=>{ SP=s.val()||{}; male(); }); R("ant").on("value",s=>{ ANT=s.val()||{}; male(); });
+  function male(){ const st=teamStand().sort((a,b)=>b.schnitt-a.schnitt); const best=st.length?st[0].schnitt:0; const maxS=Math.max(1,...st.map(z=>z.schnitt));
+    const L=Object.entries(SP).filter(([,x])=>x&&x.name).map(([p,x])=>({p, x, pkt:punkteVon(p), n:Object.keys(ANT[p]||{}).filter(k=>AUF[k]).length})).sort((a,b)=>b.pkt-a.pkt);
+    app.innerHTML=`<div class="breit"><div class="card"><h1>🎮 ${esc(SET.titel||"Team-Spiel")} – Stand</h1><p class="muted">Link für die Teilnehmenden: <b>${esc(location.host+location.pathname)}</b> · ${TEAMS.length} Teams · ${ALLE.length} Aufgaben in ${Object.keys(RUNDEN).length} Runden. Jede richtige Antwort beim ersten Versuch zählt (Sätze bauen: 2 Punkte). Gewertet wird der Durchschnitt pro Person.</p>
+      <div class="balken">${st.map((z,i)=>`<div class="z"><span>${i===0&&best>0?"👑 ":""}${z.e} ${esc(z.n)}</span><div class="bal"><i style="width:${z.schnitt/maxS*100}%;background:${z.f}"></i></div><span>Ø ${z.schnitt} <span class="small muted">(${z.m})</span></span></div>`).join("")}</div></div>
+      <div class="card"><table class="t"><tr><th>Name</th><th>Team</th><th>Punkte</th><th>Geschafft</th></tr>${L.map(z=>{ const t=TEAMS.find(t=>t.k===z.x.team)||{}; return `<tr><td><b>${esc(z.x.name)}</b></td><td><span class="chip" style="background:${t.f}">${t.e||""} ${esc(t.n||"")}</span></td><td>${z.pkt} / ${MAX}</td><td>${z.n} / ${ALLE.length}${z.n>=ALLE.length?" 🏁":""}</td></tr>`; }).join("")||'<tr><td colspan="4" class="muted">Noch niemand dabei.</td></tr>'}</table></div>
+      <div class="card"><button class="btn rot" id="reset">🔄 Neues Spiel</button> <span class="small muted">Startet ein leeres Spiel (Teams neu). Teamzahl ändern: Link mit <code>?leitung=1&teams=3</code> öffnen, dann „Neues Spiel“. Die Teilnehmenden laden ihre Seite neu.</span></div></div>`;
+    $("#reset").onclick=async()=>{ if(!confirm("Neues Spiel starten? Der aktuelle Stand wird beendet.")) return; const ref=db.ref(`ligaspiel/${KURS}/${TAGBASIS}_nr`); const nr=((await ref.once("value")).val()||0)+1; await ref.set(nr); location.reload(); }; }
+}
+if(!db) app.innerHTML=`<div class="wrap"><div class="card">Keine Verbindung.</div></div>`;
+else spielLaden().then(()=>{ if(P.get("leitung")) leitung(); else lernende(); });
+</script>
+</body>
+</html>

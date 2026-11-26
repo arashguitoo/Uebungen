@@ -565,6 +565,19 @@ export const KATALOG = [
     offen: false
   },
   {
+    id: "teamspiel-b2",
+    titel: "🎮 Team-Spiel B2: Alltag & Beruf",
+    untertitel: "Allein im eigenen Tempo spielen – Punkte für dein Team, Teamstand live · Behörden, Konnektoren, Passiv, höflich bitten, Genitiv, Chat-Nachrichten",
+    datei: "teamspiel.html",
+    typ: "Spiel",
+    niveau: "B2",
+    themen: ["Grammatik", "Wortschatz", "Alltag", "Beruf"],
+    farbe: "#2F6FDB",
+    dauer: "30–40 Min.",
+    reihe: "Grammatik-Spiele",
+    offen: true
+  },
+  {
     id: "stunde-text1",
     titel: "Textwerkstatt: Arbeitsrecht verstehen (allein)",
     untertitel: "Fachwortschatz · drei Texte mit Lücken (Verbform, Kasus, Präposition) · Fragen · Nominalstil",
