@@ -565,6 +565,19 @@ export const KATALOG = [
     offen: false
   },
   {
+    id: "teamspiel-beruf",
+    titel: "🎮 Berufs-Quiz B2 (allein spielen)",
+    untertitel: "Wortschatz Beruf, feste Verbindungen, Nominalstil, Grammatik, E-Mails – 45 Fragen + Sätze bauen, Punkte für dein Team",
+    datei: "teamspiel.html?set=beruf",
+    typ: "Spiel",
+    niveau: "B2",
+    themen: ["Wortschatz", "Beruf", "Grammatik"],
+    farbe: "#2e8a6a",
+    dauer: "20–30 Min.",
+    reihe: "Grammatik-Spiele",
+    offen: true
+  },
+  {
     id: "teamspiel-b2",
     titel: "🎮 Team-Spiel B2: Alltag & Beruf",
     untertitel: "Allein im eigenen Tempo spielen – Punkte für dein Team, Teamstand live · Behörden, Konnektoren, Passiv, höflich bitten, Genitiv, Chat-Nachrichten",
