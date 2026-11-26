@@ -206,9 +206,10 @@ body.beamer .layout{grid-template-columns:1fr} body.beamer .seite{display:none}
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script src="unterricht/b2gram.js?v=20261125a"></script>
-<script src="unterricht/konj1.js?v=20261125a"></script>
-<script src="nachzuegler.js?v=20261125a"></script>
+<script src="unterricht/b2gram.js?v=20261126a"></script>
+<script src="unterricht/text1.js?v=20261126a"></script>
+<script src="unterricht/konj1.js?v=20261126a"></script>
+<script src="nachzuegler.js?v=20261126a"></script>
 <script>
 /* =========================================================
    LIVE-UNTERRICHT – Lehrtafel + Aufgaben freigeben (wie der Persisch-Live-Unterricht)
@@ -247,7 +248,7 @@ function blockVon(id){ return PLAN.bloecke.findIndex(B=>B.aufgaben.some(A=>A.id=
 /* Lücken {richtig|falsch} */
 function teile(text){ const out=[]; const re=/\{([^}]+)\}/g; let m, last=0; while((m=re.exec(text))){ out.push(text.slice(last,m.index)); out.push(m[1].split("|")); last=re.lastIndex; } out.push(text.slice(last)); return out; }
 const loesung=text=>teile(text).map(t=>Array.isArray(t)?t[0]:t).join("");
-const itemsVon=A=>A.typ==="puzzle"?A.geschichten.flatMap(G=>G.items):A.typ==="sortieren"?A.items:A.items||[];
+const itemsVon=A=>A.typ==="puzzle"?A.geschichten.flatMap(G=>[...lueckenItems(G), ...G.items]):A.typ==="sortieren"?A.items:A.items||[];
 const okVon=(A,item,v)=>A.typ==="sortieren"?v===item.k:A.typ==="bauen"?true:v===item.o[0];
 /* Timer */
 function tRest(T){ if(!T) return null; if(T.pause) return Math.max(0,Number(T.rest)||0); return Math.max(0,Math.ceil(((Number(T.ende)||0)-jetzt())/1000)); }
@@ -339,9 +340,16 @@ function quizPos(A){ if(_qpos[A.id]) return _qpos[A.id]; const n=A.items.length;
 function quizOpts(A, i){ const it=A.items[i]; const k=it.o.length; const ziel=quizPos(A)[i]%k;
   const f=mischS(it.o.map((o,j)=>({o,j})).slice(1), A.id+"|qf|"+i); f.splice(ziel,0,{o:it.o[0],j:0}); return f; }
 function szeneVon(A, id){ return (A.szenen||[]).find(s=>s.id===id)||A.szenen[0]; }
-/* Gruppenpuzzle: eigene Fetzen-Nummer(n) + Fragen zur ganzen Geschichte */
+/* Gruppenpuzzle: Lücken {richtig|falsch|…} in den Fetzen, dann eigene Fetzen-Nummer(n) + Fragen zur ganzen Geschichte */
+function fetzenStand(G, fs, wahl){ let n=0, ok=0; fs.forEach(f=>teile(G.fetzen[f]).forEach((t,gi)=>{ if(Array.isArray(t)){ n++; if((wahl||{})[f+"_"+gi]===t[0]) ok++; } })); return {n, ok}; }
+function fetzenLuecken(A, G, f, wahl){ return teile(G.fetzen[f]).map((t,gi)=>{ if(!Array.isArray(t)) return esc(t); const key=f+"_"+gi, g=(wahl||{})[key];
+  if(g===t[0]) return `<span class="gefuellt">${esc(t[0])}</span>`;
+  return `<span class="luecke">${mischS(t, A.id+"|"+G.id+"|"+key).map(o=>`<button data-pl="${key}" data-v="${esc(o)}" class="${g===o?"falsch":""}">${esc(o)}</button>`).join("")}</span>`; }).join(""); }
+/* Allein üben: jede Lücke wird eine Auswahlaufgabe */
+function lueckenItems(G){ const out=[]; G.fetzen.forEach((txt,f)=>{ const T=teile(txt); T.forEach((t,gi)=>{ if(!Array.isArray(t)) return;
+  const satz=T.map((x,k)=>k===gi?"___":Array.isArray(x)?x[0]:x).join(""); out.push({f:`${G.icon} ${satz}`, o:t.slice()}); }); }); return out; }
 function puzzleAufgabe(A, K){ const G=A.geschichten[K.g]; const n=G.fetzen.length; const nrs=Array.from({length:n},(_,i)=>String(i+1));
-  const eig=K.fs.map(f=>({f:`${G.icon} Welche Nummer hat dein Fetzen „${G.fetzen[f].slice(0,38)}…“ in der Geschichte? (Sprecht zusammen!)`, o:[String(f+1), ...nrs.filter(x=>x!==String(f+1))], tipp:"Lest alle Fetzen laut vor: Was passiert zuerst, was danach?"}));
+  const eig=K.fs.map(f=>({f:`${G.icon} Welche Nummer hat dein Fetzen „${loesung(G.fetzen[f]).slice(0,38)}…“ in der Geschichte? (Sprecht zusammen!)`, o:[String(f+1), ...nrs.filter(x=>x!==String(f+1))], tipp:"Lest alle Fetzen laut vor: Was passiert zuerst, was danach?"}));
   return {id:A.id, typ:"wahl", titel:"Gemeinsam lösen", anleitung:"", items:[...eig, ...G.items]}; }
 
 /* =========================================================
@@ -407,7 +415,7 @@ function handy(){
       if(["sprechen","bewegung"].includes(A.typ)) r.z=S.zug; if(A.typ==="kugellager") r.k=S.kugel;
       if(["bingo","haelften","theater"].includes(A.typ)) r.sp=spielerListe().map(([p,x])=>p+x.name+(x.tg||"")+(x.online===false?0:1)).join();
       if(A.typ==="bingo") r.b=((S.bingo||{})[A.id]||{})[me.pid]; if(A.typ==="haelften") r.h=S.hael;
-      if(A.typ==="puzzle") r.pz=JSON.stringify(S.puzzle||{});
+      if(A.typ==="puzzle"){ r.pz=JSON.stringify(S.puzzle||{}); r.pl=JSON.stringify(((S.pzl||{})[A.id]||{})[me.pid]||{}); }
       if(A.typ==="theater"){ r.th=S.theater; r.tw=((S.th||{})[A.id]||{})[me.pid]; }
       if(A.typ==="partner"){ r.pa=S.paar; r.sp=spielerListe().map(([p,x])=>p+x.name).join(); }
       if(A.typ==="duell"){ r.du=S.duell; r.da=(S.du||{})[(S.duell||{}).nr]; r.sp=spielerListe().map(([p,x])=>p+x.name).join(); }
@@ -532,10 +540,16 @@ function handy(){
     return band+`<div class="card"><div class="frage">${esc(it.f)}</div><div class="qopts">${opts.map((x,k)=>`<button class="${QFARBE[k]}" data-dq="${x.j}">${QZ[k]} ${esc(x.o)}</button>`).join("")}</div></div>`; }
   function puzzle(A){ const PZ=S.puzzle||{}; const K=PZ.aid===A.id&&PZ.karten?PZ.karten[me.pid]:null;
     if(!K){ binder=()=>{}; return warte("die Lehrkraft","🧩 Gleich bekommst du deinen Fetzen."); }
-    const G=A.geschichten[K.g]; const c=ctxFuer(A); const A2=puzzleAufgabe(A,K); binder=()=>uebungBinden(A2,c);
-    let h=`<div class="card" style="border-top:8px solid ${G.farbe}"><div class="small muted" style="font-weight:800">Dein Symbol: <span style="font-size:26px">${G.icon}</span> · Suche alle mit ${G.icon}!</div>
-      ${K.fs.map(f=>`<div class="fetzen" style="border-color:${G.farbe}">${esc(G.fetzen[f])}</div>`).join("")}</div>`;
-    if(PZ.zeigen) h+=`<div class="card"><h3>${G.icon} ${esc(G.titel)}</h3>${G.fetzen.map((t,i)=>`<p><b>${i+1}.</b> ${esc(t)}</p>`).join("")}</div>`;
+    const G=A.geschichten[K.g]; const c=ctxFuer(A); const A2=puzzleAufgabe(A,K);
+    const wahl=((S.pzl||{})[A.id]||{})[me.pid]||{}; const st=fetzenStand(G,K.fs,wahl); const voll=st.ok===st.n;
+    const gnr=[...new Set(Object.values(PZ.karten||{}).map(x=>x.g))].sort().indexOf(K.g)+1;
+    let h=`<div class="card" style="border-top:8px solid ${G.farbe}"><div class="small muted" style="font-weight:800">Dein Symbol: <span style="font-size:26px">${G.icon}</span> · ${ON()?`🖥️ Gruppe/Raum ${gnr}`:`Suche alle mit ${G.icon}!`}</div>
+      ${K.fs.map(f=>`<div class="fetzen" style="border-color:${G.farbe}">${voll?esc(loesung(G.fetzen[f])):fetzenLuecken(A,G,f,wahl)}</div>`).join("")}</div>`;
+    if(st.n && !voll){ binder=()=>$$("[data-pl]").forEach(b=>b.onclick=()=>schreib(`pzl/${A.id}/${me.pid}/${b.dataset.pl}`, b.dataset.v));
+      return h+`<div class="anl steh"><b>Schritt 1 · Text korrigieren</b>Tippe bei jeder Lücke die richtige Form (Verb, Kasus, Präposition …). ${st.ok} von ${st.n} richtig.</div>`; }
+    binder=()=>uebungBinden(A2,c);
+    if(st.n) h+=`<div class="anl steh"><b>Schritt 2 · Vorlesen</b>✅ Dein Text ist korrekt! Lies ihn jetzt deiner Gruppe laut vor${ON()?" (Breakout-Raum, Mikro an)":""}. Hört alle zu: Was kommt zuerst?</div>`;
+    if(PZ.zeigen) h+=`<div class="card"><h3>${G.icon} ${esc(G.titel)}</h3>${G.fetzen.map((t,i)=>`<p><b>${i+1}.</b> ${esc(loesung(t))}</p>`).join("")}</div>`;
     return h+uebungHtml(A2,c); }
   function theater(A){ const TH=S.theater||{}; const gid=((S.spieler||{})[me.pid]||{}).tg; const G=((TH.gr)||{})[gid];
     if(TH.aid!==A.id || !G){ binder=()=>{}; return warte("die Lehrkraft","🎭 Gleich bekommst du eine Gruppe."); }
@@ -665,14 +679,14 @@ function leitung(){
     const ng=Math.max(1, Math.min(A.geschichten.length, Math.round(L.length/nf)||1)); const gs=mische(A.geschichten.map((_,i)=>i)).slice(0,ng);
     const gruppen=gs.map(()=>[]); L.forEach((p,i)=>gruppen[i%ng].push(p)); const k={};
     gruppen.forEach((m,gi)=>{ const g=gs[gi]; m.forEach((p,j)=>{ let fs=[]; for(let f=0;f<nf;f++) if(f%m.length===j) fs.push(f); if(!fs.length) fs=[j%nf]; k[p]={g, fs}; }); });
-    I().update({puzzle:{aid:A.id, karten:k, zeigen:false}, [`ant/${A.id}`]:null}); }
+    I().update({puzzle:{aid:A.id, karten:k, zeigen:false}, [`ant/${A.id}`]:null, [`pzl/${A.id}`]:null}); }
   /* Zurücksetzen (Wiederholung in einer späteren Sitzung) */
   function zuruecksetzen(ids){ const up={}; const akt=(inf().auf||{}).id;
-    ids.forEach(id=>{ ["ant","qz","th","bingo","sp"].forEach(k=>up[`${k}/${id}`]=null); });
+    ids.forEach(id=>{ ["ant","qz","th","bingo","sp","pzl"].forEach(k=>up[`${k}/${id}`]=null); });
     [["quiz","aid"],["puzzle","aid"],["paar","aid"],["theater","aid"],["hael","aid"],["kugel","aid"],["sch","aid"],["zug","aid"],["duell","aid"]].forEach(([k])=>{ const x=S[k]; if(x&&ids.includes(x.aid)) up[k]=null; });
     if(akt && ids.includes(akt)) up["info/auf"]=null, up["info/ansicht"]="tafel";
     return I().update(up); }
-  function hatDaten(id){ return !!((S.ant||{})[id]||(S.qz||{})[id]||(S.th||{})[id]||(S.puzzle&&S.puzzle.aid===id)||(S.paar&&S.paar.aid===id)||(S.duell&&S.duell.aid===id)); }
+  function hatDaten(id){ return !!((S.ant||{})[id]||(S.pzl||{})[id]||(S.qz||{})[id]||(S.th||{})[id]||(S.puzzle&&S.puzzle.aid===id)||(S.paar&&S.paar.aid===id)||(S.duell&&S.duell.aid===id)); }
   function kurseLaden(){ try{ return JSON.parse(localStorage.getItem("unt_kurse")||"[]"); }catch(e){ return []; } }
   function kursMerken(){ const l=kurseLaden().filter(k=>k.pin!==PIN); l.unshift({pin:PIN, plan:PLAN.id, name:inf().kursname||PLAN.titel, t:Date.now()}); try{ localStorage.setItem("unt_kurse", JSON.stringify(l.slice(0,12))); }catch(e){} }
   async function gruppenBilden(A){ const L=mische(online().map(([p])=>p)); const ng=Math.max(1, Math.floor(L.length/3)); const gr={}; const up={};
@@ -770,8 +784,8 @@ function leitung(){
       const gs=[...new Set(Object.values(K).map(x=>x.g))].sort();
       let h=kopfA(A)+`<div class="row" style="margin:8px 0"><button class="btn ${PZ.zeigen?"ghost":"ok"}" id="pzZeigen">${PZ.zeigen?"🙈 Geschichten verbergen":"📖 Geschichten auflösen"}</button><button class="btn sm ghost" id="pzNeu" style="margin-left:auto">🔀 Fetzen neu verteilen</button></div><div class="gruppen">`;
       h+=gs.map(g=>{ const G=A.geschichten[g]; const mit=spieler().filter(([p])=>K[p]&&K[p].g===g);
-        return `<div class="gruppe" style="border-top:6px solid ${G.farbe}"><b style="font-size:22px">${G.icon} ${PZ.zeigen?esc(G.titel):"Gruppe "+G.icon}</b><div class="small" style="margin:6px 0">${mit.map(([p,x])=>{ const A2=puzzleAufgabe(A,K[p]); const a=ant[p]||{}; const ok=A2.items.filter((_,j)=>(a[j]||{}).ok).length; return `<div class="${x.online===false?"muted":""}">${esc(x.name)} – Fetzen ${K[p].fs.map(f=>f+1).join("+")} · <b>${ok}/${A2.items.length}</b></div>`; }).join("")}</div></div>`; }).join("")+`</div>`;
-      if(PZ.zeigen) h+=gs.map(g=>{ const G=A.geschichten[g]; return `<div class="tafelinhalt" style="margin-top:16px"><h3>${G.icon} ${esc(G.titel)}</h3>${G.fetzen.map((t,i)=>`<div>${i+1}. ${esc(t)}</div>`).join("")}</div>`; }).join("");
+        return `<div class="gruppe" style="border-top:6px solid ${G.farbe}"><b style="font-size:22px">${ON()?`🖥️ ${gs.indexOf(g)+1} · `:""}${G.icon} ${PZ.zeigen?esc(G.titel):"Gruppe "+G.icon}</b><div class="small" style="margin:6px 0">${mit.map(([p,x])=>{ const A2=puzzleAufgabe(A,K[p]); const a=ant[p]||{}; const ok=A2.items.filter((_,j)=>(a[j]||{}).ok).length; const ls=fetzenStand(G,K[p].fs,((S.pzl||{})[A.id]||{})[p]); return `<div class="${x.online===false?"muted":""}">${esc(x.name)} – Fetzen ${K[p].fs.map(f=>f+1).join("+")}${ls.n?` · Lücken <b style="color:${ls.ok===ls.n?"var(--ok)":"inherit"}">${ls.ok}/${ls.n}</b>`:""} · Fragen <b>${ok}/${A2.items.length}</b></div>`; }).join("")}</div></div>`; }).join("")+`</div>`;
+      if(PZ.zeigen) h+=gs.map(g=>{ const G=A.geschichten[g]; return `<div class="tafelinhalt" style="margin-top:16px"><h3>${G.icon} ${esc(G.titel)}</h3>${G.fetzen.map((t,i)=>`<div>${i+1}. ${esc(loesung(t))}</div>`).join("")}</div>`; }).join("");
       return h; }
     if(A.typ==="theater"){ const TH=S.theater||{}; if(TH.aid!==A.id) return kopfA(A); const st=TH.schritt||1; const gr=Object.entries(TH.gr||{}); const W=(S.th||{})[A.id]||{};
       const schrittName=["","1 · Lesen & Lücken","2 · Üben (zweimal, dann mit Bewegung)","3 · Vorspielen"];
@@ -954,8 +968,8 @@ function solo(){
       const ant=st.a[A.id]||{}; const fertig=aktuellerIndex(A,ant)<0;
       st.seed=st.seed||{}; if(!st.seed[A.id]){ st.seed[A.id]=String(Math.random()).slice(2,10); merke(); }
       const ctx={pid:"solo", seed:st.seed[A.id], ant, lokal, setze:(i,v)=>{ st.a[A.id]=Object.assign({}, st.a[A.id]||{}, {[i]:v}); merke(); setTimeout(male, v.ok?500:0); }, neu:male, weiterText:"Super gemacht!", weiterKnopf:`<button class="btn" id="weiter">Weiter ▶</button> <button class="btn ghost" id="nochmal">↺ noch einmal</button>`};
-      const A2=A.typ==="quiz"?Object.assign({}, A, {typ:"wahl"}):A.typ==="puzzle"?{id:A.id, typ:"wahl", titel:"Fragen zu den Meldungen", anleitung:"", items:itemsVon(A)}:A;
-      const vor=A.typ==="puzzle"?`<h2>🧩 ${esc(A.titel)}</h2><div class="anl">Im Unterricht sucht ihr die Fetzen zusammen. Hier liest du alle Meldungen.</div>${A.geschichten.map(G=>`<div class="card" style="border-top:6px solid ${G.farbe}"><h3>${G.icon} ${esc(G.titel)}</h3>${G.fetzen.map(t=>`<p style="margin:6px 0">${esc(t)}</p>`).join("")}</div>`).join("")}`:"";
+      const A2=A.typ==="quiz"?Object.assign({}, A, {typ:"wahl"}):A.typ==="puzzle"?{id:A.id, typ:"wahl", titel:"Lücken und Fragen", anleitung:"", items:itemsVon(A)}:A;
+      const vor=A.typ==="puzzle"?`<h2>🧩 ${esc(A.titel)}</h2><div class="anl">Im Unterricht bekommt jede Person einen Teil des Textes. Hier liest du alle Texte – dann füllst du die Lücken und beantwortest die Fragen.</div>${A.geschichten.map(G=>`<div class="card" style="border-top:6px solid ${G.farbe}"><h3>${G.icon} ${esc(G.titel)}</h3>${G.fetzen.map(t=>`<p style="margin:6px 0">${esc(teile(t).map(x=>Array.isArray(x)?"___":x).join(""))}</p>`).join("")}</div>`).join("")}`:"";
       app.innerHTML=h+vor+uebungHtml(A2, ctx)+`</div>`; uebungBinden(A2, ctx);
       const n=$("#nochmal"); if(n) n.onclick=()=>{ delete st.a[A.id]; if(st.seed) delete st.seed[A.id]; merke(); male(); }; if(fertig){} }
     bind(); }

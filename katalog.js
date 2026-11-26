@@ -565,6 +565,19 @@ export const KATALOG = [
     offen: false
   },
   {
+    id: "stunde-text1",
+    titel: "Textwerkstatt: Arbeitsrecht verstehen (allein)",
+    untertitel: "Fachwortschatz · drei Texte mit Lücken (Verbform, Kasus, Präposition) · Fragen · Nominalstil",
+    datei: "unterricht.html?solo=text1",
+    typ: "Lektion",
+    niveau: "B2",
+    themen: ["Lesen", "Wortschatz", "Grammatik", "Beruf"],
+    farbe: "#2F6FDB",
+    dauer: "30–45 Min.",
+    reihe: "Zusatzlektionen",
+    offen: true
+  },
+  {
     id: "stunde-b2gram",
     titel: "Grammatik B2 – große Wiederholung (allein)",
     untertitel: "Die Online-Live-Stunden zum Nachholen: Lehrtafel + Übungen zu Satzbau, Passiv, Konjunktiv, Relativsätzen, Nominalstil …",
