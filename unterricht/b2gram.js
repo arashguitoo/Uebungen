@@ -812,7 +812,7 @@ const PLAN = {
           { f: "Weil es regnete, … → ___ des Regens …", o: ["Wegen", "Trotz", "Bei", "Nach"] },
           { f: "Das Formular ist bis Montag ___. (muss abgegeben werden)", o: ["abzugeben", "abgeben", "abgegeben", "zu abgeben"] }
         ] },
-      { id: "q_beruf", typ: "quiz", titel: "Großes Berufs-Quiz: Wortschatz, Nominalstil & Grammatik", minuten: 0,
+      { id: "q_beruf", typ: "quiz", auto: 25, titel: "Großes Berufs-Quiz: Wortschatz, Nominalstil & Grammatik", minuten: 0,
         items: [
           { f: "Ich habe mich ___ die Stelle als Lagerist beworben.", o: ["um", "für", "auf", "an"] },
           { f: "Die Firma hat mir einen Arbeitsvertrag ___ .", o: ["angeboten", "angebietet", "anbieten", "geangeboten"] },

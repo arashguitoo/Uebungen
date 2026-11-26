@@ -207,7 +207,7 @@ body.beamer .layout{grid-template-columns:1fr} body.beamer .seite{display:none}
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script src="unterricht/b2gram.js?v=20261126e"></script>
+<script src="unterricht/b2gram.js?v=20261126f"></script>
 <script src="unterricht/text1.js?v=20261126c"></script>
 <script src="unterricht/konj1.js?v=20261126c"></script>
 <script src="nachzuegler.js?v=20261126c"></script>
@@ -632,7 +632,7 @@ function leitung(){
     try{ localStorage.setItem("ueb_unt_leitung_pin",PIN); }catch(e){}
     history.replaceState(null,"","?leitung=1&pin="+PIN);
     I().on("value", s=>{ S=s.val()||{}; TIMER=S.timer||null; if(S.info&&PLAENE[S.info.plan]) PLAN=PLAENE[S.info.plan]; pflege(); male(); einsichtMalen(); nachzuegler(); statMalen(); });
-    setInterval(()=>{ const r=tRest(S.timer); if(S.timer&&!S.timer.pause&&r===0&&zuletztPiep!==S.timer.ende){ zuletztPiep=S.timer.ende; piep(); } const z=$("#planzeit"); if(z) z.innerHTML=planzeit(); },1000);
+    setInterval(()=>{ const r=tRest(S.timer); if(S.timer&&!S.timer.pause&&r===0&&zuletztPiep!==S.timer.ende){ zuletztPiep=S.timer.ende; piep(); } const z=$("#planzeit"); if(z) z.innerHTML=planzeit(); try{ quizAuto(); }catch(e){} },1000);
     document.addEventListener("keydown", e=>{ if(["INPUT","SELECT","TEXTAREA"].includes((e.target||{}).tagName)) return;
       if(e.key==="ArrowRight") folie(1); if(e.key==="ArrowLeft") folie(-1); if(e.key==="b"||e.key==="B"){ beamer=!beamer; document.body.classList.toggle("beamer",beamer); } });
   }
@@ -714,6 +714,12 @@ function leitung(){
     const gruppen=gs.map(()=>[]); L.forEach((p,i)=>gruppen[i%ng].push(p)); const k={};
     gruppen.forEach((m,gi)=>{ const g=gs[gi]; m.forEach((p,j)=>{ let fs=[]; for(let f=0;f<nf;f++) if(f%m.length===j) fs.push(f); if(!fs.length) fs=[j%nf]; k[p]={g, fs}; }); });
     I().update({puzzle:{aid:A.id, karten:k, zeigen:false}, [`ant/${A.id}`]:null, [`pzl/${A.id}`]:null}); }
+  /* Quiz mit Automatik: A.auto = Sekunden pro Frage. Auflösen nach Ablauf (oder wenn alle geantwortet haben), 5 s später nächste Frage. */
+  function quizFrage(A, n){ if(n===0) I(`qz/${A.id}`).remove(); I("quiz").set({aid:A.id, i:n, zeigen:false, t:jetzt(), stopp:(S.quiz||{}).aid===A.id?!!(S.quiz||{}).stopp:false}); if(A.auto && n<A.items.length) timerSetze(A.auto/60); }
+  function quizAuto(){ const A=aktA(); const Q=S.quiz||{}; if(!A||A.typ!=="quiz"||!A.auto||Q.aid!==A.id||Q.i===undefined||Q.i<0||Q.i>=A.items.length||Q.stopp||!Q.t) return;
+    const verg=jetzt()-Number(Q.t); const an=Object.keys(((S.qz||{})[A.id]||{})[Q.i]||{}).length; const alle=online().length;
+    if(!Q.zeigen && (verg>=A.auto*1000 || (alle>0 && an>=alle && verg>=3000))){ I("quiz").update({zeigen:true, tz:jetzt()}); timerSetze(5/60); return; }
+    if(Q.zeigen && jetzt()-Number(Q.tz||Q.t)>=5000) quizFrage(A, Q.i+1); }
   function puzzleSetze(A, p, g){ const K=(S.puzzle||{}).karten||{}; const G=A.geschichten[g]; const nf=G.fetzen.length; const zahl=Array(nf).fill(0);
     Object.entries(K).forEach(([q,x])=>{ if(q!==p && x.g===g) x.fs.forEach(f=>zahl[f]++); }); const f=zahl.indexOf(Math.min(...zahl));
     I().update({[`puzzle/karten/${p}`]:{g, fs:[f]}, [`pzl/${A.id}/${p}`]:null, [`ant/${A.id}/${p}`]:null}); }
@@ -788,7 +794,7 @@ function leitung(){
       h+=`<div class="balkenliste">${spieler().map(([p,x])=>{ const a=ant[p]||{}; const ok=L.filter((_,j)=>(a[j]||{}).ok).length; return `<div class="bz ${x.online===false?"off":""}"><span>${esc(x.name)}</span><div class="bal"><i style="width:${ok/L.length*100}%"></i></div><span class="small">${ok}/${L.length}</span></div>`; }).join("")}</div>`;
       if(fehler.length) h+=`<h3 style="margin-top:18px">Hier gab es die meisten Fehler</h3>${fehler.map(f=>`<div class="tipp" style="font-size:clamp(16px,1.5vw,22px)"><b>${esc(f.it.f||f.it.t||f.it.w.join(" "))}</b> → ${esc(A.typ==="wahl"?f.it.o[0]:A.typ==="sortieren"?A.koerbe.find(k=>k.k===f.it.k).t:f.it.a[0]+(f.it.p||""))} <span class="muted">(${f.n}× falsch)</span>${f.it.tipp?` · ${esc(f.it.tipp)}`:""}</div>`).join("")}`;
       return h; }
-    if(A.typ==="quiz"){ const Q=S.quiz||{}; if(Q.aid!==A.id||Q.i<0) return kopfA(A)+`<p class="tafelinhalt">${A.items.length} Fragen. Alle antworten am Handy.</p><button class="btn acc" data-quiz="0">▶ Erste Frage</button>`;
+    if(A.typ==="quiz"){ const Q=S.quiz||{}; if(Q.aid!==A.id||Q.i<0) return kopfA(A)+`<p class="tafelinhalt">${A.items.length} Fragen. Alle antworten am Handy.${A.auto?` Das Quiz läuft <b>automatisch</b>: ${A.auto} Sekunden pro Frage, dann 5 Sekunden Lösung – alle bleiben synchron.`:""}</p><button class="btn acc" data-quiz="0">▶ ${A.auto?"Quiz starten":"Erste Frage"}</button>`;
       if(Q.i>=A.items.length){ const r={}; A.items.forEach((_,k)=>Object.entries(((S.qz||{})[A.id]||{})[k]||{}).forEach(([p,x])=>{ if(x.o===0) r[p]=(r[p]||0)+1; }));
         return `<h2>⚡ Quiz fertig!</h2>${T.length?`<div class="row">${T.map(([k,t])=>{ const m=online().filter(([,x])=>x.team===k); const s=m.reduce((a,[p])=>a+(r[p]||0),0); return `<span class="chip" style="background:${t.f};color:#fff;font-size:22px">${t.e} ${esc(t.n)}: ${m.length?Math.round(s/(m.length*A.items.length)*100):0}% richtig</span>`; }).join("")}</div>`:""}
           <div class="balkenliste">${online().map(([p,x])=>`<div class="bz"><span>${esc(x.name)}</span><div class="bal"><i style="width:${(r[p]||0)/A.items.length*100}%"></i></div><span>${r[p]||0}/${A.items.length}</span></div>`).join("")}</div><button class="btn ghost" data-quiz="0" style="margin-top:14px">↺ noch einmal</button>`; }
@@ -796,7 +802,7 @@ function leitung(){
       return `<div class="small muted" style="font-weight:800">⚡ Frage ${Q.i+1} von ${A.items.length}</div><div class="grossfrage" style="text-align:left">${esc(it.f)}</div>
         <div class="qboard">${opts.map((x,k)=>`<div class="${QFARBE[k]} ${Q.zeigen?(x.j===0?"richtig":"daneben"):""}"><span>${QZ[k]} ${esc(x.o)}</span>${Q.zeigen?`<span>${cnt(x.j)}</span>`:""}</div>`).join("")}</div>
         <p class="tafelinhalt">${Object.keys(an).length} von ${online().length} haben geantwortet.</p>
-        <div class="row">${Q.zeigen?`<button class="btn acc" data-quiz="${Q.i+1}">${Q.i+1<A.items.length?"Nächste Frage ▶":"Ergebnis ▶"}</button>`:`<button class="btn ok" id="aufloesen">✅ Auflösen</button>`}</div>`; }
+        <div class="row">${Q.zeigen?`<button class="btn acc" data-quiz="${Q.i+1}">${Q.i+1<A.items.length?"Nächste Frage ▶":"Ergebnis ▶"}</button>`:`<button class="btn ok" id="aufloesen">✅ Auflösen</button>`}${A.auto?`<button class="btn ghost" id="autoAus">${Q.stopp?"▶ Automatik weiter":"⏸ Automatik anhalten"}</button><span class="small muted">${Q.stopp?"Automatik angehalten – Sie klicken selbst weiter.":`⏱ Automatik: ${A.auto} s pro Frage, dann 5 s Lösung`}</span>`:""}</div>`; }
     if(A.typ==="sprechen"||A.typ==="bewegung"){ const Z=S.zug||{}; const d=Z.aid===A.id&&Z.pid;
       let h=kopfA(A);
       if(d && A.typ==="sprechen") h+=`<div class="grossname">🎤 ${nm(Z.pid)}</div><div class="grossfrage">${esc(A.saetze[Z.s])}</div>`;
@@ -907,7 +913,8 @@ function leitung(){
     $$("[data-zeig]").forEach(b=>b.onclick=()=>I("info/ansicht").set("aufgabe"));
     const th=$("#thandy"); if(th) th.onchange=()=>{ th.blur(); I("info/tafelHandy").set(th.checked); };
     const A=aktA(); if(!A) return;
-    $$("[data-quiz]").forEach(b=>b.onclick=()=>{ const n=Number(b.dataset.quiz); if(n===0) I(`qz/${A.id}`).remove(); I("quiz").set({aid:A.id, i:n, zeigen:false}); });
+    $$("[data-quiz]").forEach(b=>b.onclick=()=>quizFrage(A, Number(b.dataset.quiz)));
+    on("#autoAus", ()=>I("quiz/stopp").set(!(S.quiz||{}).stopp));
     on("#aufloesen", ()=>I("quiz/zeigen").set(true));
     on("#ziehen", ()=>ziehen(A)); on("#loesung", ()=>I("zug/zeigen").set(true));
     $$("[data-kr]").forEach(b=>b.onclick=()=>{ I("kugel/r").set(Number(b.dataset.kr)); timerSetze(A.minuten||2); });
