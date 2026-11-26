@@ -207,10 +207,10 @@ body.beamer .layout{grid-template-columns:1fr} body.beamer .seite{display:none}
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script src="unterricht/b2gram.js?v=20261126b"></script>
-<script src="unterricht/text1.js?v=20261126b"></script>
-<script src="unterricht/konj1.js?v=20261126b"></script>
-<script src="nachzuegler.js?v=20261126b"></script>
+<script src="unterricht/b2gram.js?v=20261126c"></script>
+<script src="unterricht/text1.js?v=20261126c"></script>
+<script src="unterricht/konj1.js?v=20261126c"></script>
+<script src="nachzuegler.js?v=20261126c"></script>
 <script>
 /* =========================================================
    LIVE-UNTERRICHT – Lehrtafel + Aufgaben freigeben (wie der Persisch-Live-Unterricht)
@@ -644,7 +644,7 @@ function leitung(){
   const aktA=()=>{ const au=inf().auf; return au&&au.id?aufgabe(au.id):null; };
   /* Neue Personen automatisch einordnen (Kugellager-Kreis) */
   function pflege(){ if(inf().fest) kursMerken(); const A=aktA(); if(!A) return;
-    if(A.typ==="puzzle" && S.puzzle && S.puzzle.aid===A.id){ const K=S.puzzle.karten||{}; const fehlt=online().filter(([p])=>!K[p]); if(fehlt.length){ const up={}; const zahl={}; Object.values(K).forEach(x=>zahl[x.g]=(zahl[x.g]||0)+1); const gl=Object.keys(zahl).map(Number); if(!gl.length) gl.push(0);
+    if(A.typ==="puzzle" && S.puzzle && S.puzzle.aid===A.id && new Set(Object.values(S.puzzle.karten||{}).map(x=>x.g)).size<=1){ const K=S.puzzle.karten||{}; const fehlt=online().filter(([p])=>!K[p]); if(fehlt.length){ const up={}; const zahl={}; Object.values(K).forEach(x=>zahl[x.g]=(zahl[x.g]||0)+1); const gl=Object.keys(zahl).map(Number); if(!gl.length) gl.push(0);
       fehlt.forEach(([p])=>{ const g=gl.sort((a,b)=>(zahl[a]||0)-(zahl[b]||0))[0]; zahl[g]=(zahl[g]||0)+1; up[p]={g, fs:[rnd(A.geschichten[g].fetzen.length)]}; }); I("puzzle/karten").update(up); } }
     if(A.typ==="schlange" && S.sch && S.sch.aid===A.id){ const li=S.sch.linie||{}; const fehlt=online().filter(([p])=>!li[p]); if(fehlt.length){ const up={}; let na=Object.values(li).filter(x=>x==="A").length, nb=Object.values(li).filter(x=>x==="B").length;
       fehlt.forEach(([p])=>{ const L=na<=nb?"A":"B"; L==="A"?na++:nb++; up[`linie/${p}`]=L; up[`karten/${p}`]=mische(A.puzzles[L==="A"?"B":"A"].teile.map(t=>t.id)).slice(0,2); }); I("sch").update(up); } }
@@ -709,11 +709,14 @@ function leitung(){
     const n=Math.max(1, ...Object.values(b).map(l=>l.length), 1); const gr=Array.from({length:Math.min(n, Math.max(1, Math.floor(on.length/2)))},()=>[]);
     Object.values(b).forEach(l=>l.forEach((p,i)=>gr[i%gr.length].push(p))); on.filter(p=>!K[p]).forEach(p=>gr.slice().sort((x,y)=>x.length-y.length)[0].push(p));
     const o={}; gr.forEach((m,i)=>o["e"+i]=m); I("exp").set({aid:A.id, gr:o}); if(A.minuten) timerSetze(A.minuten); }
-  function puzzleVerteilen(A){ const L=mische(online().map(([p])=>p)); const nf=A.geschichten[0].fetzen.length;
-    const ng=Math.max(1, Math.min(A.geschichten.length, Math.round(L.length/nf)||1)); const gs=mische(A.geschichten.map((_,i)=>i)).slice(0,ng);
+  function puzzleVerteilen(A, ngWahl){ const L=mische(online().map(([p])=>p)); const nf=A.geschichten[0].fetzen.length;
+    const ng=ngWahl?Math.min(ngWahl, A.geschichten.length):Math.max(1, Math.min(A.geschichten.length, Math.round(L.length/nf)||1)); const gs=mische(A.geschichten.map((_,i)=>i)).slice(0,ng);
     const gruppen=gs.map(()=>[]); L.forEach((p,i)=>gruppen[i%ng].push(p)); const k={};
     gruppen.forEach((m,gi)=>{ const g=gs[gi]; m.forEach((p,j)=>{ let fs=[]; for(let f=0;f<nf;f++) if(f%m.length===j) fs.push(f); if(!fs.length) fs=[j%nf]; k[p]={g, fs}; }); });
     I().update({puzzle:{aid:A.id, karten:k, zeigen:false}, [`ant/${A.id}`]:null, [`pzl/${A.id}`]:null}); }
+  function puzzleSetze(A, p, g){ const K=(S.puzzle||{}).karten||{}; const G=A.geschichten[g]; const nf=G.fetzen.length; const zahl=Array(nf).fill(0);
+    Object.entries(K).forEach(([q,x])=>{ if(q!==p && x.g===g) x.fs.forEach(f=>zahl[f]++); }); const f=zahl.indexOf(Math.min(...zahl));
+    I().update({[`puzzle/karten/${p}`]:{g, fs:[f]}, [`pzl/${A.id}/${p}`]:null, [`ant/${A.id}/${p}`]:null}); }
   /* Zurücksetzen (Wiederholung in einer späteren Sitzung) */
   function zuruecksetzen(ids){ const up={}; const akt=(inf().auf||{}).id;
     ids.forEach(id=>{ ["ant","qz","th","bingo","sp","pzl"].forEach(k=>up[`${k}/${id}`]=null); });
@@ -821,12 +824,15 @@ function leitung(){
         <div class="row" style="margin-top:14px"><button class="btn ${fzZeigen?"ghost":"ok"}" id="fzZeigen">${fzZeigen?"🙈 Lösung verbergen":"📖 Lösung zeigen"}</button></div>
         ${fzZeigen?`<h3>Fehler – am seltensten gefunden zuerst</h3><div class="tafelinhalt" style="font-size:clamp(16px,1.5vw,22px)">${quote.map(q=>`<div>❌ <s>${esc(q.t.orig)}</s> → ✅ <b>${esc(q.t.k)}</b> <span class="muted">(${q.r} von ${L.length} gefunden)</span>${(A.hinweise||[])[q.t.e]?` · ${esc(A.hinweise[q.t.e])}`:""}</div>`).join("")}</div>`:""}`; }
     if(A.typ==="experten"){ const E=S.exp||{}; if(E.aid!==A.id) return kopfA(A); const K=((S.puzzle||{}).karten)||{}; const Q=aufgabe(A.quelle)||{};
-      return kopfA(A)+`<div class="row" style="margin:8px 0"><button class="btn sm ghost" id="expNeu" style="margin-left:auto">🔀 Runden neu bilden</button></div><div class="gruppen">${Object.entries(E.gr||{}).map(([k,m],i)=>`<div class="gruppe"><b style="font-size:20px">${ON()?"🖥️ Raum ":"Runde "}${i+1}</b><div class="small" style="margin-top:6px">${Object.values(m||{}).map(p=>{ const g=K[p]&&Q.geschichten?Q.geschichten[K[p].g]:null; return `<div>${g?g.icon:"👂"} ${nm(p)}</div>`; }).join("")}</div></div>`).join("")}</div>`; }
+      const ohne=online().filter(([p])=>!Object.values(E.gr||{}).some(m=>Object.values(m||{}).includes(p)));
+      return kopfA(A)+`<div class="row" style="margin:8px 0"><button class="btn sm ghost" id="expNeu" style="margin-left:auto">🔀 Runden neu bilden</button></div>${ohne.length?`<div class="card" style="background:#FFF7E0"><b>Neu dazugekommen – Runde zuordnen:</b>${ohne.map(([p,x])=>`<div class="row" style="margin-top:6px"><b style="min-width:120px">${esc(x.name)}</b>${Object.keys(E.gr||{}).map((k,i)=>`<button class="btn sm ghost" data-expset="${p}|${k}">Runde ${i+1}</button>`).join("")}</div>`).join("")}</div>`:""}<div class="gruppen">${Object.entries(E.gr||{}).map(([k,m],i)=>`<div class="gruppe"><b style="font-size:20px">${ON()?"🖥️ Raum ":"Runde "}${i+1}</b><div class="small" style="margin-top:6px">${Object.values(m||{}).map(p=>{ const g=K[p]&&Q.geschichten?Q.geschichten[K[p].g]:null; return `<div>${g?g.icon:"👂"} ${nm(p)}</div>`; }).join("")}</div></div>`).join("")}</div>`; }
     if(A.typ==="puzzle"){ const PZ=S.puzzle||{}; if(PZ.aid!==A.id) return kopfA(A); const K=PZ.karten||{};
       const gs=[...new Set(Object.values(K).map(x=>x.g))].sort();
-      let h=kopfA(A)+`<div class="row" style="margin:8px 0"><button class="btn ${PZ.zeigen?"ghost":"ok"}" id="pzZeigen">${PZ.zeigen?"🙈 Geschichten verbergen":"📖 Geschichten auflösen"}</button><button class="btn sm ghost" id="pzNeu" style="margin-left:auto">🔀 Fetzen neu verteilen</button></div><div class="gruppen">`;
+      let h=kopfA(A)+`<div class="row" style="margin:8px 0"><button class="btn ${PZ.zeigen?"ghost":"ok"}" id="pzZeigen">${PZ.zeigen?"🙈 Geschichten verbergen":"📖 Geschichten auflösen"}</button><span style="margin-left:auto" class="small muted">Neu verteilen:</span>${A.geschichten.map((_,i)=>`<button class="btn sm ghost" data-pzng="${i+1}">${i===0?"👥 alle zusammen (1 Text)":(i+1)+" Gruppen"}</button>`).join("")}<button class="btn sm ghost" id="pzNeu">🔀 automatisch</button></div>
+      ${online().filter(([p])=>!K[p]).length?`<div class="card" style="background:#FFF7E0"><b>Neu dazugekommen – Gruppe zuordnen:</b>${online().filter(([p])=>!K[p]).map(([p,x])=>`<div class="row" style="margin-top:6px"><b style="min-width:120px">${esc(x.name)}</b>${gs.map(g=>`<button class="btn sm" style="background:${A.geschichten[g].farbe}" data-pzset="${p}|${g}">${A.geschichten[g].icon}</button>`).join("")}</div>`).join("")}</div>`:""}
+      <div class="gruppen">`;
       h+=gs.map(g=>{ const G=A.geschichten[g]; const mit=spieler().filter(([p])=>K[p]&&K[p].g===g);
-        return `<div class="gruppe" style="border-top:6px solid ${G.farbe}"><b style="font-size:22px">${ON()?`🖥️ ${gs.indexOf(g)+1} · `:""}${G.icon} ${PZ.zeigen?esc(G.titel):"Gruppe "+G.icon}</b><div class="small" style="margin:6px 0">${mit.map(([p,x])=>{ const A2=puzzleAufgabe(A,K[p]); const a=ant[p]||{}; const ok=A2.items.filter((_,j)=>(a[j]||{}).ok).length; const ls=fetzenStand(G,K[p].fs,((S.pzl||{})[A.id]||{})[p]); return `<div class="${x.online===false?"muted":""}">${esc(x.name)} – Fetzen ${K[p].fs.map(f=>f+1).join("+")}${ls.n?` · Lücken <b style="color:${ls.ok===ls.n?"var(--ok)":"inherit"}">${ls.ok}/${ls.n}</b>`:""} · Fragen <b>${ok}/${A2.items.length}</b></div>`; }).join("")}</div></div>`; }).join("")+`</div>`;
+        return `<div class="gruppe" style="border-top:6px solid ${G.farbe}"><b style="font-size:22px">${ON()?`🖥️ ${gs.indexOf(g)+1} · `:""}${G.icon} ${PZ.zeigen?esc(G.titel):"Gruppe "+G.icon}</b><div class="small" style="margin:6px 0">${mit.map(([p,x])=>{ const A2=puzzleAufgabe(A,K[p]); const a=ant[p]||{}; const ok=A2.items.filter((_,j)=>(a[j]||{}).ok).length; const ls=fetzenStand(G,K[p].fs,((S.pzl||{})[A.id]||{})[p]); return `<div class="${x.online===false?"muted":""}">${gs.length>1?`<select data-pzmove="${p}" title="In andere Gruppe verschieben" style="font-size:12px;margin-right:4px">${gs.map(g2=>`<option value="${g2}" ${g2===g?"selected":""}>${A.geschichten[g2].icon}</option>`).join("")}</select>`:""}${esc(x.name)} – Fetzen ${K[p].fs.map(f=>f+1).join("+")}${ls.n?` · Lücken <b style="color:${ls.ok===ls.n?"var(--ok)":"inherit"}">${ls.ok}/${ls.n}</b>`:""} · Fragen <b>${ok}/${A2.items.length}</b></div>`; }).join("")}</div></div>`; }).join("")+`</div>`;
       if(PZ.zeigen) h+=gs.map(g=>{ const G=A.geschichten[g]; return `<div class="tafelinhalt" style="margin-top:16px"><h3>${G.icon} ${esc(G.titel)}</h3>${G.fetzen.map((t,i)=>`<div>${i+1}. ${esc(loesung(t))}</div>`).join("")}</div>`; }).join("");
       return h; }
     if(A.typ==="theater"){ const TH=S.theater||{}; if(TH.aid!==A.id) return kopfA(A); const st=TH.schritt||1; const gr=Object.entries(TH.gr||{}); const W=(S.th||{})[A.id]||{};
@@ -909,8 +915,12 @@ function leitung(){
     on("#neueKarten", ()=>karten(A, ((S.hael||{}).runde||1)+1));
     on("#fzZeigen", ()=>{ fzZeigen=!fzZeigen; male(); });
     on("#expNeu", ()=>expertenBilden(A));
+    $$("[data-expset]").forEach(b=>b.onclick=()=>{ const [p,k]=b.dataset.expset.split("|"); const m=Object.values(((S.exp||{}).gr||{})[k]||{}); I(`exp/gr/${k}`).set([...m, p]); });
     on("#pzZeigen", ()=>I("puzzle/zeigen").set(!(S.puzzle||{}).zeigen));
     on("#pzNeu", ()=>{ if(confirm("Fetzen neu verteilen? Die Antworten werden gelöscht.")) puzzleVerteilen(A); });
+    $$("[data-pzng]").forEach(b=>b.onclick=()=>{ const n=Number(b.dataset.pzng); if(confirm(n===1?"Alle arbeiten zusammen an EINEM Text. Neu verteilen? (Antworten werden gelöscht)":`In ${n} Gruppen neu verteilen? (Antworten werden gelöscht)`)) puzzleVerteilen(A, n); });
+    $$("[data-pzset]").forEach(b=>b.onclick=()=>{ const [p,g]=b.dataset.pzset.split("|"); puzzleSetze(A, p, Number(g)); });
+    $$("[data-pzmove]").forEach(sl=>sl.onchange=()=>{ sl.blur(); puzzleSetze(A, sl.dataset.pzmove, Number(sl.value)); });
     on("#neuePaare", ()=>paareBilden(A));
     on("#sitzStart", ()=>{ sitzModus=true; sitzListe=[]; male(); }); on("#sitzAbbr", ()=>{ sitzModus=false; male(); }); on("#sitzZurueck", ()=>{ sitzListe.pop(); male(); });
     $$("[data-sitz]").forEach(b=>b.onclick=()=>{ sitzListe.push(b.dataset.sitz); male(); });
