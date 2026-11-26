@@ -7,10 +7,21 @@ export const ARTEN = {
   'email-formell':     { t: 'E-Mail (formell)', ic: '✉️', register: 'formell' },
   'email-halbformell': { t: 'E-Mail (halbformell)', ic: '📨', register: 'halbformell' },
   'forum':             { t: 'Forumsbeitrag', ic: '💬', register: 'neutral' },
-  'notiz':             { t: 'Notiz', ic: '📝', register: 'neutral' }
+  'notiz':             { t: 'Notiz', ic: '📝', register: 'neutral' },
+  'zusammenfassung':   { t: 'Zusammenfassung', ic: '📄', register: 'neutral' }
 };
 
 export const AUFGABEN = [
+  {
+    id: 'zusammenfassung-arbeitsrecht', titel: 'Zusammenfassung: Texte zum Arbeitsrecht', art: 'zusammenfassung', niveau: 'B2', worte: [80, 110], zeit: 20,
+    situation: 'Fassen Sie einen der drei Texte aus der Textwerkstatt zusammen: „Krank im Job – was gilt?“, „Mitbestimmung im Betrieb“ oder „Arbeitszeit und Arbeitsschutz“. Nennen Sie das Thema, die wichtigsten Regeln (mit Zahlen) und wer wofür zuständig ist. Schreiben Sie mit eigenen Worten und benutzen Sie mindestens zwei nominale Ausdrücke (z. B. „nach Ablauf der Frist“).',
+    punkte: [
+      { t: 'Thema des Textes nennen', kw: 'geht es um|thema|informiert|handelt von' },
+      { t: 'wichtigste Regeln mit Zahlen', kw: '\\d|sechs|elf|vier|fünf|acht|zehn' },
+      { t: 'Zuständigkeit: wer macht was?', kw: 'arbeitgeber|krankenkasse|betriebsrat|beschäftigte|arbeitnehmer|zuständig|verantwortlich' },
+      { t: 'nominale Ausdrücke', kw: 'nach ablauf|ohne anhörung|zur vermeidung|bei krankheit|durch|wegen|aufgrund|im falle' }
+    ]
+  },
   {
     id: 'kommentar-man-lernt-nie-aus', titel: 'Kommentar: Man lernt nie aus', art: 'forum', niveau: 'B1/B2', worte: [100, 160], zeit: 20,
     situation: 'Schreiben Sie einen Kommentar zu einem der vier Texte „Man lernt nie aus.“ (Luka Horvat, Sachin Prachad, Nesrin Abay oder Alice Kapp). Schreiben Sie, ob Sie eine Person kennen, die Ähnliches erlebt hat, wie Sie die Einstellung dieser Person beurteilen und wie Sie sich in einer ähnlichen Situation verhalten würden.',
@@ -160,6 +171,13 @@ export const AUFGABEN = [
 
 /* Redemittel-Hilfen je Textart (beim Schreiben ausklappbar) */
 export const REDEMITTEL = {
+  'zusammenfassung': [
+    ['Einleitung', 'In dem Text „…“ geht es um … · Der Text informiert über … · Thema des Textes ist …'],
+    ['Hauptinformationen', 'Zunächst wird erklärt, dass … · Außerdem erfährt man, dass … · Wichtig ist vor allem, dass …'],
+    ['Regeln wiedergeben', 'Laut Gesetz muss/darf … · Arbeitnehmer haben Anspruch auf … · Zuständig für … ist …'],
+    ['Nominalstil', 'nach Ablauf der Frist · ohne Anhörung des Betriebsrats · bei Krankheit · zur Vermeidung von …'],
+    ['Schluss', 'Zusammenfassend lässt sich sagen, dass … · Insgesamt zeigt der Text, dass …']
+  ],
   'email-formell': [
     ['Anrede', 'Sehr geehrte Damen und Herren, · Sehr geehrte Frau …, · Sehr geehrter Herr …,'],
     ['Einleitung', 'vielen Dank für Ihre E-Mail vom … · ich schreibe Ihnen, weil … · mit großem Interesse habe ich … gelesen.'],

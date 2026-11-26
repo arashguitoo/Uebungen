@@ -8,8 +8,8 @@
 window.UNTERRICHT_PLAENE = window.UNTERRICHT_PLAENE || {};
 const K = (titel, a, ah, b, bh) => ({ titel, a: { t: a, hilfe: ah }, b: { t: b, hilfe: bh } });
 window.UNTERRICHT_PLAENE.text1 = {
-  id: "text1", titel: "Textwerkstatt: Arbeitsrecht verstehen", minuten: 65,
-  text: "Fachwortschatz · Textpuzzle mit Lücken (Verbform, Kasus, Präposition) · in der Gruppe vorlesen und ordnen · Nominalstil · Fälle aus dem Berufsalltag",
+  id: "text1", titel: "Textwerkstatt: Arbeitsrecht verstehen", minuten: 88,
+  text: "Fachwortschatz · Textpuzzle mit Lücken · Expertenrunde · Fehlerdetektiv · Nominalstil · Schneeball-Zusammenfassung · Fälle aus dem Berufsalltag",
   bloecke: [
   /* ---------------------------------------------------------------- */
   { id: "wort", icon: "📚", titel: "Fachwortschatz vorbereiten", minuten: 18,
@@ -74,7 +74,7 @@ window.UNTERRICHT_PLAENE.text1 = {
         ] }
     ] },
   /* ---------------------------------------------------------------- */
-  { id: "puzzle", icon: "🧩", titel: "Textpuzzle: korrigieren, vorlesen, ordnen", minuten: 25,
+  { id: "puzzle", icon: "🧩", titel: "Textpuzzle + Expertenrunde", minuten: 32,
     tafel: [
       { titel: "🧩 So geht das Textpuzzle", html: `<ol class="schritte">
         <li><b>Korrigieren:</b> Du bekommst einen oder zwei <b>Fetzen</b> eines Textes. Darin sind Lücken. Tippe die richtige Form: Verb, Kasus, Präposition, Konnektor …</li>
@@ -82,6 +82,9 @@ window.UNTERRICHT_PLAENE.text1 = {
         <li><b>Ordnen:</b> Hört genau zu: Welcher Fetzen kommt zuerst? Gib am Handy die Nummer deines Fetzens an.</li>
         <li><b>Verstehen:</b> Beantwortet die Fragen zum ganzen Text <b>zusammen</b>.</li>
         <li><b>Vorstellen:</b> Eine Person aus jeder Gruppe erklärt den anderen Gruppen in 3 Sätzen, worum es geht.</li></ol>` },
+      { titel: "🎓 Expertenrunde: neue Gruppen", html: `<p>Jetzt seid ihr <b>Expertinnen und Experten</b> für euren Text.</p>
+        <ol class="schritte"><li>Neue Runden: In jeder Runde sitzt <b>eine Person pro Text</b> (🩺 🤝 ⏱️).</li><li>Jede Person erklärt <b>ihren Text in 3–4 Sätzen</b> – die anderen kennen ihn nicht!</li><li>Die anderen stellen <b>eine Frage</b>.</li></ol>
+        <div class="bsp">In meinem Text geht es um … · Das Wichtigste ist: … · Zum Beispiel muss/darf … · Zuständig ist …</div>` },
       { titel: "Danach: Die Gruppe stellt vor", html: `<div class="bsp">In unserem Text geht es um … · Wichtig ist, dass … · Wenn …, dann … · Zuständig ist … · Uns hat überrascht, dass …</div>
         <p class="klein">Die anderen Gruppen stellen eine Frage: <i>Was passiert, wenn …? Wer muss …? Gilt das auch für …?</i></p>` }
     ],
@@ -128,9 +131,29 @@ window.UNTERRICHT_PLAENE.text1 = {
               { f: "⏱️ Was prüft eine Gefährdungsbeurteilung?", o: ["welche Gefahren es an den Arbeitsplätzen gibt", "wie gesund die Beschäftigten sind", "ob alle pünktlich kommen"] },
               { f: "⏱️ Was müssen die Beschäftigten tun?", o: ["Schutzmaßnahmen einhalten und Mängel melden", "die Gefährdungsbeurteilung schreiben", "jedes Jahr eine Prüfung ablegen"] }
             ] }
-        ] }
+        ] },
+      { id: "ex", typ: "experten", quelle: "tp", titel: "Expertenrunde: Erklär deinen Text!", minuten: 8,
+        anleitung: "Neue Runden: eine Person pro Text. Jede Person erklärt ihren Text in 3–4 Sätzen, die anderen stellen eine Frage.",
+        leit: {
+          krank: ["Wann und wie muss man sich krankmelden?", "Wann braucht man eine Bescheinigung vom Arzt?", "Wer zahlt wie lange – Arbeitgeber oder Krankenkasse?"],
+          mitbest: ["Wann kann es einen Betriebsrat geben?", "Wobei bestimmt der Betriebsrat mit?", "Was passiert bei einer Kündigung ohne Anhörung?"],
+          zeit: ["Wie lange darf man pro Tag arbeiten?", "Welche Pausen und Ruhezeiten gibt es?", "Was muss der Arbeitgeber, was müssen die Beschäftigten tun?"]
+        },
+        redemittel: ["In meinem Text geht es um …", "Das Wichtigste ist, dass …", "Laut Gesetz muss / darf …", "Zuständig dafür ist …", "Habt ihr dazu eine Frage?", "Frage: Was passiert, wenn …?"] }
     ] },
   /* ---------------------------------------------------------------- */
+  { id: "fehler", icon: "🔍", titel: "Fehlerdetektiv", minuten: 8,
+    tafel: [
+      { titel: "🔍 Fehlerdetektiv", html: `<p>Eine Kollegin hat eine <b>Zusammenfassung</b> der drei Texte geschrieben – mit <b>8 Fehlern</b>.</p>
+        <ol class="schritte"><li>Lies den Text am Handy.</li><li><b>Tippe auf jedes falsche Wort.</b> Richtig gefunden → die Korrektur erscheint.</li><li>Achtung: Falsches Tippen wird gezählt!</li></ol>
+        <div class="chips"><span>Kasus</span><span>Adjektivendung</span><span>Verbposition</span><span>Subjekt–Verb</span><span>Relativpronomen</span><span>Passiv</span><span>Vergleich</span><span>Nebensatz</span></div>` }
+    ],
+    aufgaben: [
+      { id: "fd", typ: "fehler", titel: "Finde die 8 Fehler!", minuten: 6,
+        anleitung: "Tippe auf jedes falsche Wort. Es gibt genau 8 Fehler. Falsche Klicks werden gezählt – erst lesen, dann tippen!",
+        text: "Wenn eine Arbeitnehmerin krank wird, muss sie [ihrem>ihren] Arbeitgeber sofort informieren. Dauert die Krankheit länger [wie>als] drei Tage, braucht sie eine [ärztlichen>ärztliche] Bescheinigung. In den ersten sechs Wochen [zahlen>zahlt] der Arbeitgeber den Lohn weiter. Danach [sie bekommt>bekommt sie] Krankengeld von der Krankenkasse. In vielen Betrieben gibt es einen Betriebsrat, [das>der] die Interessen der Beschäftigten vertritt. Vor jeder Kündigung muss er [angehören>angehört] werden. Außerdem achtet er darauf, dass die Regeln zum Arbeitsschutz [werden eingehalten>eingehalten werden]. Zwischen zwei Arbeitstagen müssen mindestens elf Stunden Ruhezeit liegen.",
+        hinweise: ["informieren + Akkusativ: ihren Arbeitgeber", "Komparativ + als: länger als", "eine + feminin Akkusativ: eine ärztliche Bescheinigung", "Subjekt „der Arbeitgeber“ ist Singular → zahlt", "Hauptsatz: Verb auf Position 2 → Danach bekommt sie", "der Betriebsrat (maskulin) → der", "Passiv: werden + Partizip II → angehört werden", "Nebensatz mit dass: Verb am Ende → eingehalten werden"] }
+    ] },
   { id: "nominal", icon: "🏛️", titel: "Nominalstil aus dem Text", minuten: 12,
     tafel: [
       { titel: "Texte im Beruf: Nominalstil", html: `<table><tr><th>Verbalstil (gesprochen)</th><th>Nominalstil (Text)</th></tr>
@@ -165,10 +188,30 @@ window.UNTERRICHT_PLAENE.text1 = {
         ] }
     ] },
   /* ---------------------------------------------------------------- */
+  { id: "schnee", icon: "❄️", titel: "Schneeball: Zusammenfassen", minuten: 8,
+    tafel: [
+      { titel: "❄️ Schneeball-Zusammenfassung", html: `<ol class="schritte"><li><b>Zu zweit</b> (Partner am Handy / Breakout-Raum): Sammelt die <b>5 wichtigsten Informationen</b> aus den Texten.</li>
+        <li>Formuliert zusammen <b>3 Sätze</b> – mit mindestens einem <b>Nominalausdruck</b>.</li><li><b>Zwei Paare zusammen</b> (ich lege die Räume zusammen): Vergleicht und macht <b>eine</b> gemeinsame Version.</li><li>Eine Person liest die Version <b>allen vor</b>.</li></ol>
+        <div class="bsp">Bei Krankheit muss man … · Nach Ablauf von sechs Wochen … · Ohne Anhörung des Betriebsrats … · Zur Vermeidung von Unfällen …</div>` }
+    ],
+    aufgaben: [
+      { id: "sb", typ: "partner", titel: "Schneeball: In drei Sätzen", minuten: 8,
+        anleitung: "Zu zweit: Karte für Karte. Danach legt die Lehrkraft zwei Paare zusammen.",
+        karten: [
+          K("1 · Sammeln", "Nenne die 2–3 wichtigsten Informationen aus deinem Text.", ["In meinem Text war wichtig, dass …", "Man muss / darf …", "Zuständig ist …"],
+            "Hör zu, notiere Stichwörter und ergänze eine Information aus deinem Text.", ["Aus meinem Text kommt noch dazu: …", "Wichtig finde ich auch …"]),
+          K("2 · Formulieren", "Sag einen Satz für die Zusammenfassung – mit einem Nominalausdruck.", ["Nach Ablauf der Frist …", "Ohne Anhörung des Betriebsrats …", "Bei Krankheit …"],
+            "Korrigiere oder verbessere den Satz. Sag dann den zweiten Satz.", ["Besser wäre: …", "Mein Satz: …"]),
+          K("3 · Prüfen", "Lies eure drei Sätze noch einmal laut vor.", ["Erstens …, zweitens …, drittens …"],
+            "Prüfe: Verb auf Position 2? Richtiger Kasus? Fachwörter?", ["Hier fehlt …", "Das Verb muss …", "Passt!"])
+        ] }
+    ] },
   { id: "fall", icon: "💬", titel: "Anwenden: Was raten Sie?", minuten: 10,
     tafel: [
       { titel: "Fälle aus dem Berufsalltag", html: `<p>Ich ziehe einen Namen. Sie bekommen einen <b>Fall</b> und geben einen <b>Rat</b> – mit Begründung aus dem Text.</p>
-        <div class="bsp">Ich würde ihr raten, … · Laut Gesetz muss/darf … · Zuständig ist … · Wichtig ist, dass … · Nach Ablauf von …</div>` }
+        <div class="bsp">Ich würde ihr raten, … · Laut Gesetz muss/darf … · Zuständig ist … · Wichtig ist, dass … · Nach Ablauf von …</div>` },
+      { titel: "🏠 Hausaufgabe: Schreibwerkstatt", html: `<p>Übungszentrale → <b>Schreiben</b> → <b>„Zusammenfassung: Texte zum Arbeitsrecht“</b> (80–110 Wörter).</p>
+        <ul><li>Thema nennen</li><li>wichtigste Regeln mit Zahlen</li><li>wer ist wofür zuständig?</li><li>mindestens zwei Nominalausdrücke</li></ul><p class="klein">Abgeben – ich korrigiere und gebe die Korrektur frei.</p>` }
     ],
     aufgaben: [
       { id: "f1", typ: "sprechen", titel: "Blitzrunde: Was raten Sie?", minuten: 6,

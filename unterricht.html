@@ -80,6 +80,7 @@ input[type=text]{min-height:44px;border:2px solid var(--line);border-radius:12px
 .bingo button small{display:block;margin-top:4px;color:var(--ok);font-weight:900;font-size:15px}
 .kreis{font-family:var(--head);font-weight:900;font-size:30px;text-align:center;border-radius:18px;padding:14px;color:#fff}
 .kreis.i{background:#2F6FDB} .kreis.a{background:var(--steh)}
+.fztext{font-size:19px;line-height:2.05}.fz{border-bottom:2px dotted #93A8E8;cursor:pointer;border-radius:4px;padding:0 1px}.fz.ok{background:var(--ok-2);border:0;font-weight:800;cursor:default}.fz.ok s{color:var(--bad);font-weight:400}.fz.nein{background:var(--bad-2);border:0;cursor:default;text-decoration:none}
 .fetzen{background:#fff;border:3px solid var(--steh);border-radius:16px;padding:14px;margin-top:8px;font-size:19px;line-height:1.45;font-weight:600}
 .sitzkopf{font-family:var(--head);font-weight:900;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#93A8E8;margin:14px 4px 4px}
 .blk .ok{color:var(--ok);font-weight:900;margin-left:6px;font-size:13px}
@@ -206,10 +207,10 @@ body.beamer .layout{grid-template-columns:1fr} body.beamer .seite{display:none}
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script src="unterricht/b2gram.js?v=20261126a"></script>
-<script src="unterricht/text1.js?v=20261126a"></script>
-<script src="unterricht/konj1.js?v=20261126a"></script>
-<script src="nachzuegler.js?v=20261126a"></script>
+<script src="unterricht/b2gram.js?v=20261126b"></script>
+<script src="unterricht/text1.js?v=20261126b"></script>
+<script src="unterricht/konj1.js?v=20261126b"></script>
+<script src="nachzuegler.js?v=20261126b"></script>
 <script>
 /* =========================================================
    LIVE-UNTERRICHT – Lehrtafel + Aufgaben freigeben (wie der Persisch-Live-Unterricht)
@@ -240,8 +241,8 @@ const app=$("#app");
 const PLAENE=window.UNTERRICHT_PLAENE||{};
 let PLAN=PLAENE[P.get("plan")||P.get("solo")]||PLAENE[Object.keys(PLAENE)[0]];
 const ON=()=>!!(PLAN&&PLAN.online);
-const LIVE_NUR=["sprechen","bewegung","bingo","kugellager","haelften","partner","schlange","duell"];
-const TYP={wahl:"✅ Auswählen", sortieren:"🧺 Sortieren", bauen:"🧩 Sätze bauen", quiz:"⚡ Quiz für alle", sprechen:"🎤 Blitzrunde", bewegung:"🤫 Bewegungsspiel", bingo:"🚶 Bingo im Raum", kugellager:"🚶 Kugellager", haelften:"🚶 Satzhälften", theater:"🎭 Theater", partner:"🗣️ Partner-Karten", puzzle:"🧩 Gruppenpuzzle", schlange:"🚶 Schlangen-Puzzle", duell:"⚔️ Duell 1 gegen 1"};
+const LIVE_NUR=["sprechen","bewegung","bingo","kugellager","haelften","partner","schlange","duell","experten"];
+const TYP={wahl:"✅ Auswählen", sortieren:"🧺 Sortieren", bauen:"🧩 Sätze bauen", quiz:"⚡ Quiz für alle", sprechen:"🎤 Blitzrunde", bewegung:"🤫 Bewegungsspiel", bingo:"🚶 Bingo im Raum", kugellager:"🚶 Kugellager", haelften:"🚶 Satzhälften", theater:"🎭 Theater", partner:"🗣️ Partner-Karten", puzzle:"🧩 Gruppenpuzzle", fehler:"🔍 Fehlerdetektiv", experten:"🎓 Expertenrunde", schlange:"🚶 Schlangen-Puzzle", duell:"⚔️ Duell 1 gegen 1"};
 const QFARBE=["q0","q1","q2","q3"], QZ=["▲","●","■","◆"];
 function aufgabe(id){ for(const B of PLAN.bloecke) for(const A of B.aufgaben) if(A.id===id) return A; return null; }
 function blockVon(id){ return PLAN.bloecke.findIndex(B=>B.aufgaben.some(A=>A.id===id)); }
@@ -340,6 +341,19 @@ function quizPos(A){ if(_qpos[A.id]) return _qpos[A.id]; const n=A.items.length;
 function quizOpts(A, i){ const it=A.items[i]; const k=it.o.length; const ziel=quizPos(A)[i]%k;
   const f=mischS(it.o.map((o,j)=>({o,j})).slice(1), A.id+"|qf|"+i); f.splice(ziel,0,{o:it.o[0],j:0}); return f; }
 function szeneVon(A, id){ return (A.szenen||[]).find(s=>s.id===id)||A.szenen[0]; }
+/* Fehlerdetektiv: Text mit [falsch>richtig]-Stellen; jedes Wort ist antippbar */
+function fehlerTokens(A){ if(A._tok) return A._tok; const out=[]; const re=/\[([^>\]]+)>([^\]]+)\]/g; let m, last=0, e=0; const wort=t=>t.split(/(\s+)/).forEach(w=>{ if(w) out.push(/^\s+$/.test(w)?{sp:w}:{w}); });
+  while((m=re.exec(A.text))){ wort(A.text.slice(last,m.index)); const ws=m[1].split(/\s+/); ws.forEach((w,j)=>{ if(j) out.push({sp:" "}); out.push({w, e, k:m[2], orig:m[1], erst:j===0}); }); e++; last=re.lastIndex; } wort(A.text.slice(last));
+  return A._tok=out; }
+function fehlerAnzahl(A){ return new Set(fehlerTokens(A).filter(x=>x.k).map(x=>x.e)).size; }
+function fehlerStand(A, a){ a=a||{}; const f=a.f||{}, w=a.w||{}; return {n:fehlerAnzahl(A), ok:Object.keys(f).length, falsch:Object.keys(w).length}; }
+function fehlerHtml(A, a, aktiv){ a=a||{}; const f=a.f||{}, w=a.w||{}; const st=fehlerStand(A,a); const T=fehlerTokens(A);
+  const txt=T.map((t,i)=>{ if(t.sp){ const n=T[i+1], v=T[i-1]; return (n&&v&&n.k&&v.k&&n.e===v.e&&f[n.e])?"":t.sp; }
+    if(t.k && f[t.e]) return t.erst?`<span class="fz ok"><s>${esc(t.orig)}</s> ${esc(t.k)}</span>`:""; if(w[i]) return `<span class="fz nein">${esc(t.w)}</span>`;
+    return aktiv?`<span class="fz" data-fz="${i}">${esc(t.w)}</span>`:esc(t.w); }).join("");
+  const gef=[...new Set(T.filter(t=>t.k&&f[t.e]).map(t=>t.e))].map(e=>T.find(t=>t.e===e&&t.erst));
+  return `<div class="zeile-klein"><span>🔍 ${st.ok} von ${st.n} Fehlern gefunden</span><span>${st.falsch?`❌ ${st.falsch} falsch getippt`:""}</span></div><div class="fortschritt">${Array.from({length:st.n},(_,i)=>`<i class="${i<st.ok?"ok":""}"></i>`).join("")}</div>
+    <div class="card fztext">${txt}</div>${gef.length&&A.hinweise?`<div class="card small"><b>Gefunden – warum falsch?</b>${gef.map(t=>`<div>✅ <b>${esc(t.k)}</b> statt <s>${esc(t.orig)}</s>${A.hinweise[t.e]?` – ${esc(A.hinweise[t.e])}`:""}</div>`).join("")}</div>`:""}`; }
 /* Gruppenpuzzle: Lücken {richtig|falsch|…} in den Fetzen, dann eigene Fetzen-Nummer(n) + Fragen zur ganzen Geschichte */
 function fetzenStand(G, fs, wahl){ let n=0, ok=0; fs.forEach(f=>teile(G.fetzen[f]).forEach((t,gi)=>{ if(Array.isArray(t)){ n++; if((wahl||{})[f+"_"+gi]===t[0]) ok++; } })); return {n, ok}; }
 function fetzenLuecken(A, G, f, wahl){ return teile(G.fetzen[f]).map((t,gi)=>{ if(!Array.isArray(t)) return esc(t); const key=f+"_"+gi, g=(wahl||{})[key];
@@ -415,6 +429,7 @@ function handy(){
       if(["sprechen","bewegung"].includes(A.typ)) r.z=S.zug; if(A.typ==="kugellager") r.k=S.kugel;
       if(["bingo","haelften","theater"].includes(A.typ)) r.sp=spielerListe().map(([p,x])=>p+x.name+(x.tg||"")+(x.online===false?0:1)).join();
       if(A.typ==="bingo") r.b=((S.bingo||{})[A.id]||{})[me.pid]; if(A.typ==="haelften") r.h=S.hael;
+      if(A.typ==="experten") r.ex=JSON.stringify(S.exp||{})+JSON.stringify(S.puzzle||{})+spielerListe().map(([p,x])=>p+x.name).join();
       if(A.typ==="puzzle"){ r.pz=JSON.stringify(S.puzzle||{}); r.pl=JSON.stringify(((S.pzl||{})[A.id]||{})[me.pid]||{}); }
       if(A.typ==="theater"){ r.th=S.theater; r.tw=((S.th||{})[A.id]||{})[me.pid]; }
       if(A.typ==="partner"){ r.pa=S.paar; r.sp=spielerListe().map(([p,x])=>p+x.name).join(); }
@@ -436,7 +451,7 @@ function handy(){
       app.innerHTML=h+warte("die Lehrkraft","👀 Schau zur Tafel.")+`</div>`; return; }
     const steh=!!(PLAN.bloecke[blockVon(A.id)]||{}).steh;
     if(steh) h+=`<div class="small" style="font-weight:800;margin-bottom:4px;color:var(--steh)">🚶 Steh auf!</div>`;
-    const fn={wahl:uebung, sortieren:uebung, bauen:uebung, quiz:quiz, puzzle:puzzle, sprechen:zug, bewegung:zug, bingo:bingo, kugellager:kugel, haelften:haelften, theater:theater, partner:partner, schlange:schlange, duell:duell}[A.typ];
+    const fn={wahl:uebung, sortieren:uebung, bauen:uebung, quiz:quiz, puzzle:puzzle, fehler:fehlerH, experten:expertenH, sprechen:zug, bewegung:zug, bingo:bingo, kugellager:kugel, haelften:haelften, theater:theater, partner:partner, schlange:schlange, duell:duell}[A.typ];
     app.innerHTML=h+(fn?fn(A):"")+`</div>`; binder(A);
   }
   let binder=()=>{};
@@ -538,6 +553,19 @@ function handy(){
     if(mein) return band+`<div class="card"><div class="frage">${esc(it.f)}</div></div>`+warte("die Auflösung","✓ Deine Antwort ist gespeichert.");
     binder=()=>$$("[data-dq]").forEach(b=>b.onclick=()=>schreib(`du/${D.nr}/${D.i}/${me.pid}`, {o:Number(b.dataset.dq), t:DEMO?Date.now():TS()}));
     return band+`<div class="card"><div class="frage">${esc(it.f)}</div><div class="qopts">${opts.map((x,k)=>`<button class="${QFARBE[k]}" data-dq="${x.j}">${QZ[k]} ${esc(x.o)}</button>`).join("")}</div></div>`; }
+  function fehlerH(A){ const a=((S.ant||{})[A.id]||{})[me.pid]||{}; const st=fehlerStand(A,a);
+    if(st.ok>=st.n){ binder=()=>{}; return `<h2>${esc(A.titel)}</h2>`+fehlerHtml(A,a,false)+`<div class="card fertig"><div class="e">🎉</div><h2>Alle ${st.n} Fehler gefunden!</h2><p>${st.falsch} falsch getippt.</p></div>`; }
+    binder=()=>$$("[data-fz]").forEach(b=>b.onclick=()=>{ const i=Number(b.dataset.fz); const t=fehlerTokens(A)[i]; if(t.k){ toast("✓ Fehler gefunden!"); schreib(`ant/${A.id}/${me.pid}/f/${t.e}`, 1); } else { toast("✗ Das ist richtig."); schreib(`ant/${A.id}/${me.pid}/w/${i}`, 1); } });
+    return `<h2>${esc(A.titel)}</h2>${anleitung(A)}`+fehlerHtml(A,a,true); }
+  function expertenH(A){ const E=S.exp||{}; binder=()=>{}; if(E.aid!==A.id||!E.gr) return warte("die Lehrkraft","🎓 Gleich werden die Expertenrunden gebildet.");
+    const ge=Object.entries(E.gr).find(([,m])=>Object.values(m||{}).includes(me.pid)); if(!ge) return warte("die Lehrkraft","Du bekommst gleich eine Runde.");
+    const nr=Object.keys(E.gr).indexOf(ge[0])+1; const Q=aufgabe(A.quelle)||{}; const K=((S.puzzle||{}).karten)||{}; const G=k=>K[k]&&Q.geschichten?Q.geschichten[K[k].g]:null;
+    const mein=G(me.pid); const mit=Object.values(ge[1]).filter(p=>p!==me.pid);
+    return `<div class="dranband" style="background:var(--nacht)">🎓 Expertenrunde ${nr}${ON()?` · 🖥️ Raum ${nr}`:""}</div>
+      <div class="card"><b>In deiner Runde:</b>${mit.map(p=>{ const g=G(p); return `<div style="font-size:18px">${g?g.icon:"👂"} ${esc(nameVon(p))}${g?` <span class="small muted">– ${esc(g.titel)}</span>`:""}</div>`; }).join("")||'<p class="muted">Noch allein.</p>'}</div>
+      ${mein?`<div class="card" style="border-top:8px solid ${mein.farbe}"><div class="small muted" style="font-weight:800">Du bist Expert/in für</div><h2>${mein.icon} ${esc(mein.titel)}</h2>
+        <p><b>Erkläre deinen Text in 3–4 Sätzen.</b> Die anderen kennen ihn nicht!</p>${((A.leit||{})[mein.id]||[]).map(x=>`<div class="sprech">❓ ${esc(x)}</div>`).join("")}</div>`:`<div class="anl">Du hörst zu und stellst Fragen.</div>`}
+      ${(A.redemittel||[]).length?`<div class="card small"><b>💬 Redemittel</b>${A.redemittel.map(x=>`<div class="sprech">${esc(x)}</div>`).join("")}</div>`:""}`; }
   function puzzle(A){ const PZ=S.puzzle||{}; const K=PZ.aid===A.id&&PZ.karten?PZ.karten[me.pid]:null;
     if(!K){ binder=()=>{}; return warte("die Lehrkraft","🧩 Gleich bekommst du deinen Fetzen."); }
     const G=A.geschichten[K.g]; const c=ctxFuer(A); const A2=puzzleAufgabe(A,K);
@@ -594,7 +622,7 @@ function handy(){
    LEINWAND / LEITUNG
    ========================================================= */
 function leitung(){
-  document.body.classList.add("board"); let S={}, einsicht=false, beamer=false, zuletztPiep=null, letzteZuege=[];
+  document.body.classList.add("board"); let fzZeigen=false; let S={}, einsicht=false, beamer=false, zuletztPiep=null, letzteZuege=[];
   const TEAMVORLAGE=[{n:"Rot",e:"🔴",f:"#E2483D"},{n:"Blau",e:"🔵",f:"#2F6FDB"},{n:"Grün",e:"🟢",f:"#14A37F"},{n:"Gelb",e:"🟡",f:"#D69E00"}];
   async function start(){
     if(!PIN){ try{ PIN=localStorage.getItem("ueb_unt_leitung_pin")||localStorage.getItem("unt_leitung_pin")||""; }catch(e){} }
@@ -651,6 +679,7 @@ function leitung(){
     if(A.typ==="haelften") karten(A, 1);
     if(A.typ==="puzzle"){ if(!S.puzzle||S.puzzle.aid!==id) puzzleVerteilen(A); }
     if(A.typ==="partner") paareBilden(A);
+    if(A.typ==="experten") expertenBilden(A);
     if(A.typ==="duell") I("duell").set({aid:id, nr:(S.duell||{}).nr||0});
     if(A.typ==="schlange"){ const li={}, ka={}; const L=mische(online().map(([p])=>p)); L.forEach((p,i)=>li[p]=i%2?"B":"A");
       ["A","B"].forEach(X=>{ const mem=L.filter(p=>li[p]===X); const pool=mische(A.puzzles[X==="A"?"B":"A"].teile.map(t=>t.id)); let j=0; mem.forEach(p=>{ ka[p]=[pool[j%pool.length], pool[(j+1)%pool.length]]; j+=2; }); });
@@ -675,6 +704,11 @@ function leitung(){
     let pi=0; for(let i=0;i+1<L.length;i+=2){ const pp=paare[pi++%paare.length]; k[L[i]]={p:pp,t:0}; k[L[i+1]]={p:pp,t:1}; }
     if(L.length%2===1){ const last=L[L.length-1]; if(L.length>=3){ k[last]=Object.assign({}, k[L[L.length-2]]); } }
     I("hael").set({aid:A.id, runde, karten:k, ok:null}); timerSetze(A.minuten||3); }
+  function expertenBilden(A){ const K=((S.puzzle||{}).karten)||{}; const on=online().map(([p])=>p); const b={};
+    on.filter(p=>K[p]).forEach(p=>(b[K[p].g]=b[K[p].g]||[]).push(p)); Object.values(b).forEach(l=>{ const m=mische(l); l.length=0; l.push(...m); });
+    const n=Math.max(1, ...Object.values(b).map(l=>l.length), 1); const gr=Array.from({length:Math.min(n, Math.max(1, Math.floor(on.length/2)))},()=>[]);
+    Object.values(b).forEach(l=>l.forEach((p,i)=>gr[i%gr.length].push(p))); on.filter(p=>!K[p]).forEach(p=>gr.slice().sort((x,y)=>x.length-y.length)[0].push(p));
+    const o={}; gr.forEach((m,i)=>o["e"+i]=m); I("exp").set({aid:A.id, gr:o}); if(A.minuten) timerSetze(A.minuten); }
   function puzzleVerteilen(A){ const L=mische(online().map(([p])=>p)); const nf=A.geschichten[0].fetzen.length;
     const ng=Math.max(1, Math.min(A.geschichten.length, Math.round(L.length/nf)||1)); const gs=mische(A.geschichten.map((_,i)=>i)).slice(0,ng);
     const gruppen=gs.map(()=>[]); L.forEach((p,i)=>gruppen[i%ng].push(p)); const k={};
@@ -683,10 +717,10 @@ function leitung(){
   /* Zurücksetzen (Wiederholung in einer späteren Sitzung) */
   function zuruecksetzen(ids){ const up={}; const akt=(inf().auf||{}).id;
     ids.forEach(id=>{ ["ant","qz","th","bingo","sp","pzl"].forEach(k=>up[`${k}/${id}`]=null); });
-    [["quiz","aid"],["puzzle","aid"],["paar","aid"],["theater","aid"],["hael","aid"],["kugel","aid"],["sch","aid"],["zug","aid"],["duell","aid"]].forEach(([k])=>{ const x=S[k]; if(x&&ids.includes(x.aid)) up[k]=null; });
+    [["quiz","aid"],["exp","aid"],["puzzle","aid"],["paar","aid"],["theater","aid"],["hael","aid"],["kugel","aid"],["sch","aid"],["zug","aid"],["duell","aid"]].forEach(([k])=>{ const x=S[k]; if(x&&ids.includes(x.aid)) up[k]=null; });
     if(akt && ids.includes(akt)) up["info/auf"]=null, up["info/ansicht"]="tafel";
     return I().update(up); }
-  function hatDaten(id){ return !!((S.ant||{})[id]||(S.pzl||{})[id]||(S.qz||{})[id]||(S.th||{})[id]||(S.puzzle&&S.puzzle.aid===id)||(S.paar&&S.paar.aid===id)||(S.duell&&S.duell.aid===id)); }
+  function hatDaten(id){ return !!((S.ant||{})[id]||(S.pzl||{})[id]||(S.exp&&S.exp.aid===id)||(S.qz||{})[id]||(S.th||{})[id]||(S.puzzle&&S.puzzle.aid===id)||(S.paar&&S.paar.aid===id)||(S.duell&&S.duell.aid===id)); }
   function kurseLaden(){ try{ return JSON.parse(localStorage.getItem("unt_kurse")||"[]"); }catch(e){ return []; } }
   function kursMerken(){ const l=kurseLaden().filter(k=>k.pin!==PIN); l.unshift({pin:PIN, plan:PLAN.id, name:inf().kursname||PLAN.titel, t:Date.now()}); try{ localStorage.setItem("unt_kurse", JSON.stringify(l.slice(0,12))); }catch(e){} }
   async function gruppenBilden(A){ const L=mische(online().map(([p])=>p)); const ng=Math.max(1, Math.floor(L.length/3)); const gr={}; const up={};
@@ -780,6 +814,14 @@ function leitung(){
         ${online().some(([p])=>!K[p])?`<p class="small muted" style="text-align:center">Ohne Karte (neu dabei): ${online().filter(([p])=>!K[p]).map(([,x])=>esc(x.name)).join(", ")} – nächste Runde dabei.</p>`:""}
         <div class="row" style="justify-content:center"><button class="btn steh" id="neueKarten">🔀 Neue Karten – neuer Partner (Runde ${(H.runde||1)+1})</button></div>
         ${Object.keys(ok).length?`<h3>Gefundene Sätze – ein paar laut vorlesen lassen:</h3><div class="tafelinhalt" style="font-size:clamp(16px,1.6vw,24px)">${[...new Set(Object.entries(ok).map(([p])=>K[p]&&K[p].p))].filter(x=>x!==undefined).map(pi=>`<div>✅ ${esc(A.paare[pi][0])} ${esc(A.paare[pi][1])}</div>`).join("")}</div>`:""}`; }
+    if(A.typ==="fehler"){ const L=spieler(); const T=fehlerTokens(A); const n=fehlerAnzahl(A);
+      const quote=T.filter(t=>t.k&&t.erst).map(t=>({t,r:L.filter(([p])=>((ant[p]||{}).f||{})[t.e]).length})).sort((a,b)=>a.r-b.r);
+      return kopfA(A)+`<p class="tafelinhalt"><b>${L.filter(([p])=>fehlerStand(A,ant[p]).ok>=n).length}</b> von ${online().length} haben alle ${n} Fehler gefunden</p>
+        <div class="balkenliste">${L.map(([p,x])=>{ const st=fehlerStand(A,ant[p]); return `<div class="bz ${x.online===false?"off":""}"><span>${esc(x.name)}</span><div class="bal"><i style="width:${st.ok/n*100}%"></i></div><span class="small">${st.ok}/${n}${st.falsch?` · ❌${st.falsch}`:""}</span></div>`; }).join("")}</div>
+        <div class="row" style="margin-top:14px"><button class="btn ${fzZeigen?"ghost":"ok"}" id="fzZeigen">${fzZeigen?"🙈 Lösung verbergen":"📖 Lösung zeigen"}</button></div>
+        ${fzZeigen?`<h3>Fehler – am seltensten gefunden zuerst</h3><div class="tafelinhalt" style="font-size:clamp(16px,1.5vw,22px)">${quote.map(q=>`<div>❌ <s>${esc(q.t.orig)}</s> → ✅ <b>${esc(q.t.k)}</b> <span class="muted">(${q.r} von ${L.length} gefunden)</span>${(A.hinweise||[])[q.t.e]?` · ${esc(A.hinweise[q.t.e])}`:""}</div>`).join("")}</div>`:""}`; }
+    if(A.typ==="experten"){ const E=S.exp||{}; if(E.aid!==A.id) return kopfA(A); const K=((S.puzzle||{}).karten)||{}; const Q=aufgabe(A.quelle)||{};
+      return kopfA(A)+`<div class="row" style="margin:8px 0"><button class="btn sm ghost" id="expNeu" style="margin-left:auto">🔀 Runden neu bilden</button></div><div class="gruppen">${Object.entries(E.gr||{}).map(([k,m],i)=>`<div class="gruppe"><b style="font-size:20px">${ON()?"🖥️ Raum ":"Runde "}${i+1}</b><div class="small" style="margin-top:6px">${Object.values(m||{}).map(p=>{ const g=K[p]&&Q.geschichten?Q.geschichten[K[p].g]:null; return `<div>${g?g.icon:"👂"} ${nm(p)}</div>`; }).join("")}</div></div>`).join("")}</div>`; }
     if(A.typ==="puzzle"){ const PZ=S.puzzle||{}; if(PZ.aid!==A.id) return kopfA(A); const K=PZ.karten||{};
       const gs=[...new Set(Object.values(K).map(x=>x.g))].sort();
       let h=kopfA(A)+`<div class="row" style="margin:8px 0"><button class="btn ${PZ.zeigen?"ghost":"ok"}" id="pzZeigen">${PZ.zeigen?"🙈 Geschichten verbergen":"📖 Geschichten auflösen"}</button><button class="btn sm ghost" id="pzNeu" style="margin-left:auto">🔀 Fetzen neu verteilen</button></div><div class="gruppen">`;
@@ -865,6 +907,8 @@ function leitung(){
     $$("[data-kr]").forEach(b=>b.onclick=()=>{ I("kugel/r").set(Number(b.dataset.kr)); timerSetze(A.minuten||2); });
     $$("[data-kreis]").forEach(b=>b.onclick=()=>{ const p=b.dataset.kreis; I(`kugel/kreis/${p}`).set(((S.kugel.kreis||{})[p])==="i"?"a":"i"); });
     on("#neueKarten", ()=>karten(A, ((S.hael||{}).runde||1)+1));
+    on("#fzZeigen", ()=>{ fzZeigen=!fzZeigen; male(); });
+    on("#expNeu", ()=>expertenBilden(A));
     on("#pzZeigen", ()=>I("puzzle/zeigen").set(!(S.puzzle||{}).zeigen));
     on("#pzNeu", ()=>{ if(confirm("Fetzen neu verteilen? Die Antworten werden gelöscht.")) puzzleVerteilen(A); });
     on("#neuePaare", ()=>paareBilden(A));
@@ -965,6 +1009,9 @@ function solo(){
     if(X.art==="tafel"){ const F=B.tafel[X.i]; app.innerHTML=h+`<div class="card"><div class="small muted" style="font-weight:800">📋 Tafel</div><h2>${esc(F.titel)}</h2><div class="tafelinhalt">${F.html}</div></div>${weiter}</div>`; }
     else { const A=X.A; st.a=st.a||{};
       if(A.typ==="theater") return theaterSolo(A, h);
+      if(A.typ==="fehler"){ const a=st.a[A.id]||{}; const fs=fehlerStand(A,a); app.innerHTML=h+`<h2>${esc(A.titel)}</h2>${anleitung(A)}`+fehlerHtml(A,a,fs.ok<fs.n)+(fs.ok>=fs.n?`<div class="card fertig"><div class="e">🎉</div><h2>Alle Fehler gefunden!</h2><button class="btn" id="weiter">Weiter ▶</button> <button class="btn ghost" id="nochmal">↺ noch einmal</button></div>`:"")+`</div>`;
+        $$("[data-fz]").forEach(b=>b.onclick=()=>{ const i=Number(b.dataset.fz); const t=fehlerTokens(A)[i]; const x=st.a[A.id]=st.a[A.id]||{}; const k=t.k?"f":"w"; x[k]=Object.assign({}, x[k]||{}, {[t.k?t.e:i]:1}); toast(t.k?"✓ Fehler gefunden!":"✗ Das ist richtig."); merke(); male(); });
+        const n=$("#nochmal"); if(n) n.onclick=()=>{ delete st.a[A.id]; merke(); male(); }; return bind(); }
       const ant=st.a[A.id]||{}; const fertig=aktuellerIndex(A,ant)<0;
       st.seed=st.seed||{}; if(!st.seed[A.id]){ st.seed[A.id]=String(Math.random()).slice(2,10); merke(); }
       const ctx={pid:"solo", seed:st.seed[A.id], ant, lokal, setze:(i,v)=>{ st.a[A.id]=Object.assign({}, st.a[A.id]||{}, {[i]:v}); merke(); setTimeout(male, v.ok?500:0); }, neu:male, weiterText:"Super gemacht!", weiterKnopf:`<button class="btn" id="weiter">Weiter ▶</button> <button class="btn ghost" id="nochmal">↺ noch einmal</button>`};
